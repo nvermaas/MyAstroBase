@@ -1,0 +1,121 @@
+{% load static %}
+{% for observation in my_observations %}
+    {% if observation.my_status != "removed_invisible" %}
+    <div class="row">
+        <tr class="{{ observation.my_status }}">
+
+
+            <td>
+                <a href="{{ observation.get_absolute_url }}" target="_blank">{{ observation.taskID }} </a>
+            </td>
+            <td>{{ observation.name }}</td>
+            <td>{{ observation.observing_mode }}</td>
+            <td>
+            {% if observation.my_status != "valid_priority" %}
+               {{ observation.my_status }}
+            {% endif %}
+            {% if observation.my_status == "valid_priority" %}
+                valid (priority)
+            {% endif %}
+             {% if observation.my_status == "ingesting" %}
+                {% if observation.control_parameters != "unknown" %}
+                    {{ observation.control_parameters }}
+                {% endif %}
+            {% endif %}
+            </td>
+            <td>{{ observation.field_name }}</td>
+            <td>{{ observation.field_ra }}</td>
+            <td>{{ observation.field_dec }}</td>
+            <td>{{ observation.date|date:"Y-m-d H:i:s" }} </td>
+            <td>{{ observation.size|filesizeformat }} </td>
+            <td>
+                {% if "removed" in observation.my_status and observation.quality != "unknown" %}
+                    {{ observation.quality }}
+                {% endif %}
+            </td>
+            <td>
+                {% if observation.my_status == "complete" %}
+                   <a href="{% url 'dataproducts-list-view' observation.taskID %}" class="btn btn-success btn-sm" role="button">DPS</a>
+                {% elif observation.my_status == "incomplete" or "error" in observation.my_status %}
+                   <a href="{% url 'dataproducts-list-view' observation.taskID %}" class="btn btn-danger btn-sm" role="button">DPS</a>
+                {% else %}
+                    <a href="{% url 'dataproducts-list-view' observation.taskID %}" class="btn btn-primary btn-sm" role="button">DPS</a>
+                {% endif %}
+
+                {% if observation.my_status == "ingesting" %}
+                <a href="https://alta.astron.nl/science/monitor" class="btn btn-primary btn-sm" target="_blank" role="button">ALTA View</a>
+                {% endif %}
+
+                {% if not "bad" in observation.quality %}
+                    {% if observation.my_status == "archived" or observation.my_status == "removed" %}
+                    <a href="https://alta.astron.nl/science/details/{{ observation.taskID }}" class="btn btn-primary btn-sm" target="_blank" role="button">ALTA View</a>
+                    {% endif %}
+                {% endif %}
+
+            </td>
+            <td>
+
+                {% if observation.my_status == "raw" %}
+                    <a href="{% url 'observation-setstatus-view' observation.pk 'processing' my_observations.number %}" class="btn btn-success btn-sm" role="button">Process</a>
+                {% endif %}
+
+                {% if observation.my_status == "processing" %}
+                    <a href="{% url 'observation-setstatus-view' observation.pk 'raw' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Cancel Processing</a>
+                {% endif %}
+
+                {% if observation.my_status == "incomplete" %}
+                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'valid' 'valid' my_observations.number %}" class="btn btn-success btn-sm" role="button">Validate DPS</a>
+                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'invalid' 'removed_invisible' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Failed</a>
+                {% endif %}
+
+                {% if observation.my_status == "completed" or observation.my_status == "incomplete" %}
+                   <a href="{% url 'observation-setstatus-view' observation.pk 'valid' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Ready to Ingest</a>
+                {% endif %}
+
+                {% if observation.my_status == "error (no completing)" or observation.my_status == "defined" %}
+                   <a href="{% url 'observation-setstatus-view' observation.pk 'completing' my_observations.number %}" class="btn btn-success btn-sm" role="button">Completing</a>
+                {% endif %}
+
+                {% if observation.my_status == "ingest error" or observation.my_status == "ingest aborted" %}
+                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'valid' 'valid' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Retry Ingest</a>
+                {% endif %}
+
+
+                {% if observation.my_status == "archived" or "error" in observation.my_status or "aborted" in observation.my_status or observation.my_status == "completed" or observation.my_status == "incomplete" %}
+                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'removing' 'removing' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Remove Data</a>
+                {% endif %}
+
+                {% if observation.my_status == "valid" %}
+                   <a href="{% url 'observation-setstatus-view' observation.pk 'valid_priority' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Priority Ingest</a>
+                   <a href="{% url 'observation-setstatus-view' observation.pk 'completed' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Cancel Ingest</a>
+                {% endif %}
+                {% if user.is_authenticated %}
+                  {% if observation.my_status == "ingesting" %}
+                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'ingest aborted' 'ingest aborted' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Abort Ingest</a>
+                  {% endif %}
+                {% endif %}
+
+                {% if observation.my_status == "valid_priority" %}
+                   <a href="{% url 'observation-setstatus-view' observation.pk 'valid' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Cancel Priority</a>
+                   <a href="{% url 'observation-setstatus-view' observation.pk 'completed' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Cancel Ingest</a>
+                {% endif %}
+
+                {% if observation.my_status == "combining" %}
+                   <a href="{% url 'observation-setstatus-view' observation.pk 'combine' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Retry Combine</a>
+                {% endif %}
+
+                {% if observation.my_status == "incomplete" %}
+                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'defined' 'defined' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Reset</a>
+                {% endif %}
+
+                {% if "removed" in observation.my_status and observation.quality == "unknown" %}
+                <a href="{% url 'observation-setquality-view' observation.pk 'good' my_observations.number %}" class="btn btn-success btn-sm" role="button">Data is Good</a>
+                <a href="{% url 'observation-setquality-view' observation.pk 'bad' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Data is Bad</a>
+                {% endif %}
+
+            </td>
+            </tr>
+        </div>
+    {% endif %}
+{% endfor %}
+

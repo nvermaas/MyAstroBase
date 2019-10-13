@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+  db:
+    # image: atdb_postgres_dev:latest
+    build:
+       context: ./docker/postgres
+       dockerfile: Dockerfile
+    container_name: atdb_postgres_dev
+    ports:
+    - "5433:5432"
+    volumes:
+    - /home/vagrant/shared:/shared
+    restart: always
+
+  web:
+    build: .
+    container_name: atdb_web_dev
+    ports:
+      - "8010:8010"
+    expose:
+      - "8010"
+    depends_on:
+      - db
+    restart: always
+
+  nginx:
+    build:
+       context: ./docker/nginx
+       dockerfile: Dockerfile
+    container_name: atdb_nginx_dev
+    ports:
+      - "81:8011"
+    volumes:
+      - ./docker/nginx:/etc/nginx/conf.d
+      - /home/vagrant/shared/atdb/static:/static
+    depends_on:
+      - web
+    restart: always
+
+

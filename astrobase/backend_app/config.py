@@ -1,0 +1,3 @@
+VERSION = "Version 0.1 (13 oct 2019)"
+OBSERVATIONS_PER_PAGE = 50
+

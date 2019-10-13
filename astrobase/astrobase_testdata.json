@@ -1,0 +1,218 @@
+[
+{
+    "model": "backend_app.taskobject",
+    "pk": 1,
+    "fields": {
+        "name": "Orion",
+        "task_type": "observation",
+        "taskID": "020113001",
+        "creationTime": "2019-10-13T10:48:46Z",
+        "new_status": "processed",
+        "data_location": "http://uilennest.net/static/astrobase",
+        "my_status": "processed"
+    }
+},
+{
+    "model": "backend_app.taskobject",
+    "pk": 2,
+    "fields": {
+        "name": "Orion Raw",
+        "task_type": "dataproduct",
+        "taskID": "020113001",
+        "creationTime": "2002-01-13T19:40:00Z",
+        "new_status": "available",
+        "data_location": "http://uilennest.net/static/astrobase/",
+        "my_status": "available"
+    }
+},
+{
+    "model": "backend_app.taskobject",
+    "pk": 3,
+    "fields": {
+        "name": "Orion Annotated",
+        "task_type": "dataproduct",
+        "taskID": "020113001",
+        "creationTime": "2019-10-13T11:10:17Z",
+        "new_status": "available",
+        "data_location": "http://uilennest.net/static/astrobase/",
+        "my_status": "available"
+    }
+},
+{
+    "model": "backend_app.taskobject",
+    "pk": 4,
+    "fields": {
+        "name": "Orion Sources",
+        "task_type": "dataproduct",
+        "taskID": "020113001",
+        "creationTime": "2019-10-13T11:14:40Z",
+        "new_status": "available",
+        "data_location": "http://uilennest.net/static/astrobase/",
+        "my_status": "available"
+    }
+},
+{
+    "model": "backend_app.taskobject",
+    "pk": 5,
+    "fields": {
+        "name": "Orion Fits",
+        "task_type": "dataproduct",
+        "taskID": "020113001",
+        "creationTime": "2019-10-13T11:24:08Z",
+        "new_status": "available",
+        "data_location": "http://uilennest.net/static/astrobase/",
+        "my_status": "available"
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 1,
+    "fields": {
+        "name": "raw",
+        "timestamp": "2019-10-13T10:55:22.741Z",
+        "taskObject": 1
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 2,
+    "fields": {
+        "name": "raw",
+        "timestamp": "2019-10-13T10:58:44.240Z",
+        "taskObject": 2
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 3,
+    "fields": {
+        "name": "new",
+        "timestamp": "2019-10-13T11:14:07.230Z",
+        "taskObject": 3
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 4,
+    "fields": {
+        "name": "new",
+        "timestamp": "2019-10-13T11:16:19.237Z",
+        "taskObject": 4
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 5,
+    "fields": {
+        "name": "processed",
+        "timestamp": "2019-10-13T11:17:04.502Z",
+        "taskObject": 1
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 6,
+    "fields": {
+        "name": "available",
+        "timestamp": "2019-10-13T11:21:46.734Z",
+        "taskObject": 2
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 7,
+    "fields": {
+        "name": "available",
+        "timestamp": "2019-10-13T11:25:39.168Z",
+        "taskObject": 5
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 8,
+    "fields": {
+        "name": "new",
+        "timestamp": "2019-10-13T11:26:11.114Z",
+        "taskObject": 4
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 9,
+    "fields": {
+        "name": "available",
+        "timestamp": "2019-10-13T11:26:34.220Z",
+        "taskObject": 3
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 10,
+    "fields": {
+        "name": "available",
+        "timestamp": "2019-10-13T11:26:45.404Z",
+        "taskObject": 4
+    }
+},
+{
+    "model": "backend_app.observation",
+    "pk": 1,
+    "fields": {
+        "date": "2019-01-13T19:40:00Z",
+        "process_type": "observation",
+        "field_name": "Orion",
+        "field_ra": 90.0,
+        "field_dec": 0.0,
+        "field_fov": 30.0,
+        "quality": "unknown"
+    }
+},
+{
+    "model": "backend_app.dataproduct",
+    "pk": 2,
+    "fields": {
+        "filename": "02-01-13-orion3.jpg",
+        "description": "raw image of Orion",
+        "dataproduct_type": "raw",
+        "size": 2247,
+        "quality": "unknown",
+        "parent": 1
+    }
+},
+{
+    "model": "backend_app.dataproduct",
+    "pk": 3,
+    "fields": {
+        "filename": "02-01-13-orion3_annotated.jpg",
+        "description": "Orion annotated with astrometry",
+        "dataproduct_type": "annotated",
+        "size": 1052,
+        "quality": "unknown",
+        "parent": 1
+    }
+},
+{
+    "model": "backend_app.dataproduct",
+    "pk": 4,
+    "fields": {
+        "filename": "02-01-13 orion3_sources.png",
+        "description": "Orion sources added by astrometry",
+        "dataproduct_type": "sources",
+        "size": 8172,
+        "quality": "unknown",
+        "parent": 1
+    }
+},
+{
+    "model": "backend_app.dataproduct",
+    "pk": 5,
+    "fields": {
+        "filename": "02-01-13-orion3.fits",
+        "description": "Orion fits",
+        "dataproduct_type": "fits",
+        "size": 11360,
+        "quality": "unknown",
+        "parent": 1
+    }
+}
+]

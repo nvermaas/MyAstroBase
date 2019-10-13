@@ -1,0 +1,169 @@
+[2019-10-13 12:55:22,736] SIGNAL : pre_save Observation(020113001)
+[2019-10-13 12:55:22,736] handle_pre_save(020113001)
+[2019-10-13 12:55:22,740] handle_post_save(020113001)
+[2019-10-13 12:55:22,740] save new observation
+[2019-10-13 12:55:57,468] DataProductsListView.get_queryset()
+[2019-10-13 12:55:57,469] my_queryset retrieved
+[2019-10-13 12:58:44,237] SIGNAL : pre_save DataProduct(02-01-13 orion3.jpg)
+[2019-10-13 12:58:44,237] handle_pre_save(02-01-13 orion3.jpg)
+[2019-10-13 12:58:44,239] handle_post_save(02-01-13 orion3.jpg)
+[2019-10-13 12:58:44,239] save new dataproduct
+[2019-10-13 12:58:44,241] update dataproduct parent = 020113001
+[2019-10-13 12:58:53,090] DataProductsListView.get_queryset()
+[2019-10-13 12:58:53,091] my_queryset retrieved
+[2019-10-13 13:02:08,580] DataProductsListView.get_queryset()
+[2019-10-13 13:02:08,582] my_queryset retrieved
+[2019-10-13 13:07:28,398] SIGNAL : pre_save DataProduct(02-01-13-orion3.jpg)
+[2019-10-13 13:07:28,399] handle_pre_save(02-01-13-orion3.jpg)
+[2019-10-13 13:07:28,424] handle_post_save(02-01-13-orion3.jpg)
+[2019-10-13 13:07:28,424] update dataproduct parent = 020113001
+[2019-10-13 13:11:49,260] SIGNAL : pre_save DataProduct(02-01-13-orion3.jpg)
+[2019-10-13 13:11:49,260] handle_pre_save(02-01-13-orion3.jpg)
+[2019-10-13 13:11:49,285] handle_post_save(02-01-13-orion3.jpg)
+[2019-10-13 13:11:49,285] update dataproduct parent = 020113001
+[2019-10-13 13:14:07,226] SIGNAL : pre_save DataProduct(02-01-13-orion3_annotated.jpg)
+[2019-10-13 13:14:07,226] handle_pre_save(02-01-13-orion3_annotated.jpg)
+[2019-10-13 13:14:07,230] handle_post_save(02-01-13-orion3_annotated.jpg)
+[2019-10-13 13:14:07,230] save new dataproduct
+[2019-10-13 13:14:07,232] update dataproduct parent = 020113001
+[2019-10-13 13:16:19,229] SIGNAL : pre_save DataProduct(02-01-13 orion3_sources.png)
+[2019-10-13 13:16:19,230] handle_pre_save(02-01-13 orion3_sources.png)
+[2019-10-13 13:16:19,236] handle_post_save(02-01-13 orion3_sources.png)
+[2019-10-13 13:16:19,237] save new dataproduct
+[2019-10-13 13:16:19,239] update dataproduct parent = 020113001
+[2019-10-13 13:16:32,070] DataProductsListView.get_queryset()
+[2019-10-13 13:16:32,071] my_queryset retrieved
+[2019-10-13 13:17:04,502] SIGNAL : pre_save Observation(020113001)
+[2019-10-13 13:17:04,502] handle_pre_save(020113001)
+[2019-10-13 13:17:04,536] handle_post_save(020113001)
+[2019-10-13 13:17:16,959] DataProductsListView.get_queryset()
+[2019-10-13 13:17:16,961] my_queryset retrieved
+[2019-10-13 13:21:46,733] SIGNAL : pre_save DataProduct(02-01-13-orion3.jpg)
+[2019-10-13 13:21:46,734] handle_pre_save(02-01-13-orion3.jpg)
+[2019-10-13 13:21:46,764] handle_post_save(02-01-13-orion3.jpg)
+[2019-10-13 13:21:46,765] update dataproduct parent = 020113001
+[2019-10-13 13:21:52,135] DataProductsListView.get_queryset()
+[2019-10-13 13:21:52,136] my_queryset retrieved
+[2019-10-13 13:25:39,162] SIGNAL : pre_save DataProduct(02-01-13-orion3.fits)
+[2019-10-13 13:25:39,162] handle_pre_save(02-01-13-orion3.fits)
+[2019-10-13 13:25:39,166] handle_post_save(02-01-13-orion3.fits)
+[2019-10-13 13:25:39,167] save new dataproduct
+[2019-10-13 13:25:39,171] update dataproduct parent = 020113001
+[2019-10-13 13:26:11,114] SIGNAL : pre_save DataProduct(02-01-13 orion3_sources.png)
+[2019-10-13 13:26:11,114] handle_pre_save(02-01-13 orion3_sources.png)
+[2019-10-13 13:26:11,126] handle_post_save(02-01-13 orion3_sources.png)
+[2019-10-13 13:26:11,126] update dataproduct parent = 020113001
+[2019-10-13 13:26:21,415] DataProductsListView.get_queryset()
+[2019-10-13 13:26:21,417] my_queryset retrieved
+[2019-10-13 13:26:34,220] SIGNAL : pre_save DataProduct(02-01-13-orion3_annotated.jpg)
+[2019-10-13 13:26:34,220] handle_pre_save(02-01-13-orion3_annotated.jpg)
+[2019-10-13 13:26:34,252] handle_post_save(02-01-13-orion3_annotated.jpg)
+[2019-10-13 13:26:34,252] update dataproduct parent = 020113001
+[2019-10-13 13:26:45,404] SIGNAL : pre_save DataProduct(02-01-13 orion3_sources.png)
+[2019-10-13 13:26:45,404] handle_pre_save(02-01-13 orion3_sources.png)
+[2019-10-13 13:26:45,436] handle_post_save(02-01-13 orion3_sources.png)
+[2019-10-13 13:26:45,436] update dataproduct parent = 020113001
+[2019-10-13 13:26:48,984] DataProductsListView.get_queryset()
+[2019-10-13 13:26:48,985] my_queryset retrieved
+[2019-10-13 13:36:48,969] DataProductsListView.get_queryset()
+[2019-10-13 13:36:48,971] my_queryset retrieved
+[2019-10-13 13:36:54,630] DataProductsListView.get_queryset()
+[2019-10-13 13:36:54,631] my_queryset retrieved
+[2019-10-13 13:46:36,442] DataProductsListView.get_queryset()
+[2019-10-13 13:46:36,444] my_queryset retrieved
+[2019-10-13 13:48:48,218] DataProductsListView.get_queryset()
+[2019-10-13 13:48:48,220] my_queryset retrieved
+[2019-10-13 13:50:37,678] DataProductsListView.get_queryset()
+[2019-10-13 13:50:37,680] my_queryset retrieved
+[2019-10-13 13:51:00,191] DataProductsListView.get_queryset()
+[2019-10-13 13:51:00,194] my_queryset retrieved
+[2019-10-13 14:32:58,683] DataProductsListView.get_queryset()
+[2019-10-13 14:32:58,685] my_queryset retrieved
+[2019-10-13 14:33:48,902] SIGNAL : pre_save Observation(020113001)
+[2019-10-13 14:33:48,902] handle_pre_save(020113001)
+[2019-10-13 14:33:48,925] handle_post_save(020113001)
+[2019-10-13 14:40:50,142] SIGNAL : pre_save Observation(021001001)
+[2019-10-13 14:40:50,143] handle_pre_save(021001001)
+[2019-10-13 14:40:50,154] handle_post_save(021001001)
+[2019-10-13 14:40:50,154] save new observation
+[2019-10-13 14:42:47,524] SIGNAL : pre_save DataProduct(02-10-01-cygnus-cevennes.jpg)
+[2019-10-13 14:42:47,524] handle_pre_save(02-10-01-cygnus-cevennes.jpg)
+[2019-10-13 14:42:47,534] handle_post_save(02-10-01-cygnus-cevennes.jpg)
+[2019-10-13 14:42:47,534] save new dataproduct
+[2019-10-13 14:42:47,546] update dataproduct parent = 021001001
+[2019-10-13 14:42:59,533] DataProductsListView.get_queryset()
+[2019-10-13 14:42:59,533] my_queryset retrieved
+[2019-10-13 14:44:07,941] SIGNAL : pre_save DataProduct(02-10-01-cygnus-cevennes.jpg)
+[2019-10-13 14:44:07,942] handle_pre_save(02-10-01-cygnus-cevennes.jpg)
+[2019-10-13 14:44:07,952] handle_post_save(02-10-01-cygnus-cevennes.jpg)
+[2019-10-13 14:44:07,952] save new dataproduct
+[2019-10-13 14:44:07,965] update dataproduct parent = 021001001
+[2019-10-13 14:44:33,054] SIGNAL : pre_save DataProduct(02-10-01-cygnus-cevennes.jpg)
+[2019-10-13 14:44:33,055] handle_pre_save(02-10-01-cygnus-cevennes.jpg)
+[2019-10-13 14:44:33,074] handle_post_save(02-10-01-cygnus-cevennes.jpg)
+[2019-10-13 14:44:33,074] update dataproduct parent = 021001001
+[2019-10-13 14:44:45,685] DataProductsListView.get_queryset()
+[2019-10-13 14:44:45,686] my_queryset retrieved
+[2019-10-13 14:45:23,008] DataProductsListView.get_queryset()
+[2019-10-13 14:45:23,010] my_queryset retrieved
+[2019-10-13 14:47:13,939] SIGNAL : pre_save DataProduct(02-10-01-cygnus-cevennes_annotated.jpg)
+[2019-10-13 14:47:13,940] handle_pre_save(02-10-01-cygnus-cevennes_annotated.jpg)
+[2019-10-13 14:47:13,948] handle_post_save(02-10-01-cygnus-cevennes_annotated.jpg)
+[2019-10-13 14:47:13,949] save new dataproduct
+[2019-10-13 14:47:13,961] update dataproduct parent = 021001001
+[2019-10-13 14:47:21,190] DataProductsListView.get_queryset()
+[2019-10-13 14:47:21,191] my_queryset retrieved
+[2019-10-13 14:49:36,002] DataProductsListView.get_queryset()
+[2019-10-13 14:49:36,003] my_queryset retrieved
+[2019-10-13 14:50:26,143] DataProductsListView.get_queryset()
+[2019-10-13 14:50:26,144] my_queryset retrieved
+[2019-10-13 14:50:57,425] DataProductsListView.get_queryset()
+[2019-10-13 14:50:57,426] my_queryset retrieved
+[2019-10-13 14:51:34,332] DataProductsListView.get_queryset()
+[2019-10-13 14:51:34,333] my_queryset retrieved
+[2019-10-13 14:52:07,426] DataProductsListView.get_queryset()
+[2019-10-13 14:52:07,427] my_queryset retrieved
+[2019-10-13 14:52:38,931] DataProductsListView.get_queryset()
+[2019-10-13 14:52:38,932] my_queryset retrieved
+[2019-10-13 14:53:33,391] DataProductsListView.get_queryset()
+[2019-10-13 14:53:33,392] my_queryset retrieved
+[2019-10-13 14:57:32,127] SIGNAL : pre_save Observation(020322001)
+[2019-10-13 14:57:32,127] handle_pre_save(020322001)
+[2019-10-13 14:57:32,140] handle_post_save(020322001)
+[2019-10-13 14:57:32,141] save new observation
+[2019-10-13 14:58:03,199] SIGNAL : pre_save Observation(020322001)
+[2019-10-13 14:58:03,200] handle_pre_save(020322001)
+[2019-10-13 14:58:03,220] handle_post_save(020322001)
+[2019-10-13 14:59:35,065] SIGNAL : pre_save DataProduct(img_2953.jpg)
+[2019-10-13 14:59:35,065] handle_pre_save(img_2953.jpg)
+[2019-10-13 14:59:35,073] handle_post_save(img_2953.jpg)
+[2019-10-13 14:59:35,074] save new dataproduct
+[2019-10-13 14:59:35,085] update dataproduct parent = 020322001
+[2019-10-13 14:59:46,655] DataProductsListView.get_queryset()
+[2019-10-13 14:59:46,655] my_queryset retrieved
+[2019-10-13 15:00:33,724] DataProductsListView.get_queryset()
+[2019-10-13 15:00:33,725] my_queryset retrieved
+[2019-10-13 15:04:57,698] DataProductsListView.get_queryset()
+[2019-10-13 15:04:57,699] my_queryset retrieved
+[2019-10-13 15:05:17,145] DataProductsListView.get_queryset()
+[2019-10-13 15:05:17,146] my_queryset retrieved
+[2019-10-13 15:05:30,481] SIGNAL : pre_save DataProduct(02-01-13-orion3.jpg)
+[2019-10-13 15:05:30,482] handle_pre_save(02-01-13-orion3.jpg)
+[2019-10-13 15:05:30,511] handle_post_save(02-01-13-orion3.jpg)
+[2019-10-13 15:05:30,512] update dataproduct parent = 020113001
+[2019-10-13 15:05:35,535] DataProductsListView.get_queryset()
+[2019-10-13 15:05:35,537] my_queryset retrieved
+[2019-10-13 15:06:06,154] SIGNAL : pre_save DataProduct(02-01-13-orion3.jpg)
+[2019-10-13 15:06:06,154] handle_pre_save(02-01-13-orion3.jpg)
+[2019-10-13 15:06:06,181] handle_post_save(02-01-13-orion3.jpg)
+[2019-10-13 15:06:06,181] update dataproduct parent = 020113001
+[2019-10-13 15:06:10,556] DataProductsListView.get_queryset()
+[2019-10-13 15:06:10,558] my_queryset retrieved
+[2019-10-13 15:06:44,371] SIGNAL : pre_save Observation(020322001)
+[2019-10-13 15:06:44,372] handle_pre_save(020322001)
+[2019-10-13 15:06:44,418] handle_post_save(020322001)
+[2019-10-13 15:11:35,299] SIGNAL : pre_save Observation(020322001)
+[2019-10-13 15:11:35,299] handle_pre_save(020322001)
+[2019-10-13 15:11:35,351] handle_post_save(020322001)
+[2019-10-13 15:13:35,321] DataProductsListView.get_queryset()
+[2019-10-13 15:13:35,322] my_queryset retrieved
