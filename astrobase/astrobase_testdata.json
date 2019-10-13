@@ -20,9 +20,9 @@
         "task_type": "dataproduct",
         "taskID": "020113001",
         "creationTime": "2002-01-13T19:40:00Z",
-        "new_status": "available",
+        "new_status": "processed",
         "data_location": "http://uilennest.net/static/astrobase/",
-        "my_status": "available"
+        "my_status": "processed"
     }
 },
 {
@@ -62,6 +62,71 @@
         "new_status": "available",
         "data_location": "http://uilennest.net/static/astrobase/",
         "my_status": "available"
+    }
+},
+{
+    "model": "backend_app.taskobject",
+    "pk": 6,
+    "fields": {
+        "name": "Cygnus Cevennes",
+        "task_type": "observation",
+        "taskID": "021001001",
+        "creationTime": "2019-10-13T14:40:00Z",
+        "new_status": "processed",
+        "data_location": "http://uilennest.net/static/astrobase",
+        "my_status": "processed"
+    }
+},
+{
+    "model": "backend_app.taskobject",
+    "pk": 7,
+    "fields": {
+        "name": "Cygnus Cevennes Raw",
+        "task_type": "dataproduct",
+        "taskID": "021001001",
+        "creationTime": "2019-10-13T14:42:00Z",
+        "new_status": "available",
+        "data_location": "http://uilennest.net/static/astrobase/",
+        "my_status": "available"
+    }
+},
+{
+    "model": "backend_app.taskobject",
+    "pk": 9,
+    "fields": {
+        "name": "Cygnus Cevennes Annotated",
+        "task_type": "dataproduct",
+        "taskID": "021001001",
+        "creationTime": "2019-10-13T14:46:00Z",
+        "new_status": "available",
+        "data_location": "http://uilennest.net/static/astrobase/",
+        "my_status": "available"
+    }
+},
+{
+    "model": "backend_app.taskobject",
+    "pk": 10,
+    "fields": {
+        "name": "unknown",
+        "task_type": "observation",
+        "taskID": "020322001",
+        "creationTime": "2019-10-13T14:56:00Z",
+        "new_status": "raw",
+        "data_location": "http://uilennest.net/static/astrobase/",
+        "my_status": "raw"
+    }
+},
+{
+    "model": "backend_app.taskobject",
+    "pk": 11,
+    "fields": {
+        "name": "img_2953.jpg",
+        "task_type": "dataproduct",
+        "taskID": "020322001",
+        "creationTime": "2019-10-13T14:59:00Z",
+        "new_status": "raw",
+        "data_location": "http://uilennest.net/static/astrobase/",
+        "my_status": "raw"
     }
 },
 {
@@ -155,15 +220,125 @@
     }
 },
 {
+    "model": "backend_app.status",
+    "pk": 11,
+    "fields": {
+        "name": "processed",
+        "timestamp": "2019-10-13T12:40:50.155Z",
+        "taskObject": 6
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 12,
+    "fields": {
+        "name": "available",
+        "timestamp": "2019-10-13T12:42:47.534Z",
+        "taskObject": 7
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 14,
+    "fields": {
+        "name": "available",
+        "timestamp": "2019-10-13T12:47:13.949Z",
+        "taskObject": 9
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 15,
+    "fields": {
+        "name": "raw",
+        "timestamp": "2019-10-13T12:57:32.141Z",
+        "taskObject": 10
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 16,
+    "fields": {
+        "name": "raw",
+        "timestamp": "2019-10-13T12:59:35.074Z",
+        "taskObject": 11
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 17,
+    "fields": {
+        "name": "raw",
+        "timestamp": "2019-10-13T13:05:30.482Z",
+        "taskObject": 2
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 18,
+    "fields": {
+        "name": "processed",
+        "timestamp": "2019-10-13T13:06:06.155Z",
+        "taskObject": 2
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 19,
+    "fields": {
+        "name": "processing",
+        "timestamp": "2019-10-13T13:06:44.373Z",
+        "taskObject": 10
+    }
+},
+{
+    "model": "backend_app.status",
+    "pk": 20,
+    "fields": {
+        "name": "raw",
+        "timestamp": "2019-10-13T13:11:35.300Z",
+        "taskObject": 10
+    }
+},
+{
     "model": "backend_app.observation",
     "pk": 1,
     "fields": {
         "date": "2019-01-13T19:40:00Z",
+        "observing_mode": "G2",
         "process_type": "observation",
         "field_name": "Orion",
         "field_ra": 90.0,
         "field_dec": 0.0,
         "field_fov": 30.0,
+        "quality": "unknown"
+    }
+},
+{
+    "model": "backend_app.observation",
+    "pk": 6,
+    "fields": {
+        "date": "2002-10-01T00:00:00Z",
+        "observing_mode": "G2",
+        "process_type": "observation",
+        "field_name": "Cygnus",
+        "field_ra": null,
+        "field_dec": null,
+        "field_fov": null,
+        "quality": "unknown"
+    }
+},
+{
+    "model": "backend_app.observation",
+    "pk": 10,
+    "fields": {
+        "date": "2002-03-22T20:32:00Z",
+        "observing_mode": "G2",
+        "process_type": "observation",
+        "field_name": "unknown",
+        "field_ra": null,
+        "field_dec": null,
+        "field_fov": null,
         "quality": "unknown"
     }
 },
@@ -213,6 +388,42 @@
         "size": 11360,
         "quality": "unknown",
         "parent": 1
+    }
+},
+{
+    "model": "backend_app.dataproduct",
+    "pk": 7,
+    "fields": {
+        "filename": "02-10-01-cygnus-cevennes.jpg",
+        "description": "Cygnus Raw image",
+        "dataproduct_type": "raw",
+        "size": 1701,
+        "quality": "unknown",
+        "parent": 6
+    }
+},
+{
+    "model": "backend_app.dataproduct",
+    "pk": 9,
+    "fields": {
+        "filename": "02-10-01-cygnus-cevennes_annotated.jpg",
+        "description": "Cygnus annotated by Astrometry.net",
+        "dataproduct_type": "raw",
+        "size": 2132,
+        "quality": "unknown",
+        "parent": 6
+    }
+},
+{
+    "model": "backend_app.dataproduct",
+    "pk": 11,
+    "fields": {
+        "filename": "img_2953.jpg",
+        "description": "unknown",
+        "dataproduct_type": "raw",
+        "size": 3223,
+        "quality": "unknown",
+        "parent": 10
     }
 }
 ]

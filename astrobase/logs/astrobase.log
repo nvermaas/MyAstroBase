@@ -167,3 +167,59 @@
 [2019-10-13 15:11:35,351] handle_post_save(020322001)
 [2019-10-13 15:13:35,321] DataProductsListView.get_queryset()
 [2019-10-13 15:13:35,322] my_queryset retrieved
+[2019-10-13 15:54:18,260] DataProductsListView.get_queryset()
+[2019-10-13 15:54:18,261] my_queryset retrieved
+[2019-10-13 15:54:40,872] DataProductsListView.get_queryset()
+[2019-10-13 15:54:40,873] my_queryset retrieved
+[2019-10-13 19:14:30,462] SIGNAL : pre_save Observation(030528001)
+[2019-10-13 19:14:30,463] handle_pre_save(030528001)
+[2019-10-13 19:14:30,477] handle_post_save(030528001)
+[2019-10-13 19:14:30,477] save new observation
+[2019-10-13 19:15:22,092] SIGNAL : pre_save Observation(030528001)
+[2019-10-13 19:15:22,093] handle_pre_save(030528001)
+[2019-10-13 19:15:22,131] handle_post_save(030528001)
+[2019-10-13 19:15:46,915] DataProductsListView.get_queryset()
+[2019-10-13 19:15:46,918] my_queryset retrieved
+[2019-10-13 19:16:34,762] DataProductsListView.get_queryset()
+[2019-10-13 19:16:34,763] my_queryset retrieved
+[2019-10-13 19:31:00,319] SIGNAL : pre_save Observation(030528001)
+[2019-10-13 19:31:00,319] handle_pre_save(030528001)
+[2019-10-13 19:31:00,337] handle_post_save(030528001)
+[2019-10-13 19:31:00,338] save new observation
+[2019-10-13 19:34:45,887] SIGNAL : pre_save Observation(030528001)
+[2019-10-13 19:34:45,887] handle_pre_save(030528001)
+[2019-10-13 19:34:45,900] handle_post_save(030528001)
+[2019-10-13 19:34:45,900] save new observation
+[2019-10-13 19:35:23,863] add_dataproducts(030528001,2)
+[2019-10-13 19:35:50,079] DataProductsListView.get_queryset()
+[2019-10-13 19:35:50,080] my_queryset retrieved
+[2019-10-13 19:36:11,799] DataProductsListView.get_queryset()
+[2019-10-13 19:36:11,800] my_queryset retrieved
+[2019-10-13 19:37:35,273] SIGNAL : pre_save Observation(030528001)
+[2019-10-13 19:37:35,274] handle_pre_save(030528001)
+[2019-10-13 19:37:35,292] handle_post_save(030528001)
+[2019-10-13 19:37:35,293] save new observation
+[2019-10-13 19:39:31,691] SIGNAL : pre_save Observation(030528001)
+[2019-10-13 19:39:31,692] handle_pre_save(030528001)
+[2019-10-13 19:39:31,708] handle_post_save(030528001)
+[2019-10-13 19:39:31,708] save new observation
+[2019-10-13 19:40:52,310] add_dataproducts(030528001,2)
+[2019-10-13 19:40:52,312] addding dataproduct: IMG_2881.jpg
+[2019-10-13 19:40:52,313] SIGNAL : pre_save DataProduct(IMG_2881.jpg)
+[2019-10-13 19:40:52,313] handle_pre_save(IMG_2881.jpg)
+[2019-10-13 19:40:52,329] handle_post_save(IMG_2881.jpg)
+[2019-10-13 19:40:52,330] save new dataproduct
+[2019-10-13 19:40:52,340] update dataproduct parent = 030528001
+[2019-10-13 19:40:52,349] addding dataproduct: IMG_2881_annotated.jpg
+[2019-10-13 19:40:52,352] SIGNAL : pre_save DataProduct(IMG_2881_annotated.jpg)
+[2019-10-13 19:40:52,352] handle_pre_save(IMG_2881_annotated.jpg)
+[2019-10-13 19:40:52,361] handle_post_save(IMG_2881_annotated.jpg)
+[2019-10-13 19:40:52,362] save new dataproduct
+[2019-10-13 19:40:52,370] update dataproduct parent = 030528001
+[2019-10-13 19:41:10,672] SIGNAL : pre_save Observation(030528001)
+[2019-10-13 19:41:10,673] handle_pre_save(030528001)
+[2019-10-13 19:41:10,710] handle_post_save(030528001)
+[2019-10-13 19:41:22,808] DataProductsListView.get_queryset()
+[2019-10-13 19:41:22,809] my_queryset retrieved
+[2019-10-13 19:43:03,901] DataProductsListView.get_queryset()
+[2019-10-13 19:43:03,901] my_queryset retrieved

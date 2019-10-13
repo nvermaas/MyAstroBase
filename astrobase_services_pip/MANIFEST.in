@@ -1,0 +1,5 @@
+include README.rst
+
+include astrobase_services/astrobase_service_logging.ini
+include astrobase_scripts/astrobase_start_all_services.sh
+
