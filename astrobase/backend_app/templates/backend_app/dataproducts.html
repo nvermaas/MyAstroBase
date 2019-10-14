@@ -15,6 +15,7 @@
                     <thead>
                     <tr>
                         <th>ID (API)</th>
+                        <th>Type</th>
                         <th>Image</th>
                         <th>Status</th>
                         <th>Size</th>
@@ -28,6 +29,7 @@
                                 <div class="row">
                                    <tr class="{{ dataproduct.my_status }}">
                                        <td><a href="{{ dataproduct.get_absolute_url }}" target="_blank">{{ dataproduct.taskID }}</a> </td>
+                                       <td>{{ dataproduct.dataproduct_type }}</td>
                                        <td><a href="{{ dataproduct.property_url }}" target="_blank" >{{ dataproduct.filename }}</a> </td>
                                        <td>{{ dataproduct.my_status }}</td>
                                        <td>{{ dataproduct.size|filesizeformat }} </td>

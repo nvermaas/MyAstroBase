@@ -28,7 +28,7 @@ class DataProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DataProduct
-        fields = ('id','task_type','name','filename','description',
+        fields = ('id','task_type','dataproduct_type','filename','description',
                   'taskID','creationTime','size','quality',
                   'my_status','new_status','status_history','parent',
                   'data_location','property_url')

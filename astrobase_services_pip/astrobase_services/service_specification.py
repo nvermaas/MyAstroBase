@@ -62,7 +62,7 @@ def add_dataproducts(astrobase, taskid, dataproducts_string, new_status):
     dataproducts = dataproducts_string.split(',')
     for dataproduct in dataproducts:
         dp = {}
-        dp['filename'],dp['new_status'] = dataproduct.split(':')
+        dp['filename'],dp['dataproduct_type'],dp['new_status'] = dataproduct.split(':')
         astrobase.report('adding dataproduct : ' + str(dp['filename']))
         dps.append(dp)
 

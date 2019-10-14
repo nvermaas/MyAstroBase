@@ -83,6 +83,7 @@ def add_dataproducts(taskID, dataproducts):
         data_location = dp.get('data_dir',parent_data_location)
         size = dp.get('size', 0)
         myDataProduct = DataProduct(taskID=taskID,
+                                    dataproduct_type=dp['dataproduct_type'],
                                     data_location=data_location,
                                     filename=dp['filename'],
                                     name=dp['filename'],

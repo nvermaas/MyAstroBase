@@ -106,7 +106,7 @@ class DataProduct(TaskObject):
     # properties
     filename = models.CharField(max_length=200, default="unknown")
     description = models.CharField(max_length=255, default="unknown")
-    dataproduct_type = models.CharField('type', default=TYPE_RAW, max_length=50)
+    dataproduct_type = models.CharField('Dataproduct Type', default=TYPE_RAW, max_length=50)
     size = models.BigIntegerField(default=0)
     quality = models.CharField(max_length=30, default="unknown")
 

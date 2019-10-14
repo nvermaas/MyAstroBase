@@ -8,4 +8,4 @@
 --field_fov=90
 --astrobase_host=dev
 --taskid=030528001
---dataproducts=IMG_2881.jpg:raw,IMG_2881_annotated.jpg:available
+--dataproducts=IMG_2881.jpg:raw:raw,IMG_2881_annotated.jpg:annotated:available
