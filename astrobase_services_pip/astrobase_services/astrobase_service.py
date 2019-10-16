@@ -16,10 +16,8 @@ import logging.config
 
 from astrobase_io import AstroBaseIO, DEFAULT_ASTROBASE_HOST
 from service_specification import do_specification
-from service_scheduler import do_scheduler
-from service_executor import do_executor
+from service_processor import do_processor
 from service_data_monitor import do_data_monitor
-from service_cleanup import do_cleanup
 from service_add_dataproduct import do_add_dataproduct
 
 
@@ -94,7 +92,7 @@ def main():
     try:
         logging_config_file = os.path.join(os.path.dirname(__file__), 'astrobase_service_logging.ini')
         logging.config.fileConfig(logging_config_file)
-        logger = logging.getLogger('astrobase_service')
+        logger = logging.getLogger('astrobaseIO')
     except:
         pass
 
@@ -118,9 +116,16 @@ def main():
                         default=None,
                         help="SPECIFICATION or SCHEDULING parameter. Format like 2018-02-23 21:03:33")
     # Specification and Datamonitor parameters (required)
-    parser.add_argument("--data_location",
+    parser.add_argument("--local_data_dir",
+                        default="astrobase_datadir",
+                        help="DATA_MONITOR parameter. This is the local directory where the data will be.")
+    parser.add_argument("--local_landing_pad",
+                        default="astrobase_datadir\landing_pad",
+                        help="Directory where DATA_MONITOR will check for incoming raw files.")
+    parser.add_argument("--override_data_location",
                         default=None,
-                        help="SPECIFICATION and DATA_MONITOR parameter. This is where EXECUTOR must write the data and DATA_MONITOR will monitor it.")
+                        help="override the default data_location that is set by the backend.")
+
     # Specification parameters (optional)
     parser.add_argument("--taskid", nargs="?",
                         default=None,
@@ -217,7 +222,7 @@ def main():
 
     args = get_arguments(parser)
     try:
-        astrobase_service = AstroBaseIO(args.astrobase_host, args.user, args.password, args.obs_mode_filter,
+        astrobaseIO = AstroBaseIO(args.astrobase_host, args.user, args.password, args.obs_mode_filter,
                                args.host_filter, args.verbose, args.verbose_deep, args.testmode)
 
         # don't spam the channel for every added dataproduct
@@ -235,12 +240,12 @@ def main():
             else:
                 message ='starting *' + args.operation+'* ' + obs_mode_filter_text + host_filter_text + ' service version '+pkg_version+'...'
 
-            astrobase_service.report(message)
-            astrobase_service.send_message_to_apidorn_slack_channel(message)
+            astrobaseIO.report(message)
+            astrobaseIO.send_message_to_apidorn_slack_channel(message)
 
         if (args.examples):
 
-            print('astrobase_service.py version = '+ pkg_version + " (last updated " + LAST_UPDATE + ")")
+            print('astrobaseIO.py version = '+ pkg_version + " (last updated " + LAST_UPDATE + ")")
             print('--------------------------------------------------------------')
             print()
             print('--- Examples --- ')
@@ -250,101 +255,71 @@ def main():
 
         # --------------------------------------------------------------------------------------------------------
         if (args.version):
-            print('--- astrobase_service.py version = '+ pkg_version + " (last updated " + LAST_UPDATE + ") ---")
+            print('--- astrobaseIO.py version = '+ pkg_version + " (last updated " + LAST_UPDATE + ") ---")
             return
 
         # --------------------------------------------------------------------------------------------------------
         if (args.operation=='specification'):
-            do_specification(astrobase_service,
+            do_specification(astrobaseIO,
                              taskid=args.taskid,
-                             taskid_postfix=args.taskid_postfix,
                              initial_status=args.status,
-                             ndps=args.ndps,
                              field_name=args.field_name,
                              date=args.date,
                              field_ra=args.field_ra,
                              field_dec=args.field_dec,
                              field_fov=args.field_fov,
-                             data_location=args.data_location,
                              observing_mode=args.observing_mode,
                              process_type=args.process_type,
-                             dataproducts=args.dataproducts
+                             dataproducts=args.dataproducts,
+                             data_location=args.override_data_location
                              )
 
-        # --------------------------------------------------------------------------------------------------------
-        if (args.operation == 'scheduler'):
-            do_scheduler(astrobase_service, taskid=args.taskid, starttime=args.starttime, endtime=args.endtime)
-
-        # --------------------------------------------------------------------------------------------------------
-
-        if (args.operation == 'executor'):
-
-            do_executor(astrobase_service)
-            if args.interval:
-                print('*executor* starting polling ' + astrobase_service.host + ' every ' + args.interval + ' secs')
-                while True:
-                    try:
-                        time.sleep(int(args.interval))
-                        do_executor(astrobase_service)
-                    except:
-                        print('*** executor crashed! ***')
-                        print(sys.exc_info()[0])
-                        print('trying to continue...')
-                        astrobase_service.send_message_to_apidorn_slack_channel("*executor service* crashed! ... restarting.")
-
-        # --------------------------------------------------------------------------------------------------------
+         # --------------------------------------------------------------------------------------------------------
         if (args.operation == 'data_monitor'):
-            do_data_monitor(astrobase_service)
+            do_data_monitor(astrobaseIO, args.local_landing_pad, args.local_data_dir)
             if args.interval:
-                print('*data_monitor* starting polling ' + astrobase_service.host + ' every ' + args.interval + ' secs')
+                print('*data_monitor* starting polling ' + astrobaseIO.host + ' every ' + args.interval + ' secs')
                 while True:
                     try:
                         time.sleep(int(args.interval))
-                        do_data_monitor(astrobase_service)
+                        do_data_monitor(astrobaseIO, args.local_landing_pad, args.local_data_dir)
                     except:
                         print('*** data_monitor crashed! ***')
                         print(sys.exc_info()[0])
                         print('trying to continue...')
-                        astrobase_service.send_message_to_apidorn_slack_channel("*data_monitor service* crashed! ... restarting.")
+                        astrobaseIO.send_message_to_apidorn_slack_channel("*data_monitor service* crashed! ... restarting.")
 
         # --------------------------------------------------------------------------------------------------------
-        if (args.operation == 'cleanup'):
-            # the 'archived' status is written by the 'ingest_monitor' service
-            # or the 'removing' status is set from the GUI or otherwise.
+        if (args.operation == 'processor'):
 
-            do_cleanup(astrobase_service,'archived','removed')
-            do_cleanup(astrobase_service,'removing', 'removed (manual)')
+            do_processor(astrobaseIO, args.local_data_dir)
 
             if args.interval:
-                print('*cleanup* starting polling ' + astrobase_service.host + ' every ' + args.interval + ' secs')
+                print('*processor* starting polling ' + astrobaseIO.host + ' every ' + args.interval + ' secs')
                 while True:
                     try:
                         time.sleep(int(args.interval))
-                        do_cleanup(astrobase_service, 'archived', 'removed')
-                        do_cleanup(astrobase_service, 'removing', 'removed (manual)')
+                        do_processor(astrobaseIO, args.local_data_dir)
+
                     except:
-                        print('*** cleanup crashed! ***')
+                        print('*** processor crashed! ***')
                         print(sys.exc_info()[0])
                         print('trying to continue...')
-                        astrobase_service.send_message_to_apidorn_slack_channel("*cleanup service* crashed! ... restarting.")
+                        astrobaseIO.send_message_to_apidorn_slack_channel("*processor service* crashed! ... restarting.")
 
         # --------------------------------------------------------------------------------------------------------
         if (args.operation == 'add_dataproduct'):
-            do_add_dataproduct(astrobase_service, taskid=args.taskid, node=args.node, data_dir=args.data_dir, filename=args.filename)
+            do_add_dataproduct(astrobaseIO, taskid=args.taskid, node=args.node, data_dir=args.data_dir, filename=args.filename)
 
         # --------------------------------------------------------------------------------------------------------
         if (args.operation=='change_status'):
-            astrobase_service.do_change_status(resource=args.resource, search_key=args.search_key, status=args.status)
-
-        # --------------------------------------------------------------------------------------------------------
-        if (args.operation=='delete_taskid'):
-            astrobase_service.do_delete_taskid(taskid=args.taskid)
+            astrobaseIO.do_change_status(resource=args.resource, search_key=args.search_key, status=args.status)
 
         # --------------------------------------------------------------------------------------------------------
 
     except Exception as exp:
         message = str(exp)
-        astrobase_service.send_message_to_apidorn_slack_channel(message)
+        astrobaseIO.send_message_to_apidorn_slack_channel(message)
         exit_with_error(str(exp))
 
     sys.exit(0)

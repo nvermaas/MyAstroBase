@@ -3,7 +3,7 @@
 # after pip install, start as production: nohup astrobase_start_services.sh &
 
 # data_monitor looks for 'completed' observations and its 'defined' dataproducts and puts them on 'completed'
-atdb_service -o data_monitor --interval 30 --atdb_host prod -v &
+atdb_service -o data_monitor --interval 30 --astrobase_host dev --landing_pad d:\my_landing_pad -v &
 
 # start_ingest looks for 'valid' tasks and then starts the ingest to ALTA.
 atdb_service -o start_ingest --interval 30 --atdb_host prod --alta_host prod -v &

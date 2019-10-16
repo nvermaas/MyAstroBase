@@ -91,7 +91,7 @@ def add_dataproducts(taskID, dataproducts):
                                     task_type='dataproduct',
                                     new_status=new_status,
                                     parent=parent,
-                                    size=size
+                                    size=dp['size'],
                                     )
 
         logger.info('addding dataproduct: '+str(myDataProduct))

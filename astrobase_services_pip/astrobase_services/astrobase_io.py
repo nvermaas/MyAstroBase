@@ -271,23 +271,6 @@ class AstroBaseIO:
         if 'slack' in method:
             self.send_message_to_apidorn_slack_channel(message)
 
-
-    def _send_message_to_alta_channel(self, message_str):
-        """
-        Send a message to the Slack channel #alta-transfers
-        With this channel a notification of Ingest ready (or failed) is given.
-        Don't raise an Exception in case of error
-        :param message_str: Message String
-        """
-        try:
-            payload = {"text": message_str}
-            url = "https://hooks.slack.com/services/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"
-            res = requests.post(url, data=str(payload))
-            self.verbose_print("Result of sending message to alta-channel: " + str(res))
-        except Exception as err:
-            self.verbose_print("Exception of sending message to alta-channel: " + str(err))
-
-
     def send_message_to_apidorn_slack_channel(self, message_str):
         """
         Send a message to the Slack channel #atdb-logging

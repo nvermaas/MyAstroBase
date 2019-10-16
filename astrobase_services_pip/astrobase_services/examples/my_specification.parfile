@@ -1,6 +1,6 @@
 --operation=specification
 --observing_mode=G2
---data_location=http://uilennest.net/static/astrobase/
+--local_data_dir=d:\my_astrobase
 --date=2003-05-28 04:50:00
 --field_name=Polaris
 --field_ra=0.0
@@ -8,4 +8,4 @@
 --field_fov=90
 --astrobase_host=dev
 --taskid=030528001
---dataproducts=IMG_2881.jpg:raw:raw,IMG_2881_annotated.jpg:annotated:available
+--dataproducts=IMG_2881.jpg:raw:raw:700,IMG_2881_annotated.jpg:annotated:available:580

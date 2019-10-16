@@ -15,7 +15,6 @@ TASKID_TIME_FORMAT = "%Y%m%d"
 DURATION_TIME_FORMAT ="%H:%M:%S"
 SPECIFICATION_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 
-
 # --- Helper Functions ---------------------------------------------------------------------------------------------
 
 # decorator to time the execution of a function
@@ -49,7 +48,7 @@ def generate_taskid(astrobase, timestamp, taskid_postfix):
 
 # add dataproducts as a batch
 @timeit
-def add_dataproducts(astrobase, taskid, dataproducts_string, new_status):
+def add_dataproducts(astrobase, taskid, dataproducts_string):
     """
     add dataproduct as a batch to a given observation
     :param atdb:
@@ -62,7 +61,7 @@ def add_dataproducts(astrobase, taskid, dataproducts_string, new_status):
     dataproducts = dataproducts_string.split(',')
     for dataproduct in dataproducts:
         dp = {}
-        dp['filename'],dp['dataproduct_type'],dp['new_status'] = dataproduct.split(':')
+        dp['filename'],dp['dataproduct_type'],dp['new_status'],dp['size'] = dataproduct.split(':')
         astrobase.report('adding dataproduct : ' + str(dp['filename']))
         dps.append(dp)
 
@@ -76,8 +75,10 @@ def add_dataproducts(astrobase, taskid, dataproducts_string, new_status):
 # --- Main Service -------
 # ----------------------------------------------------------------------------------------
 @timeit
-def do_specification(astrobase, taskid, taskid_postfix, initial_status, ndps, field_name, date, field_ra,
-                         field_dec, field_fov, data_location, observing_mode, process_type, dataproducts):
+def do_specification(astrobase, taskid, initial_status, field_name, date,
+                     field_ra=0.0, field_dec=0.0, field_fov=0.0,
+                     observing_mode="raw", process_type="observation", dataproducts="",
+                     data_location=""):
 
     # if no taskid is given, then generate the new taskid based on date and (optional) taskid_postfix
     STATUS_OBS_END = 'raw'  # this service will leave the observation in this state
@@ -85,7 +86,6 @@ def do_specification(astrobase, taskid, taskid_postfix, initial_status, ndps, fi
 
     if initial_status!=None:
         STATUS_OBS_END = initial_status  # this service will leave the observation in this state
-        # STATUS_DPS_END = initial_status  # leave the dataproducts on 'defined', otherwise the data_monitor service will not pick it up
 
     if taskid is None:
         if date!=None:
@@ -93,7 +93,7 @@ def do_specification(astrobase, taskid, taskid_postfix, initial_status, ndps, fi
             timestamp = target_time.strftime(TASKID_TIME_FORMAT)
         else:
             timestamp = datetime.datetime.now().strftime(TASKID_TIME_FORMAT)
-        taskid = generate_taskid(astrobase, timestamp, taskid_postfix)
+        taskid = generate_taskid(astrobase, timestamp)
 
 
     # --- construct payload as json ----------------
@@ -124,9 +124,9 @@ def do_specification(astrobase, taskid, taskid_postfix, initial_status, ndps, fi
 
 
     # add dataproducts
-    add_dataproducts(astrobase, taskid, dataproducts, STATUS_DPS_END)
+    add_dataproducts(astrobase, taskid, dataproducts)
 
-    # everything is done for this new observation, put its status to 'scheduled'
+    # everything is done for this new observation, put its status to 'raw'
     astrobase.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskid, value=STATUS_OBS_END)
     astrobase.report("*specification* :" + taskid + " " + STATUS_OBS_END, "print,slack")
 

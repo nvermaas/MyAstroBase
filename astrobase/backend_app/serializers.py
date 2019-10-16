@@ -30,8 +30,7 @@ class DataProductSerializer(serializers.ModelSerializer):
         model = DataProduct
         fields = ('id','task_type','dataproduct_type','filename','description',
                   'taskID','creationTime','size','quality',
-                  'my_status','new_status','status_history','parent',
-                  'data_location','property_url')
+                  'my_status','new_status','status_history','parent','property_url')
 
 
 class ObservationSerializer(serializers.ModelSerializer):
@@ -54,5 +53,5 @@ class ObservationSerializer(serializers.ModelSerializer):
         fields = ('id','task_type', 'name', 'observing_mode','process_type','taskID',
                   'field_name','field_ra','field_dec','field_fov',
                   'creationTime','date','size',
-                  'my_status','new_status','status_history',
+                  'my_status','new_status','status_history','job',
                   'generated_dataproducts','data_location', 'quality')

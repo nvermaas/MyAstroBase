@@ -3,6 +3,8 @@ from django.urls import reverse
 from django.utils.timezone import datetime
 from django.db.models import Sum
 
+from django.conf import settings
+
 import os
 # constants
 datetime_format_string = '%Y-%m-%dT%H:%M:%SZ'
@@ -40,11 +42,12 @@ class TaskObject(models.Model):
     creationTime = models.DateTimeField(default=datetime.utcnow, blank=True)
 
     new_status = models.CharField(max_length=50, default="defined", null=True)
-    data_location = models.CharField(max_length=255, default="unknown",null=True)
+    data_location = models.CharField(max_length=255, default=None, blank=True, null=True)
 
     # my_status is 'platgeslagen', because django-filters can not filter on a related property,
     # and I need services to be able to filter on a status to execute their tasks.
     my_status = models.CharField(db_index=True, max_length=50,default="defined")
+    job = models.CharField(max_length=15, default="", null=True)
 
     def __str__(self):
         return str(self.id)
@@ -124,5 +127,7 @@ class DataProduct(TaskObject):
 
     @property
     def property_url(self):
-        path = os.path.join(self.data_location,self.filename)
+        data_host = settings.DATA_HOST
+
+        path = os.path.join(data_host,self.filename)
         return path

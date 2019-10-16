@@ -447,27 +447,6 @@ class AstroBase:
                     "ERROR: " + str(response.status_code) + ", " + str(response.reason) + ', ' + str(response.content)))
 
 
-    def do_POST_obsolete(self, resource, payload):
-        """
-        POST a payload to a resource (table). This creates a new object (observation or dataproduct)
-        This is the old function, left for backward compatibility. Use 'do_POST_json()' now.
-        :param resource: contains the resource, for example 'observations', 'dataproducts'
-        :param payload: the contents of the object to create in json format
-        """
-
-        url = self.host + resource + '/'
-        self.verbose_print(('payload: ' + payload))
-
-        payload = self.jsonifyPayload_obsolete(payload)
-        try:
-            response = requests.request("POST", url, data=payload, headers=self.header)
-            self.verbose_print("[POST " + response.url + "]")
-            self.verbose_print("Response: " + str(response.status_code) + ", " + str(response.reason))
-            if not (response.status_code==200 or response.status_code==201):
-                raise Exception()
-        except Exception:
-            raise (Exception("ERROR: " + str(response.status_code) + ", " + str(response.reason) + ', ' + str(response.content)))
-
 
     def do_POST_json(self, resource, payload):
         """

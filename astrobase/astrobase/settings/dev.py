@@ -10,3 +10,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 AUTH_PASSWORD_VALIDATORS = []
 
+DATA_HOST = "http://uilennest.net/static/astrobase"
