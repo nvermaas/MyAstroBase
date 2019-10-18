@@ -11,7 +11,7 @@ TD {
   background-color: lightyellow;
   color: green;
 }
-.processed, .available, .ready {
+.processed, .available, .ready,.done {
  color: green;
  background-color: lightyellow;
 }
@@ -40,11 +40,11 @@ TD {
 .invalid,.error,.aborted,.incomplete,.failed,.Failed {
   color: red;
 }
-.ingesting,.processing {
+.ingesting, {
  color: green;
  font-weight: bold;
 }
-.checking,.starting,.removing {
+.checking,.starting,.removing,.processing_pending,.submitting,.downloading {
 font-style: italic;
 }
 

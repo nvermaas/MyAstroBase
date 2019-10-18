@@ -126,8 +126,8 @@ class IndexView(ListView):
         if (search_box is not None):
             observations = get_searched_observations(search_box)
         else:
-            #observations = Observation.objects.order_by('-taskID')
-            observations = Observation.objects.order_by('-date')
+            observations = Observation.objects.order_by('-taskID')
+            #observations = Observation.objects.order_by('-date')
         if (my_status is not None):
             observations = get_filtered_observations(my_status)
         if (not_my_status is not None):

@@ -15,7 +15,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-from astrobase_interface import AstroBase
+from astrobase_services.astrobase_interface import AstroBase
 
 # The request header
 ASTROBASE_HEADER = {

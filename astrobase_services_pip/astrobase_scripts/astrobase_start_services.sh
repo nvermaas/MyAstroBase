@@ -2,14 +2,8 @@
 # AstroBase script to start the 'background services'
 # after pip install, start as production: nohup astrobase_start_services.sh &
 
-# data_monitor looks for 'completed' observations and its 'defined' dataproducts and puts them on 'completed'
-atdb_service -o data_monitor --interval 30 --astrobase_host dev --landing_pad d:\my_landing_pad -v &
+# data_monitor looks for new images in the 'landing_pad' folder and moves them to''raw' observations and its 'defined' dataproducts and puts them on 'completed'
+astrobase_service -o data_monitor --interval 30 --astrobase_host dev --landing_pad ~/www/astrobase/landing_pad --local_data_dir ~/www/astrobase/data -v &
 
-# start_ingest looks for 'valid' tasks and then starts the ingest to ALTA.
-atdb_service -o start_ingest --interval 30 --atdb_host prod --alta_host prod -v &
-
-# ingest_monitor looks if 'ingesting' tasks and dataproducts have arrived in ALTA, and when found sets their status in ATDB to 'archived'
-atdb_service -o ingest_monitor --interval 30 --atdb_host prod --alta_host prod --user atdb --password V5Q3ZPnxm3uj -v &
-
-# looks for 'archived' observations and deletes its 'archived' dataproducts
-atdb_service -o cleanup --interval 60 --atdb_host prod -v &
+# processor submits a new job and handles the results
+astrobase_service -o processor --interval 30 --astrobase_host dev --landing_pad ~/www/astrobase/landing_pad --local_data_dir ~/www/astrobase/data --local_data_url http://uilennest.net/astrobase/data -v &

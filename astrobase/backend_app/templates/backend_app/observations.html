@@ -19,7 +19,7 @@
             <td>{{ observation.date|date:"Y-m-d H:i:s" }} </td>
             <td>{{ observation.size|filesizeformat }} </td>
             <td>
-                <a href="{% url 'dataproducts-list-view' observation.taskID %}" class="btn btn-primary btn-sm" role="button">DPS</a>
+                <a href="{% url 'dataproducts-list-view' observation.taskID %}" class="btn btn-warning btn-sm" role="button">DPS</a>
                 {% for dataproduct in my_dataproducts_list %}
                    {% if dataproduct.dataproduct_type == "raw" %}
                       <a href="{{ dataproduct.property_url }}" target="_blank" >{{ dataproduct.filename }}</a>
@@ -29,61 +29,20 @@
             <td>
 
                 {% if observation.my_status == "raw" %}
-                    <a href="{% url 'observation-setstatus-view' observation.pk 'do_processing' my_observations.number %}" class="btn btn-success btn-sm" role="button">Do Processing</a>
+                    <a href="{% url 'observation-setstatus-view' observation.pk 'processing pending' my_observations.number %}" class="btn btn-success btn-sm" role="button">Do Processing</a>
                 {% endif %}
-
+                {% if observation.my_status == "submitting" %}
+                    <a href="{% url 'observation-setstatus-view' observation.pk 'raw' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Cancel Processing</a>
+                {% endif %}
                 {% if observation.my_status == "processing" %}
                     <a href="{% url 'observation-setstatus-view' observation.pk 'raw' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Cancel Processing</a>
                 {% endif %}
-
-                {% if observation.my_status == "incomplete" %}
-                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'valid' 'valid' my_observations.number %}" class="btn btn-success btn-sm" role="button">Validate DPS</a>
-                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'invalid' 'removed_invisible' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Failed</a>
+                {% if observation.my_status == "downloading" %}
+                    <a href="{% url 'observation-setstatus-view' observation.pk 'processed' my_observations.number %}" class="btn btn-success btn-sm" role="button">Retry</a>
+                    <a href="{% url 'observation-setstatus-view' observation.pk 'failed' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Failed</a>
                 {% endif %}
-
-                {% if observation.my_status == "completed" or observation.my_status == "incomplete" %}
-                   <a href="{% url 'observation-setstatus-view' observation.pk 'valid' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Ready to Ingest</a>
-                {% endif %}
-
-                {% if observation.my_status == "error (no completing)" or observation.my_status == "defined" %}
-                   <a href="{% url 'observation-setstatus-view' observation.pk 'completing' my_observations.number %}" class="btn btn-success btn-sm" role="button">Completing</a>
-                {% endif %}
-
-                {% if observation.my_status == "ingest error" or observation.my_status == "ingest aborted" %}
-                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'valid' 'valid' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Retry Ingest</a>
-                {% endif %}
-
-
-                {% if observation.my_status == "archived" or "error" in observation.my_status or "aborted" in observation.my_status or observation.my_status == "completed" or observation.my_status == "incomplete" %}
-                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'removing' 'removing' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Remove Data</a>
-                {% endif %}
-
-                {% if observation.my_status == "valid" %}
-                   <a href="{% url 'observation-setstatus-view' observation.pk 'valid_priority' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Priority Ingest</a>
-                   <a href="{% url 'observation-setstatus-view' observation.pk 'completed' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Cancel Ingest</a>
-                {% endif %}
-                {% if user.is_authenticated %}
-                  {% if observation.my_status == "ingesting" %}
-                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'ingest aborted' 'ingest aborted' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Abort Ingest</a>
-                  {% endif %}
-                {% endif %}
-
-                {% if observation.my_status == "valid_priority" %}
-                   <a href="{% url 'observation-setstatus-view' observation.pk 'valid' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Cancel Priority</a>
-                   <a href="{% url 'observation-setstatus-view' observation.pk 'completed' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Cancel Ingest</a>
-                {% endif %}
-
-                {% if observation.my_status == "combining" %}
-                   <a href="{% url 'observation-setstatus-view' observation.pk 'combine' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Retry Combine</a>
-                {% endif %}
-
-                {% if observation.my_status == "incomplete" %}
-                   <a href="{% url 'observation-dps-setstatus-view' observation.pk 'defined' 'defined' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Reset</a>
-                {% endif %}
-
-                {% if "removed" in observation.my_status and observation.quality == "unknown" %}
-                <a href="{% url 'observation-setquality-view' observation.pk 'good' my_observations.number %}" class="btn btn-success btn-sm" role="button">Data is Good</a>
-                <a href="{% url 'observation-setquality-view' observation.pk 'bad' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Data is Bad</a>
+                {% if observation.my_status == "failed" %}
+                    <a href="{% url 'observation-setstatus-view' observation.pk 'submitted' my_observations.number %}" class="btn btn-success btn-sm" role="button">Retry</a>
                 {% endif %}
 
             </td>

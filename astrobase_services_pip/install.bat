@@ -1,0 +1,1 @@
+pip install http://uilennest.net/repository/astrobase_services-1.0.0.tar.gz --upgrade

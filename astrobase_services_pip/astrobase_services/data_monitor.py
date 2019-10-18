@@ -9,7 +9,7 @@
 import os
 import platform
 from datetime import datetime
-from service_specification import do_specification
+from astrobase_services.specification import do_specification
 
 def get_creation_date(path_to_file):
     """
@@ -27,8 +27,6 @@ def get_creation_date(path_to_file):
             # We're probably on Linux. No easy way to get creation dates here,
             # so we'll settle for when its content was last modified.
             return stat.st_mtime
-
-
 
 
 # --- Main Service -----------------------------------------------------------------------------------------------
@@ -65,7 +63,11 @@ def do_data_monitor(astrobaseIO, local_landing_pad, local_data_dir):
 
 
             # move the new file to the local_data_dir
-            destination = os.path.join(local_data_dir,filename)
+            task_directory = os.path.join(local_data_dir, taskid)
+            if not os.path.exists(task_directory):
+                os.makedirs(task_directory)
+
+            destination = os.path.join(task_directory,filename)
             os.rename(path_to_file, destination)
 
             astrobaseIO.report("*data_monitor* : added observation " + taskid, "slack")

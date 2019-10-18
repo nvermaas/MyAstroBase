@@ -128,6 +128,6 @@ class DataProduct(TaskObject):
     @property
     def property_url(self):
         data_host = settings.DATA_HOST
-
-        path = os.path.join(data_host,self.filename)
+        directory = os.path.join(data_host, self.taskID)
+        path = os.path.join(directory,self.filename)
         return path

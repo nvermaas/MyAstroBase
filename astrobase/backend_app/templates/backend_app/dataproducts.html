@@ -1,56 +1,38 @@
 {% extends 'backend_app/base.html' %}
 {% load static %}
 {% block myBlock %}
-
+<META HTTP-EQUIV="refresh" CONTENT="10">
 <div class="container-fluid details-container">
-    <h4>Dataproducts</h4>
+
+    <h4>Dataproducts </h4>
+
     <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12">
-
+        <a href="{% url 'index' %}" class="btn btn-warning btn-sm" role="button">To Observations</a>
         {% if my_dataproducts_list %}
         <div class="panel panel-success">
 
             <div class="panel-body">
-                <table class="table table-striped table-bordered table-sm">
-                    <thead>
-                    <tr>
-                        <th>ID (API)</th>
-                        <th>Type</th>
-                        <th>Image</th>
-                        <th>Status</th>
-                        <th>Size</th>
-                        <th>Actions</th>
-                     </tr>
-                    </thead>
-                    <tbody>
+
+                <div class="row">
+                    {% if my_dataproducts_list %}
                         {% for dataproduct in my_dataproducts_list %}
-                            {% if dataproduct.my_status != "removed_invisible" %}
+                            <div class="col-sm-6 col-md-12 col-lg-2">
+                                <div class="img-thumbnail img-fluid">
+                                    <a href="{{ dataproduct.property_url }}" target="_blank">
+                                        <img class="img-thumbnail" src="{{ dataproduct.property_url }}" class="img-rounded" >
+                                  </a>
+                                    <div class="caption">
 
-                                <div class="row">
-                                   <tr class="{{ dataproduct.my_status }}">
-                                       <td><a href="{{ dataproduct.get_absolute_url }}" target="_blank">{{ dataproduct.taskID }}</a> </td>
-                                       <td>{{ dataproduct.dataproduct_type }} </td>
-                                       <td><a href="{{ dataproduct.property_url }}" target="_blank" >{{ dataproduct.filename }}</a> </td>
-                                       <td>{{ dataproduct.my_status }}</td>
-                                       <td>{{ dataproduct.size|filesizeformat }} </td>
-                                       <td>
-                                            <a href="{% url 'index' %}" class="btn btn-primary btn-sm" role="button">Observations</a>
-                                            {% if dataproduct.my_status == "raw" %}
-                                               <a href="{{ dataproduct.property_url }}" class="btn btn-success btn-sm" target="_blank" role="button">Process</a>
-                                            {% endif %}
-
-<!--
-                                           {% if dataproduct.my_status == "archived" or dataproduct.my_status == "invalid" %}
-                                                <a href="{% url 'dataproduct-setstatus-view' dataproduct.pk 'removed'%}" class="btn btn-danger btn-sm" role="button">Delete Data</a>
-                                            {% endif %}
--->
-                                       </td>
-                                   </tr>
+                                        <a href="{{ dataproduct.get_absolute_url }}" class="btn btn-info btn-sm" role="button" target="_blank">{{ dataproduct.dataproduct_type }}</a>
+                                    </div>
                                 </div>
-                            {% endif %}
+                            </div>
+
+                            {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
                         {% endfor %}
-                    </tbody>
-                </table>
+                    {% endif %}
+                </div>
             {% else %}
                 <p>No dataproducts.</p>
             {% endif %}

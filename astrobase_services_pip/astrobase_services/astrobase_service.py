@@ -14,12 +14,10 @@ import time
 import logging
 import logging.config
 
-from astrobase_io import AstroBaseIO, DEFAULT_ASTROBASE_HOST
-from service_specification import do_specification
-from service_processor import do_processor
-from service_data_monitor import do_data_monitor
-from service_add_dataproduct import do_add_dataproduct
-
+from astrobase_services.specification import do_specification
+from astrobase_services.processor import do_processor
+from astrobase_services.data_monitor import do_data_monitor
+from astrobase_services.astrobase_io import AstroBaseIO, DEFAULT_ASTROBASE_HOST
 
 from pkg_resources import get_distribution
 try:
@@ -27,7 +25,7 @@ try:
 except:
     pkg_version = '0.9'
 
-LAST_UPDATE = "13 oct 2019"
+LAST_UPDATE = "18 oct 2019"
 
 # ====================================================================
 
@@ -81,6 +79,33 @@ def get_arguments(parser):
             raise (Exception("Can not find parameter file " + args_file))
     return args
 
+def do_test():
+    ASTROMETRY_URL = "http://nova.astrometry.net"
+    ASTROMETRY_API = "http://nova.astrometry.net/api/"
+    ASTROMETRY_API_KEY = "otrkmikbckoopfje"
+    from astrobase_services.astrometry_client import Client
+
+    # login to astrometry with the API_KEY
+    client = Client(apiurl=ASTROMETRY_API)
+    client.login(apikey=ASTROMETRY_API_KEY)
+
+    # url = "http://uilennest.net/static/astrobase/orion.jpg"
+    # url = "http://localhost/cetus.jpg"
+    # url = "http://uilennest.net/static/astrobase/cetus.jpg"
+    #result = client.url_upload(url=url)
+    path_to_file = "/home/nvermaas/www/astrobase/landing_pad/orion.jpg"
+    path_to_file = "D:\my_astrobase\orion.jpg"
+    result = client.upload(fn=path_to_file)
+
+#...get_or_create_image(df)
+#  File "process_submissions.py", line 586, in get_or_create_image
+#    img = create_source_list(df)
+#  File "process_submissions.py", line 673, in create_source_list
+#    raise e
+#TypeError: cannot perform reduce with flexible type
+
+    print(result)
+
 # ------------------------------------------------------------------------------#
 #                                Main                                           #
 # ------------------------------------------------------------------------------#
@@ -122,6 +147,10 @@ def main():
     parser.add_argument("--local_landing_pad",
                         default="astrobase_datadir\landing_pad",
                         help="Directory where DATA_MONITOR will check for incoming raw files.")
+    parser.add_argument("--local_data_url",
+                        nargs="?",
+                        default=os.path.join(DEFAULT_ASTROBASE_HOST),
+                        help="url where the raw files can be found by PROCESSOR for job submission")
     parser.add_argument("--override_data_location",
                         default=None,
                         help="override the default data_location that is set by the backend.")
@@ -164,7 +193,7 @@ def main():
     # Global parameters (required)
     parser.add_argument("--operation","-o",
                         default="None",
-                        help="specification, scheduler, executor, data_monitor, start_ingest, ingest_monitor, cleanup, delete_taskid, change_status")
+                        help="data_monitor, processing, testing")
 
     # Global parameters
     parser.add_argument("--obs_mode_filter",
@@ -291,31 +320,37 @@ def main():
 
         # --------------------------------------------------------------------------------------------------------
         if (args.operation == 'processor'):
-
-            do_processor(astrobaseIO, args.local_data_dir)
+            try:
+                do_processor(astrobaseIO, args.local_data_url, args.local_data_dir)
+            except:
+                print('*** processor crashed on first run! ***')
+                print(sys.exc_info()[0])
+                print('trying to continue...')
+                astrobaseIO.send_message_to_apidorn_slack_channel("*processor service* crashed on first run! ... trying to continue.")
 
             if args.interval:
                 print('*processor* starting polling ' + astrobaseIO.host + ' every ' + args.interval + ' secs')
                 while True:
                     try:
                         time.sleep(int(args.interval))
-                        do_processor(astrobaseIO, args.local_data_dir)
+                        do_processor(astrobaseIO, args.local_data_url, args.local_data_dir)
 
                     except:
                         print('*** processor crashed! ***')
                         print(sys.exc_info()[0])
                         print('trying to continue...')
-                        astrobaseIO.send_message_to_apidorn_slack_channel("*processor service* crashed! ... restarting.")
-
-        # --------------------------------------------------------------------------------------------------------
-        if (args.operation == 'add_dataproduct'):
-            do_add_dataproduct(astrobaseIO, taskid=args.taskid, node=args.node, data_dir=args.data_dir, filename=args.filename)
+                        astrobaseIO.send_message_to_apidorn_slack_channel("*processor * crashed! ... restarting.")
 
         # --------------------------------------------------------------------------------------------------------
         if (args.operation=='change_status'):
             astrobaseIO.do_change_status(resource=args.resource, search_key=args.search_key, status=args.status)
 
         # --------------------------------------------------------------------------------------------------------
+        if (args.operation=='testing'):
+            do_test()
+
+        # --------------------------------------------------------------------------------------------------------
+
 
     except Exception as exp:
         message = str(exp)

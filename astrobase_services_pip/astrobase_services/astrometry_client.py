@@ -21,7 +21,7 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.application  import MIMEApplication
 
-from email.encoders import encode_noop
+from email.encoders import encode_noop,encode_base64
 
 import json
 def json2python(data):
@@ -77,7 +77,10 @@ class Client(object):
             m1.add_header('Content-disposition',
                           'form-data; name="request-json"')
             m1.set_payload(json)
-            m2 = MIMEApplication(file_args[1],'octet-stream',encode_noop)
+
+            # nv:18oct2019,
+            # bugfix: https://groups.google.com/forum/#!msg/astrometry/JRIUZ7f-Y2A/i2j93y5ZEAAJ
+            m2 = MIMEApplication(file_args[1],'octet-stream',encode_base64)
             m2.add_header('Content-disposition',
                           'form-data; name="file"; filename="%s"'%file_args[0])
             mp = MIMEMultipart('form-data', None, [m1, m2])

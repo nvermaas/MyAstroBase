@@ -37,3 +37,4 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = []
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
+DATA_HOST = "http://uilennest.net/static/astrobase/data"

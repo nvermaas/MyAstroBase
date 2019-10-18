@@ -1,9 +1,5 @@
 from setuptools import setup, find_packages
 
-def readme():
-    with open('README.rst') as f:
-        return f.read()
-
 setup(name='astrobase_services',
       version='1.0.0',
       description='AstroBase services',
@@ -13,6 +9,7 @@ setup(name='astrobase_services',
       license='BSD',
       install_requires=['requests'],
       packages=find_packages(),
+      #packages=['astrobase_services'],
       include_package_data=True,
       entry_points={
             'console_scripts': [
