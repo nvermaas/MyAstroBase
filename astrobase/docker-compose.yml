@@ -7,7 +7,6 @@ services:
       - "8018:8018"
     expose:
       - "8018"
-
     restart: always
 
   nginx:
@@ -23,5 +22,4 @@ services:
     depends_on:
       - web
     restart: always
-
 
