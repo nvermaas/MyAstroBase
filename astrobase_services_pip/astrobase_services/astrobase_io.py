@@ -259,7 +259,7 @@ class AstroBaseIO:
 
 # --------------------------------------------------------------------------------------------------------
     def report(self, message, method='logging'):
-        self.verbose_print(message)
+        #self.verbose_print(message)
         if 'ERROR' in message.upper():
             logging.error(message)
         else:

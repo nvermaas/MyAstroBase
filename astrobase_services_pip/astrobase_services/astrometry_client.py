@@ -238,32 +238,44 @@ class Client(object):
         return result['jobs']
 
     def job_status(self, job_id, justdict=False):
+        print("- job_status("+job_id+")")
         result = self.send_request('jobs/%s' % job_id)
         if justdict:
+            print('justdict: return results')
             return result
         results = {}
         stat = result.get('status')
         if stat == 'success':
             results['job'] = result
+            print('- request calibrations')
             result = self.send_request('jobs/%s/calibration' % job_id)
             results['calibration'] = result
             print('Calibration:', result)
-            result = self.send_request('jobs/%s/tags' % job_id)
-            results['tags'] = result
-            print('Tags:', result)
-            result = self.send_request('jobs/%s/machine_tags' % job_id)
-            results['machine_tags'] = result
-            print('Machine Tags:', result)
-            result = self.send_request('jobs/%s/objects_in_field' % job_id)
-            results['objects_in_field'] = result
-            print('Objects in field:', result)
-            result = self.send_request('jobs/%s/annotations' % job_id)
-            results['annotations'] = result
-            print('Annotations:', result)
-            result = self.send_request('jobs/%s/info' % job_id)
-            results['info'] = result
-            print('info:', result)
+            #result = self.send_request('jobs/%s/tags' % job_id)
+            #results['tags'] = result
+            #print('Tags:', result)
+            #result = self.send_request('jobs/%s/machine_tags' % job_id)
+            #results['machine_tags'] = result
+            #print('Machine Tags:', result)
 
+            # this causes a UnicodeEncodeError exception in linux/python3.4 because of
+            # the greek letters. It works in windows/python3.5 why?
+
+            print('- request objects_in_field')
+            try:
+                result = self.send_request('jobs/%s/objects_in_field' % job_id)
+                print('Objects in field:', result)
+            except:
+                print('encoding errors? continue without this info.. not fatal')
+                pass
+
+            #result = self.send_request('jobs/%s/annotations' % job_id)
+            #results['annotations'] = result
+            #print('Annotations:', result)
+            #result = self.send_request('jobs/%s/info' % job_id)
+            #results['info'] = result
+            #print('info:', result)
+            print('- return results')
         return results
 
     def annotate_data(self,job_id):

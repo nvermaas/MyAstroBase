@@ -41,10 +41,15 @@
                     <a href="{% url 'observation-setstatus-view' observation.pk 'processed' my_observations.number %}" class="btn btn-success btn-sm" role="button">Retry</a>
                     <a href="{% url 'observation-setstatus-view' observation.pk 'failed' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Failed</a>
                 {% endif %}
+                {% if observation.my_status == "waiting" %}
+                    <a href="{% url 'observation-setstatus-view' observation.pk 'failed' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Failed</a>
+                {% endif %}
                 {% if observation.my_status == "failed" %}
                     <a href="{% url 'observation-setstatus-view' observation.pk 'submitted' my_observations.number %}" class="btn btn-success btn-sm" role="button">Retry</a>
                 {% endif %}
-
+                {% if observation.my_status == "done" %}
+                    <a href="{% url 'observation-setstatus-view' observation.pk 'processed' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Download</a>
+                {% endif %}
             </td>
             </tr>
         </div>
