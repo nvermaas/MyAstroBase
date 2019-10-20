@@ -36,6 +36,20 @@ def get_creation_date(path_to_file):
             return stat.st_mtime
 
 
+def get_job_id(submission_id):
+
+    client = Client(apiurl=ASTROMETRY_API)
+    client.login(apikey=ASTROMETRY_API_KEY)
+    submission_result = client.sub_status(submission_id, justdict=True)
+    print("submission_result :" + str(submission_result))
+
+    try:
+        job_id = str(submission_result['jobs'][0])
+        return job_id
+    except:
+        return None
+
+
 def get_job_results(astrobaseIO, job_id, justdict):
     """
     {'objects_in_field':
@@ -66,7 +80,7 @@ def get_job_results(astrobaseIO, job_id, justdict):
     :param job_id:
     :return:
     """
-    astrobaseIO.report("---- get_job_results(" + job_id + ")", "print")
+    astrobaseIO.report("---- get_job_results(" + str(job_id) + ")", "print")
     # login to astrometry with the API_KEY
     client = Client(apiurl=ASTROMETRY_API)
     client.login(apikey=ASTROMETRY_API_KEY)
@@ -75,19 +89,19 @@ def get_job_results(astrobaseIO, job_id, justdict):
     return result
 
 
-def get_submission(astrobaseIO, job_id):
+def get_submission(astrobaseIO, submission_id):
     """
     check of the pipeline at astrometry is done processing the submitted image
-    :param job_id:
+    :param submission_id:
     :return:
     """
     # login to astrometry with the API_KEY
-    astrobaseIO.report("---- get_submission(" + job_id + ")", "print")
+    astrobaseIO.report("---- get_submission(" + submission_id + ")", "print")
 
     client = Client(apiurl=ASTROMETRY_API)
     client.login(apikey=ASTROMETRY_API_KEY)
 
-    result = client.sub_status(job_id, justdict=True)
+    result = client.sub_status(submission_id, justdict=True)
     return result
 
 #-------------------------------------------------------------------------------------
@@ -167,16 +181,11 @@ def do_check_submission_status(astrobaseIO):
         :return:
         """
         astrobaseIO.report("-- check_submission_status("+ submission_id + ")", "print")
-        # login to astrometry with the API_KEY
-        client = Client(apiurl=ASTROMETRY_API)
-        client.login(apikey=ASTROMETRY_API_KEY)
-
-        #submission_result = client.sub_status(submission_id, justdict=True)
-        #print("submission_result :"+str(submission_result))
-        job_results = get_job_results(astrobaseIO, submission_id, False)
-        print("job_results: " +str(job_results))
 
         try:
+            job_id = get_job_id(submission_id)
+            job_results = get_job_results(astrobaseIO, job_id, False)
+            print("job_results: " + str(job_results))
             if job_results['job']['status']=='success':
                 return 'success'
             if job_results['job']['status']=='failure':
@@ -315,7 +324,8 @@ def do_handle_processed_jobs(astrobaseIO, local_data_dir):
             # astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="downloading")
 
             submission_id = astrobaseIO.astrobase_interface.do_GET(key='observations:job',id=None, taskid=taskID)
-            results =  get_job_results(astrobaseIO, submission_id,False)
+            job_id = get_job_id(submission_id)
+            results =  get_job_results(astrobaseIO, job_id, False)
             astrobaseIO.report("*processor* : handle results of job " + submission_id, "slack")
 
             # parse the results and update the observation
