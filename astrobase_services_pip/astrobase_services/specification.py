@@ -78,7 +78,7 @@ def add_dataproducts(astrobase, taskid, dataproducts_string):
 def do_specification(astrobase, taskid, initial_status, field_name, date,
                      field_ra=0.0, field_dec=0.0, field_fov=0.0,
                      observing_mode="raw", process_type="observation", dataproducts="",
-                     data_location=""):
+                     data_location="", name=""):
 
     # if no taskid is given, then generate the new taskid based on date and (optional) taskid_postfix
     STATUS_OBS_END = 'raw'  # this service will leave the observation in this state
@@ -98,7 +98,7 @@ def do_specification(astrobase, taskid, initial_status, field_name, date,
 
     # --- construct payload as json ----------------
     payload = "{"
-    payload += '"name" : "' + str(field_name) + '",'
+    payload += '"name" : "' + str(name) + '",'
     payload += '"taskID" : "' + str(taskid) + '",'
     payload += '"date" : "' + str(date) + '",'
     payload += '"task_type" : "observation",'

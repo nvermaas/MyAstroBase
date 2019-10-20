@@ -293,6 +293,7 @@ def main():
             do_specification(astrobaseIO,
                              taskid=args.taskid,
                              initial_status=args.status,
+                             name = args.field_name,
                              field_name=args.field_name,
                              date=args.date,
                              field_ra=args.field_ra,
