@@ -7009,3 +7009,848 @@
 [2019-10-19 15:02:44,075] SIGNAL : pre_save Observation(090311011)
 [2019-10-19 15:02:44,075] handle_pre_save(090311011)
 [2019-10-19 15:02:44,113] handle_post_save(090311011)
+[2019-10-19 15:02:59,168] SIGNAL : pre_save Observation(090311011)
+[2019-10-19 15:02:59,168] handle_pre_save(090311011)
+[2019-10-19 15:02:59,193] handle_post_save(090311011)
+[2019-10-19 15:03:01,750] SIGNAL : pre_save Observation(090311011)
+[2019-10-19 15:03:01,751] handle_pre_save(090311011)
+[2019-10-19 15:03:01,777] handle_post_save(090311011)
+[2019-10-19 15:03:04,199] SIGNAL : pre_save Observation(090311011)
+[2019-10-19 15:03:04,199] handle_pre_save(090311011)
+[2019-10-19 15:03:04,228] handle_post_save(090311011)
+[2019-10-19 15:03:12,094] add_dataproducts(090311011,4)
+[2019-10-19 15:03:12,096] addding dataproduct: 3680682_sky_plot.jpg
+[2019-10-19 15:03:12,097] SIGNAL : pre_save DataProduct(3680682_sky_plot.jpg)
+[2019-10-19 15:03:12,097] handle_pre_save(3680682_sky_plot.jpg)
+[2019-10-19 15:03:12,114] handle_post_save(3680682_sky_plot.jpg)
+[2019-10-19 15:03:12,114] save new dataproduct
+[2019-10-19 15:03:12,130] update dataproduct parent = 090311011
+[2019-10-19 15:03:12,154] addding dataproduct: 3680682_annotated.jpg
+[2019-10-19 15:03:12,155] SIGNAL : pre_save DataProduct(3680682_annotated.jpg)
+[2019-10-19 15:03:12,155] handle_pre_save(3680682_annotated.jpg)
+[2019-10-19 15:03:12,170] handle_post_save(3680682_annotated.jpg)
+[2019-10-19 15:03:12,171] save new dataproduct
+[2019-10-19 15:03:12,185] update dataproduct parent = 090311011
+[2019-10-19 15:03:12,206] addding dataproduct: 3680682_redgreen.jpg
+[2019-10-19 15:03:12,206] SIGNAL : pre_save DataProduct(3680682_redgreen.jpg)
+[2019-10-19 15:03:12,207] handle_pre_save(3680682_redgreen.jpg)
+[2019-10-19 15:03:12,221] handle_post_save(3680682_redgreen.jpg)
+[2019-10-19 15:03:12,222] save new dataproduct
+[2019-10-19 15:03:12,236] update dataproduct parent = 090311011
+[2019-10-19 15:03:12,252] addding dataproduct: 3680682_extraction.jpg
+[2019-10-19 15:03:12,252] SIGNAL : pre_save DataProduct(3680682_extraction.jpg)
+[2019-10-19 15:03:12,252] handle_pre_save(3680682_extraction.jpg)
+[2019-10-19 15:03:12,263] handle_post_save(3680682_extraction.jpg)
+[2019-10-19 15:03:12,264] save new dataproduct
+[2019-10-19 15:03:12,274] update dataproduct parent = 090311011
+[2019-10-19 15:03:14,668] SIGNAL : pre_save Observation(090311011)
+[2019-10-19 15:03:14,668] handle_pre_save(090311011)
+[2019-10-19 15:03:14,708] handle_post_save(090311011)
+[2019-10-19 15:40:15,274] DataProductsListView.get_queryset()
+[2019-10-19 15:40:15,276] my_queryset retrieved
+[2019-10-19 15:59:10,860] SIGNAL : pre_save Observation(090311006)
+[2019-10-19 15:59:10,861] handle_pre_save(090311006)
+[2019-10-19 15:59:10,910] handle_post_save(090311006)
+[2019-10-19 16:00:39,737] DataProductsListView.get_queryset()
+[2019-10-19 16:00:39,738] my_queryset retrieved
+[2019-10-19 16:00:47,130] DataProductsListView.get_queryset()
+[2019-10-19 16:00:47,130] my_queryset retrieved
+[2019-10-19 16:01:11,485] DataProductsListView.get_queryset()
+[2019-10-19 16:01:11,486] my_queryset retrieved
+[2019-10-19 16:01:21,743] DataProductsListView.get_queryset()
+[2019-10-19 16:01:21,744] my_queryset retrieved
+[2019-10-19 16:01:41,673] DataProductsListView.get_queryset()
+[2019-10-19 16:01:41,673] my_queryset retrieved
+[2019-10-19 16:01:54,182] DataProductsListView.get_queryset()
+[2019-10-19 16:01:54,183] my_queryset retrieved
+[2019-10-19 16:08:45,926] get_next_taskid(20090311)
+[2019-10-19 16:08:45,927] checking taskid 090311001..
+[2019-10-19 16:08:45,935] checking taskid 090311002..
+[2019-10-19 16:08:45,941] checking taskid 090311003..
+[2019-10-19 16:08:45,946] checking taskid 090311004..
+[2019-10-19 16:08:45,961] checking taskid 090311005..
+[2019-10-19 16:08:45,964] checking taskid 090311006..
+[2019-10-19 16:08:45,969] checking taskid 090311007..
+[2019-10-19 16:08:45,972] checking taskid 090311008..
+[2019-10-19 16:08:45,977] checking taskid 090311009..
+[2019-10-19 16:08:45,984] checking taskid 090311010..
+[2019-10-19 16:08:45,990] checking taskid 090311011..
+[2019-10-19 16:08:45,993] checking taskid 090311012..
+[2019-10-19 16:08:45,995] checking taskid 090311013..
+[2019-10-19 16:08:45,996] checking taskid 090311014..
+[2019-10-19 16:08:45,998] checking taskid 090311015..
+[2019-10-19 16:08:46,001] checking taskid 090311016..
+[2019-10-19 16:08:46,005] checking taskid 090311017..
+[2019-10-19 16:08:46,008] checking taskid 090311018..
+[2019-10-19 16:08:46,012] checking taskid 090311019..
+[2019-10-19 16:08:47,215] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:08:47,216] handle_pre_save(090311019)
+[2019-10-19 16:08:47,235] handle_post_save(090311019)
+[2019-10-19 16:08:47,235] save new observation
+[2019-10-19 16:08:48,459] add_dataproducts(090311019,1)
+[2019-10-19 16:08:48,463] addding dataproduct: andromeda.jpg
+[2019-10-19 16:08:48,464] SIGNAL : pre_save DataProduct(andromeda.jpg)
+[2019-10-19 16:08:48,464] handle_pre_save(andromeda.jpg)
+[2019-10-19 16:08:48,478] handle_post_save(andromeda.jpg)
+[2019-10-19 16:08:48,478] save new dataproduct
+[2019-10-19 16:08:48,490] update dataproduct parent = 090311019
+[2019-10-19 16:08:50,962] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:08:50,963] handle_pre_save(090311019)
+[2019-10-19 16:08:51,009] handle_post_save(090311019)
+[2019-10-19 16:08:59,695] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:08:59,696] handle_pre_save(090311019)
+[2019-10-19 16:08:59,734] handle_post_save(090311019)
+[2019-10-19 16:09:07,227] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:09:07,227] handle_pre_save(090311019)
+[2019-10-19 16:09:07,261] handle_post_save(090311019)
+[2019-10-19 16:09:16,205] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:09:16,205] handle_pre_save(090311019)
+[2019-10-19 16:09:16,233] handle_post_save(090311019)
+[2019-10-19 16:09:18,578] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:09:18,578] handle_pre_save(090311019)
+[2019-10-19 16:09:18,610] handle_post_save(090311019)
+[2019-10-19 16:09:22,319] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:09:22,319] handle_pre_save(090311019)
+[2019-10-19 16:09:22,358] handle_post_save(090311019)
+[2019-10-19 16:09:28,309] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:09:28,310] handle_pre_save(090311019)
+[2019-10-19 16:09:28,348] handle_post_save(090311019)
+[2019-10-19 16:09:31,910] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:09:31,911] handle_pre_save(090311019)
+[2019-10-19 16:09:31,948] handle_post_save(090311019)
+[2019-10-19 16:09:37,956] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:09:37,956] handle_pre_save(090311019)
+[2019-10-19 16:09:37,982] handle_post_save(090311019)
+[2019-10-19 16:09:40,304] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:09:40,304] handle_pre_save(090311019)
+[2019-10-19 16:09:40,329] handle_post_save(090311019)
+[2019-10-19 16:09:42,669] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:09:42,670] handle_pre_save(090311019)
+[2019-10-19 16:09:42,698] handle_post_save(090311019)
+[2019-10-19 16:09:47,949] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:09:47,949] handle_pre_save(090311019)
+[2019-10-19 16:09:47,986] handle_post_save(090311019)
+[2019-10-19 16:10:08,873] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:10:08,874] handle_pre_save(090311019)
+[2019-10-19 16:10:08,903] handle_post_save(090311019)
+[2019-10-19 16:10:14,684] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:10:14,684] handle_pre_save(090311019)
+[2019-10-19 16:10:14,711] handle_post_save(090311019)
+[2019-10-19 16:10:17,026] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:10:17,026] handle_pre_save(090311019)
+[2019-10-19 16:10:17,045] handle_post_save(090311019)
+[2019-10-19 16:10:19,421] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:10:19,421] handle_pre_save(090311019)
+[2019-10-19 16:10:19,446] handle_post_save(090311019)
+[2019-10-19 16:10:40,366] add_dataproducts(090311019,4)
+[2019-10-19 16:10:40,367] addding dataproduct: 3680788_sky_plot.jpg
+[2019-10-19 16:10:40,367] SIGNAL : pre_save DataProduct(3680788_sky_plot.jpg)
+[2019-10-19 16:10:40,367] handle_pre_save(3680788_sky_plot.jpg)
+[2019-10-19 16:10:40,378] handle_post_save(3680788_sky_plot.jpg)
+[2019-10-19 16:10:40,379] save new dataproduct
+[2019-10-19 16:10:40,388] update dataproduct parent = 090311019
+[2019-10-19 16:10:40,398] addding dataproduct: 3680788_annotated.jpg
+[2019-10-19 16:10:40,399] SIGNAL : pre_save DataProduct(3680788_annotated.jpg)
+[2019-10-19 16:10:40,399] handle_pre_save(3680788_annotated.jpg)
+[2019-10-19 16:10:40,412] handle_post_save(3680788_annotated.jpg)
+[2019-10-19 16:10:40,413] save new dataproduct
+[2019-10-19 16:10:40,427] update dataproduct parent = 090311019
+[2019-10-19 16:10:40,440] addding dataproduct: 3680788_redgreen.jpg
+[2019-10-19 16:10:40,441] SIGNAL : pre_save DataProduct(3680788_redgreen.jpg)
+[2019-10-19 16:10:40,441] handle_pre_save(3680788_redgreen.jpg)
+[2019-10-19 16:10:40,452] handle_post_save(3680788_redgreen.jpg)
+[2019-10-19 16:10:40,452] save new dataproduct
+[2019-10-19 16:10:40,460] update dataproduct parent = 090311019
+[2019-10-19 16:10:40,473] addding dataproduct: 3680788_extraction.jpg
+[2019-10-19 16:10:40,474] SIGNAL : pre_save DataProduct(3680788_extraction.jpg)
+[2019-10-19 16:10:40,474] handle_pre_save(3680788_extraction.jpg)
+[2019-10-19 16:10:40,483] handle_post_save(3680788_extraction.jpg)
+[2019-10-19 16:10:40,483] save new dataproduct
+[2019-10-19 16:10:40,492] update dataproduct parent = 090311019
+[2019-10-19 16:10:42,805] SIGNAL : pre_save Observation(090311019)
+[2019-10-19 16:10:42,805] handle_pre_save(090311019)
+[2019-10-19 16:10:42,840] handle_post_save(090311019)
+[2019-10-20 08:00:00,734] DataProductsListView.get_queryset()
+[2019-10-20 08:00:00,735] my_queryset retrieved
+[2019-10-20 08:00:20,670] SIGNAL : pre_save Observation(090311010)
+[2019-10-20 08:00:20,671] handle_pre_save(090311010)
+[2019-10-20 08:00:20,719] handle_post_save(090311010)
+[2019-10-20 08:01:21,066] SIGNAL : pre_save Observation(090311010)
+[2019-10-20 08:01:21,067] handle_pre_save(090311010)
+[2019-10-20 08:01:21,096] handle_post_save(090311010)
+[2019-10-20 08:03:46,307] DataProductsListView.get_queryset()
+[2019-10-20 08:03:46,307] my_queryset retrieved
+[2019-10-20 08:03:56,429] DataProductsListView.get_queryset()
+[2019-10-20 08:03:56,430] my_queryset retrieved
+[2019-10-20 08:04:06,557] DataProductsListView.get_queryset()
+[2019-10-20 08:04:06,558] my_queryset retrieved
+[2019-10-20 08:04:16,730] DataProductsListView.get_queryset()
+[2019-10-20 08:04:16,731] my_queryset retrieved
+[2019-10-20 08:04:26,929] DataProductsListView.get_queryset()
+[2019-10-20 08:04:26,931] my_queryset retrieved
+[2019-10-20 08:04:37,136] DataProductsListView.get_queryset()
+[2019-10-20 08:04:37,138] my_queryset retrieved
+[2019-10-20 08:04:47,346] DataProductsListView.get_queryset()
+[2019-10-20 08:04:47,347] my_queryset retrieved
+[2019-10-20 08:04:57,578] DataProductsListView.get_queryset()
+[2019-10-20 08:04:57,579] my_queryset retrieved
+[2019-10-20 08:05:07,802] DataProductsListView.get_queryset()
+[2019-10-20 08:05:07,802] my_queryset retrieved
+[2019-10-20 08:05:18,003] DataProductsListView.get_queryset()
+[2019-10-20 08:05:18,004] my_queryset retrieved
+[2019-10-20 08:05:28,177] DataProductsListView.get_queryset()
+[2019-10-20 08:05:28,180] my_queryset retrieved
+[2019-10-20 08:05:38,400] DataProductsListView.get_queryset()
+[2019-10-20 08:05:38,402] my_queryset retrieved
+[2019-10-20 08:12:00,811] get_next_taskid(20090311)
+[2019-10-20 08:12:00,811] checking taskid 090311001..
+[2019-10-20 08:12:00,812] checking taskid 090311002..
+[2019-10-20 08:12:00,813] checking taskid 090311003..
+[2019-10-20 08:12:00,814] checking taskid 090311004..
+[2019-10-20 08:12:00,815] checking taskid 090311005..
+[2019-10-20 08:12:00,816] checking taskid 090311006..
+[2019-10-20 08:12:00,817] checking taskid 090311007..
+[2019-10-20 08:12:00,818] checking taskid 090311008..
+[2019-10-20 08:12:00,819] checking taskid 090311009..
+[2019-10-20 08:12:00,820] checking taskid 090311010..
+[2019-10-20 08:12:09,252] SIGNAL : pre_save Observation(090311010)
+[2019-10-20 08:12:09,252] handle_pre_save(090311010)
+[2019-10-20 08:12:09,264] handle_post_save(090311010)
+[2019-10-20 08:12:09,264] save new observation
+[2019-10-20 08:12:10,465] add_dataproducts(090311010,1)
+[2019-10-20 08:12:10,467] addding dataproduct: Ophiuchus.jpg
+[2019-10-20 08:12:10,467] SIGNAL : pre_save DataProduct(Ophiuchus.jpg)
+[2019-10-20 08:12:10,468] handle_pre_save(Ophiuchus.jpg)
+[2019-10-20 08:12:10,484] handle_post_save(Ophiuchus.jpg)
+[2019-10-20 08:12:10,485] save new dataproduct
+[2019-10-20 08:12:10,494] update dataproduct parent = 090311010
+[2019-10-20 08:12:12,831] SIGNAL : pre_save Observation(090311010)
+[2019-10-20 08:12:12,831] handle_pre_save(090311010)
+[2019-10-20 08:12:12,857] handle_post_save(090311010)
+[2019-10-20 08:13:05,702] SIGNAL : pre_save Observation(090311010)
+[2019-10-20 08:13:05,702] handle_pre_save(090311010)
+[2019-10-20 08:13:05,744] handle_post_save(090311010)
+[2019-10-20 08:13:17,759] SIGNAL : pre_save Observation(090311010)
+[2019-10-20 08:13:17,760] handle_pre_save(090311010)
+[2019-10-20 08:13:17,792] handle_post_save(090311010)
+[2019-10-20 08:13:26,632] SIGNAL : pre_save Observation(090311010)
+[2019-10-20 08:13:26,632] handle_pre_save(090311010)
+[2019-10-20 08:13:26,659] handle_post_save(090311010)
+[2019-10-20 08:13:28,997] SIGNAL : pre_save Observation(090311010)
+[2019-10-20 08:13:28,998] handle_pre_save(090311010)
+[2019-10-20 08:13:29,039] handle_post_save(090311010)
+[2019-10-20 08:31:31,127] SIGNAL : pre_save Observation(090311002)
+[2019-10-20 08:31:31,128] handle_pre_save(090311002)
+[2019-10-20 08:31:31,159] handle_post_save(090311002)
+[2019-10-20 08:31:42,364] SIGNAL : pre_save Observation(090311001)
+[2019-10-20 08:31:42,364] handle_pre_save(090311001)
+[2019-10-20 08:31:42,391] handle_post_save(090311001)
+[2019-10-20 08:31:57,526] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 08:31:57,527] handle_pre_save(090311015)
+[2019-10-20 08:31:57,572] handle_post_save(090311015)
+[2019-10-20 08:32:02,052] SIGNAL : pre_save Observation(090311016)
+[2019-10-20 08:32:02,052] handle_pre_save(090311016)
+[2019-10-20 08:32:02,096] handle_post_save(090311016)
+[2019-10-20 08:32:29,543] get_next_taskid(20090311)
+[2019-10-20 08:32:29,543] checking taskid 090311001..
+[2019-10-20 08:32:29,544] checking taskid 090311002..
+[2019-10-20 08:32:29,545] checking taskid 090311003..
+[2019-10-20 08:32:29,546] checking taskid 090311004..
+[2019-10-20 08:32:29,548] checking taskid 090311005..
+[2019-10-20 08:32:29,549] checking taskid 090311006..
+[2019-10-20 08:32:29,550] checking taskid 090311007..
+[2019-10-20 08:32:29,551] checking taskid 090311008..
+[2019-10-20 08:32:29,552] checking taskid 090311009..
+[2019-10-20 08:32:29,553] checking taskid 090311010..
+[2019-10-20 08:32:29,554] checking taskid 090311011..
+[2019-10-20 08:32:29,555] checking taskid 090311012..
+[2019-10-20 08:32:29,556] checking taskid 090311013..
+[2019-10-20 08:32:29,558] checking taskid 090311014..
+[2019-10-20 08:32:29,562] checking taskid 090311015..
+[2019-10-20 08:32:29,563] checking taskid 090311016..
+[2019-10-20 08:32:29,564] checking taskid 090311017..
+[2019-10-20 08:32:29,565] checking taskid 090311018..
+[2019-10-20 08:32:29,566] checking taskid 090311019..
+[2019-10-20 08:32:29,567] checking taskid 090311020..
+[2019-10-20 08:32:30,738] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 08:32:30,738] handle_pre_save(090311020)
+[2019-10-20 08:32:30,758] handle_post_save(090311020)
+[2019-10-20 08:32:30,759] save new observation
+[2019-10-20 08:32:31,961] add_dataproducts(090311020,1)
+[2019-10-20 08:32:31,962] addding dataproduct: orion.jpg
+[2019-10-20 08:32:31,962] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 08:32:31,963] handle_pre_save(orion.jpg)
+[2019-10-20 08:32:31,990] handle_post_save(orion.jpg)
+[2019-10-20 08:32:31,990] save new dataproduct
+[2019-10-20 08:32:32,004] update dataproduct parent = 090311020
+[2019-10-20 08:32:34,391] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 08:32:34,392] handle_pre_save(090311020)
+[2019-10-20 08:32:34,428] handle_post_save(090311020)
+[2019-10-20 08:38:47,570] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 08:38:47,570] handle_pre_save(090311020)
+[2019-10-20 08:38:47,613] handle_post_save(090311020)
+[2019-10-20 08:39:02,118] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 08:39:02,119] handle_pre_save(090311020)
+[2019-10-20 08:39:02,154] handle_post_save(090311020)
+[2019-10-20 08:39:10,606] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 08:39:10,607] handle_pre_save(090311020)
+[2019-10-20 08:39:10,632] handle_post_save(090311020)
+[2019-10-20 08:39:13,020] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 08:39:13,021] handle_pre_save(090311020)
+[2019-10-20 08:39:13,059] handle_post_save(090311020)
+[2019-10-20 08:40:36,550] SIGNAL : pre_save Observation(090311010)
+[2019-10-20 08:40:36,551] handle_pre_save(090311010)
+[2019-10-20 08:40:36,592] handle_post_save(090311010)
+[2019-10-20 08:40:59,098] DataProductsListView.get_queryset()
+[2019-10-20 08:40:59,099] my_queryset retrieved
+[2019-10-20 08:41:09,414] DataProductsListView.get_queryset()
+[2019-10-20 08:41:09,416] my_queryset retrieved
+[2019-10-20 08:41:19,553] DataProductsListView.get_queryset()
+[2019-10-20 08:41:19,554] my_queryset retrieved
+[2019-10-20 08:41:25,007] DataProductsListView.get_queryset()
+[2019-10-20 08:41:25,007] my_queryset retrieved
+[2019-10-20 08:41:44,761] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 08:41:44,762] handle_pre_save(090311020)
+[2019-10-20 08:41:44,803] handle_post_save(090311020)
+[2019-10-20 08:59:33,473] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 08:59:33,474] handle_pre_save(090311020)
+[2019-10-20 08:59:33,516] handle_post_save(090311020)
+[2019-10-20 09:04:12,716] get_next_taskid(20090311)
+[2019-10-20 09:04:12,716] checking taskid 090311001..
+[2019-10-20 09:04:12,718] checking taskid 090311002..
+[2019-10-20 09:04:12,719] checking taskid 090311003..
+[2019-10-20 09:04:12,720] checking taskid 090311004..
+[2019-10-20 09:04:12,721] checking taskid 090311005..
+[2019-10-20 09:04:12,722] checking taskid 090311006..
+[2019-10-20 09:04:12,723] checking taskid 090311007..
+[2019-10-20 09:04:12,724] checking taskid 090311008..
+[2019-10-20 09:04:12,725] checking taskid 090311009..
+[2019-10-20 09:04:12,726] checking taskid 090311010..
+[2019-10-20 09:04:12,727] checking taskid 090311011..
+[2019-10-20 09:04:12,727] checking taskid 090311012..
+[2019-10-20 09:04:12,729] checking taskid 090311013..
+[2019-10-20 09:04:12,730] checking taskid 090311014..
+[2019-10-20 09:04:12,730] checking taskid 090311015..
+[2019-10-20 09:04:13,912] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:04:13,913] handle_pre_save(090311015)
+[2019-10-20 09:04:13,934] handle_post_save(090311015)
+[2019-10-20 09:04:13,934] save new observation
+[2019-10-20 09:04:15,080] add_dataproducts(090311015,1)
+[2019-10-20 09:04:15,081] addding dataproduct: orion.jpg
+[2019-10-20 09:04:15,082] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:04:15,083] handle_pre_save(orion.jpg)
+[2019-10-20 09:04:15,101] handle_post_save(orion.jpg)
+[2019-10-20 09:04:15,102] save new dataproduct
+[2019-10-20 09:04:15,111] update dataproduct parent = 090311015
+[2019-10-20 09:04:17,672] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:04:17,673] handle_pre_save(090311015)
+[2019-10-20 09:04:17,711] handle_post_save(090311015)
+[2019-10-20 09:04:34,426] get_next_taskid(20090311)
+[2019-10-20 09:04:34,426] checking taskid 090311001..
+[2019-10-20 09:04:34,427] checking taskid 090311002..
+[2019-10-20 09:04:34,428] checking taskid 090311003..
+[2019-10-20 09:04:34,429] checking taskid 090311004..
+[2019-10-20 09:04:34,430] checking taskid 090311005..
+[2019-10-20 09:04:34,431] checking taskid 090311006..
+[2019-10-20 09:04:34,432] checking taskid 090311007..
+[2019-10-20 09:04:34,433] checking taskid 090311008..
+[2019-10-20 09:04:34,434] checking taskid 090311009..
+[2019-10-20 09:04:34,436] checking taskid 090311010..
+[2019-10-20 09:04:34,444] checking taskid 090311011..
+[2019-10-20 09:04:34,446] checking taskid 090311012..
+[2019-10-20 09:04:34,448] checking taskid 090311013..
+[2019-10-20 09:04:34,450] checking taskid 090311014..
+[2019-10-20 09:04:34,453] checking taskid 090311015..
+[2019-10-20 09:04:34,455] checking taskid 090311016..
+[2019-10-20 09:04:35,599] SIGNAL : pre_save Observation(090311016)
+[2019-10-20 09:04:35,599] handle_pre_save(090311016)
+[2019-10-20 09:04:35,616] handle_post_save(090311016)
+[2019-10-20 09:04:35,616] save new observation
+[2019-10-20 09:04:36,798] add_dataproducts(090311016,1)
+[2019-10-20 09:04:36,801] addding dataproduct: orion.jpg
+[2019-10-20 09:04:36,801] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:04:36,802] handle_pre_save(orion.jpg)
+[2019-10-20 09:04:36,817] handle_post_save(orion.jpg)
+[2019-10-20 09:04:36,817] save new dataproduct
+[2019-10-20 09:04:36,826] update dataproduct parent = 090311016
+[2019-10-20 09:04:39,164] SIGNAL : pre_save Observation(090311016)
+[2019-10-20 09:04:39,164] handle_pre_save(090311016)
+[2019-10-20 09:04:39,198] handle_post_save(090311016)
+[2019-10-20 09:04:55,858] get_next_taskid(20090311)
+[2019-10-20 09:04:55,858] checking taskid 090311001..
+[2019-10-20 09:04:55,860] checking taskid 090311002..
+[2019-10-20 09:04:55,860] checking taskid 090311003..
+[2019-10-20 09:04:55,861] checking taskid 090311004..
+[2019-10-20 09:04:55,862] checking taskid 090311005..
+[2019-10-20 09:04:55,863] checking taskid 090311006..
+[2019-10-20 09:04:55,864] checking taskid 090311007..
+[2019-10-20 09:04:55,865] checking taskid 090311008..
+[2019-10-20 09:04:55,866] checking taskid 090311009..
+[2019-10-20 09:04:55,867] checking taskid 090311010..
+[2019-10-20 09:04:55,868] checking taskid 090311011..
+[2019-10-20 09:04:55,870] checking taskid 090311012..
+[2019-10-20 09:04:55,879] checking taskid 090311013..
+[2019-10-20 09:04:55,881] checking taskid 090311014..
+[2019-10-20 09:04:55,881] checking taskid 090311015..
+[2019-10-20 09:04:55,882] checking taskid 090311016..
+[2019-10-20 09:04:55,883] checking taskid 090311017..
+[2019-10-20 09:04:55,884] checking taskid 090311018..
+[2019-10-20 09:04:55,885] checking taskid 090311019..
+[2019-10-20 09:04:55,886] checking taskid 090311020..
+[2019-10-20 09:04:57,059] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 09:04:57,061] handle_pre_save(090311020)
+[2019-10-20 09:04:57,089] handle_post_save(090311020)
+[2019-10-20 09:04:57,089] save new observation
+[2019-10-20 09:04:58,365] add_dataproducts(090311020,1)
+[2019-10-20 09:04:58,367] addding dataproduct: orion.jpg
+[2019-10-20 09:04:58,368] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:04:58,368] handle_pre_save(orion.jpg)
+[2019-10-20 09:04:58,378] handle_post_save(orion.jpg)
+[2019-10-20 09:04:58,379] save new dataproduct
+[2019-10-20 09:04:58,387] update dataproduct parent = 090311020
+[2019-10-20 09:05:00,734] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 09:05:00,734] handle_pre_save(090311020)
+[2019-10-20 09:05:00,772] handle_post_save(090311020)
+[2019-10-20 09:05:17,432] get_next_taskid(20090311)
+[2019-10-20 09:05:17,433] checking taskid 090311001..
+[2019-10-20 09:05:17,434] checking taskid 090311002..
+[2019-10-20 09:05:17,435] checking taskid 090311003..
+[2019-10-20 09:05:17,444] checking taskid 090311004..
+[2019-10-20 09:05:17,445] checking taskid 090311005..
+[2019-10-20 09:05:17,446] checking taskid 090311006..
+[2019-10-20 09:05:17,447] checking taskid 090311007..
+[2019-10-20 09:05:17,448] checking taskid 090311008..
+[2019-10-20 09:05:17,449] checking taskid 090311009..
+[2019-10-20 09:05:17,450] checking taskid 090311010..
+[2019-10-20 09:05:17,451] checking taskid 090311011..
+[2019-10-20 09:05:17,452] checking taskid 090311012..
+[2019-10-20 09:05:17,452] checking taskid 090311013..
+[2019-10-20 09:05:17,453] checking taskid 090311014..
+[2019-10-20 09:05:17,454] checking taskid 090311015..
+[2019-10-20 09:05:17,455] checking taskid 090311016..
+[2019-10-20 09:05:17,456] checking taskid 090311017..
+[2019-10-20 09:05:17,457] checking taskid 090311018..
+[2019-10-20 09:05:17,458] checking taskid 090311019..
+[2019-10-20 09:05:17,459] checking taskid 090311020..
+[2019-10-20 09:05:17,460] checking taskid 090311021..
+[2019-10-20 09:05:18,712] SIGNAL : pre_save Observation(090311021)
+[2019-10-20 09:05:18,712] handle_pre_save(090311021)
+[2019-10-20 09:05:18,731] handle_post_save(090311021)
+[2019-10-20 09:05:18,731] save new observation
+[2019-10-20 09:05:20,019] add_dataproducts(090311021,1)
+[2019-10-20 09:05:20,021] addding dataproduct: orion.jpg
+[2019-10-20 09:05:20,021] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:05:20,022] handle_pre_save(orion.jpg)
+[2019-10-20 09:05:20,038] handle_post_save(orion.jpg)
+[2019-10-20 09:05:20,039] save new dataproduct
+[2019-10-20 09:05:20,048] update dataproduct parent = 090311021
+[2019-10-20 09:05:22,459] SIGNAL : pre_save Observation(090311021)
+[2019-10-20 09:05:22,459] handle_pre_save(090311021)
+[2019-10-20 09:05:22,497] handle_post_save(090311021)
+[2019-10-20 09:05:39,200] get_next_taskid(20090311)
+[2019-10-20 09:05:39,200] checking taskid 090311001..
+[2019-10-20 09:05:39,203] checking taskid 090311002..
+[2019-10-20 09:05:39,210] checking taskid 090311003..
+[2019-10-20 09:05:39,211] checking taskid 090311004..
+[2019-10-20 09:05:39,212] checking taskid 090311005..
+[2019-10-20 09:05:39,213] checking taskid 090311006..
+[2019-10-20 09:05:39,215] checking taskid 090311007..
+[2019-10-20 09:05:39,216] checking taskid 090311008..
+[2019-10-20 09:05:39,217] checking taskid 090311009..
+[2019-10-20 09:05:39,218] checking taskid 090311010..
+[2019-10-20 09:05:39,220] checking taskid 090311011..
+[2019-10-20 09:05:39,221] checking taskid 090311012..
+[2019-10-20 09:05:39,222] checking taskid 090311013..
+[2019-10-20 09:05:39,223] checking taskid 090311014..
+[2019-10-20 09:05:39,224] checking taskid 090311015..
+[2019-10-20 09:05:39,226] checking taskid 090311016..
+[2019-10-20 09:05:39,227] checking taskid 090311017..
+[2019-10-20 09:05:39,228] checking taskid 090311018..
+[2019-10-20 09:05:39,229] checking taskid 090311019..
+[2019-10-20 09:05:39,230] checking taskid 090311020..
+[2019-10-20 09:05:39,231] checking taskid 090311021..
+[2019-10-20 09:05:39,232] checking taskid 090311022..
+[2019-10-20 09:05:40,404] SIGNAL : pre_save Observation(090311022)
+[2019-10-20 09:05:40,404] handle_pre_save(090311022)
+[2019-10-20 09:05:40,421] handle_post_save(090311022)
+[2019-10-20 09:05:40,421] save new observation
+[2019-10-20 09:05:41,612] add_dataproducts(090311022,1)
+[2019-10-20 09:05:41,614] addding dataproduct: orion.jpg
+[2019-10-20 09:05:41,615] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:05:41,615] handle_pre_save(orion.jpg)
+[2019-10-20 09:05:41,633] handle_post_save(orion.jpg)
+[2019-10-20 09:05:41,634] save new dataproduct
+[2019-10-20 09:05:41,643] update dataproduct parent = 090311022
+[2019-10-20 09:05:44,067] SIGNAL : pre_save Observation(090311022)
+[2019-10-20 09:05:44,067] handle_pre_save(090311022)
+[2019-10-20 09:05:44,103] handle_post_save(090311022)
+[2019-10-20 09:05:57,336] get_next_taskid(20090311)
+[2019-10-20 09:05:57,336] checking taskid 090311001..
+[2019-10-20 09:05:57,338] checking taskid 090311002..
+[2019-10-20 09:05:57,339] checking taskid 090311003..
+[2019-10-20 09:05:57,339] checking taskid 090311004..
+[2019-10-20 09:05:57,340] checking taskid 090311005..
+[2019-10-20 09:05:57,341] checking taskid 090311006..
+[2019-10-20 09:05:57,342] checking taskid 090311007..
+[2019-10-20 09:05:57,344] checking taskid 090311008..
+[2019-10-20 09:05:57,345] checking taskid 090311009..
+[2019-10-20 09:05:57,346] checking taskid 090311010..
+[2019-10-20 09:05:57,347] checking taskid 090311011..
+[2019-10-20 09:05:57,348] checking taskid 090311012..
+[2019-10-20 09:05:57,349] checking taskid 090311013..
+[2019-10-20 09:05:57,350] checking taskid 090311014..
+[2019-10-20 09:05:57,350] checking taskid 090311015..
+[2019-10-20 09:05:57,351] checking taskid 090311016..
+[2019-10-20 09:05:57,352] checking taskid 090311017..
+[2019-10-20 09:05:57,353] checking taskid 090311018..
+[2019-10-20 09:05:57,354] checking taskid 090311019..
+[2019-10-20 09:05:57,355] checking taskid 090311020..
+[2019-10-20 09:05:57,356] checking taskid 090311021..
+[2019-10-20 09:05:57,358] checking taskid 090311022..
+[2019-10-20 09:05:57,367] checking taskid 090311023..
+[2019-10-20 09:05:58,523] SIGNAL : pre_save Observation(090311023)
+[2019-10-20 09:05:58,524] handle_pre_save(090311023)
+[2019-10-20 09:05:58,534] handle_post_save(090311023)
+[2019-10-20 09:05:58,535] save new observation
+[2019-10-20 09:05:59,723] add_dataproducts(090311023,1)
+[2019-10-20 09:05:59,725] addding dataproduct: orion.jpg
+[2019-10-20 09:05:59,725] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:05:59,726] handle_pre_save(orion.jpg)
+[2019-10-20 09:05:59,737] handle_post_save(orion.jpg)
+[2019-10-20 09:05:59,737] save new dataproduct
+[2019-10-20 09:05:59,745] update dataproduct parent = 090311023
+[2019-10-20 09:06:02,079] SIGNAL : pre_save Observation(090311023)
+[2019-10-20 09:06:02,080] handle_pre_save(090311023)
+[2019-10-20 09:06:02,117] handle_post_save(090311023)
+[2019-10-20 09:06:31,854] get_next_taskid(20090311)
+[2019-10-20 09:06:31,854] checking taskid 090311001..
+[2019-10-20 09:06:31,856] checking taskid 090311002..
+[2019-10-20 09:06:31,857] checking taskid 090311003..
+[2019-10-20 09:06:31,858] checking taskid 090311004..
+[2019-10-20 09:06:31,859] checking taskid 090311005..
+[2019-10-20 09:06:31,861] checking taskid 090311006..
+[2019-10-20 09:06:31,869] checking taskid 090311007..
+[2019-10-20 09:06:31,870] checking taskid 090311008..
+[2019-10-20 09:06:31,871] checking taskid 090311009..
+[2019-10-20 09:06:31,872] checking taskid 090311010..
+[2019-10-20 09:06:31,873] checking taskid 090311011..
+[2019-10-20 09:06:31,875] checking taskid 090311012..
+[2019-10-20 09:06:31,876] checking taskid 090311013..
+[2019-10-20 09:06:31,877] checking taskid 090311014..
+[2019-10-20 09:06:31,878] checking taskid 090311015..
+[2019-10-20 09:06:31,878] checking taskid 090311016..
+[2019-10-20 09:06:31,879] checking taskid 090311017..
+[2019-10-20 09:06:31,880] checking taskid 090311018..
+[2019-10-20 09:06:31,881] checking taskid 090311019..
+[2019-10-20 09:06:31,882] checking taskid 090311020..
+[2019-10-20 09:06:31,883] checking taskid 090311021..
+[2019-10-20 09:06:31,884] checking taskid 090311022..
+[2019-10-20 09:06:31,886] checking taskid 090311023..
+[2019-10-20 09:06:31,887] checking taskid 090311024..
+[2019-10-20 09:06:33,059] SIGNAL : pre_save Observation(090311024)
+[2019-10-20 09:06:33,059] handle_pre_save(090311024)
+[2019-10-20 09:06:33,074] handle_post_save(090311024)
+[2019-10-20 09:06:33,074] save new observation
+[2019-10-20 09:06:34,246] add_dataproducts(090311024,1)
+[2019-10-20 09:06:34,248] addding dataproduct: orion.jpg
+[2019-10-20 09:06:34,248] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:06:34,249] handle_pre_save(orion.jpg)
+[2019-10-20 09:06:34,268] handle_post_save(orion.jpg)
+[2019-10-20 09:06:34,268] save new dataproduct
+[2019-10-20 09:06:34,277] update dataproduct parent = 090311024
+[2019-10-20 09:06:36,660] SIGNAL : pre_save Observation(090311024)
+[2019-10-20 09:06:36,661] handle_pre_save(090311024)
+[2019-10-20 09:06:36,704] handle_post_save(090311024)
+[2019-10-20 09:07:50,635] get_next_taskid(20090311)
+[2019-10-20 09:07:50,635] checking taskid 090311001..
+[2019-10-20 09:07:50,636] checking taskid 090311002..
+[2019-10-20 09:07:50,637] checking taskid 090311003..
+[2019-10-20 09:07:50,638] checking taskid 090311004..
+[2019-10-20 09:07:50,639] checking taskid 090311005..
+[2019-10-20 09:07:50,640] checking taskid 090311006..
+[2019-10-20 09:07:50,641] checking taskid 090311007..
+[2019-10-20 09:07:50,642] checking taskid 090311008..
+[2019-10-20 09:07:50,643] checking taskid 090311009..
+[2019-10-20 09:07:50,644] checking taskid 090311010..
+[2019-10-20 09:07:50,645] checking taskid 090311011..
+[2019-10-20 09:07:50,646] checking taskid 090311012..
+[2019-10-20 09:07:50,647] checking taskid 090311013..
+[2019-10-20 09:07:50,648] checking taskid 090311014..
+[2019-10-20 09:07:50,649] checking taskid 090311015..
+[2019-10-20 09:07:50,650] checking taskid 090311016..
+[2019-10-20 09:07:50,651] checking taskid 090311017..
+[2019-10-20 09:07:50,652] checking taskid 090311018..
+[2019-10-20 09:07:50,654] checking taskid 090311019..
+[2019-10-20 09:07:50,655] checking taskid 090311020..
+[2019-10-20 09:07:50,664] checking taskid 090311021..
+[2019-10-20 09:07:50,665] checking taskid 090311022..
+[2019-10-20 09:07:50,666] checking taskid 090311023..
+[2019-10-20 09:07:50,667] checking taskid 090311024..
+[2019-10-20 09:07:50,668] checking taskid 090311025..
+[2019-10-20 09:07:51,839] SIGNAL : pre_save Observation(090311025)
+[2019-10-20 09:07:51,840] handle_pre_save(090311025)
+[2019-10-20 09:07:51,852] handle_post_save(090311025)
+[2019-10-20 09:07:51,853] save new observation
+[2019-10-20 09:07:53,029] add_dataproducts(090311025,1)
+[2019-10-20 09:07:53,031] addding dataproduct: orion.jpg
+[2019-10-20 09:07:53,039] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:07:53,039] handle_pre_save(orion.jpg)
+[2019-10-20 09:07:53,055] handle_post_save(orion.jpg)
+[2019-10-20 09:07:53,056] save new dataproduct
+[2019-10-20 09:07:53,064] update dataproduct parent = 090311025
+[2019-10-20 09:07:55,437] SIGNAL : pre_save Observation(090311025)
+[2019-10-20 09:07:55,437] handle_pre_save(090311025)
+[2019-10-20 09:07:55,496] handle_post_save(090311025)
+[2019-10-20 09:08:18,884] get_next_taskid(20090311)
+[2019-10-20 09:08:18,884] checking taskid 090311001..
+[2019-10-20 09:08:18,885] checking taskid 090311002..
+[2019-10-20 09:08:18,886] checking taskid 090311003..
+[2019-10-20 09:08:18,887] checking taskid 090311004..
+[2019-10-20 09:08:18,888] checking taskid 090311005..
+[2019-10-20 09:08:18,889] checking taskid 090311006..
+[2019-10-20 09:08:18,890] checking taskid 090311007..
+[2019-10-20 09:08:18,891] checking taskid 090311008..
+[2019-10-20 09:08:18,892] checking taskid 090311009..
+[2019-10-20 09:08:18,893] checking taskid 090311010..
+[2019-10-20 09:08:18,894] checking taskid 090311011..
+[2019-10-20 09:08:18,895] checking taskid 090311012..
+[2019-10-20 09:08:18,896] checking taskid 090311013..
+[2019-10-20 09:08:18,896] checking taskid 090311014..
+[2019-10-20 09:08:18,897] checking taskid 090311015..
+[2019-10-20 09:08:18,898] checking taskid 090311016..
+[2019-10-20 09:08:18,899] checking taskid 090311017..
+[2019-10-20 09:08:18,900] checking taskid 090311018..
+[2019-10-20 09:08:18,902] checking taskid 090311019..
+[2019-10-20 09:08:18,911] checking taskid 090311020..
+[2019-10-20 09:08:18,911] checking taskid 090311021..
+[2019-10-20 09:08:18,912] checking taskid 090311022..
+[2019-10-20 09:08:18,913] checking taskid 090311023..
+[2019-10-20 09:08:18,914] checking taskid 090311024..
+[2019-10-20 09:08:18,915] checking taskid 090311025..
+[2019-10-20 09:08:18,916] checking taskid 090311026..
+[2019-10-20 09:08:20,149] SIGNAL : pre_save Observation(090311026)
+[2019-10-20 09:08:20,149] handle_pre_save(090311026)
+[2019-10-20 09:08:20,160] handle_post_save(090311026)
+[2019-10-20 09:08:20,160] save new observation
+[2019-10-20 09:08:21,448] add_dataproducts(090311026,1)
+[2019-10-20 09:08:21,450] addding dataproduct: orion.jpg
+[2019-10-20 09:08:21,450] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:08:21,451] handle_pre_save(orion.jpg)
+[2019-10-20 09:08:21,463] handle_post_save(orion.jpg)
+[2019-10-20 09:08:21,463] save new dataproduct
+[2019-10-20 09:08:21,473] update dataproduct parent = 090311026
+[2019-10-20 09:08:23,862] SIGNAL : pre_save Observation(090311026)
+[2019-10-20 09:08:23,863] handle_pre_save(090311026)
+[2019-10-20 09:08:23,895] handle_post_save(090311026)
+[2019-10-20 09:10:20,319] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:10:20,319] handle_pre_save(090311015)
+[2019-10-20 09:10:20,370] handle_post_save(090311015)
+[2019-10-20 09:10:23,195] SIGNAL : pre_save Observation(090311021)
+[2019-10-20 09:10:23,195] handle_pre_save(090311021)
+[2019-10-20 09:10:23,235] handle_post_save(090311021)
+[2019-10-20 09:10:24,209] SIGNAL : pre_save Observation(090311022)
+[2019-10-20 09:10:24,210] handle_pre_save(090311022)
+[2019-10-20 09:10:24,247] handle_post_save(090311022)
+[2019-10-20 09:10:25,158] SIGNAL : pre_save Observation(090311023)
+[2019-10-20 09:10:25,159] handle_pre_save(090311023)
+[2019-10-20 09:10:25,198] handle_post_save(090311023)
+[2019-10-20 09:10:26,105] SIGNAL : pre_save Observation(090311024)
+[2019-10-20 09:10:26,106] handle_pre_save(090311024)
+[2019-10-20 09:10:26,145] handle_post_save(090311024)
+[2019-10-20 09:10:26,955] SIGNAL : pre_save Observation(090311025)
+[2019-10-20 09:10:26,955] handle_pre_save(090311025)
+[2019-10-20 09:10:26,990] handle_post_save(090311025)
+[2019-10-20 09:10:27,825] SIGNAL : pre_save Observation(090311026)
+[2019-10-20 09:10:27,825] handle_pre_save(090311026)
+[2019-10-20 09:10:27,870] handle_post_save(090311026)
+[2019-10-20 09:10:30,299] SIGNAL : pre_save Observation(090311020)
+[2019-10-20 09:10:30,299] handle_pre_save(090311020)
+[2019-10-20 09:10:30,344] handle_post_save(090311020)
+[2019-10-20 09:10:33,885] SIGNAL : pre_save Observation(090311016)
+[2019-10-20 09:10:33,885] handle_pre_save(090311016)
+[2019-10-20 09:10:33,923] handle_post_save(090311016)
+[2019-10-20 09:12:21,682] get_next_taskid(20090311)
+[2019-10-20 09:12:21,683] checking taskid 090311001..
+[2019-10-20 09:12:21,684] checking taskid 090311002..
+[2019-10-20 09:12:21,685] checking taskid 090311003..
+[2019-10-20 09:12:21,686] checking taskid 090311004..
+[2019-10-20 09:12:21,687] checking taskid 090311005..
+[2019-10-20 09:12:21,688] checking taskid 090311006..
+[2019-10-20 09:12:21,690] checking taskid 090311007..
+[2019-10-20 09:12:21,691] checking taskid 090311008..
+[2019-10-20 09:12:21,702] checking taskid 090311009..
+[2019-10-20 09:12:21,703] checking taskid 090311010..
+[2019-10-20 09:12:21,704] checking taskid 090311011..
+[2019-10-20 09:12:21,705] checking taskid 090311012..
+[2019-10-20 09:12:21,706] checking taskid 090311013..
+[2019-10-20 09:12:21,707] checking taskid 090311014..
+[2019-10-20 09:12:21,708] checking taskid 090311015..
+[2019-10-20 09:12:22,865] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:12:22,865] handle_pre_save(090311015)
+[2019-10-20 09:12:22,877] handle_post_save(090311015)
+[2019-10-20 09:12:22,878] save new observation
+[2019-10-20 09:12:23,904] get_next_taskid(20090311)
+[2019-10-20 09:12:23,904] checking taskid 090311001..
+[2019-10-20 09:12:23,906] checking taskid 090311002..
+[2019-10-20 09:12:23,907] checking taskid 090311003..
+[2019-10-20 09:12:23,908] checking taskid 090311004..
+[2019-10-20 09:12:23,909] checking taskid 090311005..
+[2019-10-20 09:12:23,910] checking taskid 090311006..
+[2019-10-20 09:12:23,911] checking taskid 090311007..
+[2019-10-20 09:12:23,912] checking taskid 090311008..
+[2019-10-20 09:12:23,914] checking taskid 090311009..
+[2019-10-20 09:12:23,915] checking taskid 090311010..
+[2019-10-20 09:12:23,917] checking taskid 090311011..
+[2019-10-20 09:12:23,922] checking taskid 090311012..
+[2019-10-20 09:12:23,924] checking taskid 090311013..
+[2019-10-20 09:12:23,926] checking taskid 090311014..
+[2019-10-20 09:12:23,927] checking taskid 090311015..
+[2019-10-20 09:12:23,929] checking taskid 090311016..
+[2019-10-20 09:12:24,049] add_dataproducts(090311015,1)
+[2019-10-20 09:12:24,050] addding dataproduct: orion.jpg
+[2019-10-20 09:12:24,051] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:12:24,051] handle_pre_save(orion.jpg)
+[2019-10-20 09:12:24,062] handle_post_save(orion.jpg)
+[2019-10-20 09:12:24,063] save new dataproduct
+[2019-10-20 09:12:24,072] update dataproduct parent = 090311015
+[2019-10-20 09:12:25,101] SIGNAL : pre_save Observation(090311016)
+[2019-10-20 09:12:25,102] handle_pre_save(090311016)
+[2019-10-20 09:12:25,118] handle_post_save(090311016)
+[2019-10-20 09:12:25,118] save new observation
+[2019-10-20 09:12:26,297] add_dataproducts(090311016,1)
+[2019-10-20 09:12:26,300] addding dataproduct: orion.jpg
+[2019-10-20 09:12:26,300] SIGNAL : pre_save DataProduct(orion.jpg)
+[2019-10-20 09:12:26,300] handle_pre_save(orion.jpg)
+[2019-10-20 09:12:26,315] handle_post_save(orion.jpg)
+[2019-10-20 09:12:26,316] save new dataproduct
+[2019-10-20 09:12:26,324] update dataproduct parent = 090311016
+[2019-10-20 09:12:26,438] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:12:26,438] handle_pre_save(090311015)
+[2019-10-20 09:12:26,467] handle_post_save(090311015)
+[2019-10-20 09:12:28,657] SIGNAL : pre_save Observation(090311016)
+[2019-10-20 09:12:28,657] handle_pre_save(090311016)
+[2019-10-20 09:12:28,692] handle_post_save(090311016)
+[2019-10-20 09:14:12,030] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:14:12,031] handle_pre_save(090311015)
+[2019-10-20 09:14:12,071] handle_post_save(090311015)
+[2019-10-20 09:14:21,408] DataProductsListView.get_queryset()
+[2019-10-20 09:14:21,409] my_queryset retrieved
+[2019-10-20 09:14:31,520] DataProductsListView.get_queryset()
+[2019-10-20 09:14:31,521] my_queryset retrieved
+[2019-10-20 09:17:14,748] SIGNAL : pre_save Observation(090311016)
+[2019-10-20 09:17:14,748] handle_pre_save(090311016)
+[2019-10-20 09:17:14,794] handle_post_save(090311016)
+[2019-10-20 09:17:39,576] get_next_taskid(20090311)
+[2019-10-20 09:17:39,577] checking taskid 090311001..
+[2019-10-20 09:17:39,578] checking taskid 090311002..
+[2019-10-20 09:17:39,579] checking taskid 090311003..
+[2019-10-20 09:17:39,580] checking taskid 090311004..
+[2019-10-20 09:17:39,581] checking taskid 090311005..
+[2019-10-20 09:17:39,582] checking taskid 090311006..
+[2019-10-20 09:17:39,583] checking taskid 090311007..
+[2019-10-20 09:17:39,584] checking taskid 090311008..
+[2019-10-20 09:17:39,585] checking taskid 090311009..
+[2019-10-20 09:17:39,586] checking taskid 090311010..
+[2019-10-20 09:17:39,587] checking taskid 090311011..
+[2019-10-20 09:17:39,588] checking taskid 090311012..
+[2019-10-20 09:17:39,589] checking taskid 090311013..
+[2019-10-20 09:17:39,590] checking taskid 090311014..
+[2019-10-20 09:17:39,591] checking taskid 090311015..
+[2019-10-20 09:17:40,769] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:17:40,770] handle_pre_save(090311015)
+[2019-10-20 09:17:40,787] handle_post_save(090311015)
+[2019-10-20 09:17:40,788] save new observation
+[2019-10-20 09:17:41,961] add_dataproducts(090311015,1)
+[2019-10-20 09:17:41,963] addding dataproduct: 090311015_raw.jpg
+[2019-10-20 09:17:41,964] SIGNAL : pre_save DataProduct(090311015_raw.jpg)
+[2019-10-20 09:17:41,964] handle_pre_save(090311015_raw.jpg)
+[2019-10-20 09:17:41,984] handle_post_save(090311015_raw.jpg)
+[2019-10-20 09:17:41,985] save new dataproduct
+[2019-10-20 09:17:41,995] update dataproduct parent = 090311015
+[2019-10-20 09:17:44,314] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:17:44,315] handle_pre_save(090311015)
+[2019-10-20 09:17:44,362] handle_post_save(090311015)
+[2019-10-20 09:17:51,859] DataProductsListView.get_queryset()
+[2019-10-20 09:17:51,860] my_queryset retrieved
+[2019-10-20 09:18:02,006] DataProductsListView.get_queryset()
+[2019-10-20 09:18:02,007] my_queryset retrieved
+[2019-10-20 09:18:08,762] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:18:08,762] handle_pre_save(090311015)
+[2019-10-20 09:18:08,802] handle_post_save(090311015)
+[2019-10-20 09:18:30,949] get_next_taskid(20090311)
+[2019-10-20 09:18:30,950] checking taskid 090311001..
+[2019-10-20 09:18:30,952] checking taskid 090311002..
+[2019-10-20 09:18:30,953] checking taskid 090311003..
+[2019-10-20 09:18:30,954] checking taskid 090311004..
+[2019-10-20 09:18:30,954] checking taskid 090311005..
+[2019-10-20 09:18:30,955] checking taskid 090311006..
+[2019-10-20 09:18:30,956] checking taskid 090311007..
+[2019-10-20 09:18:30,957] checking taskid 090311008..
+[2019-10-20 09:18:30,958] checking taskid 090311009..
+[2019-10-20 09:18:30,959] checking taskid 090311010..
+[2019-10-20 09:18:30,960] checking taskid 090311011..
+[2019-10-20 09:18:30,961] checking taskid 090311012..
+[2019-10-20 09:18:30,962] checking taskid 090311013..
+[2019-10-20 09:18:30,963] checking taskid 090311014..
+[2019-10-20 09:18:30,964] checking taskid 090311015..
+[2019-10-20 09:18:32,149] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:18:32,150] handle_pre_save(090311015)
+[2019-10-20 09:18:32,165] handle_post_save(090311015)
+[2019-10-20 09:18:32,165] save new observation
+[2019-10-20 09:18:33,427] add_dataproducts(090311015,1)
+[2019-10-20 09:18:33,429] addding dataproduct: 090311015_raw.jpg
+[2019-10-20 09:18:33,430] SIGNAL : pre_save DataProduct(090311015_raw.jpg)
+[2019-10-20 09:18:33,430] handle_pre_save(090311015_raw.jpg)
+[2019-10-20 09:18:33,446] handle_post_save(090311015_raw.jpg)
+[2019-10-20 09:18:33,447] save new dataproduct
+[2019-10-20 09:18:33,465] update dataproduct parent = 090311015
+[2019-10-20 09:18:35,918] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:18:35,918] handle_pre_save(090311015)
+[2019-10-20 09:18:35,958] handle_post_save(090311015)
+[2019-10-20 09:18:57,340] DataProductsListView.get_queryset()
+[2019-10-20 09:18:57,341] my_queryset retrieved
+[2019-10-20 09:19:07,475] DataProductsListView.get_queryset()
+[2019-10-20 09:19:07,476] my_queryset retrieved
+[2019-10-20 09:21:58,886] get_next_taskid(20090311)
+[2019-10-20 09:21:58,887] checking taskid 090311001..
+[2019-10-20 09:21:58,888] checking taskid 090311002..
+[2019-10-20 09:21:58,889] checking taskid 090311003..
+[2019-10-20 09:21:58,890] checking taskid 090311004..
+[2019-10-20 09:21:58,891] checking taskid 090311005..
+[2019-10-20 09:21:58,892] checking taskid 090311006..
+[2019-10-20 09:21:58,893] checking taskid 090311007..
+[2019-10-20 09:21:58,893] checking taskid 090311008..
+[2019-10-20 09:21:58,894] checking taskid 090311009..
+[2019-10-20 09:21:58,895] checking taskid 090311010..
+[2019-10-20 09:21:58,896] checking taskid 090311011..
+[2019-10-20 09:21:58,897] checking taskid 090311012..
+[2019-10-20 09:21:58,898] checking taskid 090311013..
+[2019-10-20 09:21:58,899] checking taskid 090311014..
+[2019-10-20 09:21:58,900] checking taskid 090311015..
+[2019-10-20 09:21:58,901] checking taskid 090311016..
+[2019-10-20 09:22:13,707] SIGNAL : pre_save Observation(090311016)
+[2019-10-20 09:22:13,707] handle_pre_save(090311016)
+[2019-10-20 09:22:13,724] handle_post_save(090311016)
+[2019-10-20 09:22:13,724] save new observation
+[2019-10-20 09:22:14,883] add_dataproducts(090311016,1)
+[2019-10-20 09:22:14,884] addding dataproduct: 090311016_raw.jpg
+[2019-10-20 09:22:14,885] SIGNAL : pre_save DataProduct(090311016_raw.jpg)
+[2019-10-20 09:22:14,885] handle_pre_save(090311016_raw.jpg)
+[2019-10-20 09:22:14,895] handle_post_save(090311016_raw.jpg)
+[2019-10-20 09:22:14,895] save new dataproduct
+[2019-10-20 09:22:14,904] update dataproduct parent = 090311016
+[2019-10-20 09:22:17,375] SIGNAL : pre_save Observation(090311016)
+[2019-10-20 09:22:17,375] handle_pre_save(090311016)
+[2019-10-20 09:22:17,412] handle_post_save(090311016)
+[2019-10-20 09:22:26,417] DataProductsListView.get_queryset()
+[2019-10-20 09:22:26,418] my_queryset retrieved
+[2019-10-20 09:22:43,316] DataProductsListView.get_queryset()
+[2019-10-20 09:22:43,317] my_queryset retrieved
+[2019-10-20 09:22:53,450] DataProductsListView.get_queryset()
+[2019-10-20 09:22:53,451] my_queryset retrieved
+[2019-10-20 09:23:06,118] SIGNAL : pre_save Observation(090311015)
+[2019-10-20 09:23:06,119] handle_pre_save(090311015)
+[2019-10-20 09:23:06,155] handle_post_save(090311015)
+[2019-10-20 09:23:07,944] SIGNAL : pre_save Observation(090311016)
+[2019-10-20 09:23:07,945] handle_pre_save(090311016)
+[2019-10-20 09:23:07,979] handle_post_save(090311016)

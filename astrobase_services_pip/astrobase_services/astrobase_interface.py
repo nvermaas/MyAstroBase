@@ -10,6 +10,7 @@ import datetime
 astrobase_interface.py : a commandline tool to interface with the AstroBase REST API.
 :author Nico Vermaas - Astron
 """
+VERSION = "1.0.0"
 LAST_UPDATE = "13 oct 2019"
 
 # ====================================================================
@@ -24,7 +25,7 @@ ASTROBASE_HEADER = {
 # some constants
 ASTROBASE_HOST_DEV = "http://localhost:8000/astrobase"       # your local development environment with Django webserver
 ASTROBASE_HOST_VM = "http://localhost:8000/astrobase"         # your local Ansible/Vagrant setup for testing
-ASTROBASE_HOST_PROD = "http://localhost:8000/astrobase"      # the atdb production environment.
+ASTROBASE_HOST_PROD = "http://192.168.178.62:8018/astrobase"      # the astrobase production environment.
 
 DEFAULT_ASTROBASE_HOST = ASTROBASE_HOST_DEV
 TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
@@ -40,7 +41,7 @@ class AstroBase:
         :param host: the host name of the backend.
         :param username: The username known in Django Admin.
         :param verbose: more information runtime.
-        :param header: Request header for Atdb REST requests with token authentication.
+        :param header: Request header for Astrobase REST requests with token authentication.
         """
         # accept some presets to set host to dev, test, acc or prod
         self.host = host
@@ -209,7 +210,7 @@ class AstroBase:
 
     def do_GET(self, key, id, taskid):
         """
-        Do a http GET request to the ATDB backend to find the value of one field of an object
+        Do a http GET request to the astrobase backend to find the value of one field of an object
         :param key: contains the name of the resource and the name of the field separated by a colon.
         :param id: the database id of the object.
         :param taskid (optional): when the taskid (of an activity) is known it can be used instead of id.
@@ -245,10 +246,10 @@ class AstroBase:
               Exception("ERROR: " + str(response.status_code) + ", " + str(response.reason) + ', ' + str(response.content)))
 
 
-    #  python atdb_interface.py -o GET_LIST --key observations:taskID --query status=valid
+    #  python astrobase_interface.py -o GET_LIST --key observations:taskID --query status=valid
     def do_GET_LIST(self, key, query):
         """
-        Do a http GET request to the ATDB backend to find the value of one field of an object
+        Do a http GET request to the astrobase backend to find the value of one field of an object
         :param key: contains the name of the resource and the name of the field separated by a dot.
         :param id: the database id of the object.
         :param taskid (optional): when the taskid (of an activity) is known it can be used instead of id.
@@ -297,7 +298,7 @@ class AstroBase:
         # construct the url
         url = self.host + "get_next_taskid?timestamp=" + str(timestamp)+"&taskid_postfix="+taskid_postfix
 
-        # do the request to the ATDB backend
+        # do the request to the astrobase backend
         response = requests.request("GET", url, headers=self.header)
         self.verbose_print("[GET " + response.url + "]")
         self.verbose_print("Response: " + str(response.status_code) + ", " + str(response.reason))
@@ -315,7 +316,7 @@ class AstroBase:
 
     def do_GET_Observation(self, taskid):
         """
-        Do a http request to the ATDB backend get all the observation parameters in the response
+        Do a http request to the astrobase backend get all the observation parameters in the response
         :param taskid
         """
         self.verbose_print("do_GET_Observation(" + taskid + ")")
@@ -323,7 +324,7 @@ class AstroBase:
         # construct the url
         url = self.host + "observations?taskID=" + str(taskid)
 
-        # do the request to the ATDB backend
+        # do the request to the astrobase backend
         response = requests.request("GET", url, headers=self.header)
         self.verbose_print("[GET " + response.url + "]")
 
@@ -333,36 +334,6 @@ class AstroBase:
             results = json_response["results"]
             observation = results[0]
             return observation
-        except Exception as err:
-            self.verbose_print("Exception : " + str(err))
-            raise (Exception(
-                "ERROR: " + str(response.status_code) + ", " + str(response.reason) + ', ' + str(response.content)))
-
-
-
-    def do_GET_NextObservation(self, my_status, observing_mode, datawriter):
-        """
-        Do a http request to the ATDB backend get the next observation of a given status and observing_mode
-        :param my_status: status to search for (probably 'scheduled')
-        :param observing_mode: imaging or arts
-        :param taskid (optional): when the taskid (of an activity) is known it can be used instead of id.
-        """
-        self.verbose_print("do_GET_NextObservation(" + my_status + "," + observing_mode + "," + datawriter + ")")
-
-        # construct the url
-        url = self.host + "get_next_observation?my_status=" + str(my_status) + "&observing_mode=" + str(observing_mode) + "&datawriter=" + str(datawriter)
-
-        # do the request to the ATDB backend
-        response = requests.request("GET", url, headers=self.header)
-        self.verbose_print("[GET " + response.url + "]")
-        self.verbose_print("Response: " + str(response.status_code) + ", " + str(response.reason))
-
-        # parse the response
-        try:
-            json_response = json.loads(response.text)
-            taskID = json_response["taskID"]
-            minutes_left = json_response["minutes_left"]
-            return taskID, minutes_left
         except Exception as err:
             self.verbose_print("Exception : " + str(err))
             raise (Exception(
@@ -472,7 +443,7 @@ class AstroBase:
     def do_POST_dataproducts(self, taskid, dataproducts):
         """
         POST (create) a batch of dataproducts for the (observation) with the given taskid.
-        This is done with a custom made http request to the ATDB backend
+        This is done with a custom made http request to the AstroBase backend
         :param taskid: taskid of the observation
         :param dataproducts: json list of dataproducts to be added to the provided taskid
         """
@@ -491,7 +462,7 @@ class AstroBase:
         # encode the dictonary as proper json
         payload = self.encodePayload(dataproducts)
         try:
-            # do a POST request to the 'post_dataproducts' resource of the ATDB backend
+            # do a POST request to the 'post_dataproducts' resource of the astrobase backend
             response = requests.request("POST", url, data=payload, headers=self.header)
             self.verbose_print("[POST " + response.url + "]")
 
@@ -507,7 +478,7 @@ class AstroBase:
 
     def do_DELETE(self, resource, id):
         """
-        Do a http DELETE request to the ATDB backend
+        Do a http DELETE request to the AstroBase backend
         """
         if id == None:
             raise (Exception("ERROR: no valid 'id' provided"))
@@ -580,7 +551,7 @@ def main():
     """
     parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
     parser.add_argument("-v","--verbose", default=False, help="More information at run time.",action="store_true")
-    parser.add_argument("--host", nargs="?", default='test', help="Presets are 'dev', 'vm', 'test', 'acc', 'prod'. Otherwise give a full url like https://atdb.astron.nl/atdb")
+    parser.add_argument("--host", nargs="?", default='test', help="Presets are 'dev', 'vm', 'test', 'acc', 'prod'. Otherwise give a full url like https://astrobase.astron.nl/astrobase")
     parser.add_argument("--version", default=False, help="Show current version of this program", action="store_true")
     parser.add_argument("--operation","-o", default="GET", help="GET, GET_ID, GET_LIST, POST, PUT, DELETE. Note that these operations will only work if you have the proper rights in the ALTA user database.")
     parser.add_argument("--id", default=None, help="id of the object to PUT to.")
@@ -594,79 +565,79 @@ def main():
 
     args = get_arguments(parser)
     try:
-        atdb = ATDB(args.host, args.verbose)
+        astrobase = AstroBase(args.host, args.verbose)
 
         if (args.show_examples):
 
-            print('atdb_interface.py version = '+ pkg_version + " (last updated " + LAST_UPDATE + ")")
+            print('astrobase_interface.py version = '+ VERSION + " (last updated " + LAST_UPDATE + ")")
             print('---------------------------------------------------------------------------------------------')
             print()
             print('--- basic examples --- ')
             print()
             print("Show the 'status' for Observation with taskID 180720003")
-            print("> atdb_interface -o GET --key observations:my_status --taskid 180223003")
+            print("> astrobase_interface -o GET --key observations:my_status --taskid 180223003")
             print()
             print("GET the ID of Observation with taskID 180223003")
-            print("> atdb_interface -o GET_ID --key observations:taskID --value 180223003")
+            print("> astrobase_interface -o GET_ID --key observations:taskID --value 180223003")
             print()
             print("GET the ID of Dataproduct with name WSRTA180223003_ALL_IMAGE.jpg")
-            print("> atdb_interface -o GET_ID --key dataproducts:name --value WSRTA180223003_ALL_IMAGE.jpg")
+            print("> astrobase_interface -o GET_ID --key dataproducts:name --value WSRTA180223003_ALL_IMAGE.jpg")
             print()
             print("GET the 'status' for Dataproduct with ID = 45")
-            print("> atdb_interface -o GET --key dataproducts:my_status --id 45")
+            print("> astrobase_interface -o GET --key dataproducts:my_status --id 45")
             print()
             print("PUT the 'status' of dataproduct with ID = 45 on 'copied'")
-            print("> atdb_interface -o PUT --key dataproducts:new_status --id 45 --value copied")
+            print("> astrobase_interface -o PUT --key dataproducts:new_status --id 45 --value copied")
             print()
             print("PUT the 'status' of observation with taskID 180720003 on 'valid'")
-            print("> atdb_interface -o PUT --key observations:new_status --value valid --taskid 180223003")
+            print("> astrobase_interface -o PUT --key observations:new_status --value valid --taskid 180223003")
             print()
             print("DELETE dataproduct with ID = 46 from the database (no files will be deleted).")
-            print("> atdb_interface -o DELETE --key dataproducts --id 46")
+            print("> astrobase_interface -o DELETE --key dataproducts --id 46")
             print()
             print("DELETE dataproducts with ID's ranging from 11..15 from the database (no files will be deleted).")
-            print("> atdb_interface -o DELETE --key dataproducts --id 11..15 -v")
+            print("> astrobase_interface -o DELETE --key dataproducts --id 11..15 -v")
             print()
             print('--- advanced examples --- ')
             print()
             print("GET_LIST of taskIDs for observations with status = 'valid'")
-            print("> atdb_interface -o GET_LIST --key observations:taskID --query status=valid")
+            print("> astrobase_interface -o GET_LIST --key observations:taskID --query status=valid")
             print()
             print("GET_LIST of IDs for dataproducts with status = 'invalid'")
-            print("> atdb_interface -o GET_LIST --key dataproducts:id --query status=invalid")
+            print("> astrobase_interface -o GET_LIST --key dataproducts:id --query status=invalid")
             print()
             print("PUT the field 'new_status' on 'valid' for all dataproducts with taskId = '180816001'")
-            print("> atdb_interface -o PUT_LIST --key dataproducts:new_status --taskid 180816001 --value valid")
+            print("> astrobase_interface -o PUT_LIST --key dataproducts:new_status --taskid 180816001 --value valid")
             print('---------------------------------------------------------------------------------------------')
             return
 
         if (args.version):
-            print('--- atdb_interface.py version = '+ pkg_version + " (last updated " + LAST_UPDATE + ") ---")
+            print('--- astrobase_interface.py version = '+ VERSION + " (last updated " + LAST_UPDATE + ") ---")
             return
 
         if (args.operation=='GET'):
-            result = atdb.do_GET(key=args.key, id=args.id, taskid=args.taskid)
+            result = astrobase.do_GET(key=args.key, id=args.id, taskid=args.taskid)
             print(result)
 
         if (args.operation == 'GET_ID'):
-            result = atdb.do_GET_ID(key=args.key, value=args.value)
+            result = astrobase.do_GET_ID(key=args.key, value=args.value)
             print(result)
 
         if (args.operation == 'GET_LIST'):
-            result = atdb.do_GET_LIST(key=args.key, query=args.query)
+            result = astrobase.do_GET_LIST(key=args.key, query=args.query)
             print(result)
 
         if (args.operation=='PUT_LIST'):
-            atdb.do_PUT_LIST(key=args.key, taskid=args.taskid, value=args.value)
+            astrobase.do_PUT_LIST(key=args.key, taskid=args.taskid, value=args.value)
 
         if (args.operation=='PUT'):
-            atdb.do_PUT(key=args.key, id=args.id, value=args.value, taskid=args.taskid)
+            astrobase.do_PUT(key=args.key, id=args.id, value=args.value, taskid=args.taskid)
 
         if (args.operation=='POST'):
-            atdb.do_POST_json(resource=args.key, payload=args.payload)
+            astrobase.do_POST_json(resource=args.key, payload=args.payload)
 
         if (args.operation=='DELETE'):
-            atdb.do_DELETE(resource=args.key, id=args.id)
+            astrobase.do_DELETE(resource=args.key, id=args.id)
 
     except Exception as exp:
         exit_with_error(str(exp))

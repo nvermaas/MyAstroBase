@@ -44,7 +44,7 @@ TD {
  color: green;
  font-weight: bold;
 }
-.checking,.starting,.removing,.processing,.submitting,.downloading,.waiting {
+.checking,.starting,.removing,.processing,.submitting,.downloading,.waiting,.pending {
 font-style: italic;
 }
 

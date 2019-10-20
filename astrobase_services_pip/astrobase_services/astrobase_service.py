@@ -16,7 +16,8 @@ import logging.config
 
 from astrobase_services.specification import do_specification
 from astrobase_services.processor import do_processor
-from astrobase_services.data_monitor import do_data_monitor
+from astrobase_services.ingest import do_ingest
+from astrobase_services.cleanup import do_cleanup
 from astrobase_services.astrobase_io import AstroBaseIO, DEFAULT_ASTROBASE_HOST
 
 from pkg_resources import get_distribution
@@ -143,10 +144,10 @@ def main():
     # Specification and Datamonitor parameters (required)
     parser.add_argument("--local_data_dir",
                         default="astrobase_datadir",
-                        help="DATA_MONITOR parameter. This is the local directory where the data will be.")
+                        help="ingest parameter. This is the local directory where the data will be.")
     parser.add_argument("--local_landing_pad",
                         default="astrobase_datadir\landing_pad",
-                        help="Directory where DATA_MONITOR will check for incoming raw files.")
+                        help="Directory where ingest will check for incoming raw files.")
     parser.add_argument("--local_data_url",
                         nargs="?",
                         default=os.path.join(DEFAULT_ASTROBASE_HOST),
@@ -193,7 +194,7 @@ def main():
     # Global parameters (required)
     parser.add_argument("--operation","-o",
                         default="None",
-                        help="data_monitor, processing, testing")
+                        help="ingest, processing, cleanup, testing")
 
     # Global parameters
     parser.add_argument("--obs_mode_filter",
@@ -304,19 +305,19 @@ def main():
                              )
 
          # --------------------------------------------------------------------------------------------------------
-        if (args.operation == 'data_monitor'):
-            do_data_monitor(astrobaseIO, args.local_landing_pad, args.local_data_dir)
+        if (args.operation == 'ingest'):
+            do_ingest(astrobaseIO, args.local_landing_pad, args.local_data_dir)
             if args.interval:
-                print('*data_monitor* starting polling ' + astrobaseIO.host + ' every ' + args.interval + ' secs')
+                print('*ingest* starting polling ' + astrobaseIO.host + ' every ' + args.interval + ' secs')
                 while True:
                     try:
                         time.sleep(int(args.interval))
-                        do_data_monitor(astrobaseIO, args.local_landing_pad, args.local_data_dir)
+                        do_ingest(astrobaseIO, args.local_landing_pad, args.local_data_dir)
                     except:
-                        print('*** data_monitor crashed! ***')
+                        print('*** ingest crashed! ***')
                         print(sys.exc_info()[0])
                         print('trying to continue...')
-                        astrobaseIO.send_message_to_apidorn_slack_channel("*data_monitor service* crashed! ... restarting.")
+                        astrobaseIO.send_message_to_apidorn_slack_channel("*ingest service* crashed! ... restarting.")
 
         # --------------------------------------------------------------------------------------------------------
         if (args.operation == 'processor'):
@@ -340,6 +341,25 @@ def main():
                         print(sys.exc_info()[0])
                         print('trying to continue...')
                         astrobaseIO.send_message_to_apidorn_slack_channel("*processor * crashed! ... restarting.")
+
+        # --------------------------------------------------------------------------------------------------------
+        if (args.operation == 'cleanup'):
+
+            do_cleanup(astrobaseIO, args.local_data_dir)
+
+            if args.interval:
+                print(
+                    '*cleanup* starting polling ' + astrobaseIO.host + ' every ' + args.interval + ' secs')
+                while True:
+                    try:
+                        time.sleep(int(args.interval))
+                        do_cleanup(astrobaseIO, args.local_data_dir)
+
+                    except:
+                        print('*** cleanup crashed! ***')
+                        print(sys.exc_info()[0])
+                        print('trying to continue...')
+                        astrobaseIO.send_message_to_apidorn_slack_channel("*cleanup service* crashed! ... restarting.")
 
         # --------------------------------------------------------------------------------------------------------
         if (args.operation=='change_status'):

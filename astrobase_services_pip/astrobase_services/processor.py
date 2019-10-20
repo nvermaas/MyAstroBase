@@ -118,7 +118,7 @@ def do_submit_jobs(astrobaseIO, local_data_url, local_data_dir):
 
     # --- start of function body ---
     astrobaseIO.report("-- do_submit_jobs()", "print")
-    STATUS_START = "processing pending"
+    STATUS_START = "pending"
     STATUS_END = "submitted"
 
     taskIDs = astrobaseIO.astrobase_interface.do_GET_LIST(key='observations:taskID', query='my_status=' + STATUS_START)
@@ -188,19 +188,19 @@ def do_check_submission_status(astrobaseIO):
     # --- start of function body ---
     astrobaseIO.report("-- do_check_submission_status()", "print")
 
-    STATUS_START = "submitted,processing"
+    STATUS_START = "submitted"
     query = 'my_status__in='+STATUS_START
     taskIDs = astrobaseIO.astrobase_interface.do_GET_LIST(key='observations:taskID', query=query)
     if len(taskIDs) > 0:
 
-        # loop through the 'submitted' and 'processing' observations
+        # loop through the 'submitted' and check for the success status
         for taskID in taskIDs:
-            astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="processing")
+            # astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="processing")
 
             # get the astrometry submission_id to check
             submission_id = astrobaseIO.astrobase_interface.do_GET(key='observations:job', id=None, taskid=taskID)
             job_status = check_submission_status(submission_id)
-            astrobaseIO.report("*processor* : status of job " + submission_id + " = " + job_status, "slack")
+            astrobaseIO.report("*processor* : status of job " + submission_id + " = " + job_status, "print")
 
             if job_status == 'success':
                 astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None,taskid=taskID,value="processed")
@@ -303,8 +303,6 @@ def do_handle_processed_jobs(astrobaseIO, local_data_dir):
     # --- start of function body ---
     astrobaseIO.report("-- do_handle_processed_jobs()", "print")
 
-
-
     STATUS_START = "processed,waiting"
     query = 'my_status__in='+STATUS_START
 
@@ -314,7 +312,7 @@ def do_handle_processed_jobs(astrobaseIO, local_data_dir):
         # loop through the 'processing' observations
         for taskID in taskIDs:
             # get the astrometry submission_id to check
-            astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="downloading")
+            # astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="downloading")
 
             submission_id = astrobaseIO.astrobase_interface.do_GET(key='observations:job',id=None, taskid=taskID)
             results =  get_job_results(astrobaseIO, submission_id,False)
@@ -332,12 +330,7 @@ def do_handle_processed_jobs(astrobaseIO, local_data_dir):
             ok = do_create_dataproducts(astrobaseIO, taskID, submission_id, local_data_dir)
 
             if (ok):
-                astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID,
-                                                       value="done")
-            else:
-                # set status back to 'processed' and try again next heartbeat
-                astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID,
-                                                       value="waiting")
+                astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="done")
 
 
 # --- Main Service -----------------------------------------------------------------------------------------------
