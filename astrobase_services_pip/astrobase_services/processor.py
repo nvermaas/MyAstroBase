@@ -17,6 +17,36 @@ import urllib.request
 
 from astrobase_services.astrometry_client import Client
 from astrobase_services.specification import add_dataproducts
+from astrobase_services.submit import get_submission, get_job_id
+
+
+def get_fits_header(filename):
+
+    fits_dict = {}
+    with open(filename, "r") as fits_file:
+
+        # read the file as a long line
+        line = fits_file.readline()
+
+        # split the long line in 80 character chunks
+        n = 80
+        chunks = [line[i:i + n] for i in range(0, len(line), n)]
+
+        for chunk in chunks:
+            try:
+                # retrieve the key/value apier
+                key,value_comment = chunk.split("=")
+
+                # split off the comments from the value
+                value,comment = value_comment.split("/")
+
+                fits_dict[key.strip()]=value.strip()
+            except:
+                pass
+        #print(str(fits_dict))
+        return fits_dict
+
+
 
 def get_creation_date(path_to_file):
     """
@@ -34,20 +64,6 @@ def get_creation_date(path_to_file):
             # We're probably on Linux. No easy way to get creation dates here,
             # so we'll settle for when its content was last modified.
             return stat.st_mtime
-
-
-def get_job_id(submission_id):
-
-    client = Client(apiurl=ASTROMETRY_API)
-    client.login(apikey=ASTROMETRY_API_KEY)
-    submission_result = client.sub_status(submission_id, justdict=True)
-    print("submission_result :" + str(submission_result))
-
-    try:
-        job_id = str(submission_result['jobs'][0])
-        return job_id
-    except:
-        return None
 
 
 def get_job_results(astrobaseIO, job_id, justdict):
@@ -80,7 +96,7 @@ def get_job_results(astrobaseIO, job_id, justdict):
     :param job_id:
     :return:
     """
-    astrobaseIO.report("---- get_job_results(" + str(job_id) + ")", "print")
+    # astrobaseIO.report("---- get_job_results(" + str(job_id) + ")", "print")
     # login to astrometry with the API_KEY
     client = Client(apiurl=ASTROMETRY_API)
     client.login(apikey=ASTROMETRY_API_KEY)
@@ -89,139 +105,11 @@ def get_job_results(astrobaseIO, job_id, justdict):
     return result
 
 
-def get_submission(astrobaseIO, submission_id):
-    """
-    check of the pipeline at astrometry is done processing the submitted image
-    :param submission_id:
-    :return:
-    """
-    # login to astrometry with the API_KEY
-    astrobaseIO.report("---- get_submission(" + submission_id + ")", "print")
-
-    client = Client(apiurl=ASTROMETRY_API)
-    client.login(apikey=ASTROMETRY_API_KEY)
-
-    result = client.sub_status(submission_id, justdict=True)
-    return result
-
-#-------------------------------------------------------------------------------------
-def do_submit_jobs(astrobaseIO, local_data_url, local_data_dir):
-
-    def submit_job_to_astrometry(path_to_file):
-        """
-        http://astrometry.net/doc/net/api.html
-        :param path_to_file:
-        :return:
-        """
-        astrobaseIO.report("-- submit_job_to_astrometry(" + path_to_file + ")", "print")
-        # login to astrometry with the API_KEY
-        client = Client(apiurl=ASTROMETRY_API)
-        client.login(apikey=ASTROMETRY_API_KEY)
-
-        result = client.upload(fn=path_to_file)
-
-        #url = local_data_url + "/" + filename
-        #url = "http://localhost/cetus.jpg"
-        #url = "http://uilennest.net/static/astrobase/cetus.jpg"
-        #result = client.url_upload(url=url)
-
-        print(result)
-        job = result['subid']
-        job_status = result['status']
-        return job, job_status
-
-    # --- start of function body ---
-    astrobaseIO.report("-- do_submit_jobs()", "print")
-    STATUS_START = "pending"
-    STATUS_END = "submitted"
-
-    taskIDs = astrobaseIO.astrobase_interface.do_GET_LIST(key='observations:taskID', query='my_status=' + STATUS_START)
-    if len(taskIDs) > 0:
-
-        # loop through the 'processing' observations
-        for taskID in taskIDs:
-
-            astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="submitting")
-
-            # find the raw dataproducts
-            ids = astrobaseIO.astrobase_interface.do_GET_LIST(key='dataproducts:id', query='taskID=' + taskID + '&dataproduct_type=raw')
-            for id in ids:
-                # retrieve the raw image
-                filename = astrobaseIO.astrobase_interface.do_GET(key='dataproducts:filename', id=id, taskid=None)
-                directory = os.path.join(local_data_dir,taskID)
-                path_to_file = os.path.join(directory,filename)
-
-                astrobaseIO.report("*processor* : processing " + filename, "slack")
-
-                # do the magic!
-                # when using files
-                submission_id, submission_status = submit_job_to_astrometry(path_to_file)
-
-                # when using urls
-                #submission_id, submission_status = submit_job_to_astrometry(filename)
-
-                if submission_status=="success":
-                    # write the current job to the observation.
-                    astrobaseIO.astrobase_interface.do_PUT(key='observations:job', id=None, taskid=taskID, value=submission_id)
-
-                    # when all raw dps have been processed, put observation to 'processed'.
-                    astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="submitted")
-                    astrobaseIO.report("*processor* : submitted job " + str(submission_id) + " for " + taskID + " " + STATUS_END,"slack")
-                else:
-                    astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="failed submitting")
-                    astrobaseIO.report("*processor* : submitted job " + str(submission_id) + " for " + taskID + " failed.","slack")
-
-#-------------------------------------------------------------------------------------
-def do_check_submission_status(astrobaseIO):
-
-    def check_submission_status(submission_id):
-        """
-        check of the pipeline at astrometry is done processing the submitted image
-        :param submission_id:
-        :return:
-        """
-        astrobaseIO.report("-- check_submission_status("+ submission_id + ")", "print")
-
-        try:
-            job_id = get_job_id(submission_id)
-            job_results = get_job_results(astrobaseIO, job_id, False)
-            print("job_results: " + str(job_results))
-            if job_results['job']['status']=='success':
-                return 'success'
-            if job_results['job']['status']=='failure':
-                return 'failure'
-        except:
-            return 'unfinished'
-        return "unknown"
-
-    # --- start of function body ---
-    astrobaseIO.report("-- do_check_submission_status()", "print")
-
-    STATUS_START = "submitted"
-    query = 'my_status__in='+STATUS_START
-    taskIDs = astrobaseIO.astrobase_interface.do_GET_LIST(key='observations:taskID', query=query)
-    if len(taskIDs) > 0:
-
-        # loop through the 'submitted' and check for the success status
-        for taskID in taskIDs:
-            # astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="processing")
-
-            # get the astrometry submission_id to check
-            submission_id = astrobaseIO.astrobase_interface.do_GET(key='observations:job', id=None, taskid=taskID)
-            job_status = check_submission_status(submission_id)
-            astrobaseIO.report("*processor* : status of job " + submission_id + " = " + job_status, "print")
-
-            if job_status == 'success':
-                astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None,taskid=taskID,value="processed")
-            if job_status == 'failure':
-                astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None,taskid=taskID,value="failed")
-
-
 
 #-------------------------------------------------------------------------------------
 def do_handle_processed_jobs(astrobaseIO, local_data_dir):
 
-    def do_handle_results(results):
+    def do_handle_results_obsolete(results):
         astrobaseIO.report("--- do_handle_results()", "print")
         try:
 
@@ -250,6 +138,18 @@ def do_handle_processed_jobs(astrobaseIO, local_data_dir):
 
 
     def do_create_dataproducts(astrobase, taskid, submission_id, local_data_dir):
+
+        def add_dataproduct(job_id, sub_url,file_end, dataproduct_type):
+            url = ASTROMETRY_URL + sub_url + job_id
+            destination = os.path.join(task_directory, job_id + file_end)
+            if not os.path.exists(destination):
+                urllib.request.urlretrieve(url, destination)
+                size = os.path.getsize(destination)
+                dp = job_id + file_end + ":"+dataproduct_type+":ready:"+str(size)
+                return "," + dp
+            else:
+                return ""
+
         astrobaseIO.report("--- do_create_dataproducts("+taskid+","+submission_id+")", "print")
         submission = get_submission(astrobase, submission_id)
 
@@ -271,52 +171,61 @@ def do_handle_processed_jobs(astrobaseIO, local_data_dir):
 
         # retrieve images and store as dataproducts
         # http://nova.astrometry.net/sky_plot/zoom0/2390269
+        dataproducts = ""
+
         url = ASTROMETRY_URL + "/sky_plot/zoom0/" + skyplot_id
         destination = os.path.join(task_directory, job_id + "_sky_globe.jpg")
-        urllib.request.urlretrieve(url, destination)
-        size = os.path.getsize(destination)
-        dp1 = job_id + "_sky_globe.jpg" + ":sky_globe:ready:"+str(size)
+        if not os.path.exists(destination):
+            urllib.request.urlretrieve(url, destination)
+            size = os.path.getsize(destination)
+            dp = job_id + "_sky_globe.jpg" + ":sky_globe:ready:"+str(size)
+            dataproducts = dataproducts + "," + dp
 
         # http://nova.astrometry.net/sky_plot/zoom1/2390269
         url = ASTROMETRY_URL + "/sky_plot/zoom1/" + skyplot_id
         destination = os.path.join(task_directory, job_id + "_sky_plot.jpg")
-        urllib.request.urlretrieve(url, destination)
-        size = os.path.getsize(destination)
-        dp2 = job_id + "_sky_plot.jpg" + ":sky_plot:ready:"+str(size)
+        if not os.path.exists(destination):
+            urllib.request.urlretrieve(url, destination)
+            size = os.path.getsize(destination)
+            dp = job_id + "_sky_plot.jpg" + ":sky_plot:ready:"+str(size)
+            dataproducts = dataproducts + "," + dp
 
-        # http://nova.astrometry.net/annotated_full/3675324
-        url = ASTROMETRY_URL + "/annotated_full/" + job_id
-        destination = os.path.join(task_directory,job_id+"_annotated.jpg")
-        urllib.request.urlretrieve(url,destination)
-        size = os.path.getsize(destination)
-        dp3 = job_id+"_annotated.jpg" + ":annotated:ready:"+str(size)
+        dataproducts = dataproducts + add_dataproduct(job_id,"/annotated_full/", "_annotated.jpg", "annotated")
+        dataproducts = dataproducts + add_dataproduct(job_id,"/red_green_image_full/", "_redgreen.jpg", "redgreen")
+        dataproducts = dataproducts + add_dataproduct(job_id,"/extraction_image_full/", "_extraction.jpg", "extraction")
+        dataproducts = dataproducts + add_dataproduct(job_id,"/new_fits_file/", ".fits", str(job_id)+".fits")
+        dataproducts = dataproducts + add_dataproduct(job_id,"/rdls_file/", "_rdls_file.fits", "nearby_stars_fits")
+        dataproducts = dataproducts + add_dataproduct(job_id,"/wcs_file/", "_wcs_file.fits", "wcs_fits")
+        dataproducts = dataproducts + add_dataproduct(job_id,"/axy_file/", "_axy_file.fits", "stars_fits")
 
-        # http://nova.astrometry.net/red_green_image_full/3675324
-        url = ASTROMETRY_URL + "/red_green_image_full/" + job_id
-        destination = os.path.join(task_directory,job_id+"_redgreen.jpg")
-        urllib.request.urlretrieve(url,destination)
-        size = os.path.getsize(destination)
-        dp4 = job_id+"_redgreen.jpg" + ":redgreen:ready:"+str(size)
+        # if there are new dataproducts, then add them to the observation
+        if dataproducts!='':
+            # cut off the first ','
+            add_dataproducts(astrobase, taskid, dataproducts[1:])
 
-        # http://nova.astrometry.net/extraction_image_full/3675324
-        url = ASTROMETRY_URL + "/extraction_image_full/" + job_id
-        destination = os.path.join(task_directory,job_id+"_extraction.jpg")
-        urllib.request.urlretrieve(url,destination)
-        size = os.path.getsize(destination)
-        dp5 = job_id+"_extraction.jpg" + ":extraction:ready:"+str(size)
 
-        dataproducts = dp2 + "," + dp3+ "," + dp4+ "," + dp5
-        add_dataproducts(astrobase, taskid, dataproducts)
+        # check if the wcs fitsfile exists to extract coordinates from
+        # try to extract some metadata from the fits dataproduct
+        fits_filename = os.path.join(task_directory, job_id + "_wcs_file.fits")
+        if os.path.exists(fits_filename):
+            fits_header = get_fits_header(fits_filename)
+            ra = fits_header['CRVAL1']
+            dec = fits_header['CRVAL2']
+
+            astrobaseIO.astrobase_interface.do_PUT(key='observations:field_ra', id=None, taskid=taskid,
+                                                   value=str(ra))
+            astrobaseIO.astrobase_interface.do_PUT(key='observations:field_dec', id=None, taskid=taskid,
+                                                   value=str(dec))
         return True
 
-    # --- start of function body ---
-    astrobaseIO.report("-- do_handle_processed_jobs()", "print")
 
+    # --- start of function body ---
     STATUS_START = "processed,waiting"
     query = 'my_status__in='+STATUS_START
 
     taskIDs = astrobaseIO.astrobase_interface.do_GET_LIST(key='observations:taskID', query=query)
     if len(taskIDs) > 0:
+        astrobaseIO.report("-- do_handle_processed_jobs()", "print")
 
         # loop through the 'processing' observations
         for taskID in taskIDs:
@@ -330,11 +239,11 @@ def do_handle_processed_jobs(astrobaseIO, local_data_dir):
 
             # parse the results and update the observation
 
-            ok = do_handle_results(results)
-            if (not ok):
-                # results could not be found, doesn't matter, continue
-                #astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="waiting")
-                pass
+            #ok = do_handle_results(results)
+            #if (not ok):
+            #    # results could not be found, doesn't matter, continue
+            #    #astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="waiting")
+            #    pass
 
             # download the created images as dataproducts
             ok = do_create_dataproducts(astrobaseIO, taskID, submission_id, local_data_dir)
@@ -346,13 +255,7 @@ def do_handle_processed_jobs(astrobaseIO, local_data_dir):
 # --- Main Service -----------------------------------------------------------------------------------------------
 
 def do_processor(astrobaseIO, local_data_url, local_data_dir):
-    astrobaseIO.report("- do_processor()", "print")
-
-    # submit new jobs to astrometry.net
-    do_submit_jobs(astrobaseIO,local_data_url, local_data_dir)
-
-    # check if the job is ready and handle results on success.
-    do_check_submission_status(astrobaseIO)
+    # astrobaseIO.report("- do_processor()", "print")
 
     # handle the results
     do_handle_processed_jobs(astrobaseIO, local_data_dir)

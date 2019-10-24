@@ -15,6 +15,7 @@ import logging
 import logging.config
 
 from astrobase_services.specification import do_specification
+from astrobase_services.submit import do_submit
 from astrobase_services.processor import do_processor
 from astrobase_services.ingest import do_ingest
 from astrobase_services.cleanup import do_cleanup
@@ -26,7 +27,7 @@ try:
 except:
     pkg_version = '0.9'
 
-LAST_UPDATE = "19 oct 2019"
+LAST_UPDATE = "24 oct 2019"
 
 # ====================================================================
 
@@ -319,6 +320,23 @@ def main():
                         print(sys.exc_info()[0])
                         print('trying to continue...')
                         astrobaseIO.send_message_to_apidorn_slack_channel("*ingest service* crashed! ... restarting.")
+
+        # --------------------------------------------------------------------------------------------------------
+        if (args.operation == 'submit'):
+            do_submit(astrobaseIO, args.local_data_url, args.local_data_dir)
+            if args.interval:
+                print('*submit* starting polling ' + astrobaseIO.host + ' every ' + args.interval + ' secs')
+                while True:
+                    try:
+                        time.sleep(int(args.interval))
+                        do_submit(astrobaseIO, args.local_data_url, args.local_data_dir)
+                    except:
+                        print('*** submit crashed! ***')
+                        print(sys.exc_info()[0])
+                        print('trying to continue...')
+                        astrobaseIO.send_message_to_apidorn_slack_channel(
+                            "*submit service* crashed! ... restarting.")
+
 
         # --------------------------------------------------------------------------------------------------------
         if (args.operation == 'processor'):

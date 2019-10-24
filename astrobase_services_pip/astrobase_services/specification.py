@@ -33,7 +33,6 @@ def timeit(method):
     return timed
 
 
-@timeit
 def generate_taskid(astrobase, timestamp, taskid_postfix):
     """
     :param astrobase: the atdb interface abstraction layer
@@ -47,7 +46,7 @@ def generate_taskid(astrobase, timestamp, taskid_postfix):
 
 
 # add dataproducts as a batch
-@timeit
+
 def add_dataproducts(astrobase, taskid, dataproducts_string):
     """
     add dataproduct as a batch to a given observation
@@ -74,7 +73,7 @@ def add_dataproducts(astrobase, taskid, dataproducts_string):
 
 # --- Main Service -------
 # ----------------------------------------------------------------------------------------
-@timeit
+
 def do_specification(astrobase, taskid, initial_status, field_name, date,
                      field_ra=0.0, field_dec=0.0, field_fov=0.0,
                      observing_mode="raw", process_type="observation", dataproducts="",

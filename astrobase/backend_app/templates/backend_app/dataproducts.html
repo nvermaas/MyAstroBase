@@ -19,9 +19,15 @@
                         {% for dataproduct in my_dataproducts_list %}
                             <div class="col-sm-6 col-md-12 col-lg-2">
                                 <div class="img-thumbnail img-fluid">
-                                    <a href="{{ dataproduct.property_url }}" target="_blank">
-                                        <img class="img-thumbnail" src="{{ dataproduct.property_url }}" class="img-rounded" >
-                                  </a>
+                                    {% if 'fits' in dataproduct.dataproduct_type %}
+                                        <a href="{{ dataproduct.property_url }}" target="_blank">
+                                            <img class="img-thumbnail" src="http://uilennest.net/astrobase/fits.png" class="img-rounded" >
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ dataproduct.property_url }}" target="_blank">
+                                            <img class="img-thumbnail" src="{{ dataproduct.property_url }}" class="img-rounded" >
+                                        </a>
+                                    {% endif %}
                                     <div class="caption">
 
                                         <a href="{{ dataproduct.get_absolute_url }}" class="btn btn-info btn-sm" role="button" target="_blank">{{ dataproduct.dataproduct_type }}</a>
