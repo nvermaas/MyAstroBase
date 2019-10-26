@@ -196,4 +196,7 @@ LOGGING = {
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+MEDIA_URL = 'http://localhost/'
+MEDIA_ROOT = 'd:/my_astrobase'
+
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"

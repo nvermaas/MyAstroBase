@@ -27,7 +27,9 @@
                 {% endfor %}
             </td>
             <td>
-
+                {% if observation.my_status == "pending" %}
+                    <a href="{% url 'observation-setstatus-view' observation.pk 'raw' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Cancel</a>
+                {% endif %}
                 {% if observation.my_status == "raw" %}
                     <a href="{% url 'observation-setstatus-view' observation.pk 'pending' my_observations.number %}" class="btn btn-success btn-sm" role="button">Do Processing</a>
                     <a href="{% url 'observation-setstatus-view' observation.pk 'invisible' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Hide</a>

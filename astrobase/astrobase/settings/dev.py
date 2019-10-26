@@ -10,4 +10,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 AUTH_PASSWORD_VALIDATORS = []
 
+MEDIA_URL = 'http://localhost/'
+MEDIA_ROOT = 'd:/my_astrobase/landing_pad'
 DATA_HOST = "http://localhost/data"

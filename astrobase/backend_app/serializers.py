@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import DataProduct, Observation, Status, TaskObject
+from .models import DataProduct, Observation, Status, AstroFile
 import logging
 
 logger = logging.getLogger(__name__)
@@ -55,3 +55,9 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'creationTime','date','size',
                   'my_status','new_status','status_history','job',
                   'generated_dataproducts','data_location', 'quality')
+
+# Serializer for file uploads
+class AstroFileSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = AstroFile
+        fields = "__all__"

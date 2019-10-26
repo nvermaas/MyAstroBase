@@ -3,6 +3,8 @@ from django.urls import reverse
 from django.utils.timezone import datetime
 from django.db.models import Sum
 
+from .services.storage import OverwriteStorage
+
 from django.conf import settings
 
 import os
@@ -105,8 +107,39 @@ class Observation(TaskObject):
         return str(self.taskID)
 
 
+# file upload for images to the astrobase landing_pad
+def my_directory_path(instance, filename):
+    """
+    overrides the location where the file is written and adds the provided directory to it.
+    :param instance:
+    :param filename:
+    :return:
+    """
+    new_filename = instance.new_filename
+    if new_filename!="":
+        my_file = os.path.join(instance.directory, new_filename)
+    else:
+        my_file = os.path.join(instance.directory, filename)
+    return my_file
+
+
+# Files to upload (images and inspectionplots)
+class AstroFile(models.Model):
+    # using a custom 'storage' to overwrite existing files.
+    # (because the 'delete' methods do not delete associated images).
+    file = models.FileField(upload_to=my_directory_path, storage=OverwriteStorage(), blank=False, null=False)
+    new_filename = models.CharField(max_length=80, blank=True)
+    directory = models.CharField(max_length=128, blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.file.name
+
+
 class DataProduct(TaskObject):
     # properties
+    #file = models.FileField(upload_to=my_directory_path, storage=OverwriteStorage(), blank=False, null=False)
+
     filename = models.CharField(max_length=200, default="unknown")
     description = models.CharField(max_length=255, default="unknown")
     dataproduct_type = models.CharField('Dataproduct Type', default=TYPE_RAW, max_length=50)

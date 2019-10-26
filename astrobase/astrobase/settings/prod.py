@@ -18,4 +18,6 @@ SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
 #####################################################
 
+MEDIA_URL = 'http://localhost/'
+MEDIA_ROOT = 'd:/my_astrobase/landing_pad'
 DATA_HOST = "http://uilennest.net/static/astrobase/data"

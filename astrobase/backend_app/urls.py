@@ -37,13 +37,22 @@ urlpatterns = [
          views.PostDataproductsView.as_view(),
          name='post-dataproducts-view'),
 
+    path('upload_file/',
+         views.UploadFileView.as_view(),
+         name='upload-file'),
+
+    path('uploads/', views.UploadsView.as_view()),
+    path('uploads/<int:pk>/', views.UploadsDetailsView.as_view()),
+
     # --- Commands ---
     path('observations/<int:pk>/setstatus/<new_status>/<page>',
          views.ObservationSetStatus,
          name='observation-setstatus-view'),
+
     path('observations/<int:pk>/setstatus_dps/<new_dps_status>/<new_obs_status>/<page>',
          views.ObservationSetStatusDataProducts,
          name='observation-dps-setstatus-view'),
+
     path('dataproducts/<int:pk>/setstatus/<new_status>',
          views.DataProductSetStatusView,
          name='dataproduct-setstatus-view'),

@@ -1,23 +1,24 @@
-import time
 import logging
 import json
-import datetime
 
 from . import config
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView
-from rest_framework import generics, pagination
+
+from rest_framework import generics, pagination, status
 from rest_framework.response import Response
+from rest_framework.parsers import MultiPartParser, FormParser, FileUploadParser
+from rest_framework.views import APIView
+
 from django_filters import rest_framework as filters
-from django.template import loader
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from .models import DataProduct, Observation, Status
 from django.db.models import Q
-from .serializers import DataProductSerializer, ObservationSerializer, StatusSerializer
-from .forms import FilterForm
 
+from .models import DataProduct, Observation, Status, AstroFile
+from .serializers import DataProductSerializer, ObservationSerializer, StatusSerializer, AstroFileSerializer
+from .forms import FilterForm
 from .services import algorithms
 
 logger = logging.getLogger(__name__)
@@ -353,3 +354,32 @@ class PostDataproductsView(generics.CreateAPIView):
         return Response({
             'taskID': taskID,
         })
+
+# overview of the uploads
+class UploadsView(generics.ListCreateAPIView):
+    serializer_class = AstroFileSerializer
+    queryset = AstroFile.objects.all()
+
+# overview of the uploads
+class UploadsDetailsView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = AstroFileSerializer
+    queryset = AstroFile.objects.all()
+
+# view for uploading images to the 'landing_pad website
+class UploadFileView(APIView):
+    # https://stackoverflow.com/questions/4894976/django-custom-file-storage-system
+    parser_classes = (MultiPartParser, FormParser, FileUploadParser)
+    serializer_class = AstroFileSerializer
+    queryset = AstroFile.objects.all()
+
+    def post(self, request, *args, **kwargs):
+        # http://www.django-rest-framework.org/api-guide/parsers/
+        logger.info('UploadFileView.post()')
+
+        file_serializer = AstroFileSerializer(data=request.data)
+
+        if file_serializer.is_valid():
+            file_serializer.save()
+            return Response(file_serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
