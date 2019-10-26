@@ -37,7 +37,7 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = []
 
 MEDIA_URL = 'http://localhost/'
-MEDIA_ROOT = '~/shared/astrobase_landing_pad'
+MEDIA_ROOT = '/shared/astrobase_landing_pad'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 DATA_HOST = "http://uilennest.net/astrobase/data"
