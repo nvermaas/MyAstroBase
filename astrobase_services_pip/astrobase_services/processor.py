@@ -233,8 +233,8 @@ def do_handle_processed_jobs(astrobaseIO, local_data_dir):
             # astrobaseIO.astrobase_interface.do_PUT(key='observations:new_status', id=None, taskid=taskID, value="downloading")
 
             submission_id = astrobaseIO.astrobase_interface.do_GET(key='observations:job',id=None, taskid=taskID)
-            job_id = get_job_id(submission_id)
-            results =  get_job_results(astrobaseIO, job_id, False)
+            # job_id = get_job_id(submission_id)
+            # results =  get_job_results(astrobaseIO, job_id, False)
             astrobaseIO.report("*processor* : handle results of job " + submission_id, "slack")
 
             # parse the results and update the observation
