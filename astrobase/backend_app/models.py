@@ -78,7 +78,7 @@ class Observation(TaskObject):
     date = models.DateTimeField('start time', null=True)
     # can be used to distinguish types of observations, like with powershot G2 or Kitt Peak
     observing_mode = models.CharField(max_length=50, default="digcam")
-
+    description = models.CharField(max_length=255, default="")
     # can be used to distinguish types of observations, like for ARTS.
     process_type = models.CharField(max_length=50, default="observation")
 
@@ -102,6 +102,35 @@ class Observation(TaskObject):
         # sum the sizes of all dataproducts with this taskID. In Mb
         size = get_sum_from_dataproduct_field(self.taskID,'size')
         return size
+
+    @property
+    def derived_raw_image(self):
+        # get the raw dataproduct
+
+        # find object with 'datasetID'
+        dataproduct = DataProduct.objects.get(dataproduct_type='raw',taskID=self.taskID)
+        path = dataproduct.property_url
+        return path
+
+
+    @property
+    def derived_annotated_image(self):
+        # get the annotated dataproduct
+
+        # find object with 'datasetID'
+        dataproduct = DataProduct.objects.get(dataproduct_type='annotated',taskID=self.taskID)
+        path = dataproduct.property_url
+        return path
+
+
+    @property
+    def derived_sky_plot_image(self):
+        # get the sky_plot dataproduct
+
+        # find object with 'datasetID'
+        dataproduct = DataProduct.objects.get(dataproduct_type='sky_plot',taskID=self.taskID)
+        path = dataproduct.property_url
+        return path
 
     def __str__(self):
         return str(self.taskID)
@@ -161,6 +190,6 @@ class DataProduct(TaskObject):
     @property
     def property_url(self):
         data_host = settings.DATA_HOST
-        directory = os.path.join(data_host, self.taskID)
-        path = os.path.join(directory,self.filename)
+        path = data_host + '/' + self.taskID + '/' + self.filename
+
         return path

@@ -53,8 +53,9 @@ class ObservationSerializer(serializers.ModelSerializer):
         fields = ('id','task_type', 'name', 'observing_mode','process_type','taskID',
                   'field_name','field_ra','field_dec','field_fov',
                   'creationTime','date','size',
+                  'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
                   'my_status','new_status','status_history','job',
-                  'generated_dataproducts','data_location', 'quality')
+                  'generated_dataproducts','data_location', 'quality','description')
 
 # Serializer for file uploads
 class AstroFileSerializer(serializers.ModelSerializer):

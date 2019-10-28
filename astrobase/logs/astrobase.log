@@ -12530,3 +12530,296 @@
 [2019-10-26 08:21:35,106] my_queryset retrieved
 [2019-10-26 08:21:45,280] DataProductsListView.get_queryset()
 [2019-10-26 08:21:45,281] my_queryset retrieved
+[2019-10-27 14:15:05,244] DataProductsListView.get_queryset()
+[2019-10-27 14:15:05,251] my_queryset retrieved
+[2019-10-27 14:15:15,418] DataProductsListView.get_queryset()
+[2019-10-27 14:15:15,419] my_queryset retrieved
+[2019-10-27 15:17:33,079] SIGNAL : pre_save Observation(090311002)
+[2019-10-27 15:17:33,080] handle_pre_save(090311002)
+[2019-10-27 15:17:33,110] handle_post_save(090311002)
+[2019-10-27 15:52:47,979] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 15:52:47,980] handle_pre_save(090311006)
+[2019-10-27 15:52:48,031] handle_post_save(090311006)
+[2019-10-27 16:24:37,300] get_next_taskid(20090311)
+[2019-10-27 16:24:37,300] checking taskid 090311001..
+[2019-10-27 16:24:37,301] checking taskid 090311002..
+[2019-10-27 16:24:37,302] checking taskid 090311003..
+[2019-10-27 16:24:37,303] checking taskid 090311004..
+[2019-10-27 16:24:37,304] checking taskid 090311005..
+[2019-10-27 16:24:37,305] checking taskid 090311006..
+[2019-10-27 16:24:38,498] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 16:24:38,499] handle_pre_save(090311006)
+[2019-10-27 16:24:38,514] handle_post_save(090311006)
+[2019-10-27 16:24:38,514] save new observation
+[2019-10-27 16:24:39,687] add_dataproducts(090311006,1)
+[2019-10-27 16:24:39,689] addding dataproduct: 090311006_raw.jpg
+[2019-10-27 16:24:39,690] SIGNAL : pre_save DataProduct(090311006_raw.jpg)
+[2019-10-27 16:24:39,690] handle_pre_save(090311006_raw.jpg)
+[2019-10-27 16:24:39,711] handle_post_save(090311006_raw.jpg)
+[2019-10-27 16:24:39,712] save new dataproduct
+[2019-10-27 16:24:39,723] update dataproduct parent = 090311006
+[2019-10-27 16:24:42,081] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 16:24:42,082] handle_pre_save(090311006)
+[2019-10-27 16:24:42,123] handle_post_save(090311006)
+[2019-10-27 16:25:14,184] get_next_taskid(20090311)
+[2019-10-27 16:25:14,185] checking taskid 090311001..
+[2019-10-27 16:25:14,187] checking taskid 090311002..
+[2019-10-27 16:25:14,192] checking taskid 090311003..
+[2019-10-27 16:25:14,194] checking taskid 090311004..
+[2019-10-27 16:25:14,195] checking taskid 090311005..
+[2019-10-27 16:25:14,196] checking taskid 090311006..
+[2019-10-27 16:25:14,197] checking taskid 090311007..
+[2019-10-27 16:25:14,198] checking taskid 090311008..
+[2019-10-27 16:25:14,199] checking taskid 090311009..
+[2019-10-27 16:25:14,200] checking taskid 090311010..
+[2019-10-27 16:25:14,201] checking taskid 090311011..
+[2019-10-27 16:25:14,202] checking taskid 090311012..
+[2019-10-27 16:25:14,203] checking taskid 090311013..
+[2019-10-27 16:25:14,204] checking taskid 090311014..
+[2019-10-27 16:25:14,205] checking taskid 090311015..
+[2019-10-27 16:25:15,407] SIGNAL : pre_save Observation(090311015)
+[2019-10-27 16:25:15,408] handle_pre_save(090311015)
+[2019-10-27 16:25:15,421] handle_post_save(090311015)
+[2019-10-27 16:25:15,421] save new observation
+[2019-10-27 16:25:16,627] add_dataproducts(090311015,1)
+[2019-10-27 16:25:16,629] addding dataproduct: 090311015_raw.jpg
+[2019-10-27 16:25:16,630] SIGNAL : pre_save DataProduct(090311015_raw.jpg)
+[2019-10-27 16:25:16,630] handle_pre_save(090311015_raw.jpg)
+[2019-10-27 16:25:16,644] handle_post_save(090311015_raw.jpg)
+[2019-10-27 16:25:16,644] save new dataproduct
+[2019-10-27 16:25:16,655] update dataproduct parent = 090311015
+[2019-10-27 16:25:19,027] SIGNAL : pre_save Observation(090311015)
+[2019-10-27 16:25:19,029] handle_pre_save(090311015)
+[2019-10-27 16:25:19,083] handle_post_save(090311015)
+[2019-10-27 16:25:20,689] get_next_taskid(20090311)
+[2019-10-27 16:25:20,689] checking taskid 090311001..
+[2019-10-27 16:25:20,691] checking taskid 090311002..
+[2019-10-27 16:25:20,693] checking taskid 090311003..
+[2019-10-27 16:25:20,694] checking taskid 090311004..
+[2019-10-27 16:25:20,695] checking taskid 090311005..
+[2019-10-27 16:25:20,696] checking taskid 090311006..
+[2019-10-27 16:25:20,697] checking taskid 090311007..
+[2019-10-27 16:25:20,698] checking taskid 090311008..
+[2019-10-27 16:25:20,699] checking taskid 090311009..
+[2019-10-27 16:25:20,700] checking taskid 090311010..
+[2019-10-27 16:25:20,701] checking taskid 090311011..
+[2019-10-27 16:25:20,702] checking taskid 090311012..
+[2019-10-27 16:25:20,704] checking taskid 090311013..
+[2019-10-27 16:25:20,705] checking taskid 090311014..
+[2019-10-27 16:25:20,707] checking taskid 090311015..
+[2019-10-27 16:25:20,709] checking taskid 090311016..
+[2019-10-27 16:25:21,879] SIGNAL : pre_save Observation(090311016)
+[2019-10-27 16:25:21,879] handle_pre_save(090311016)
+[2019-10-27 16:25:21,898] handle_post_save(090311016)
+[2019-10-27 16:25:21,898] save new observation
+[2019-10-27 16:25:23,068] add_dataproducts(090311016,1)
+[2019-10-27 16:25:23,070] addding dataproduct: 090311016_raw.jpg
+[2019-10-27 16:25:23,071] SIGNAL : pre_save DataProduct(090311016_raw.jpg)
+[2019-10-27 16:25:23,072] handle_pre_save(090311016_raw.jpg)
+[2019-10-27 16:25:23,089] handle_post_save(090311016_raw.jpg)
+[2019-10-27 16:25:23,089] save new dataproduct
+[2019-10-27 16:25:23,100] update dataproduct parent = 090311016
+[2019-10-27 16:25:25,405] SIGNAL : pre_save Observation(090311016)
+[2019-10-27 16:25:25,406] handle_pre_save(090311016)
+[2019-10-27 16:25:25,449] handle_post_save(090311016)
+[2019-10-27 16:29:09,815] SIGNAL : pre_save Observation(090311016)
+[2019-10-27 16:29:09,815] handle_pre_save(090311016)
+[2019-10-27 16:29:09,858] handle_post_save(090311016)
+[2019-10-27 16:29:11,795] SIGNAL : pre_save Observation(090311015)
+[2019-10-27 16:29:11,796] handle_pre_save(090311015)
+[2019-10-27 16:29:11,843] handle_post_save(090311015)
+[2019-10-27 16:29:14,138] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 16:29:14,139] handle_pre_save(090311006)
+[2019-10-27 16:29:14,189] handle_post_save(090311006)
+[2019-10-27 16:29:27,396] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 16:29:27,397] handle_pre_save(090311006)
+[2019-10-27 16:29:27,443] handle_post_save(090311006)
+[2019-10-27 16:29:34,573] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 16:29:34,573] handle_pre_save(090311006)
+[2019-10-27 16:29:34,605] handle_post_save(090311006)
+[2019-10-27 16:29:36,986] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 16:29:36,986] handle_pre_save(090311006)
+[2019-10-27 16:29:37,025] handle_post_save(090311006)
+[2019-10-27 16:29:39,599] SIGNAL : pre_save Observation(090311015)
+[2019-10-27 16:29:39,600] handle_pre_save(090311015)
+[2019-10-27 16:29:39,637] handle_post_save(090311015)
+[2019-10-27 16:29:48,278] SIGNAL : pre_save Observation(090311015)
+[2019-10-27 16:29:48,279] handle_pre_save(090311015)
+[2019-10-27 16:29:48,308] handle_post_save(090311015)
+[2019-10-27 16:29:50,644] SIGNAL : pre_save Observation(090311015)
+[2019-10-27 16:29:50,645] handle_pre_save(090311015)
+[2019-10-27 16:29:50,677] handle_post_save(090311015)
+[2019-10-27 16:29:53,214] SIGNAL : pre_save Observation(090311016)
+[2019-10-27 16:29:53,214] handle_pre_save(090311016)
+[2019-10-27 16:29:53,266] handle_post_save(090311016)
+[2019-10-27 16:29:59,976] SIGNAL : pre_save Observation(090311016)
+[2019-10-27 16:29:59,977] handle_pre_save(090311016)
+[2019-10-27 16:30:00,012] handle_post_save(090311016)
+[2019-10-27 16:30:02,334] SIGNAL : pre_save Observation(090311016)
+[2019-10-27 16:30:02,335] handle_pre_save(090311016)
+[2019-10-27 16:30:02,375] handle_post_save(090311016)
+[2019-10-27 16:31:09,498] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 16:31:09,498] handle_pre_save(090311006)
+[2019-10-27 16:31:09,532] handle_post_save(090311006)
+[2019-10-27 16:31:15,525] SIGNAL : pre_save Observation(090311015)
+[2019-10-27 16:31:15,525] handle_pre_save(090311015)
+[2019-10-27 16:31:15,566] handle_post_save(090311015)
+[2019-10-27 16:31:21,758] SIGNAL : pre_save Observation(090311016)
+[2019-10-27 16:31:21,758] handle_pre_save(090311016)
+[2019-10-27 16:31:21,804] handle_post_save(090311016)
+[2019-10-27 16:31:22,737] add_dataproducts(090311006,7)
+[2019-10-27 16:31:22,739] addding dataproduct: 3699956_sky_globe.jpg
+[2019-10-27 16:31:22,740] SIGNAL : pre_save DataProduct(3699956_sky_globe.jpg)
+[2019-10-27 16:31:22,740] handle_pre_save(3699956_sky_globe.jpg)
+[2019-10-27 16:31:22,757] handle_post_save(3699956_sky_globe.jpg)
+[2019-10-27 16:31:22,757] save new dataproduct
+[2019-10-27 16:31:22,768] update dataproduct parent = 090311006
+[2019-10-27 16:31:22,781] addding dataproduct: 3699956_sky_plot.jpg
+[2019-10-27 16:31:22,782] SIGNAL : pre_save DataProduct(3699956_sky_plot.jpg)
+[2019-10-27 16:31:22,782] handle_pre_save(3699956_sky_plot.jpg)
+[2019-10-27 16:31:22,794] handle_post_save(3699956_sky_plot.jpg)
+[2019-10-27 16:31:22,794] save new dataproduct
+[2019-10-27 16:31:22,805] update dataproduct parent = 090311006
+[2019-10-27 16:31:22,818] addding dataproduct: 3699956_annotated.jpg
+[2019-10-27 16:31:22,818] SIGNAL : pre_save DataProduct(3699956_annotated.jpg)
+[2019-10-27 16:31:22,819] handle_pre_save(3699956_annotated.jpg)
+[2019-10-27 16:31:22,829] handle_post_save(3699956_annotated.jpg)
+[2019-10-27 16:31:22,830] save new dataproduct
+[2019-10-27 16:31:22,840] update dataproduct parent = 090311006
+[2019-10-27 16:31:22,854] addding dataproduct: 3699956.fits
+[2019-10-27 16:31:22,855] SIGNAL : pre_save DataProduct(3699956.fits)
+[2019-10-27 16:31:22,855] handle_pre_save(3699956.fits)
+[2019-10-27 16:31:22,869] handle_post_save(3699956.fits)
+[2019-10-27 16:31:22,869] save new dataproduct
+[2019-10-27 16:31:22,879] update dataproduct parent = 090311006
+[2019-10-27 16:31:22,892] addding dataproduct: 3699956_rdls_file.fits
+[2019-10-27 16:31:22,893] SIGNAL : pre_save DataProduct(3699956_rdls_file.fits)
+[2019-10-27 16:31:22,893] handle_pre_save(3699956_rdls_file.fits)
+[2019-10-27 16:31:22,905] handle_post_save(3699956_rdls_file.fits)
+[2019-10-27 16:31:22,905] save new dataproduct
+[2019-10-27 16:31:22,916] update dataproduct parent = 090311006
+[2019-10-27 16:31:22,929] addding dataproduct: 3699956_wcs_file.fits
+[2019-10-27 16:31:22,930] SIGNAL : pre_save DataProduct(3699956_wcs_file.fits)
+[2019-10-27 16:31:22,930] handle_pre_save(3699956_wcs_file.fits)
+[2019-10-27 16:31:22,944] handle_post_save(3699956_wcs_file.fits)
+[2019-10-27 16:31:22,944] save new dataproduct
+[2019-10-27 16:31:22,955] update dataproduct parent = 090311006
+[2019-10-27 16:31:22,969] addding dataproduct: 3699956_axy_file.fits
+[2019-10-27 16:31:22,969] SIGNAL : pre_save DataProduct(3699956_axy_file.fits)
+[2019-10-27 16:31:22,970] handle_pre_save(3699956_axy_file.fits)
+[2019-10-27 16:31:22,979] handle_post_save(3699956_axy_file.fits)
+[2019-10-27 16:31:22,980] save new dataproduct
+[2019-10-27 16:31:22,989] update dataproduct parent = 090311006
+[2019-10-27 16:31:25,359] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 16:31:25,360] handle_pre_save(090311006)
+[2019-10-27 16:31:25,394] handle_post_save(090311006)
+[2019-10-27 16:31:27,727] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 16:31:27,727] handle_pre_save(090311006)
+[2019-10-27 16:31:27,758] handle_post_save(090311006)
+[2019-10-27 16:31:30,149] SIGNAL : pre_save Observation(090311006)
+[2019-10-27 16:31:30,150] handle_pre_save(090311006)
+[2019-10-27 16:31:30,185] handle_post_save(090311006)
+[2019-10-27 16:32:01,169] add_dataproducts(090311015,7)
+[2019-10-27 16:32:01,171] addding dataproduct: 3699954_sky_globe.jpg
+[2019-10-27 16:32:01,172] SIGNAL : pre_save DataProduct(3699954_sky_globe.jpg)
+[2019-10-27 16:32:01,172] handle_pre_save(3699954_sky_globe.jpg)
+[2019-10-27 16:32:01,194] handle_post_save(3699954_sky_globe.jpg)
+[2019-10-27 16:32:01,194] save new dataproduct
+[2019-10-27 16:32:01,206] update dataproduct parent = 090311015
+[2019-10-27 16:32:01,222] addding dataproduct: 3699954_sky_plot.jpg
+[2019-10-27 16:32:01,222] SIGNAL : pre_save DataProduct(3699954_sky_plot.jpg)
+[2019-10-27 16:32:01,223] handle_pre_save(3699954_sky_plot.jpg)
+[2019-10-27 16:32:01,237] handle_post_save(3699954_sky_plot.jpg)
+[2019-10-27 16:32:01,237] save new dataproduct
+[2019-10-27 16:32:01,248] update dataproduct parent = 090311015
+[2019-10-27 16:32:01,262] addding dataproduct: 3699954_annotated.jpg
+[2019-10-27 16:32:01,262] SIGNAL : pre_save DataProduct(3699954_annotated.jpg)
+[2019-10-27 16:32:01,262] handle_pre_save(3699954_annotated.jpg)
+[2019-10-27 16:32:01,278] handle_post_save(3699954_annotated.jpg)
+[2019-10-27 16:32:01,279] save new dataproduct
+[2019-10-27 16:32:01,290] update dataproduct parent = 090311015
+[2019-10-27 16:32:01,304] addding dataproduct: 3699954.fits
+[2019-10-27 16:32:01,305] SIGNAL : pre_save DataProduct(3699954.fits)
+[2019-10-27 16:32:01,311] handle_pre_save(3699954.fits)
+[2019-10-27 16:32:01,326] handle_post_save(3699954.fits)
+[2019-10-27 16:32:01,326] save new dataproduct
+[2019-10-27 16:32:01,342] update dataproduct parent = 090311015
+[2019-10-27 16:32:01,359] addding dataproduct: 3699954_rdls_file.fits
+[2019-10-27 16:32:01,359] SIGNAL : pre_save DataProduct(3699954_rdls_file.fits)
+[2019-10-27 16:32:01,360] handle_pre_save(3699954_rdls_file.fits)
+[2019-10-27 16:32:01,372] handle_post_save(3699954_rdls_file.fits)
+[2019-10-27 16:32:01,372] save new dataproduct
+[2019-10-27 16:32:01,382] update dataproduct parent = 090311015
+[2019-10-27 16:32:01,397] addding dataproduct: 3699954_wcs_file.fits
+[2019-10-27 16:32:01,398] SIGNAL : pre_save DataProduct(3699954_wcs_file.fits)
+[2019-10-27 16:32:01,398] handle_pre_save(3699954_wcs_file.fits)
+[2019-10-27 16:32:01,411] handle_post_save(3699954_wcs_file.fits)
+[2019-10-27 16:32:01,411] save new dataproduct
+[2019-10-27 16:32:01,421] update dataproduct parent = 090311015
+[2019-10-27 16:32:01,436] addding dataproduct: 3699954_axy_file.fits
+[2019-10-27 16:32:01,436] SIGNAL : pre_save DataProduct(3699954_axy_file.fits)
+[2019-10-27 16:32:01,437] handle_pre_save(3699954_axy_file.fits)
+[2019-10-27 16:32:01,452] handle_post_save(3699954_axy_file.fits)
+[2019-10-27 16:32:01,452] save new dataproduct
+[2019-10-27 16:32:01,464] update dataproduct parent = 090311015
+[2019-10-27 16:32:03,805] SIGNAL : pre_save Observation(090311015)
+[2019-10-27 16:32:03,806] handle_pre_save(090311015)
+[2019-10-27 16:32:03,838] handle_post_save(090311015)
+[2019-10-27 16:32:06,197] SIGNAL : pre_save Observation(090311015)
+[2019-10-27 16:32:06,197] handle_pre_save(090311015)
+[2019-10-27 16:32:06,228] handle_post_save(090311015)
+[2019-10-27 16:32:08,554] SIGNAL : pre_save Observation(090311015)
+[2019-10-27 16:32:08,554] handle_pre_save(090311015)
+[2019-10-27 16:32:08,598] handle_post_save(090311015)
+[2019-10-27 16:32:26,719] add_dataproducts(090311016,7)
+[2019-10-27 16:32:26,721] addding dataproduct: 3699957_sky_globe.jpg
+[2019-10-27 16:32:26,722] SIGNAL : pre_save DataProduct(3699957_sky_globe.jpg)
+[2019-10-27 16:32:26,723] handle_pre_save(3699957_sky_globe.jpg)
+[2019-10-27 16:32:26,741] handle_post_save(3699957_sky_globe.jpg)
+[2019-10-27 16:32:26,742] save new dataproduct
+[2019-10-27 16:32:26,753] update dataproduct parent = 090311016
+[2019-10-27 16:32:26,766] addding dataproduct: 3699957_sky_plot.jpg
+[2019-10-27 16:32:26,766] SIGNAL : pre_save DataProduct(3699957_sky_plot.jpg)
+[2019-10-27 16:32:26,767] handle_pre_save(3699957_sky_plot.jpg)
+[2019-10-27 16:32:26,780] handle_post_save(3699957_sky_plot.jpg)
+[2019-10-27 16:32:26,781] save new dataproduct
+[2019-10-27 16:32:26,793] update dataproduct parent = 090311016
+[2019-10-27 16:32:26,807] addding dataproduct: 3699957_annotated.jpg
+[2019-10-27 16:32:26,807] SIGNAL : pre_save DataProduct(3699957_annotated.jpg)
+[2019-10-27 16:32:26,808] handle_pre_save(3699957_annotated.jpg)
+[2019-10-27 16:32:26,821] handle_post_save(3699957_annotated.jpg)
+[2019-10-27 16:32:26,822] save new dataproduct
+[2019-10-27 16:32:26,833] update dataproduct parent = 090311016
+[2019-10-27 16:32:26,848] addding dataproduct: 3699957.fits
+[2019-10-27 16:32:26,848] SIGNAL : pre_save DataProduct(3699957.fits)
+[2019-10-27 16:32:26,849] handle_pre_save(3699957.fits)
+[2019-10-27 16:32:26,861] handle_post_save(3699957.fits)
+[2019-10-27 16:32:26,862] save new dataproduct
+[2019-10-27 16:32:26,872] update dataproduct parent = 090311016
+[2019-10-27 16:32:26,885] addding dataproduct: 3699957_rdls_file.fits
+[2019-10-27 16:32:26,885] SIGNAL : pre_save DataProduct(3699957_rdls_file.fits)
+[2019-10-27 16:32:26,885] handle_pre_save(3699957_rdls_file.fits)
+[2019-10-27 16:32:26,896] handle_post_save(3699957_rdls_file.fits)
+[2019-10-27 16:32:26,897] save new dataproduct
+[2019-10-27 16:32:26,906] update dataproduct parent = 090311016
+[2019-10-27 16:32:26,921] addding dataproduct: 3699957_wcs_file.fits
+[2019-10-27 16:32:26,921] SIGNAL : pre_save DataProduct(3699957_wcs_file.fits)
+[2019-10-27 16:32:26,922] handle_pre_save(3699957_wcs_file.fits)
+[2019-10-27 16:32:26,933] handle_post_save(3699957_wcs_file.fits)
+[2019-10-27 16:32:26,933] save new dataproduct
+[2019-10-27 16:32:26,943] update dataproduct parent = 090311016
+[2019-10-27 16:32:26,956] addding dataproduct: 3699957_axy_file.fits
+[2019-10-27 16:32:26,957] SIGNAL : pre_save DataProduct(3699957_axy_file.fits)
+[2019-10-27 16:32:26,957] handle_pre_save(3699957_axy_file.fits)
+[2019-10-27 16:32:26,968] handle_post_save(3699957_axy_file.fits)
+[2019-10-27 16:32:26,969] save new dataproduct
+[2019-10-27 16:32:26,980] update dataproduct parent = 090311016
+[2019-10-27 16:32:29,307] SIGNAL : pre_save Observation(090311016)
+[2019-10-27 16:32:29,307] handle_pre_save(090311016)
+[2019-10-27 16:32:29,340] handle_post_save(090311016)
+[2019-10-27 16:32:31,665] SIGNAL : pre_save Observation(090311016)
+[2019-10-27 16:32:31,666] handle_pre_save(090311016)
+[2019-10-27 16:32:31,697] handle_post_save(090311016)
+[2019-10-27 16:32:34,034] SIGNAL : pre_save Observation(090311016)
+[2019-10-27 16:32:34,035] handle_pre_save(090311016)
+[2019-10-27 16:32:34,079] handle_post_save(090311016)
