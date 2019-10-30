@@ -54,6 +54,7 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'field_name','field_ra','field_dec','field_fov',
                   'creationTime','date','size',
                   'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
+                  'derived_sky_globe_image','derived_red_green_image',
                   'my_status','new_status','status_history','job',
                   'generated_dataproducts','data_location', 'quality','description')
 

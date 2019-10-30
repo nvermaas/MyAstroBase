@@ -191,7 +191,7 @@ def do_handle_processed_jobs(astrobaseIO, local_data_dir):
             dataproducts = dataproducts + "," + dp
 
         dataproducts = dataproducts + add_dataproduct(job_id,"/annotated_full/", "_annotated.jpg", "annotated")
-        # dataproducts = dataproducts + add_dataproduct(job_id,"/red_green_image_full/", "_redgreen.jpg", "redgreen")
+        dataproducts = dataproducts + add_dataproduct(job_id,"/red_green_image_full/", "_redgreen.jpg", "redgreen")
         # dataproducts = dataproducts + add_dataproduct(job_id,"/extraction_image_full/", "_extraction.jpg", "extraction")
         dataproducts = dataproducts + add_dataproduct(job_id,"/new_fits_file/", ".fits", str(job_id)+".fits")
         dataproducts = dataproducts + add_dataproduct(job_id,"/rdls_file/", "_rdls_file.fits", "nearby_stars_fits")

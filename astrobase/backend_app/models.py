@@ -79,6 +79,7 @@ class Observation(TaskObject):
     # can be used to distinguish types of observations, like with powershot G2 or Kitt Peak
     observing_mode = models.CharField(max_length=50, default="digcam")
     description = models.CharField(max_length=255, default="")
+    url = models.CharField(max_length=100, default="")
     # can be used to distinguish types of observations, like for ARTS.
     process_type = models.CharField(max_length=50, default="observation")
 
@@ -124,11 +125,31 @@ class Observation(TaskObject):
 
 
     @property
+    def derived_red_green_image(self):
+        # get the red_green dataproduct
+
+        # find object with 'datasetID'
+        dataproduct = DataProduct.objects.get(dataproduct_type='redgreen',taskID=self.taskID)
+        path = dataproduct.property_url
+        return path
+
+
+    @property
     def derived_sky_plot_image(self):
         # get the sky_plot dataproduct
 
         # find object with 'datasetID'
         dataproduct = DataProduct.objects.get(dataproduct_type='sky_plot',taskID=self.taskID)
+        path = dataproduct.property_url
+        return path
+
+
+    @property
+    def derived_sky_globe_image(self):
+        # get the sky_globe dataproduct
+
+        # find object with 'datasetID'
+        dataproduct = DataProduct.objects.get(dataproduct_type='sky_globe',taskID=self.taskID)
         path = dataproduct.property_url
         return path
 
