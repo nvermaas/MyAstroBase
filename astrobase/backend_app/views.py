@@ -237,7 +237,7 @@ class ObservationListViewAPI(generics.ListCreateAPIView):
     A pagination list of observations, unsorted.
     """
     model = Observation
-    queryset = Observation.objects.all()
+    queryset = Observation.objects.all().order_by('-taskID')
     serializer_class = ObservationSerializer
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html

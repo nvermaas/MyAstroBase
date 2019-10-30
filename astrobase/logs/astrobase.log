@@ -12903,3 +12903,227 @@
 [2019-10-30 11:16:54,278] my_queryset retrieved
 [2019-10-30 11:17:04,448] DataProductsListView.get_queryset()
 [2019-10-30 11:17:04,449] my_queryset retrieved
+[2019-10-30 15:45:23,289] SIGNAL : pre_save Observation(090311002)
+[2019-10-30 15:45:23,290] handle_pre_save(090311002)
+[2019-10-30 15:45:23,351] handle_post_save(090311002)
+[2019-10-30 15:45:26,946] DataProductsListView.get_queryset()
+[2019-10-30 15:45:26,947] my_queryset retrieved
+[2019-10-30 15:45:36,819] SIGNAL : pre_save Observation(090311002)
+[2019-10-30 15:45:36,820] handle_pre_save(090311002)
+[2019-10-30 15:45:36,858] handle_post_save(090311002)
+[2019-10-30 15:45:37,353] DataProductsListView.get_queryset()
+[2019-10-30 15:45:37,353] my_queryset retrieved
+[2019-10-30 15:45:39,185] SIGNAL : pre_save Observation(090311002)
+[2019-10-30 15:45:39,185] handle_pre_save(090311002)
+[2019-10-30 15:45:39,221] handle_post_save(090311002)
+[2019-10-30 15:45:41,561] SIGNAL : pre_save Observation(090311002)
+[2019-10-30 15:45:41,561] handle_pre_save(090311002)
+[2019-10-30 15:45:41,608] handle_post_save(090311002)
+[2019-10-30 15:45:47,547] DataProductsListView.get_queryset()
+[2019-10-30 15:45:47,549] my_queryset retrieved
+[2019-10-30 15:45:57,742] DataProductsListView.get_queryset()
+[2019-10-30 15:45:57,743] my_queryset retrieved
+[2019-10-30 15:46:07,912] DataProductsListView.get_queryset()
+[2019-10-30 15:46:07,913] my_queryset retrieved
+[2019-10-30 15:46:18,112] DataProductsListView.get_queryset()
+[2019-10-30 15:46:18,113] my_queryset retrieved
+[2019-10-30 15:46:28,324] DataProductsListView.get_queryset()
+[2019-10-30 15:46:28,326] my_queryset retrieved
+[2019-10-30 15:46:38,564] DataProductsListView.get_queryset()
+[2019-10-30 15:46:38,566] my_queryset retrieved
+[2019-10-30 15:46:48,768] DataProductsListView.get_queryset()
+[2019-10-30 15:46:48,771] my_queryset retrieved
+[2019-10-30 15:46:58,982] DataProductsListView.get_queryset()
+[2019-10-30 15:46:58,984] my_queryset retrieved
+[2019-10-30 15:47:09,202] DataProductsListView.get_queryset()
+[2019-10-30 15:47:09,205] my_queryset retrieved
+[2019-10-30 15:47:19,408] DataProductsListView.get_queryset()
+[2019-10-30 15:47:19,409] my_queryset retrieved
+[2019-10-30 15:47:29,559] DataProductsListView.get_queryset()
+[2019-10-30 15:47:29,560] my_queryset retrieved
+[2019-10-30 15:47:39,773] DataProductsListView.get_queryset()
+[2019-10-30 15:47:39,774] my_queryset retrieved
+[2019-10-30 15:47:49,980] DataProductsListView.get_queryset()
+[2019-10-30 15:47:49,981] my_queryset retrieved
+[2019-10-30 15:48:00,503] DataProductsListView.get_queryset()
+[2019-10-30 15:48:00,504] my_queryset retrieved
+[2019-10-30 15:48:10,732] DataProductsListView.get_queryset()
+[2019-10-30 15:48:10,734] my_queryset retrieved
+[2019-10-30 15:48:20,962] DataProductsListView.get_queryset()
+[2019-10-30 15:48:20,965] my_queryset retrieved
+[2019-10-30 15:48:31,173] DataProductsListView.get_queryset()
+[2019-10-30 15:48:31,174] my_queryset retrieved
+[2019-10-30 15:48:42,923] DataProductsListView.get_queryset()
+[2019-10-30 15:48:42,924] my_queryset retrieved
+[2019-10-30 18:37:27,344] SIGNAL : pre_save Observation(090311014 - Img_7402b)
+[2019-10-30 18:37:27,345] handle_pre_save(090311014 - Img_7402b)
+[2019-10-30 18:37:27,355] handle_post_save(090311014 - Img_7402b)
+[2019-10-30 18:38:46,030] SIGNAL : pre_save Observation(090311012 - Soutern Cross)
+[2019-10-30 18:38:46,031] handle_pre_save(090311012 - Soutern Cross)
+[2019-10-30 18:38:46,043] handle_post_save(090311012 - Soutern Cross)
+[2019-10-30 19:22:53,021] DataProductsListView.get_queryset()
+[2019-10-30 19:22:53,022] my_queryset retrieved
+[2019-10-30 19:23:01,349] SIGNAL : pre_save Observation(090311019 - andromeda)
+[2019-10-30 19:23:01,350] handle_pre_save(090311019 - andromeda)
+[2019-10-30 19:23:01,416] handle_post_save(090311019 - andromeda)
+[2019-10-30 19:23:16,889] SIGNAL : pre_save Observation(090311019 - andromeda)
+[2019-10-30 19:23:16,890] handle_pre_save(090311019 - andromeda)
+[2019-10-30 19:23:16,925] handle_post_save(090311019 - andromeda)
+[2019-10-30 19:23:19,289] SIGNAL : pre_save Observation(090311019 - andromeda)
+[2019-10-30 19:23:19,289] handle_pre_save(090311019 - andromeda)
+[2019-10-30 19:23:19,317] handle_post_save(090311019 - andromeda)
+[2019-10-30 19:23:21,706] SIGNAL : pre_save Observation(090311019 - andromeda)
+[2019-10-30 19:23:21,707] handle_pre_save(090311019 - andromeda)
+[2019-10-30 19:23:21,751] handle_post_save(090311019 - andromeda)
+[2019-10-30 19:23:29,506] DataProductsListView.get_queryset()
+[2019-10-30 19:23:29,507] my_queryset retrieved
+[2019-10-30 19:23:39,891] DataProductsListView.get_queryset()
+[2019-10-30 19:23:39,892] my_queryset retrieved
+[2019-10-30 19:23:50,129] DataProductsListView.get_queryset()
+[2019-10-30 19:23:50,130] my_queryset retrieved
+[2019-10-30 19:24:00,469] DataProductsListView.get_queryset()
+[2019-10-30 19:24:00,470] my_queryset retrieved
+[2019-10-30 19:24:10,666] DataProductsListView.get_queryset()
+[2019-10-30 19:24:10,667] my_queryset retrieved
+[2019-10-30 19:24:20,870] DataProductsListView.get_queryset()
+[2019-10-30 19:24:20,872] my_queryset retrieved
+[2019-10-30 19:24:31,087] DataProductsListView.get_queryset()
+[2019-10-30 19:24:31,091] my_queryset retrieved
+[2019-10-30 19:24:41,309] DataProductsListView.get_queryset()
+[2019-10-30 19:24:41,313] my_queryset retrieved
+[2019-10-30 19:24:51,516] DataProductsListView.get_queryset()
+[2019-10-30 19:24:51,518] my_queryset retrieved
+[2019-10-30 19:25:01,731] DataProductsListView.get_queryset()
+[2019-10-30 19:25:01,732] my_queryset retrieved
+[2019-10-30 19:25:12,154] DataProductsListView.get_queryset()
+[2019-10-30 19:25:12,159] my_queryset retrieved
+[2019-10-30 19:25:22,921] DataProductsListView.get_queryset()
+[2019-10-30 19:25:22,924] my_queryset retrieved
+[2019-10-30 19:25:33,381] DataProductsListView.get_queryset()
+[2019-10-30 19:25:33,382] my_queryset retrieved
+[2019-10-30 19:25:43,613] DataProductsListView.get_queryset()
+[2019-10-30 19:25:43,614] my_queryset retrieved
+[2019-10-30 19:25:53,816] DataProductsListView.get_queryset()
+[2019-10-30 19:25:53,817] my_queryset retrieved
+[2019-10-30 19:26:04,027] DataProductsListView.get_queryset()
+[2019-10-30 19:26:04,028] my_queryset retrieved
+[2019-10-30 19:26:14,265] DataProductsListView.get_queryset()
+[2019-10-30 19:26:14,266] my_queryset retrieved
+[2019-10-30 19:26:24,486] DataProductsListView.get_queryset()
+[2019-10-30 19:26:24,488] my_queryset retrieved
+[2019-10-30 19:26:34,727] DataProductsListView.get_queryset()
+[2019-10-30 19:26:34,729] my_queryset retrieved
+[2019-10-30 19:26:44,949] DataProductsListView.get_queryset()
+[2019-10-30 19:26:44,950] my_queryset retrieved
+[2019-10-30 19:26:55,322] DataProductsListView.get_queryset()
+[2019-10-30 19:26:55,324] my_queryset retrieved
+[2019-10-30 19:27:05,555] DataProductsListView.get_queryset()
+[2019-10-30 19:27:05,559] my_queryset retrieved
+[2019-10-30 19:27:15,810] DataProductsListView.get_queryset()
+[2019-10-30 19:27:15,812] my_queryset retrieved
+[2019-10-30 19:27:26,187] DataProductsListView.get_queryset()
+[2019-10-30 19:27:26,189] my_queryset retrieved
+[2019-10-30 19:27:36,447] DataProductsListView.get_queryset()
+[2019-10-30 19:27:36,450] my_queryset retrieved
+[2019-10-30 19:27:46,702] DataProductsListView.get_queryset()
+[2019-10-30 19:27:46,702] my_queryset retrieved
+[2019-10-30 19:27:57,067] DataProductsListView.get_queryset()
+[2019-10-30 19:27:57,068] my_queryset retrieved
+[2019-10-30 19:28:07,376] DataProductsListView.get_queryset()
+[2019-10-30 19:28:07,378] my_queryset retrieved
+[2019-10-30 19:28:17,605] DataProductsListView.get_queryset()
+[2019-10-30 19:28:17,606] my_queryset retrieved
+[2019-10-30 19:28:27,800] DataProductsListView.get_queryset()
+[2019-10-30 19:28:27,801] my_queryset retrieved
+[2019-10-30 19:28:38,117] DataProductsListView.get_queryset()
+[2019-10-30 19:28:38,118] my_queryset retrieved
+[2019-10-30 19:28:48,324] DataProductsListView.get_queryset()
+[2019-10-30 19:28:48,325] my_queryset retrieved
+[2019-10-30 19:28:58,542] DataProductsListView.get_queryset()
+[2019-10-30 19:28:58,544] my_queryset retrieved
+[2019-10-30 19:29:08,937] DataProductsListView.get_queryset()
+[2019-10-30 19:29:08,939] my_queryset retrieved
+[2019-10-30 19:29:19,179] DataProductsListView.get_queryset()
+[2019-10-30 19:29:19,184] my_queryset retrieved
+[2019-10-30 19:29:29,404] DataProductsListView.get_queryset()
+[2019-10-30 19:29:29,408] my_queryset retrieved
+[2019-10-30 19:29:39,771] DataProductsListView.get_queryset()
+[2019-10-30 19:29:39,772] my_queryset retrieved
+[2019-10-30 19:29:49,982] DataProductsListView.get_queryset()
+[2019-10-30 19:29:49,983] my_queryset retrieved
+[2019-10-30 19:30:00,214] DataProductsListView.get_queryset()
+[2019-10-30 19:30:00,216] my_queryset retrieved
+[2019-10-30 19:30:10,546] DataProductsListView.get_queryset()
+[2019-10-30 19:30:10,549] my_queryset retrieved
+[2019-10-30 19:30:20,767] DataProductsListView.get_queryset()
+[2019-10-30 19:30:20,768] my_queryset retrieved
+[2019-10-30 19:30:30,980] DataProductsListView.get_queryset()
+[2019-10-30 19:30:30,980] my_queryset retrieved
+[2019-10-30 19:30:41,195] DataProductsListView.get_queryset()
+[2019-10-30 19:30:41,196] my_queryset retrieved
+[2019-10-30 19:30:51,406] DataProductsListView.get_queryset()
+[2019-10-30 19:30:51,408] my_queryset retrieved
+[2019-10-30 19:31:01,798] DataProductsListView.get_queryset()
+[2019-10-30 19:31:01,800] my_queryset retrieved
+[2019-10-30 19:31:12,041] DataProductsListView.get_queryset()
+[2019-10-30 19:31:12,046] my_queryset retrieved
+[2019-10-30 19:31:22,278] DataProductsListView.get_queryset()
+[2019-10-30 19:31:22,280] my_queryset retrieved
+[2019-10-30 19:31:32,671] DataProductsListView.get_queryset()
+[2019-10-30 19:31:32,673] my_queryset retrieved
+[2019-10-30 19:31:42,894] DataProductsListView.get_queryset()
+[2019-10-30 19:31:42,896] my_queryset retrieved
+[2019-10-30 19:31:53,133] DataProductsListView.get_queryset()
+[2019-10-30 19:31:53,135] my_queryset retrieved
+[2019-10-30 19:32:03,330] DataProductsListView.get_queryset()
+[2019-10-30 19:32:03,331] my_queryset retrieved
+[2019-10-30 19:32:13,545] DataProductsListView.get_queryset()
+[2019-10-30 19:32:13,546] my_queryset retrieved
+[2019-10-30 19:32:23,882] DataProductsListView.get_queryset()
+[2019-10-30 19:32:23,890] my_queryset retrieved
+[2019-10-30 19:32:34,118] DataProductsListView.get_queryset()
+[2019-10-30 19:32:34,123] my_queryset retrieved
+[2019-10-30 19:32:44,348] DataProductsListView.get_queryset()
+[2019-10-30 19:32:44,350] my_queryset retrieved
+[2019-10-30 19:32:54,668] DataProductsListView.get_queryset()
+[2019-10-30 19:32:54,669] my_queryset retrieved
+[2019-10-30 19:33:04,929] DataProductsListView.get_queryset()
+[2019-10-30 19:33:04,932] my_queryset retrieved
+[2019-10-30 19:33:15,152] DataProductsListView.get_queryset()
+[2019-10-30 19:33:15,155] my_queryset retrieved
+[2019-10-30 19:33:25,377] DataProductsListView.get_queryset()
+[2019-10-30 19:33:25,379] my_queryset retrieved
+[2019-10-30 19:33:35,594] DataProductsListView.get_queryset()
+[2019-10-30 19:33:35,594] my_queryset retrieved
+[2019-10-30 19:33:45,903] DataProductsListView.get_queryset()
+[2019-10-30 19:33:45,905] my_queryset retrieved
+[2019-10-30 19:33:56,153] DataProductsListView.get_queryset()
+[2019-10-30 19:33:56,154] my_queryset retrieved
+[2019-10-30 19:34:06,352] DataProductsListView.get_queryset()
+[2019-10-30 19:34:06,354] my_queryset retrieved
+[2019-10-30 19:34:16,581] DataProductsListView.get_queryset()
+[2019-10-30 19:34:16,582] my_queryset retrieved
+[2019-10-30 19:34:26,928] DataProductsListView.get_queryset()
+[2019-10-30 19:34:26,929] my_queryset retrieved
+[2019-10-30 19:34:37,203] DataProductsListView.get_queryset()
+[2019-10-30 19:34:37,204] my_queryset retrieved
+[2019-10-30 19:34:47,484] DataProductsListView.get_queryset()
+[2019-10-30 19:34:47,485] my_queryset retrieved
+[2019-10-30 19:34:57,723] DataProductsListView.get_queryset()
+[2019-10-30 19:34:57,726] my_queryset retrieved
+[2019-10-30 19:35:07,972] DataProductsListView.get_queryset()
+[2019-10-30 19:35:07,974] my_queryset retrieved
+[2019-10-30 19:35:18,214] DataProductsListView.get_queryset()
+[2019-10-30 19:35:18,215] my_queryset retrieved
+[2019-10-30 19:35:28,442] DataProductsListView.get_queryset()
+[2019-10-30 19:35:28,443] my_queryset retrieved
+[2019-10-30 19:35:38,773] DataProductsListView.get_queryset()
+[2019-10-30 19:35:38,773] my_queryset retrieved
+[2019-10-30 19:35:49,049] DataProductsListView.get_queryset()
+[2019-10-30 19:35:49,051] my_queryset retrieved
+[2019-10-30 19:35:59,275] DataProductsListView.get_queryset()
+[2019-10-30 19:35:59,276] my_queryset retrieved
+[2019-10-30 19:36:09,508] DataProductsListView.get_queryset()
+[2019-10-30 19:36:09,511] my_queryset retrieved
+[2019-10-30 19:36:19,734] DataProductsListView.get_queryset()
+[2019-10-30 19:36:19,735] my_queryset retrieved

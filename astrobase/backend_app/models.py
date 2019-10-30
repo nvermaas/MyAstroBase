@@ -154,7 +154,7 @@ class Observation(TaskObject):
         return path
 
     def __str__(self):
-        return str(self.taskID)
+        return str(self.taskID) + ' - ' + str(self.name)
 
 
 # file upload for images to the astrobase landing_pad

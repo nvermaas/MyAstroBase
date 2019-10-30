@@ -55,7 +55,7 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'creationTime','date','size',
                   'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
                   'derived_sky_globe_image','derived_red_green_image',
-                  'my_status','new_status','status_history','job',
+                  'my_status','new_status','status_history','job','url',
                   'generated_dataproducts','data_location', 'quality','description')
 
 # Serializer for file uploads
