@@ -109,49 +109,60 @@ class Observation(TaskObject):
         # get the raw dataproduct
 
         # find object with 'datasetID'
-        dataproduct = DataProduct.objects.get(dataproduct_type='raw',taskID=self.taskID)
-        path = dataproduct.property_url
-        return path
-
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='raw',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
 
     @property
     def derived_annotated_image(self):
         # get the annotated dataproduct
 
         # find object with 'datasetID'
-        dataproduct = DataProduct.objects.get(dataproduct_type='annotated',taskID=self.taskID)
-        path = dataproduct.property_url
-        return path
-
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='annotated',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
 
     @property
     def derived_red_green_image(self):
         # get the red_green dataproduct
 
         # find object with 'datasetID'
-        dataproduct = DataProduct.objects.get(dataproduct_type='redgreen',taskID=self.taskID)
-        path = dataproduct.property_url
-        return path
-
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='redgreen',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
 
     @property
     def derived_sky_plot_image(self):
         # get the sky_plot dataproduct
 
         # find object with 'datasetID'
-        dataproduct = DataProduct.objects.get(dataproduct_type='sky_plot',taskID=self.taskID)
-        path = dataproduct.property_url
-        return path
-
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='sky_plot',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
 
     @property
     def derived_sky_globe_image(self):
         # get the sky_globe dataproduct
 
         # find object with 'datasetID'
-        dataproduct = DataProduct.objects.get(dataproduct_type='sky_globe',taskID=self.taskID)
-        path = dataproduct.property_url
-        return path
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='sky_globe',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
 
     def __str__(self):
         return str(self.taskID) + ' - ' + str(self.name)
