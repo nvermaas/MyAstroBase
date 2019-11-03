@@ -180,15 +180,17 @@ def do_ingest(astrobaseIO, local_landing_pad, local_data_dir):
                 taskid = ingest_from_metadata(dirpath,filename)
                 astrobaseIO.report("*ingest* : added (metadata) observation " + taskid, "slack")
             else:
-                # if there is an image file without an accompanying json metadata file
-                # then create the metadata json
-                path_to_json = os.path.join(dirpath,name)+'.json'
-                if not os.path.isfile(path_to_json):
+                # first check if it is still there to prevent a race condition from
+                # having it just ingested as json/image combination.
+                if os.path.isfile(path_to_file):
 
-                    create_metadata_json(filename, dirpath,name)
-                    astrobaseIO.report("*ingest* : created metadata for " + filename, "slack")
+                    # if there is an image file without an accompanying json metadata file
+                    # then create the metadata json
+                    path_to_json = os.path.join(dirpath,name)+'.json'
+                    if not os.path.isfile(path_to_json):
 
-                    # metadata json file is created and will be picked up on the next heartbeat
+                        create_metadata_json(filename, dirpath,name)
+                        astrobaseIO.report("*ingest* : created metadata for " + filename, "slack")
 
-                    #taskid = ingest_from_image(path_to_file)
-                    #astrobaseIO.report("*ingest* : added (image) observation " + taskid, "slack")
+                        # metadata json file is created and will be picked up on the next heartbeat
+

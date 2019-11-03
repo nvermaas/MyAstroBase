@@ -25,9 +25,9 @@ from pkg_resources import get_distribution
 try:
     pkg_version = get_distribution('astrobase_services').version
 except:
-    pkg_version = '0.9'
+    pkg_version = '1.0.0'
 
-LAST_UPDATE = "24 oct 2019"
+LAST_UPDATE = "3 nov 2019"
 
 # ====================================================================
 

@@ -13621,3 +13621,317 @@
 [2019-10-31 19:48:22,699] SIGNAL : pre_save Observation(090311004 - 040521_CometNeat_a)
 [2019-10-31 19:48:22,699] handle_pre_save(090311004 - 040521_CometNeat_a)
 [2019-10-31 19:48:22,747] handle_post_save(090311004 - 040521_CometNeat_a)
+[2019-11-03 09:23:49,169] DataProductsListView.get_queryset()
+[2019-11-03 09:23:49,176] my_queryset retrieved
+[2019-11-03 09:24:32,474] DataProductsListView.get_queryset()
+[2019-11-03 09:24:32,475] my_queryset retrieved
+[2019-11-03 09:24:42,682] DataProductsListView.get_queryset()
+[2019-11-03 09:24:42,683] my_queryset retrieved
+[2019-11-03 09:24:52,862] DataProductsListView.get_queryset()
+[2019-11-03 09:24:52,863] my_queryset retrieved
+[2019-11-03 09:25:02,983] DataProductsListView.get_queryset()
+[2019-11-03 09:25:02,984] my_queryset retrieved
+[2019-11-03 09:25:13,152] DataProductsListView.get_queryset()
+[2019-11-03 09:25:13,153] my_queryset retrieved
+[2019-11-03 09:25:23,317] DataProductsListView.get_queryset()
+[2019-11-03 09:25:23,318] my_queryset retrieved
+[2019-11-03 09:25:33,485] DataProductsListView.get_queryset()
+[2019-11-03 09:25:33,486] my_queryset retrieved
+[2019-11-03 09:25:43,644] DataProductsListView.get_queryset()
+[2019-11-03 09:25:43,645] my_queryset retrieved
+[2019-11-03 09:25:53,748] DataProductsListView.get_queryset()
+[2019-11-03 09:25:53,749] my_queryset retrieved
+[2019-11-03 09:26:03,930] DataProductsListView.get_queryset()
+[2019-11-03 09:26:03,931] my_queryset retrieved
+[2019-11-03 09:26:14,105] DataProductsListView.get_queryset()
+[2019-11-03 09:26:14,106] my_queryset retrieved
+[2019-11-03 09:26:24,268] DataProductsListView.get_queryset()
+[2019-11-03 09:26:24,269] my_queryset retrieved
+[2019-11-03 09:26:34,432] DataProductsListView.get_queryset()
+[2019-11-03 09:26:34,433] my_queryset retrieved
+[2019-11-03 09:26:44,592] DataProductsListView.get_queryset()
+[2019-11-03 09:26:44,593] my_queryset retrieved
+[2019-11-03 09:26:54,753] DataProductsListView.get_queryset()
+[2019-11-03 09:26:54,754] my_queryset retrieved
+[2019-11-03 09:27:04,933] DataProductsListView.get_queryset()
+[2019-11-03 09:27:04,934] my_queryset retrieved
+[2019-11-03 09:27:15,100] DataProductsListView.get_queryset()
+[2019-11-03 09:27:15,101] my_queryset retrieved
+[2019-11-03 09:27:25,263] DataProductsListView.get_queryset()
+[2019-11-03 09:27:25,264] my_queryset retrieved
+[2019-11-03 09:27:35,436] DataProductsListView.get_queryset()
+[2019-11-03 09:27:35,437] my_queryset retrieved
+[2019-11-03 09:27:45,606] DataProductsListView.get_queryset()
+[2019-11-03 09:27:45,607] my_queryset retrieved
+[2019-11-03 09:27:49,796] SIGNAL : pre_save Observation(090311004 - 040521_CometNeat_a)
+[2019-11-03 09:27:49,796] handle_pre_save(090311004 - 040521_CometNeat_a)
+[2019-11-03 09:27:49,829] handle_post_save(090311004 - 040521_CometNeat_a)
+[2019-11-03 09:27:52,258] SIGNAL : pre_save Observation(090311004 - 040521_CometNeat_a)
+[2019-11-03 09:27:52,258] handle_pre_save(090311004 - 040521_CometNeat_a)
+[2019-11-03 09:27:52,285] handle_post_save(090311004 - 040521_CometNeat_a)
+[2019-11-03 09:27:54,660] SIGNAL : pre_save Observation(090311004 - 040521_CometNeat_a)
+[2019-11-03 09:27:54,660] handle_pre_save(090311004 - 040521_CometNeat_a)
+[2019-11-03 09:27:54,708] handle_post_save(090311004 - 040521_CometNeat_a)
+[2019-11-03 09:27:55,844] DataProductsListView.get_queryset()
+[2019-11-03 09:27:55,845] my_queryset retrieved
+[2019-11-03 09:28:06,039] DataProductsListView.get_queryset()
+[2019-11-03 09:28:06,040] my_queryset retrieved
+[2019-11-03 09:28:16,238] DataProductsListView.get_queryset()
+[2019-11-03 09:28:16,239] my_queryset retrieved
+[2019-11-03 09:28:26,404] DataProductsListView.get_queryset()
+[2019-11-03 09:28:26,405] my_queryset retrieved
+[2019-11-03 09:28:36,578] DataProductsListView.get_queryset()
+[2019-11-03 09:28:36,579] my_queryset retrieved
+[2019-11-03 09:28:46,670] DataProductsListView.get_queryset()
+[2019-11-03 09:28:46,671] my_queryset retrieved
+[2019-11-03 09:28:52,465] SIGNAL : pre_save DataProduct(3691835.fits)
+[2019-11-03 09:28:52,465] handle_pre_save(3691835.fits)
+[2019-11-03 09:28:52,491] handle_post_save(3691835.fits)
+[2019-11-03 09:28:52,491] update dataproduct parent = 020113001
+[2019-11-03 09:28:56,787] DataProductsListView.get_queryset()
+[2019-11-03 09:28:56,789] my_queryset retrieved
+[2019-11-03 09:29:07,099] DataProductsListView.get_queryset()
+[2019-11-03 09:29:07,099] my_queryset retrieved
+[2019-11-03 09:29:17,330] DataProductsListView.get_queryset()
+[2019-11-03 09:29:17,331] my_queryset retrieved
+[2019-11-03 09:29:27,651] DataProductsListView.get_queryset()
+[2019-11-03 09:29:27,652] my_queryset retrieved
+[2019-11-03 09:29:37,946] DataProductsListView.get_queryset()
+[2019-11-03 09:29:37,947] my_queryset retrieved
+[2019-11-03 09:29:48,157] DataProductsListView.get_queryset()
+[2019-11-03 09:29:48,158] my_queryset retrieved
+[2019-11-03 09:29:58,401] DataProductsListView.get_queryset()
+[2019-11-03 09:29:58,402] my_queryset retrieved
+[2019-11-03 09:30:08,664] DataProductsListView.get_queryset()
+[2019-11-03 09:30:08,664] my_queryset retrieved
+[2019-11-03 09:30:18,931] DataProductsListView.get_queryset()
+[2019-11-03 09:30:18,932] my_queryset retrieved
+[2019-11-03 09:30:29,157] DataProductsListView.get_queryset()
+[2019-11-03 09:30:29,158] my_queryset retrieved
+[2019-11-03 10:46:39,782] get_next_taskid(20090311)
+[2019-11-03 10:46:39,783] checking taskid 090311001..
+[2019-11-03 10:46:39,784] checking taskid 090311002..
+[2019-11-03 10:46:39,784] checking taskid 090311003..
+[2019-11-03 10:46:39,785] checking taskid 090311004..
+[2019-11-03 10:46:39,786] checking taskid 090311005..
+[2019-11-03 10:46:39,787] checking taskid 090311006..
+[2019-11-03 10:46:39,787] checking taskid 090311007..
+[2019-11-03 10:46:39,788] checking taskid 090311008..
+[2019-11-03 10:46:39,789] checking taskid 090311009..
+[2019-11-03 10:46:39,790] checking taskid 090311010..
+[2019-11-03 10:46:39,790] checking taskid 090311011..
+[2019-11-03 10:46:39,791] checking taskid 090311012..
+[2019-11-03 10:46:39,792] checking taskid 090311013..
+[2019-11-03 10:46:39,792] checking taskid 090311014..
+[2019-11-03 10:46:39,793] checking taskid 090311015..
+[2019-11-03 10:46:39,794] checking taskid 090311016..
+[2019-11-03 10:46:39,795] checking taskid 090311017..
+[2019-11-03 10:46:39,795] checking taskid 090311018..
+[2019-11-03 10:46:39,796] checking taskid 090311019..
+[2019-11-03 10:46:39,797] checking taskid 090311020..
+[2019-11-03 10:48:19,229] get_next_taskid(20090311)
+[2019-11-03 10:48:19,229] checking taskid 090311001..
+[2019-11-03 10:48:19,230] checking taskid 090311002..
+[2019-11-03 10:48:19,231] checking taskid 090311003..
+[2019-11-03 10:48:19,232] checking taskid 090311004..
+[2019-11-03 10:48:19,233] checking taskid 090311005..
+[2019-11-03 10:48:19,234] checking taskid 090311006..
+[2019-11-03 10:48:19,235] checking taskid 090311007..
+[2019-11-03 10:48:19,236] checking taskid 090311008..
+[2019-11-03 10:48:19,237] checking taskid 090311009..
+[2019-11-03 10:48:19,237] checking taskid 090311010..
+[2019-11-03 10:48:19,238] checking taskid 090311011..
+[2019-11-03 10:48:19,239] checking taskid 090311012..
+[2019-11-03 10:48:19,240] checking taskid 090311013..
+[2019-11-03 10:48:19,241] checking taskid 090311014..
+[2019-11-03 10:48:19,242] checking taskid 090311015..
+[2019-11-03 10:48:19,242] checking taskid 090311016..
+[2019-11-03 10:48:19,243] checking taskid 090311017..
+[2019-11-03 10:48:19,244] checking taskid 090311018..
+[2019-11-03 10:48:19,245] checking taskid 090311019..
+[2019-11-03 10:48:19,245] checking taskid 090311020..
+[2019-11-03 10:49:57,692] get_next_taskid(20090311)
+[2019-11-03 10:49:57,692] checking taskid 090311001..
+[2019-11-03 10:49:57,693] checking taskid 090311002..
+[2019-11-03 10:49:57,694] checking taskid 090311003..
+[2019-11-03 10:49:57,695] checking taskid 090311004..
+[2019-11-03 10:49:57,696] checking taskid 090311005..
+[2019-11-03 10:49:57,696] checking taskid 090311006..
+[2019-11-03 10:49:57,697] checking taskid 090311007..
+[2019-11-03 10:49:57,698] checking taskid 090311008..
+[2019-11-03 10:49:57,699] checking taskid 090311009..
+[2019-11-03 10:49:57,700] checking taskid 090311010..
+[2019-11-03 10:49:57,701] checking taskid 090311011..
+[2019-11-03 10:49:57,702] checking taskid 090311012..
+[2019-11-03 10:49:57,703] checking taskid 090311013..
+[2019-11-03 10:49:57,703] checking taskid 090311014..
+[2019-11-03 10:49:57,704] checking taskid 090311015..
+[2019-11-03 10:49:57,705] checking taskid 090311016..
+[2019-11-03 10:49:57,706] checking taskid 090311017..
+[2019-11-03 10:49:57,707] checking taskid 090311018..
+[2019-11-03 10:49:57,708] checking taskid 090311019..
+[2019-11-03 10:49:57,709] checking taskid 090311020..
+[2019-11-03 10:50:06,791] SIGNAL : pre_save Observation(090311020 - Neptune)
+[2019-11-03 10:50:06,791] handle_pre_save(090311020 - Neptune)
+[2019-11-03 10:50:06,811] handle_post_save(090311020 - Neptune)
+[2019-11-03 10:50:06,811] save new observation
+[2019-11-03 10:50:10,771] add_dataproducts(090311020,1)
+[2019-11-03 10:50:10,772] addding dataproduct: 090311020_raw.png
+[2019-11-03 10:50:10,772] SIGNAL : pre_save DataProduct(090311020_raw.png)
+[2019-11-03 10:50:10,772] handle_pre_save(090311020_raw.png)
+[2019-11-03 10:50:10,792] handle_post_save(090311020_raw.png)
+[2019-11-03 10:50:10,792] save new dataproduct
+[2019-11-03 10:50:10,804] update dataproduct parent = 090311020
+[2019-11-03 10:50:13,119] SIGNAL : pre_save Observation(090311020 - Neptune)
+[2019-11-03 10:50:13,119] handle_pre_save(090311020 - Neptune)
+[2019-11-03 10:50:13,161] handle_post_save(090311020 - Neptune)
+[2019-11-03 10:51:01,473] get_next_taskid(20090311)
+[2019-11-03 10:51:01,473] checking taskid 090311001..
+[2019-11-03 10:51:01,475] checking taskid 090311002..
+[2019-11-03 10:51:01,475] checking taskid 090311003..
+[2019-11-03 10:51:01,476] checking taskid 090311004..
+[2019-11-03 10:51:01,478] checking taskid 090311005..
+[2019-11-03 10:51:01,478] checking taskid 090311006..
+[2019-11-03 10:51:01,479] checking taskid 090311007..
+[2019-11-03 10:51:01,480] checking taskid 090311008..
+[2019-11-03 10:51:01,481] checking taskid 090311009..
+[2019-11-03 10:51:01,482] checking taskid 090311010..
+[2019-11-03 10:51:01,482] checking taskid 090311011..
+[2019-11-03 10:51:01,483] checking taskid 090311012..
+[2019-11-03 10:51:01,484] checking taskid 090311013..
+[2019-11-03 10:51:01,485] checking taskid 090311014..
+[2019-11-03 10:51:01,486] checking taskid 090311015..
+[2019-11-03 10:51:01,487] checking taskid 090311016..
+[2019-11-03 10:51:01,488] checking taskid 090311017..
+[2019-11-03 10:51:01,489] checking taskid 090311018..
+[2019-11-03 10:51:01,490] checking taskid 090311019..
+[2019-11-03 10:51:01,491] checking taskid 090311020..
+[2019-11-03 10:51:01,492] checking taskid 090311021..
+[2019-11-03 10:51:02,640] SIGNAL : pre_save Observation(090311021 - Neptune)
+[2019-11-03 10:51:02,640] handle_pre_save(090311021 - Neptune)
+[2019-11-03 10:51:02,653] handle_post_save(090311021 - Neptune)
+[2019-11-03 10:51:02,653] save new observation
+[2019-11-03 10:51:03,819] add_dataproducts(090311021,1)
+[2019-11-03 10:51:03,821] addding dataproduct: 090311021_raw.png
+[2019-11-03 10:51:03,821] SIGNAL : pre_save DataProduct(090311021_raw.png)
+[2019-11-03 10:51:03,821] handle_pre_save(090311021_raw.png)
+[2019-11-03 10:51:04,348] handle_post_save(090311021_raw.png)
+[2019-11-03 10:51:04,348] save new dataproduct
+[2019-11-03 10:51:04,982] update dataproduct parent = 090311021
+[2019-11-03 10:51:07,765] SIGNAL : pre_save Observation(090311021 - Neptune)
+[2019-11-03 10:51:07,765] handle_pre_save(090311021 - Neptune)
+[2019-11-03 10:51:09,667] handle_post_save(090311021 - Neptune)
+[2019-11-03 10:52:27,100] get_next_taskid(20090311)
+[2019-11-03 10:52:27,100] checking taskid 090311001..
+[2019-11-03 10:52:27,101] checking taskid 090311002..
+[2019-11-03 10:52:27,102] checking taskid 090311003..
+[2019-11-03 10:52:27,102] checking taskid 090311004..
+[2019-11-03 10:52:27,103] checking taskid 090311005..
+[2019-11-03 10:52:27,104] checking taskid 090311006..
+[2019-11-03 10:52:27,105] checking taskid 090311007..
+[2019-11-03 10:52:27,106] checking taskid 090311008..
+[2019-11-03 10:52:27,106] checking taskid 090311009..
+[2019-11-03 10:52:27,107] checking taskid 090311010..
+[2019-11-03 10:52:27,108] checking taskid 090311011..
+[2019-11-03 10:52:27,108] checking taskid 090311012..
+[2019-11-03 10:52:27,109] checking taskid 090311013..
+[2019-11-03 10:52:27,110] checking taskid 090311014..
+[2019-11-03 10:52:27,111] checking taskid 090311015..
+[2019-11-03 10:52:27,111] checking taskid 090311016..
+[2019-11-03 10:52:27,112] checking taskid 090311017..
+[2019-11-03 10:52:27,113] checking taskid 090311018..
+[2019-11-03 10:52:27,114] checking taskid 090311019..
+[2019-11-03 10:52:27,114] checking taskid 090311020..
+[2019-11-03 10:52:27,115] checking taskid 090311021..
+[2019-11-03 10:52:27,116] checking taskid 090311022..
+[2019-11-03 10:52:30,039] SIGNAL : pre_save Observation(090311022 - Neptune)
+[2019-11-03 10:52:30,039] handle_pre_save(090311022 - Neptune)
+[2019-11-03 10:52:30,061] handle_post_save(090311022 - Neptune)
+[2019-11-03 10:52:30,061] save new observation
+[2019-11-03 10:52:36,139] add_dataproducts(090311022,1)
+[2019-11-03 10:52:36,141] addding dataproduct: 090311022_raw.png
+[2019-11-03 10:52:36,141] SIGNAL : pre_save DataProduct(090311022_raw.png)
+[2019-11-03 10:52:36,141] handle_pre_save(090311022_raw.png)
+[2019-11-03 10:52:36,159] handle_post_save(090311022_raw.png)
+[2019-11-03 10:52:36,160] save new dataproduct
+[2019-11-03 10:52:36,171] update dataproduct parent = 090311022
+[2019-11-03 10:52:38,483] SIGNAL : pre_save Observation(090311022 - Neptune)
+[2019-11-03 10:52:38,483] handle_pre_save(090311022 - Neptune)
+[2019-11-03 10:52:38,524] handle_post_save(090311022 - Neptune)
+[2019-11-03 10:57:32,495] get_next_taskid(20090311)
+[2019-11-03 10:57:32,495] checking taskid 090311001..
+[2019-11-03 10:57:32,496] checking taskid 090311002..
+[2019-11-03 10:57:32,497] checking taskid 090311003..
+[2019-11-03 10:57:32,498] checking taskid 090311004..
+[2019-11-03 10:57:32,499] checking taskid 090311005..
+[2019-11-03 10:57:32,500] checking taskid 090311006..
+[2019-11-03 10:57:32,500] checking taskid 090311007..
+[2019-11-03 10:57:32,501] checking taskid 090311008..
+[2019-11-03 10:57:32,502] checking taskid 090311009..
+[2019-11-03 10:57:32,503] checking taskid 090311010..
+[2019-11-03 10:57:32,504] checking taskid 090311011..
+[2019-11-03 10:57:32,505] checking taskid 090311012..
+[2019-11-03 10:57:32,505] checking taskid 090311013..
+[2019-11-03 10:57:32,506] checking taskid 090311014..
+[2019-11-03 10:57:32,507] checking taskid 090311015..
+[2019-11-03 10:57:32,508] checking taskid 090311016..
+[2019-11-03 10:57:32,509] checking taskid 090311017..
+[2019-11-03 10:57:32,510] checking taskid 090311018..
+[2019-11-03 10:57:32,511] checking taskid 090311019..
+[2019-11-03 10:57:32,511] checking taskid 090311020..
+[2019-11-03 10:57:32,512] checking taskid 090311021..
+[2019-11-03 10:57:32,513] checking taskid 090311022..
+[2019-11-03 10:57:32,514] checking taskid 090311023..
+[2019-11-03 10:57:33,673] SIGNAL : pre_save Observation(090311023 - Neptune)
+[2019-11-03 10:57:33,673] handle_pre_save(090311023 - Neptune)
+[2019-11-03 10:57:33,693] handle_post_save(090311023 - Neptune)
+[2019-11-03 10:57:33,694] save new observation
+[2019-11-03 10:57:34,885] add_dataproducts(090311023,1)
+[2019-11-03 10:57:34,887] addding dataproduct: 090311023_raw.png
+[2019-11-03 10:57:34,888] SIGNAL : pre_save DataProduct(090311023_raw.png)
+[2019-11-03 10:57:34,888] handle_pre_save(090311023_raw.png)
+[2019-11-03 10:57:34,904] handle_post_save(090311023_raw.png)
+[2019-11-03 10:57:34,905] save new dataproduct
+[2019-11-03 10:57:34,915] update dataproduct parent = 090311023
+[2019-11-03 10:57:37,214] SIGNAL : pre_save Observation(090311023 - Neptune)
+[2019-11-03 10:57:37,214] handle_pre_save(090311023 - Neptune)
+[2019-11-03 10:57:37,249] handle_post_save(090311023 - Neptune)
+[2019-11-03 10:58:23,839] get_next_taskid(20090311)
+[2019-11-03 10:58:23,839] checking taskid 090311001..
+[2019-11-03 10:58:23,841] checking taskid 090311002..
+[2019-11-03 10:58:23,842] checking taskid 090311003..
+[2019-11-03 10:58:23,843] checking taskid 090311004..
+[2019-11-03 10:58:23,844] checking taskid 090311005..
+[2019-11-03 10:58:23,844] checking taskid 090311006..
+[2019-11-03 10:58:23,845] checking taskid 090311007..
+[2019-11-03 10:58:23,846] checking taskid 090311008..
+[2019-11-03 10:58:23,847] checking taskid 090311009..
+[2019-11-03 10:58:23,848] checking taskid 090311010..
+[2019-11-03 10:58:23,849] checking taskid 090311011..
+[2019-11-03 10:58:23,850] checking taskid 090311012..
+[2019-11-03 10:58:23,850] checking taskid 090311013..
+[2019-11-03 10:58:23,851] checking taskid 090311014..
+[2019-11-03 10:58:23,852] checking taskid 090311015..
+[2019-11-03 10:58:23,853] checking taskid 090311016..
+[2019-11-03 10:58:23,854] checking taskid 090311017..
+[2019-11-03 10:58:23,856] checking taskid 090311018..
+[2019-11-03 10:58:23,857] checking taskid 090311019..
+[2019-11-03 10:58:23,858] checking taskid 090311020..
+[2019-11-03 10:58:23,858] checking taskid 090311021..
+[2019-11-03 10:58:23,859] checking taskid 090311022..
+[2019-11-03 10:58:23,860] checking taskid 090311023..
+[2019-11-03 10:58:23,860] checking taskid 090311024..
+[2019-11-03 10:58:25,052] SIGNAL : pre_save Observation(090311024 - Neptune)
+[2019-11-03 10:58:25,052] handle_pre_save(090311024 - Neptune)
+[2019-11-03 10:58:25,073] handle_post_save(090311024 - Neptune)
+[2019-11-03 10:58:25,073] save new observation
+[2019-11-03 10:58:26,244] add_dataproducts(090311024,1)
+[2019-11-03 10:58:26,245] addding dataproduct: 090311024_raw.png
+[2019-11-03 10:58:26,245] SIGNAL : pre_save DataProduct(090311024_raw.png)
+[2019-11-03 10:58:26,245] handle_pre_save(090311024_raw.png)
+[2019-11-03 10:58:26,260] handle_post_save(090311024_raw.png)
+[2019-11-03 10:58:26,260] save new dataproduct
+[2019-11-03 10:58:26,271] update dataproduct parent = 090311024
+[2019-11-03 10:58:28,600] SIGNAL : pre_save Observation(090311024 - Neptune)
+[2019-11-03 10:58:28,601] handle_pre_save(090311024 - Neptune)
+[2019-11-03 10:58:28,651] handle_post_save(090311024 - Neptune)

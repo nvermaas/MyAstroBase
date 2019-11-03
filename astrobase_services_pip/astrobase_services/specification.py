@@ -74,7 +74,7 @@ def add_dataproducts(astrobase, taskid, dataproducts_string):
 # --- Main Service -------
 # ----------------------------------------------------------------------------------------
 
-def do_specification(astrobase, taskid, initial_status, field_name, date,
+def do_specification(astrobase, taskid, initial_status, field_name, description, date,
                      field_ra=0.0, field_dec=0.0, field_fov=0.0,
                      observing_mode="raw", process_type="observation", dataproducts="",
                      data_location="", name=""):
@@ -98,6 +98,7 @@ def do_specification(astrobase, taskid, initial_status, field_name, date,
     # --- construct payload as json ----------------
     payload = "{"
     payload += '"name" : "' + str(name) + '",'
+    payload += '"description" : "' + str(description) + '",'
     payload += '"taskID" : "' + str(taskid) + '",'
     payload += '"date" : "' + str(date) + '",'
     payload += '"task_type" : "observation",'
