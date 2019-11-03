@@ -164,6 +164,18 @@ class Observation(TaskObject):
         except:
             return None
 
+    @property
+    def derived_fits(self):
+        # get the sky_globe dataproduct
+
+        # find object with 'datasetID'
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='fits',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
+
     def __str__(self):
         return str(self.taskID) + ' - ' + str(self.name)
 
