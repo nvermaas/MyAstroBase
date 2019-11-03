@@ -35,7 +35,7 @@ def get_creation_date(path_to_file):
 
 def do_ingest(astrobaseIO, local_landing_pad, local_data_dir):
 
-    def create_metadata_json(filename, dirpath, name):
+    def create_metadata_json(filename, dirpath, name, description=""):
         """
         Create metadata json file for ingest
         :param filename:
@@ -51,6 +51,7 @@ def do_ingest(astrobaseIO, local_landing_pad, local_data_dir):
         data = {}
         data['raw_image_file'] = filename
         data['name'] = name
+        data['description'] = description
         data['field_name'] = name
         data['field_ra'] = "0.0"
         data['field_dec'] = "0.0"
@@ -120,6 +121,7 @@ def do_ingest(astrobaseIO, local_landing_pad, local_data_dir):
                              taskid=taskid,
                              initial_status="raw",
                              name=data['name'],
+                             description=data['description'],
                              field_name=data['field_name'],
                              field_ra=data['field_ra'],
                              field_dec=data['field_dec'],
