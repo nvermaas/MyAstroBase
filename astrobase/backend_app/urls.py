@@ -57,4 +57,7 @@ urlpatterns = [
          views.DataProductSetStatusView,
          name='dataproduct-setstatus-view'),
 
+    path('observations/<int:pk>/setquality/<quality>/<page>',
+         views.ObservationSetQuality,
+         name='observation-setquality-view'),
 ]

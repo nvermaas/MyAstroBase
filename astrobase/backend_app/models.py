@@ -77,7 +77,7 @@ class Status(models.Model):
 class Observation(TaskObject):
     date = models.DateTimeField('start time', null=True)
     # can be used to distinguish types of observations, like with powershot G2 or Kitt Peak
-    observing_mode = models.CharField(max_length=50, default="digcam")
+    observing_mode = models.CharField(max_length=50, default="")
     description = models.CharField(max_length=255, default="", null=True, blank=True)
     url = models.CharField(max_length=100, default="")
     # can be used to distinguish types of observations, like for ARTS.
@@ -90,7 +90,7 @@ class Observation(TaskObject):
     field_dec = models.FloatField('field_dec', null = True)
     field_fov = models.FloatField('field_fov', null=True)
 
-    quality = models.CharField(max_length=30, default="unknown")
+    quality = models.CharField(max_length=30, default="")
 
     # this translates a view-name (from urls.py) back to a url, to avoid hardcoded url's in the html templates
     # bad : <td><a href="/astrobase/observations/{{ observation.id }}/" target="_blank">{{ observation.taskID }} </a> </td>

@@ -18,6 +18,17 @@
             <td>{{ observation.field_dec|floatformat }}</td>
             <td>{{ observation.date|date:"Y-m-d H:i:s" }} </td>
             <td>{{ observation.size|filesizeformat }} </td>
+
+            <td>{{ observation.quality }}</td>
+            <td>
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'observation-setquality-view' observation.pk 'good' my_observations.number %}" class="btn btn-success btn-sm" role="button">G</a>
+                    <a href="{% url 'observation-setquality-view' observation.pk 'medium' my_observations.number %}" class="btn btn-warning btn-sm" role="button">M</a>
+                    <a href="{% url 'observation-setquality-view' observation.pk 'bad' my_observations.number %}" class="btn btn-danger btn-sm" role="button">B</a>
+                {% endif %}
+            </td>
+
             <td>
                 <a href="{% url 'dataproducts-list-view' observation.taskID %}" class="btn btn-success btn-sm" role="button">DPS</a>
                 {% for dataproduct in my_dataproducts_list %}
@@ -61,12 +72,13 @@
                     {% endif %}
                     {% if observation.my_status == "done" %}
                         <a href="{% url 'observation-setstatus-view' observation.pk 'processed' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Update</a>
-                        <a href="{% url 'observation-setstatus-view' observation.pk 'removing' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Delete</a>
+                        <a href="{% url 'observation-setstatus-view' observation.pk 'removing' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Del</a>
 
                     {% endif %}
 
                 {% endif %}
             </td>
+
             </tr>
         </div>
     {% endif %}

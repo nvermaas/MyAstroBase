@@ -268,6 +268,14 @@ def ObservationSetStatus(request,pk,new_status,page):
     return redirect('/astrobase/?page='+page)
 
 
+def ObservationSetQuality(request,pk,quality,page):
+    model = Observation
+    observation = Observation.objects.get(pk=pk)
+    observation.quality = quality
+    observation.save()
+    return redirect('/astrobase/?page='+page)
+
+
 # set the status of an observation and all its dataproducts to 'new_dps_status'
 # example: 'Validate DPS' button
 # /astrobase/observations/<int:pk>/setstatus_dps/<new_dps_status>/<new_obs_status>/<page>
