@@ -14605,3 +14605,117 @@
 [2019-11-03 14:56:53,706] checking taskid 090311026..
 [2019-11-03 14:56:53,707] checking taskid 090311027..
 [2019-11-03 14:56:53,708] checking taskid 090311028..
+[2019-11-15 17:23:04,472] get_next_taskid(20090313)
+[2019-11-15 17:23:04,473] checking taskid 090313001..
+[2019-11-15 17:23:05,677] SIGNAL : pre_save Observation(090313001 - cevennes2002)
+[2019-11-15 17:23:05,677] handle_pre_save(090313001 - cevennes2002)
+[2019-11-15 17:23:05,703] handle_post_save(090313001 - cevennes2002)
+[2019-11-15 17:23:05,704] save new observation
+[2019-11-15 17:23:06,882] add_dataproducts(090313001,1)
+[2019-11-15 17:23:06,884] addding dataproduct: 090313001_raw.jpg
+[2019-11-15 17:23:06,885] SIGNAL : pre_save DataProduct(090313001_raw.jpg)
+[2019-11-15 17:23:06,885] handle_pre_save(090313001_raw.jpg)
+[2019-11-15 17:23:06,905] handle_post_save(090313001_raw.jpg)
+[2019-11-15 17:23:06,906] save new dataproduct
+[2019-11-15 17:23:06,918] update dataproduct parent = 090313001
+[2019-11-15 17:23:09,316] SIGNAL : pre_save Observation(090313001 - cevennes2002)
+[2019-11-15 17:23:09,317] handle_pre_save(090313001 - cevennes2002)
+[2019-11-15 17:23:09,363] handle_post_save(090313001 - cevennes2002)
+[2019-11-15 17:23:11,002] get_next_taskid(20090313)
+[2019-11-15 17:23:11,002] checking taskid 090313001..
+[2019-11-15 17:23:11,004] checking taskid 090313002..
+[2019-11-15 17:23:12,204] SIGNAL : pre_save Observation(090313002 - lyra)
+[2019-11-15 17:23:12,205] handle_pre_save(090313002 - lyra)
+[2019-11-15 17:23:12,226] handle_post_save(090313002 - lyra)
+[2019-11-15 17:23:12,227] save new observation
+[2019-11-15 17:23:13,453] add_dataproducts(090313002,1)
+[2019-11-15 17:23:13,455] addding dataproduct: 090313002_raw.jpg
+[2019-11-15 17:23:13,455] SIGNAL : pre_save DataProduct(090313002_raw.jpg)
+[2019-11-15 17:23:13,456] handle_pre_save(090313002_raw.jpg)
+[2019-11-15 17:23:13,478] handle_post_save(090313002_raw.jpg)
+[2019-11-15 17:23:13,479] save new dataproduct
+[2019-11-15 17:23:13,496] update dataproduct parent = 090313002
+[2019-11-15 17:23:15,831] SIGNAL : pre_save Observation(090313002 - lyra)
+[2019-11-15 17:23:15,831] handle_pre_save(090313002 - lyra)
+[2019-11-15 17:23:15,871] handle_post_save(090313002 - lyra)
+[2019-11-15 17:23:17,508] get_next_taskid(20090313)
+[2019-11-15 17:23:17,508] checking taskid 090313001..
+[2019-11-15 17:23:17,510] checking taskid 090313002..
+[2019-11-15 17:23:17,511] checking taskid 090313003..
+[2019-11-15 17:23:18,706] SIGNAL : pre_save Observation(090313003 - lyra_raw)
+[2019-11-15 17:23:18,706] handle_pre_save(090313003 - lyra_raw)
+[2019-11-15 17:23:18,721] handle_post_save(090313003 - lyra_raw)
+[2019-11-15 17:23:18,721] save new observation
+[2019-11-15 17:23:19,893] add_dataproducts(090313003,1)
+[2019-11-15 17:23:19,896] addding dataproduct: 090313003_raw.jpg
+[2019-11-15 17:23:19,896] SIGNAL : pre_save DataProduct(090313003_raw.jpg)
+[2019-11-15 17:23:19,897] handle_pre_save(090313003_raw.jpg)
+[2019-11-15 17:23:19,920] handle_post_save(090313003_raw.jpg)
+[2019-11-15 17:23:19,921] save new dataproduct
+[2019-11-15 17:23:19,935] update dataproduct parent = 090313003
+[2019-11-15 17:23:22,277] SIGNAL : pre_save Observation(090313003 - lyra_raw)
+[2019-11-15 17:23:22,278] handle_pre_save(090313003 - lyra_raw)
+[2019-11-15 17:23:22,328] handle_post_save(090313003 - lyra_raw)
+[2019-11-15 17:24:33,717] SIGNAL : pre_save Observation(090313003 - lyra_raw)
+[2019-11-15 17:24:33,718] handle_pre_save(090313003 - lyra_raw)
+[2019-11-15 17:24:33,761] handle_post_save(090313003 - lyra_raw)
+[2019-11-15 17:24:35,901] SIGNAL : pre_save Observation(090313002 - lyra)
+[2019-11-15 17:24:35,901] handle_pre_save(090313002 - lyra)
+[2019-11-15 17:24:35,952] handle_post_save(090313002 - lyra)
+[2019-11-15 17:24:38,390] SIGNAL : pre_save Observation(090313001 - cevennes2002)
+[2019-11-15 17:24:38,391] handle_pre_save(090313001 - cevennes2002)
+[2019-11-15 17:24:38,439] handle_post_save(090313001 - cevennes2002)
+[2019-11-16 15:33:45,766] get_next_taskid(20191116)
+[2019-11-16 15:33:45,768] checking taskid 191116001..
+[2019-11-16 15:33:46,955] SIGNAL : pre_save Observation(191116001 - sim_uranus_16nov2019)
+[2019-11-16 15:33:46,956] handle_pre_save(191116001 - sim_uranus_16nov2019)
+[2019-11-16 15:33:46,972] handle_post_save(191116001 - sim_uranus_16nov2019)
+[2019-11-16 15:33:46,972] save new observation
+[2019-11-16 15:33:48,135] add_dataproducts(191116001,1)
+[2019-11-16 15:33:48,136] addding dataproduct: 191116001_raw.jpg
+[2019-11-16 15:33:48,136] SIGNAL : pre_save DataProduct(191116001_raw.jpg)
+[2019-11-16 15:33:48,136] handle_pre_save(191116001_raw.jpg)
+[2019-11-16 15:33:48,154] handle_post_save(191116001_raw.jpg)
+[2019-11-16 15:33:48,154] save new dataproduct
+[2019-11-16 15:33:48,165] update dataproduct parent = 191116001
+[2019-11-16 15:33:50,503] SIGNAL : pre_save Observation(191116001 - sim_uranus_16nov2019)
+[2019-11-16 15:33:50,510] handle_pre_save(191116001 - sim_uranus_16nov2019)
+[2019-11-16 15:33:50,542] handle_post_save(191116001 - sim_uranus_16nov2019)
+[2019-11-16 15:34:13,456] get_next_taskid(20191116)
+[2019-11-16 15:34:13,456] checking taskid 191116001..
+[2019-11-16 15:34:13,457] checking taskid 191116002..
+[2019-11-16 15:34:14,609] SIGNAL : pre_save Observation(191116002 - sim_uranus_17nov2019)
+[2019-11-16 15:34:14,609] handle_pre_save(191116002 - sim_uranus_17nov2019)
+[2019-11-16 15:34:14,626] handle_post_save(191116002 - sim_uranus_17nov2019)
+[2019-11-16 15:34:14,626] save new observation
+[2019-11-16 15:34:15,779] add_dataproducts(191116002,1)
+[2019-11-16 15:34:15,780] addding dataproduct: 191116002_raw.jpg
+[2019-11-16 15:34:15,780] SIGNAL : pre_save DataProduct(191116002_raw.jpg)
+[2019-11-16 15:34:15,780] handle_pre_save(191116002_raw.jpg)
+[2019-11-16 15:34:15,799] handle_post_save(191116002_raw.jpg)
+[2019-11-16 15:34:15,799] save new dataproduct
+[2019-11-16 15:34:15,808] update dataproduct parent = 191116002
+[2019-11-16 15:34:18,192] SIGNAL : pre_save Observation(191116002 - sim_uranus_17nov2019)
+[2019-11-16 15:34:18,192] handle_pre_save(191116002 - sim_uranus_17nov2019)
+[2019-11-16 15:34:18,220] handle_post_save(191116002 - sim_uranus_17nov2019)
+[2019-11-17 07:32:03,665] SIGNAL : pre_save Observation(191116002 - sim_uranus_17nov2019)
+[2019-11-17 07:32:03,665] handle_pre_save(191116002 - sim_uranus_17nov2019)
+[2019-11-17 07:32:03,705] handle_post_save(191116002 - sim_uranus_17nov2019)
+[2019-11-17 07:32:09,222] SIGNAL : pre_save Observation(191116001 - sim_uranus_16nov2019)
+[2019-11-17 07:32:09,222] handle_pre_save(191116001 - sim_uranus_16nov2019)
+[2019-11-17 07:32:09,270] handle_post_save(191116001 - sim_uranus_16nov2019)
+[2019-11-17 07:36:29,610] SIGNAL : pre_save Observation(191116002 - sim_uranus_17nov2019)
+[2019-11-17 07:36:29,611] handle_pre_save(191116002 - sim_uranus_17nov2019)
+[2019-11-17 07:36:29,649] handle_post_save(191116002 - sim_uranus_17nov2019)
+[2019-11-17 07:36:32,045] SIGNAL : pre_save Observation(191116001 - sim_uranus_16nov2019)
+[2019-11-17 07:36:32,045] handle_pre_save(191116001 - sim_uranus_16nov2019)
+[2019-11-17 07:36:32,084] handle_post_save(191116001 - sim_uranus_16nov2019)
+[2019-11-17 07:36:54,508] SIGNAL : pre_save Observation(191026001 - Orion Nebula)
+[2019-11-17 07:36:54,508] handle_pre_save(191026001 - Orion Nebula)
+[2019-11-17 07:36:54,544] handle_post_save(191026001 - Orion Nebula)
+[2019-11-17 07:37:26,648] SIGNAL : pre_save Observation(191109002 - Stacked Pleiades 2019)
+[2019-11-17 07:37:26,649] handle_pre_save(191109002 - Stacked Pleiades 2019)
+[2019-11-17 07:37:26,685] handle_post_save(191109002 - Stacked Pleiades 2019)
+[2019-11-17 07:41:07,488] SIGNAL : pre_save Observation(190918003 - Aurora Borealis 2019 (Finland))
+[2019-11-17 07:41:07,489] handle_pre_save(190918003 - Aurora Borealis 2019 (Finland))
+[2019-11-17 07:41:07,531] handle_post_save(190918003 - Aurora Borealis 2019 (Finland))

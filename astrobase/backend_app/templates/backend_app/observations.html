@@ -13,22 +13,30 @@
             <td>
                 <a href="http://nova.astrometry.net/status/{{ observation.job }}" target="_blank" >{{ observation.job }}</a>
             </td>
-            <td>{{ observation.field_name }}</td>
-            <td>{{ observation.field_ra|floatformat }} </td>
-            <td>{{ observation.field_dec|floatformat }}</td>
+
             <td>{{ observation.date|date:"Y-m-d H:i:s" }} </td>
             <td>{{ observation.size|filesizeformat }} </td>
-
-            <td>{{ observation.quality }}</td>
+            <td>{{ observation.observing_mode }}</td>
             <td>
-
                 {% if user.is_authenticated %}
-                    <a href="{% url 'observation-setquality-view' observation.pk 'good' my_observations.number %}" class="btn btn-success btn-sm" role="button">G</a>
-                    <a href="{% url 'observation-setquality-view' observation.pk 'medium' my_observations.number %}" class="btn btn-warning btn-sm" role="button">M</a>
-                    <a href="{% url 'observation-setquality-view' observation.pk 'bad' my_observations.number %}" class="btn btn-danger btn-sm" role="button">B</a>
+                    <a href="{% url 'observation-setmode-view' observation.pk 'raw_single' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Raw (1)</a>
+                    <a href="{% url 'observation-setmode-view' observation.pk 'processed_single' my_observations.number %}" class="btn btn-success btn-sm" role="button">Proc (1)</a>
+                    <a href="{% url 'observation-setmode-view' observation.pk 'raw_stacked' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Raw (n)</a>
+                                       <a href="{% url 'observation-setmode-view' observation.pk 'raw_stacked' my_observations.number %}" class="btn btn-success btn-sm" role="button">Proc (n)</a>
+                    <a href="{% url 'observation-setmode-view' observation.pk 'wild' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Wild</a>
+                    <a href="{% url 'observation-setmode-view' observation.pk 'simulation' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Sim</a>
+
                 {% endif %}
             </td>
-
+            <td>{{ observation.quality }}</td>
+            <td>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'observation-setquality-view' observation.pk 'good' my_observations.number %}" class="btn btn-success btn-sm" role="button">Great</a>
+                    <a href="{% url 'observation-setquality-view' observation.pk 'good' my_observations.number %}" class="btn btn-success btn-sm" role="button">Good</a>
+                    <a href="{% url 'observation-setquality-view' observation.pk 'medium' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Medium</a>
+                    <a href="{% url 'observation-setquality-view' observation.pk 'bad' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Bad</a>
+                {% endif %}
+            </td>
             <td>
                 <a href="{% url 'dataproducts-list-view' observation.taskID %}" class="btn btn-success btn-sm" role="button">DPS</a>
                 {% for dataproduct in my_dataproducts_list %}
@@ -43,9 +51,9 @@
                         <a href="{% url 'observation-setstatus-view' observation.pk 'raw' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Cancel</a>
                     {% endif %}
                     {% if observation.my_status == "raw" %}
-                        <a href="{% url 'observation-setstatus-view' observation.pk 'pending' my_observations.number %}" class="btn btn-success btn-sm" role="button">Do Processing</a>
+                        <a href="{% url 'observation-setstatus-view' observation.pk 'pending' my_observations.number %}" class="btn btn-success btn-sm" role="button">Process</a>
                         <a href="{% url 'observation-setstatus-view' observation.pk 'invisible' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Hide</a>
-                        <a href="{% url 'observation-setstatus-view' observation.pk 'removing' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Delete</a>
+                        <a href="{% url 'observation-setstatus-view' observation.pk 'removing' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Del</a>
                     {% endif %}
                     {% if observation.my_status == "submitting" %}
                         <a href="{% url 'observation-setstatus-view' observation.pk 'raw' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Cancel</a>
@@ -68,7 +76,7 @@
                     {% if observation.my_status == "failed" %}
                         <a href="{% url 'observation-setstatus-view' observation.pk 'submitted' my_observations.number %}" class="btn btn-success btn-sm" role="button">Retry</a>
                         <a href="{% url 'observation-setstatus-view' observation.pk 'invisible' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Hide</a>
-                        <a href="{% url 'observation-setstatus-view' observation.pk 'removing' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Delete</a>
+                        <a href="{% url 'observation-setstatus-view' observation.pk 'removing' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Del</a>
                     {% endif %}
                     {% if observation.my_status == "done" %}
                         <a href="{% url 'observation-setstatus-view' observation.pk 'processed' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Update</a>

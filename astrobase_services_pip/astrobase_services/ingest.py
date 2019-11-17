@@ -173,6 +173,7 @@ def do_ingest(astrobaseIO, local_landing_pad, local_data_dir):
     for dirpath, dirnames, filenames in os.walk(local_landing_pad, followlinks=True):
 
         for filename in filenames:
+
             path_to_file = os.path.join(dirpath, filename)
             name,ext = filename.split(".")
 
@@ -192,5 +193,8 @@ def do_ingest(astrobaseIO, local_landing_pad, local_data_dir):
                         create_metadata_json(filename, dirpath,name)
                         astrobaseIO.report("*ingest* : created metadata for " + filename, "slack")
 
+                        # exit for now to prevent race condition with the for loop caused by newly created file
+                        # ingest will be picked up on next heartbeat
+                        return
                         # metadata json file is created and will be picked up on the next heartbeat
 

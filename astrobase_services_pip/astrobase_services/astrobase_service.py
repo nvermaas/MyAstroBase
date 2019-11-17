@@ -27,7 +27,7 @@ try:
 except:
     pkg_version = '1.0.0'
 
-LAST_UPDATE = "3 nov 2019"
+LAST_UPDATE = "16 nov 2019"
 
 # ====================================================================
 
@@ -308,7 +308,9 @@ def main():
 
          # --------------------------------------------------------------------------------------------------------
         if (args.operation == 'ingest'):
+
             do_ingest(astrobaseIO, args.local_landing_pad, args.local_data_dir)
+
             if args.interval:
                 print('*ingest* starting polling ' + astrobaseIO.host + ' every ' + args.interval + ' secs')
                 while True:

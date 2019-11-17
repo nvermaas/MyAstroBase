@@ -60,4 +60,8 @@ urlpatterns = [
     path('observations/<int:pk>/setquality/<quality>/<page>',
          views.ObservationSetQuality,
          name='observation-setquality-view'),
+
+    path('observations/<int:pk>/setmode/<mode>/<page>',
+         views.ObservationSetMode,
+         name='observation-setmode-view'),
 ]
