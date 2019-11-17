@@ -20,9 +20,9 @@
             <td>
                 {% if user.is_authenticated %}
                     <a href="{% url 'observation-setmode-view' observation.pk 'raw_single' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Raw (1)</a>
-                    <a href="{% url 'observation-setmode-view' observation.pk 'processed_single' my_observations.number %}" class="btn btn-success btn-sm" role="button">Proc (1)</a>
+                    <a href="{% url 'observation-setmode-view' observation.pk 'proc_single' my_observations.number %}" class="btn btn-success btn-sm" role="button">Proc (1)</a>
                     <a href="{% url 'observation-setmode-view' observation.pk 'raw_stacked' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Raw (n)</a>
-                                       <a href="{% url 'observation-setmode-view' observation.pk 'raw_stacked' my_observations.number %}" class="btn btn-success btn-sm" role="button">Proc (n)</a>
+                                       <a href="{% url 'observation-setmode-view' observation.pk 'proc_stacked' my_observations.number %}" class="btn btn-success btn-sm" role="button">Proc (n)</a>
                     <a href="{% url 'observation-setmode-view' observation.pk 'wild' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Wild</a>
                     <a href="{% url 'observation-setmode-view' observation.pk 'simulation' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Sim</a>
 
