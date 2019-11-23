@@ -34,6 +34,7 @@ class ObservationFilter(filters.FilterSet):
         fields = {
             'observing_mode': ['exact', 'in', 'icontains'],  # /astrobase/observations?&observing_mode=g2
             'process_type': ['exact', 'in', 'icontains'], #/astrobase/observations?&process_type=observation
+            'task_type': ['exact', 'in', 'icontains'],  # /astrobase/observations?&process_type=observation
             'field_name': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
@@ -45,7 +46,10 @@ class ObservationFilter(filters.FilterSet):
             'date' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'data_location': ['exact', 'icontains'],
             'quality': ['exact', 'icontains'],
+
         }
+
+
 
 # example: /astrobase/dataproducts?status__in=created,archived
 class DataProductFilter(filters.FilterSet):

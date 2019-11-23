@@ -81,9 +81,9 @@ class Status(models.Model):
         return str(self.name)+' ('+str(formatedDate)+')'
 
 # a proxy object that makes it possible for observations to have a relationship with
-# another observatoin as a parent
+# another observation as a parent
 class Master(TaskObject):
-    queryset = TaskObject.objects.filter(task_type='observation')
+    queryset = TaskObject.objects.filter(task_type='master')
 
     class Meta:
         proxy = True
@@ -94,8 +94,6 @@ class Observation(TaskObject):
         ("observation", "observation"),
         ("pipeline","pipeline"),
     )
-
-
 
     date = models.DateTimeField('start time', null=True)
 
@@ -117,7 +115,7 @@ class Observation(TaskObject):
 
 
     # relationships
-    parent = models.ForeignKey(TaskObject, related_name='children', on_delete=models.SET_NULL, null=True, blank=True)
+    parent = models.ForeignKey('self', related_name='children', on_delete=models.SET_NULL, null=True, blank=True)
 
     # this translates a view-name (from urls.py) back to a url, to avoid hardcoded url's in the html templates
     # bad : <td><a href="/astrobase/observations/{{ observation.id }}/" target="_blank">{{ observation.taskID }} </a> </td>

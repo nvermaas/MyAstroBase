@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import DataProduct, Observation, Status, AstroFile, TaskObject, Master
+from .models import DataProduct, Observation, Status, AstroFile
 import logging
 
 logger = logging.getLogger(__name__)
@@ -50,9 +50,15 @@ class ObservationSerializer(serializers.ModelSerializer):
 
     parent = serializers.PrimaryKeyRelatedField(
         many=False,
-        queryset=Master.objects.filter(task_type='master'),
+        queryset=Observation.objects.filter(task_type='master'),
         required=False,
         allow_null=True,
+    )
+
+    children = serializers.StringRelatedField(
+        many=True,
+        required=False,
+        read_only=True
     )
 
     class Meta:
@@ -64,7 +70,7 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'derived_sky_globe_image','derived_red_green_image','derived_fits',
                   'my_status','new_status','status_history','job','url',
                   'generated_dataproducts','data_location', 'quality','description',
-                  'parent')
+                  'parent','children')
 
 # Serializer for file uploads
 class AstroFileSerializer(serializers.ModelSerializer):
