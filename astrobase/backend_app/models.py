@@ -11,6 +11,7 @@ import os
 # constants
 datetime_format_string = '%Y-%m-%dT%H:%M:%SZ'
 
+TASK_TYPE_MASTER = 'master'
 TASK_TYPE_OBSERVATION = 'observation'
 TASK_TYPE_DATAPRODUCT = 'dataproduct'
 
@@ -37,8 +38,14 @@ def get_sum_from_dataproduct_field(taskID, field):
 a base class of both Observation and Dataproducts
 """
 class TaskObject(models.Model):
+    TASK_TYPE_CHOICES = (
+        (TASK_TYPE_MASTER, TASK_TYPE_MASTER),
+        (TASK_TYPE_OBSERVATION,TASK_TYPE_OBSERVATION),
+        (TASK_TYPE_DATAPRODUCT, TASK_TYPE_DATAPRODUCT),
+    )
+
     name = models.CharField(max_length=100, default="unknown")
-    task_type = models.CharField(max_length=20, default=TASK_TYPE_DATAPRODUCT)
+    task_type = models.CharField(max_length=20, choices = TASK_TYPE_CHOICES, default=TASK_TYPE_DATAPRODUCT)
 
     taskID = models.CharField('taskID', db_index=True, max_length=30, blank=True, null=True)
     creationTime = models.DateTimeField(default=datetime.utcnow, blank=True)
@@ -52,7 +59,7 @@ class TaskObject(models.Model):
     job = models.CharField(max_length=15, default="", null=True)
 
     def __str__(self):
-        return str(self.id)
+        return str(self.taskID) + ' ' + str(self.name)
 
 
 class Status(models.Model):
@@ -73,15 +80,31 @@ class Status(models.Model):
         formatedDate = self.timestamp.strftime(datetime_format_string)
         return str(self.name)+' ('+str(formatedDate)+')'
 
+# a proxy object that makes it possible for observations to have a relationship with
+# another observatoin as a parent
+class Master(TaskObject):
+    queryset = TaskObject.objects.filter(task_type='observation')
+
+    class Meta:
+        proxy = True
+
 
 class Observation(TaskObject):
+    PROCESS_TYPE_CHOICES = (
+        ("observation", "observation"),
+        ("pipeline","pipeline"),
+    )
+
+
+
     date = models.DateTimeField('start time', null=True)
+
     # can be used to distinguish types of observations, like with powershot G2 or Kitt Peak
     observing_mode = models.CharField(max_length=50, default="")
     description = models.CharField(max_length=255, default="", null=True, blank=True)
     url = models.CharField(max_length=100, default="")
-    # can be used to distinguish types of observations, like for ARTS.
-    process_type = models.CharField(max_length=50, default="observation")
+
+    process_type = models.CharField(max_length=50, choices = PROCESS_TYPE_CHOICES, default="observation")
 
     # json object containing unmodelled parameters that are used by the 'executor' service
     # to create the parset based on a template and these parameters
@@ -91,6 +114,10 @@ class Observation(TaskObject):
     field_fov = models.FloatField('field_fov', null=True)
 
     quality = models.CharField(max_length=30, default="")
+
+
+    # relationships
+    parent = models.ForeignKey(TaskObject, related_name='children', on_delete=models.SET_NULL, null=True, blank=True)
 
     # this translates a view-name (from urls.py) back to a url, to avoid hardcoded url's in the html templates
     # bad : <td><a href="/astrobase/observations/{{ observation.id }}/" target="_blank">{{ observation.taskID }} </a> </td>

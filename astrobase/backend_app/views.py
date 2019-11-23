@@ -167,6 +167,7 @@ def get_unfiltered_observations(my_status):
 def get_searched_observations(search):
     observations = Observation.objects.filter(
         Q(taskID__contains=search) |
+        Q(parent__taskID__contains=search) |
         Q(observing_mode__icontains=search) |
         Q(my_status__icontains=search) |
         Q(field_name__icontains=search)).order_by('-creationTime')
@@ -280,6 +281,16 @@ def ObservationSetMode(request,pk,mode,page):
     model = Observation
     observation = Observation.objects.get(pk=pk)
     observation.observing_mode = mode
+    observation.save()
+    return redirect('/astrobase/?page='+page)
+
+
+def ObservationSetTaskType(request,pk,type,page):
+    model = Observation
+    observation = Observation.objects.get(pk=pk)
+    observation.task_type = type
+    # status is set to 'master' to show it in a different style
+    observation.new_status = type
     observation.save()
     return redirect('/astrobase/?page='+page)
 

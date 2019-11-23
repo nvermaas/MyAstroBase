@@ -34,7 +34,7 @@ TD {
 .secured {
   color: black;
 }
-.removed {
+.removed,.changed {
   color: darkgray;
 }
 .invalid,.error,.aborted,.incomplete,.failed,.Failed {
@@ -46,6 +46,12 @@ TD {
 }
 .checking,.starting,.removing {
 font-style: italic;
+}
+
+.master, {
+ color: blue;
+ font-weight: bold;
+ background-color: yellow;
 }
 
 p.title {

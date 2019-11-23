@@ -8,8 +8,16 @@
             <td>
                 <a href="{{ observation.get_absolute_url }}" target="_blank">{{ observation.taskID }} </a>
             </td>
+
+            {% if observation.task_type == "master" %}
+            <td>master</td>
+            {% else %}
+            <td>{{ observation.parent.taskID }}</td>
+            {% endif %}
+
             <td>{{ observation.name }}</td>
-              <td>{{ observation.my_status }}</td>
+
+            <td>{{ observation.my_status }}</td>
             <td>
                 <a href="http://nova.astrometry.net/status/{{ observation.job }}" target="_blank" >{{ observation.job }}</a>
             </td>
@@ -19,22 +27,22 @@
             <td>{{ observation.observing_mode }}</td>
             <td>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'observation-setmode-view' observation.pk 'raw_single' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Raw (1)</a>
-                    <a href="{% url 'observation-setmode-view' observation.pk 'proc_single' my_observations.number %}" class="btn btn-success btn-sm" role="button">Proc (1)</a>
-                    <a href="{% url 'observation-setmode-view' observation.pk 'raw_stacked' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Raw (n)</a>
-                                       <a href="{% url 'observation-setmode-view' observation.pk 'proc_stacked' my_observations.number %}" class="btn btn-success btn-sm" role="button">Proc (n)</a>
-                    <a href="{% url 'observation-setmode-view' observation.pk 'wild' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Wild</a>
-                    <a href="{% url 'observation-setmode-view' observation.pk 'simulation' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Sim</a>
+                    <a title="Raw (single image)" href="{% url 'observation-setmode-view' observation.pk 'raw_single' my_observations.number %}" class="btn btn-primary btn-sm" role="button">R(1)</a>
+                    <a title="Processed (single image)" href="{% url 'observation-setmode-view' observation.pk 'proc_single' my_observations.number %}" class="btn btn-success btn-sm" role="button">P(1)</a>
+                    <a title="Raw (stacked images)" href="{% url 'observation-setmode-view' observation.pk 'raw_stacked' my_observations.number %}" class="btn btn-primary btn-sm" role="button">R(n)</a>
+                    <a title="Processed (stacked images)" href="{% url 'observation-setmode-view' observation.pk 'proc_stacked' my_observations.number %}" class="btn btn-success btn-sm" role="button">P(n)</a>
+                    <a title="Creative, wild, beautiful but unsuitable for astrometry" href="{% url 'observation-setmode-view' observation.pk 'wild' my_observations.number %}" class="btn btn-warning btn-sm" role="button">W</a>
+                    <a title="Simulated image" href="{% url 'observation-setmode-view' observation.pk 'simulation' my_observations.number %}" class="btn btn-warning btn-sm" role="button">S</a>
 
                 {% endif %}
             </td>
             <td>{{ observation.quality }}</td>
             <td>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'observation-setquality-view' observation.pk 'good' my_observations.number %}" class="btn btn-success btn-sm" role="button">Great</a>
-                    <a href="{% url 'observation-setquality-view' observation.pk 'good' my_observations.number %}" class="btn btn-success btn-sm" role="button">Good</a>
-                    <a href="{% url 'observation-setquality-view' observation.pk 'medium' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Medium</a>
-                    <a href="{% url 'observation-setquality-view' observation.pk 'bad' my_observations.number %}" class="btn btn-danger btn-sm" role="button">Bad</a>
+                    <a title="Great quality!" href="{% url 'observation-setquality-view' observation.pk 'great' my_observations.number %}" class="btn btn-success btn-sm" role="button">G+</a>
+                    <a title="Good quality" href="{% url 'observation-setquality-view' observation.pk 'good' my_observations.number %}" class="btn btn-success btn-sm" role="button">G</a>
+                    <a title="Medium quality" href="{% url 'observation-setquality-view' observation.pk 'medium' my_observations.number %}" class="btn btn-warning btn-sm" role="button">M</a>
+                    <a title="Bad quality" href="{% url 'observation-setquality-view' observation.pk 'bad' my_observations.number %}" class="btn btn-danger btn-sm" role="button">B</a>
                 {% endif %}
             </td>
             <td>
@@ -79,9 +87,12 @@
                         <a href="{% url 'observation-setstatus-view' observation.pk 'removing' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Del</a>
                     {% endif %}
                     {% if observation.my_status == "done" %}
-                        <a href="{% url 'observation-setstatus-view' observation.pk 'processed' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Update</a>
+                        <a href="{% url 'observation-setstatus-view' observation.pk 'processed' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Upd</a>
                         <a href="{% url 'observation-setstatus-view' observation.pk 'removing' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Del</a>
 
+                        {% if observation.task_type != "master" %}
+                            <a title="Make this a Master Observation, so it can contain 'children'. Useful for adding multiple processing products under 1 master observation." href="{% url 'observation-settasktype-view' observation.pk 'master' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Master</a>
+                        {% endif %}
                     {% endif %}
 
                 {% endif %}

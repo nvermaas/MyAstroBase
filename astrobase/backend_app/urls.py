@@ -18,6 +18,10 @@ urlpatterns = [
     path('dataproducts/<int:pk>/', views.DataProductDetailsViewAPI.as_view(),name='dataproduct-detail-view-api'),
 
     # ex: /astrobase/observations/
+    path('tasks/', views.ObservationListViewAPI.as_view()),
+
+
+    # ex: /astrobase/observations/
     path('observations/', views.ObservationListViewAPI.as_view()),
 
     # ex: /astrobase/observations/5/
@@ -64,4 +68,8 @@ urlpatterns = [
     path('observations/<int:pk>/setmode/<mode>/<page>',
          views.ObservationSetMode,
          name='observation-setmode-view'),
+
+    path('observations/<int:pk>/settasktype/<type>/<page>',
+         views.ObservationSetTaskType,
+         name='observation-settasktype-view'),
 ]

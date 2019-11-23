@@ -48,6 +48,12 @@ TD {
 font-style: italic;
 }
 
+.master, {
+ color: blue;
+ font-weight: bold;
+ background-color: yellow;
+}
+
 p.title {
 	font-family: Raleway;
 	font-size: 18pt;
