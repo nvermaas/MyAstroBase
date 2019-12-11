@@ -11,10 +11,10 @@ CMD exec gunicorn astrobase.wsgi_docker_vm:application --bind 0.0.0.0:8018 --wor
 # EXPOSE 8018
 
 # build the image like this:
-# docker build -t astrobase_web_dev:latest .
+# docker build -t astrobase_web:latest .
 
 # run the container from 'shared', like this:
-# sudo docker run -d --name astrobase_rpi --mount type=bind,source="$(pwd)",target=/shared -p 8018:8018 --restart always astrobase_web_dev:latest &
+# sudo docker run -d --name astrobase_rpi --mount type=bind,source="$(pwd)",target=/shared -p 8018:8018 --restart always astrobase_web:latest
 
 # log into the container
 # docker exec -it astrobase_rpi sh

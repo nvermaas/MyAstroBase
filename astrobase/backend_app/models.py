@@ -80,14 +80,6 @@ class Status(models.Model):
         formatedDate = self.timestamp.strftime(datetime_format_string)
         return str(self.name)+' ('+str(formatedDate)+')'
 
-# a proxy object that makes it possible for observations to have a relationship with
-# another observation as a parent
-class Master(TaskObject):
-    queryset = TaskObject.objects.filter(task_type='master')
-
-    class Meta:
-        proxy = True
-
 
 class Observation(TaskObject):
     PROCESS_TYPE_CHOICES = (
@@ -95,7 +87,7 @@ class Observation(TaskObject):
         ("pipeline","pipeline"),
     )
 
-    date = models.DateTimeField('start time', null=True)
+    date = models.DateTimeField('date', null=True)
 
     # can be used to distinguish types of observations, like with powershot G2 or Kitt Peak
     observing_mode = models.CharField(max_length=50, default="")

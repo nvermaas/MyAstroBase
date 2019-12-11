@@ -14753,3 +14753,6 @@
 [2019-11-23 12:23:26,020] SIGNAL : pre_save Observation(191123002 - stacked2_191119h_perseus)
 [2019-11-23 12:23:26,020] handle_pre_save(191123002 - stacked2_191119h_perseus)
 [2019-11-23 12:23:26,064] handle_post_save(191123002 - stacked2_191119h_perseus)
+[2019-11-23 14:20:39,562] SIGNAL : pre_save Observation(191120001 - Blue Zenit)
+[2019-11-23 14:20:39,563] handle_pre_save(191120001 - Blue Zenit)
+[2019-11-23 14:20:40,088] handle_post_save(191120001 - Blue Zenit)
