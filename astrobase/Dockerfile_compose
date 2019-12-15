@@ -3,7 +3,7 @@ ENV PYTHONUNBUFFERED 1
 RUN apk update && apk add bash && apk add nano
 RUN mkdir /code
 WORKDIR /code
-COPY ../.. /code/
+COPY . /code/
 RUN pip install -r requirements/prod.txt
 CMD exec gunicorn astrobase.wsgi_docker_rpi:application --bind 0.0.0.0:8008 --workers 3
 
@@ -14,7 +14,7 @@ CMD exec gunicorn astrobase.wsgi_docker_rpi:application --bind 0.0.0.0:8008 --wo
 # docker build -t astrobase_web:latest .
 
 # run the container from 'shared', like this:
-# sudo docker run -d --name astrobase_rpi --mount type=bind,source="$(pwd)",target=/shared -p 8008:8008 --restart always astrobase_web:latest
+# sudo docker run -d --name astrobase_rpi --mount type=bind,source="$(pwd)",target=/shared -p 8018:8018 --restart always astrobase_web:latest
 
 # log into the container
 # docker exec -it astrobase_rpi sh
