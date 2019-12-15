@@ -19,7 +19,7 @@ services:
        dockerfile: Dockerfile
     container_name: astrobase_nginx_compose
     ports:
-      - "89:8009"
+      - "89:80"
     volumes:
       - ./docker/nginx:/etc/nginx/conf.d
       - /home/pi/shared/astrobase/static:/static
@@ -27,3 +27,8 @@ services:
       - web
     restart: always
 
+# build the stack like this:
+# > docker-compose build
+
+# run the stack like this:
+# > docker-compose up
