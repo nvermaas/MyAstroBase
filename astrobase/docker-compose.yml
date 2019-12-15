@@ -2,23 +2,23 @@ version: "3.7"
 services:
   web:
     build: .
-    container_name: astrobase_web_dev
+    container_name: astrobase_web_compose
     ports:
-      - "8018:8018"
+      - "8008:8008"
     expose:
-      - "8018"
+      - "8008"
     restart: always
 
   nginx:
     build:
        context: ./docker/nginx
        dockerfile: Dockerfile
-    container_name: astrobase_nginx_dev
+    container_name: astrobase_nginx_compose
     ports:
-      - "89:8019"
+      - "89:8009"
     volumes:
       - ./docker/nginx:/etc/nginx/conf.d
-      - /home/vagrant/shared/astrobase/static:/static
+      - /home/pi/shared/astrobase/static:/static
     depends_on:
       - web
     restart: always
