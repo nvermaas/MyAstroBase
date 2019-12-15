@@ -11,8 +11,7 @@ services:
       - "8008"
     restart: always
     volumes:
-      # this is where the sqlite database lives
-      - /home/pi/shared:/shared
+      - /home/pi/shared:/shared # this is where the sqlite database lives
   nginx:
     build:
        context: ./docker/nginx
@@ -22,7 +21,8 @@ services:
       - "89:80"
     volumes:
       - ./docker/nginx:/etc/nginx/conf.d
-      - /home/pi/shared/astrobase/static:/static
+      - /home/pi/shared/astrobase/static:/static # external method to share static (not used)
+      - ./src:/src # for syncing with django source code
     depends_on:
       - web
     restart: always
