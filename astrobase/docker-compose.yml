@@ -21,7 +21,6 @@ services:
       - "88:80"
     volumes:
       - ./docker/nginx:/etc/nginx/conf.d
-      - /home/pi/shared/astrobase/static:/static # external method to share static (not used)
     depends_on:
       - web
     restart: always
