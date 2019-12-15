@@ -1,5 +1,4 @@
 FROM nginx
-RUN apk update && apk add bash && apk add nano && apk add mc
 RUN rm /etc/nginx/conf.d/default.conf
 COPY astrobase.conf /etc/nginx/conf.d/
 
