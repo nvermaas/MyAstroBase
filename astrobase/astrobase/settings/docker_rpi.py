@@ -36,6 +36,9 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = []
 
+STATIC_URL = '/static/'
+STATIC_ROOT = './static/'
+
 MEDIA_URL = 'http://localhost/'
 MEDIA_ROOT = '/shared/astrobase_landing_pad'
 
