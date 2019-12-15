@@ -22,7 +22,6 @@ services:
     volumes:
       - ./docker/nginx:/etc/nginx/conf.d
       - /home/pi/shared/astrobase/static:/static # external method to share static (not used)
-      - ./src:/src # for syncing with django source code
     depends_on:
       - web
     restart: always
