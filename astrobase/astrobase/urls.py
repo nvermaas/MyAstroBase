@@ -18,6 +18,6 @@ from django.urls import include, path
 
 urlpatterns = [
     path('astrobase/', include('backend_app.urls')),
-    path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
+    path('astrobase/admin/', admin.site.urls),
+    path('astrobase/api-auth/', include('rest_framework.urls')),
 ]
