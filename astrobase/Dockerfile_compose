@@ -5,6 +5,7 @@ RUN mkdir /src
 WORKDIR /src
 COPY . /src/
 RUN pip install -r requirements/prod.txt
+RUN exec python manage.py collectstatic --settings=astrobase.settings.docker_rpi
 CMD exec gunicorn astrobase.wsgi_docker_rpi:application --bind 0.0.0.0:8008 --workers 3
 
 # RUN exec python manage.py collectstatic --settings=astrobase.settings.docker_rpi
