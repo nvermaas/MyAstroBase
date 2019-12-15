@@ -2,7 +2,7 @@ FROM python:3.6.7-alpine
 ENV PYTHONUNBUFFERED 1
 RUN apk update && apk add bash && apk add nano
 RUN mkdir /code
-WORKDIR /code
+WORKDIR ../../code
 COPY . /code/
 RUN pip install -r requirements/prod.txt
 CMD exec gunicorn astrobase.wsgi_docker_rpi:application --bind 0.0.0.0:8008 --workers 3
