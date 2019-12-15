@@ -2,7 +2,8 @@ version: "3.7"
 services:
   web:
     build:
-        dockerfile: ./docker/web/Dockerfile
+        context: ./docker/web
+        dockerfile: Dockerfile
     container_name: astrobase_web_compose
     ports:
       - "8008:8008"
