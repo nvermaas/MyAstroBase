@@ -3,12 +3,15 @@ ENV PYTHONUNBUFFERED 1
 RUN apk update && apk add bash && apk add nano
 RUN mkdir /code
 WORKDIR /code
-COPY . /code/
+FROM python:3.6.7-alpine
+ENV PYTHONUNBUFFERED 1
+RUN apk update && apk add bash && apk add nano && apk add mc
+RUN mkdir /src
+WORKDIR /src
+COPY . /src/
 RUN pip install -r requirements/prod.txt
-CMD exec gunicorn astrobase.wsgi_docker_rpi:application --bind 0.0.0.0:8018 --workers 3
-
-# RUN exec python manage.py collectstatic --settings=astrobase.settings.prod
-# EXPOSE 8018
+# RUN exec python manage.py collectstatic --settings=astrobase.settings.docker_rpi
+CMD exec gunicorn astrobase.wsgi_docker_rpi:application --bind 0.0.0.0:8008 --workers 3
 
 # build the image like this:
 # docker build -t astrobase_web:latest .
