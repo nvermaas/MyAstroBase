@@ -4,9 +4,9 @@ services:
     build:
         context: .
         dockerfile: Dockerfile
-    container_name: astrobase_web_compose
+    container_name: astrobase_web_rpi
     ports:
-      - "8008:8008"
+      - "8008:8000"
     expose:
       - "8008"
     restart: always
@@ -16,7 +16,7 @@ services:
     build:
        context: ./docker/nginx
        dockerfile: Dockerfile
-    container_name: astrobase_nginx_compose
+    container_name: astrobase_nginx_rpi
     ports:
       - "88:80"
     volumes:
