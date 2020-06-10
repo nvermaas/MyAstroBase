@@ -1,11 +1,10 @@
-FROM python:3.6.7-alpine
+# FROM python:3.6.7-alpine
+FROM python:3.6.7-slim
+RUN apt-get update && apt-get install --no-install-recommends -y bash nano mc
+
 ENV PYTHONUNBUFFERED 1
-RUN apk update && apk add bash && apk add nano
-RUN mkdir /code
-WORKDIR /code
-FROM python:3.6.7-alpine
-ENV PYTHONUNBUFFERED 1
-RUN apk update && apk add bash && apk add nano && apk add mc
+# RUN apk update && apk add bash && apk add nano && apk add mc
+
 RUN mkdir /src
 WORKDIR /src
 COPY . /src/
