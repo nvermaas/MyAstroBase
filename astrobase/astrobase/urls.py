@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('astrobase/', include('backend_app.urls')),
-    path('astrobase/admin/', admin.site.urls),
-    path('astrobase/api-auth/', include('rest_framework.urls')),
+    path('my_astrobase/', include('backend_app.urls')),
+    path('my_astrobase/admin/', admin.site.urls),
+    path('my_astrobase/api-auth/', include('rest_framework.urls')),
 ]
