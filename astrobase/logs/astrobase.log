@@ -14756,3 +14756,8 @@
 [2019-11-23 14:20:39,562] SIGNAL : pre_save Observation(191120001 - Blue Zenit)
 [2019-11-23 14:20:39,563] handle_pre_save(191120001 - Blue Zenit)
 [2019-11-23 14:20:40,088] handle_post_save(191120001 - Blue Zenit)
+[2020-07-19 09:45:47,667] DataProductsListView.get_queryset()
+[2020-07-19 09:45:47,675] my_queryset retrieved
+[2020-07-19 11:13:48,874] SIGNAL : pre_save Observation(200712007 - Saturn in Sagittarius)
+[2020-07-19 11:13:48,875] handle_pre_save(200712007 - Saturn in Sagittarius)
+[2020-07-19 11:13:48,904] handle_post_save(200712007 - Saturn in Sagittarius)

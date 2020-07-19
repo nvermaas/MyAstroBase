@@ -25,22 +25,22 @@ logger = logging.getLogger(__name__)
 
 
 # ---------- filters (in the REST API) ---------
-# example: /astrobase/observations/?observing_mode__icontains=powershot_g2
+# example: /my_astrobase/observations/?observing_mode__icontains=powershot_g2
 class ObservationFilter(filters.FilterSet):
     # A direct filter on a @property field is not possible, this simulates that behaviour
     class Meta:
         model = Observation
 
         fields = {
-            'observing_mode': ['exact', 'in', 'icontains'],  # /astrobase/observations?&observing_mode=g2
-            'process_type': ['exact', 'in', 'icontains'], #/astrobase/observations?&process_type=observation
-            'task_type': ['exact', 'in', 'icontains'],  # /astrobase/observations?&process_type=observation
+            'observing_mode': ['exact', 'in', 'icontains'],  # /my_astrobase/observations?&observing_mode=g2
+            'process_type': ['exact', 'in', 'icontains'], #/my_astrobase/observations?&process_type=observation
+            'task_type': ['exact', 'in', 'icontains'],  # /my_astrobase/observations?&process_type=observation
             'field_name': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_fov': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'name': ['exact', 'icontains'],
-            'my_status': ['exact', 'icontains', 'in', 'startswith'],          #/astrobase/observations?&my_status__in=archived,removing
+            'my_status': ['exact', 'icontains', 'in', 'startswith'],          #/my_astrobase/observations?&my_status__in=archived,removing
             'taskID': ['gt', 'lt', 'gte', 'lte','exact', 'icontains', 'startswith','in'],
             'creationTime' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'date' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
@@ -51,7 +51,7 @@ class ObservationFilter(filters.FilterSet):
 
 
 
-# example: /astrobase/dataproducts?status__in=created,archived
+# example: /my_astrobase/dataproducts?status__in=created,archived
 class DataProductFilter(filters.FilterSet):
 
     class Meta:
@@ -70,7 +70,7 @@ class DataProductFilter(filters.FilterSet):
         }
 
 # example: has 1811130001 been 'processed?'
-# http://localhost:8000/astrobase/status/?&taskID=181130001&name=processed
+# http://localhost:8000/my_astrobase/status/?&taskID=181130001&name=processed
 class StatusFilter(filters.FilterSet):
 
     # A direct filter on a @property field is not possible, this simulates that behaviour
@@ -99,17 +99,17 @@ def do_filter(request):
         if form.is_valid():
             status = form.cleaned_data.get('status')
             #observations = get_filtered_observations()
-            return HttpResponseRedirect('/astrobase/')
+            return HttpResponseRedirect('/my_astrobase/')
     else:
         form = FilterForm
 
     return render(request, 'backend_app/index.html', {'my_form': form})
 
 # ---------- GUI Views -----------
-# http://localhost:8000/astrobase/
+# http://localhost:8000/my_astrobase/
 # calling this view renders the index.html template in the GUI (the observation list)
-# http://localhost:8000/astrobase/query?my_status=removed
-# http://localhost:8000/astrobase/query?not_my_status=removed
+# http://localhost:8000/my_astrobase/query?my_status=removed
+# http://localhost:8000/my_astrobase/query?not_my_status=removed
 
 class IndexView(ListView):
     """
@@ -155,14 +155,14 @@ class IndexView(ListView):
 
 # an attempt to get a filtering mechanism in the GUI
 # filter on a single status
-# http://localhost:8000/astrobase/query?my_status=scheduled
+# http://localhost:8000/my_astrobase/query?my_status=scheduled
 def get_filtered_observations(my_status):
     q = Observation.objects.order_by('-creationTime')
     q = q.filter(my_status=my_status)
     #q = q.exclude(my_status__icontains='removed')
     return q
 
-# http://localhost:8000/astrobase/query?not_my_status=removed
+# http://localhost:8000/my_astrobase/query?not_my_status=removed
 def get_unfiltered_observations(my_status):
     q = Observation.objects.order_by('-creationTime')
     q = q.exclude(my_status=my_status)
@@ -178,7 +178,7 @@ def get_searched_observations(search):
     return observations
 
 
-# example: /astrobase/task/180323003/
+# example: /my_astrobase/task/180323003/
 # https://docs.djangoproject.com/en/2.1/topics/class-based-views/generic-display/
 # calling this view renders the dataproducts.html template in the GUI
 # a custom pagination class to return more than the default 100 dataproducts
@@ -202,7 +202,7 @@ class DataProductsListView(ListView):
 
 
 # ---------- REST API views -----------
-# example: /astrobase/status
+# example: /my_astrobase/status
 
 class StatusListViewAPI(generics.ListCreateAPIView):
     model = Status
@@ -214,7 +214,7 @@ class StatusListViewAPI(generics.ListCreateAPIView):
     filter_class = StatusFilter
 
 
-# example: /astrobase/dataproducts/
+# example: /my_astrobase/dataproducts/
 # calling this view serializes the dataproduct list in a REST API
 class DataProductListViewAPI(generics.ListCreateAPIView):
     model = DataProduct
@@ -227,7 +227,7 @@ class DataProductListViewAPI(generics.ListCreateAPIView):
     filter_class = DataProductFilter
 
 
-# example: /astrobase/dataproducts/5/
+# example: /my_astrobase/dataproducts/5/
 # calling this view serializes a dataproduct in the REST API
 class DataProductDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     model = DataProduct
@@ -235,7 +235,7 @@ class DataProductDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = DataProductSerializer
 
 
-# example: /astrobase/observations/
+# example: /my_astrobase/observations/
 # calling this view serializes the observations list in a REST API
 class ObservationListViewAPI(generics.ListCreateAPIView):
     """
@@ -250,7 +250,7 @@ class ObservationListViewAPI(generics.ListCreateAPIView):
     filter_class = ObservationFilter
 
 
-# example: /astrobase/observations/5/
+# example: /my_astrobase/observations/5/
 # calling this view serializes an observation in the REST API
 class ObservationDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     """
@@ -270,7 +270,7 @@ def ObservationSetStatus(request,pk,new_status,page):
     observation = Observation.objects.get(pk=pk)
     observation.new_status = new_status
     observation.save()
-    return redirect('/astrobase/?page='+page)
+    return redirect('/my_astrobase/?page='+page)
 
 
 def ObservationSetQuality(request,pk,quality,page):
@@ -278,7 +278,7 @@ def ObservationSetQuality(request,pk,quality,page):
     observation = Observation.objects.get(pk=pk)
     observation.quality = quality
     observation.save()
-    return redirect('/astrobase/?page='+page)
+    return redirect('/my_astrobase/?page='+page)
 
 
 def ObservationSetMode(request,pk,mode,page):
@@ -286,7 +286,7 @@ def ObservationSetMode(request,pk,mode,page):
     observation = Observation.objects.get(pk=pk)
     observation.observing_mode = mode
     observation.save()
-    return redirect('/astrobase/?page='+page)
+    return redirect('/my_astrobase/?page='+page)
 
 
 def ObservationSetTaskType(request,pk,type,page):
@@ -296,12 +296,12 @@ def ObservationSetTaskType(request,pk,type,page):
     # status is set to 'master' to show it in a different style
     observation.new_status = type
     observation.save()
-    return redirect('/astrobase/?page='+page)
+    return redirect('/my_astrobase/?page='+page)
 
 
 # set the status of an observation and all its dataproducts to 'new_dps_status'
 # example: 'Validate DPS' button
-# /astrobase/observations/<int:pk>/setstatus_dps/<new_dps_status>/<new_obs_status>/<page>
+# /my_astrobase/observations/<int:pk>/setstatus_dps/<new_dps_status>/<new_obs_status>/<page>
 def ObservationSetStatusDataProducts(request,pk,new_dps_status,new_obs_status,page):
     model = Observation
     observation = Observation.objects.get(pk=pk)
@@ -314,7 +314,7 @@ def ObservationSetStatusDataProducts(request,pk,new_dps_status,new_obs_status,pa
         dataproduct.new_status = new_dps_status
         dataproduct.save()
 
-    return redirect('/astrobase/?page='+page)
+    return redirect('/my_astrobase/?page='+page)
 
 # set the status of a dataproduct to 'new_status'
 # example: 'Validate', 'Skip' and 'Remove' buttons
@@ -326,11 +326,11 @@ def DataProductSetStatusView(request,pk,new_status):
 
     taskid = dataproduct.taskID
 
-    return redirect('/astrobase/task/'+taskid)
+    return redirect('/my_astrobase/task/'+taskid)
 
 
 # get the next taskid based on starttime and what is currently in the database
-#/astrobase/get_next_taskid?timestamp=2019-04-05
+#/my_astrobase/get_next_taskid?timestamp=2019-04-05
 class GetNextTaskIDView(generics.ListAPIView):
     queryset = Observation.objects.all()
 
@@ -360,7 +360,7 @@ class GetNextTaskIDView(generics.ListAPIView):
 
 
 # add dataproducts as a batch
-# /astrobase/post_dataproducts&taskid=190405034
+# /my_astrobase/post_dataproducts&taskid=190405034
 class PostDataproductsView(generics.CreateAPIView):
     queryset = DataProduct.objects.all()
     serializer_class = DataProductSerializer
