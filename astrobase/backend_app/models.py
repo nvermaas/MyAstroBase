@@ -98,7 +98,7 @@ class Observation(TaskObject):
 
     # json object containing unmodelled parameters that are used by the 'executor' service
     # to create the parset based on a template and these parameters
-    field_name = models.CharField(max_length=50, null=True)
+    field_name = models.CharField(max_length=255, null=True)
     field_ra = models.FloatField('field_ra', null = True)
     field_dec = models.FloatField('field_dec', null = True)
     field_fov = models.FloatField('field_fov', null=True)
