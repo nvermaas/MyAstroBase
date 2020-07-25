@@ -35,7 +35,7 @@ class ObservationFilter(filters.FilterSet):
             'observing_mode': ['exact', 'in', 'icontains'],  # /my_astrobase/observations?&observing_mode=g2
             'process_type': ['exact', 'in', 'icontains'], #/my_astrobase/observations?&process_type=observation
             'task_type': ['exact', 'in', 'icontains'],  # /my_astrobase/observations?&process_type=observation
-            'field_name': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'field_name': ['gt', 'lt', 'gte', 'lte', 'icontains', 'exact'],
             'field_ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_fov': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
