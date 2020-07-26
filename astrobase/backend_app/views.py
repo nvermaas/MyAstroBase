@@ -37,9 +37,9 @@ class ObservationFilter(filters.FilterSet):
     fieldsearch = filters.CharFilter(field_name='fieldsearch', method='search_my_fields')
 
     def search_my_fields(self, queryset, name, value):
-        logger.info('name = '+name)
+        logger.info('***'+value)
         return queryset.filter(
-            Q(name__icontains=value) | Q(field_name__icontains=value) | Q(observing_mode__icontains=value) |
+            Q(field_name__icontains=value) | Q(field_name__icontains=value) | Q(observing_mode__icontains=value) |
             Q(quality__icontains=value)| Q(my_status__icontains=value)| Q(description__icontains=value)
         )
 
@@ -49,19 +49,20 @@ class ObservationFilter(filters.FilterSet):
         fields = {
             'observing_mode': ['exact', 'in', 'icontains'],  # /my_astrobase/observations?&observing_mode=g2
             'process_type': ['exact', 'in', 'icontains'], #/my_astrobase/observations?&process_type=observation
-            'task_type': ['exact', 'in', 'icontains'],  # /my_astrobase/observations?&process_type=observation
-            'field_name': ['gt', 'lt', 'gte', 'lte', 'icontains', 'exact'],
+            'task_type': ['exact', 'in', 'icontains'],  #
+            'field_name': ['gt', 'lt', 'gte', 'lte', 'icontains', 'exact','in'],
             'field_ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_fov': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'name': ['exact', 'icontains'],
+            'name': ['exact', 'icontains','in'],
+            'description': ['exact', 'icontains', 'in'],
             'my_status': ['exact', 'icontains', 'in', 'startswith'],          #/my_astrobase/observations?&my_status__in=archived,removing
             'taskID': ['gt', 'lt', 'gte', 'lte','exact', 'icontains', 'startswith','in'],
             'creationTime' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'date' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'data_location': ['exact', 'icontains'],
-            'quality': ['exact', 'icontains'],
-            'fieldsearch': ['exact', 'icontains'],
+            'quality': ['exact', 'icontains','in'],
+            'fieldsearch': ['exact', 'icontains','in'],
         }
 
 
