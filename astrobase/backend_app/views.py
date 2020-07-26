@@ -10,6 +10,7 @@ from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser, FileUploadParser
 from rest_framework.views import APIView
 
+import django_filters
 from django_filters import rest_framework as filters
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -25,9 +26,23 @@ logger = logging.getLogger(__name__)
 
 
 # ---------- filters (in the REST API) ---------
+
 # example: /my_astrobase/observations/?observing_mode__icontains=powershot_g2
 class ObservationFilter(filters.FilterSet):
-    # A direct filter on a @property field is not possible, this simulates that behaviour
+
+    # example of an OR filter.
+    # this filters the fields 'name, field_name, description, observing_mode and quality
+    # for the given value of 'fieldsearch='.
+    # http://localhost:8000/my_astrobase/observations/?fieldsearch=aurora
+    fieldsearch = filters.CharFilter(field_name='fieldsearch', method='search_my_fields')
+
+    def search_my_fields(self, queryset, name, value):
+        logger.info('name = '+name)
+        return queryset.filter(
+            Q(name__icontains=value) | Q(field_name__icontains=value) | Q(observing_mode__icontains=value) |
+            Q(quality__icontains=value)| Q(my_status__icontains=value)| Q(description__icontains=value)
+        )
+
     class Meta:
         model = Observation
 
@@ -46,7 +61,7 @@ class ObservationFilter(filters.FilterSet):
             'date' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'data_location': ['exact', 'icontains'],
             'quality': ['exact', 'icontains'],
-
+            'fieldsearch': ['exact', 'icontains'],
         }
 
 
@@ -89,6 +104,9 @@ class StatusFilter(filters.FilterSet):
 
             #'derived_taskid' : ['exact', 'in']
         }
+
+
+
 
 # this uses a form
 def do_filter(request):
@@ -414,3 +432,5 @@ class UploadFileView(APIView):
             return Response(file_serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
