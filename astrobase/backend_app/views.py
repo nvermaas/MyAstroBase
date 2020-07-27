@@ -39,7 +39,7 @@ class ObservationFilter(filters.FilterSet):
     def search_my_fields(self, queryset, name, value):
         logger.info('***'+value)
         return queryset.filter(
-            Q(field_name__icontains=value) | Q(field_name__icontains=value) | Q(observing_mode__icontains=value) |
+            Q(name__icontains=value) | Q(field_name__icontains=value) | Q(observing_mode__icontains=value) |
             Q(quality__icontains=value)| Q(my_status__icontains=value)| Q(description__icontains=value)
         )
 
