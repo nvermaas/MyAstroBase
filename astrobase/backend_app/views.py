@@ -150,8 +150,8 @@ class IndexView(ListView):
         if (search_box is not None):
             observations = get_searched_observations(search_box)
         else:
-            observations = Observation.objects.order_by('-taskID')
-            #observations = Observation.objects.order_by('-date')
+            #observations = Observation.objects.order_by('-taskID')
+            observations = Observation.objects.order_by('-date')
         if (my_status is not None):
             observations = get_filtered_observations(my_status)
         if (not_my_status is not None):
@@ -176,14 +176,14 @@ class IndexView(ListView):
 # filter on a single status
 # http://localhost:8000/my_astrobase/query?my_status=scheduled
 def get_filtered_observations(my_status):
-    q = Observation.objects.order_by('-creationTime')
+    q = Observation.objects.order_by('-date')
     q = q.filter(my_status=my_status)
     #q = q.exclude(my_status__icontains='removed')
     return q
 
 # http://localhost:8000/my_astrobase/query?not_my_status=removed
 def get_unfiltered_observations(my_status):
-    q = Observation.objects.order_by('-creationTime')
+    q = Observation.objects.order_by('-date')
     q = q.exclude(my_status=my_status)
     return q
 
@@ -193,7 +193,7 @@ def get_searched_observations(search):
         Q(parent__taskID__contains=search) |
         Q(observing_mode__icontains=search) |
         Q(my_status__icontains=search) |
-        Q(field_name__icontains=search)).order_by('-creationTime')
+        Q(field_name__icontains=search)).order_by('-date')
     return observations
 
 
@@ -261,7 +261,7 @@ class ObservationListViewAPI(generics.ListCreateAPIView):
     A pagination list of observations, unsorted.
     """
     model = Observation
-    queryset = Observation.objects.all().order_by('-taskID')
+    queryset = Observation.objects.all().order_by('-date')
     serializer_class = ObservationSerializer
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
