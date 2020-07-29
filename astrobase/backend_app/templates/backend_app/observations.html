@@ -94,6 +94,7 @@
                             <a title="Make this a Master Observation, so it can contain 'children'. Useful for adding multiple processing products under 1 master observation." href="{% url 'observation-settasktype-view' observation.pk 'master' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Master</a>
                         {% endif %}
                     {% endif %}
+
                     {% if observation.task_type != "done" %}
                         <a title="Set status to 'done'." href="{% url 'observation-setstatus-view' observation.pk 'done' my_observations.number %}" class="btn btn-primary btn-sm" role="button">Done</a>
                     {% endif %}
