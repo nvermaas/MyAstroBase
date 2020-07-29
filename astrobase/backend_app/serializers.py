@@ -70,7 +70,7 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'derived_sky_globe_image','derived_red_green_image','derived_fits',
                   'my_status','new_status','status_history','job','url',
                   'generated_dataproducts','data_location', 'quality','description',
-                  'parent','children')
+                  'parent','derived_parent_taskid','children')
 
 # Serializer for file uploads
 class AstroFileSerializer(serializers.ModelSerializer):

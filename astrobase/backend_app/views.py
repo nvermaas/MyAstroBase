@@ -313,7 +313,7 @@ def ObservationSetTaskType(request,pk,type,page):
     observation = Observation.objects.get(pk=pk)
     observation.task_type = type
     # status is set to 'master' to show it in a different style
-    observation.new_status = type
+    # observation.new_status = type
     observation.save()
     return redirect('/my_astrobase/?page='+page)
 

@@ -193,6 +193,10 @@ class Observation(TaskObject):
         except:
             return None
 
+    @property
+    def derived_parent_taskid(self):
+        return self.parent.taskID
+
     def __str__(self):
         return str(self.taskID) + ' - ' + str(self.name)
 
