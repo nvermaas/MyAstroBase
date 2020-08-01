@@ -14810,3 +14810,25 @@
 [2020-07-26 18:54:11,143] ***ANDROMEDA
 [2020-07-26 18:57:08,169] ***ANDROMEDA
 [2020-07-26 19:34:25,623] ***ORION
+[2020-07-29 20:33:12,789] SIGNAL : pre_save Observation(200721003 - Jupiter 21 july 2020)
+[2020-07-29 20:33:12,790] handle_pre_save(200721003 - Jupiter 21 july 2020)
+[2020-07-29 20:33:12,832] handle_post_save(200721003 - Jupiter 21 july 2020)
+[2020-07-29 20:34:16,734] SIGNAL : pre_save Observation(200714001 - Jupiter & Saturn)
+[2020-07-29 20:34:16,735] handle_pre_save(200714001 - Jupiter & Saturn)
+[2020-07-29 20:34:16,766] handle_post_save(200714001 - Jupiter & Saturn)
+[2020-07-29 20:34:36,168] SIGNAL : pre_save Observation(200712003 - Saturn & Titan (crappy))
+[2020-07-29 20:34:36,168] handle_pre_save(200712003 - Saturn & Titan (crappy))
+[2020-07-29 20:34:36,196] handle_post_save(200712003 - Saturn & Titan (crappy))
+[2020-07-29 20:34:59,384] SIGNAL : pre_save Observation(200712002 - Jupiter Moons (crappy))
+[2020-07-29 20:34:59,385] handle_pre_save(200712002 - Jupiter Moons (crappy))
+[2020-07-29 20:34:59,423] handle_post_save(200712002 - Jupiter Moons (crappy))
+[2020-07-29 20:42:04,379] SIGNAL : pre_save Observation(200712004 - C/2020 F3 (Neowise))
+[2020-07-29 20:42:04,379] handle_pre_save(200712004 - C/2020 F3 (Neowise))
+[2020-07-29 20:42:04,415] handle_post_save(200712004 - C/2020 F3 (Neowise))
+[2020-07-29 20:43:49,125] SIGNAL : pre_save Observation(200712004 - C/2020 F3 (Neowise))
+[2020-07-29 20:43:49,128] handle_pre_save(200712004 - C/2020 F3 (Neowise))
+[2020-07-29 20:43:49,162] handle_post_save(200712004 - C/2020 F3 (Neowise))
+[2020-07-29 20:44:22,856] SIGNAL : pre_save Observation(200712004 - C/2020 F3 (Neowise))
+[2020-07-29 20:44:22,856] handle_pre_save(200712004 - C/2020 F3 (Neowise))
+[2020-07-29 20:44:22,911] handle_post_save(200712004 - C/2020 F3 (Neowise))
+[2020-08-01 17:24:17,593] ***200712004
