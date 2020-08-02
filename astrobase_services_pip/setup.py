@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='astrobase_services',
-      version='1.0.0',
+      version='1.6.0',
       description='AstroBase services',
       url='',
       author='Nico Vermaas',
