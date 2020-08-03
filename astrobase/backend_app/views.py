@@ -40,7 +40,7 @@ class ObservationFilter(filters.FilterSet):
         logger.info('***'+value)
         return queryset.filter(
             Q(name__icontains=value) | Q(field_name__icontains=value) | Q(observing_mode__icontains=value) |
-            Q(quality__icontains=value)| Q(my_status__icontains=value)| Q(description__icontains=value) |
+            Q(quality__icontains=value)| Q(my_status__icontains=value)|
             Q(taskID__icontains=value) | Q(parent__taskID__icontains=value)
         )
 
