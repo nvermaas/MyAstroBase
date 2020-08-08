@@ -131,6 +131,7 @@ class Observation(TaskObject):
 
     # details about the imaging
     iso = models.CharField(max_length=4, null=True, choices = ISO_CHOICES, default="none")
+    focal_length = models.IntegerField(default=0)
     exposure_in_seconds = models.IntegerField(default=0)
     stacked_images = models.IntegerField(default=0)
     magnitude = models.FloatField(null = True, blank=True)
