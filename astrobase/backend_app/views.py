@@ -64,6 +64,12 @@ class ObservationFilter(filters.FilterSet):
             'data_location': ['exact', 'icontains'],
             'quality': ['exact', 'icontains','in'],
             'fieldsearch': ['exact', 'icontains','in'],
+            'exposure_in_seconds' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'iso': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'exposure_in_seconds' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'magnitude' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'image_type': ['icontains', 'exact']
+
         }
 
 

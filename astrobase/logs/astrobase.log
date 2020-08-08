@@ -14832,3 +14832,293 @@
 [2020-07-29 20:44:22,856] handle_pre_save(200712004 - C/2020 F3 (Neowise))
 [2020-07-29 20:44:22,911] handle_post_save(200712004 - C/2020 F3 (Neowise))
 [2020-08-01 17:24:17,593] ***200712004
+[2020-08-03 18:51:21,718] DataProductsListView.get_queryset()
+[2020-08-03 18:51:21,725] my_queryset retrieved
+[2020-08-03 18:51:35,560] DataProductsListView.get_queryset()
+[2020-08-03 18:51:35,562] my_queryset retrieved
+[2020-08-03 18:51:39,576] DataProductsListView.get_queryset()
+[2020-08-03 18:51:39,577] my_queryset retrieved
+[2020-08-03 18:51:43,376] DataProductsListView.get_queryset()
+[2020-08-03 18:51:43,376] my_queryset retrieved
+[2020-08-03 18:51:53,956] DataProductsListView.get_queryset()
+[2020-08-03 18:51:53,956] my_queryset retrieved
+[2020-08-03 18:52:04,077] DataProductsListView.get_queryset()
+[2020-08-03 18:52:04,078] my_queryset retrieved
+[2020-08-03 18:52:14,290] DataProductsListView.get_queryset()
+[2020-08-03 18:52:14,291] my_queryset retrieved
+[2020-08-03 18:52:24,540] DataProductsListView.get_queryset()
+[2020-08-03 18:52:24,541] my_queryset retrieved
+[2020-08-03 18:52:34,765] DataProductsListView.get_queryset()
+[2020-08-03 18:52:34,766] my_queryset retrieved
+[2020-08-03 18:52:44,979] DataProductsListView.get_queryset()
+[2020-08-03 18:52:44,980] my_queryset retrieved
+[2020-08-03 18:52:55,220] DataProductsListView.get_queryset()
+[2020-08-03 18:52:55,223] my_queryset retrieved
+[2020-08-03 18:53:05,470] DataProductsListView.get_queryset()
+[2020-08-03 18:53:05,472] my_queryset retrieved
+[2020-08-03 18:53:15,726] DataProductsListView.get_queryset()
+[2020-08-03 18:53:15,728] my_queryset retrieved
+[2020-08-03 18:53:25,950] DataProductsListView.get_queryset()
+[2020-08-03 18:53:25,950] my_queryset retrieved
+[2020-08-03 18:53:36,191] DataProductsListView.get_queryset()
+[2020-08-03 18:53:36,194] my_queryset retrieved
+[2020-08-03 18:53:46,470] DataProductsListView.get_queryset()
+[2020-08-03 18:53:46,473] my_queryset retrieved
+[2020-08-03 18:53:57,345] DataProductsListView.get_queryset()
+[2020-08-03 18:53:57,346] my_queryset retrieved
+[2020-08-03 18:54:07,611] DataProductsListView.get_queryset()
+[2020-08-03 18:54:07,614] my_queryset retrieved
+[2020-08-03 18:54:17,874] DataProductsListView.get_queryset()
+[2020-08-03 18:54:17,875] my_queryset retrieved
+[2020-08-03 18:54:28,649] DataProductsListView.get_queryset()
+[2020-08-03 18:54:28,650] my_queryset retrieved
+[2020-08-03 18:54:38,858] DataProductsListView.get_queryset()
+[2020-08-03 18:54:38,866] my_queryset retrieved
+[2020-08-03 18:54:49,044] DataProductsListView.get_queryset()
+[2020-08-03 18:54:49,046] my_queryset retrieved
+[2020-08-03 18:55:23,837] DataProductsListView.get_queryset()
+[2020-08-03 18:55:23,838] my_queryset retrieved
+[2020-08-03 18:55:34,101] DataProductsListView.get_queryset()
+[2020-08-03 18:55:34,102] my_queryset retrieved
+[2020-08-03 18:55:44,408] DataProductsListView.get_queryset()
+[2020-08-03 18:55:44,410] my_queryset retrieved
+[2020-08-03 18:55:54,710] DataProductsListView.get_queryset()
+[2020-08-03 18:55:54,711] my_queryset retrieved
+[2020-08-03 18:56:05,008] DataProductsListView.get_queryset()
+[2020-08-03 18:56:05,011] my_queryset retrieved
+[2020-08-03 18:56:15,310] DataProductsListView.get_queryset()
+[2020-08-03 18:56:15,311] my_queryset retrieved
+[2020-08-03 18:56:25,707] DataProductsListView.get_queryset()
+[2020-08-03 18:56:25,708] my_queryset retrieved
+[2020-08-03 18:56:35,894] DataProductsListView.get_queryset()
+[2020-08-03 18:56:35,895] my_queryset retrieved
+[2020-08-03 18:56:46,206] DataProductsListView.get_queryset()
+[2020-08-03 18:56:46,208] my_queryset retrieved
+[2020-08-03 18:56:56,473] DataProductsListView.get_queryset()
+[2020-08-03 18:56:56,473] my_queryset retrieved
+[2020-08-03 18:57:06,754] DataProductsListView.get_queryset()
+[2020-08-03 18:57:06,756] my_queryset retrieved
+[2020-08-03 18:57:17,032] DataProductsListView.get_queryset()
+[2020-08-03 18:57:17,034] my_queryset retrieved
+[2020-08-03 18:57:27,302] DataProductsListView.get_queryset()
+[2020-08-03 18:57:27,305] my_queryset retrieved
+[2020-08-03 18:57:37,566] DataProductsListView.get_queryset()
+[2020-08-03 18:57:37,568] my_queryset retrieved
+[2020-08-03 18:57:47,859] DataProductsListView.get_queryset()
+[2020-08-03 18:57:47,860] my_queryset retrieved
+[2020-08-03 18:57:58,119] DataProductsListView.get_queryset()
+[2020-08-03 18:57:58,120] my_queryset retrieved
+[2020-08-03 18:58:08,374] DataProductsListView.get_queryset()
+[2020-08-03 18:58:08,376] my_queryset retrieved
+[2020-08-03 18:58:18,645] DataProductsListView.get_queryset()
+[2020-08-03 18:58:18,647] my_queryset retrieved
+[2020-08-03 18:58:28,937] DataProductsListView.get_queryset()
+[2020-08-03 18:58:28,938] my_queryset retrieved
+[2020-08-03 18:58:39,197] DataProductsListView.get_queryset()
+[2020-08-03 18:58:39,198] my_queryset retrieved
+[2020-08-03 18:58:49,511] DataProductsListView.get_queryset()
+[2020-08-03 18:58:49,513] my_queryset retrieved
+[2020-08-03 18:58:59,802] DataProductsListView.get_queryset()
+[2020-08-03 18:58:59,803] my_queryset retrieved
+[2020-08-03 18:59:10,044] DataProductsListView.get_queryset()
+[2020-08-03 18:59:10,046] my_queryset retrieved
+[2020-08-03 18:59:18,702] DataProductsListView.get_queryset()
+[2020-08-03 18:59:18,703] my_queryset retrieved
+[2020-08-03 18:59:26,090] DataProductsListView.get_queryset()
+[2020-08-03 18:59:26,091] my_queryset retrieved
+[2020-08-03 18:59:37,151] DataProductsListView.get_queryset()
+[2020-08-03 18:59:37,153] my_queryset retrieved
+[2020-08-03 18:59:47,338] DataProductsListView.get_queryset()
+[2020-08-03 18:59:47,340] my_queryset retrieved
+[2020-08-03 18:59:57,616] DataProductsListView.get_queryset()
+[2020-08-03 18:59:57,618] my_queryset retrieved
+[2020-08-03 19:00:07,829] DataProductsListView.get_queryset()
+[2020-08-03 19:00:07,831] my_queryset retrieved
+[2020-08-03 19:02:28,256] DataProductsListView.get_queryset()
+[2020-08-03 19:02:28,257] my_queryset retrieved
+[2020-08-03 19:02:38,529] DataProductsListView.get_queryset()
+[2020-08-03 19:02:38,530] my_queryset retrieved
+[2020-08-03 19:02:48,965] DataProductsListView.get_queryset()
+[2020-08-03 19:02:48,966] my_queryset retrieved
+[2020-08-03 19:02:59,277] DataProductsListView.get_queryset()
+[2020-08-03 19:02:59,280] my_queryset retrieved
+[2020-08-03 19:03:09,540] DataProductsListView.get_queryset()
+[2020-08-03 19:03:09,543] my_queryset retrieved
+[2020-08-03 19:03:19,826] DataProductsListView.get_queryset()
+[2020-08-03 19:03:19,828] my_queryset retrieved
+[2020-08-03 19:03:30,096] DataProductsListView.get_queryset()
+[2020-08-03 19:03:30,098] my_queryset retrieved
+[2020-08-03 19:03:40,358] DataProductsListView.get_queryset()
+[2020-08-03 19:03:40,359] my_queryset retrieved
+[2020-08-03 19:03:50,783] DataProductsListView.get_queryset()
+[2020-08-03 19:03:50,787] my_queryset retrieved
+[2020-08-03 19:04:01,260] DataProductsListView.get_queryset()
+[2020-08-03 19:04:01,263] my_queryset retrieved
+[2020-08-03 19:04:11,877] DataProductsListView.get_queryset()
+[2020-08-03 19:04:11,878] my_queryset retrieved
+[2020-08-03 19:04:22,342] DataProductsListView.get_queryset()
+[2020-08-03 19:04:22,343] my_queryset retrieved
+[2020-08-03 19:04:32,783] DataProductsListView.get_queryset()
+[2020-08-03 19:04:32,786] my_queryset retrieved
+[2020-08-03 19:04:43,249] DataProductsListView.get_queryset()
+[2020-08-03 19:04:43,250] my_queryset retrieved
+[2020-08-03 19:04:53,728] DataProductsListView.get_queryset()
+[2020-08-03 19:04:53,731] my_queryset retrieved
+[2020-08-03 19:05:04,213] DataProductsListView.get_queryset()
+[2020-08-03 19:05:04,214] my_queryset retrieved
+[2020-08-03 19:05:14,689] DataProductsListView.get_queryset()
+[2020-08-03 19:05:14,689] my_queryset retrieved
+[2020-08-03 19:05:25,185] DataProductsListView.get_queryset()
+[2020-08-03 19:05:25,186] my_queryset retrieved
+[2020-08-03 19:05:35,648] DataProductsListView.get_queryset()
+[2020-08-03 19:05:35,649] my_queryset retrieved
+[2020-08-03 19:05:46,101] DataProductsListView.get_queryset()
+[2020-08-03 19:05:46,102] my_queryset retrieved
+[2020-08-03 19:05:56,534] DataProductsListView.get_queryset()
+[2020-08-03 19:05:56,535] my_queryset retrieved
+[2020-08-03 19:06:07,006] DataProductsListView.get_queryset()
+[2020-08-03 19:06:07,006] my_queryset retrieved
+[2020-08-03 19:06:10,928] DataProductsListView.get_queryset()
+[2020-08-03 19:06:10,929] my_queryset retrieved
+[2020-08-03 19:06:17,245] DataProductsListView.get_queryset()
+[2020-08-03 19:06:17,246] my_queryset retrieved
+[2020-08-03 19:06:27,788] DataProductsListView.get_queryset()
+[2020-08-03 19:06:27,789] my_queryset retrieved
+[2020-08-03 19:06:38,048] DataProductsListView.get_queryset()
+[2020-08-03 19:06:38,051] my_queryset retrieved
+[2020-08-03 19:06:40,669] DataProductsListView.get_queryset()
+[2020-08-03 19:06:40,670] my_queryset retrieved
+[2020-08-03 19:06:48,321] DataProductsListView.get_queryset()
+[2020-08-03 19:06:48,322] my_queryset retrieved
+[2020-08-03 19:06:58,820] DataProductsListView.get_queryset()
+[2020-08-03 19:06:58,823] my_queryset retrieved
+[2020-08-03 19:07:09,074] DataProductsListView.get_queryset()
+[2020-08-03 19:07:09,075] my_queryset retrieved
+[2020-08-03 19:07:19,316] DataProductsListView.get_queryset()
+[2020-08-03 19:07:19,317] my_queryset retrieved
+[2020-08-03 19:07:29,579] DataProductsListView.get_queryset()
+[2020-08-03 19:07:29,580] my_queryset retrieved
+[2020-08-03 19:07:39,824] DataProductsListView.get_queryset()
+[2020-08-03 19:07:39,825] my_queryset retrieved
+[2020-08-03 19:07:50,082] DataProductsListView.get_queryset()
+[2020-08-03 19:07:50,083] my_queryset retrieved
+[2020-08-03 19:08:00,316] DataProductsListView.get_queryset()
+[2020-08-03 19:08:00,317] my_queryset retrieved
+[2020-08-03 19:08:10,855] DataProductsListView.get_queryset()
+[2020-08-03 19:08:10,855] my_queryset retrieved
+[2020-08-03 19:08:21,072] DataProductsListView.get_queryset()
+[2020-08-03 19:08:21,073] my_queryset retrieved
+[2020-08-03 19:08:31,332] DataProductsListView.get_queryset()
+[2020-08-03 19:08:31,333] my_queryset retrieved
+[2020-08-03 19:08:41,554] DataProductsListView.get_queryset()
+[2020-08-03 19:08:41,555] my_queryset retrieved
+[2020-08-03 19:08:51,943] DataProductsListView.get_queryset()
+[2020-08-03 19:08:51,945] my_queryset retrieved
+[2020-08-03 19:08:55,714] DataProductsListView.get_queryset()
+[2020-08-03 19:08:55,715] my_queryset retrieved
+[2020-08-03 19:09:02,195] DataProductsListView.get_queryset()
+[2020-08-03 19:09:02,196] my_queryset retrieved
+[2020-08-03 19:09:12,373] DataProductsListView.get_queryset()
+[2020-08-03 19:09:12,373] my_queryset retrieved
+[2020-08-03 19:09:22,633] DataProductsListView.get_queryset()
+[2020-08-03 19:09:22,634] my_queryset retrieved
+[2020-08-03 19:09:32,908] DataProductsListView.get_queryset()
+[2020-08-03 19:09:32,909] my_queryset retrieved
+[2020-08-03 19:09:43,188] DataProductsListView.get_queryset()
+[2020-08-03 19:09:43,189] my_queryset retrieved
+[2020-08-03 19:09:53,457] DataProductsListView.get_queryset()
+[2020-08-03 19:09:53,458] my_queryset retrieved
+[2020-08-03 19:10:03,712] DataProductsListView.get_queryset()
+[2020-08-03 19:10:03,712] my_queryset retrieved
+[2020-08-03 19:10:13,964] DataProductsListView.get_queryset()
+[2020-08-03 19:10:13,966] my_queryset retrieved
+[2020-08-03 19:10:24,229] DataProductsListView.get_queryset()
+[2020-08-03 19:10:24,231] my_queryset retrieved
+[2020-08-03 19:10:34,502] DataProductsListView.get_queryset()
+[2020-08-03 19:10:34,506] my_queryset retrieved
+[2020-08-03 19:10:44,767] DataProductsListView.get_queryset()
+[2020-08-03 19:10:44,769] my_queryset retrieved
+[2020-08-03 19:10:55,047] DataProductsListView.get_queryset()
+[2020-08-03 19:10:55,048] my_queryset retrieved
+[2020-08-03 19:11:05,315] DataProductsListView.get_queryset()
+[2020-08-03 19:11:05,315] my_queryset retrieved
+[2020-08-03 19:11:15,570] DataProductsListView.get_queryset()
+[2020-08-03 19:11:15,572] my_queryset retrieved
+[2020-08-03 19:11:25,878] DataProductsListView.get_queryset()
+[2020-08-03 19:11:25,880] my_queryset retrieved
+[2020-08-03 19:11:36,136] DataProductsListView.get_queryset()
+[2020-08-03 19:11:36,137] my_queryset retrieved
+[2020-08-03 19:11:46,377] DataProductsListView.get_queryset()
+[2020-08-03 19:11:46,378] my_queryset retrieved
+[2020-08-03 19:11:56,633] DataProductsListView.get_queryset()
+[2020-08-03 19:11:56,634] my_queryset retrieved
+[2020-08-03 19:12:06,878] DataProductsListView.get_queryset()
+[2020-08-03 19:12:06,879] my_queryset retrieved
+[2020-08-03 19:12:17,106] DataProductsListView.get_queryset()
+[2020-08-03 19:12:17,107] my_queryset retrieved
+[2020-08-03 19:12:27,355] DataProductsListView.get_queryset()
+[2020-08-03 19:12:27,358] my_queryset retrieved
+[2020-08-03 19:12:37,638] DataProductsListView.get_queryset()
+[2020-08-03 19:12:37,640] my_queryset retrieved
+[2020-08-03 19:12:47,882] DataProductsListView.get_queryset()
+[2020-08-03 19:12:47,884] my_queryset retrieved
+[2020-08-03 19:12:58,153] DataProductsListView.get_queryset()
+[2020-08-03 19:12:58,153] my_queryset retrieved
+[2020-08-03 19:13:08,447] DataProductsListView.get_queryset()
+[2020-08-03 19:13:08,449] my_queryset retrieved
+[2020-08-03 19:13:18,697] DataProductsListView.get_queryset()
+[2020-08-03 19:13:18,698] my_queryset retrieved
+[2020-08-03 19:13:28,978] DataProductsListView.get_queryset()
+[2020-08-03 19:13:28,980] my_queryset retrieved
+[2020-08-03 19:13:39,229] DataProductsListView.get_queryset()
+[2020-08-03 19:13:39,231] my_queryset retrieved
+[2020-08-03 19:13:49,514] DataProductsListView.get_queryset()
+[2020-08-03 19:13:49,516] my_queryset retrieved
+[2020-08-03 19:13:59,817] DataProductsListView.get_queryset()
+[2020-08-03 19:13:59,819] my_queryset retrieved
+[2020-08-03 19:18:19,665] SIGNAL : pre_save Observation(200328004 - Starlink 1)
+[2020-08-03 19:18:19,666] handle_pre_save(200328004 - Starlink 1)
+[2020-08-03 19:18:19,704] handle_post_save(200328004 - Starlink 1)
+[2020-08-03 19:18:36,320] SIGNAL : pre_save Observation(200328002 - Starlink 2)
+[2020-08-03 19:18:36,321] handle_pre_save(200328002 - Starlink 2)
+[2020-08-03 19:18:36,363] handle_post_save(200328002 - Starlink 2)
+[2020-08-03 19:44:44,740] DataProductsListView.get_queryset()
+[2020-08-03 19:44:44,741] my_queryset retrieved
+[2020-08-03 19:45:38,582] DataProductsListView.get_queryset()
+[2020-08-03 19:45:38,583] my_queryset retrieved
+[2020-08-03 19:47:53,457] DataProductsListView.get_queryset()
+[2020-08-03 19:47:53,458] my_queryset retrieved
+[2020-08-03 19:50:24,018] DataProductsListView.get_queryset()
+[2020-08-03 19:50:24,019] my_queryset retrieved
+[2020-08-03 19:50:40,038] DataProductsListView.get_queryset()
+[2020-08-03 19:50:40,039] my_queryset retrieved
+[2020-08-03 19:50:50,803] DataProductsListView.get_queryset()
+[2020-08-03 19:50:50,804] my_queryset retrieved
+[2020-08-03 19:51:01,670] DataProductsListView.get_queryset()
+[2020-08-03 19:51:01,671] my_queryset retrieved
+[2020-08-03 19:51:11,966] DataProductsListView.get_queryset()
+[2020-08-03 19:51:11,968] my_queryset retrieved
+[2020-08-03 19:51:22,842] DataProductsListView.get_queryset()
+[2020-08-03 19:51:22,843] my_queryset retrieved
+[2020-08-03 19:51:33,813] DataProductsListView.get_queryset()
+[2020-08-03 19:51:33,814] my_queryset retrieved
+[2020-08-03 19:51:44,859] DataProductsListView.get_queryset()
+[2020-08-03 19:51:44,861] my_queryset retrieved
+[2020-08-03 19:51:55,797] DataProductsListView.get_queryset()
+[2020-08-03 19:51:55,797] my_queryset retrieved
+[2020-08-03 19:52:06,831] DataProductsListView.get_queryset()
+[2020-08-03 19:52:06,833] my_queryset retrieved
+[2020-08-03 19:52:17,794] DataProductsListView.get_queryset()
+[2020-08-03 19:52:17,795] my_queryset retrieved
+[2020-08-05 20:36:30,443] ***ORION
+[2020-08-05 20:48:47,511] DataProductsListView.get_queryset()
+[2020-08-05 20:48:47,512] my_queryset retrieved
+[2020-08-07 18:55:04,322] DataProductsListView.get_queryset()
+[2020-08-07 18:55:04,350] my_queryset retrieved
+[2020-08-07 18:55:21,413] ***200802005
+[2020-08-07 19:18:53,192] ***200714001
+[2020-08-07 19:25:55,697] ***200802005
+[2020-08-07 19:26:29,887] ***200802005
+[2020-08-07 19:26:44,265] ***200730001
+[2020-08-07 19:42:17,426] ***200802005
+[2020-08-07 20:21:04,366] ***200103001

@@ -87,6 +87,30 @@ class Observation(TaskObject):
         ("pipeline","pipeline"),
     )
 
+    ISO_CHOICES = (
+        ("none", "none"),
+        ("100", "100"),
+        ("200","200"),
+        ("400", "400"),
+        ("800", "800"),
+        ("1600", "1600"),
+        ("3200", "3200"),
+        ("6400", "6400"),
+    )
+
+    IMAGE_TYPE_CHOICES = (
+        ("solar system", "solar system"),
+        ("stars wide angle","stars wide angle"),
+        ("stars zoomed-in", "stars zoomed-in"),
+        ("deep sky", "deep sky"),
+        ("moon", "moon"),
+        ("spacecraft", "spacecraft"),
+        ("scenery", "scenery"),
+        ("technical", "technical"),
+        ("event", "event"),
+        ("other", "other"),
+    )
+
     date = models.DateTimeField('date', null=True)
 
     # can be used to distinguish types of observations, like with powershot G2 or Kitt Peak
@@ -105,6 +129,11 @@ class Observation(TaskObject):
 
     quality = models.CharField(max_length=30, default="")
 
+    iso = models.CharField(max_length=4, null=True, choices = ISO_CHOICES, default="none")
+    exposure_in_seconds = models.IntegerField(default=0)
+    stacked_images = models.IntegerField(default=0)
+    magnitude = models.FloatField(null = True, blank=True)
+    image_type = models.CharField(max_length=20, null=True, choices = IMAGE_TYPE_CHOICES, default="other")
 
     # relationships
     parent = models.ForeignKey('self', related_name='children', on_delete=models.SET_NULL, null=True, blank=True)
