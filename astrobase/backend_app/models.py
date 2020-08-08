@@ -129,6 +129,7 @@ class Observation(TaskObject):
 
     quality = models.CharField(max_length=30, default="")
 
+    # details about the imaging
     iso = models.CharField(max_length=4, null=True, choices = ISO_CHOICES, default="none")
     exposure_in_seconds = models.IntegerField(default=0)
     stacked_images = models.IntegerField(default=0)
