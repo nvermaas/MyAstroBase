@@ -15122,3 +15122,16 @@
 [2020-08-07 19:26:44,265] ***200730001
 [2020-08-07 19:42:17,426] ***200802005
 [2020-08-07 20:21:04,366] ***200103001
+[2020-08-08 16:17:24,906] SIGNAL : pre_save Observation(200806003 - Het Leesten 5 aug 2020)
+[2020-08-08 16:17:24,949] handle_pre_save(200806003 - Het Leesten 5 aug 2020)
+[2020-08-08 16:17:25,592] handle_post_save(200806003 - Het Leesten 5 aug 2020)
+[2020-08-08 16:24:00,098] ***ORION
+[2020-08-08 17:48:47,226] SIGNAL : pre_save Observation(200329003 - ISS coming through!)
+[2020-08-08 17:48:47,227] handle_pre_save(200329003 - ISS coming through!)
+[2020-08-08 17:48:47,664] handle_post_save(200329003 - ISS coming through!)
+[2020-08-08 17:49:15,698] SIGNAL : pre_save Observation(191116001 - Uranus Simulation)
+[2020-08-08 17:49:15,698] handle_pre_save(191116001 - Uranus Simulation)
+[2020-08-08 17:49:16,126] handle_post_save(191116001 - Uranus Simulation)
+[2020-08-08 18:37:40,734] SIGNAL : pre_save Observation(200806010 - Moon 5 aug 2020)
+[2020-08-08 18:37:40,735] handle_pre_save(200806010 - Moon 5 aug 2020)
+[2020-08-08 18:37:41,410] handle_post_save(200806010 - Moon 5 aug 2020)
