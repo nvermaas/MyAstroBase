@@ -64,40 +64,6 @@ def handle_pre_save(sender, **kwargs):
         myStatus = Status(name=new_status, taskObject=myTaskObject)
         myStatus.save()
 
-        #myTaskObject.new_status = None
-
-        # when an observation goes to valid, calculate its total size by counting its dataproducts
-        # if (myTaskObject.task_type == 'observation') and 'valid' in myTaskObject.new_status:
-        #    # calculate total size
-        #    dps = DataProduct.objects.filter(taskID=myTaskObject.taskID)
-        #    size = 0
-        #    for dp in dps:
-        #        size = size + dp.size
-        #
-        #    logger.info("total size of observation "+myTaskObject.taskID+ " = "+ str(size))
-        #    # nv:11jun2019: this requires a database change first
-        #    # myTaskObject.size = size
-
-        if (myTaskObject.task_type == 'observation'):
-                # convert the utc timestamp to a format that Django REST API understands
-                # in its GUI, otherwise null values will be put in when hitting PUT.
-                s,_ = str(myStatus.timestamp).split('.')
-                myTimestamp = datetime.datetime.strptime(s, "%Y-%m-%d %H:%M:%S")
-
-                if 'starting' in myTaskObject.new_status:
-                    myTaskObject.timestamp_starting = myTimestamp
-                elif 'running' in myTaskObject.new_status:
-                    myTaskObject.timestamp_running = myTimestamp
-                elif 'completing' in myTaskObject.new_status:
-                    myTaskObject.timestamp_completing = myTimestamp
-                elif 'ingesting' in myTaskObject.new_status:
-                    myTaskObject.timestamp_ingesting = myTimestamp
-                elif 'archived' in myTaskObject.new_status:
-                    myTaskObject.timestamp_archived = myTimestamp
-                elif 'aborted' in myTaskObject.new_status:
-                    myTaskObject.timestamp_aborted = myTimestamp
-                elif 'ingest_error' in myTaskObject.new_status:
-                    myTaskObject.timestamp_ingest_error = myTimestamp
 
     # temporarily disconnect the post_save handler to save the dataproduct (again) and avoiding recursion.
     # I don't use pre_save, because then the 'created' key is not available, which is the most handy way to
@@ -148,6 +114,53 @@ def handle_post_save(sender, **kwargs):
         logger.info("update dataproduct parent = " + str(myTaskObject.taskID))
         parent = Observation.objects.get(taskID=myTaskObject.taskID)
         myTaskObject.parent=parent
+
+    if (myTaskObject.task_type == 'observation'):
+        # note that task_type == 'master' will be omitted here
+        myObservation = kwargs.get('instance')
+
+        logger.info("update observation = " + str(myObservation.taskID))
+
+        # if this observation has a parent..
+        parent = myObservation.parent
+        if parent != None:
+            if myObservation.field_ra == 0.0:
+                myObservation.field_ra = parent.field_ra
+            if myObservation.field_dec == 0.0:
+                myObservation.field_dec = parent.field_dec
+            if myObservation.field_fov == 0.0:
+                myObservation.field_fov = parent.field_fov
+
+            if myObservation.observing_mode == "unknown":
+                myObservation.observing_mode = parent.observing_mode
+
+            # check if the following values have been set before. If not copy them from the master
+            if myObservation.quality == '':
+                myObservation.quality = parent.quality
+
+            if myObservation.iso == "none":
+                myObservation.iso = parent.iso
+
+                # This is not a bug.
+                # Default Focal_length is 200, but I can't check for that default to determine
+                # if the value has been initially set or changed. So I piggyback on 'iso' for that.
+                # if iso wasn't set, then I assume that focal_length wasn't set either
+
+                myObservation.focal_length = parent.focal_length
+                myObservation.stacked_images = parent.stacked_images
+                myObservation.date = parent.date
+
+            if myObservation.exposure_in_seconds == 0:
+                myObservation.exposure_in_seconds = parent.exposure_in_seconds
+
+            if myObservation.stacked_images == 1:
+                myObservation.stacked_images = parent.stacked_images
+
+            if myObservation.image_type == 'other':
+                myObservation.image_type = parent.image_type
+
+            # myObservation.save()
+
 
     # temporarily disconnect the post_save handler to save the dataproduct (again) and avoiding recursion.
     # I don't use pre_save, because then the 'created' key is not available, which is the most handy way to
