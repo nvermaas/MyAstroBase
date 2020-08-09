@@ -134,7 +134,8 @@ class Observation(TaskObject):
     focal_length = models.IntegerField(default=200)
     exposure_in_seconds = models.IntegerField(default=0)
     stacked_images = models.IntegerField(default=1)
-    magnitude = models.FloatField(null = True, blank=True)
+    # magnitude = models.FloatField(null = True, blank=True)
+    magnitude = models.CharField(max_length=5, null=True, blank=True)
     image_type = models.CharField(max_length=20, null=True, choices = IMAGE_TYPE_CHOICES, default="other")
 
     # relationships
@@ -148,9 +149,12 @@ class Observation(TaskObject):
 
     @property
     def size(self):
-        # sum the sizes of all dataproducts with this taskID. In Mb
-        size = get_sum_from_dataproduct_field(self.taskID,'size')
-        return size
+        try:
+            # sum the sizes of all dataproducts with this taskID. In Mb
+            size = get_sum_from_dataproduct_field(self.taskID,'size')
+            return size
+        except:
+            return None
 
     @property
     def derived_raw_image(self):
