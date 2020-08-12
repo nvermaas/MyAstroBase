@@ -24,6 +24,7 @@
 
             <td>{{ observation.date|date:"Y-m-d H:i:s" }} </td>
             <td>{{ observation.size|filesizeformat }} </td>
+            <!--
             <td>{{ observation.observing_mode }}</td>
             <td>
                 {% if user.is_authenticated %}
@@ -36,6 +37,7 @@
 
                 {% endif %}
             </td>
+            <-->
             <td>{{ observation.quality }}</td>
             <td>
                 {% if user.is_authenticated %}
@@ -43,6 +45,7 @@
                     <a title="Good quality" href="{% url 'observation-setquality-view' observation.pk 'good' my_observations.number %}" class="btn btn-success btn-sm" role="button">G</a>
                     <a title="Medium quality" href="{% url 'observation-setquality-view' observation.pk 'medium' my_observations.number %}" class="btn btn-warning btn-sm" role="button">M</a>
                     <a title="Bad quality" href="{% url 'observation-setquality-view' observation.pk 'bad' my_observations.number %}" class="btn btn-danger btn-sm" role="button">B</a>
+                    <a title="Annotated" href="{% url 'observation-setquality-view' observation.pk 'annotated' my_observations.number %}" class="btn btn-info btn-sm" role="button">A</a>
                 {% endif %}
             </td>
             <td>

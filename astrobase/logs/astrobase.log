@@ -15209,3 +15209,54 @@
 [2020-08-09 17:03:34,066] handle_pre_save(200809005 - mu_andromedae)
 [2020-08-09 17:03:34,158] handle_post_save(200809005 - mu_andromedae)
 [2020-08-09 17:03:34,158] update observation = 200809005
+[2020-08-09 20:26:52,102] ***ECLIPS
+[2020-08-09 20:27:16,346] SIGNAL : pre_save Observation(090313003 - Lunar Eclipse 2003)
+[2020-08-09 20:27:16,346] handle_pre_save(090313003 - Lunar Eclipse 2003)
+[2020-08-09 20:27:17,038] handle_post_save(090313003 - Lunar Eclipse 2003)
+[2020-08-09 20:27:17,039] update observation = 090313003
+[2020-08-10 20:05:27,332] ***M31
+[2020-08-10 20:05:51,223] ***M31
+[2020-08-10 20:07:39,243] ***31
+[2020-08-12 13:46:59,617] SIGNAL : pre_save Observation(200802001 - Saturn ISO range)
+[2020-08-12 13:46:59,618] handle_pre_save(200802001 - Saturn ISO range)
+[2020-08-12 13:46:59,660] handle_post_save(200802001 - Saturn ISO range)
+[2020-08-12 13:46:59,660] update observation = 200802001
+[2020-08-12 13:47:05,302] SIGNAL : pre_save Observation(200731003 - Saturn 30 july 2020 - ISO Range)
+[2020-08-12 13:47:05,303] handle_pre_save(200731003 - Saturn 30 july 2020 - ISO Range)
+[2020-08-12 13:47:05,341] handle_post_save(200731003 - Saturn 30 july 2020 - ISO Range)
+[2020-08-12 13:47:05,342] update observation = 200731003
+[2020-08-12 15:05:57,135] SIGNAL : pre_save Observation(191019001 - Southern Cross (annotated))
+[2020-08-12 15:05:57,136] handle_pre_save(191019001 - Southern Cross (annotated))
+[2020-08-12 15:05:57,167] handle_post_save(191019001 - Southern Cross (annotated))
+[2020-08-12 15:05:57,167] update observation = 191019001
+[2020-08-12 15:08:04,469] SIGNAL : pre_save Observation(090311030 - 04-05-20 - Comet Neat)
+[2020-08-12 15:08:04,469] handle_pre_save(090311030 - 04-05-20 - Comet Neat)
+[2020-08-12 15:08:04,503] handle_post_save(090311030 - 04-05-20 - Comet Neat)
+[2020-08-12 15:08:04,504] update observation = 090311030
+[2020-08-12 15:08:11,301] SIGNAL : pre_save Observation(090311031 - 04-05-21 - Comet Neat)
+[2020-08-12 15:08:11,301] handle_pre_save(090311031 - 04-05-21 - Comet Neat)
+[2020-08-12 15:08:11,338] handle_post_save(090311031 - 04-05-21 - Comet Neat)
+[2020-08-12 15:08:11,338] update observation = 090311031
+[2020-08-12 15:08:50,377] SIGNAL : pre_save Observation(090314001 - Tuscon Tent 2)
+[2020-08-12 15:08:50,378] handle_pre_save(090314001 - Tuscon Tent 2)
+[2020-08-12 15:08:50,409] handle_post_save(090314001 - Tuscon Tent 2)
+[2020-08-12 15:08:50,409] update observation = 090314001
+[2020-08-12 15:09:21,841] SIGNAL : pre_save Observation(090314002 - Tuscon Tent 1)
+[2020-08-12 15:09:21,842] handle_pre_save(090314002 - Tuscon Tent 1)
+[2020-08-12 15:09:21,875] handle_post_save(090314002 - Tuscon Tent 1)
+[2020-08-12 15:10:22,129] SIGNAL : pre_save Observation(200802004 - Jupiter ISO800)
+[2020-08-12 15:10:22,129] handle_pre_save(200802004 - Jupiter ISO800)
+[2020-08-12 15:10:22,164] handle_post_save(200802004 - Jupiter ISO800)
+[2020-08-12 15:10:22,165] update observation = 200802004
+[2020-08-12 15:12:33,832] SIGNAL : pre_save Observation(200809004 - Andromeda StarFields (30 dec 2019))
+[2020-08-12 15:12:33,833] handle_pre_save(200809004 - Andromeda StarFields (30 dec 2019))
+[2020-08-12 15:12:33,860] handle_post_save(200809004 - Andromeda StarFields (30 dec 2019))
+[2020-08-12 15:27:39,001] SIGNAL : pre_save Observation(200731001 - Jupiter 30 july 2020)
+[2020-08-12 15:27:39,002] handle_pre_save(200731001 - Jupiter 30 july 2020)
+[2020-08-12 15:27:39,030] handle_post_save(200731001 - Jupiter 30 july 2020)
+[2020-08-12 15:28:21,515] SIGNAL : pre_save Observation(200731001 - Jupiter 30 july 2020)
+[2020-08-12 15:28:21,515] handle_pre_save(200731001 - Jupiter 30 july 2020)
+[2020-08-12 15:28:21,556] handle_post_save(200731001 - Jupiter 30 july 2020)
+[2020-08-12 15:33:57,938] SIGNAL : pre_save Observation(200809001 - M110 magnitude 16)
+[2020-08-12 15:33:57,939] handle_pre_save(200809001 - M110 magnitude 16)
+[2020-08-12 15:33:57,967] handle_post_save(200809001 - M110 magnitude 16)
