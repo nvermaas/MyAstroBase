@@ -266,7 +266,7 @@ class DataProductDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
 # calling this view serializes the observations list in a REST API
 class ObservationListViewAPI(generics.ListCreateAPIView):
     """
-    A pagination list of observations, unsorted.
+    A pagination list of observations, sorted by date.
     """
     model = Observation
     queryset = Observation.objects.all().order_by('-date')
@@ -286,6 +286,24 @@ class ObservationDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     model = Observation
     queryset = Observation.objects.all()
     serializer_class = ObservationSerializer
+
+
+# example: /my_astrobase/projects/
+# calling this view serializes the projects list in a REST API
+class ProjectListViewAPI(generics.ListCreateAPIView):
+    """
+    A pagination list of projects, sorted by date
+    """
+
+    # a projects is a observation
+    model = Observation
+    queryset = Observation.objects.filter(task_type='master').order_by('-date')
+    serializer_class = ObservationSerializer
+
+    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = ObservationFilter
+
 
 
 # --- Command views, triggered by a button in the GUI or directoy with a URL ---

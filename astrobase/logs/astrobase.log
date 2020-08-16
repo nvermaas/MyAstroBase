@@ -15260,3 +15260,15 @@
 [2020-08-12 15:33:57,938] SIGNAL : pre_save Observation(200809001 - M110 magnitude 16)
 [2020-08-12 15:33:57,939] handle_pre_save(200809001 - M110 magnitude 16)
 [2020-08-12 15:33:57,967] handle_post_save(200809001 - M110 magnitude 16)
+[2020-08-12 16:06:42,146] SIGNAL : pre_save Observation(200714001 - Jupiter & Saturn)
+[2020-08-12 16:06:42,147] handle_pre_save(200714001 - Jupiter & Saturn)
+[2020-08-12 16:06:42,174] handle_post_save(200714001 - Jupiter & Saturn)
+[2020-08-12 16:09:39,053] SIGNAL : pre_save Observation(200103002 - Alphonsus a)
+[2020-08-12 16:09:39,054] handle_pre_save(200103002 - Alphonsus a)
+[2020-08-12 16:09:39,092] handle_post_save(200103002 - Alphonsus a)
+[2020-08-12 16:09:39,093] update observation = 200103002
+[2020-08-12 20:52:35,975] ***JUPITER
+[2020-08-16 11:16:16,158] ***ORION
+[2020-08-16 11:19:34,214] ***ORION
+[2020-08-16 11:19:34,502] ***ORION
+[2020-08-16 11:21:04,419] ***ORION

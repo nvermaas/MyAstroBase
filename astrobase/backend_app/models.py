@@ -233,7 +233,7 @@ class Observation(TaskObject):
         return self.parent.taskID
 
     def __str__(self):
-        return str(self.taskID) + ' - ' + str(self.name)
+        return str(self.taskID)
 
 
 # file upload for images to the astrobase landing_pad
