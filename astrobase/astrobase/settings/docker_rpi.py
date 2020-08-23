@@ -44,3 +44,6 @@ MEDIA_ROOT = '/shared/astrobase_landing_pad'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 DATA_HOST = "http://uilennest.net/astrobase/data"
+
+LOGIN_REDIRECT_URL = "http://uilennest/astroview/login"
+LOGOUT_REDIRECT_URL = "http://uilennest/astroview/logout"
