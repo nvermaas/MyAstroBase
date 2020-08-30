@@ -9,6 +9,7 @@ from rest_framework import generics, pagination, status
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser, FileUploadParser
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, AllowAny
 
 import django_filters
 from django_filters import rest_framework as filters
@@ -113,9 +114,6 @@ class StatusFilter(filters.FilterSet):
 
             #'derived_taskid' : ['exact', 'in']
         }
-
-
-
 
 # this uses a form
 def do_filter(request):

@@ -39,11 +39,11 @@ AUTH_PASSWORD_VALIDATORS = []
 STATIC_URL = '/static_astrobase/'
 #STATIC_ROOT = './static/'
 
-MEDIA_URL = 'http://localhost/'
+MEDIA_URL = 'https://localhost/'
 MEDIA_ROOT = '/shared/astrobase_landing_pad'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
-DATA_HOST = "http://uilennest.net/astrobase/data"
+DATA_HOST = "https://uilennest.net/astrobase/data"
 
-LOGIN_REDIRECT_URL = "http://uilennest.net/astroview/login"
-LOGOUT_REDIRECT_URL = "http://uilennest.net/astroview/logout"
+LOGIN_REDIRECT_URL = "https://uilennest.net/astroview/login"
+LOGOUT_REDIRECT_URL = "https://uilennest.net/astroview/logout"
