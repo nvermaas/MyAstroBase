@@ -116,7 +116,7 @@ class Observation(TaskObject):
     # can be used to distinguish types of observations, like with powershot G2 or Kitt Peak
     observing_mode = models.CharField(max_length=50, default="")
     description = models.CharField(max_length=255, default="", null=True, blank=True)
-    url = models.CharField(max_length=100, default="")
+    url = models.CharField(max_length=100, default="", null=True, blank=True)
 
     process_type = models.CharField(max_length=50, choices = PROCESS_TYPE_CHOICES, default="observation")
 
