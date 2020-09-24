@@ -27,7 +27,7 @@ try:
 except:
     pkg_version = '1.0.0'
 
-LAST_UPDATE = "2 aug 2020"
+LAST_UPDATE = "24 sept 2020"
 
 # ====================================================================
 
@@ -222,11 +222,11 @@ def main():
                         help="Presets are 'dev', 'vm', 'prod'. Otherwise give a full url like https://localhost:8000/astrobase")
     parser.add_argument("-u","--user",
                         nargs="?",
-                        default='vagrant',
+                        default='nvermaas',
                         help="Username.")
     parser.add_argument("-p", "--password",
                         nargs="?",
-                        default='vagrant',
+                        default='StErReN_2020',
                         help="Password.")
     # Global parameters (for info)
     parser.add_argument("-v", "--verbose",

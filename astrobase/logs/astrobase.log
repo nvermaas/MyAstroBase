@@ -15841,3 +15841,466 @@
 [2020-08-23 20:44:08,988] ***200819004
 [2020-08-23 20:45:30,126] ***200819004
 [2020-08-23 20:45:34,365] ***200819004
+[2020-09-24 12:38:25,151] get_next_taskid(20200916)
+[2020-09-24 12:38:25,152] checking taskid 200916001..
+[2020-09-24 12:55:41,702] get_next_taskid(20200916)
+[2020-09-24 12:55:41,703] checking taskid 200916001..
+[2020-09-24 12:57:31,664] get_next_taskid(20200916)
+[2020-09-24 12:57:31,664] checking taskid 200916001..
+[2020-09-24 13:26:58,186] get_next_taskid(20200916)
+[2020-09-24 13:26:58,187] checking taskid 200916001..
+[2020-09-24 13:29:37,332] get_next_taskid(20200916)
+[2020-09-24 13:29:37,332] checking taskid 200916001..
+[2020-09-24 13:30:55,144] get_next_taskid(20200916)
+[2020-09-24 13:30:55,144] checking taskid 200916001..
+[2020-09-24 13:32:36,841] get_next_taskid(20200916)
+[2020-09-24 13:32:36,842] checking taskid 200916001..
+[2020-09-24 13:40:55,987] get_next_taskid(20200916)
+[2020-09-24 13:40:55,987] checking taskid 200916001..
+[2020-09-24 13:41:47,914] get_next_taskid(20200916)
+[2020-09-24 13:41:47,914] checking taskid 200916001..
+[2020-09-24 13:42:07,699] get_next_taskid(20200916)
+[2020-09-24 13:42:07,699] checking taskid 200916001..
+[2020-09-24 14:25:36,253] get_next_taskid(20200916)
+[2020-09-24 14:25:36,254] checking taskid 200916001..
+[2020-09-24 14:29:56,224] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 14:29:56,224] handle_pre_save(200916001 - auriga3)
+[2020-09-24 14:29:56,243] handle_post_save(200916001 - auriga3)
+[2020-09-24 14:29:56,243] save new observation
+[2020-09-24 14:29:56,252] update observation = 200916001
+[2020-09-24 14:32:20,986] get_next_taskid(20200916)
+[2020-09-24 14:32:20,987] checking taskid 200916001..
+[2020-09-24 14:32:20,990] checking taskid 200916002..
+[2020-09-24 14:33:23,197] get_next_taskid(20200916)
+[2020-09-24 14:33:23,197] checking taskid 200916001..
+[2020-09-24 14:33:23,200] checking taskid 200916002..
+[2020-09-24 14:33:32,626] SIGNAL : pre_save Observation(200916002 - auriga3)
+[2020-09-24 14:33:32,627] handle_pre_save(200916002 - auriga3)
+[2020-09-24 14:33:32,642] handle_post_save(200916002 - auriga3)
+[2020-09-24 14:33:32,643] save new observation
+[2020-09-24 14:33:32,655] update observation = 200916002
+[2020-09-24 14:35:22,685] ***200916001
+[2020-09-24 14:36:11,811] ***200819010
+[2020-09-24 14:37:01,248] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 14:37:01,249] handle_pre_save(200916001 - auriga3)
+[2020-09-24 14:37:01,299] handle_post_save(200916001 - auriga3)
+[2020-09-24 14:37:01,300] update observation = 200916001
+[2020-09-24 14:37:03,646] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 14:37:03,647] handle_pre_save(200916001 - auriga3)
+[2020-09-24 14:37:03,694] handle_post_save(200916001 - auriga3)
+[2020-09-24 14:37:03,695] update observation = 200916001
+[2020-09-24 14:37:05,142] SIGNAL : pre_save Observation(200916002 - auriga3)
+[2020-09-24 14:37:05,142] handle_pre_save(200916002 - auriga3)
+[2020-09-24 14:37:05,190] handle_post_save(200916002 - auriga3)
+[2020-09-24 14:37:05,191] update observation = 200916002
+[2020-09-24 14:37:06,771] SIGNAL : pre_save Observation(200916002 - auriga3)
+[2020-09-24 14:37:06,772] handle_pre_save(200916002 - auriga3)
+[2020-09-24 14:37:06,816] handle_post_save(200916002 - auriga3)
+[2020-09-24 14:37:06,816] update observation = 200916002
+[2020-09-24 14:37:31,103] get_next_taskid(20200916)
+[2020-09-24 14:37:31,104] checking taskid 200916001..
+[2020-09-24 14:37:31,106] checking taskid 200916002..
+[2020-09-24 14:37:31,108] checking taskid 200916003..
+[2020-09-24 14:38:14,097] get_next_taskid(20200916)
+[2020-09-24 14:38:14,098] checking taskid 200916001..
+[2020-09-24 14:38:14,101] checking taskid 200916002..
+[2020-09-24 14:38:14,102] checking taskid 200916003..
+[2020-09-24 14:38:19,411] SIGNAL : pre_save Observation(200916003 - auriga3)
+[2020-09-24 14:38:19,411] handle_pre_save(200916003 - auriga3)
+[2020-09-24 14:38:19,741] handle_post_save(200916003 - auriga3)
+[2020-09-24 14:38:19,741] save new observation
+[2020-09-24 14:38:19,940] update observation = 200916003
+[2020-09-24 14:52:45,646] get_next_taskid(20200916)
+[2020-09-24 14:52:45,646] checking taskid 200916001..
+[2020-09-24 14:52:45,649] checking taskid 200916002..
+[2020-09-24 14:52:45,650] checking taskid 200916003..
+[2020-09-24 14:52:45,651] checking taskid 200916004..
+[2020-09-24 14:52:57,015] SIGNAL : pre_save Observation(200916004 - auriga3)
+[2020-09-24 14:52:57,016] handle_pre_save(200916004 - auriga3)
+[2020-09-24 14:52:57,032] handle_post_save(200916004 - auriga3)
+[2020-09-24 14:52:57,032] save new observation
+[2020-09-24 14:52:57,043] update observation = 200916004
+[2020-09-24 14:54:14,292] DataProductsListView.get_queryset()
+[2020-09-24 14:54:14,293] my_queryset retrieved
+[2020-09-24 15:08:09,326] SIGNAL : pre_save Observation(200916003 - auriga3)
+[2020-09-24 15:08:09,326] handle_pre_save(200916003 - auriga3)
+[2020-09-24 15:08:09,979] handle_post_save(200916003 - auriga3)
+[2020-09-24 15:08:09,979] update observation = 200916003
+[2020-09-24 15:08:12,608] SIGNAL : pre_save Observation(200916004 - auriga3)
+[2020-09-24 15:08:12,609] handle_pre_save(200916004 - auriga3)
+[2020-09-24 15:08:13,233] handle_post_save(200916004 - auriga3)
+[2020-09-24 15:08:13,234] update observation = 200916004
+[2020-09-24 15:08:15,805] SIGNAL : pre_save Observation(200916003 - auriga3)
+[2020-09-24 15:08:15,805] handle_pre_save(200916003 - auriga3)
+[2020-09-24 15:08:16,525] handle_post_save(200916003 - auriga3)
+[2020-09-24 15:08:16,526] update observation = 200916003
+[2020-09-24 15:08:17,939] SIGNAL : pre_save Observation(200916004 - auriga3)
+[2020-09-24 15:08:17,940] handle_pre_save(200916004 - auriga3)
+[2020-09-24 15:08:18,002] handle_post_save(200916004 - auriga3)
+[2020-09-24 15:08:18,002] update observation = 200916004
+[2020-09-24 15:09:40,163] get_next_taskid(20200916)
+[2020-09-24 15:09:40,164] checking taskid 200916001..
+[2020-09-24 15:09:44,819] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:09:44,819] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:09:45,067] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:09:45,068] save new observation
+[2020-09-24 15:09:45,269] update observation = 200916001
+[2020-09-24 15:13:58,921] get_next_taskid(20200916)
+[2020-09-24 15:13:58,922] checking taskid 200916001..
+[2020-09-24 15:13:58,930] checking taskid 200916002..
+[2020-09-24 15:14:04,880] SIGNAL : pre_save Observation(200916002 - auriga3)
+[2020-09-24 15:14:04,881] handle_pre_save(200916002 - auriga3)
+[2020-09-24 15:14:05,098] handle_post_save(200916002 - auriga3)
+[2020-09-24 15:14:05,100] save new observation
+[2020-09-24 15:14:05,330] update observation = 200916002
+[2020-09-24 15:14:20,961] add_dataproducts(200916002,1)
+[2020-09-24 15:14:20,963] addding dataproduct: 200916002_raw.jpg
+[2020-09-24 15:14:20,964] SIGNAL : pre_save DataProduct(200916002_raw.jpg)
+[2020-09-24 15:14:20,964] handle_pre_save(200916002_raw.jpg)
+[2020-09-24 15:14:21,385] handle_post_save(200916002_raw.jpg)
+[2020-09-24 15:14:21,385] save new dataproduct
+[2020-09-24 15:14:22,427] update dataproduct parent = 200916002
+[2020-09-24 15:15:10,454] SIGNAL : pre_save Observation(200916002 - auriga3)
+[2020-09-24 15:15:10,454] handle_pre_save(200916002 - auriga3)
+[2020-09-24 15:15:11,079] handle_post_save(200916002 - auriga3)
+[2020-09-24 15:15:11,081] update observation = 200916002
+[2020-09-24 15:15:12,624] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:15:12,624] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:15:13,293] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:15:13,293] update observation = 200916001
+[2020-09-24 15:15:15,374] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:15:15,374] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:15:15,423] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:15:15,424] update observation = 200916001
+[2020-09-24 15:15:16,378] SIGNAL : pre_save Observation(200916002 - auriga3)
+[2020-09-24 15:15:16,379] handle_pre_save(200916002 - auriga3)
+[2020-09-24 15:15:16,428] handle_post_save(200916002 - auriga3)
+[2020-09-24 15:15:16,429] update observation = 200916002
+[2020-09-24 15:32:42,100] get_next_taskid(20200916)
+[2020-09-24 15:32:42,101] checking taskid 200916001..
+[2020-09-24 15:32:48,474] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:32:48,474] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:32:48,707] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:32:48,708] save new observation
+[2020-09-24 15:32:48,923] update observation = 200916001
+[2020-09-24 15:32:55,252] add_dataproducts(200916001,1)
+[2020-09-24 15:32:55,255] addding dataproduct: 200916001_raw.jpg
+[2020-09-24 15:32:55,255] SIGNAL : pre_save DataProduct(200916001_raw.jpg)
+[2020-09-24 15:32:55,256] handle_pre_save(200916001_raw.jpg)
+[2020-09-24 15:32:55,807] handle_post_save(200916001_raw.jpg)
+[2020-09-24 15:32:55,809] save new dataproduct
+[2020-09-24 15:32:56,021] update dataproduct parent = 200916001
+[2020-09-24 15:33:16,360] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:33:16,360] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:33:17,022] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:33:17,023] update observation = 200916001
+[2020-09-24 15:33:50,469] DataProductsListView.get_queryset()
+[2020-09-24 15:33:50,470] my_queryset retrieved
+[2020-09-24 15:34:00,850] DataProductsListView.get_queryset()
+[2020-09-24 15:34:00,851] my_queryset retrieved
+[2020-09-24 15:34:11,141] DataProductsListView.get_queryset()
+[2020-09-24 15:34:11,141] my_queryset retrieved
+[2020-09-24 15:34:21,411] DataProductsListView.get_queryset()
+[2020-09-24 15:34:21,413] my_queryset retrieved
+[2020-09-24 15:34:31,690] DataProductsListView.get_queryset()
+[2020-09-24 15:34:31,691] my_queryset retrieved
+[2020-09-24 15:34:42,078] DataProductsListView.get_queryset()
+[2020-09-24 15:34:42,080] my_queryset retrieved
+[2020-09-24 15:34:52,312] DataProductsListView.get_queryset()
+[2020-09-24 15:34:52,314] my_queryset retrieved
+[2020-09-24 15:35:02,596] DataProductsListView.get_queryset()
+[2020-09-24 15:35:02,598] my_queryset retrieved
+[2020-09-24 15:35:12,882] DataProductsListView.get_queryset()
+[2020-09-24 15:35:12,885] my_queryset retrieved
+[2020-09-24 15:35:23,157] DataProductsListView.get_queryset()
+[2020-09-24 15:35:23,159] my_queryset retrieved
+[2020-09-24 15:35:33,431] DataProductsListView.get_queryset()
+[2020-09-24 15:35:33,432] my_queryset retrieved
+[2020-09-24 15:35:43,686] DataProductsListView.get_queryset()
+[2020-09-24 15:35:43,687] my_queryset retrieved
+[2020-09-24 15:35:53,980] DataProductsListView.get_queryset()
+[2020-09-24 15:35:53,981] my_queryset retrieved
+[2020-09-24 15:36:04,259] DataProductsListView.get_queryset()
+[2020-09-24 15:36:04,260] my_queryset retrieved
+[2020-09-24 15:36:14,518] DataProductsListView.get_queryset()
+[2020-09-24 15:36:14,520] my_queryset retrieved
+[2020-09-24 15:36:24,781] DataProductsListView.get_queryset()
+[2020-09-24 15:36:24,783] my_queryset retrieved
+[2020-09-24 15:36:35,050] DataProductsListView.get_queryset()
+[2020-09-24 15:36:35,051] my_queryset retrieved
+[2020-09-24 15:36:45,321] DataProductsListView.get_queryset()
+[2020-09-24 15:36:45,323] my_queryset retrieved
+[2020-09-24 15:36:55,578] DataProductsListView.get_queryset()
+[2020-09-24 15:36:55,580] my_queryset retrieved
+[2020-09-24 15:37:05,820] DataProductsListView.get_queryset()
+[2020-09-24 15:37:05,821] my_queryset retrieved
+[2020-09-24 15:37:16,066] DataProductsListView.get_queryset()
+[2020-09-24 15:37:16,068] my_queryset retrieved
+[2020-09-24 15:37:26,239] DataProductsListView.get_queryset()
+[2020-09-24 15:37:26,240] my_queryset retrieved
+[2020-09-24 15:37:36,459] DataProductsListView.get_queryset()
+[2020-09-24 15:37:36,460] my_queryset retrieved
+[2020-09-24 15:37:46,708] DataProductsListView.get_queryset()
+[2020-09-24 15:37:46,710] my_queryset retrieved
+[2020-09-24 15:37:56,999] DataProductsListView.get_queryset()
+[2020-09-24 15:37:57,000] my_queryset retrieved
+[2020-09-24 15:38:07,289] DataProductsListView.get_queryset()
+[2020-09-24 15:38:07,289] my_queryset retrieved
+[2020-09-24 15:38:17,556] DataProductsListView.get_queryset()
+[2020-09-24 15:38:17,557] my_queryset retrieved
+[2020-09-24 15:38:27,844] DataProductsListView.get_queryset()
+[2020-09-24 15:38:27,845] my_queryset retrieved
+[2020-09-24 15:38:38,084] DataProductsListView.get_queryset()
+[2020-09-24 15:38:38,086] my_queryset retrieved
+[2020-09-24 15:38:48,372] DataProductsListView.get_queryset()
+[2020-09-24 15:38:48,375] my_queryset retrieved
+[2020-09-24 15:38:58,685] DataProductsListView.get_queryset()
+[2020-09-24 15:38:58,687] my_queryset retrieved
+[2020-09-24 15:39:08,948] DataProductsListView.get_queryset()
+[2020-09-24 15:39:08,952] my_queryset retrieved
+[2020-09-24 15:39:19,248] DataProductsListView.get_queryset()
+[2020-09-24 15:39:19,249] my_queryset retrieved
+[2020-09-24 15:39:29,527] DataProductsListView.get_queryset()
+[2020-09-24 15:39:29,528] my_queryset retrieved
+[2020-09-24 15:39:39,814] DataProductsListView.get_queryset()
+[2020-09-24 15:39:39,815] my_queryset retrieved
+[2020-09-24 15:39:46,062] get_next_taskid(20200916)
+[2020-09-24 15:39:46,063] checking taskid 200916001..
+[2020-09-24 15:39:46,065] checking taskid 200916002..
+[2020-09-24 15:39:47,257] SIGNAL : pre_save Observation(200916002 - auriga3)
+[2020-09-24 15:39:47,257] handle_pre_save(200916002 - auriga3)
+[2020-09-24 15:39:47,468] handle_post_save(200916002 - auriga3)
+[2020-09-24 15:39:47,469] save new observation
+[2020-09-24 15:39:47,675] update observation = 200916002
+[2020-09-24 15:39:49,089] add_dataproducts(200916002,1)
+[2020-09-24 15:39:49,091] addding dataproduct: 200916002_raw.jpg
+[2020-09-24 15:39:49,101] SIGNAL : pre_save DataProduct(200916002_raw.jpg)
+[2020-09-24 15:39:49,101] handle_pre_save(200916002_raw.jpg)
+[2020-09-24 15:39:49,317] handle_post_save(200916002_raw.jpg)
+[2020-09-24 15:39:49,318] save new dataproduct
+[2020-09-24 15:39:49,531] update dataproduct parent = 200916002
+[2020-09-24 15:39:50,098] DataProductsListView.get_queryset()
+[2020-09-24 15:39:50,099] my_queryset retrieved
+[2020-09-24 15:40:00,397] DataProductsListView.get_queryset()
+[2020-09-24 15:40:00,398] my_queryset retrieved
+[2020-09-24 15:40:10,704] DataProductsListView.get_queryset()
+[2020-09-24 15:40:10,705] my_queryset retrieved
+[2020-09-24 15:40:20,976] DataProductsListView.get_queryset()
+[2020-09-24 15:40:20,977] my_queryset retrieved
+[2020-09-24 15:40:31,235] DataProductsListView.get_queryset()
+[2020-09-24 15:40:31,238] my_queryset retrieved
+[2020-09-24 15:40:41,511] DataProductsListView.get_queryset()
+[2020-09-24 15:40:41,512] my_queryset retrieved
+[2020-09-24 15:40:51,814] DataProductsListView.get_queryset()
+[2020-09-24 15:40:51,815] my_queryset retrieved
+[2020-09-24 15:41:02,082] DataProductsListView.get_queryset()
+[2020-09-24 15:41:02,083] my_queryset retrieved
+[2020-09-24 15:41:12,359] DataProductsListView.get_queryset()
+[2020-09-24 15:41:12,360] my_queryset retrieved
+[2020-09-24 15:41:22,655] DataProductsListView.get_queryset()
+[2020-09-24 15:41:22,656] my_queryset retrieved
+[2020-09-24 15:41:32,923] DataProductsListView.get_queryset()
+[2020-09-24 15:41:32,926] my_queryset retrieved
+[2020-09-24 15:41:43,199] DataProductsListView.get_queryset()
+[2020-09-24 15:41:43,200] my_queryset retrieved
+[2020-09-24 15:41:51,245] get_next_taskid(20200916)
+[2020-09-24 15:41:51,245] checking taskid 200916001..
+[2020-09-24 15:41:51,249] checking taskid 200916002..
+[2020-09-24 15:41:51,251] checking taskid 200916003..
+[2020-09-24 15:41:53,520] DataProductsListView.get_queryset()
+[2020-09-24 15:41:53,522] my_queryset retrieved
+[2020-09-24 15:42:03,769] DataProductsListView.get_queryset()
+[2020-09-24 15:42:03,769] my_queryset retrieved
+[2020-09-24 15:42:04,484] SIGNAL : pre_save Observation(200916003 - auriga3)
+[2020-09-24 15:42:04,485] handle_pre_save(200916003 - auriga3)
+[2020-09-24 15:42:04,690] handle_post_save(200916003 - auriga3)
+[2020-09-24 15:42:04,690] save new observation
+[2020-09-24 15:42:04,897] update observation = 200916003
+[2020-09-24 15:42:14,056] DataProductsListView.get_queryset()
+[2020-09-24 15:42:14,057] my_queryset retrieved
+[2020-09-24 15:42:24,369] DataProductsListView.get_queryset()
+[2020-09-24 15:42:24,373] my_queryset retrieved
+[2020-09-24 15:42:34,680] DataProductsListView.get_queryset()
+[2020-09-24 15:42:34,682] my_queryset retrieved
+[2020-09-24 15:42:44,976] DataProductsListView.get_queryset()
+[2020-09-24 15:42:44,977] my_queryset retrieved
+[2020-09-24 15:42:55,282] DataProductsListView.get_queryset()
+[2020-09-24 15:42:55,283] my_queryset retrieved
+[2020-09-24 15:43:05,581] DataProductsListView.get_queryset()
+[2020-09-24 15:43:05,584] my_queryset retrieved
+[2020-09-24 15:43:15,876] DataProductsListView.get_queryset()
+[2020-09-24 15:43:15,877] my_queryset retrieved
+[2020-09-24 15:43:26,158] DataProductsListView.get_queryset()
+[2020-09-24 15:43:26,158] my_queryset retrieved
+[2020-09-24 15:43:36,438] DataProductsListView.get_queryset()
+[2020-09-24 15:43:36,439] my_queryset retrieved
+[2020-09-24 15:43:46,714] DataProductsListView.get_queryset()
+[2020-09-24 15:43:46,715] my_queryset retrieved
+[2020-09-24 15:43:57,003] DataProductsListView.get_queryset()
+[2020-09-24 15:43:57,005] my_queryset retrieved
+[2020-09-24 15:44:07,315] DataProductsListView.get_queryset()
+[2020-09-24 15:44:07,316] my_queryset retrieved
+[2020-09-24 15:44:17,660] DataProductsListView.get_queryset()
+[2020-09-24 15:44:17,661] my_queryset retrieved
+[2020-09-24 15:44:27,937] DataProductsListView.get_queryset()
+[2020-09-24 15:44:27,939] my_queryset retrieved
+[2020-09-24 15:44:38,209] DataProductsListView.get_queryset()
+[2020-09-24 15:44:38,210] my_queryset retrieved
+[2020-09-24 15:44:48,501] DataProductsListView.get_queryset()
+[2020-09-24 15:44:48,502] my_queryset retrieved
+[2020-09-24 15:44:58,767] DataProductsListView.get_queryset()
+[2020-09-24 15:44:58,768] my_queryset retrieved
+[2020-09-24 15:45:09,053] DataProductsListView.get_queryset()
+[2020-09-24 15:45:09,054] my_queryset retrieved
+[2020-09-24 15:45:19,350] DataProductsListView.get_queryset()
+[2020-09-24 15:45:19,351] my_queryset retrieved
+[2020-09-24 15:45:29,619] DataProductsListView.get_queryset()
+[2020-09-24 15:45:29,620] my_queryset retrieved
+[2020-09-24 15:45:39,872] DataProductsListView.get_queryset()
+[2020-09-24 15:45:39,874] my_queryset retrieved
+[2020-09-24 15:45:50,125] DataProductsListView.get_queryset()
+[2020-09-24 15:45:50,126] my_queryset retrieved
+[2020-09-24 15:46:00,351] DataProductsListView.get_queryset()
+[2020-09-24 15:46:00,352] my_queryset retrieved
+[2020-09-24 15:46:10,642] DataProductsListView.get_queryset()
+[2020-09-24 15:46:10,644] my_queryset retrieved
+[2020-09-24 15:46:14,757] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:46:14,758] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:46:15,402] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:46:15,403] update observation = 200916001
+[2020-09-24 15:46:18,991] SIGNAL : pre_save Observation(200916002 - auriga3)
+[2020-09-24 15:46:18,992] handle_pre_save(200916002 - auriga3)
+[2020-09-24 15:46:19,191] handle_post_save(200916002 - auriga3)
+[2020-09-24 15:46:19,192] update observation = 200916002
+[2020-09-24 15:46:20,342] SIGNAL : pre_save Observation(200916003 - auriga3)
+[2020-09-24 15:46:20,343] handle_pre_save(200916003 - auriga3)
+[2020-09-24 15:46:20,391] handle_post_save(200916003 - auriga3)
+[2020-09-24 15:46:20,392] update observation = 200916003
+[2020-09-24 15:46:21,573] SIGNAL : pre_save Observation(200916002 - auriga3)
+[2020-09-24 15:46:21,574] handle_pre_save(200916002 - auriga3)
+[2020-09-24 15:46:21,626] handle_post_save(200916002 - auriga3)
+[2020-09-24 15:46:21,626] update observation = 200916002
+[2020-09-24 15:46:22,613] SIGNAL : pre_save Observation(200819010 - Lyra North)
+[2020-09-24 15:46:22,614] handle_pre_save(200819010 - Lyra North)
+[2020-09-24 15:46:23,254] handle_post_save(200819010 - Lyra North)
+[2020-09-24 15:46:26,352] SIGNAL : pre_save Observation(200916003 - auriga3)
+[2020-09-24 15:46:26,352] handle_pre_save(200916003 - auriga3)
+[2020-09-24 15:46:26,998] handle_post_save(200916003 - auriga3)
+[2020-09-24 15:46:26,998] update observation = 200916003
+[2020-09-24 15:46:38,309] SIGNAL : pre_save Observation(200819010 - Lyra North)
+[2020-09-24 15:46:38,310] handle_pre_save(200819010 - Lyra North)
+[2020-09-24 15:46:39,683] handle_post_save(200819010 - Lyra North)
+[2020-09-24 15:47:31,420] get_next_taskid(20200916)
+[2020-09-24 15:47:31,420] checking taskid 200916001..
+[2020-09-24 15:47:37,313] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:47:37,314] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:47:37,346] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:47:37,346] save new observation
+[2020-09-24 15:47:37,359] update observation = 200916001
+[2020-09-24 15:47:38,524] add_dataproducts(200916001,1)
+[2020-09-24 15:47:38,526] addding dataproduct: 200916001_raw.jpg
+[2020-09-24 15:47:38,527] SIGNAL : pre_save DataProduct(200916001_raw.jpg)
+[2020-09-24 15:47:38,527] handle_pre_save(200916001_raw.jpg)
+[2020-09-24 15:47:39,031] handle_post_save(200916001_raw.jpg)
+[2020-09-24 15:47:39,031] save new dataproduct
+[2020-09-24 15:47:39,487] update dataproduct parent = 200916001
+[2020-09-24 15:47:46,671] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:47:46,671] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:47:47,407] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:47:47,408] update observation = 200916001
+[2020-09-24 15:50:14,836] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:50:14,837] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:50:15,450] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:50:15,450] update observation = 200916001
+[2020-09-24 15:50:39,606] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:50:39,606] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:50:40,250] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:50:40,250] update observation = 200916001
+[2020-09-24 15:50:57,907] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:50:57,907] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:50:58,339] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:50:58,340] update observation = 200916001
+[2020-09-24 15:51:01,403] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:51:01,404] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:51:02,025] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:51:02,026] update observation = 200916001
+[2020-09-24 15:52:48,407] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:52:48,407] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:52:49,135] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:52:49,137] update observation = 200916001
+[2020-09-24 15:53:08,477] add_dataproducts(200916001,7)
+[2020-09-24 15:53:08,479] addding dataproduct: 4588171_sky_globe.jpg
+[2020-09-24 15:53:08,480] SIGNAL : pre_save DataProduct(4588171_sky_globe.jpg)
+[2020-09-24 15:53:08,480] handle_pre_save(4588171_sky_globe.jpg)
+[2020-09-24 15:53:08,699] handle_post_save(4588171_sky_globe.jpg)
+[2020-09-24 15:53:08,700] save new dataproduct
+[2020-09-24 15:53:08,913] update dataproduct parent = 200916001
+[2020-09-24 15:53:09,133] addding dataproduct: 4588171_sky_plot.jpg
+[2020-09-24 15:53:09,134] SIGNAL : pre_save DataProduct(4588171_sky_plot.jpg)
+[2020-09-24 15:53:09,136] handle_pre_save(4588171_sky_plot.jpg)
+[2020-09-24 15:53:09,351] handle_post_save(4588171_sky_plot.jpg)
+[2020-09-24 15:53:09,352] save new dataproduct
+[2020-09-24 15:53:09,569] update dataproduct parent = 200916001
+[2020-09-24 15:53:09,799] addding dataproduct: 4588171_annotated.jpg
+[2020-09-24 15:53:09,799] SIGNAL : pre_save DataProduct(4588171_annotated.jpg)
+[2020-09-24 15:53:09,800] handle_pre_save(4588171_annotated.jpg)
+[2020-09-24 15:53:10,000] handle_post_save(4588171_annotated.jpg)
+[2020-09-24 15:53:10,000] save new dataproduct
+[2020-09-24 15:53:10,223] update dataproduct parent = 200916001
+[2020-09-24 15:53:10,426] addding dataproduct: 4588171.fits
+[2020-09-24 15:53:10,428] SIGNAL : pre_save DataProduct(4588171.fits)
+[2020-09-24 15:53:10,428] handle_pre_save(4588171.fits)
+[2020-09-24 15:53:10,700] handle_post_save(4588171.fits)
+[2020-09-24 15:53:10,701] save new dataproduct
+[2020-09-24 15:53:10,918] update dataproduct parent = 200916001
+[2020-09-24 15:53:11,138] addding dataproduct: 4588171_rdls_file.fits
+[2020-09-24 15:53:11,138] SIGNAL : pre_save DataProduct(4588171_rdls_file.fits)
+[2020-09-24 15:53:11,140] handle_pre_save(4588171_rdls_file.fits)
+[2020-09-24 15:53:11,348] handle_post_save(4588171_rdls_file.fits)
+[2020-09-24 15:53:11,350] save new dataproduct
+[2020-09-24 15:53:11,501] update dataproduct parent = 200916001
+[2020-09-24 15:53:11,516] addding dataproduct: 4588171_wcs_file.fits
+[2020-09-24 15:53:11,516] SIGNAL : pre_save DataProduct(4588171_wcs_file.fits)
+[2020-09-24 15:53:11,517] handle_pre_save(4588171_wcs_file.fits)
+[2020-09-24 15:53:11,533] handle_post_save(4588171_wcs_file.fits)
+[2020-09-24 15:53:11,534] save new dataproduct
+[2020-09-24 15:53:11,546] update dataproduct parent = 200916001
+[2020-09-24 15:53:11,562] addding dataproduct: 4588171_axy_file.fits
+[2020-09-24 15:53:11,563] SIGNAL : pre_save DataProduct(4588171_axy_file.fits)
+[2020-09-24 15:53:11,563] handle_pre_save(4588171_axy_file.fits)
+[2020-09-24 15:53:11,576] handle_post_save(4588171_axy_file.fits)
+[2020-09-24 15:53:11,576] save new dataproduct
+[2020-09-24 15:53:11,588] update dataproduct parent = 200916001
+[2020-09-24 15:53:13,781] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:53:13,781] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:53:13,825] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:53:13,825] update observation = 200916001
+[2020-09-24 15:53:16,029] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:53:16,030] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:53:17,288] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:53:17,288] update observation = 200916001
+[2020-09-24 15:53:20,064] SIGNAL : pre_save Observation(200916001 - auriga3)
+[2020-09-24 15:53:20,065] handle_pre_save(200916001 - auriga3)
+[2020-09-24 15:53:20,849] handle_post_save(200916001 - auriga3)
+[2020-09-24 15:53:20,850] update observation = 200916001
+[2020-09-24 15:57:02,586] ***200916001
+[2020-09-24 15:58:29,461] DataProductsListView.get_queryset()
+[2020-09-24 15:58:29,462] my_queryset retrieved
+[2020-09-24 15:58:39,652] DataProductsListView.get_queryset()
+[2020-09-24 15:58:39,653] my_queryset retrieved
+[2020-09-24 15:58:49,936] DataProductsListView.get_queryset()
+[2020-09-24 15:58:49,937] my_queryset retrieved
+[2020-09-24 15:59:00,944] DataProductsListView.get_queryset()
+[2020-09-24 15:59:00,949] my_queryset retrieved
+[2020-09-24 15:59:11,935] DataProductsListView.get_queryset()
+[2020-09-24 15:59:11,936] my_queryset retrieved
+[2020-09-24 15:59:22,977] DataProductsListView.get_queryset()
+[2020-09-24 15:59:22,979] my_queryset retrieved
+[2020-09-24 15:59:33,978] DataProductsListView.get_queryset()
+[2020-09-24 15:59:33,979] my_queryset retrieved
+[2020-09-24 15:59:44,937] DataProductsListView.get_queryset()
+[2020-09-24 15:59:44,938] my_queryset retrieved
+[2020-09-24 15:59:55,947] DataProductsListView.get_queryset()
+[2020-09-24 15:59:55,948] my_queryset retrieved
+[2020-09-24 16:00:06,947] DataProductsListView.get_queryset()
+[2020-09-24 16:00:06,954] my_queryset retrieved

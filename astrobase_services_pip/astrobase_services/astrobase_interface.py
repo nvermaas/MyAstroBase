@@ -2,6 +2,7 @@
 import sys
 import os
 import requests
+from requests.auth import HTTPBasicAuth
 import json
 import argparse
 import datetime
@@ -10,8 +11,8 @@ import datetime
 astrobase_interface.py : a commandline tool to interface with the AstroBase REST API.
 :author Nico Vermaas - Astron
 """
-VERSION = "1.0.0"
-LAST_UPDATE = "13 oct 2019"
+VERSION = "1.9.1"
+LAST_UPDATE = "24 sept 2020"
 
 # ====================================================================
 
@@ -19,7 +20,7 @@ LAST_UPDATE = "13 oct 2019"
 ASTROBASE_HEADER = {
     'content-type': "application/json",
     'cache-control': "no-cache",
-    'authorization': "Basic YWRtaW46YWRtaW4="
+    #'authorization': "Basic aedf3a3d011cd2e415ea333a523a688f30b88d26="
 }
 
 # some constants
@@ -35,7 +36,7 @@ class AstroBase:
     """
     Interface class to the AstroBase REST API
     """
-    def __init__(self, host, verbose=False):
+    def __init__(self, host, user=None, password=None, verbose=False):
         """
         Constructor.
         :param host: the host name of the backend.
@@ -56,6 +57,8 @@ class AstroBase:
 
         self.verbose = verbose
         self.header = ASTROBASE_HEADER
+        self.user = user
+        self.password = password
 
     def verbose_print(self, info_str):
         """
@@ -371,7 +374,11 @@ class AstroBase:
             payload[field]=value
             payload = self.encodePayload(payload)
         try:
-            response = requests.request("PUT", url, data=payload, headers=self.header)
+            if self.user == None:
+                response = requests.request("PUT", url, data=payload, headers=self.header)
+            else:
+                response = requests.request("PUT", url, data=payload, headers=self.header, auth=HTTPBasicAuth(self.user, self.password))
+
             self.verbose_print("[PUT " + response.url + "]")
             self.verbose_print("Response: " + str(response.status_code) + ", " + str(response.reason))
         except:
@@ -410,7 +417,11 @@ class AstroBase:
                 payload[field]=value
                 payload = self.encodePayload(payload)
             try:
-                response = requests.request("PUT", url, data=payload, headers=self.header)
+                if self.user == None:
+                    response = requests.request("PUT", url, data=payload, headers=self.header)
+                else:
+                    response = requests.request("PUT", url, data=payload, headers=self.header, auth = HTTPBasicAuth(self.user, self.password))
+
                 self.verbose_print("[PUT " + response.url + "]")
                 self.verbose_print("Response: " + str(response.status_code) + ", " + str(response.reason))
             except:
@@ -431,7 +442,11 @@ class AstroBase:
         self.verbose_print(('payload: ' + payload))
 
         try:
-            response = requests.request("POST", url, data=payload, headers=self.header)
+            if self.user==None:
+                response = requests.request("POST", url, data=payload, headers=self.header)
+            else:
+                response = requests.request("POST", url, data=payload, headers=self.header, auth=HTTPBasicAuth(self.user, self.password))
+
             self.verbose_print("[POST " + response.url + "]")
             self.verbose_print("Response: " + str(response.status_code) + ", " + str(response.reason))
             if not (response.status_code==200 or response.status_code==201):
@@ -463,7 +478,11 @@ class AstroBase:
         payload = self.encodePayload(dataproducts)
         try:
             # do a POST request to the 'post_dataproducts' resource of the astrobase backend
-            response = requests.request("POST", url, data=payload, headers=self.header)
+            if self.user == None:
+                response = requests.request("POST", url, data=payload, headers=self.header)
+            else:
+                response = requests.request("POST", url, data=payload, headers=self.header, auth = HTTPBasicAuth(self.user, self.password))
+
             self.verbose_print("[POST " + response.url + "]")
 
             # if anything went wrong, throw an exception.
@@ -498,8 +517,12 @@ class AstroBase:
             url = self.host + resource + "/" + str(i) + "/"
 
             try:
-                response = requests.request("DELETE", url, headers=self.header)
-                self.verbose_print("[DELETE " + response.url + "]")
+                if self.user==None:
+                    response = requests.request("DELETE", url, headers=self.header)
+                else:
+                    response = requests.request("DELETE", url, headers=self.header, auth = HTTPBasicAuth(self.user, self.password))
+
+                    self.verbose_print("[DELETE " + response.url + "]")
                 self.verbose_print("Response: " + str(response.status_code) + ", " + str(response.reason))
             except:
                 raise (Exception("ERROR: deleting " + url + "failed." + response.url))

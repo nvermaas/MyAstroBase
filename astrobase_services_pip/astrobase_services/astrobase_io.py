@@ -25,9 +25,9 @@ ASTROBASE_HEADER = {
 }
 
 # some constants
-ASTROBASE_HOST_DEV = "http://localhost:8000/astrobase"       # your local development environment with Django webserver
-ASTROBASE_HOST_VM = "http://localhost:8000/astrobase"         # your local Ansible/Vagrant setup for testing
-ASTROBASE_HOST_PROD = "http://localhost:8000/astrobase"      # the atdb production environment.
+ASTROBASE_HOST_DEV = "http://localhost:8000/my_astrobase"       # your local development environment with Django webserver
+ASTROBASE_HOST_VM = "http://localhost:8000/my_astrobase"         # your local Ansible/Vagrant setup for testing
+ASTROBASE_HOST_PROD = "http://localhost:8000/my_astrobase"      # the atdb production environment.
 
 DEFAULT_ASTROBASE_HOST = ASTROBASE_HOST_DEV
 
@@ -56,7 +56,7 @@ class AstroBaseIO:
     """
     TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
-    def __init__(self, astrobase_host, user='', password='', obs_mode_filter='', host_filter='', verbose=False, verbose_deep=False, testmode=False):
+    def __init__(self, astrobase_host, user=None, password=None, obs_mode_filter='', host_filter='', verbose=False, verbose_deep=False, testmode=False):
         """
         Constructor.
         :param host: the host name of the backend.
@@ -89,7 +89,7 @@ class AstroBaseIO:
         self.testmode = testmode
         self.obs_mode_filter = obs_mode_filter
         self.host_filter = host_filter
-        self.astrobase_interface = AstroBase(self.host, self.verbose_deep)
+        self.astrobase_interface = AstroBase(self.host, self.user, self.password, self.verbose_deep)
 
 
     def verbose_print(self, info_str):

@@ -67,7 +67,7 @@ def add_dataproducts(astrobase, taskid, dataproducts_string):
     if len(dps)>0:
         astrobase.astrobase_interface.do_POST_dataproducts(taskid, dps)
     else:
-        astrobase.report("*specification* : (intentionally?) no dataproducts created for observing_mode: " + str(observing_mode))
+        astrobase.report("*specification* : (intentionally?) no dataproducts created")
 
 
 
@@ -121,7 +121,6 @@ def do_specification(astrobase, taskid, initial_status, field_name, description,
     except Exception as err:
         astrobase.report("ERROR by *specification* : " + taskid + " has specification error...","print,slack")
         raise (Exception(str(err)))
-
 
     # add dataproducts
     add_dataproducts(astrobase, taskid, dataproducts)
