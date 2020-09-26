@@ -293,3 +293,31 @@ class DataProduct(TaskObject):
         path = data_host + '/' + self.taskID + '/' + self.filename
 
         return path
+
+
+class Collection(models.Model):
+    """
+    A way to bundle observations into collections
+    """
+    COLLECTION_TYPE_CHOICES = (
+        ("solar system", "solar system"),
+        ("stars wide angle","stars wide angle"),
+        ("stars zoomed-in", "stars zoomed-in"),
+        ("deep sky", "deep sky"),
+        ("moon", "moon"),
+        ("spacecraft", "spacecraft"),
+        ("scenery", "scenery"),
+        ("technical", "technical"),
+        ("event", "event"),
+        ("other", "other"),
+    )
+
+    name = models.CharField(max_length=100, default="unknown")
+    collection_type = models.CharField(max_length=20, null=True, choices = COLLECTION_TYPE_CHOICES, default="other")
+    description = models.CharField(max_length=255, default="", null=True, blank=True)
+
+    # relationships
+    observations = models.ManyToManyField(Observation)
+
+    def __str__(self):
+        return str(self.name)
