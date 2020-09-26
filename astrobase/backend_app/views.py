@@ -18,8 +18,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import DataProduct, Observation, Status, AstroFile
-from .serializers import DataProductSerializer, ObservationSerializer, StatusSerializer, AstroFileSerializer
+from .models import DataProduct, Observation, Status, AstroFile, Collection
+from .serializers import DataProductSerializer, ObservationSerializer, StatusSerializer, AstroFileSerializer, CollectionSerializer
 from .forms import FilterForm
 from .services import algorithms
 
@@ -92,6 +92,18 @@ class DataProductFilter(filters.FilterSet):
             'parent__taskID': ['exact', 'in', 'icontains'],
             'my_status': ['exact', 'icontains', 'in'],
             'data_location': ['exact', 'icontains'],
+        }
+
+# example: /my_astrobase/dataproducts?status__in=created,archived
+class CollectionFilter(filters.FilterSet):
+
+    class Meta:
+        model = Collection
+
+        fields = {
+            'description': ['exact', 'icontains'],
+            'name': ['exact', 'icontains'],
+            'collection_type': ['icontains', 'exact']
         }
 
 # example: has 1811130001 been 'processed?'
@@ -286,6 +298,32 @@ class ObservationDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ObservationSerializer
 
 
+# example: /my_astrobase/collections/
+# calling this view serializes the Collections list in a REST API
+class CollectionListViewAPI(generics.ListCreateAPIView):
+    """
+    A pagination list of Collections, sorted by date.
+    """
+    model = Collection
+    queryset = Collection.objects.all().order_by('-date')
+    serializer_class = CollectionSerializer
+
+    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = CollectionFilter
+
+
+# example: /my_astrobase/Collections/5/
+# calling this view serializes an Collection in the REST API
+class CollectionDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Detailed view of an Collection.
+    """
+    model = Collection
+    queryset = Collection.objects.all()
+    serializer_class = CollectionSerializer
+    
+    
 # example: /my_astrobase/projects/
 # calling this view serializes the projects list in a REST API
 class ProjectListViewAPI(generics.ListCreateAPIView):

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import DataProduct, Observation, Status, AstroFile
+from .models import DataProduct, Observation, Collection, Status, AstroFile
 import logging
 
 logger = logging.getLogger(__name__)
@@ -72,6 +72,12 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'parent','derived_parent_taskid',
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
                   'image_type','children')
+
+class CollectionSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Collection
+        fields = "__all__"
 
 # Serializer for file uploads
 class AstroFileSerializer(serializers.ModelSerializer):

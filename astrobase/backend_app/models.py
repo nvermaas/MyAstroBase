@@ -312,6 +312,7 @@ class Collection(models.Model):
         ("other", "other"),
     )
 
+    date = models.DateTimeField('date', null=True)
     name = models.CharField(max_length=100, default="unknown")
     collection_type = models.CharField(max_length=20, null=True, choices = COLLECTION_TYPE_CHOICES, default="other")
     description = models.CharField(max_length=255, default="", null=True, blank=True)
