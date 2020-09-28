@@ -49,6 +49,7 @@ class ObservationFilter(filters.FilterSet):
         model = Observation
 
         fields = {
+            'id': ['exact', 'in'],
             'observing_mode': ['exact', 'in', 'icontains'],  # /my_astrobase/observations?&observing_mode=g2
             'process_type': ['exact', 'in', 'icontains'], #/my_astrobase/observations?&process_type=observation
             'task_type': ['exact', 'in', 'icontains'],  #
@@ -83,6 +84,7 @@ class DataProductFilter(filters.FilterSet):
         model = DataProduct
 
         fields = {
+            'id': ['exact', 'in'],
             'dataproduct_type': ['exact', 'in'],  # ../dataproducts?dataProductType=IMAGE,VISIBILITY
             'description': ['exact', 'icontains'],
             'name': ['exact', 'icontains'],

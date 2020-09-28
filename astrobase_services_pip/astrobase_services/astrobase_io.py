@@ -13,6 +13,9 @@ import datetime
 import requests
 import logging
 
+#import json
+#from rabbits_lib import rabbits
+
 logger = logging.getLogger(__name__)
 
 from astrobase_services.astrobase_interface import AstroBase
@@ -283,12 +286,8 @@ class AstroBaseIO:
             message_str = unicode_to_ascii(message_str)
             payload = {"text": str(timestamp) + ' - ' + message_str}
 
-            if (self.host == ASTROBASE_HOST_PROD):
-                # in production send to 'atdb_logging'
-               url = "https://hooks.slack.com/services/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"
-            else:
-                # otherwise send to 'atdb-test'
-               url = "https://hooks.slack.com/services/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"
+            # rabbits.do_send_message("amqp://nvermaas:<my_password>@192.168.178.37:5672/","slack",json.dumps(message_str))
+            url = "https://hooks.slack.com/services/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"
 
             res = requests.post(url, data=str(payload))
         except Exception as err:

@@ -73,11 +73,14 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
                   'image_type','children')
 
+
 class CollectionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Collection
-        fields = "__all__"
+        fields = ('id','date','name','collection_type','description','observations')
+        # this expands the observations to more than just the id.
+        depth=1
 
 # Serializer for file uploads
 class AstroFileSerializer(serializers.ModelSerializer):

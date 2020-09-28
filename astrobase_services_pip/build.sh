@@ -6,4 +6,4 @@ python --version
 python setup.py sdist --formats=gztar
 
 # Next command will not close the window, can be handy if something goes wrong
-#exec $SHELL
+exec $SHELL
