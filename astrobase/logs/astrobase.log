@@ -16356,3 +16356,22 @@
 [2020-09-28 16:59:10,361] ***PLEIADES
 [2020-09-28 16:59:10,375] ***PLEIADES
 [2020-09-28 16:59:10,665] ***200328001
+[2020-09-29 10:21:25,585] SIGNAL : pre_save Observation(200207002 - Vesta in Aries - Aries, Vesta)
+[2020-09-29 10:21:25,592] handle_pre_save(200207002 - Vesta in Aries - Aries, Vesta)
+[2020-09-29 10:21:25,614] handle_post_save(200207002 - Vesta in Aries - Aries, Vesta)
+[2020-09-29 10:21:30,548] SIGNAL : pre_save Observation(200819007 - Pallas - Hercules, Pallas Asteroid)
+[2020-09-29 10:21:30,549] handle_pre_save(200819007 - Pallas - Hercules, Pallas Asteroid)
+[2020-09-29 10:21:30,571] handle_post_save(200819007 - Pallas - Hercules, Pallas Asteroid)
+[2020-09-29 10:21:30,571] update observation = 200819007
+[2020-09-29 10:22:09,499] SIGNAL : pre_save Observation(090311032 - Saturn and Vesta in Taurus - Taurus, Saturn, Vesta)
+[2020-09-29 10:22:09,499] handle_pre_save(090311032 - Saturn and Vesta in Taurus - Taurus, Saturn, Vesta)
+[2020-09-29 10:22:09,529] handle_post_save(090311032 - Saturn and Vesta in Taurus - Taurus, Saturn, Vesta)
+[2020-09-29 10:22:09,529] update observation = 090311032
+[2020-09-29 10:22:33,397] SIGNAL : pre_save Observation(090311044 - Vesta in Taurus - Taurus, Vesta)
+[2020-09-29 10:22:33,397] handle_pre_save(090311044 - Vesta in Taurus - Taurus, Vesta)
+[2020-09-29 10:22:33,427] handle_post_save(090311044 - Vesta in Taurus - Taurus, Vesta)
+[2020-09-29 10:22:33,427] update observation = 090311044
+[2020-09-29 10:22:41,588] SIGNAL : pre_save Observation(090311034 - Saturn and Vesta in Taurus - Taurus, Saturn, Vesta)
+[2020-09-29 10:22:41,589] handle_pre_save(090311034 - Saturn and Vesta in Taurus - Taurus, Saturn, Vesta)
+[2020-09-29 10:22:41,613] handle_post_save(090311034 - Saturn and Vesta in Taurus - Taurus, Saturn, Vesta)
+[2020-09-29 10:22:41,614] update observation = 090311034

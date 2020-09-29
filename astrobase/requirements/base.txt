@@ -11,3 +11,4 @@ django-cors-headers==2.4.0
 django-extensions==2.1.4
 django-bootstrap-pagination==1.7.0
 whitenoise==5.0.1
+docutils==0.16
