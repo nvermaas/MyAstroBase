@@ -75,12 +75,14 @@ class ObservationSerializer(serializers.ModelSerializer):
 
 
 class CollectionSerializer(serializers.ModelSerializer):
+    observations = ObservationSerializer(many=True, read_only=True)
 
     class Meta:
         model = Collection
-        fields = ('id','date','name','collection_type','description','observations')
+        #fields = ('id','date','name','collection_type','description','observations')
+        fields = "__all__"
         # this expands the observations to more than just the id.
-        depth=1
+        #depth=1
 
 # Serializer for file uploads
 class AstroFileSerializer(serializers.ModelSerializer):
