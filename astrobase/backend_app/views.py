@@ -32,15 +32,14 @@ logger = logging.getLogger(__name__)
 class ObservationFilter(filters.FilterSet):
 
     # example of an OR filter.
-    # this filters the fields 'name, field_name, description, observing_mode and quality
-    # for the given value of 'fieldsearch='.
-    # http://localhost:8000/my_astrobase/observations/?fieldsearch=aurora
+    # this filters a range of fields for the given value of 'fieldsearch='.
+    # example: http://localhost:8000/my_astrobase/observations/?fieldsearch=aurora
     fieldsearch = filters.CharFilter(field_name='fieldsearch', method='search_my_fields')
 
     def search_my_fields(self, queryset, name, value):
-        logger.info('***'+value)
         return queryset.filter(
-            Q(name__icontains=value) | Q(field_name__icontains=value) | Q(observing_mode__icontains=value) |
+            Q(name__icontains=value) | Q(field_name__icontains=value) |
+            Q(observing_mode__icontains=value) |
             Q(quality__icontains=value)| Q(my_status__icontains=value)|
             Q(taskID__icontains=value) | Q(parent__taskID__icontains=value)
         )
@@ -65,14 +64,13 @@ class ObservationFilter(filters.FilterSet):
             'date' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'data_location': ['exact', 'icontains'],
             'quality': ['exact', 'icontains','in'],
-            'fieldsearch': ['exact', 'icontains','in'],
             'exposure_in_seconds' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'iso': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'focal_length': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'stacked_images' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'magnitude' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'image_type': ['icontains', 'exact']
-
+            'image_type': ['icontains', 'exact'],
+            'fieldsearch': ['exact', 'icontains', 'in']
         }
 
 
@@ -99,13 +97,24 @@ class DataProductFilter(filters.FilterSet):
 # example: /my_astrobase/dataproducts?status__in=created,archived
 class CollectionFilter(filters.FilterSet):
 
+    # example of an OR filter.
+    # this filters a range of fields for the given value of 'fieldsearch='.
+    # example: http://localhost:8000/my_astrobase/observations/?fieldsearch=aurora
+    fieldsearch = filters.CharFilter(field_name='fieldsearch', method='search_my_fields')
+
+    def search_my_fields(self, queryset, name, value):
+        return queryset.filter(
+            Q(name__icontains=value) | Q(description__icontains=value)
+        )
+
     class Meta:
         model = Collection
 
         fields = {
             'description': ['exact', 'icontains'],
             'name': ['exact', 'icontains'],
-            'collection_type': ['icontains', 'exact']
+            'collection_type': ['icontains', 'exact'],
+            'fieldsearch': ['exact', 'icontains', 'in']
         }
 
 # example: has 1811130001 been 'processed?'
