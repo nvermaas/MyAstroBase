@@ -16375,3 +16375,31 @@
 [2020-09-29 10:22:41,589] handle_pre_save(090311034 - Saturn and Vesta in Taurus - Taurus, Saturn, Vesta)
 [2020-09-29 10:22:41,613] handle_post_save(090311034 - Saturn and Vesta in Taurus - Taurus, Saturn, Vesta)
 [2020-09-29 10:22:41,614] update observation = 090311034
+[2020-10-04 08:53:24,569] SIGNAL : pre_save Observation(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:53:24,576] handle_pre_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:53:24,604] handle_post_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:53:24,604] update observation = 200915001
+[2020-10-04 08:53:27,778] SIGNAL : pre_save Observation(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:53:27,779] handle_pre_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:53:27,814] handle_post_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:53:27,814] update observation = 200915001
+[2020-10-04 08:54:56,853] SIGNAL : pre_save Observation(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:54:56,853] handle_pre_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:54:56,883] handle_post_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:54:56,883] update observation = 200915001
+[2020-10-04 08:55:00,790] SIGNAL : pre_save Observation(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:00,790] handle_pre_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:00,824] handle_post_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:00,824] update observation = 200915001
+[2020-10-04 08:55:01,740] SIGNAL : pre_save Observation(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:01,746] handle_pre_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:01,778] handle_post_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:01,778] update observation = 200915001
+[2020-10-04 08:55:45,323] SIGNAL : pre_save Observation(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:45,323] handle_pre_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:45,359] handle_post_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:45,359] update observation = 200915001
+[2020-10-04 08:55:49,939] SIGNAL : pre_save Observation(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:49,940] handle_pre_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:50,033] handle_post_save(200915001 - Bad Auriga - Auriga)
+[2020-10-04 08:55:50,034] update observation = 200915001
