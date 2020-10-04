@@ -10,7 +10,7 @@ WORKDIR /src
 COPY . /src/
 RUN pip install -r requirements/prod.txt
 RUN exec python manage.py collectstatic --settings=astrobase.settings.docker --no-input
-CMD exec gunicorn astrobase.wsgi_docker_rpi:application --bind 0.0.0.0:8000 --workers 3
+CMD exec gunicorn astrobase.wsgi_docker:application --bind 0.0.0.0:8000 --workers 3
 
 # build the image like this:
 # docker build -t astrobase_web:latest .
