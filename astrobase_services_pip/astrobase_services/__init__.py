@@ -1,1 +1,0 @@
-name = "astrobase_services"
