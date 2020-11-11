@@ -1,0 +1,44 @@
+version: "3.7"
+services:
+  nginx:
+    build:
+       context: $HOME/shared
+       dockerfile: Dockerfile
+    container_name: my_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - $HOME/shared:/shared
+      - $HOME/shared/static:/static
+    restart: always
+
+  backend:
+    build:
+        context: $HOME/my_docker/astrobase_docker/myastrobase/astrobase
+        dockerfile: Dockerfile
+    container_name: astrobase
+    ports:
+      - "8008:8000"
+    expose:
+      - "8008"
+    restart: always
+    volumes:
+      - $HOME/shared:/shared # this is where the sqlite database lives
+
+  frontend:
+    build:
+        context: $HOME/my_docker/astroview_docker
+        dockerfile: Dockerfile
+    container_name: astroview
+    ports:
+      - "8017:80"
+    expose:
+      - "8017"
+    restart: always
+
+
+# build the stack like this:
+# > docker-compose build
+
+# run the stack like this:
+# > docker-compose up

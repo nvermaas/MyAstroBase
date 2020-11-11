@@ -39,7 +39,6 @@ class ObservationFilter(filters.FilterSet):
     def search_my_fields(self, queryset, name, value):
         return queryset.filter(
             Q(name__icontains=value) | Q(field_name__icontains=value) |
-            Q(observing_mode__icontains=value) |
             Q(quality__icontains=value)| Q(my_status__icontains=value)|
             Q(taskID__icontains=value) | Q(parent__taskID__icontains=value)
         )
@@ -49,7 +48,8 @@ class ObservationFilter(filters.FilterSet):
 
         fields = {
             'id': ['exact', 'in'],
-            'observing_mode': ['exact', 'in', 'icontains'],  # /my_astrobase/observations?&observing_mode=g2
+            'instrument': ['exact', 'in', 'icontains'],
+            'filter': ['exact', 'in', 'icontains'],
             'process_type': ['exact', 'in', 'icontains'], #/my_astrobase/observations?&process_type=observation
             'task_type': ['exact', 'in', 'icontains'],  #
             'field_name': ['gt', 'lt', 'gte', 'lte', 'icontains', 'exact','in'],
@@ -220,7 +220,6 @@ def get_searched_observations(search):
     observations = Observation.objects.filter(
         Q(taskID__contains=search) |
         Q(parent__taskID__contains=search) |
-        Q(observing_mode__icontains=search) |
         Q(my_status__icontains=search) |
         Q(field_name__icontains=search)).order_by('-date')
     return observations
@@ -372,13 +371,6 @@ def ObservationSetQuality(request,pk,quality,page):
     observation.save()
     return redirect('/my_astrobase/?page='+page)
 
-
-def ObservationSetMode(request,pk,mode,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
-    observation.observing_mode = mode
-    observation.save()
-    return redirect('/my_astrobase/?page='+page)
 
 
 def ObservationSetTaskType(request,pk,type,page):

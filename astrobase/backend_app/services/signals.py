@@ -131,8 +131,7 @@ def handle_post_save(sender, **kwargs):
             if myObservation.field_fov == 0.0:
                 myObservation.field_fov = parent.field_fov
 
-            if myObservation.observing_mode == "unknown":
-                myObservation.observing_mode = parent.observing_mode
+
 
             # check if the following values have been set before. If not copy them from the master
             if myObservation.quality == '':
@@ -159,6 +158,8 @@ def handle_post_save(sender, **kwargs):
             if myObservation.image_type == 'other':
                 myObservation.image_type = parent.image_type
 
+            myObservation.instrument = parent.instrument
+            myObservation.filter = parent.filter
             # myObservation.save()
 
 

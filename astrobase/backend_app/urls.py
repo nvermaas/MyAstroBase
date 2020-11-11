@@ -79,10 +79,6 @@ urlpatterns = [
          views.ObservationSetQuality,
          name='observation-setquality-view'),
 
-    path('observations/<int:pk>/setmode/<mode>/<page>',
-         views.ObservationSetMode,
-         name='observation-setmode-view'),
-
     path('observations/<int:pk>/settasktype/<type>/<page>',
          views.ObservationSetTaskType,
          name='observation-settasktype-view'),

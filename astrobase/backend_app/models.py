@@ -56,7 +56,7 @@ class TaskObject(models.Model):
     # my_status is 'platgeslagen', because django-filters can not filter on a related property,
     # and I need services to be able to filter on a status to execute their tasks.
     my_status = models.CharField(db_index=True, max_length=50,default="defined")
-    job = models.CharField(max_length=15, default="", null=True)
+    job = models.CharField(max_length=15, default="", null=True, blank=True)
 
     def __str__(self):
         return str(self.taskID) + ' ' + str(self.name)
@@ -82,6 +82,18 @@ class Status(models.Model):
 
 
 class Observation(TaskObject):
+    INSTRUMENT_CHOICES = (
+        ("Powershot G2", "Powershot G2"),
+        ("Powershot G15", "Powershot G15"),
+        ("Canon 350D", "Canon 350D"),
+        ("Canon 2000D","Canon 2000D"),
+    )
+
+    FILTER_CHOICES = (
+        ("None", "None"),
+        ("CLS", "CLS"),
+    )
+
     PROCESS_TYPE_CHOICES = (
         ("observation", "observation"),
         ("pipeline","pipeline"),
@@ -114,7 +126,9 @@ class Observation(TaskObject):
     date = models.DateTimeField('date', null=True)
 
     # can be used to distinguish types of observations, like with powershot G2 or Kitt Peak
-    observing_mode = models.CharField(max_length=50, default="")
+    instrument = models.CharField(max_length=50, choices = INSTRUMENT_CHOICES, default="Canon 2000D")
+    filter = models.CharField(max_length=50, choices = FILTER_CHOICES, default="CLS")
+
     description = models.CharField(max_length=255, default="", null=True, blank=True)
     url = models.CharField(max_length=100, default="", null=True, blank=True)
 
@@ -127,7 +141,7 @@ class Observation(TaskObject):
     field_dec = models.FloatField('field_dec', null = True)
     field_fov = models.FloatField('field_fov', null=True)
 
-    quality = models.CharField(max_length=30, default="")
+    quality = models.CharField(max_length=30, default="good", null=True)
 
     # details about the imaging
     iso = models.CharField(max_length=4, null=True, choices = ISO_CHOICES, default="none")
