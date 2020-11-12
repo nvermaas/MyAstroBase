@@ -23,20 +23,6 @@
 
             <td>{{ observation.date|date:"Y-m-d H:i:s" }} </td>
             <td>{{ observation.size|filesizeformat }} </td>
-            <!--
-            <td>{{ observation.observing_mode }}</td>
-            <td>
-                {% if user.is_authenticated %}
-                    <a title="Raw (single image)" href="{% url 'observation-setmode-view' observation.pk 'raw_single' my_observations.number %}" class="btn btn-primary btn-sm" role="button">R(1)</a>
-                    <a title="Processed (single image)" href="{% url 'observation-setmode-view' observation.pk 'proc_single' my_observations.number %}" class="btn btn-success btn-sm" role="button">P(1)</a>
-                    <a title="Raw (stacked images)" href="{% url 'observation-setmode-view' observation.pk 'raw_stacked' my_observations.number %}" class="btn btn-primary btn-sm" role="button">R(n)</a>
-                    <a title="Processed (stacked images)" href="{% url 'observation-setmode-view' observation.pk 'proc_stacked' my_observations.number %}" class="btn btn-success btn-sm" role="button">P(n)</a>
-                    <a title="Creative, wild, beautiful but unsuitable for astrometry" href="{% url 'observation-setmode-view' observation.pk 'wild' my_observations.number %}" class="btn btn-warning btn-sm" role="button">W</a>
-                    <a title="Simulated image" href="{% url 'observation-setmode-view' observation.pk 'simulation' my_observations.number %}" class="btn btn-warning btn-sm" role="button">S</a>
-
-                {% endif %}
-            </td>
-            <-->
             <td>{{ observation.quality }}</td>
             <td>
                 {% if user.is_authenticated %}
