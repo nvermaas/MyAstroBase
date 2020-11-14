@@ -551,10 +551,16 @@ class RunCommandView(generics.ListAPIView):
             observation_id = None
 
         q = get_queryset_auth(self, Command)
-        # taskID = algorithms.add_dataproducts(taskID, dataproducts)
+
+        # depending on the 'command', gather extra information like file locations
+        # For example the fits file dataproduct of the observation_id
+
+        # fits_location = algorithms.get_fits_location(observation_id)
+        # result_url = algorithms.create_map(fits_location)
 
         # return a response
         return Response({
             'command': command,
-            'observation_id' : observation_id
+            'observation_id' : observation_id,
+            # 'result_url' : result_url
         })
