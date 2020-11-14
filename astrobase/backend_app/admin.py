@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Status, DataProduct, Observation, Collection
+from .models import Status, DataProduct, Observation, Collection, Command
 
 @admin.register(Observation)
 class ObservationAdmin(admin.ModelAdmin):
@@ -14,4 +14,5 @@ class CollectionAdmin(admin.ModelAdmin):
 
 admin.site.register(Status)
 admin.site.register(DataProduct)
+admin.site.register(Command)
 #admin.site.register(Collection)

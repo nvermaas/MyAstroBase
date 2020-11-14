@@ -82,4 +82,8 @@ urlpatterns = [
     path('observations/<int:pk>/settasktype/<type>/<page>',
          views.ObservationSetTaskType,
          name='observation-settasktype-view'),
+
+    path('run-command/',
+         views.RunCommandView.as_view(),
+         name='run-command-view'),
 ]

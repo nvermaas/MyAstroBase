@@ -336,3 +336,18 @@ class Collection(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class Command(models.Model):
+    RIGHTS_CHOICES = (
+        ("superuser", "superuser"),
+        ("anonymous","anonymous"),
+    )
+    command_id = models.CharField(max_length=20, default="unknown")
+    command = models.CharField(max_length=50, default="", null=True)
+    type = models.CharField(max_length=10, default="", null=True)
+    rights = models.CharField(max_length=10, choices = RIGHTS_CHOICES, default="superuser")
+    parameters = models.CharField(max_length=200, default="", null=True)
+
+    def __str__(self):
+        return str(self.command_id)

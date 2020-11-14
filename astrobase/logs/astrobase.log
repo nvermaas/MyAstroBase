@@ -16403,3 +16403,5 @@
 [2020-10-04 08:55:49,940] handle_pre_save(200915001 - Bad Auriga - Auriga)
 [2020-10-04 08:55:50,033] handle_post_save(200915001 - Bad Auriga - Auriga)
 [2020-10-04 08:55:50,034] update observation = 200915001
+[2020-11-14 19:27:25,310] user (auth) : nvermaas (None)
+[2020-11-14 19:34:16,827] user (auth) : nvermaas (None)

@@ -18,8 +18,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import DataProduct, Observation, Status, AstroFile, Collection
-from .serializers import DataProductSerializer, ObservationSerializer, StatusSerializer, AstroFileSerializer, CollectionSerializer
+from .models import DataProduct, Observation, Status, AstroFile, Collection, Command
+from .serializers import DataProductSerializer, ObservationSerializer, StatusSerializer, AstroFileSerializer, \
+    CollectionSerializer, CommandSerializer
 from .forms import FilterForm
 from .services import algorithms
 
@@ -501,3 +502,59 @@ class UploadFileView(APIView):
             return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+
+def get_queryset_auth(object, my_model_class, process_type=None):
+    """
+    This is a global function that can be used to override the get_queryset for a model
+    It is specifically used to return a different queryset for anonymous or authenticated users based
+
+    :param object:
+    :param my_model_class:
+    :return:
+    """
+    user = str(object.request.user)
+    auth = str(object.request.auth)
+    logger.info("user (auth) : " + user + ' (' + auth + ')')
+
+    # Authorisation: Anonymous users only see 'public' dataproducts
+    if (object.request.user.is_superuser):
+        # superusers can use all commands
+        queryset = my_model_class.objects.all()
+    else:
+        queryset = my_model_class.objects.filter(rights='anonymous')
+
+    return queryset
+
+
+# run an external command
+# /my_astrobase/run-command/?command=foo&observation_id=1
+class RunCommandView(generics.ListAPIView):
+
+    serializer_class = CommandSerializer
+    permission_classes = (IsAuthenticated,)
+
+    # overriding GET get_queryset to access the request
+    def get_queryset(self):
+        return get_queryset_auth(self, Command)
+
+
+    def list(self, request, *args, **kwargs):
+        # read the arguments from the request
+        try:
+            command = self.request.query_params['command']
+        except:
+            command = None
+
+        try:
+            observation_id = self.request.query_params['observation_id']
+        except:
+            observation_id = None
+
+        q = get_queryset_auth(self, Command)
+        # taskID = algorithms.add_dataproducts(taskID, dataproducts)
+
+        # return a response
+        return Response({
+            'command': command,
+            'observation_id' : observation_id
+        })
