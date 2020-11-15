@@ -12,5 +12,5 @@ django-extensions==2.1.4
 django-bootstrap-pagination==1.7.0
 whitenoise==5.0.1
 docutils==0.16
-numpy==1.18.1
-astropy==4.0
+# numpy==1.18.1
+# astropy==4.0

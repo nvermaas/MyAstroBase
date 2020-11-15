@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import DataProduct, Observation, Collection, Status, AstroFile, Command
+from .models import DataProduct, Observation, Collection, Status, AstroFile, Command, Job
 import logging
 
 logger = logging.getLogger(__name__)
@@ -93,4 +93,9 @@ class AstroFileSerializer(serializers.ModelSerializer):
 class CommandSerializer(serializers.ModelSerializer):
     class Meta():
         model = Command
+        fields = "__all__"
+
+class JobSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = Job
         fields = "__all__"

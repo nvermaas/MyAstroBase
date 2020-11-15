@@ -44,6 +44,12 @@ urlpatterns = [
     # ex: /astrobase/status/
     path('status/', views.StatusListViewAPI.as_view(),name='status-list-view-api'),
 
+    # ex: /astrobase/jobs/
+    path('jobs/', views.JobListViewAPI.as_view()),
+
+    # ex: /astrobase/jobs/5/
+    path('jobs/<int:pk>/', views.JobDetailsViewAPI.as_view(), name='job-detail-view-api'),
+
     # --- custom requests ---
     # ex: /astrobase/get_next_taskid?timestamp=2019-04-05
     path('get_next_taskid',

@@ -18,9 +18,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import DataProduct, Observation, Status, AstroFile, Collection, Command
+from .models import DataProduct, Observation, Status, AstroFile, Collection, Command, Job
 from .serializers import DataProductSerializer, ObservationSerializer, StatusSerializer, AstroFileSerializer, \
-    CollectionSerializer, CommandSerializer
+    CollectionSerializer, CommandSerializer, JobSerializer
 from .forms import FilterForm
 from .services import algorithms
 
@@ -351,6 +351,27 @@ class ProjectListViewAPI(generics.ListCreateAPIView):
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = ObservationFilter
 
+
+# example: /my_astrobase/Jobs/
+# calling this view serializes the Jobs list in a REST API
+class JobListViewAPI(generics.ListCreateAPIView):
+    """
+    A pagination list of Jobs, sorted by date.
+    """
+    model = Job
+    queryset = Job.objects.all()
+    serializer_class = JobSerializer
+
+
+# example: /my_astrobase/Jobs/5/
+# calling this view serializes an Job in the REST API
+class JobDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Detailed view of an Job.
+    """
+    model = Job
+    queryset = Job.objects.all()
+    serializer_class = JobSerializer
 
 
 # --- Command views, triggered by a button in the GUI or directoy with a URL ---

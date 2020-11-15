@@ -337,7 +337,7 @@ class Collection(models.Model):
     def __str__(self):
         return str(self.name)
 
-
+# contains possible system commands to execute
 class Command(models.Model):
     RIGHTS_CHOICES = (
         ("superuser", "superuser"),
@@ -347,7 +347,16 @@ class Command(models.Model):
     command = models.CharField(max_length=50, default="", null=True)
     type = models.CharField(max_length=10, default="", null=True)
     rights = models.CharField(max_length=10, choices = RIGHTS_CHOICES, default="superuser")
-    parameters = models.CharField(max_length=200, default="", null=True)
 
     def __str__(self):
         return str(self.command_id)
+
+# job to be executed async by the astrobase_services packages by polling the database
+class Job(models.Model):
+    creationTime = models.DateTimeField(default=datetime.utcnow, blank=True)
+    # relationships
+    command = models.ForeignKey(Command, on_delete=models.DO_NOTHING, null=True)
+    parameters = models.CharField(max_length=200, default="", null=True)
+
+    status = models.CharField(max_length=50, default="defined", null=True)
+    result = models.CharField(max_length=200, default="", null=True)
