@@ -9,7 +9,8 @@ jobs:
         with:
           host: ${{ secrets.MY_HOST }}
           username: ${{ secrets.MY_USERNAME }}
-          password: ${{ secrets.MY_PASSWORD }}
+          #password: ${{ secrets.MY_PASSWORD }}
+          key: ${{ secrets.MY_PRIVATE_KEY }}
           script: |
              cd ~/my_docker/MyAstroBase
              git pull
