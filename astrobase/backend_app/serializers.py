@@ -66,7 +66,7 @@ class ObservationSerializer(serializers.ModelSerializer):
         fields = ('id','task_type', 'name', 'instrument','filter','process_type','taskID',
                   'field_name','field_ra','field_dec','field_fov','date','size',
                   'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
-                  'derived_sky_globe_image','derived_fits',
+                  'derived_annotated_grid_image','derived_sky_globe_image','derived_fits',
                   'my_status','new_status','status_history','job','url',
                   'generated_dataproducts','data_location', 'quality','description',
                   'parent','derived_parent_taskid',

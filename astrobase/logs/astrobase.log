@@ -16437,3 +16437,106 @@
 [2020-11-14 20:36:35,933] user (auth) : nvermaas (None)
 [2020-11-14 20:36:35,934] user (auth) : nvermaas (None)
 [2020-11-14 20:36:35,947] user (auth) : nvermaas (None)
+[2020-11-18 17:03:41,967] add_dataproducts(200801003,1)
+[2020-11-18 17:03:51,011] addding dataproduct: d:\my_astrobase\data\200801003\4426976_annotated_grid.jpg
+[2020-11-18 17:03:51,011] SIGNAL : pre_save DataProduct(d:\my_astrobase\data\200801003\4426976_annotated_grid.jpg)
+[2020-11-18 17:03:51,012] handle_pre_save(d:\my_astrobase\data\200801003\4426976_annotated_grid.jpg)
+[2020-11-18 17:03:51,208] handle_post_save(d:\my_astrobase\data\200801003\4426976_annotated_grid.jpg)
+[2020-11-18 17:03:51,209] save new dataproduct
+[2020-11-18 17:03:51,404] update dataproduct parent = 200801003
+[2020-11-18 17:06:40,833] DataProductsListView.get_queryset()
+[2020-11-18 17:06:40,834] my_queryset retrieved
+[2020-11-18 17:06:51,169] DataProductsListView.get_queryset()
+[2020-11-18 17:06:51,170] my_queryset retrieved
+[2020-11-18 17:07:01,518] DataProductsListView.get_queryset()
+[2020-11-18 17:07:01,519] my_queryset retrieved
+[2020-11-18 17:07:11,782] DataProductsListView.get_queryset()
+[2020-11-18 17:07:11,784] my_queryset retrieved
+[2020-11-18 17:07:22,110] DataProductsListView.get_queryset()
+[2020-11-18 17:07:22,112] my_queryset retrieved
+[2020-11-18 17:07:32,458] DataProductsListView.get_queryset()
+[2020-11-18 17:07:32,460] my_queryset retrieved
+[2020-11-18 17:07:42,783] DataProductsListView.get_queryset()
+[2020-11-18 17:07:42,785] my_queryset retrieved
+[2020-11-18 17:07:53,116] DataProductsListView.get_queryset()
+[2020-11-18 17:07:53,118] my_queryset retrieved
+[2020-11-18 17:08:03,658] DataProductsListView.get_queryset()
+[2020-11-18 17:08:03,659] my_queryset retrieved
+[2020-11-18 17:08:13,949] DataProductsListView.get_queryset()
+[2020-11-18 17:08:13,950] my_queryset retrieved
+[2020-11-18 17:08:24,229] DataProductsListView.get_queryset()
+[2020-11-18 17:08:24,231] my_queryset retrieved
+[2020-11-18 17:08:34,577] DataProductsListView.get_queryset()
+[2020-11-18 17:08:34,578] my_queryset retrieved
+[2020-11-18 17:08:44,870] DataProductsListView.get_queryset()
+[2020-11-18 17:08:44,926] my_queryset retrieved
+[2020-11-18 17:08:55,190] DataProductsListView.get_queryset()
+[2020-11-18 17:08:55,191] my_queryset retrieved
+[2020-11-18 17:09:05,469] DataProductsListView.get_queryset()
+[2020-11-18 17:09:05,470] my_queryset retrieved
+[2020-11-18 17:09:15,730] DataProductsListView.get_queryset()
+[2020-11-18 17:09:15,732] my_queryset retrieved
+[2020-11-18 17:09:25,988] DataProductsListView.get_queryset()
+[2020-11-18 17:09:25,990] my_queryset retrieved
+[2020-11-18 17:09:36,268] DataProductsListView.get_queryset()
+[2020-11-18 17:09:36,269] my_queryset retrieved
+[2020-11-18 17:09:46,526] DataProductsListView.get_queryset()
+[2020-11-18 17:09:46,528] my_queryset retrieved
+[2020-11-18 17:09:56,839] DataProductsListView.get_queryset()
+[2020-11-18 17:09:56,841] my_queryset retrieved
+[2020-11-18 17:10:07,108] DataProductsListView.get_queryset()
+[2020-11-18 17:10:07,109] my_queryset retrieved
+[2020-11-18 17:10:17,426] DataProductsListView.get_queryset()
+[2020-11-18 17:10:17,428] my_queryset retrieved
+[2020-11-18 17:10:27,703] DataProductsListView.get_queryset()
+[2020-11-18 17:10:27,705] my_queryset retrieved
+[2020-11-18 17:10:37,964] DataProductsListView.get_queryset()
+[2020-11-18 17:10:37,965] my_queryset retrieved
+[2020-11-18 17:10:48,230] DataProductsListView.get_queryset()
+[2020-11-18 17:10:48,232] my_queryset retrieved
+[2020-11-18 17:10:58,496] DataProductsListView.get_queryset()
+[2020-11-18 17:10:58,497] my_queryset retrieved
+[2020-11-18 17:11:08,775] DataProductsListView.get_queryset()
+[2020-11-18 17:11:08,776] my_queryset retrieved
+[2020-11-18 17:11:18,965] DataProductsListView.get_queryset()
+[2020-11-18 17:11:18,966] my_queryset retrieved
+[2020-11-18 17:11:29,212] DataProductsListView.get_queryset()
+[2020-11-18 17:11:29,213] my_queryset retrieved
+[2020-11-18 17:11:39,485] DataProductsListView.get_queryset()
+[2020-11-18 17:11:39,486] my_queryset retrieved
+[2020-11-18 17:11:49,729] DataProductsListView.get_queryset()
+[2020-11-18 17:11:49,730] my_queryset retrieved
+[2020-11-18 17:12:00,006] DataProductsListView.get_queryset()
+[2020-11-18 17:12:00,009] my_queryset retrieved
+[2020-11-18 17:12:10,267] DataProductsListView.get_queryset()
+[2020-11-18 17:12:10,269] my_queryset retrieved
+[2020-11-18 17:12:20,520] DataProductsListView.get_queryset()
+[2020-11-18 17:12:20,522] my_queryset retrieved
+[2020-11-18 20:25:25,128] add_dataproducts(200801003,1)
+[2020-11-18 20:25:27,642] addding dataproduct: 4426976_annotated_grid.jpg
+[2020-11-18 20:25:27,642] SIGNAL : pre_save DataProduct(4426976_annotated_grid.jpg)
+[2020-11-18 20:25:27,643] handle_pre_save(4426976_annotated_grid.jpg)
+[2020-11-18 20:25:27,658] handle_post_save(4426976_annotated_grid.jpg)
+[2020-11-18 20:25:27,658] save new dataproduct
+[2020-11-18 20:25:27,666] update dataproduct parent = 200801003
+[2020-11-18 20:48:30,055] add_dataproducts(200801003,1)
+[2020-11-18 20:48:30,058] addding dataproduct: 4426976_annotated_grid.jpg
+[2020-11-18 20:48:30,058] SIGNAL : pre_save DataProduct(4426976_annotated_grid.jpg)
+[2020-11-18 20:48:30,059] handle_pre_save(4426976_annotated_grid.jpg)
+[2020-11-18 20:48:30,077] handle_post_save(4426976_annotated_grid.jpg)
+[2020-11-18 20:48:30,077] save new dataproduct
+[2020-11-18 20:48:30,086] update dataproduct parent = 200801003
+[2020-11-18 21:02:20,084] add_dataproducts(200801003,1)
+[2020-11-18 21:02:20,086] addding dataproduct: 4426976_annotated_grid.jpg
+[2020-11-18 21:02:20,086] SIGNAL : pre_save DataProduct(4426976_annotated_grid.jpg)
+[2020-11-18 21:02:20,087] handle_pre_save(4426976_annotated_grid.jpg)
+[2020-11-18 21:02:20,103] handle_post_save(4426976_annotated_grid.jpg)
+[2020-11-18 21:02:20,104] save new dataproduct
+[2020-11-18 21:02:20,114] update dataproduct parent = 200801003
+[2020-11-18 21:06:50,752] add_dataproducts(200801003,1)
+[2020-11-18 21:06:50,754] addding dataproduct: 4426976_annotated_grid.jpg
+[2020-11-18 21:06:50,754] SIGNAL : pre_save DataProduct(4426976_annotated_grid.jpg)
+[2020-11-18 21:06:50,755] handle_pre_save(4426976_annotated_grid.jpg)
+[2020-11-18 21:06:50,771] handle_post_save(4426976_annotated_grid.jpg)
+[2020-11-18 21:06:50,771] save new dataproduct
+[2020-11-18 21:06:50,781] update dataproduct parent = 200801003

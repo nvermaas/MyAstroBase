@@ -23,6 +23,7 @@ from .serializers import DataProductSerializer, ObservationSerializer, StatusSer
     CollectionSerializer, JobSerializer
 from .forms import FilterForm
 from .services import algorithms
+from .services import jobs
 
 logger = logging.getLogger(__name__)
 
@@ -577,22 +578,14 @@ class RunCommandView(generics.ListAPIView):
         except:
             observation_id = None
 
-        # construct job
+        result = "jobs can only be executed by authenticated users"
         if self.request.user.is_superuser:
-            if command=="fitsing":
-                observation = Observation.objects.get(id=observation_id)
+            result = jobs.dispatch_job(command, observation_id)
 
-                # parse the url into observation_dir and filenames
-                path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-                path2 = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+      # return a response
 
-                parameters=str(path1[1]+','+str(path1[2]))+','+str(path2[2])
-                job = Job(command='fitsing', parameters=parameters, status="new")
-                job.save()
-
-          # return a response
         return Response({
             'command': command,
             'observation_id' : observation_id,
-            # 'result_url' : result_url
+            'result' : result
         })

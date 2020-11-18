@@ -195,6 +195,18 @@ class Observation(TaskObject):
             return None
 
     @property
+    def derived_annotated_grid_image(self):
+        # get the annotated grid dataproduct
+
+        # find object with 'datasetID'
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='annotated_grid',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
+
+    @property
     def derived_red_green_image(self):
         # get the red_green dataproduct
 
@@ -349,4 +361,4 @@ class Job(models.Model):
     result = models.CharField(max_length=200, default="", null=True, blank=True)
 
     def __str__(self):
-        return str(self.command)
+        return str(self.id) + '-' + str(self.command) + '-' + self.parameters
