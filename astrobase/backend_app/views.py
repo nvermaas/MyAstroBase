@@ -18,9 +18,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import DataProduct, Observation, Status, AstroFile, Collection, Command, Job
+from .models import DataProduct, Observation, Status, AstroFile, Collection, Job
 from .serializers import DataProductSerializer, ObservationSerializer, StatusSerializer, AstroFileSerializer, \
-    CollectionSerializer, CommandSerializer, JobSerializer
+    CollectionSerializer, JobSerializer
 from .forms import FilterForm
 from .services import algorithms
 
@@ -137,6 +137,16 @@ class StatusFilter(filters.FilterSet):
             'taskID': ['exact', 'in'],
 
             #'derived_taskid' : ['exact', 'in']
+        }
+
+# example: /my_astrobase/dataproducts?status__in=created,archived
+class JobFilter(filters.FilterSet):
+
+    class Meta:
+        model = Job
+
+        fields = {
+            'status': ['exact', 'icontains', 'in'],
         }
 
 # this uses a form
@@ -362,6 +372,8 @@ class JobListViewAPI(generics.ListCreateAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
 
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = JobFilter
 
 # example: /my_astrobase/Jobs/5/
 # calling this view serializes an Job in the REST API
@@ -372,7 +384,6 @@ class JobDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     model = Job
     queryset = Job.objects.all()
     serializer_class = JobSerializer
-
 
 # --- Command views, triggered by a button in the GUI or directoy with a URL ---
 # set observation status to 'new_status' - called from the GUI
@@ -551,13 +562,8 @@ def get_queryset_auth(object, my_model_class, process_type=None):
 # /my_astrobase/run-command/?command=foo&observation_id=1
 class RunCommandView(generics.ListAPIView):
 
-    serializer_class = CommandSerializer
+    # commands can only be run by authenticated users (me)
     permission_classes = (IsAuthenticated,)
-
-    # overriding GET get_queryset to access the request
-    def get_queryset(self):
-        return get_queryset_auth(self, Command)
-
 
     def list(self, request, *args, **kwargs):
         # read the arguments from the request
@@ -571,15 +577,20 @@ class RunCommandView(generics.ListAPIView):
         except:
             observation_id = None
 
-        q = get_queryset_auth(self, Command)
+        # construct job
+        if self.request.user.is_superuser:
+            if command=="fitsing":
+                observation = Observation.objects.get(id=observation_id)
 
-        # depending on the 'command', gather extra information like file locations
-        # For example the fits file dataproduct of the observation_id
+                # parse the url into observation_dir and filenames
+                path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+                path2 = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
-        # fits_location = algorithms.get_fits_location(observation_id)
-        # result_url = algorithms.create_map(fits_location)
+                parameters=str(path1[1]+','+str(path1[2]))+','+str(path2[2])
+                job = Job(command='fitsing', parameters=parameters, status="new")
+                job.save()
 
-        # return a response
+          # return a response
         return Response({
             'command': command,
             'observation_id' : observation_id,
