@@ -562,9 +562,10 @@ def get_queryset_auth(object, my_model_class, process_type=None):
 # run an external command
 # /my_astrobase/run-command/?command=foo&observation_id=1
 class RunCommandView(generics.ListAPIView):
-
+    serializer_class = JobSerializer
+    queryset = Job.objects.all()
     # commands can only be run by authenticated users (me)
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
 
     def list(self, request, *args, **kwargs):
         # read the arguments from the request
@@ -578,11 +579,11 @@ class RunCommandView(generics.ListAPIView):
         except:
             observation_id = None
 
-        result = "jobs can only be executed by authenticated users"
-        if self.request.user.is_superuser:
-            result = jobs.dispatch_job(command, observation_id)
+        # result = "jobs can only be executed by authenticated users"
+        # if self.request.user.is_superuser:
+        result = jobs.dispatch_job(command, observation_id)
 
-      # return a response
+        # return a response
 
         return Response({
             'command': command,
