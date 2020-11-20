@@ -16540,3 +16540,10 @@
 [2020-11-18 21:06:50,771] handle_post_save(4426976_annotated_grid.jpg)
 [2020-11-18 21:06:50,771] save new dataproduct
 [2020-11-18 21:06:50,781] update dataproduct parent = 200801003
+[2020-11-19 19:56:11,512] add_dataproducts(200801003,1)
+[2020-11-19 19:56:11,523] addding dataproduct: 4426976_annotated_grid.jpg
+[2020-11-19 19:56:11,523] SIGNAL : pre_save DataProduct(4426976_annotated_grid.jpg)
+[2020-11-19 19:56:11,524] handle_pre_save(4426976_annotated_grid.jpg)
+[2020-11-19 19:56:11,538] handle_post_save(4426976_annotated_grid.jpg)
+[2020-11-19 19:56:11,539] save new dataproduct
+[2020-11-19 19:56:11,548] update dataproduct parent = 200801003

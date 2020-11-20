@@ -73,8 +73,8 @@ def handle_pre_save(sender, **kwargs):
     connect_signals()
 
     # dispatch a job if the status has changed.
-    if (new_status != None) and (my_status != new_status):
-        jobs.dispatchJob(myTaskObject, new_status)
+    #if (new_status != None) and (my_status != new_status):
+    #   jobs.dispatchJob(myTaskObject, new_status)
 
 
 @receiver(post_save, sender=Observation)
