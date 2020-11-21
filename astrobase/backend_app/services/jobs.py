@@ -17,7 +17,7 @@ def dispatch_job(command, observation_id):
         path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
         path2 = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
-        parameters = str(path1[1] + ',' + str(path1[2])) + ',' + str(path2[2])
+        parameters = str(path1[1] + ',' + str(path1[2])) + ',' + str(path2[2]) + ',' + observation.field_name.replace(',','#')
         job = Job(command='fitsing', parameters=parameters, status="new")
         job.save()
 
