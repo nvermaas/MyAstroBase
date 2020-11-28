@@ -16982,3 +16982,578 @@
 [2020-11-28 11:31:10,145] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
 [2020-11-28 11:31:10,638] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
 [2020-11-28 11:31:10,639] update observation = 090311009
+[2020-11-28 12:08:25,203] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:25,204] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:25,619] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:28,226] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:28,226] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:28,658] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:31,220] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:31,220] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:31,686] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:34,267] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:34,267] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:34,686] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:37,353] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:37,353] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:08:37,776] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:44,350] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:44,350] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:44,860] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:47,497] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:47,498] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:47,930] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:50,504] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:50,505] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:50,967] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:53,565] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:53,565] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:53,974] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:56,554] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:56,554] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:18:57,385] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:47,656] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:47,656] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:47,705] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:50,057] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:50,057] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:50,517] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:53,071] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:53,071] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:53,475] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:56,062] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:56,062] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:56,654] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:59,238] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:59,238] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 12:21:59,611] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 14:48:19,517] DataProductsListView.get_queryset()
+[2020-11-28 14:48:19,519] my_queryset retrieved
+[2020-11-28 14:48:30,262] DataProductsListView.get_queryset()
+[2020-11-28 14:48:30,263] my_queryset retrieved
+[2020-11-28 14:48:40,447] DataProductsListView.get_queryset()
+[2020-11-28 14:48:40,450] my_queryset retrieved
+[2020-11-28 14:48:50,728] DataProductsListView.get_queryset()
+[2020-11-28 14:48:50,729] my_queryset retrieved
+[2020-11-28 14:49:01,023] DataProductsListView.get_queryset()
+[2020-11-28 14:49:01,024] my_queryset retrieved
+[2020-11-28 14:49:11,306] DataProductsListView.get_queryset()
+[2020-11-28 14:49:11,308] my_queryset retrieved
+[2020-11-28 14:49:21,584] DataProductsListView.get_queryset()
+[2020-11-28 14:49:21,585] my_queryset retrieved
+[2020-11-28 14:49:31,903] DataProductsListView.get_queryset()
+[2020-11-28 14:49:31,905] my_queryset retrieved
+[2020-11-28 14:49:42,493] DataProductsListView.get_queryset()
+[2020-11-28 14:49:42,499] my_queryset retrieved
+[2020-11-28 14:49:53,015] DataProductsListView.get_queryset()
+[2020-11-28 14:49:53,017] my_queryset retrieved
+[2020-11-28 14:50:03,340] DataProductsListView.get_queryset()
+[2020-11-28 14:50:03,341] my_queryset retrieved
+[2020-11-28 14:50:13,628] DataProductsListView.get_queryset()
+[2020-11-28 14:50:13,630] my_queryset retrieved
+[2020-11-28 14:50:23,934] DataProductsListView.get_queryset()
+[2020-11-28 14:50:23,936] my_queryset retrieved
+[2020-11-28 14:50:34,212] DataProductsListView.get_queryset()
+[2020-11-28 14:50:34,213] my_queryset retrieved
+[2020-11-28 14:50:44,620] DataProductsListView.get_queryset()
+[2020-11-28 14:50:44,623] my_queryset retrieved
+[2020-11-28 14:50:54,909] DataProductsListView.get_queryset()
+[2020-11-28 14:50:54,911] my_queryset retrieved
+[2020-11-28 14:51:05,203] DataProductsListView.get_queryset()
+[2020-11-28 14:51:05,204] my_queryset retrieved
+[2020-11-28 14:51:15,480] DataProductsListView.get_queryset()
+[2020-11-28 14:51:15,481] my_queryset retrieved
+[2020-11-28 14:51:25,781] DataProductsListView.get_queryset()
+[2020-11-28 14:51:25,782] my_queryset retrieved
+[2020-11-28 14:51:36,070] DataProductsListView.get_queryset()
+[2020-11-28 14:51:36,071] my_queryset retrieved
+[2020-11-28 14:51:46,351] DataProductsListView.get_queryset()
+[2020-11-28 14:51:46,353] my_queryset retrieved
+[2020-11-28 14:51:57,007] DataProductsListView.get_queryset()
+[2020-11-28 14:51:57,009] my_queryset retrieved
+[2020-11-28 14:52:07,828] DataProductsListView.get_queryset()
+[2020-11-28 14:52:07,829] my_queryset retrieved
+[2020-11-28 14:52:18,114] DataProductsListView.get_queryset()
+[2020-11-28 14:52:18,115] my_queryset retrieved
+[2020-11-28 14:52:28,386] DataProductsListView.get_queryset()
+[2020-11-28 14:52:28,389] my_queryset retrieved
+[2020-11-28 14:52:38,578] DataProductsListView.get_queryset()
+[2020-11-28 14:52:38,581] my_queryset retrieved
+[2020-11-28 14:52:48,850] DataProductsListView.get_queryset()
+[2020-11-28 14:52:48,851] my_queryset retrieved
+[2020-11-28 14:52:59,128] DataProductsListView.get_queryset()
+[2020-11-28 14:52:59,129] my_queryset retrieved
+[2020-11-28 14:53:09,424] DataProductsListView.get_queryset()
+[2020-11-28 14:53:09,426] my_queryset retrieved
+[2020-11-28 14:53:19,708] DataProductsListView.get_queryset()
+[2020-11-28 14:53:19,709] my_queryset retrieved
+[2020-11-28 14:53:29,985] DataProductsListView.get_queryset()
+[2020-11-28 14:53:29,987] my_queryset retrieved
+[2020-11-28 14:53:40,359] DataProductsListView.get_queryset()
+[2020-11-28 14:53:40,360] my_queryset retrieved
+[2020-11-28 14:53:50,674] DataProductsListView.get_queryset()
+[2020-11-28 14:53:50,675] my_queryset retrieved
+[2020-11-28 14:54:01,028] DataProductsListView.get_queryset()
+[2020-11-28 14:54:01,029] my_queryset retrieved
+[2020-11-28 14:54:11,342] DataProductsListView.get_queryset()
+[2020-11-28 14:54:11,343] my_queryset retrieved
+[2020-11-28 14:54:21,707] DataProductsListView.get_queryset()
+[2020-11-28 14:54:21,710] my_queryset retrieved
+[2020-11-28 14:54:32,011] DataProductsListView.get_queryset()
+[2020-11-28 14:54:32,013] my_queryset retrieved
+[2020-11-28 14:54:42,374] DataProductsListView.get_queryset()
+[2020-11-28 14:54:42,376] my_queryset retrieved
+[2020-11-28 14:54:52,718] DataProductsListView.get_queryset()
+[2020-11-28 14:54:52,720] my_queryset retrieved
+[2020-11-28 14:55:03,016] DataProductsListView.get_queryset()
+[2020-11-28 14:55:03,018] my_queryset retrieved
+[2020-11-28 14:55:13,387] DataProductsListView.get_queryset()
+[2020-11-28 14:55:13,388] my_queryset retrieved
+[2020-11-28 14:55:23,736] DataProductsListView.get_queryset()
+[2020-11-28 14:55:23,737] my_queryset retrieved
+[2020-11-28 14:55:34,040] DataProductsListView.get_queryset()
+[2020-11-28 14:55:34,041] my_queryset retrieved
+[2020-11-28 14:55:44,368] DataProductsListView.get_queryset()
+[2020-11-28 14:55:44,369] my_queryset retrieved
+[2020-11-28 14:55:54,698] DataProductsListView.get_queryset()
+[2020-11-28 14:55:54,700] my_queryset retrieved
+[2020-11-28 14:56:05,001] DataProductsListView.get_queryset()
+[2020-11-28 14:56:05,002] my_queryset retrieved
+[2020-11-28 14:56:15,301] DataProductsListView.get_queryset()
+[2020-11-28 14:56:15,303] my_queryset retrieved
+[2020-11-28 14:56:25,606] DataProductsListView.get_queryset()
+[2020-11-28 14:56:25,608] my_queryset retrieved
+[2020-11-28 14:56:35,869] DataProductsListView.get_queryset()
+[2020-11-28 14:56:35,870] my_queryset retrieved
+[2020-11-28 14:56:46,190] DataProductsListView.get_queryset()
+[2020-11-28 14:56:46,192] my_queryset retrieved
+[2020-11-28 14:56:56,487] DataProductsListView.get_queryset()
+[2020-11-28 14:56:56,488] my_queryset retrieved
+[2020-11-28 14:57:06,796] DataProductsListView.get_queryset()
+[2020-11-28 14:57:06,798] my_queryset retrieved
+[2020-11-28 14:57:17,094] DataProductsListView.get_queryset()
+[2020-11-28 14:57:17,096] my_queryset retrieved
+[2020-11-28 14:57:27,387] DataProductsListView.get_queryset()
+[2020-11-28 14:57:27,388] my_queryset retrieved
+[2020-11-28 14:57:37,854] DataProductsListView.get_queryset()
+[2020-11-28 14:57:37,855] my_queryset retrieved
+[2020-11-28 14:57:48,175] DataProductsListView.get_queryset()
+[2020-11-28 14:57:48,176] my_queryset retrieved
+[2020-11-28 14:57:58,493] DataProductsListView.get_queryset()
+[2020-11-28 14:57:58,495] my_queryset retrieved
+[2020-11-28 14:58:08,783] DataProductsListView.get_queryset()
+[2020-11-28 14:58:08,786] my_queryset retrieved
+[2020-11-28 14:58:19,093] DataProductsListView.get_queryset()
+[2020-11-28 14:58:19,094] my_queryset retrieved
+[2020-11-28 14:58:29,400] DataProductsListView.get_queryset()
+[2020-11-28 14:58:29,402] my_queryset retrieved
+[2020-11-28 14:58:39,675] DataProductsListView.get_queryset()
+[2020-11-28 14:58:39,676] my_queryset retrieved
+[2020-11-28 14:58:50,000] DataProductsListView.get_queryset()
+[2020-11-28 14:58:50,001] my_queryset retrieved
+[2020-11-28 14:59:00,274] DataProductsListView.get_queryset()
+[2020-11-28 14:59:00,276] my_queryset retrieved
+[2020-11-28 14:59:10,599] DataProductsListView.get_queryset()
+[2020-11-28 14:59:10,601] my_queryset retrieved
+[2020-11-28 14:59:21,092] DataProductsListView.get_queryset()
+[2020-11-28 14:59:21,092] my_queryset retrieved
+[2020-11-28 14:59:31,371] DataProductsListView.get_queryset()
+[2020-11-28 14:59:31,373] my_queryset retrieved
+[2020-11-28 14:59:41,693] DataProductsListView.get_queryset()
+[2020-11-28 14:59:41,694] my_queryset retrieved
+[2020-11-28 14:59:52,002] DataProductsListView.get_queryset()
+[2020-11-28 14:59:52,004] my_queryset retrieved
+[2020-11-28 15:00:02,293] DataProductsListView.get_queryset()
+[2020-11-28 15:00:02,295] my_queryset retrieved
+[2020-11-28 15:00:12,647] DataProductsListView.get_queryset()
+[2020-11-28 15:00:12,649] my_queryset retrieved
+[2020-11-28 15:00:22,952] DataProductsListView.get_queryset()
+[2020-11-28 15:00:22,953] my_queryset retrieved
+[2020-11-28 15:00:33,277] DataProductsListView.get_queryset()
+[2020-11-28 15:00:33,279] my_queryset retrieved
+[2020-11-28 15:00:43,620] DataProductsListView.get_queryset()
+[2020-11-28 15:00:43,622] my_queryset retrieved
+[2020-11-28 15:00:53,943] DataProductsListView.get_queryset()
+[2020-11-28 15:00:53,944] my_queryset retrieved
+[2020-11-28 15:01:04,236] DataProductsListView.get_queryset()
+[2020-11-28 15:01:04,237] my_queryset retrieved
+[2020-11-28 15:01:14,881] DataProductsListView.get_queryset()
+[2020-11-28 15:01:14,883] my_queryset retrieved
+[2020-11-28 15:01:25,324] DataProductsListView.get_queryset()
+[2020-11-28 15:01:25,326] my_queryset retrieved
+[2020-11-28 15:01:35,730] DataProductsListView.get_queryset()
+[2020-11-28 15:01:35,732] my_queryset retrieved
+[2020-11-28 15:01:46,059] DataProductsListView.get_queryset()
+[2020-11-28 15:01:46,060] my_queryset retrieved
+[2020-11-28 15:01:56,355] DataProductsListView.get_queryset()
+[2020-11-28 15:01:56,357] my_queryset retrieved
+[2020-11-28 15:02:06,711] DataProductsListView.get_queryset()
+[2020-11-28 15:02:06,738] my_queryset retrieved
+[2020-11-28 15:02:17,032] DataProductsListView.get_queryset()
+[2020-11-28 15:02:17,034] my_queryset retrieved
+[2020-11-28 15:02:27,338] DataProductsListView.get_queryset()
+[2020-11-28 15:02:27,343] my_queryset retrieved
+[2020-11-28 15:02:37,634] DataProductsListView.get_queryset()
+[2020-11-28 15:02:37,635] my_queryset retrieved
+[2020-11-28 15:02:47,913] DataProductsListView.get_queryset()
+[2020-11-28 15:02:47,914] my_queryset retrieved
+[2020-11-28 15:02:58,205] DataProductsListView.get_queryset()
+[2020-11-28 15:02:58,214] my_queryset retrieved
+[2020-11-28 15:03:08,490] DataProductsListView.get_queryset()
+[2020-11-28 15:03:08,493] my_queryset retrieved
+[2020-11-28 15:03:18,780] DataProductsListView.get_queryset()
+[2020-11-28 15:03:18,781] my_queryset retrieved
+[2020-11-28 15:03:29,115] DataProductsListView.get_queryset()
+[2020-11-28 15:03:29,119] my_queryset retrieved
+[2020-11-28 15:03:39,710] DataProductsListView.get_queryset()
+[2020-11-28 15:03:39,712] my_queryset retrieved
+[2020-11-28 15:03:50,163] DataProductsListView.get_queryset()
+[2020-11-28 15:03:50,165] my_queryset retrieved
+[2020-11-28 15:04:00,442] DataProductsListView.get_queryset()
+[2020-11-28 15:04:00,443] my_queryset retrieved
+[2020-11-28 15:04:10,729] DataProductsListView.get_queryset()
+[2020-11-28 15:04:10,732] my_queryset retrieved
+[2020-11-28 15:04:21,035] DataProductsListView.get_queryset()
+[2020-11-28 15:04:21,036] my_queryset retrieved
+[2020-11-28 15:04:31,324] DataProductsListView.get_queryset()
+[2020-11-28 15:04:31,332] my_queryset retrieved
+[2020-11-28 15:04:41,629] DataProductsListView.get_queryset()
+[2020-11-28 15:04:41,630] my_queryset retrieved
+[2020-11-28 15:04:51,907] DataProductsListView.get_queryset()
+[2020-11-28 15:04:51,908] my_queryset retrieved
+[2020-11-28 15:05:02,199] DataProductsListView.get_queryset()
+[2020-11-28 15:05:02,200] my_queryset retrieved
+[2020-11-28 15:05:12,471] DataProductsListView.get_queryset()
+[2020-11-28 15:05:12,472] my_queryset retrieved
+[2020-11-28 15:05:22,754] DataProductsListView.get_queryset()
+[2020-11-28 15:05:22,756] my_queryset retrieved
+[2020-11-28 15:05:33,028] DataProductsListView.get_queryset()
+[2020-11-28 15:05:33,029] my_queryset retrieved
+[2020-11-28 15:05:43,287] DataProductsListView.get_queryset()
+[2020-11-28 15:05:43,289] my_queryset retrieved
+[2020-11-28 15:05:53,622] DataProductsListView.get_queryset()
+[2020-11-28 15:05:53,624] my_queryset retrieved
+[2020-11-28 15:06:03,904] DataProductsListView.get_queryset()
+[2020-11-28 15:06:03,906] my_queryset retrieved
+[2020-11-28 15:06:14,246] DataProductsListView.get_queryset()
+[2020-11-28 15:06:14,250] my_queryset retrieved
+[2020-11-28 15:06:24,533] DataProductsListView.get_queryset()
+[2020-11-28 15:06:24,534] my_queryset retrieved
+[2020-11-28 15:06:34,823] DataProductsListView.get_queryset()
+[2020-11-28 15:06:34,824] my_queryset retrieved
+[2020-11-28 15:06:45,121] DataProductsListView.get_queryset()
+[2020-11-28 15:06:45,123] my_queryset retrieved
+[2020-11-28 15:06:55,483] DataProductsListView.get_queryset()
+[2020-11-28 15:06:55,485] my_queryset retrieved
+[2020-11-28 15:07:05,748] DataProductsListView.get_queryset()
+[2020-11-28 15:07:05,750] my_queryset retrieved
+[2020-11-28 15:07:16,023] DataProductsListView.get_queryset()
+[2020-11-28 15:07:16,025] my_queryset retrieved
+[2020-11-28 15:07:26,322] DataProductsListView.get_queryset()
+[2020-11-28 15:07:26,324] my_queryset retrieved
+[2020-11-28 15:07:36,605] DataProductsListView.get_queryset()
+[2020-11-28 15:07:36,608] my_queryset retrieved
+[2020-11-28 15:07:46,974] DataProductsListView.get_queryset()
+[2020-11-28 15:07:46,977] my_queryset retrieved
+[2020-11-28 15:07:57,262] DataProductsListView.get_queryset()
+[2020-11-28 15:07:57,264] my_queryset retrieved
+[2020-11-28 15:08:07,575] DataProductsListView.get_queryset()
+[2020-11-28 15:08:07,577] my_queryset retrieved
+[2020-11-28 15:08:17,858] DataProductsListView.get_queryset()
+[2020-11-28 15:08:17,859] my_queryset retrieved
+[2020-11-28 15:08:28,432] DataProductsListView.get_queryset()
+[2020-11-28 15:08:28,447] my_queryset retrieved
+[2020-11-28 15:08:38,761] DataProductsListView.get_queryset()
+[2020-11-28 15:08:38,763] my_queryset retrieved
+[2020-11-28 15:08:49,147] DataProductsListView.get_queryset()
+[2020-11-28 15:08:49,149] my_queryset retrieved
+[2020-11-28 15:08:59,491] DataProductsListView.get_queryset()
+[2020-11-28 15:08:59,492] my_queryset retrieved
+[2020-11-28 15:09:09,771] DataProductsListView.get_queryset()
+[2020-11-28 15:09:09,772] my_queryset retrieved
+[2020-11-28 15:09:20,060] DataProductsListView.get_queryset()
+[2020-11-28 15:09:20,062] my_queryset retrieved
+[2020-11-28 15:09:30,398] DataProductsListView.get_queryset()
+[2020-11-28 15:09:30,402] my_queryset retrieved
+[2020-11-28 15:09:40,683] DataProductsListView.get_queryset()
+[2020-11-28 15:09:40,685] my_queryset retrieved
+[2020-11-28 15:09:50,965] DataProductsListView.get_queryset()
+[2020-11-28 15:09:50,966] my_queryset retrieved
+[2020-11-28 15:10:01,305] DataProductsListView.get_queryset()
+[2020-11-28 15:10:01,306] my_queryset retrieved
+[2020-11-28 15:10:11,623] DataProductsListView.get_queryset()
+[2020-11-28 15:10:11,627] my_queryset retrieved
+[2020-11-28 15:10:21,903] DataProductsListView.get_queryset()
+[2020-11-28 15:10:21,906] my_queryset retrieved
+[2020-11-28 15:10:32,229] DataProductsListView.get_queryset()
+[2020-11-28 15:10:32,232] my_queryset retrieved
+[2020-11-28 15:10:42,522] DataProductsListView.get_queryset()
+[2020-11-28 15:10:42,523] my_queryset retrieved
+[2020-11-28 15:10:52,820] DataProductsListView.get_queryset()
+[2020-11-28 15:10:52,820] my_queryset retrieved
+[2020-11-28 15:11:03,151] DataProductsListView.get_queryset()
+[2020-11-28 15:11:03,155] my_queryset retrieved
+[2020-11-28 15:11:13,471] DataProductsListView.get_queryset()
+[2020-11-28 15:11:13,473] my_queryset retrieved
+[2020-11-28 15:11:23,758] DataProductsListView.get_queryset()
+[2020-11-28 15:11:23,761] my_queryset retrieved
+[2020-11-28 15:11:34,060] DataProductsListView.get_queryset()
+[2020-11-28 15:11:34,062] my_queryset retrieved
+[2020-11-28 15:11:44,365] DataProductsListView.get_queryset()
+[2020-11-28 15:11:44,367] my_queryset retrieved
+[2020-11-28 15:11:54,661] DataProductsListView.get_queryset()
+[2020-11-28 15:11:54,662] my_queryset retrieved
+[2020-11-28 15:12:04,938] DataProductsListView.get_queryset()
+[2020-11-28 15:12:04,941] my_queryset retrieved
+[2020-11-28 15:12:15,244] DataProductsListView.get_queryset()
+[2020-11-28 15:12:15,245] my_queryset retrieved
+[2020-11-28 15:12:25,548] DataProductsListView.get_queryset()
+[2020-11-28 15:12:25,550] my_queryset retrieved
+[2020-11-28 15:12:35,860] DataProductsListView.get_queryset()
+[2020-11-28 15:12:35,861] my_queryset retrieved
+[2020-11-28 15:12:46,179] DataProductsListView.get_queryset()
+[2020-11-28 15:12:46,181] my_queryset retrieved
+[2020-11-28 15:12:56,473] DataProductsListView.get_queryset()
+[2020-11-28 15:12:56,476] my_queryset retrieved
+[2020-11-28 15:13:06,779] DataProductsListView.get_queryset()
+[2020-11-28 15:13:06,781] my_queryset retrieved
+[2020-11-28 15:13:17,083] DataProductsListView.get_queryset()
+[2020-11-28 15:13:17,085] my_queryset retrieved
+[2020-11-28 15:13:27,358] DataProductsListView.get_queryset()
+[2020-11-28 15:13:27,360] my_queryset retrieved
+[2020-11-28 15:13:37,639] DataProductsListView.get_queryset()
+[2020-11-28 15:13:37,640] my_queryset retrieved
+[2020-11-28 15:13:47,939] DataProductsListView.get_queryset()
+[2020-11-28 15:13:47,941] my_queryset retrieved
+[2020-11-28 15:13:58,239] DataProductsListView.get_queryset()
+[2020-11-28 15:13:58,240] my_queryset retrieved
+[2020-11-28 15:14:08,558] DataProductsListView.get_queryset()
+[2020-11-28 15:14:08,561] my_queryset retrieved
+[2020-11-28 15:14:19,145] DataProductsListView.get_queryset()
+[2020-11-28 15:14:19,147] my_queryset retrieved
+[2020-11-28 15:14:29,475] DataProductsListView.get_queryset()
+[2020-11-28 15:14:29,477] my_queryset retrieved
+[2020-11-28 15:14:39,906] DataProductsListView.get_queryset()
+[2020-11-28 15:14:39,907] my_queryset retrieved
+[2020-11-28 15:14:46,069] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:14:46,070] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:14:46,624] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:14:46,625] update observation = 090311013
+[2020-11-28 15:14:49,387] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:14:49,387] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:14:49,788] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:14:49,788] update observation = 090311013
+[2020-11-28 15:14:50,215] DataProductsListView.get_queryset()
+[2020-11-28 15:14:50,217] my_queryset retrieved
+[2020-11-28 15:15:00,563] DataProductsListView.get_queryset()
+[2020-11-28 15:15:00,567] my_queryset retrieved
+[2020-11-28 15:15:10,857] DataProductsListView.get_queryset()
+[2020-11-28 15:15:10,860] my_queryset retrieved
+[2020-11-28 15:15:21,150] DataProductsListView.get_queryset()
+[2020-11-28 15:15:21,151] my_queryset retrieved
+[2020-11-28 15:15:23,343] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:23,343] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:23,460] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:23,461] update observation = 090311013
+[2020-11-28 15:15:25,846] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:25,846] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:26,292] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:26,293] update observation = 090311013
+[2020-11-28 15:15:28,946] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:28,947] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:29,420] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:29,420] update observation = 090311013
+[2020-11-28 15:15:31,429] DataProductsListView.get_queryset()
+[2020-11-28 15:15:31,430] my_queryset retrieved
+[2020-11-28 15:15:31,995] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:31,995] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:32,398] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:32,399] update observation = 090311013
+[2020-11-28 15:15:34,981] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:34,981] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:35,438] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 15:15:35,439] update observation = 090311013
+[2020-11-28 15:15:41,714] DataProductsListView.get_queryset()
+[2020-11-28 15:15:41,717] my_queryset retrieved
+[2020-11-28 15:15:52,054] DataProductsListView.get_queryset()
+[2020-11-28 15:15:52,059] my_queryset retrieved
+[2020-11-28 15:16:02,402] DataProductsListView.get_queryset()
+[2020-11-28 15:16:02,405] my_queryset retrieved
+[2020-11-28 15:16:13,009] DataProductsListView.get_queryset()
+[2020-11-28 15:16:13,010] my_queryset retrieved
+[2020-11-28 15:16:23,482] DataProductsListView.get_queryset()
+[2020-11-28 15:16:23,484] my_queryset retrieved
+[2020-11-28 15:16:33,907] DataProductsListView.get_queryset()
+[2020-11-28 15:16:33,909] my_queryset retrieved
+[2020-11-28 15:16:44,325] DataProductsListView.get_queryset()
+[2020-11-28 15:16:44,325] my_queryset retrieved
+[2020-11-28 15:16:54,648] DataProductsListView.get_queryset()
+[2020-11-28 15:16:54,651] my_queryset retrieved
+[2020-11-28 15:17:04,940] DataProductsListView.get_queryset()
+[2020-11-28 15:17:04,941] my_queryset retrieved
+[2020-11-28 15:17:15,294] DataProductsListView.get_queryset()
+[2020-11-28 15:17:15,296] my_queryset retrieved
+[2020-11-28 15:17:25,596] DataProductsListView.get_queryset()
+[2020-11-28 15:17:25,599] my_queryset retrieved
+[2020-11-28 15:17:35,916] DataProductsListView.get_queryset()
+[2020-11-28 15:17:35,917] my_queryset retrieved
+[2020-11-28 15:17:46,196] DataProductsListView.get_queryset()
+[2020-11-28 15:17:46,197] my_queryset retrieved
+[2020-11-28 15:17:56,620] DataProductsListView.get_queryset()
+[2020-11-28 15:17:56,624] my_queryset retrieved
+[2020-11-28 15:18:07,268] DataProductsListView.get_queryset()
+[2020-11-28 15:18:07,272] my_queryset retrieved
+[2020-11-28 15:18:17,629] DataProductsListView.get_queryset()
+[2020-11-28 15:18:17,631] my_queryset retrieved
+[2020-11-28 15:18:27,915] DataProductsListView.get_queryset()
+[2020-11-28 15:18:27,916] my_queryset retrieved
+[2020-11-28 15:18:38,267] DataProductsListView.get_queryset()
+[2020-11-28 15:18:38,269] my_queryset retrieved
+[2020-11-28 15:18:48,549] DataProductsListView.get_queryset()
+[2020-11-28 15:18:48,550] my_queryset retrieved
+[2020-11-28 15:18:58,845] DataProductsListView.get_queryset()
+[2020-11-28 15:18:58,848] my_queryset retrieved
+[2020-11-28 15:19:09,172] DataProductsListView.get_queryset()
+[2020-11-28 15:19:09,176] my_queryset retrieved
+[2020-11-28 15:19:19,465] DataProductsListView.get_queryset()
+[2020-11-28 15:19:19,465] my_queryset retrieved
+[2020-11-28 15:19:29,765] DataProductsListView.get_queryset()
+[2020-11-28 15:19:29,766] my_queryset retrieved
+[2020-11-28 15:19:39,536] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:39,536] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:40,079] DataProductsListView.get_queryset()
+[2020-11-28 15:19:40,081] my_queryset retrieved
+[2020-11-28 15:19:40,097] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:40,098] update observation = 090311009
+[2020-11-28 15:19:42,698] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:42,698] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:43,133] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:43,133] update observation = 090311009
+[2020-11-28 15:19:45,719] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:45,720] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:45,751] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:45,751] update observation = 090311009
+[2020-11-28 15:19:48,116] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:48,117] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:48,614] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:48,614] update observation = 090311009
+[2020-11-28 15:19:50,368] DataProductsListView.get_queryset()
+[2020-11-28 15:19:50,369] my_queryset retrieved
+[2020-11-28 15:19:51,194] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:51,195] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:51,710] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:19:51,716] update observation = 090311009
+[2020-11-28 15:20:00,659] DataProductsListView.get_queryset()
+[2020-11-28 15:20:00,661] my_queryset retrieved
+[2020-11-28 15:20:10,960] DataProductsListView.get_queryset()
+[2020-11-28 15:20:10,963] my_queryset retrieved
+[2020-11-28 15:20:21,284] DataProductsListView.get_queryset()
+[2020-11-28 15:20:21,285] my_queryset retrieved
+[2020-11-28 15:20:31,586] DataProductsListView.get_queryset()
+[2020-11-28 15:20:31,588] my_queryset retrieved
+[2020-11-28 15:20:41,905] DataProductsListView.get_queryset()
+[2020-11-28 15:20:41,906] my_queryset retrieved
+[2020-11-28 15:20:44,207] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:44,207] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:44,653] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:44,654] update observation = 090311009
+[2020-11-28 15:20:47,327] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:47,327] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:47,751] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:47,753] update observation = 090311009
+[2020-11-28 15:20:50,445] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:50,446] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:50,623] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:50,623] update observation = 090311009
+[2020-11-28 15:20:52,200] DataProductsListView.get_queryset()
+[2020-11-28 15:20:52,203] my_queryset retrieved
+[2020-11-28 15:20:53,046] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:53,047] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:53,485] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:53,486] update observation = 090311009
+[2020-11-28 15:20:56,073] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:56,073] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:56,593] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 15:20:56,594] update observation = 090311009
+[2020-11-28 15:21:02,499] DataProductsListView.get_queryset()
+[2020-11-28 15:21:02,500] my_queryset retrieved
+[2020-11-28 15:21:12,807] DataProductsListView.get_queryset()
+[2020-11-28 15:21:12,809] my_queryset retrieved
+[2020-11-28 15:21:23,151] DataProductsListView.get_queryset()
+[2020-11-28 15:21:23,154] my_queryset retrieved
+[2020-11-28 15:21:33,424] DataProductsListView.get_queryset()
+[2020-11-28 15:21:33,425] my_queryset retrieved
+[2020-11-28 15:21:43,684] DataProductsListView.get_queryset()
+[2020-11-28 15:21:43,685] my_queryset retrieved
+[2020-11-28 15:21:54,004] DataProductsListView.get_queryset()
+[2020-11-28 15:21:54,006] my_queryset retrieved
+[2020-11-28 15:22:04,300] DataProductsListView.get_queryset()
+[2020-11-28 15:22:04,303] my_queryset retrieved
+[2020-11-28 15:22:14,597] DataProductsListView.get_queryset()
+[2020-11-28 15:22:14,599] my_queryset retrieved
+[2020-11-28 15:22:24,876] DataProductsListView.get_queryset()
+[2020-11-28 15:22:24,878] my_queryset retrieved
+[2020-11-28 15:22:35,164] DataProductsListView.get_queryset()
+[2020-11-28 15:22:35,166] my_queryset retrieved
+[2020-11-28 15:22:45,438] DataProductsListView.get_queryset()
+[2020-11-28 15:22:45,440] my_queryset retrieved
+[2020-11-28 15:22:55,721] DataProductsListView.get_queryset()
+[2020-11-28 15:22:55,722] my_queryset retrieved
+[2020-11-28 15:23:06,012] DataProductsListView.get_queryset()
+[2020-11-28 15:23:06,013] my_queryset retrieved
+[2020-11-28 15:23:16,320] DataProductsListView.get_queryset()
+[2020-11-28 15:23:16,323] my_queryset retrieved
+[2020-11-28 15:23:26,604] DataProductsListView.get_queryset()
+[2020-11-28 15:23:26,606] my_queryset retrieved
+[2020-11-28 15:23:36,959] DataProductsListView.get_queryset()
+[2020-11-28 15:23:36,961] my_queryset retrieved
+[2020-11-28 15:23:47,472] DataProductsListView.get_queryset()
+[2020-11-28 15:23:47,473] my_queryset retrieved
+[2020-11-28 15:23:58,046] DataProductsListView.get_queryset()
+[2020-11-28 15:23:58,052] my_queryset retrieved
+[2020-11-28 15:24:08,381] DataProductsListView.get_queryset()
+[2020-11-28 15:24:08,382] my_queryset retrieved
+[2020-11-28 15:24:18,929] DataProductsListView.get_queryset()
+[2020-11-28 15:24:18,931] my_queryset retrieved
+[2020-11-28 15:24:29,292] DataProductsListView.get_queryset()
+[2020-11-28 15:24:29,293] my_queryset retrieved
+[2020-11-28 15:24:39,632] DataProductsListView.get_queryset()
+[2020-11-28 15:24:39,634] my_queryset retrieved
+[2020-11-28 15:24:49,950] DataProductsListView.get_queryset()
+[2020-11-28 15:24:49,952] my_queryset retrieved
+[2020-11-28 15:25:00,549] DataProductsListView.get_queryset()
+[2020-11-28 15:25:00,550] my_queryset retrieved
+[2020-11-28 15:25:12,397] DataProductsListView.get_queryset()
+[2020-11-28 15:25:12,398] my_queryset retrieved
+[2020-11-28 15:25:22,715] DataProductsListView.get_queryset()
+[2020-11-28 15:25:22,716] my_queryset retrieved
+[2020-11-28 15:25:33,016] DataProductsListView.get_queryset()
+[2020-11-28 15:25:33,018] my_queryset retrieved
+[2020-11-28 15:25:43,298] DataProductsListView.get_queryset()
+[2020-11-28 15:25:43,300] my_queryset retrieved
+[2020-11-28 15:25:53,574] DataProductsListView.get_queryset()
+[2020-11-28 15:25:53,575] my_queryset retrieved
+[2020-11-28 15:26:03,860] DataProductsListView.get_queryset()
+[2020-11-28 15:26:03,862] my_queryset retrieved
+[2020-11-28 15:26:14,161] DataProductsListView.get_queryset()
+[2020-11-28 15:26:14,163] my_queryset retrieved
+[2020-11-28 15:26:24,437] DataProductsListView.get_queryset()
+[2020-11-28 15:26:24,438] my_queryset retrieved
+[2020-11-28 15:26:34,734] DataProductsListView.get_queryset()
+[2020-11-28 15:26:34,735] my_queryset retrieved
+[2020-11-28 15:26:45,035] DataProductsListView.get_queryset()
+[2020-11-28 15:26:45,037] my_queryset retrieved
+[2020-11-28 15:26:55,342] DataProductsListView.get_queryset()
+[2020-11-28 15:26:55,345] my_queryset retrieved
+[2020-11-28 15:27:05,675] DataProductsListView.get_queryset()
+[2020-11-28 15:27:05,677] my_queryset retrieved
+[2020-11-28 15:27:16,185] DataProductsListView.get_queryset()
+[2020-11-28 15:27:16,187] my_queryset retrieved
+[2020-11-28 15:27:26,452] DataProductsListView.get_queryset()
+[2020-11-28 15:27:26,454] my_queryset retrieved
+[2020-11-28 15:27:36,743] DataProductsListView.get_queryset()
+[2020-11-28 15:27:36,746] my_queryset retrieved
+[2020-11-28 15:27:47,034] DataProductsListView.get_queryset()
+[2020-11-28 15:27:47,036] my_queryset retrieved
+[2020-11-28 15:27:57,319] DataProductsListView.get_queryset()
+[2020-11-28 15:27:57,320] my_queryset retrieved

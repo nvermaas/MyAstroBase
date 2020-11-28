@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 def dispatch_job(command, observation_id):
 
+    # /my_astrobase/run-command/?command=grid&observation_id=2410
     if command == "grid":
         observation = Observation.objects.get(id=observation_id)
 
@@ -31,5 +32,25 @@ def dispatch_job(command, observation_id):
         parameters = str(path1[1] + ',' + str(path1[2]))
         job = Job(command='min_max', parameters=parameters, status="new")
         job.save()
+
+
+    # update min/max ra and dec for all observations with a fits file
+    # /my_astrobase/run-command?command=all_min_max
+    if command == "all_min_max":
+        # find all observations with a fits file, and create a min_max job for all of them
+        #obs_with_fits = Observation.objects.filter(generated_dataproducts__dataproduct_type='fits')
+        obs = Observation.objects.all()
+
+        for observation in obs:
+
+            try:
+                path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+                parameters = str(path1[1] + ',' + str(path1[2]))
+                job = Job(command='min_max', parameters=parameters, status="new")
+                job.save()
+                print('ok: ' + str(observation))
+            except:
+                print('failed: '+str(observation))
+
 
     return "dispatched"

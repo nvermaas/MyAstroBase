@@ -38,12 +38,28 @@ class ObservationFilter(filters.FilterSet):
     # example: http://localhost:8000/my_astrobase/observations/?fieldsearch=aurora
     fieldsearch = filters.CharFilter(field_name='fieldsearch', method='search_my_fields')
 
+    # example: http://localhost:8000/my_astrobase/observations/?coordsearch=212,48
+    coordsearch = filters.CharFilter(field_name='coordsearch', method='search_my_coords')
+
     def search_my_fields(self, queryset, name, value):
         return queryset.filter(
             Q(name__icontains=value) | Q(field_name__icontains=value) |
             Q(quality__icontains=value)| Q(my_status__icontains=value)|
             Q(taskID__icontains=value) | Q(parent__taskID__icontains=value)
         )
+
+    def search_my_coords(self, queryset, name, value):
+        # value is a comma separated decimal RA,dec coordinate
+        # chain the filters to create a query to find the coordinate in the bounding box of observations
+        ra,dec = value.split(',')
+        search_ra = float(ra.strip())
+        search_dec = float(dec.strip())
+        q = queryset.filter(ra_min__lte=search_ra)\
+            .filter(ra_max__gte=search_ra)\
+            .filter(dec_min__lte=search_dec)\
+            .filter(dec_max__gte=search_dec)
+        return q
+
 
     class Meta:
         model = Observation
@@ -76,7 +92,11 @@ class ObservationFilter(filters.FilterSet):
             'stacked_images' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'magnitude' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'image_type': ['icontains', 'exact'],
-            'fieldsearch': ['exact', 'icontains', 'in']
+            'fieldsearch': ['exact', 'icontains', 'in'],
+            'coordsearch': ['exact'],
+
+            # &generated_dataproducts__dataproduct_type=fits
+            'generated_dataproducts__dataproduct_type': ['exact', 'icontains', 'in']
         }
 
 
