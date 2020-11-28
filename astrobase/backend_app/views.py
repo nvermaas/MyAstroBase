@@ -58,6 +58,10 @@ class ObservationFilter(filters.FilterSet):
             'field_ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'field_fov': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'ra_min': ['gt', 'lt', 'gte', 'lte'],
+            'ra_max': ['gt', 'lt', 'gte', 'lte'],
+            'dec_min': ['gt', 'lt', 'gte', 'lte'],
+            'dec_max': ['gt', 'lt', 'gte', 'lte'],
             'name': ['exact', 'icontains','in'],
             'description': ['exact', 'icontains', 'in'],
             'my_status': ['exact', 'icontains', 'in', 'startswith'],          #/my_astrobase/observations?&my_status__in=archived,removing

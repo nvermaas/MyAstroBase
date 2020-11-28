@@ -16547,3 +16547,371 @@
 [2020-11-19 19:56:11,538] handle_post_save(4426976_annotated_grid.jpg)
 [2020-11-19 19:56:11,539] save new dataproduct
 [2020-11-19 19:56:11,548] update dataproduct parent = 200801003
+[2020-11-21 20:42:19,893] add_dataproducts(200726001,1)
+[2020-11-21 20:42:19,918] addding dataproduct: 4408675_annotated_grid.jpg
+[2020-11-21 20:42:19,919] SIGNAL : pre_save DataProduct(4408675_annotated_grid.jpg)
+[2020-11-21 20:42:19,920] handle_pre_save(4408675_annotated_grid.jpg)
+[2020-11-21 20:42:20,140] handle_post_save(4408675_annotated_grid.jpg)
+[2020-11-21 20:42:20,140] save new dataproduct
+[2020-11-21 20:42:20,337] update dataproduct parent = 200726001
+[2020-11-26 20:30:30,626] add_dataproducts(200915003,1)
+[2020-11-26 20:30:30,634] addding dataproduct: 4588270_annotated_grid.jpg
+[2020-11-26 20:30:30,634] SIGNAL : pre_save DataProduct(4588270_annotated_grid.jpg)
+[2020-11-26 20:30:30,635] handle_pre_save(4588270_annotated_grid.jpg)
+[2020-11-26 20:30:30,647] handle_post_save(4588270_annotated_grid.jpg)
+[2020-11-26 20:30:30,648] save new dataproduct
+[2020-11-26 20:30:30,656] update dataproduct parent = 200915003
+[2020-11-28 07:08:06,693] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:08:06,700] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:08:06,732] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:09:30,312] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:09:30,312] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:09:30,354] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:36,497] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:36,498] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:36,535] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:40,287] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:40,287] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:40,325] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:43,746] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:43,746] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:43,781] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:55,667] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:55,668] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:10:55,704] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:20,088] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:20,088] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:20,126] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:22,486] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:22,486] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:22,523] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:24,910] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:24,911] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:24,950] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:27,333] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:27,334] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:15:27,372] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:43,713] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:43,713] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:43,750] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:46,104] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:46,105] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:46,144] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:48,499] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:48,500] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:48,540] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:50,905] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:50,905] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:16:50,941] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:17:04,639] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:17:04,640] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:17:04,677] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:50,386] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:50,386] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:50,417] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:52,667] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:52,668] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:52,695] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:54,977] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:54,977] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:55,007] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:57,249] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:57,249] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:57,280] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:59,487] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:59,488] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:48:59,513] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:49,459] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:49,459] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:49,487] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:51,734] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:51,735] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:51,763] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:54,066] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:54,067] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:54,096] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:56,354] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:56,355] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:56,378] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:58,652] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:58,652] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:52:58,679] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:31,754] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:31,754] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:31,774] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:34,028] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:34,034] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:34,059] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:36,304] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:36,304] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:36,333] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:38,599] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:38,600] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:38,620] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:40,923] SIGNAL : pre_save Observation(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:40,923] handle_pre_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 07:57:40,946] handle_post_save(200915003 - Morvan Zenith - Cygnus, Lyra, Cepheus, Draco, Hercules, Lacerta, Milky Way)
+[2020-11-28 08:09:08,497] SIGNAL : pre_save Observation(200726001 - Ursa Major - Ursa Major, Canis Venatici)
+[2020-11-28 08:09:08,498] handle_pre_save(200726001 - Ursa Major - Ursa Major, Canis Venatici)
+[2020-11-28 08:09:08,527] handle_post_save(200726001 - Ursa Major - Ursa Major, Canis Venatici)
+[2020-11-28 08:09:08,527] update observation = 200726001
+[2020-11-28 08:09:46,269] SIGNAL : pre_save Observation(200726001 - Ursa Major - Ursa Major, Canis Venatici)
+[2020-11-28 08:09:46,269] handle_pre_save(200726001 - Ursa Major - Ursa Major, Canis Venatici)
+[2020-11-28 08:09:46,302] handle_post_save(200726001 - Ursa Major - Ursa Major, Canis Venatici)
+[2020-11-28 08:09:46,303] update observation = 200726001
+[2020-11-28 08:18:17,486] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:18:17,486] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:18:17,921] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:18:17,922] update observation = 200801003
+[2020-11-28 08:23:57,095] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:23:57,096] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:23:57,529] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:23:57,529] update observation = 200801003
+[2020-11-28 08:24:00,023] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:00,023] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:00,434] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:00,434] update observation = 200801003
+[2020-11-28 08:24:02,883] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:02,883] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:03,297] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:03,297] update observation = 200801003
+[2020-11-28 08:24:05,782] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:05,782] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:06,219] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:06,220] update observation = 200801003
+[2020-11-28 08:24:08,699] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:08,699] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:09,111] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:24:09,111] update observation = 200801003
+[2020-11-28 08:29:18,580] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:18,580] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:18,753] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:18,754] update observation = 200801003
+[2020-11-28 08:29:20,999] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:21,000] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:21,034] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:21,034] update observation = 200801003
+[2020-11-28 08:29:23,291] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:23,291] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:24,205] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:24,332] update observation = 200801003
+[2020-11-28 08:29:26,984] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:26,984] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:27,505] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:29:27,505] update observation = 200801003
+[2020-11-28 08:31:15,575] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:15,576] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:16,251] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:16,251] update observation = 200801003
+[2020-11-28 08:31:18,698] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:18,698] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:19,185] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:19,186] update observation = 200801003
+[2020-11-28 08:31:21,617] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:21,618] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:22,030] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:22,031] update observation = 200801003
+[2020-11-28 08:31:24,494] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:24,494] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:25,012] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 08:31:25,013] update observation = 200801003
+[2020-11-28 08:39:42,115] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:42,116] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:42,547] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:42,548] update observation = 201120005
+[2020-11-28 08:39:45,048] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:45,048] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:45,561] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:45,561] update observation = 201120005
+[2020-11-28 08:39:48,222] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:48,222] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:48,931] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:48,932] update observation = 201120005
+[2020-11-28 08:39:51,573] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:51,574] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:52,076] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 08:39:52,076] update observation = 201120005
+[2020-11-28 09:55:50,004] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:50,005] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:50,617] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:50,617] update observation = 201120005
+[2020-11-28 09:55:53,072] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:53,073] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:53,564] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:53,564] update observation = 201120005
+[2020-11-28 09:55:56,073] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:56,073] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:56,533] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:56,533] update observation = 201120005
+[2020-11-28 09:55:59,055] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:59,056] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:59,567] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 09:55:59,567] update observation = 201120005
+[2020-11-28 10:00:45,278] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:45,279] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:46,023] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:46,023] update observation = 201120005
+[2020-11-28 10:00:48,470] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:48,470] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:48,896] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:48,897] update observation = 201120005
+[2020-11-28 10:00:51,473] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:51,473] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:51,896] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:51,896] update observation = 201120005
+[2020-11-28 10:00:54,385] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:54,385] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:54,860] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:00:54,861] update observation = 201120005
+[2020-11-28 10:06:34,633] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:34,633] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:35,094] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:35,095] update observation = 201120005
+[2020-11-28 10:06:37,759] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:37,759] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:38,199] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:38,199] update observation = 201120005
+[2020-11-28 10:06:40,820] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:40,821] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:41,290] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:41,291] update observation = 201120005
+[2020-11-28 10:06:43,958] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:43,959] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:44,444] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:06:44,444] update observation = 201120005
+[2020-11-28 10:07:42,026] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:07:42,027] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:07:42,528] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:07:42,528] update observation = 201120005
+[2020-11-28 10:20:11,243] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:11,244] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:11,669] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:11,669] update observation = 201120005
+[2020-11-28 10:20:14,219] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:14,219] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:14,640] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:14,641] update observation = 201120005
+[2020-11-28 10:20:17,276] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:17,276] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:17,710] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:17,710] update observation = 201120005
+[2020-11-28 10:20:20,263] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:20,264] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:20,708] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:20:20,709] update observation = 201120005
+[2020-11-28 10:25:26,950] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:26,951] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:27,481] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:27,481] update observation = 201120005
+[2020-11-28 10:25:30,053] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:30,054] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:30,305] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:30,306] update observation = 201120005
+[2020-11-28 10:25:32,676] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:32,677] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:33,606] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:33,606] update observation = 201120005
+[2020-11-28 10:25:36,634] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:36,634] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:37,197] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:25:37,198] update observation = 201120005
+[2020-11-28 10:30:28,630] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:28,630] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:28,664] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:28,664] update observation = 201120005
+[2020-11-28 10:30:31,003] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:31,004] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:31,475] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:31,475] update observation = 201120005
+[2020-11-28 10:30:34,081] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:34,081] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:34,552] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:34,553] update observation = 201120005
+[2020-11-28 10:30:37,160] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:37,160] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:37,604] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:37,604] update observation = 201120005
+[2020-11-28 10:30:43,418] SIGNAL : pre_save Observation(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:43,418] handle_pre_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:43,835] handle_post_save(201120005 - 8 Flora - Cetus, Flora)
+[2020-11-28 10:30:43,835] update observation = 201120005
+[2020-11-28 10:44:10,092] SIGNAL : pre_save Observation(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:10,093] handle_pre_save(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:10,540] handle_post_save(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:10,542] update observation = 201023011
+[2020-11-28 10:44:14,034] SIGNAL : pre_save Observation(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:14,035] handle_pre_save(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:14,258] handle_post_save(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:14,258] update observation = 201023011
+[2020-11-28 10:44:17,058] SIGNAL : pre_save Observation(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:17,060] handle_pre_save(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:18,981] handle_post_save(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:18,982] update observation = 201023011
+[2020-11-28 10:44:22,296] SIGNAL : pre_save Observation(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:22,296] handle_pre_save(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:23,192] handle_post_save(201023011 - Fish Head - Pisces)
+[2020-11-28 10:44:23,193] update observation = 201023011
+[2020-11-28 10:45:57,800] SIGNAL : pre_save Observation(201023011 - Fish Head - Pisces)
+[2020-11-28 10:45:57,801] handle_pre_save(201023011 - Fish Head - Pisces)
+[2020-11-28 10:45:58,302] handle_post_save(201023011 - Fish Head - Pisces)
+[2020-11-28 10:45:58,303] update observation = 201023011
+[2020-11-28 10:48:25,128] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:25,129] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:25,638] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:25,638] update observation = 200801003
+[2020-11-28 10:48:28,462] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:28,465] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:28,946] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:28,947] update observation = 200801003
+[2020-11-28 10:48:31,751] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:31,758] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:32,221] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:32,222] update observation = 200801003
+[2020-11-28 10:48:35,002] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:35,006] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:35,453] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:48:35,454] update observation = 200801003
+[2020-11-28 10:49:01,082] SIGNAL : pre_save Observation(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:49:01,083] handle_pre_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:49:01,796] handle_post_save(200801003 - M31 with Siril - M31, Andromeda Galaxy, M32, M110)
+[2020-11-28 10:49:01,797] update observation = 200801003
+[2020-11-28 10:50:42,041] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:42,041] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:42,521] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:42,522] update observation = 201120006
+[2020-11-28 10:50:45,140] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:45,140] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:45,729] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:45,730] update observation = 201120006
+[2020-11-28 10:50:49,024] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:49,024] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:49,568] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:49,569] update observation = 201120006
+[2020-11-28 10:50:52,457] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:52,462] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:53,032] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:53,033] update observation = 201120006
+[2020-11-28 10:50:55,825] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:55,825] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:56,123] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:50:56,124] update observation = 201120006
+[2020-11-28 10:54:43,732] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:43,733] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:44,164] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:44,165] update observation = 201120006
+[2020-11-28 10:54:46,873] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:46,873] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:47,379] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:47,379] update observation = 201120006
+[2020-11-28 10:54:49,963] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:49,964] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:50,467] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:50,467] update observation = 201120006
+[2020-11-28 10:54:53,045] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:53,045] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:53,524] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:53,527] update observation = 201120006
+[2020-11-28 10:54:56,097] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:56,097] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:56,543] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-11-28 10:54:56,544] update observation = 201120006

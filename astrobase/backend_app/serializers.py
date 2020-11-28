@@ -64,7 +64,8 @@ class ObservationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Observation
         fields = ('id','task_type', 'name', 'instrument','filter','process_type','taskID',
-                  'field_name','field_ra','field_dec','field_fov','date','size',
+                  'field_name','field_ra','field_dec','field_fov',
+                  'ra_min', 'ra_max','dec_min', 'dec_max','ra_dec_fov','date','size',
                   'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
                   'derived_annotated_grid_image','derived_sky_globe_image','derived_fits',
                   'my_status','new_status','status_history','job','url',
