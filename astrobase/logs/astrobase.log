@@ -16915,3 +16915,70 @@
 [2020-11-28 10:54:56,097] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
 [2020-11-28 10:54:56,543] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
 [2020-11-28 10:54:56,544] update observation = 201120006
+[2020-11-28 11:15:20,573] SIGNAL : pre_save Observation(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:20,573] handle_pre_save(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:21,003] handle_post_save(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:21,004] update observation = 201120002
+[2020-11-28 11:15:23,882] SIGNAL : pre_save Observation(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:23,885] handle_pre_save(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:24,378] handle_post_save(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:24,379] update observation = 201120002
+[2020-11-28 11:15:27,345] SIGNAL : pre_save Observation(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:27,346] handle_pre_save(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:28,522] handle_post_save(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:28,522] update observation = 201120002
+[2020-11-28 11:15:31,227] SIGNAL : pre_save Observation(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:31,227] handle_pre_save(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:31,567] handle_post_save(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:31,568] update observation = 201120002
+[2020-11-28 11:15:33,979] SIGNAL : pre_save Observation(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:33,979] handle_pre_save(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:34,006] handle_post_save(201120002 - Soutern Fish - Pisces Austrinus, Aquarius)
+[2020-11-28 11:15:34,006] update observation = 201120002
+[2020-11-28 11:24:25,227] add_dataproducts(090311013,1)
+[2020-11-28 11:24:25,231] addding dataproduct: 3680550_annotated_grid.jpg
+[2020-11-28 11:24:25,232] SIGNAL : pre_save DataProduct(3680550_annotated_grid.jpg)
+[2020-11-28 11:24:25,232] handle_pre_save(3680550_annotated_grid.jpg)
+[2020-11-28 11:24:25,476] handle_post_save(3680550_annotated_grid.jpg)
+[2020-11-28 11:24:25,477] save new dataproduct
+[2020-11-28 11:24:25,681] update dataproduct parent = 090311013
+[2020-11-28 11:24:28,273] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:28,274] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:28,716] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:28,717] update observation = 090311013
+[2020-11-28 11:24:31,254] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:31,255] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:32,093] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:32,095] update observation = 090311013
+[2020-11-28 11:24:34,825] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:34,825] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:35,261] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:35,261] update observation = 090311013
+[2020-11-28 11:24:37,821] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:37,821] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:38,545] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:38,546] update observation = 090311013
+[2020-11-28 11:24:41,240] SIGNAL : pre_save Observation(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:41,241] handle_pre_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:41,684] handle_post_save(090311013 - Southern Cross (raw) - Crux, Centaurus)
+[2020-11-28 11:24:41,684] update observation = 090311013
+[2020-11-28 11:30:58,024] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:30:58,025] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:30:58,449] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:30:58,449] update observation = 090311009
+[2020-11-28 11:31:00,976] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:00,976] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:01,401] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:01,402] update observation = 090311009
+[2020-11-28 11:31:04,009] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:04,014] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:04,492] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:04,492] update observation = 090311009
+[2020-11-28 11:31:07,059] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:07,059] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:07,525] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:07,525] update observation = 090311009
+[2020-11-28 11:31:10,144] SIGNAL : pre_save Observation(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:10,145] handle_pre_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:10,638] handle_post_save(090311009 - Centaurus - Centaurus, Crux)
+[2020-11-28 11:31:10,639] update observation = 090311009

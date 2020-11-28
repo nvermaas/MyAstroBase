@@ -141,10 +141,10 @@ class Observation(TaskObject):
     field_dec = models.FloatField('field_dec', null = True)
     field_fov = models.FloatField('field_fov', null=True)
 
-    ra_min = models.FloatField('ra_min', null=True)
-    ra_max = models.FloatField('ra_max', null=True)
-    dec_min = models.FloatField('dec_min', null=True)
-    dec_max = models.FloatField('dec_max', null=True)
+    ra_min = models.FloatField('ra_min', null=True, blank=True)
+    ra_max = models.FloatField('ra_max', null=True, blank=True)
+    dec_min = models.FloatField('dec_min', null=True, blank=True)
+    dec_max = models.FloatField('dec_max', null=True, blank=True)
     ra_dec_fov = models.CharField(max_length=30, null=True, blank=True)
 
     quality = models.CharField(max_length=30, default="good", null=True)
