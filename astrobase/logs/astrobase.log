@@ -17557,3 +17557,328 @@
 [2020-11-28 15:27:47,036] my_queryset retrieved
 [2020-11-28 15:27:57,319] DataProductsListView.get_queryset()
 [2020-11-28 15:27:57,320] my_queryset retrieved
+[2020-11-28 15:28:07,587] DataProductsListView.get_queryset()
+[2020-11-28 15:28:07,590] my_queryset retrieved
+[2020-11-28 15:28:17,878] DataProductsListView.get_queryset()
+[2020-11-28 15:28:17,880] my_queryset retrieved
+[2020-11-28 15:28:28,226] DataProductsListView.get_queryset()
+[2020-11-28 15:28:28,229] my_queryset retrieved
+[2020-11-28 15:28:38,503] DataProductsListView.get_queryset()
+[2020-11-28 15:28:38,504] my_queryset retrieved
+[2020-11-28 15:28:48,765] DataProductsListView.get_queryset()
+[2020-11-28 15:28:48,767] my_queryset retrieved
+[2020-11-28 15:28:59,068] DataProductsListView.get_queryset()
+[2020-11-28 15:28:59,069] my_queryset retrieved
+[2020-11-28 15:29:09,345] DataProductsListView.get_queryset()
+[2020-11-28 15:29:09,347] my_queryset retrieved
+[2020-11-28 15:29:19,633] DataProductsListView.get_queryset()
+[2020-11-28 15:29:19,635] my_queryset retrieved
+[2020-11-28 15:29:29,906] DataProductsListView.get_queryset()
+[2020-11-28 15:29:29,907] my_queryset retrieved
+[2020-11-28 15:29:40,233] DataProductsListView.get_queryset()
+[2020-11-28 15:29:40,234] my_queryset retrieved
+[2020-11-28 15:29:50,551] DataProductsListView.get_queryset()
+[2020-11-28 15:29:50,554] my_queryset retrieved
+[2020-11-28 15:30:00,870] DataProductsListView.get_queryset()
+[2020-11-28 15:30:00,872] my_queryset retrieved
+[2020-11-28 15:30:11,146] DataProductsListView.get_queryset()
+[2020-11-28 15:30:11,148] my_queryset retrieved
+[2020-11-28 15:30:21,435] DataProductsListView.get_queryset()
+[2020-11-28 15:30:21,436] my_queryset retrieved
+[2020-11-28 15:30:31,728] DataProductsListView.get_queryset()
+[2020-11-28 15:30:31,729] my_queryset retrieved
+[2020-11-28 15:30:42,004] DataProductsListView.get_queryset()
+[2020-11-28 15:30:42,006] my_queryset retrieved
+[2020-11-28 15:30:52,407] DataProductsListView.get_queryset()
+[2020-11-28 15:30:52,408] my_queryset retrieved
+[2020-11-28 15:31:02,689] DataProductsListView.get_queryset()
+[2020-11-28 15:31:02,691] my_queryset retrieved
+[2020-11-28 15:31:13,002] DataProductsListView.get_queryset()
+[2020-11-28 15:31:13,004] my_queryset retrieved
+[2020-11-28 15:31:23,327] DataProductsListView.get_queryset()
+[2020-11-28 15:31:23,332] my_queryset retrieved
+[2020-11-28 15:31:33,615] DataProductsListView.get_queryset()
+[2020-11-28 15:31:33,616] my_queryset retrieved
+[2020-11-28 15:31:43,870] DataProductsListView.get_queryset()
+[2020-11-28 15:31:43,871] my_queryset retrieved
+[2020-11-28 15:31:54,147] DataProductsListView.get_queryset()
+[2020-11-28 15:31:54,148] my_queryset retrieved
+[2020-11-28 15:32:04,426] DataProductsListView.get_queryset()
+[2020-11-28 15:32:04,428] my_queryset retrieved
+[2020-11-28 15:32:14,735] DataProductsListView.get_queryset()
+[2020-11-28 15:32:14,736] my_queryset retrieved
+[2020-11-28 15:32:25,059] DataProductsListView.get_queryset()
+[2020-11-28 15:32:25,061] my_queryset retrieved
+[2020-11-28 15:32:35,397] DataProductsListView.get_queryset()
+[2020-11-28 15:32:35,398] my_queryset retrieved
+[2020-11-28 15:32:45,658] DataProductsListView.get_queryset()
+[2020-11-28 15:32:45,659] my_queryset retrieved
+[2020-11-28 15:32:55,945] DataProductsListView.get_queryset()
+[2020-11-28 15:32:55,946] my_queryset retrieved
+[2020-11-28 15:33:06,258] DataProductsListView.get_queryset()
+[2020-11-28 15:33:06,259] my_queryset retrieved
+[2020-11-28 15:33:16,541] DataProductsListView.get_queryset()
+[2020-11-28 15:33:16,546] my_queryset retrieved
+[2020-11-28 15:33:26,818] DataProductsListView.get_queryset()
+[2020-11-28 15:33:26,820] my_queryset retrieved
+[2020-11-28 15:33:37,106] DataProductsListView.get_queryset()
+[2020-11-28 15:33:37,107] my_queryset retrieved
+[2020-11-28 15:33:47,387] DataProductsListView.get_queryset()
+[2020-11-28 15:33:47,390] my_queryset retrieved
+[2020-11-28 15:33:57,804] DataProductsListView.get_queryset()
+[2020-11-28 15:33:57,808] my_queryset retrieved
+[2020-11-28 15:34:08,094] DataProductsListView.get_queryset()
+[2020-11-28 15:34:08,098] my_queryset retrieved
+[2020-11-28 15:34:18,371] DataProductsListView.get_queryset()
+[2020-11-28 15:34:18,372] my_queryset retrieved
+[2020-11-28 15:34:28,641] DataProductsListView.get_queryset()
+[2020-11-28 15:34:28,642] my_queryset retrieved
+[2020-11-28 15:34:38,953] DataProductsListView.get_queryset()
+[2020-11-28 15:34:38,954] my_queryset retrieved
+[2020-11-28 15:34:49,251] DataProductsListView.get_queryset()
+[2020-11-28 15:34:49,254] my_queryset retrieved
+[2020-11-28 15:34:59,532] DataProductsListView.get_queryset()
+[2020-11-28 15:34:59,534] my_queryset retrieved
+[2020-11-28 15:35:09,823] DataProductsListView.get_queryset()
+[2020-11-28 15:35:09,825] my_queryset retrieved
+[2020-11-28 15:35:20,122] DataProductsListView.get_queryset()
+[2020-11-28 15:35:20,124] my_queryset retrieved
+[2020-11-28 15:35:30,399] DataProductsListView.get_queryset()
+[2020-11-28 15:35:30,401] my_queryset retrieved
+[2020-11-28 15:35:40,729] DataProductsListView.get_queryset()
+[2020-11-28 15:35:40,731] my_queryset retrieved
+[2020-11-28 15:35:51,027] DataProductsListView.get_queryset()
+[2020-11-28 15:35:51,028] my_queryset retrieved
+[2020-11-28 15:36:01,317] DataProductsListView.get_queryset()
+[2020-11-28 15:36:01,318] my_queryset retrieved
+[2020-11-28 15:36:11,644] DataProductsListView.get_queryset()
+[2020-11-28 15:36:11,648] my_queryset retrieved
+[2020-11-28 15:36:21,947] DataProductsListView.get_queryset()
+[2020-11-28 15:36:21,951] my_queryset retrieved
+[2020-11-28 15:36:32,233] DataProductsListView.get_queryset()
+[2020-11-28 15:36:32,235] my_queryset retrieved
+[2020-11-28 15:36:42,508] DataProductsListView.get_queryset()
+[2020-11-28 15:36:42,509] my_queryset retrieved
+[2020-11-28 15:36:52,804] DataProductsListView.get_queryset()
+[2020-11-28 15:36:52,806] my_queryset retrieved
+[2020-11-28 15:37:03,110] DataProductsListView.get_queryset()
+[2020-11-28 15:37:03,119] my_queryset retrieved
+[2020-11-28 15:37:13,444] DataProductsListView.get_queryset()
+[2020-11-28 15:37:13,446] my_queryset retrieved
+[2020-11-28 15:37:23,725] DataProductsListView.get_queryset()
+[2020-11-28 15:37:23,727] my_queryset retrieved
+[2020-11-28 15:37:34,034] DataProductsListView.get_queryset()
+[2020-11-28 15:37:34,036] my_queryset retrieved
+[2020-11-28 15:37:44,369] DataProductsListView.get_queryset()
+[2020-11-28 15:37:44,371] my_queryset retrieved
+[2020-11-28 15:37:54,699] DataProductsListView.get_queryset()
+[2020-11-28 15:37:54,703] my_queryset retrieved
+[2020-11-28 15:38:05,027] DataProductsListView.get_queryset()
+[2020-11-28 15:38:05,030] my_queryset retrieved
+[2020-11-28 15:38:15,341] DataProductsListView.get_queryset()
+[2020-11-28 15:38:15,342] my_queryset retrieved
+[2020-11-28 15:38:25,627] DataProductsListView.get_queryset()
+[2020-11-28 15:38:25,628] my_queryset retrieved
+[2020-11-28 15:38:35,927] DataProductsListView.get_queryset()
+[2020-11-28 15:38:35,929] my_queryset retrieved
+[2020-11-28 15:38:46,227] DataProductsListView.get_queryset()
+[2020-11-28 15:38:46,230] my_queryset retrieved
+[2020-11-28 15:38:56,523] DataProductsListView.get_queryset()
+[2020-11-28 15:38:56,525] my_queryset retrieved
+[2020-11-28 15:39:06,793] DataProductsListView.get_queryset()
+[2020-11-28 15:39:06,795] my_queryset retrieved
+[2020-11-28 15:39:17,102] DataProductsListView.get_queryset()
+[2020-11-28 15:39:17,103] my_queryset retrieved
+[2020-11-28 15:39:27,423] DataProductsListView.get_queryset()
+[2020-11-28 15:39:27,425] my_queryset retrieved
+[2020-11-28 15:39:37,732] DataProductsListView.get_queryset()
+[2020-11-28 15:39:37,736] my_queryset retrieved
+[2020-11-28 15:39:48,052] DataProductsListView.get_queryset()
+[2020-11-28 15:39:48,053] my_queryset retrieved
+[2020-11-28 15:39:58,310] DataProductsListView.get_queryset()
+[2020-11-28 15:39:58,311] my_queryset retrieved
+[2020-11-28 15:40:08,584] DataProductsListView.get_queryset()
+[2020-11-28 15:40:08,586] my_queryset retrieved
+[2020-11-28 15:40:18,862] DataProductsListView.get_queryset()
+[2020-11-28 15:40:18,864] my_queryset retrieved
+[2020-11-28 15:40:29,144] DataProductsListView.get_queryset()
+[2020-11-28 15:40:29,145] my_queryset retrieved
+[2020-11-28 19:40:47,183] add_dataproducts(200819008,1)
+[2020-11-28 19:40:47,184] addding dataproduct: 4480533_annotated_grid.jpg
+[2020-11-28 19:40:47,185] SIGNAL : pre_save DataProduct(4480533_annotated_grid.jpg)
+[2020-11-28 19:40:47,185] handle_pre_save(4480533_annotated_grid.jpg)
+[2020-11-28 19:40:47,391] handle_post_save(4480533_annotated_grid.jpg)
+[2020-11-28 19:40:47,392] save new dataproduct
+[2020-11-28 19:40:47,572] update dataproduct parent = 200819008
+[2020-11-28 19:40:50,042] SIGNAL : pre_save Observation(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:50,042] handle_pre_save(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:50,440] handle_post_save(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:50,440] update observation = 200819008
+[2020-11-28 19:40:52,740] SIGNAL : pre_save Observation(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:52,741] handle_pre_save(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:52,773] handle_post_save(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:52,774] update observation = 200819008
+[2020-11-28 19:40:54,986] SIGNAL : pre_save Observation(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:54,987] handle_pre_save(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:56,226] handle_post_save(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:56,227] update observation = 200819008
+[2020-11-28 19:40:58,912] SIGNAL : pre_save Observation(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:58,912] handle_pre_save(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:59,957] handle_post_save(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:40:59,958] update observation = 200819008
+[2020-11-28 19:41:02,525] SIGNAL : pre_save Observation(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:41:02,525] handle_pre_save(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:41:03,478] handle_post_save(200819008 - Barnard's Star - Ophiuchus, Barnard's Star)
+[2020-11-28 19:41:03,478] update observation = 200819008
+[2020-11-28 20:04:08,610] SIGNAL : pre_save Observation(201121001 - UFO - Cetus, UFO)
+[2020-11-28 20:04:08,610] handle_pre_save(201121001 - UFO - Cetus, UFO)
+[2020-11-28 20:04:08,640] handle_post_save(201121001 - UFO - Cetus, UFO)
+[2020-11-28 20:04:08,640] update observation = 201121001
+[2020-11-28 20:04:40,546] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-28 20:04:40,546] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-28 20:04:40,576] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-28 20:05:14,928] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-28 20:05:14,929] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-28 20:05:15,047] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:50:22,565] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:50:22,565] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:50:22,614] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:51:03,179] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:51:03,179] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:51:03,213] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:53:51,763] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:53:51,763] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:53:51,808] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:54:29,061] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:54:29,062] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:54:29,106] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:54:36,591] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:54:36,592] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:54:36,622] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:55:12,416] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:55:12,416] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:55:12,442] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:55:14,690] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:55:14,691] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:55:14,729] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:56:22,026] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:56:22,027] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 14:56:22,065] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:19:29,189] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:19:29,190] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:19:29,255] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:23:40,318] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:23:40,319] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:23:41,449] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:23:50,859] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:23:50,859] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:23:51,544] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:27:16,809] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:27:16,809] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:27:17,529] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:37:49,230] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:37:49,231] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:37:49,888] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:38:03,900] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:38:03,901] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:38:04,503] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:38:20,169] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:38:20,170] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:38:20,614] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:38:23,047] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:38:23,048] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 15:38:24,693] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:03:38,012] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:03:38,012] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:03:38,674] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:11:56,186] add_dataproducts(201125003,7)
+[2020-11-29 16:11:56,188] addding dataproduct: 5_sky_globe.jpg
+[2020-11-29 16:11:56,188] SIGNAL : pre_save DataProduct(5_sky_globe.jpg)
+[2020-11-29 16:11:56,189] handle_pre_save(5_sky_globe.jpg)
+[2020-11-29 16:11:56,431] handle_post_save(5_sky_globe.jpg)
+[2020-11-29 16:11:56,432] save new dataproduct
+[2020-11-29 16:11:56,644] update dataproduct parent = 201125003
+[2020-11-29 16:11:56,848] addding dataproduct: 5_sky_plot.jpg
+[2020-11-29 16:11:56,849] SIGNAL : pre_save DataProduct(5_sky_plot.jpg)
+[2020-11-29 16:11:56,849] handle_pre_save(5_sky_plot.jpg)
+[2020-11-29 16:11:57,045] handle_post_save(5_sky_plot.jpg)
+[2020-11-29 16:11:57,045] save new dataproduct
+[2020-11-29 16:11:57,244] update dataproduct parent = 201125003
+[2020-11-29 16:11:57,458] addding dataproduct: 5_annotated.jpg
+[2020-11-29 16:11:57,460] SIGNAL : pre_save DataProduct(5_annotated.jpg)
+[2020-11-29 16:11:57,461] handle_pre_save(5_annotated.jpg)
+[2020-11-29 16:11:57,672] handle_post_save(5_annotated.jpg)
+[2020-11-29 16:11:57,672] save new dataproduct
+[2020-11-29 16:11:57,877] update dataproduct parent = 201125003
+[2020-11-29 16:11:58,156] addding dataproduct: 5.fits
+[2020-11-29 16:11:58,158] SIGNAL : pre_save DataProduct(5.fits)
+[2020-11-29 16:11:58,159] handle_pre_save(5.fits)
+[2020-11-29 16:11:58,252] handle_post_save(5.fits)
+[2020-11-29 16:11:58,252] save new dataproduct
+[2020-11-29 16:11:58,263] update dataproduct parent = 201125003
+[2020-11-29 16:11:58,277] addding dataproduct: 5_rdls_file.fits
+[2020-11-29 16:11:58,277] SIGNAL : pre_save DataProduct(5_rdls_file.fits)
+[2020-11-29 16:11:58,277] handle_pre_save(5_rdls_file.fits)
+[2020-11-29 16:11:58,288] handle_post_save(5_rdls_file.fits)
+[2020-11-29 16:11:58,288] save new dataproduct
+[2020-11-29 16:11:58,297] update dataproduct parent = 201125003
+[2020-11-29 16:11:58,308] addding dataproduct: 5_wcs_file.fits
+[2020-11-29 16:11:58,309] SIGNAL : pre_save DataProduct(5_wcs_file.fits)
+[2020-11-29 16:11:58,309] handle_pre_save(5_wcs_file.fits)
+[2020-11-29 16:11:58,319] handle_post_save(5_wcs_file.fits)
+[2020-11-29 16:11:58,320] save new dataproduct
+[2020-11-29 16:11:58,329] update dataproduct parent = 201125003
+[2020-11-29 16:11:58,341] addding dataproduct: 5_axy_file.fits
+[2020-11-29 16:11:58,348] SIGNAL : pre_save DataProduct(5_axy_file.fits)
+[2020-11-29 16:11:58,349] handle_pre_save(5_axy_file.fits)
+[2020-11-29 16:11:58,359] handle_post_save(5_axy_file.fits)
+[2020-11-29 16:11:58,360] save new dataproduct
+[2020-11-29 16:11:58,369] update dataproduct parent = 201125003
+[2020-11-29 16:12:12,488] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:12,489] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:13,201] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:16,620] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:16,620] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:16,947] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:19,346] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:19,346] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:19,378] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:21,629] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:21,630] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:22,442] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:24,928] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:24,929] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:25,390] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:27,668] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:27,669] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:28,542] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:31,002] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:31,003] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:31,433] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:50,469] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:50,469] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:12:50,500] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-11-29 16:13:01,411] DataProductsListView.get_queryset()
+[2020-11-29 16:13:01,412] my_queryset retrieved
+[2020-11-29 16:13:11,684] DataProductsListView.get_queryset()
+[2020-11-29 16:13:11,686] my_queryset retrieved
+[2020-11-29 16:13:22,027] DataProductsListView.get_queryset()
+[2020-11-29 16:13:22,028] my_queryset retrieved
+[2020-11-29 16:13:32,413] DataProductsListView.get_queryset()
+[2020-11-29 16:13:32,414] my_queryset retrieved
+[2020-11-29 16:13:42,674] DataProductsListView.get_queryset()
+[2020-11-29 16:13:42,676] my_queryset retrieved
+[2020-11-29 16:13:52,944] DataProductsListView.get_queryset()
+[2020-11-29 16:13:52,945] my_queryset retrieved
+[2020-11-29 16:14:03,192] DataProductsListView.get_queryset()
+[2020-11-29 16:14:03,194] my_queryset retrieved
+[2020-11-29 16:14:13,473] DataProductsListView.get_queryset()
+[2020-11-29 16:14:13,474] my_queryset retrieved
+[2020-11-29 16:14:23,681] DataProductsListView.get_queryset()
+[2020-11-29 16:14:23,683] my_queryset retrieved
+[2020-11-29 16:14:33,988] DataProductsListView.get_queryset()
+[2020-11-29 16:14:33,989] my_queryset retrieved
+[2020-11-29 16:14:44,250] DataProductsListView.get_queryset()
+[2020-11-29 16:14:44,251] my_queryset retrieved
+[2020-11-29 16:14:54,564] DataProductsListView.get_queryset()
+[2020-11-29 16:14:54,566] my_queryset retrieved
