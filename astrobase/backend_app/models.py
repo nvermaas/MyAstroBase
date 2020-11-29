@@ -56,7 +56,7 @@ class TaskObject(models.Model):
     # my_status is 'platgeslagen', because django-filters can not filter on a related property,
     # and I need services to be able to filter on a status to execute their tasks.
     my_status = models.CharField(db_index=True, max_length=50,default="defined")
-    astrometry_url = models.CharField(max_length=50, default="", null=True, blank=True)
+    astrometry_url = models.CharField(max_length=50, default="http://nova.astrometry.net", null=True, blank=True)
     job = models.CharField(max_length=15, default="", null=True, blank=True)
 
     def __str__(self):
