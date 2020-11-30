@@ -18,7 +18,7 @@
 
             <td>{{ observation.my_status }}</td>
             <td>
-                <a href="http://nova.astrometry.net/status/{{ observation.job }}" target="_blank" >{{ observation.job }}</a>
+                <a href="{{ observation.astrometry_url }}/status/{{ observation.job }}" target="_blank" >{{ observation.job }}</a>
             </td>
 
             <td>{{ observation.date|date:"Y-m-d H:i:s" }} </td>
