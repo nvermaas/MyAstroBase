@@ -17882,3 +17882,205 @@
 [2020-11-29 16:14:44,251] my_queryset retrieved
 [2020-11-29 16:14:54,564] DataProductsListView.get_queryset()
 [2020-11-29 16:14:54,566] my_queryset retrieved
+[2020-12-01 19:05:43,357] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:05:43,358] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:05:43,366] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:05:43,367] update observation = 201129001
+[2020-12-01 19:06:15,630] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:06:15,631] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:06:15,636] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:06:15,637] update observation = 201129001
+[2020-12-01 19:06:21,425] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:06:21,426] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:06:21,461] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:06:21,462] update observation = 201129001
+[2020-12-01 19:06:46,143] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:06:46,143] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:06:46,175] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:06:46,176] update observation = 201129001
+[2020-12-01 19:11:30,948] SIGNAL : pre_save Observation(201104001 - ngc7000 - ngc7000)
+[2020-12-01 19:11:30,949] handle_pre_save(201104001 - ngc7000 - ngc7000)
+[2020-12-01 19:11:30,982] handle_post_save(201104001 - ngc7000 - ngc7000)
+[2020-12-01 19:11:30,982] update observation = 201104001
+[2020-12-01 19:12:40,964] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:12:40,964] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:12:40,999] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:12:40,999] update observation = 201129001
+[2020-12-01 19:13:06,632] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:13:06,632] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:13:06,664] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:13:06,665] update observation = 201129001
+[2020-12-01 19:13:18,587] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:13:18,588] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:13:18,618] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:13:18,618] update observation = 201129001
+[2020-12-01 19:15:25,501] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:15:25,501] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:15:25,538] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:15:25,538] update observation = 201129001
+[2020-12-01 19:15:29,643] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:15:29,644] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:15:29,677] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:15:29,677] update observation = 201129001
+[2020-12-01 19:15:45,447] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:15:45,447] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:15:45,476] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:15:45,477] update observation = 201129001
+[2020-12-01 19:16:37,133] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:16:37,133] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:16:37,183] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:16:37,184] update observation = 201129001
+[2020-12-01 19:17:01,343] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:17:01,344] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:17:01,381] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:17:01,382] update observation = 201129001
+[2020-12-01 19:17:12,477] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:17:12,478] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:17:12,499] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:17:12,499] update observation = 201129001
+[2020-12-01 19:19:46,587] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:19:46,587] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:19:46,613] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:19:46,613] update observation = 201129001
+[2020-12-01 19:19:48,862] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:19:48,863] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:19:48,886] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:19:48,886] update observation = 201129001
+[2020-12-01 19:19:51,114] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:19:51,114] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:19:51,145] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:19:51,146] update observation = 201129001
+[2020-12-01 19:22:48,203] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:22:48,204] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:22:48,229] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:22:48,230] update observation = 201129001
+[2020-12-01 19:23:49,456] add_dataproducts(201129001,8)
+[2020-12-01 19:23:49,458] addding dataproduct: 33_sky_globe.jpg
+[2020-12-01 19:23:49,458] SIGNAL : pre_save DataProduct(33_sky_globe.jpg)
+[2020-12-01 19:23:49,459] handle_pre_save(33_sky_globe.jpg)
+[2020-12-01 19:23:49,469] handle_post_save(33_sky_globe.jpg)
+[2020-12-01 19:23:49,469] save new dataproduct
+[2020-12-01 19:23:49,477] update dataproduct parent = 201129001
+[2020-12-01 19:23:49,488] addding dataproduct: 33_sky_plot.jpg
+[2020-12-01 19:23:49,488] SIGNAL : pre_save DataProduct(33_sky_plot.jpg)
+[2020-12-01 19:23:49,489] handle_pre_save(33_sky_plot.jpg)
+[2020-12-01 19:23:49,496] handle_post_save(33_sky_plot.jpg)
+[2020-12-01 19:23:49,496] save new dataproduct
+[2020-12-01 19:23:49,503] update dataproduct parent = 201129001
+[2020-12-01 19:23:49,510] addding dataproduct: 33_annotated.jpg
+[2020-12-01 19:23:49,511] SIGNAL : pre_save DataProduct(33_annotated.jpg)
+[2020-12-01 19:23:49,511] handle_pre_save(33_annotated.jpg)
+[2020-12-01 19:23:49,517] handle_post_save(33_annotated.jpg)
+[2020-12-01 19:23:49,517] save new dataproduct
+[2020-12-01 19:23:49,523] update dataproduct parent = 201129001
+[2020-12-01 19:23:49,534] addding dataproduct: 33.fits
+[2020-12-01 19:23:49,534] SIGNAL : pre_save DataProduct(33.fits)
+[2020-12-01 19:23:49,534] handle_pre_save(33.fits)
+[2020-12-01 19:23:49,542] handle_post_save(33.fits)
+[2020-12-01 19:23:49,542] save new dataproduct
+[2020-12-01 19:23:49,549] update dataproduct parent = 201129001
+[2020-12-01 19:23:49,559] addding dataproduct: 33_rdls_file.fits
+[2020-12-01 19:23:49,559] SIGNAL : pre_save DataProduct(33_rdls_file.fits)
+[2020-12-01 19:23:49,560] handle_pre_save(33_rdls_file.fits)
+[2020-12-01 19:23:49,565] handle_post_save(33_rdls_file.fits)
+[2020-12-01 19:23:49,565] save new dataproduct
+[2020-12-01 19:23:49,572] update dataproduct parent = 201129001
+[2020-12-01 19:23:49,581] addding dataproduct: 33_wcs_file.fits
+[2020-12-01 19:23:49,581] SIGNAL : pre_save DataProduct(33_wcs_file.fits)
+[2020-12-01 19:23:49,581] handle_pre_save(33_wcs_file.fits)
+[2020-12-01 19:23:49,587] handle_post_save(33_wcs_file.fits)
+[2020-12-01 19:23:49,588] save new dataproduct
+[2020-12-01 19:23:49,593] update dataproduct parent = 201129001
+[2020-12-01 19:23:49,603] addding dataproduct: 33_axy_file.fits
+[2020-12-01 19:23:49,603] SIGNAL : pre_save DataProduct(33_axy_file.fits)
+[2020-12-01 19:23:49,603] handle_pre_save(33_axy_file.fits)
+[2020-12-01 19:23:49,610] handle_post_save(33_axy_file.fits)
+[2020-12-01 19:23:49,610] save new dataproduct
+[2020-12-01 19:23:49,617] update dataproduct parent = 201129001
+[2020-12-01 19:23:49,626] addding dataproduct: 33_corr_file.fits
+[2020-12-01 19:23:49,627] SIGNAL : pre_save DataProduct(33_corr_file.fits)
+[2020-12-01 19:23:49,627] handle_pre_save(33_corr_file.fits)
+[2020-12-01 19:23:49,633] handle_post_save(33_corr_file.fits)
+[2020-12-01 19:23:49,633] save new dataproduct
+[2020-12-01 19:23:49,639] update dataproduct parent = 201129001
+[2020-12-01 19:23:51,842] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:51,842] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:51,865] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:51,865] update observation = 201129001
+[2020-12-01 19:23:54,152] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:54,153] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:54,178] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:54,179] update observation = 201129001
+[2020-12-01 19:23:56,539] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:56,539] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:56,560] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:56,560] update observation = 201129001
+[2020-12-01 19:23:58,809] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:58,809] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:58,838] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:23:58,839] update observation = 201129001
+[2020-12-01 19:24:01,083] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:01,083] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:01,106] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:01,106] update observation = 201129001
+[2020-12-01 19:24:03,382] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:03,383] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:03,406] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:03,407] update observation = 201129001
+[2020-12-01 19:24:05,652] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:05,653] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:05,675] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:05,675] update observation = 201129001
+[2020-12-01 19:24:07,967] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:07,968] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:08,002] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:24:08,002] update observation = 201129001
+[2020-12-01 19:25:25,804] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:25:25,804] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:25:25,808] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:25:25,809] update observation = 201129001
+[2020-12-01 19:27:57,712] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:27:57,713] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:27:57,720] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:27:57,720] update observation = 201129001
+[2020-12-01 19:28:07,495] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:07,495] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:07,529] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:07,529] update observation = 201129001
+[2020-12-01 19:28:14,588] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:14,589] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:14,620] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:14,620] update observation = 201129001
+[2020-12-01 19:28:26,776] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:26,776] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:26,800] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:26,801] update observation = 201129001
+[2020-12-01 19:28:29,001] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:29,002] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:29,019] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:29,020] update observation = 201129001
+[2020-12-01 19:28:31,232] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:31,232] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:31,262] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:28:31,262] update observation = 201129001
+[2020-12-01 19:38:07,945] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:38:07,945] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:38:07,967] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:38:07,967] update observation = 201129001
+[2020-12-01 19:38:11,163] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-01 19:38:11,164] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:38:11,187] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-01 19:38:11,188] update observation = 201129001
+[2020-12-01 19:47:30,201] DataProductsListView.get_queryset()
+[2020-12-01 19:47:30,202] my_queryset retrieved
+[2020-12-01 19:47:40,850] DataProductsListView.get_queryset()
+[2020-12-01 19:47:40,851] my_queryset retrieved
+[2020-12-01 19:47:51,091] DataProductsListView.get_queryset()
+[2020-12-01 19:47:51,092] my_queryset retrieved
+[2020-12-03 20:16:47,369] add_dataproducts(201120005,1)
+[2020-12-03 20:16:47,380] addding dataproduct: 4729345_annotated_stars.jpg
+[2020-12-03 20:16:47,380] SIGNAL : pre_save DataProduct(4729345_annotated_stars.jpg)
+[2020-12-03 20:16:47,380] handle_pre_save(4729345_annotated_stars.jpg)
+[2020-12-03 20:16:47,393] handle_post_save(4729345_annotated_stars.jpg)
+[2020-12-03 20:16:47,393] save new dataproduct
+[2020-12-03 20:16:47,403] update dataproduct parent = 201120005

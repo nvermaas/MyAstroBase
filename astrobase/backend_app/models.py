@@ -214,6 +214,18 @@ class Observation(TaskObject):
             return None
 
     @property
+    def derived_annotated_stars_image(self):
+        # get the annotated stars dataproduct
+
+        # find object with 'datasetID'
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='annotated_stars',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
+
+    @property
     def derived_sky_plot_image(self):
         # get the sky_plot dataproduct
 

@@ -22,6 +22,18 @@ def dispatch_job(command, observation_id):
         job = Job(command='grid', parameters=parameters, status="new")
         job.save()
 
+    # /my_astrobase/run-command/?command=stars&observation_id=2410
+    if command == "stars":
+        observation = Observation.objects.get(id=observation_id)
+
+        # parse the url into observation_dir and filenames
+        path_to_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        job_id = path_to_fits[2].split('.')
+
+        parameters = str(path_to_fits[1] + ',' + str(job_id[0]))
+        job = Job(command='stars', parameters=parameters, status="new")
+        job.save()
+
     # read min/max ra and dec from fits and store in database
     if command == "min_max":
         observation = Observation.objects.get(id=observation_id)
