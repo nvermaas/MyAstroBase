@@ -343,6 +343,8 @@ class ObservationDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     queryset = Observation.objects.all()
     serializer_class = ObservationSerializer
 
+class CollectionPagination(pagination.PageNumberPagination):
+    page_size = 10
 
 # example: /my_astrobase/collections/
 # calling this view serializes the Collections list in a REST API
@@ -353,6 +355,7 @@ class CollectionListViewAPI(generics.ListCreateAPIView):
     model = Collection
     queryset = Collection.objects.all().order_by('-date')
     serializer_class = CollectionSerializer
+    pagination_class = CollectionPagination
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
