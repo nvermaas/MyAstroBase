@@ -368,4 +368,4 @@ class Job(models.Model):
     result = models.CharField(max_length=200, default="", null=True, blank=True)
 
     def __str__(self):
-        return str(self.id) + ' - ' + str(self.command)
+        return str(self.id) + ' - ' + str(self.command) + " (" + self.status + ")"

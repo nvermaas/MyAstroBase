@@ -18084,3 +18084,16 @@
 [2020-12-03 20:16:47,393] handle_post_save(4729345_annotated_stars.jpg)
 [2020-12-03 20:16:47,393] save new dataproduct
 [2020-12-03 20:16:47,403] update dataproduct parent = 201120005
+[2020-12-03 20:32:51,853] add_dataproducts(201125003,1)
+[2020-12-03 20:32:51,859] addding dataproduct: 4741387_annotated_stars.jpg
+[2020-12-03 20:32:51,859] SIGNAL : pre_save DataProduct(4741387_annotated_stars.jpg)
+[2020-12-03 20:32:51,860] handle_pre_save(4741387_annotated_stars.jpg)
+[2020-12-03 20:32:51,875] handle_post_save(4741387_annotated_stars.jpg)
+[2020-12-03 20:32:51,876] save new dataproduct
+[2020-12-03 20:32:51,886] update dataproduct parent = 201125003
+[2020-12-03 20:46:35,211] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-12-03 20:46:35,212] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-12-03 20:46:35,223] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-12-03 20:47:04,348] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-12-03 20:47:04,348] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-12-03 20:47:04,365] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
