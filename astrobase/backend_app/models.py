@@ -178,6 +178,15 @@ class Observation(TaskObject):
             return None
 
     @property
+    def nr_of_dps(self):
+        try:
+            # sum the sizes of all dataproducts with this taskID. In Mb
+            count = len(DataProduct.objects.filter(taskID=self.taskID))
+            return count
+        except:
+            return None
+
+    @property
     def derived_raw_image(self):
         # get the raw dataproduct
 

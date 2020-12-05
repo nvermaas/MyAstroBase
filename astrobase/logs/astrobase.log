@@ -18097,3 +18097,7 @@
 [2020-12-03 20:47:04,348] SIGNAL : pre_save Observation(201125003 - Vesta Dawn 800 - Leo, Vesta)
 [2020-12-03 20:47:04,348] handle_pre_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
 [2020-12-03 20:47:04,365] handle_post_save(201125003 - Vesta Dawn 800 - Leo, Vesta)
+[2020-12-05 08:02:09,054] DataProductsListView.get_queryset()
+[2020-12-05 08:02:09,056] my_queryset retrieved
+[2020-12-05 08:02:20,323] DataProductsListView.get_queryset()
+[2020-12-05 08:02:20,325] my_queryset retrieved

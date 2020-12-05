@@ -19,7 +19,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
 from .models import DataProduct, Observation, Status, AstroFile, Collection, Job
-from .serializers import DataProductSerializer, ObservationSerializer, StatusSerializer, AstroFileSerializer, \
+from .serializers import DataProductSerializer, ObservationSerializer, ObservationLimitedSerializer, StatusSerializer, AstroFileSerializer, \
     CollectionSerializer, JobSerializer
 from .forms import FilterForm
 from .services import algorithms

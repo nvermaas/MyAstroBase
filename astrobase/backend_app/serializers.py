@@ -38,16 +38,6 @@ class ObservationSerializer(serializers.ModelSerializer):
     # note that 'generated_dataproducts' is not defined in the DataProduct model,
     # but comes from the related_field in Observation.parent.
 
-    generated_dataproducts = serializers.StringRelatedField(
-        many=True,
-        required=False,
-    )
-
-    status_history = serializers.StringRelatedField(
-        many=True,
-        required=False,
-    )
-
     parent = serializers.PrimaryKeyRelatedField(
         many=False,
         queryset=Observation.objects.filter(task_type='master'),
@@ -69,8 +59,8 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
                   'derived_annotated_grid_image','derived_annotated_stars_image','derived_sky_globe_image',
                   'derived_fits',
-                  'my_status','new_status','status_history','job','astrometry_url','url',
-                  'generated_dataproducts','data_location', 'quality','description',
+                  'my_status','new_status','astrometry_url','url',
+                  'nr_of_dps','data_location', 'quality','description',
                   'parent','derived_parent_taskid',
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
                   'image_type','children')
@@ -120,7 +110,7 @@ class ObservationFullSerializer(serializers.ModelSerializer):
                   'image_type','children')
 
 
-class ObservationCollectionSerializer(serializers.ModelSerializer):
+class ObservationLimitedSerializer(serializers.ModelSerializer):
     # this adds a 'generated_dataproducts' list with hyperlinks to the Observation API.
     # note that 'generated_dataproducts' is not defined in the DataProduct model,
     # but comes from the related_field in Observation.parent.
@@ -148,7 +138,7 @@ class ObservationCollectionSerializer(serializers.ModelSerializer):
 
 
 class CollectionSerializer(serializers.ModelSerializer):
-    observations = ObservationCollectionSerializer(many=True, read_only=True)
+    observations = ObservationLimitedSerializer(many=True, read_only=True)
 
     class Meta:
         model = Collection
