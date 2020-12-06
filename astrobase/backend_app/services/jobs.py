@@ -34,6 +34,8 @@ def dispatch_job(command, observation_id):
         job = Job(command='stars', parameters=parameters, status="new")
         job.save()
 
+
+
     # read min/max ra and dec from fits and store in database
     if command == "min_max":
         observation = Observation.objects.get(id=observation_id)

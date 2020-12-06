@@ -18101,3 +18101,23 @@
 [2020-12-05 08:02:09,056] my_queryset retrieved
 [2020-12-05 08:02:20,323] DataProductsListView.get_queryset()
 [2020-12-05 08:02:20,325] my_queryset retrieved
+[2020-12-05 10:23:25,176] DataProductsListView.get_queryset()
+[2020-12-05 10:23:25,179] my_queryset retrieved
+[2020-12-05 13:59:50,947] SIGNAL : pre_save Observation(201129001 - eugenia - eugenia)
+[2020-12-05 13:59:50,947] handle_pre_save(201129001 - eugenia - eugenia)
+[2020-12-05 13:59:50,976] handle_post_save(201129001 - eugenia - eugenia)
+[2020-12-05 13:59:50,976] update observation = 201129001
+[2020-12-05 15:54:14,441] add_dataproducts(201125003,1)
+[2020-12-05 15:54:14,451] addding dataproduct: 4741387_annotated_stars.jpg
+[2020-12-05 15:54:14,452] SIGNAL : pre_save DataProduct(4741387_annotated_stars.jpg)
+[2020-12-05 15:54:14,452] handle_pre_save(4741387_annotated_stars.jpg)
+[2020-12-05 15:54:14,672] handle_post_save(4741387_annotated_stars.jpg)
+[2020-12-05 15:54:14,673] save new dataproduct
+[2020-12-05 15:54:15,155] update dataproduct parent = 201125003
+[2020-12-05 15:58:38,138] add_dataproducts(201125003,1)
+[2020-12-05 15:58:38,139] addding dataproduct: 4741387_annotated_stars.jpg
+[2020-12-05 15:58:38,140] SIGNAL : pre_save DataProduct(4741387_annotated_stars.jpg)
+[2020-12-05 15:58:38,140] handle_pre_save(4741387_annotated_stars.jpg)
+[2020-12-05 15:58:38,498] handle_post_save(4741387_annotated_stars.jpg)
+[2020-12-05 15:58:38,499] save new dataproduct
+[2020-12-05 15:58:38,815] update dataproduct parent = 201125003

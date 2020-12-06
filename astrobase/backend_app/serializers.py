@@ -59,7 +59,7 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
                   'derived_annotated_grid_image','derived_annotated_stars_image','derived_sky_globe_image',
                   'derived_fits',
-                  'my_status','new_status','astrometry_url','url',
+                  'my_status','new_status','astrometry_url','job','url',
                   'nr_of_dps','data_location', 'quality','description',
                   'parent','derived_parent_taskid',
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
