@@ -39,8 +39,10 @@ AUTH_PASSWORD_VALIDATORS = []
 
 #STATIC_URL = '/my_astrobase/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static_astrobase/'
-#STATIC_URL = '/my_astrobase/static/'
+
+# this works, reverse-proxy through apache
+# STATIC_URL = '/static_astrobase/'
+STATIC_URL = '/my_astrobase/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'my_static_files')
 
 MEDIA_URL = 'https://localhost/'
