@@ -37,6 +37,7 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = []
 
 STATIC_URL = '/static_astrobase/'
+STATIC_URL = '/my_astrobase/static_astrobase/'
 #STATIC_ROOT = './static/'
 
 MEDIA_URL = 'https://localhost/'
