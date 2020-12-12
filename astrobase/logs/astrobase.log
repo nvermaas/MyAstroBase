@@ -18121,3 +18121,58 @@
 [2020-12-05 15:58:38,498] handle_post_save(4741387_annotated_stars.jpg)
 [2020-12-05 15:58:38,499] save new dataproduct
 [2020-12-05 15:58:38,815] update dataproduct parent = 201125003
+[2020-12-09 15:07:26,935] DataProductsListView.get_queryset()
+[2020-12-09 15:07:26,961] my_queryset retrieved
+[2020-12-12 15:02:54,861] add_dataproducts(201120006,1)
+[2020-12-12 15:02:54,867] addding dataproduct: 4729327_annotated_grid_eq.jpg
+[2020-12-12 15:02:54,867] SIGNAL : pre_save DataProduct(4729327_annotated_grid_eq.jpg)
+[2020-12-12 15:02:54,867] handle_pre_save(4729327_annotated_grid_eq.jpg)
+[2020-12-12 15:02:54,881] handle_post_save(4729327_annotated_grid_eq.jpg)
+[2020-12-12 15:02:54,881] save new dataproduct
+[2020-12-12 15:02:54,893] update dataproduct parent = 201120006
+[2020-12-12 15:02:57,251] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:02:57,252] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:02:57,287] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:02:57,288] update observation = 201120006
+[2020-12-12 15:02:59,646] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:02:59,646] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:02:59,680] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:02:59,680] update observation = 201120006
+[2020-12-12 15:03:02,117] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:03:02,117] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:03:02,153] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:03:02,154] update observation = 201120006
+[2020-12-12 15:03:04,516] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:03:04,516] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:03:04,548] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:03:04,548] update observation = 201120006
+[2020-12-12 15:03:06,954] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:03:06,955] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:03:06,990] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-12 15:03:06,990] update observation = 201120006
+[2020-12-12 15:14:38,072] DataProductsListView.get_queryset()
+[2020-12-12 15:14:38,074] my_queryset retrieved
+[2020-12-12 15:14:49,753] DataProductsListView.get_queryset()
+[2020-12-12 15:14:49,756] my_queryset retrieved
+[2020-12-12 15:15:00,012] DataProductsListView.get_queryset()
+[2020-12-12 15:15:00,017] my_queryset retrieved
+[2020-12-12 15:15:10,407] DataProductsListView.get_queryset()
+[2020-12-12 15:15:10,410] my_queryset retrieved
+[2020-12-12 15:15:20,711] DataProductsListView.get_queryset()
+[2020-12-12 15:15:20,713] my_queryset retrieved
+[2020-12-12 15:15:31,038] DataProductsListView.get_queryset()
+[2020-12-12 15:15:31,039] my_queryset retrieved
+[2020-12-12 15:15:41,416] DataProductsListView.get_queryset()
+[2020-12-12 15:15:41,417] my_queryset retrieved
+[2020-12-12 15:15:51,779] DataProductsListView.get_queryset()
+[2020-12-12 15:15:51,780] my_queryset retrieved
+[2020-12-12 15:16:02,138] DataProductsListView.get_queryset()
+[2020-12-12 15:16:02,140] my_queryset retrieved
+[2020-12-12 15:16:12,611] DataProductsListView.get_queryset()
+[2020-12-12 15:16:12,614] my_queryset retrieved
+[2020-12-12 15:16:22,986] DataProductsListView.get_queryset()
+[2020-12-12 15:16:22,988] my_queryset retrieved
+[2020-12-12 15:16:33,323] DataProductsListView.get_queryset()
+[2020-12-12 15:16:33,325] my_queryset retrieved
+[2020-12-12 15:16:44,072] DataProductsListView.get_queryset()
+[2020-12-12 15:16:44,073] my_queryset retrieved

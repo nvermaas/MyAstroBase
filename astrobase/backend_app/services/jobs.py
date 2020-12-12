@@ -22,6 +22,19 @@ def dispatch_job(command, observation_id):
         job = Job(command='grid', parameters=parameters, status="new")
         job.save()
 
+    # /my_astrobase/run-command/?command=grid&observation_id=2410
+    if command == "grid_eq":
+        observation = Observation.objects.get(id=observation_id)
+
+        # parse the url into observation_dir and filenames
+        path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        path2 = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+
+        parameters = str(path1[1] + ',' + str(path1[2])) + ',' + str(path2[2]) + ',' + observation.field_name.replace(',','#')
+        parameters=parameters+',equatorial'
+        job = Job(command='grid', parameters=parameters, status="new")
+        job.save()
+
     # /my_astrobase/run-command/?command=stars&observation_id=2410
     if command == "stars":
         observation = Observation.objects.get(id=observation_id)

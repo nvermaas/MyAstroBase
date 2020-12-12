@@ -223,6 +223,18 @@ class Observation(TaskObject):
             return None
 
     @property
+    def derived_annotated_grid_eq_image(self):
+        # get the annotated equatorial grid dataproduct
+
+        # find object with 'datasetID'
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='annotated_grid_eq',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
+
+    @property
     def derived_annotated_stars_image(self):
         # get the annotated stars dataproduct
 
