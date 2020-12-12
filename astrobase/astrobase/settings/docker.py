@@ -37,8 +37,8 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = []
 
 STATIC_URL = '/static_astrobase/'
-STATIC_URL = '/my_astrobase/static/'
-#STATIC_ROOT = './static/'
+#STATIC_URL = '/my_astrobase/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = 'https://localhost/'
 MEDIA_ROOT = '/data/astrobase/landing_pad'
