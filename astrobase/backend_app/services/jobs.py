@@ -47,8 +47,6 @@ def dispatch_job(command, observation_id):
         job = Job(command='stars', parameters=parameters, status="new")
         job.save()
 
-
-
     # read min/max ra and dec from fits and store in database
     if command == "min_max":
         observation = Observation.objects.get(id=observation_id)
@@ -59,7 +57,6 @@ def dispatch_job(command, observation_id):
         parameters = str(path1[1] + ',' + str(path1[2]))
         job = Job(command='min_max', parameters=parameters, status="new")
         job.save()
-
 
     # update min/max ra and dec for all observations with a fits file
     # /my_astrobase/run-command?command=all_min_max
@@ -79,5 +76,9 @@ def dispatch_job(command, observation_id):
             except:
                 print('failed: '+str(observation))
 
+    # kick off the hips generation
+    if command == "hips":
+        job = Job(command='hips',status="new")
+        job.save()
 
     return "dispatched"

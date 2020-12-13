@@ -18180,3 +18180,5 @@
 [2020-12-13 13:30:34,853] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
 [2020-12-13 13:30:34,859] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
 [2020-12-13 13:30:34,860] update observation = 201120006
+[2020-12-13 14:29:37,133] SIGNAL : pre_save Observation(201125003 - Vesta at Dawn 800 - Leo, Vesta)
+[2020-12-13 14:29:37,134] handle_pre_save(201125003 - Vesta at Dawn 800 - Leo, Vesta)
