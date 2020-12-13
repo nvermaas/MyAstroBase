@@ -92,6 +92,7 @@ class ObservationFilter(filters.FilterSet):
             'stacked_images' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'magnitude' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'image_type': ['icontains', 'exact'],
+            'used_in_hips': ['exact'],
             'fieldsearch': ['exact', 'icontains', 'in'],
             'coordsearch': ['exact'],
 
@@ -265,14 +266,14 @@ def get_searched_observations(search):
 # https://docs.djangoproject.com/en/2.1/topics/class-based-views/generic-display/
 # calling this view renders the dataproducts.html template in the GUI
 # a custom pagination class to return more than the default 100 dataproducts
-class DataProductsPagination(pagination.PageNumberPagination):
+class NoPagination(pagination.PageNumberPagination):
     page_size = 10000
 
 class DataProductsListView(ListView):
     model = DataProduct
     context_object_name = 'my_dataproducts_list'
     template_name = 'backend_app/dataproducts.html'
-    pagination_class = DataProductsPagination
+    pagination_class = NoPagination
 
     # override get_queryset to make a custom query on taskid
     def get_queryset(self):
@@ -291,7 +292,7 @@ class StatusListViewAPI(generics.ListCreateAPIView):
     model = Status
     queryset = Status.objects.all()
     serializer_class = StatusSerializer
-    pagination_class = DataProductsPagination
+    pagination_class = NoPagination
 
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = StatusFilter
@@ -303,7 +304,7 @@ class DataProductListViewAPI(generics.ListCreateAPIView):
     model = DataProduct
     queryset = DataProduct.objects.all()
     serializer_class = DataProductSerializer
-    pagination_class = DataProductsPagination
+    pagination_class = NoPagination
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
@@ -327,6 +328,21 @@ class ObservationListViewAPI(generics.ListCreateAPIView):
     model = Observation
     queryset = Observation.objects.all().order_by('-date')
     serializer_class = ObservationSerializer
+
+    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = ObservationFilter
+
+# example: /my_astrobase/observations/
+# calling this view serializes the observations list in a REST API
+class ObservationListViewHips(generics.ListCreateAPIView):
+    """
+    A pagination list of observations, sorted by date.
+    """
+    model = Observation
+    queryset = Observation.objects.all()
+    serializer_class = ObservationLimitedSerializer
+    pagination_class = NoPagination
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
@@ -432,7 +448,12 @@ def ObservationSetQuality(request,pk,quality,page):
     observation.save()
     return redirect('/my_astrobase/?page='+page)
 
-
+def ObservationSetHips(request,pk,hips,page):
+    model = Observation
+    observation = Observation.objects.get(pk=pk)
+    observation.used_in_hips = hips
+    observation.save()
+    return redirect('/my_astrobase/?page='+page)
 
 def ObservationSetTaskType(request,pk,type,page):
     model = Observation
@@ -509,7 +530,7 @@ class GetNextTaskIDView(generics.ListAPIView):
 class PostDataproductsView(generics.CreateAPIView):
     queryset = DataProduct.objects.all()
     serializer_class = DataProductSerializer
-    pagination_class = DataProductsPagination
+    pagination_class = NoPagination
 
     def post(self, request, *args, **kwargs):
         # read the arguments from the request

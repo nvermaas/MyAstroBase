@@ -63,7 +63,7 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'nr_of_dps','data_location', 'quality','description',
                   'parent','derived_parent_taskid',
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
-                  'image_type','children')
+                  'image_type','used_in_hips','children')
 
 
 
@@ -107,7 +107,7 @@ class ObservationFullSerializer(serializers.ModelSerializer):
                   'generated_dataproducts','data_location', 'quality','description',
                   'parent','derived_parent_taskid',
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
-                  'image_type','children')
+                  'image_type','used_in_hips','children')
 
 
 class ObservationLimitedSerializer(serializers.ModelSerializer):
@@ -134,7 +134,7 @@ class ObservationLimitedSerializer(serializers.ModelSerializer):
                   'quality','description',
                   'parent','derived_parent_taskid',
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
-                  'image_type')
+                  'image_type','used_in_hips')
 
 
 class CollectionSerializer(serializers.ModelSerializer):

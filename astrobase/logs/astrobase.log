@@ -18176,3 +18176,7 @@
 [2020-12-12 15:16:33,325] my_queryset retrieved
 [2020-12-12 15:16:44,072] DataProductsListView.get_queryset()
 [2020-12-12 15:16:44,073] my_queryset retrieved
+[2020-12-13 13:30:34,852] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-13 13:30:34,853] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-13 13:30:34,859] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[2020-12-13 13:30:34,860] update observation = 201120006

@@ -23,6 +23,19 @@
 
             <td>{{ observation.date|date:"Y-m-d H:i:s" }} </td>
             <td>{{ observation.size|filesizeformat }} </td>
+            <td>{{ observation.used_in_hips }}</td>
+
+            <td>
+                {% if user.is_authenticated %}
+                    {% if not observation.used_in_hips %}
+                      <a title="Use in HIPS" href="{% url 'observation-sethips-view' observation.pk 'True' my_observations.number %}" class="btn btn-success btn-sm" role="button">Use</a>
+                    {% endif %}
+
+                    {% if observation.used_in_hips %}
+                        <a title="Do not use in HIPS" href="{% url 'observation-sethips-view' observation.pk 'False' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Del</a>
+                    {% endif %}
+                {% endif %}
+            </td>
             <td>{{ observation.quality }}</td>
             <td>
                 {% if user.is_authenticated %}

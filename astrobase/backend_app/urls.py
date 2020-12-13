@@ -28,6 +28,7 @@ urlpatterns = [
 
     # ex: /astrobase/observations/
     path('observations/', views.ObservationListViewAPI.as_view()),
+    path('observations_hips/', views.ObservationListViewHips.as_view()),
 
     # ex: /astrobase/observations/5/
     path('observations/<int:pk>/', views.ObservationDetailsViewAPI.as_view(),name='observation-detail-view-api'),
@@ -84,6 +85,10 @@ urlpatterns = [
     path('observations/<int:pk>/setquality/<quality>/<page>',
          views.ObservationSetQuality,
          name='observation-setquality-view'),
+
+    path('observations/<int:pk>/sethips/<hips>/<page>',
+         views.ObservationSetHips,
+         name='observation-sethips-view'),
 
     path('observations/<int:pk>/settasktype/<type>/<page>',
          views.ObservationSetTaskType,
