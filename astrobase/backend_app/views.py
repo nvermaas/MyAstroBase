@@ -93,8 +93,8 @@ class ObservationFilter(filters.FilterSet):
             'magnitude' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'image_type': ['icontains', 'exact'],
             'used_in_hips': ['exact'],
-            'fieldsearch': ['exact', 'icontains', 'in'],
-            'coordsearch': ['exact'],
+            #'fieldsearch': ['exact', 'icontains', 'in'],
+            #'coordsearch': ['exact'],
 
             # &generated_dataproducts__dataproduct_type=fits
             'generated_dataproducts__dataproduct_type': ['exact', 'icontains', 'in']
@@ -141,7 +141,7 @@ class CollectionFilter(filters.FilterSet):
             'description': ['exact', 'icontains'],
             'name': ['exact', 'icontains'],
             'collection_type': ['icontains', 'exact'],
-            'fieldsearch': ['exact', 'icontains', 'in']
+            # 'fieldsearch': ['exact', 'icontains', 'in']
         }
 
 # example: has 1811130001 been 'processed?'
@@ -160,9 +160,8 @@ class StatusFilter(filters.FilterSet):
             'name': ['exact', 'in'],
             'timestamp': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'taskObject__taskID': ['exact', 'in'],
-            'taskID': ['exact', 'in'],
+            # 'taskID': ['exact', 'in'],
 
-            #'derived_taskid' : ['exact', 'in']
         }
 
 # example: /my_astrobase/dataproducts?status__in=created,archived

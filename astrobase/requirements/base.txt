@@ -1,16 +1,8 @@
-chardet==3.0.4
-Django==2.2.13
-django-filter==2.0.0
-djangorestframework==3.9.1
-idna==2.7
-Markdown==2.6.11
-pytz==2018.5
-requests==2.20.0
-urllib3==1.24.2
-django-cors-headers==2.4.0
-django-extensions==2.1.4
+Django==3.1.4
+djangorestframework==3.12.2
+django-filter==2.3.0
+psycopg2==2.8.6
+django-cors-headers==3.6.0
+django-extensions==3.1.0
 django-bootstrap-pagination==1.7.0
 whitenoise==5.0.1
-docutils==0.16
-# numpy==1.18.1
-# astropy==4.0
