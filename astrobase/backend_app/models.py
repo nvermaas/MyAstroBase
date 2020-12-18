@@ -396,8 +396,8 @@ class Job(models.Model):
 # only retrieve a limited number of fields for better performance
 class ObservationBoxManager(models.Manager):
     def get_queryset(self):
-        return super(ObservationBoxManager, self).get_queryset()\
-            .only('ra_min','ra_max','dec_min','field_fov','taskID','name')
+        return super(ObservationBoxManager, self).get_queryset().filter(used_in_hips=True)\
+            .only('taskID','name','field_ra','field_dec','field_fov','ra_min','ra_max','dec_min','image_type')
 
 # this is a proxy model of Observation with limited fields
 class ObservationBox(Observation):
