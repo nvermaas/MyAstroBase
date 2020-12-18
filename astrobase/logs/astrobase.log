@@ -18182,3 +18182,151 @@
 [2020-12-13 13:30:34,860] update observation = 201120006
 [2020-12-13 14:29:37,133] SIGNAL : pre_save Observation(201125003 - Vesta at Dawn 800 - Leo, Vesta)
 [2020-12-13 14:29:37,134] handle_pre_save(201125003 - Vesta at Dawn 800 - Leo, Vesta)
+[17/Dec/2020 19:07:48,442] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:48,449] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:48,471] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:48,472] update observation = 201120006
+[17/Dec/2020 19:07:50,732] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:50,732] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:50,760] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:50,761] update observation = 201120006
+[17/Dec/2020 19:07:53,031] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:53,031] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:53,060] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:53,061] update observation = 201120006
+[17/Dec/2020 19:07:55,317] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:55,317] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:55,339] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:55,340] update observation = 201120006
+[17/Dec/2020 19:07:57,627] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:57,627] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:57,649] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:07:57,649] update observation = 201120006
+[17/Dec/2020 19:09:01,266] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:01,267] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:01,294] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:01,295] update observation = 201120006
+[17/Dec/2020 19:09:03,589] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:03,590] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:03,618] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:03,619] update observation = 201120006
+[17/Dec/2020 19:09:05,906] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:05,906] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:05,930] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:05,930] update observation = 201120006
+[17/Dec/2020 19:09:08,230] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:08,230] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:08,258] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:08,258] update observation = 201120006
+[17/Dec/2020 19:09:10,522] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:10,523] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:10,545] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:09:10,545] update observation = 201120006
+[17/Dec/2020 19:10:00,103] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:00,103] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:00,131] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:00,131] update observation = 201120006
+[17/Dec/2020 19:10:02,393] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:02,394] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:02,423] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:02,423] update observation = 201120006
+[17/Dec/2020 19:10:04,674] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:04,675] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:04,703] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:04,703] update observation = 201120006
+[17/Dec/2020 19:10:06,972] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:06,972] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:07,002] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:07,002] update observation = 201120006
+[17/Dec/2020 19:10:09,268] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:09,269] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:09,298] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:10:09,298] update observation = 201120006
+[17/Dec/2020 19:11:26,827] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:26,828] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:26,857] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:26,858] update observation = 201120006
+[17/Dec/2020 19:11:29,113] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:29,114] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:29,142] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:29,142] update observation = 201120006
+[17/Dec/2020 19:11:31,396] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:31,397] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:31,423] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:31,424] update observation = 201120006
+[17/Dec/2020 19:11:33,678] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:33,679] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:33,707] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:33,708] update observation = 201120006
+[17/Dec/2020 19:11:35,965] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:35,965] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:35,991] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:11:35,991] update observation = 201120006
+[17/Dec/2020 19:12:50,333] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:50,333] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:50,360] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:50,360] update observation = 201120006
+[17/Dec/2020 19:12:52,607] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:52,608] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:52,640] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:52,640] update observation = 201120006
+[17/Dec/2020 19:12:54,887] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:54,888] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:54,909] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:54,909] update observation = 201120006
+[17/Dec/2020 19:12:57,159] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:57,160] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:57,187] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:57,188] update observation = 201120006
+[17/Dec/2020 19:12:59,436] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:59,437] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:59,463] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:12:59,464] update observation = 201120006
+[17/Dec/2020 19:19:31,187] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:31,187] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:31,216] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:31,216] update observation = 201120006
+[17/Dec/2020 19:19:33,475] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:33,476] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:33,496] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:33,497] update observation = 201120006
+[17/Dec/2020 19:19:35,750] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:35,751] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:35,771] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:35,771] update observation = 201120006
+[17/Dec/2020 19:19:38,017] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:38,017] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:38,045] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:38,045] update observation = 201120006
+[17/Dec/2020 19:19:40,291] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:40,291] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:40,315] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:19:40,315] update observation = 201120006
+[17/Dec/2020 19:20:34,373] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:20:34,373] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:20:34,395] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:20:34,395] update observation = 201120006
+[17/Dec/2020 19:26:48,095] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:48,095] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:48,122] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:48,122] update observation = 201120006
+[17/Dec/2020 19:26:50,393] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:50,394] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:50,417] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:50,418] update observation = 201120006
+[17/Dec/2020 19:26:52,723] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:52,724] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:52,753] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:52,753] update observation = 201120006
+[17/Dec/2020 19:26:55,027] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:55,027] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:55,057] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:55,057] update observation = 201120006
+[17/Dec/2020 19:26:57,334] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:57,334] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:57,358] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:26:57,358] update observation = 201120006
+[17/Dec/2020 19:27:25,171] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:27:25,172] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:27:25,203] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Dec/2020 19:27:25,203] update observation = 201120006

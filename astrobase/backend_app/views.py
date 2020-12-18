@@ -18,9 +18,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import DataProduct, Observation, Status, AstroFile, Collection, Job
+from .models import DataProduct, Observation, Status, AstroFile, Collection, Job, ObservationBox
 from .serializers import DataProductSerializer, ObservationSerializer, ObservationLimitedSerializer, StatusSerializer, AstroFileSerializer, \
-    CollectionSerializer, JobSerializer
+    CollectionSerializer, JobSerializer, ObservationBoxSerializer
 from .forms import FilterForm
 from .services import algorithms
 from .services import jobs
@@ -637,3 +637,11 @@ class RunCommandView(generics.ListAPIView):
             'observation_id' : observation_id,
             'result' : result
         })
+
+# Observation Coordinates for Aladin
+class ObservationBoxesListView(generics.ListCreateAPIView):
+    queryset = ObservationBox.objects.all()
+    serializer_class = ObservationBoxSerializer
+    pagination_class = NoPagination
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = ObservationFilter

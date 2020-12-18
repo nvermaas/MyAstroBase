@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import DataProduct, Observation, Collection, Status, AstroFile, Job
+from .models import DataProduct, Observation, Collection, Status, AstroFile, Job, ObservationBox
 import logging
 
 logger = logging.getLogger(__name__)
@@ -158,3 +158,8 @@ class JobSerializer(serializers.ModelSerializer):
     class Meta():
         model = Job
         fields = "__all__"
+
+class ObservationBoxSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = ObservationBox
+        fields = ('ra_min','ra_max','dec_min','field_fov','taskID','name')

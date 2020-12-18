@@ -48,6 +48,9 @@ urlpatterns = [
     # ex: /astrobase/jobs/
     path('jobs/', views.JobListViewAPI.as_view()),
 
+    # ex: /astrobase/boxes/
+    path('boxes/', views.ObservationBoxesListView.as_view()),
+
     # ex: /astrobase/jobs/5/
     path('jobs/<int:pk>/', views.JobDetailsViewAPI.as_view(), name='job-detail-view-api'),
 
