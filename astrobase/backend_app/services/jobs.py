@@ -55,7 +55,7 @@ def dispatch_job(command, observation_id):
         path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
 
         parameters = str(path1[1] + ',' + str(path1[2]))
-        job = Job(command='min_max', parameters=parameters, status="new")
+        job = Job(command='box', parameters=parameters, status="new")
         job.save()
 
     # update min/max ra and dec for all observations with a fits file

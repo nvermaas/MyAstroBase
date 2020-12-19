@@ -147,6 +147,7 @@ class Observation(TaskObject):
     dec_min = models.FloatField('dec_min', null=True, blank=True)
     dec_max = models.FloatField('dec_max', null=True, blank=True)
     ra_dec_fov = models.CharField(max_length=30, null=True, blank=True)
+    box = models.CharField(max_length=255, null=True, blank=True)
 
     quality = models.CharField(max_length=30, default="good", null=True)
 
@@ -396,12 +397,27 @@ class Job(models.Model):
 # only retrieve a limited number of fields for better performance
 class ObservationBoxManager(models.Manager):
     def get_queryset(self):
-        return super(ObservationBoxManager, self).get_queryset().filter(used_in_hips=True)\
-            .only('taskID','name','field_ra','field_dec','field_fov','ra_min','ra_max','dec_min','image_type')
+        return super(ObservationBoxManager, self).get_queryset().filter(used_in_hips=True).exclude(box=None)\
+            .only('taskID','name','field_ra','field_dec','field_fov','ra_min','ra_max','dec_min','box','image_type')
+        #return super(ObservationBoxManager, self).get_queryset().filter(used_in_hips=True)\
+        #    .only('taskID','name','field_ra','field_dec','field_fov','ra_min','ra_max','dec_min','box','image_type')
 
 # this is a proxy model of Observation with limited fields
 class ObservationBox(Observation):
     objects = ObservationBoxManager()
 
+    @property
+    def derived_fits(self):
+        # get the sky_globe dataproduct
+
+        # find object with 'datasetID'
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='fits',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
+
     class Meta:
         proxy = True
+
