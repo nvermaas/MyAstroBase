@@ -66,11 +66,10 @@ def dispatch_job(command, observation_id):
         obs = Observation.objects.all()
 
         for observation in obs:
-
             try:
                 path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
                 parameters = str(path1[1] + ',' + str(path1[2]))
-                job = Job(command='min_max', parameters=parameters, status="new")
+                job = Job(command='box', parameters=parameters, status="new")
                 job.save()
                 print('ok: ' + str(observation))
             except:
