@@ -162,4 +162,4 @@ class JobSerializer(serializers.ModelSerializer):
 class ObservationBoxSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ObservationBox
-        fields = ('taskID','name','field_ra','field_dec','field_fov','box','image_type','derived_fits')
+        fields = ('taskID','name','field_ra','field_dec','field_fov','box','image_type','quality','derived_fits')

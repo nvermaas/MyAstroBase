@@ -398,7 +398,7 @@ class Job(models.Model):
 class ObservationBoxManager(models.Manager):
     def get_queryset(self):
         return super(ObservationBoxManager, self).get_queryset().filter(used_in_hips=True).exclude(box=None)\
-            .only('taskID','name','field_ra','field_dec','field_fov','box','image_type')
+            .only('taskID','name','field_ra','field_dec','field_fov','box','image_type','quality')
 
 # this is a proxy model of Observation with limited fields
 class ObservationBox(Observation):
