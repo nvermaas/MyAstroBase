@@ -36,10 +36,6 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = []
 
-
-#STATIC_URL = '/my_astrobase/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 # this works, reverse-proxy through apache
 # STATIC_URL = '/static_astrobase/'
 STATIC_URL = '/my_astrobase/static/'
@@ -53,3 +49,10 @@ DATA_HOST = "https://uilennest.net/astrobase/data"
 
 LOGIN_REDIRECT_URL = "https://uilennest.net/astroview/login"
 LOGOUT_REDIRECT_URL = "https://uilennest.net/astroview/logout"
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}

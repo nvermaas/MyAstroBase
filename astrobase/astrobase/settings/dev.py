@@ -16,3 +16,9 @@ DATA_HOST = "http://uilennest.net/astrobase/data"
 
 LOGIN_REDIRECT_URL = "http://localhost:3000/astroview/login"
 LOGOUT_REDIRECT_URL = "http://localhost:3000/astroview/logout"
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
