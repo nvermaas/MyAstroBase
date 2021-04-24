@@ -18403,3 +18403,11 @@
 [23/Dec/2020 18:32:36,447] handle_pre_save(201125003 - Vesta at Dawn 800 - Leo, Vesta)
 [23/Dec/2020 19:07:22,076] DataProductsListView.get_queryset()
 [23/Dec/2020 19:07:22,077] my_queryset retrieved
+[2021-04-24 07:41:02,067] SIGNAL : pre_save Observation(210418002 - Pinwheel Haze Small - Ursa Major, Pinwheel Galaxy)
+[2021-04-24 07:41:02,068] handle_pre_save(210418002 - Pinwheel Haze Small - Ursa Major, Pinwheel Galaxy)
+[2021-04-24 07:41:02,095] handle_post_save(210418002 - Pinwheel Haze Small - Ursa Major, Pinwheel Galaxy)
+[2021-04-24 07:41:02,095] update observation = 210418002
+[2021-04-24 07:47:22,146] SIGNAL : pre_save Observation(210418002 - Pinwheel Haze Small - Ursa Major, Pinwheel Galaxy)
+[2021-04-24 07:47:22,146] handle_pre_save(210418002 - Pinwheel Haze Small - Ursa Major, Pinwheel Galaxy)
+[2021-04-24 07:47:22,179] handle_post_save(210418002 - Pinwheel Haze Small - Ursa Major, Pinwheel Galaxy)
+[2021-04-24 07:47:22,179] update observation = 210418002
