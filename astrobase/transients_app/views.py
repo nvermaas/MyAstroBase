@@ -41,8 +41,14 @@ class MinorPlanetsView(generics.ListAPIView):
         except:
             name = "ceres"
 
+        try:
+            s = self.request.query_params['timestamp']
+            timestamp = datetime.datetime.strptime(s,algorithms.DJANGO_TIME_FORMAT)
+        except:
+            timestamp = datetime.datetime.now()
+
         # call to the business logic that returns a list of moonphase
-        my_transients = algorithms.get_minor_planets_webservice(name)
+        my_transients = algorithms.get_minor_planets_webservice(name, timestamp)
 
         # serializer = MinorPlanetSerializer(instance=my_transients, many=True)
         # data = {'minor_planets' : serializer.data}
