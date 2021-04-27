@@ -8,5 +8,6 @@ app_name = 'transients_app'
 urlpatterns = [
      path('transients/', views.TransientView.as_view(), name='transients'),
      path('minor_planets/', views.MinorPlanetsView.as_view(), name='minor_planets'),
+     path('comet/', views.CometView.as_view(), name='comet'),
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)
