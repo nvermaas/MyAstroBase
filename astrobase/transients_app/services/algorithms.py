@@ -104,6 +104,7 @@ def get_comet(name, timestamp):
     # https://astroquery.readthedocs.io/en/latest/mpc/mpc.html
 
     # name = "C/2020 F3 (NEOWISE)"
+    # https://www.minorplanetcenter.net/iau/info/CometOrbitFormat.html
     with load.open(mpc.COMET_URL) as f:
         comets = mpc.load_comets_dataframe(f)
 
@@ -134,3 +135,39 @@ def get_comet(name, timestamp):
     return result
 
 
+def get_asteroid(name, timestamp):
+    # https://rhodesmill.org/skyfield/example-plots.html#drawing-a-finder-chart-for-comet-neowise
+    # https://astroquery.readthedocs.io/en/latest/mpc/mpc.html
+
+    MY_ASTEROID_URL = "https://uilennest.net/repository/asteroids.txt"
+    with load.open(MY_ASTEROID_URL) as f:
+        minor_planets = mpc.load_mpcorb_dataframe(f)
+
+    print(minor_planets.shape[0], 'minor planets loaded')
+
+    bad_orbits = minor_planets.semimajor_axis_au.isnull()
+    minor_planets = minor_planets[~bad_orbits]
+
+    # Index by designation for fast lookup.
+    minor_planets = minor_planets.set_index('designation', drop=False)
+
+    row = minor_planets.loc[name]
+    print(row)
+    ts = load.timescale()
+    eph = load('de421.bsp')
+    sun, earth = eph['sun'], eph['earth']
+
+    asteroid = sun + mpc.mpcorb_orbit(row, ts, GM_SUN)
+
+    t = ts.utc(timestamp.year, timestamp.month, timestamp.day)
+    ra, dec, distance = earth.at(t).observe(asteroid).radec()
+
+    result = {}
+    result['name'] = name
+    result['timestamp'] = str(timestamp)
+    result['ra'] = str(ra)
+    result['dec'] = str(dec)
+    result['distance'] = str(distance)
+    result['magnitude_h'] = row['magnitude_H']
+    result['row'] = row
+    return result

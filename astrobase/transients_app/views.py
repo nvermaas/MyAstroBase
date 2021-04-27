@@ -84,3 +84,28 @@ class CometView(generics.ListAPIView):
         # data = {'minor_planets' : serializer.data}
         # return Response(serializer.data)
         return Response(my_comet)
+
+# http://localhost:8000/my_astrobase/asteroid/?name=psyche&timestamp=2021-01-12T20:55:59Z
+class AsteroidView(generics.ListAPIView):
+    model = Transient
+    queryset = Transient.objects.all()
+    serializer_class = TransientSerializer
+
+    # override the list method to be able to plug in my transient business logic
+    def list(self, request):
+
+        try:
+            name = self.request.query_params['name']
+        except:
+            name = "Psyche"
+
+        try:
+            s = self.request.query_params['timestamp']
+            timestamp = datetime.datetime.strptime(s,algorithms.DJANGO_TIME_FORMAT)
+        except:
+            timestamp = datetime.datetime.now()
+
+         # call to the business logic that returns a list of moonphase
+        my_asteroid = algorithms.get_asteroid(name,timestamp)
+
+        return Response(my_asteroid)
