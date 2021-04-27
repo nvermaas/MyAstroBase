@@ -1,8 +1,5 @@
 
-from rest_framework import viewsets
 from rest_framework.response import Response
-
-from django.views.generic import ListView
 from rest_framework import generics
 
 from .serializers import MoonPhasesSerializer
@@ -11,7 +8,6 @@ from .my_moon.moon import get_new_moons
 from .models import MoonPhases
 
 class MoonPhasesView(generics.ListAPIView):
-#class MoonPhasesView(viewsets.ViewSet):
     model = MoonPhases
     queryset = MoonPhases.objects.all()
     serializer_class = MoonPhasesSerializer
