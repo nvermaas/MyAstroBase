@@ -22,9 +22,10 @@ class TransientView(generics.ListAPIView):
         except:
             name = "eros"
 
-        # call to the business logic that returns a list of moonphase
-        my_transients = algorithms.get_minor_planets(name)
+        # uses astropy to also calc emphemeris
+        my_transients = algorithms.get_transients(name)
         return Response(my_transients)
+
 
 
 class MinorPlanetsView(generics.ListAPIView):
@@ -41,7 +42,7 @@ class MinorPlanetsView(generics.ListAPIView):
             name = "ceres"
 
         # call to the business logic that returns a list of moonphase
-        my_transients = algorithms.get_minor_planets(name)
+        my_transients = algorithms.get_minor_planets_webservice(name)
 
         # serializer = MinorPlanetSerializer(instance=my_transients, many=True)
         # data = {'minor_planets' : serializer.data}
