@@ -18,6 +18,9 @@ DJANGO_TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
 # fetch properties of the orbits of a minor planet by name
 def get_minor_planets_webservice(name, timestamp):
+    result = {}
+    ephemeris = {}
+
     url = 'https://minorplanetcenter.net/web_service/search_orbits'
 
     params = {}
@@ -53,29 +56,29 @@ def get_minor_planets_webservice(name, timestamp):
     line = field1 + ',' + field2 + ',' + field3 + ',' + field4 + ',' + field5 + ',' + field6 + ',' + field7 + ',' + \
            field8 + ',' + field9 + ',' + field10 + ',' +field11 + ',' + field12 + ',' + field13 + ',' + field14
 
-    #yh = ephem.readdb("C/2002 Y1 (Juels-Holvorcem),e,103.7816," +
-    #                  "166.2194,128.8232,242.5695,0.0002609,0.99705756,0.0000," +
-    #                  "04/13.2508/2003,2000,g  6.5,4.0")
-    yh = ephem.readdb(line)
+    try:
+        # todo: replalce ephem with something else (skyfield?) because gcc won't work
+        # see how that works for comets
 
-    # convert timestamp to proper observing time for ephem to understand
-    # 1984/5/30 16:22:56
-    # "%Y-%m-%dT%H:%M:%SZ"
-    observing_time = timestamp.strftime('%Y/%m/%d %H:%M:%S')
-    yh.compute(observing_time)
+        yh = ephem.readdb(line)
 
-    print(yh.name)
-    print("%s %s" % (yh.ra, yh.dec))
-    print("%s %s" % (ephem.constellation(yh), yh.mag))
+        # convert timestamp to proper observing time for ephem to understand
+        observing_time = timestamp.strftime('%Y/%m/%d %H:%M:%S')
+        yh.compute(observing_time)
 
-    ephemeris = {}
-    ephemeris['name'] = yh.name
-    ephemeris['timestamp'] = observing_time
-    ephemeris['ra'] = str(yh.ra)
-    ephemeris['dec'] = str(yh.dec)
-    ephemeris['magnitude'] = str(yh.mag)
+        print(yh.name)
+        print("%s %s" % (yh.ra, yh.dec))
+        print("%s %s" % (ephem.constellation(yh), yh.mag))
 
-    result = {}
+        ephemeris['name'] = yh.name
+        ephemeris['timestamp'] = observing_time
+        ephemeris['ra'] = str(yh.ra)
+        ephemeris['dec'] = str(yh.dec)
+        ephemeris['magnitude'] = str(yh.mag)
+        ephemeris['constellation'] = str(ephem.constellation(yh))
+    except:
+        pass
+
     result['orbital_elements'] = orbital_elements
     result['ephemeris'] = ephemeris
 
