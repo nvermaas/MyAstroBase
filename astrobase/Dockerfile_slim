@@ -1,6 +1,6 @@
 FROM python:3.6.7-alpine
 # FROM python:3.6.7-slim
-RUN apk update && apk add bash nano mc
+RUN apk update && apk add gcc bash nano mc
 # RUN apt-get update && apt-get install --no-install-recommends -y bash nano mc
 
 ENV PYTHONUNBUFFERED 1
