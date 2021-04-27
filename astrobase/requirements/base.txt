@@ -7,3 +7,4 @@ django-bootstrap-pagination==1.7.0
 whitenoise==5.0.1
 requests==2.20.0
 astropy==4.0
+astroquery==0.4.1
