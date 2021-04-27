@@ -18411,3 +18411,7 @@
 [2021-04-24 07:47:22,146] handle_pre_save(210418002 - Pinwheel Haze Small - Ursa Major, Pinwheel Galaxy)
 [2021-04-24 07:47:22,179] handle_post_save(210418002 - Pinwheel Haze Small - Ursa Major, Pinwheel Galaxy)
 [2021-04-24 07:47:22,179] update observation = 210418002
+[24/Apr/2021 12:29:15,003] SIGNAL : pre_save Observation(040521001 - Comet Neat 2004 - Lynx, Comet Neat)
+[24/Apr/2021 12:29:15,004] handle_pre_save(040521001 - Comet Neat 2004 - Lynx, Comet Neat)
+[24/Apr/2021 12:29:15,027] handle_post_save(040521001 - Comet Neat 2004 - Lynx, Comet Neat)
+[24/Apr/2021 12:29:15,028] update observation = 040521001

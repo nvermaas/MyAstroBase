@@ -21,4 +21,7 @@ urlpatterns = [
     path('my_astrobase/admin/doc/', include('django.contrib.admindocs.urls')),
     path('my_astrobase/admin/', admin.site.urls),
     path('my_astrobase/api-auth/', include('rest_framework.urls')),
+
+    path('my_astrobase/', include('moon.urls')),
 ]
+
