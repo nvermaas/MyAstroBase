@@ -142,3 +142,22 @@ class UpdateAsteroids(generics.ListAPIView):
         algorithms.update_asteroid_table()
         count = Asteroid.objects.all().count()
         return Response({str(count)+" asteroids updated"})
+
+
+class UpdateAsteroidsEphemeris(generics.ListAPIView):
+    model = Asteroid
+    queryset = Asteroid.objects.all()
+
+    # override the list method to be able to plug in my transient business logic
+    def list(self, request):
+        try:
+            s = self.request.query_params['timestamp']
+            timestamp = datetime.datetime.strptime(s, algorithms.DJANGO_TIME_FORMAT)
+        except:
+            timestamp = datetime.datetime.now()
+
+         # call to the business logic that returns a list of moonphase
+        algorithms.update_asteroid_table_ephemeris(timestamp)
+
+        count = Asteroid.objects.all().count()
+        return Response({str(count)+" asteroids updated"})

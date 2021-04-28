@@ -155,19 +155,13 @@ def get_asteroid(name, timestamp):
     with load.open(MY_ASTEROID_URL) as f:
         minor_planets = mpc.load_mpcorb_dataframe(f)
 
-    print(minor_planets.shape[0], 'minor planets loaded')
-
     bad_orbits = minor_planets.semimajor_axis_au.isnull()
     minor_planets = minor_planets[~bad_orbits]
 
     # Index by designation for fast lookup.
     minor_planets = minor_planets.set_index('designation', drop=False)
-
-    nico = minor_planets.head()
-    print(nico)
-
     row = minor_planets.loc[designation]
-    print(row)
+
     ts = load.timescale()
     eph = load('de421.bsp')
     sun, earth = eph['sun'], eph['earth']
@@ -221,3 +215,22 @@ def update_asteroid_table():
             asteroid.save()
 
             line = f.readline()
+
+
+# update the ra,dec and timestamp in the asteroid table
+# so that the table can be used to know where asteroids are for a given timestamp
+# this function could be executed daily by a service to keep the ra,dec uptodate
+def update_asteroid_table_ephemeris(timestamp):
+
+    asteroids = Asteroid.objects.all()
+
+    for asteroid in asteroids:
+        designation = asteroid.designation
+
+        details = get_asteroid(designation,timestamp)
+
+        asteroid.ra = details['ra_decimal']
+        asteroid.dec = details['dec_decimal']
+        asteroid.timestamp = timestamp
+
+        asteroid.save()

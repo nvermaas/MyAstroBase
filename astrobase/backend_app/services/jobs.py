@@ -75,6 +75,20 @@ def dispatch_job(command, observation_id):
             except:
                 print('failed: '+str(observation))
 
+    # /my_astrobase/run-command/?command=draw_extra&observation_id=4131
+    # the 'observation.extra' field contains instructions from what to draw.
+    # the extra objects will be drawn on the 'annotated image'
+    if command == "draw_extra":
+        observation = Observation.objects.get(id=observation_id)
+
+        # parse the url into observation_dir and filenames
+        path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        path2 = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+
+        parameters = str(path1[1] + ',' + str(path1[2])) + ',' + str(path2[2])
+        job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
+        job.save()
+
     # kick off the hips generation
     if command == "hips":
         job = Job(command='hips',status="new")

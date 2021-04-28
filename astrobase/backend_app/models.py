@@ -160,6 +160,7 @@ class Observation(TaskObject):
     magnitude = models.CharField(max_length=5, null=True, blank=True)
     image_type = models.CharField(max_length=20, null=True, choices = IMAGE_TYPE_CHOICES, default="other")
     used_in_hips = models.BooleanField(default=True)
+    extra = models.TextField(null=True, blank=True)
 
     # relationships
     parent = models.ForeignKey('self', related_name='children', on_delete=models.SET_NULL, null=True, blank=True)
@@ -386,7 +387,7 @@ class Job(models.Model):
     # relationships
     command = models.CharField(max_length=200, default="", null=True)
     parameters = models.CharField(max_length=200, default="", null=True, blank=True)
-
+    extra = models.TextField(null=True, blank=True)
     status = models.CharField(max_length=50, default="defined", null=True)
     result = models.CharField(max_length=200, default="", null=True, blank=True)
 
