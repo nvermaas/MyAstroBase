@@ -16,6 +16,8 @@ DATE_FORMAT = "%Y-%m-%d"
 TIME_FORMAT = "%Y-%m-%d %H:%M:%SZ"
 DJANGO_TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
+MY_ASTEROID_URL = "https://uilennest.net/repository/asteroids.txt"
+
 # fetch properties of the orbits of a minor planet by name
 def get_minor_planets_webservice(name, timestamp):
     result = {}
@@ -128,6 +130,8 @@ def get_comet(name, timestamp):
     result['timestamp'] = str(timestamp)
     result['ra'] = str(ra)
     result['dec'] = str(dec)
+    result['ra_decimal'] = str(ra.hours)
+    result['dec_decimal'] = str(dec.degrees)
     result['distance'] = str(distance)
     result['magnitude_g'] = row['magnitude_g']
     result['magnitude_k'] = row['magnitude_k']
@@ -139,7 +143,6 @@ def get_asteroid(name, timestamp):
     # https://rhodesmill.org/skyfield/example-plots.html#drawing-a-finder-chart-for-comet-neowise
     # https://astroquery.readthedocs.io/en/latest/mpc/mpc.html
 
-    MY_ASTEROID_URL = "https://uilennest.net/repository/asteroids.txt"
     with load.open(MY_ASTEROID_URL) as f:
         minor_planets = mpc.load_mpcorb_dataframe(f)
 
@@ -151,7 +154,14 @@ def get_asteroid(name, timestamp):
     # Index by designation for fast lookup.
     minor_planets = minor_planets.set_index('designation', drop=False)
 
-    row = minor_planets.loc[name]
+    nico = minor_planets.head()
+    print(nico)
+
+    designation = name
+    # find the designation in the asteroid lookup table.
+    # designation = get_designation(name)
+
+    row = minor_planets.loc[designation]
     print(row)
     ts = load.timescale()
     eph = load('de421.bsp')
@@ -167,7 +177,17 @@ def get_asteroid(name, timestamp):
     result['timestamp'] = str(timestamp)
     result['ra'] = str(ra)
     result['dec'] = str(dec)
+    result['ra_decimal'] = str(ra.hours)
+    result['dec_decimal'] = str(dec.degrees)
     result['distance'] = str(distance)
     result['magnitude_h'] = row['magnitude_H']
+    result['magnitude_h'] = row['magnitude_G']
     result['row'] = row
     return result
+
+
+def update_asteroid_table():
+    # parse asteroids.txt
+
+    # clear asteroid table
+    pass

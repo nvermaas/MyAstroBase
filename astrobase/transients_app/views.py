@@ -1,12 +1,23 @@
 
 from rest_framework.response import Response
 from rest_framework import generics
+from django_filters import rest_framework as filters
 
 from .serializers import TransientSerializer, MinorPlanetSerializer
 import datetime
 
-from .models import Transient
+from .models import Transient,Asteroid
 from .services import algorithms
+
+# example: /my_astrobase/dataproducts?status__in=created,archived
+class AsteroidFilter(filters.FilterSet):
+
+    class Meta:
+        model = Asteroid
+
+        fields = {
+            'designation': ['exact', 'icontains', 'in'],
+        }
 
 
 class TransientView(generics.ListAPIView):
