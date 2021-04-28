@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import generics
 from django_filters import rest_framework as filters
 
-from .serializers import TransientSerializer, MinorPlanetSerializer
+from .serializers import TransientSerializer, MinorPlanetSerializer, AsteroidSerializer
 import datetime
 
 from .models import Transient,Asteroid
@@ -17,7 +17,17 @@ class AsteroidFilter(filters.FilterSet):
 
         fields = {
             'designation': ['exact', 'icontains', 'in'],
+            'ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'absolute_magnitude': ['gt', 'lt', 'gte', 'lte'],
+            'apparent_magnitude': ['gt', 'lt', 'gte', 'lte'],
         }
+
+class AsteroidsView(generics.ListAPIView):
+    model = Asteroid
+    queryset = Asteroid.objects.all()
+    serializer_class = AsteroidSerializer
+    filter_class = AsteroidFilter
 
 
 class TransientView(generics.ListAPIView):
@@ -120,3 +130,15 @@ class AsteroidView(generics.ListAPIView):
         my_asteroid = algorithms.get_asteroid(name,timestamp)
 
         return Response(my_asteroid)
+
+class UpdateAsteroids(generics.ListAPIView):
+    model = Asteroid
+    queryset = Asteroid.objects.all()
+
+    # override the list method to be able to plug in my transient business logic
+    def list(self, request):
+
+         # call to the business logic that returns a list of moonphase
+        algorithms.update_asteroid_table()
+        count = Asteroid.objects.all().count()
+        return Response({str(count)+" asteroids updated"})

@@ -12,7 +12,15 @@ class Transient(models.Model):
 
 
 class Asteroid(models.Model):
+    # static info from minor planet center
     designation = models.CharField(max_length=30)
+    absolute_magnitude = models.FloatField(null = True)
+
+    # ephemeris
+    timestamp = models.DateTimeField(null = True)
+    apparent_magnitude = models.FloatField(null = True)
+    ra = models.FloatField('ra', null = True)
+    dec = models.FloatField('dec', null = True)
 
     def __str__(self):
         return self.designation

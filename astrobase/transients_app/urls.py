@@ -10,5 +10,8 @@ urlpatterns = [
      path('minor_planets/', views.MinorPlanetsView.as_view(), name='minor_planets'),
      path('comet/', views.CometView.as_view(), name='comet'),
      path('asteroid/', views.AsteroidView.as_view(), name='asteroid'),
+
+     path('asteroids/', views.AsteroidsView.as_view(), name='asteroids'),
+     path('update_asteroids/', views.UpdateAsteroids.as_view(), name='update_asteroids'),
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)

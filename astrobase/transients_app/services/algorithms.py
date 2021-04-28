@@ -1,4 +1,7 @@
 import requests
+import urllib.request
+import datetime
+from django.conf import settings
 
 try:
     from skyfield.api import load
@@ -10,7 +13,7 @@ except:
     # works fine in production
     pass
 
-import datetime
+from ..models import Asteroid
 
 DATE_FORMAT = "%Y-%m-%d"
 TIME_FORMAT = "%Y-%m-%d %H:%M:%SZ"
@@ -142,6 +145,12 @@ def get_comet(name, timestamp):
 def get_asteroid(name, timestamp):
     # https://rhodesmill.org/skyfield/example-plots.html#drawing-a-finder-chart-for-comet-neowise
     # https://astroquery.readthedocs.io/en/latest/mpc/mpc.html
+    designation = name
+    try:
+        asteroids = Asteroid.objects.filter(designation__icontains=name)
+        designation = asteroids[0].designation
+    except:
+        pass
 
     with load.open(MY_ASTEROID_URL) as f:
         minor_planets = mpc.load_mpcorb_dataframe(f)
@@ -157,10 +166,6 @@ def get_asteroid(name, timestamp):
     nico = minor_planets.head()
     print(nico)
 
-    designation = name
-    # find the designation in the asteroid lookup table.
-    # designation = get_designation(name)
-
     row = minor_planets.loc[designation]
     print(row)
     ts = load.timescale()
@@ -168,26 +173,51 @@ def get_asteroid(name, timestamp):
     sun, earth = eph['sun'], eph['earth']
 
     asteroid = sun + mpc.mpcorb_orbit(row, ts, GM_SUN)
-
     t = ts.utc(timestamp.year, timestamp.month, timestamp.day)
     ra, dec, distance = earth.at(t).observe(asteroid).radec()
 
+
     result = {}
     result['name'] = name
+    result['designation'] = designation
     result['timestamp'] = str(timestamp)
     result['ra'] = str(ra)
     result['dec'] = str(dec)
-    result['ra_decimal'] = str(ra.hours)
+    result['ra_decimal'] = str(ra.hours * 15)
     result['dec_decimal'] = str(dec.degrees)
     result['distance'] = str(distance)
     result['magnitude_h'] = row['magnitude_H']
-    result['magnitude_h'] = row['magnitude_G']
+    result['magnitude_g'] = row['magnitude_G']
     result['row'] = row
     return result
 
 
 def update_asteroid_table():
+
     # parse asteroids.txt
+    asteroids_file = settings.MY_ASTEROIDS
 
     # clear asteroid table
-    pass
+    Asteroid.objects.all().delete()
+
+#    for b in urllib.request.urlopen(MY_ASTEROID_URL):
+#        line = b.decode('utf-8')
+
+    with open(asteroids_file, "r") as f:
+        line = f.readline()
+
+        while line != '':  # The EOF char is an empty string
+
+            # find the absolute magnitude
+            m = line[8:13]
+            absolute_magnitude = float(m)
+
+            # find the designation
+            pos = line.find('(')
+            designation = line[pos:pos+20].rstrip()
+
+            asteroid = Asteroid(designation=designation, absolute_magnitude=absolute_magnitude)
+            print(designation,absolute_magnitude)
+            asteroid.save()
+
+            line = f.readline()
