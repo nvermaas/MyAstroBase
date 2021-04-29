@@ -167,9 +167,8 @@ def get_asteroid(name, timestamp):
     sun, earth = eph['sun'], eph['earth']
 
     asteroid = sun + mpc.mpcorb_orbit(row, ts, GM_SUN)
-    t = ts.utc(timestamp.year, timestamp.month, timestamp.day)
+    t = ts.utc(timestamp.year, timestamp.month, timestamp.day, timestamp.hour, timestamp.minute)
     ra, dec, distance = earth.at(t).observe(asteroid).radec()
-
 
     result = {}
     result['name'] = name

@@ -161,6 +161,7 @@ class Observation(TaskObject):
     image_type = models.CharField(max_length=20, null=True, choices = IMAGE_TYPE_CHOICES, default="other")
     used_in_hips = models.BooleanField(default=True)
     extra = models.TextField(null=True, blank=True)
+    transients = models.CharField(max_length=100, null=True, blank=True)
 
     # relationships
     parent = models.ForeignKey('self', related_name='children', on_delete=models.SET_NULL, null=True, blank=True)

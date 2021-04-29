@@ -82,10 +82,11 @@ def dispatch_job(command, observation_id):
         observation = Observation.objects.get(id=observation_id)
 
         # parse the url into observation_dir and filenames
-        path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-        path2 = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        path_to_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        path_to_input_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        path_to_output_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
-        parameters = str(path1[1] + ',' + str(path1[2])) + ',' + str(path2[2])
+        parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2].replace(".", "_extra."))
         job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
