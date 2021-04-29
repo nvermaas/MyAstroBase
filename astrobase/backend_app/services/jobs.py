@@ -4,7 +4,10 @@ for Observations or DataProducts in AstroBase.
 """
 
 import logging;
+import json
+import datetime
 from ..models import Observation, Job
+from transients_app.services import algorithms as transients
 
 logger = logging.getLogger(__name__)
 
@@ -89,6 +92,68 @@ def dispatch_job(command, observation_id):
         parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2].replace(".", "_extra."))
         job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
         job.save()
+
+
+    if command == "transient":
+        observation = Observation.objects.get(id=observation_id)
+
+        # create ephemeris for the transient
+        # get the name of the transient and the timestamp for calculation
+        transient = observation.transient
+
+        timestamps = []
+        timestamp = observation.date
+        midnight = timestamp.replace(hour=0, minute=0, second=0)
+        yesterday = midnight + datetime.timedelta(days=-1)
+        tomorrow = midnight + datetime.timedelta(days=+1)
+        tomorrow2 = midnight + datetime.timedelta(days=+2)
+        tomorrow3 = midnight + datetime.timedelta(days=+3)
+
+        timestamps.append(timestamp)
+        timestamps.append(midnight)
+        timestamps.append(yesterday)
+        timestamps.append(tomorrow)
+        timestamps.append(tomorrow2)
+        timestamps.append(tomorrow3)
+
+        list = []
+        count = 0
+        for t in timestamps:
+            count += 1
+            result = transients.get_asteroid(transient,t)
+            designation = result['designation']
+
+            line = {}
+
+            line['ra'] = float(result['ra_decimal'])
+            line['dec'] = float(result['dec_decimal'])
+            if count == 1:
+                line['label'] = designation
+                line['shape'] = 'circle'
+                line['size'] = 50
+                line['color'] = 'yellow'
+            else:
+                line['label'] = str(t.day)
+                line['shape'] = 'cross'
+                line['size'] = 5
+                line['color'] = 'red'
+
+            list.append(line)
+
+        extra = json.dumps(list)
+
+        observation.extra = extra
+        observation.save()
+
+        # parse the url into observation_dir and filenames
+        path_to_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        path_to_input_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        path_to_output_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+
+        parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2].replace(".", "_extra."))
+        job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
+        job.save()
+
 
     # kick off the hips generation
     if command == "hips":

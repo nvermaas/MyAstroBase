@@ -181,7 +181,8 @@ def get_asteroid(name, timestamp):
     result['distance'] = str(distance)
     result['magnitude_h'] = row['magnitude_H']
     result['magnitude_g'] = row['magnitude_G']
-    result['row'] = row
+    result['last_observation_date'] = row['last_observation_date']
+    # result['row'] = row
     return result
 
 
