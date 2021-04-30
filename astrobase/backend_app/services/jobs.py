@@ -11,19 +11,93 @@ from transients_app.services import algorithms as transients
 
 logger = logging.getLogger(__name__)
 
+def add_transient(observation):
+    # create ephemeris for the transient
+    # get the name of the transient and the timestamp for calculation
+    transient = observation.transient
+
+    timestamps = []
+    timestamp = observation.date
+    midnight = timestamp.replace(hour=0, minute=0, second=0)
+    yesterday = midnight + datetime.timedelta(days=-1)
+    tomorrow = midnight + datetime.timedelta(days=+1)
+    tomorrow2 = midnight + datetime.timedelta(days=+2)
+    tomorrow3 = midnight + datetime.timedelta(days=+3)
+
+    timestamps.append(timestamp)
+    timestamps.append(midnight)
+    timestamps.append(yesterday)
+    timestamps.append(tomorrow)
+    timestamps.append(tomorrow2)
+    timestamps.append(tomorrow3)
+
+    list = []
+    count = 0
+    for t in timestamps:
+        count += 1
+        result = transients.get_asteroid(transient, t)
+        designation = result['designation']
+
+        line = {}
+
+        line['ra'] = float(result['ra_decimal'])
+        line['dec'] = float(result['dec_decimal'])
+        if count == 1:
+            line['label'] = designation
+            line['shape'] = 'circle'
+            line['size'] = 50
+            line['color'] = 'yellow'
+        else:
+            line['label'] = str(t.day)
+            line['shape'] = 'cross'
+            line['size'] = 5
+            line['color'] = 'red'
+
+        list.append(line)
+
+    extra = json.dumps(list)
+
+    observation.extra = extra
+    observation.save()
+
+
 def dispatch_job(command, observation_id):
 
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     if command == "grid":
         observation = Observation.objects.get(id=observation_id)
 
+        # first add the transient information to the annotated image
+        transient = observation.transient
+        if transient:
+            add_transient(observation)
+
+            # parse the url into observation_dir and filenames
+            path_to_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+            path_to_input_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+            path_to_output_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+            parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2].replace(".", "_extra."))
+            # parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2])
+
+            job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
+            job.save()
+
         # parse the url into observation_dir and filenames
         path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-        path2 = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+
+        if transient:
+            # use just created _extra image as input image
+            path2 = path_to_output_image
+        else:
+            # use annotated image as input image
+            path2 = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(path1[1] + ',' + str(path1[2])) + ',' + str(path2[2]) + ',' + observation.field_name.replace(',','#')
         job = Job(command='grid', parameters=parameters, status="new")
         job.save()
+
+
+
 
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     if command == "grid_eq":
@@ -97,53 +171,7 @@ def dispatch_job(command, observation_id):
     if command == "transient":
         observation = Observation.objects.get(id=observation_id)
 
-        # create ephemeris for the transient
-        # get the name of the transient and the timestamp for calculation
-        transient = observation.transient
-
-        timestamps = []
-        timestamp = observation.date
-        midnight = timestamp.replace(hour=0, minute=0, second=0)
-        yesterday = midnight + datetime.timedelta(days=-1)
-        tomorrow = midnight + datetime.timedelta(days=+1)
-        tomorrow2 = midnight + datetime.timedelta(days=+2)
-        tomorrow3 = midnight + datetime.timedelta(days=+3)
-
-        timestamps.append(timestamp)
-        timestamps.append(midnight)
-        timestamps.append(yesterday)
-        timestamps.append(tomorrow)
-        timestamps.append(tomorrow2)
-        timestamps.append(tomorrow3)
-
-        list = []
-        count = 0
-        for t in timestamps:
-            count += 1
-            result = transients.get_asteroid(transient,t)
-            designation = result['designation']
-
-            line = {}
-
-            line['ra'] = float(result['ra_decimal'])
-            line['dec'] = float(result['dec_decimal'])
-            if count == 1:
-                line['label'] = designation
-                line['shape'] = 'circle'
-                line['size'] = 50
-                line['color'] = 'yellow'
-            else:
-                line['label'] = str(t.day)
-                line['shape'] = 'cross'
-                line['size'] = 5
-                line['color'] = 'red'
-
-            list.append(line)
-
-        extra = json.dumps(list)
-
-        observation.extra = extra
-        observation.save()
+        add_transient(observation)
 
         # parse the url into observation_dir and filenames
         path_to_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
