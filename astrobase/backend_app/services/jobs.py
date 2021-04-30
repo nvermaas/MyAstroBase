@@ -85,14 +85,14 @@ def dispatch_job(command, observation_id):
         # parse the url into observation_dir and filenames
         path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
 
+        # use annotated image as input image
+        path2 = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
         if transient:
-            # use just created _extra image as input image
-            path2 = path_to_output_image
-        else:
-            # use annotated image as input image
-            path2 = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+            # use the just created extra image as input image
+            path2[2] = path2[2].replace(".", "_extra.")
 
         parameters = str(path1[1] + ',' + str(path1[2])) + ',' + str(path2[2]) + ',' + observation.field_name.replace(',','#')
+        print(parameters)
         job = Job(command='grid', parameters=parameters, status="new")
         job.save()
 
