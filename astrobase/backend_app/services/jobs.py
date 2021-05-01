@@ -105,8 +105,6 @@ def dispatch_job(command, observation_id):
         job.save()
 
 
-
-
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     if command == "grid_eq":
         observation = Observation.objects.get(id=observation_id)
@@ -171,7 +169,7 @@ def dispatch_job(command, observation_id):
         path_to_input_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
         path_to_output_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
-        parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2].replace(".", "_extra."))
+        parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2])
         job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
@@ -187,7 +185,7 @@ def dispatch_job(command, observation_id):
         path_to_output_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2].replace(".", "_extra."))
-        job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
+        job = Job(command='transient', parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
 
