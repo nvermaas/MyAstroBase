@@ -18892,3 +18892,102 @@
 [01/May/2021 09:01:51,047] handle_post_save(4952468_annotated_transient.jpg)
 [01/May/2021 09:01:51,048] save new dataproduct
 [01/May/2021 09:01:51,397] update dataproduct parent = 210223002
+[2021-05-01 10:29:22,982] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[2021-05-01 10:29:22,983] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[2021-05-01 10:29:23,139] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[2021-05-01 10:29:23,140] update observation = 210222004
+[01/May/2021 10:36:32,992] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:36:32,993] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:36:33,613] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:36:33,613] update observation = 210222004
+[01/May/2021 10:37:32,369] add_dataproducts(210222004,1)
+[01/May/2021 10:37:32,371] addding dataproduct: 4952442_annotated_transient.jpg
+[01/May/2021 10:37:32,371] SIGNAL : pre_save DataProduct(4952442_annotated_transient.jpg)
+[01/May/2021 10:37:32,372] handle_pre_save(4952442_annotated_transient.jpg)
+[01/May/2021 10:37:32,642] handle_post_save(4952442_annotated_transient.jpg)
+[01/May/2021 10:37:32,643] save new dataproduct
+[01/May/2021 10:37:33,582] update dataproduct parent = 210222004
+[01/May/2021 10:37:44,794] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:37:44,794] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:37:45,396] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:38:14,155] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:38:14,155] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:38:14,754] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:38:14,755] update observation = 210222004
+[01/May/2021 10:38:41,451] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:38:41,451] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:38:42,152] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:38:42,153] update observation = 210222004
+[01/May/2021 10:40:18,087] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:40:18,087] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:40:18,767] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:41:56,131] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:41:56,132] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:41:56,774] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:42:07,200] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:42:07,200] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:42:07,824] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:42:07,825] update observation = 210222004
+[01/May/2021 10:43:12,714] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:43:12,715] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:43:13,361] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:43:13,362] update observation = 210222004
+[01/May/2021 10:43:16,547] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:43:16,549] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:43:17,430] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:43:44,176] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:43:44,176] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:43:44,750] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:46:54,298] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:46:54,298] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:46:54,833] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:47:34,313] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:47:34,313] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:47:35,860] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:51:27,145] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:51:27,145] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:51:27,982] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:51:27,982] update observation = 210222004
+[01/May/2021 10:58:03,905] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:58:03,997] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:58:04,637] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:59:24,139] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:59:24,139] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:59:24,691] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 10:59:28,052] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:59:28,052] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:59:28,261] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 10:59:28,262] update observation = 210222004
+[01/May/2021 11:03:03,741] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:03:03,741] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:03:04,332] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:03:04,332] update observation = 210222004
+[01/May/2021 11:04:46,596] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:04:46,596] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:04:47,161] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:04:47,162] update observation = 210222004
+[01/May/2021 11:06:13,710] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:06:13,711] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:06:14,456] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:06:14,457] update observation = 210222004
+[01/May/2021 11:09:52,929] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 11:09:52,930] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 11:09:53,586] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 11:11:25,113] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:11:25,113] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:11:25,820] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:11:25,821] update observation = 210222004
+[01/May/2021 11:15:23,345] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:15:23,346] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:15:23,967] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:15:23,968] update observation = 210222004
+[01/May/2021 11:16:18,037] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:16:18,037] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:16:18,611] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[01/May/2021 11:16:18,612] update observation = 210222004
+[01/May/2021 11:17:59,035] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 11:17:59,035] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 11:17:59,569] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 11:20:09,522] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 11:20:09,523] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 11:20:10,051] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)

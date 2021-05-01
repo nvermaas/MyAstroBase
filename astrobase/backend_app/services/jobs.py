@@ -64,6 +64,7 @@ def add_transient(observation):
 def dispatch_job(command, observation_id):
 
     # /my_astrobase/run-command/?command=grid&observation_id=2410
+    # add a grid of 1 or 10 square degrees to the image
     if command == "grid":
         observation = Observation.objects.get(id=observation_id)
 
@@ -86,6 +87,7 @@ def dispatch_job(command, observation_id):
 
 
     # /my_astrobase/run-command/?command=grid&observation_id=2410
+    # add a grid of 1 or 10 square degrees to the image and rotate the image to horizontal (equatorial)
     if command == "grid_eq":
         observation = Observation.objects.get(id=observation_id)
 
@@ -107,6 +109,8 @@ def dispatch_job(command, observation_id):
         job.save()
 
     # /my_astrobase/run-command/?command=stars&observation_id=2410
+    # retrieve the stars from the fits that were used by astrometry.net,
+    # and draw them with their magnitudes. (to get a feel of the limiting magnitude of the image)
     if command == "stars":
         observation = Observation.objects.get(id=observation_id)
 
@@ -130,7 +134,7 @@ def dispatch_job(command, observation_id):
         job.save()
 
     # update min/max ra and dec for all observations with a fits file
-    # /my_astrobase/run-command?command=all_min_max
+    # /my_astrobase/run-command?command=all_min_max (no longer used)
     if command == "all_min_max":
         # find all observations with a fits file, and create a min_max job for all of them
         #obs_with_fits = Observation.objects.filter(generated_dataproducts__dataproduct_type='fits')
@@ -162,14 +166,18 @@ def dispatch_job(command, observation_id):
         job.save()
 
 
+    # draw a transient (planet, comet or asteroid) on the image
     if command == "transient":
         observation = Observation.objects.get(id=observation_id)
+
+        if observation.transient==None:
+            return "impossible"
 
         add_transient(observation)
 
         # parse the url into observation_dir and filenames
         parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-        parameter_input = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_input = observation.observation.derived_raw_image.split('astrobase/data')[1].split('/')
         parameter_output = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_transient."))
@@ -177,7 +185,7 @@ def dispatch_job(command, observation_id):
         job.save()
 
 
-    # kick off the hips generation
+    # kick off the hips generation (not currently in place)
     if command == "hips":
         job = Job(command='hips',status="new")
         job.save()

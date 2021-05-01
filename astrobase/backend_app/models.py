@@ -222,7 +222,6 @@ class Observation(TaskObject):
         try:
             dataproduct = DataProduct.objects.get(dataproduct_type='annotated_transient',taskID=self.taskID)
             path = dataproduct.property_url
-            print('TRANSIENT PATH = '+str(path))
             return path
         except:
             return None
