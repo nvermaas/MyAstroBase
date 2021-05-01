@@ -6,7 +6,11 @@ from django.conf import settings
 from skyfield.api import load
 from skyfield.data import mpc
 from skyfield.constants import GM_SUN_Pitjeva_2005_km3_s2 as GM_SUN
-import ephem
+
+try:
+    import ephem
+except:
+    pass
 
 from ..models import Asteroid
 
