@@ -68,7 +68,8 @@ def dispatch_job(command, observation_id):
         observation = Observation.objects.get(id=observation_id)
 
         # first add the transient information to the annotated image
-        transient = observation.transient
+        #transient = observation.transient
+        transient = False
         if transient:
             add_transient(observation)
 
