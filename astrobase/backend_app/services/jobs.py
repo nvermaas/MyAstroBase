@@ -11,7 +11,7 @@ from transients_app.services import algorithms as transients
 
 logger = logging.getLogger(__name__)
 
-def add_transient(observation):
+def add_transient_to_job(observation):
     # create ephemeris for the transient
     # get the name of the transient and the timestamp for calculation
     transient = observation.transient
@@ -173,7 +173,7 @@ def dispatch_job(command, observation_id):
         if observation.transient==None:
             return "impossible"
 
-        add_transient(observation)
+        add_transient_to_job(observation)
 
         # parse the url into observation_dir and filenames
         parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
