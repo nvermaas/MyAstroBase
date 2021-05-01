@@ -11,6 +11,9 @@ class CollectionAdmin(admin.ModelAdmin):
     filter_horizontal = ['observations']
 
 admin.site.register(Status)
-admin.site.register(DataProduct)
+#admin.site.register(DataProduct)
+@admin.register(DataProduct)
+class DataProductAdmin(admin.ModelAdmin):
+    search_fields = ['filename']
 admin.site.register(Job)
 

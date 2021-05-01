@@ -215,6 +215,19 @@ class Observation(TaskObject):
             return None
 
     @property
+    def derived_annotated_transient_image(self):
+        # get the annotated grid dataproduct
+
+        # find object with 'datasetID'
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='annotated_transient',taskID=self.taskID)
+            path = dataproduct.property_url
+            print('TRANSIENT PATH = '+str(path))
+            return path
+        except:
+            return None
+
+    @property
     def derived_annotated_grid_image(self):
         # get the annotated grid dataproduct
 

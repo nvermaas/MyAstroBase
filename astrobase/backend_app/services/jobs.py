@@ -67,37 +67,17 @@ def dispatch_job(command, observation_id):
     if command == "grid":
         observation = Observation.objects.get(id=observation_id)
 
-        # first add the transient information to the annotated image
-        #transient = observation.transient
-        transient = False
-        if transient:
-            add_transient(observation)
-
-            # parse the url into observation_dir and filenames
-            path_to_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-            path_to_input_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-            path_to_output_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-            parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2].replace(".", "_extra."))
-            # parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2])
-
-            job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
-            job.save()
-
         # parse the url into observation_dir and filenames
-        path_to_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
 
         # use annotated image as input image
-        path_to_input_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        path_to_output_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_input = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_output = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
-        if transient:
-            # use the just created extra image as input image
-            path_to_input_image[2] = path_to_input_image[2].replace(".", "_extra.")
-
-        parameters = str(path_to_fits[1]) + ',' + \
-                     str(path_to_fits[2]) + ',' + \
-                     str(path_to_input_image[2]) + ','  + \
-                     str(path_to_output_image[2].replace(".", "_grid.")) + ',' + \
+        parameters = str(parameter_fits[1]) + ',' + \
+                     str(parameter_fits[2]) + ',' + \
+                     str(parameter_input[2]) + ','  + \
+                     str(parameter_output[2].replace(".", "_grid.")) + ',' + \
                      observation.field_name.replace(',','#')
 
         print(parameters)
@@ -123,10 +103,10 @@ def dispatch_job(command, observation_id):
         observation = Observation.objects.get(id=observation_id)
 
         # parse the url into observation_dir and filenames
-        path_to_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-        job_id = path_to_fits[2].split('.')
+        parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        job_id = parameter_fits[2].split('.')
 
-        parameters = str(path_to_fits[1] + ',' + str(job_id[0]))
+        parameters = str(parameter_fits[1] + ',' + str(job_id[0]))
         job = Job(command='stars', parameters=parameters, status="new")
         job.save()
 
@@ -165,11 +145,11 @@ def dispatch_job(command, observation_id):
         observation = Observation.objects.get(id=observation_id)
 
         # parse the url into observation_dir and filenames
-        path_to_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-        path_to_input_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        path_to_output_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        parameter_input = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_output = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
-        parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2])
+        parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2])
         job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
@@ -180,11 +160,11 @@ def dispatch_job(command, observation_id):
         add_transient(observation)
 
         # parse the url into observation_dir and filenames
-        path_to_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-        path_to_input_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        path_to_output_image = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        parameter_input = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_output = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
-        parameters = str(path_to_fits[1]) + ',' + str(path_to_fits[2]) + ',' + str(path_to_input_image[2]) + ',' + str(path_to_output_image[2].replace(".", "_extra."))
+        parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_transient."))
         job = Job(command='transient', parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
