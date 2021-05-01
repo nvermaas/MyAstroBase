@@ -129,7 +129,7 @@ class ObservationLimitedSerializer(serializers.ModelSerializer):
                   'ra_min', 'ra_max','dec_min', 'dec_max','ra_dec_fov','date','size',
                   'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
                   'derived_annotated_grid_image','derived_annotated_grid_eq_image','derived_annotated_stars_image','derived_sky_globe_image',
-                  'derived_fits','derived_annotated_transient_image'
+                  'derived_fits','derived_annotated_transient_image',
                   'my_status','new_status','job','astrometry_url','url',
                   'quality','description',
                   'parent','derived_parent_taskid',
