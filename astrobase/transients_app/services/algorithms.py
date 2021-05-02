@@ -3,6 +3,8 @@ import math
 import datetime
 from django.conf import settings
 
+import numpy as np
+
 from skyfield.api import load
 from skyfield.data import mpc
 from skyfield.constants import GM_SUN_Pitjeva_2005_km3_s2 as GM_SUN
@@ -19,6 +21,99 @@ TIME_FORMAT = "%Y-%m-%d %H:%M:%SZ"
 DJANGO_TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
 MY_ASTEROID_URL = "https://uilennest.net/repository/asteroids.txt"
+
+def phi_func(index, phase_angle):
+    """
+    Phase function that is needed for the reduced magnitude. The function has
+    two versions, depending on the index ('1' or '2').
+    Parameters
+    ----------
+    index : str
+        Phase function index / version. '1' or '2'.
+    phase_angle : float
+        Phase angle of the asteroid in radians.
+    Returns
+    -------
+    phi : float
+        Phase function result.
+    """
+
+    # Dictionary that contains the A and B constants, depending on the index /
+    # version
+    a_factor = {'1': 3.33, \
+                '2': 1.87}
+
+    b_factor = {'1': 0.63, \
+                '2': 1.22}
+
+    # Phase function
+    phi = np.exp(-1.0 * a_factor[index] \
+                 *+ ((np.tan(0.5 * phase_angle) ** b_factor[index])))
+
+    # Return the phase function result
+    return phi
+
+
+def red_mag(abs_mag, phase_angle, slope_g):
+    """
+    Reduced magnitude of an asteroid, depending on the absolute magnitude,
+    phase angle and slope parameter (G)
+    Parameters
+    ----------
+    abs_mag : float
+        Absolute magnitude.
+    phase_angle : float
+        Phase angle in radians.
+    slope_g : float
+        Slope parameter (G), between 0 and 1.
+    Returns
+    -------
+    r_mag : float
+        Reduced magnitude.
+    """
+
+    # Computation of the reduced magnitude
+    r_mag = abs_mag - 2.5 * np.log10((1.0 - slope_g) \
+                                     * phi_func(index='1', \
+                                                phase_angle=phase_angle) \
+                                     + slope_g \
+                                     * phi_func(index='2', \
+                                                phase_angle=phase_angle))
+
+    # Return the reduced magnitude
+    return r_mag
+
+def app_mag(abs_mag, phase_angle, slope_g, d_ast_sun, d_ast_earth):
+    """
+    Apparent / Visual magnitude of an asteroid (not considering atmospheric
+    attenuation), depending on the absolute magnitude, phase angle, the slope
+    parameter (G) as well as the distance between the asteroid and Earth,
+    respectively the Sun
+    Parameters
+    ----------
+    abs_mag : float
+        Absolute magnitude.
+    phase_angle : float
+        Phase angle in radians.
+    slope_g : float
+        Slope parameter (G).
+    d_ast_sun : float
+        Distance between the asteroid and the Sun in AU.
+    d_ast_earth : float
+        Distance between the asteroid and the Earth in AU.
+    Returns
+    -------
+    mag : float
+        Apparent / visual magnitude.
+    """
+
+    # Compute the apparent / visual magnitude
+    mag = red_mag(abs_mag, phase_angle, slope_g) \
+          + 5.0 * np.log10(d_ast_sun * d_ast_earth)
+
+    # Return the apparent magnitude
+    return mag
+
 
 # fetch properties of the orbits of a minor planet by name
 def get_minor_planets_webservice(name, timestamp):
@@ -170,8 +265,19 @@ def get_asteroid(name, timestamp):
     ra, dec, distance_from_sun = sun.at(t).observe(asteroid).radec()
     ra, dec, distance_from_earth = earth.at(t).observe(asteroid).radec()
 
-    # m = g + 5 log rD
-    visual_magnitude = row['magnitude_H'] + 5 * math.log(distance_from_sun.au * distance_from_earth.au)
+    # https://towardsdatascience.com/space-science-with-python-a-very-bright-opposition-62e248abfe62
+    # how do I calculate the current phase_angle between sun and earth as seen from the asteroid
+    ra_sun, dec_sun, d = asteroid.at(t).observe(sun).radec()
+    ra_earth,dec_earth, d = asteroid.at(t).observe(earth).radec()
+
+    phase_angle_in_degrees = abs(ra_sun.hours - ra_earth.hours)
+    phase_angle = phase_angle_in_degrees * math.pi / 180
+
+    visual_magnitude = app_mag(abs_mag=row['magnitude_H'], \
+                             phase_angle=phase_angle, \
+                             slope_g=row['magnitude_G'], \
+                             d_ast_sun=distance_from_sun.au, \
+                             d_ast_earth=distance_from_earth.au)
 
     result = {}
     result['name'] = name
@@ -238,5 +344,5 @@ def update_asteroid_table_ephemeris(timestamp):
         asteroid.dec = details['dec_decimal']
         asteroid.visual_magnitude = details['visual_magnitude']
         asteroid.timestamp = timestamp
-
+        print(designation)
         asteroid.save()
