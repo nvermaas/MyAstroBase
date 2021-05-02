@@ -1,5 +1,5 @@
 import requests
-import urllib.request
+import math
 import datetime
 from django.conf import settings
 
@@ -167,7 +167,11 @@ def get_asteroid(name, timestamp):
 
     asteroid = sun + mpc.mpcorb_orbit(row, ts, GM_SUN)
     t = ts.utc(timestamp.year, timestamp.month, timestamp.day, timestamp.hour, timestamp.minute)
-    ra, dec, distance = earth.at(t).observe(asteroid).radec()
+    ra, dec, distance_from_sun = sun.at(t).observe(asteroid).radec()
+    ra, dec, distance_from_earth = earth.at(t).observe(asteroid).radec()
+
+    # m = g + 5 log rD
+    visual_magnitude = row['magnitude_H'] + 5 * math.log(distance_from_sun.au * distance_from_earth.au)
 
     result = {}
     result['name'] = name
@@ -177,9 +181,11 @@ def get_asteroid(name, timestamp):
     result['dec'] = str(dec)
     result['ra_decimal'] = str(ra.hours * 15)
     result['dec_decimal'] = str(dec.degrees)
-    result['distance'] = str(distance)
+    result['distance_from_earth'] = str(distance_from_earth.au)
+    result['distance_from_sun'] = str(distance_from_sun.au)
     result['magnitude_h'] = row['magnitude_H']
     result['magnitude_g'] = row['magnitude_G']
+    result['visual_magnitude'] = visual_magnitude
     result['last_observation_date'] = row['last_observation_date']
     # result['row'] = row
     return result
@@ -230,6 +236,7 @@ def update_asteroid_table_ephemeris(timestamp):
 
         asteroid.ra = details['ra_decimal']
         asteroid.dec = details['dec_decimal']
+        asteroid.visual_magnitude = details['visual_magnitude']
         asteroid.timestamp = timestamp
 
         asteroid.save()

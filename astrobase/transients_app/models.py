@@ -18,7 +18,7 @@ class Asteroid(models.Model):
 
     # ephemeris
     timestamp = models.DateTimeField(null = True)
-    apparent_magnitude = models.FloatField(null = True)
+    visual_magnitude = models.FloatField(null = True)
     ra = models.FloatField('ra', null = True)
     dec = models.FloatField('dec', null = True)
 

@@ -20,7 +20,7 @@ class AsteroidFilter(filters.FilterSet):
             'ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'absolute_magnitude': ['gt', 'lt', 'gte', 'lte'],
-            'apparent_magnitude': ['gt', 'lt', 'gte', 'lte'],
+            'visual_magnitude': ['gt', 'lt', 'gte', 'lte'],
         }
 
 class AsteroidsView(generics.ListAPIView):

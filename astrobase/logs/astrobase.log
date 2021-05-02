@@ -19058,3 +19058,6 @@
 [02/May/2021 09:03:49,641] handle_post_save(4659937_annotated_transient.jpg)
 [02/May/2021 09:03:49,641] save new dataproduct
 [02/May/2021 09:03:49,651] update dataproduct parent = 201023008
+[02/May/2021 18:40:18,509] SIGNAL : pre_save Observation(201125002 - Vesta at Dawn 1600 - Leo, Vesta)
+[02/May/2021 18:40:18,510] handle_pre_save(201125002 - Vesta at Dawn 1600 - Leo, Vesta)
+[02/May/2021 18:40:18,517] handle_post_save(201125002 - Vesta at Dawn 1600 - Leo, Vesta)
