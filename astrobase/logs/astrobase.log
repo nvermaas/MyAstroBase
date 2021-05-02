@@ -19040,3 +19040,21 @@
 [01/May/2021 12:03:02,771] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
 [01/May/2021 12:03:02,771] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
 [01/May/2021 12:03:03,426] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 15:50:48,801] SIGNAL : pre_save Observation(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 15:50:48,802] handle_pre_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[01/May/2021 15:50:50,443] handle_post_save(210223002 - 15 Eunomia - Gemini, Eunomia)
+[02/May/2021 08:41:07,408] SIGNAL : pre_save Observation(201023008 - Fortuna Extreme - Fortuna, Aquarius)
+[02/May/2021 08:41:07,409] handle_pre_save(201023008 - Fortuna Extreme - Fortuna, Aquarius)
+[02/May/2021 08:41:07,419] handle_post_save(201023008 - Fortuna Extreme - Fortuna, Aquarius)
+[02/May/2021 08:41:07,419] update observation = 201023008
+[02/May/2021 08:42:31,776] SIGNAL : pre_save Observation(201023008 - Fortuna Extreme - Fortuna, Aquarius)
+[02/May/2021 08:42:31,776] handle_pre_save(201023008 - Fortuna Extreme - Fortuna, Aquarius)
+[02/May/2021 08:42:31,809] handle_post_save(201023008 - Fortuna Extreme - Fortuna, Aquarius)
+[02/May/2021 08:42:31,809] update observation = 201023008
+[02/May/2021 09:03:49,616] add_dataproducts(201023008,1)
+[02/May/2021 09:03:49,620] addding dataproduct: 4659937_annotated_transient.jpg
+[02/May/2021 09:03:49,621] SIGNAL : pre_save DataProduct(4659937_annotated_transient.jpg)
+[02/May/2021 09:03:49,621] handle_pre_save(4659937_annotated_transient.jpg)
+[02/May/2021 09:03:49,641] handle_post_save(4659937_annotated_transient.jpg)
+[02/May/2021 09:03:49,641] save new dataproduct
+[02/May/2021 09:03:49,651] update dataproduct parent = 201023008

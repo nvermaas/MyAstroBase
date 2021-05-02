@@ -177,7 +177,7 @@ def dispatch_job(command, observation_id):
 
         # parse the url into observation_dir and filenames
         parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-        parameter_input = observation.observation.derived_raw_image.split('astrobase/data')[1].split('/')
+        parameter_input = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
         parameter_output = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_transient."))
