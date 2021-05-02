@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import DataProduct, Observation, Collection, Status, AstroFile, Job, ObservationBox
+from .models import DataProduct, Observation, Observation2, Collection, Status, AstroFile, Job, ObservationBox
 import logging
 
 logger = logging.getLogger(__name__)
@@ -54,6 +54,39 @@ class ObservationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Observation
         fields = ('id','task_type', 'name', 'instrument','filter','process_type','taskID',
+                  'field_name','field_ra','field_dec','field_fov','box',
+                  'ra_min', 'ra_max','dec_min', 'dec_max','ra_dec_fov','date','size',
+                  'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
+                  'derived_annotated_grid_image','derived_annotated_grid_eq_image','derived_annotated_stars_image','derived_sky_globe_image',
+                  'derived_fits','derived_annotated_transient_image',
+                  'my_status','new_status','astrometry_url','job','url',
+                  'nr_of_dps','data_location', 'quality','description',
+                  'parent','derived_parent_taskid',
+                  'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
+                  'image_type','used_in_hips','children','extra','transient')
+
+
+class Observation2Serializer(serializers.ModelSerializer):
+    # this adds a 'generated_dataproducts' list with hyperlinks to the Observation API.
+    # note that 'generated_dataproducts' is not defined in the DataProduct model,
+    # but comes from the related_field in Observation.parent.
+
+    parent = serializers.PrimaryKeyRelatedField(
+        many=False,
+        queryset=Observation2.objects.filter(task_type='master'),
+        required=False,
+        allow_null=True,
+    )
+
+    children = serializers.StringRelatedField(
+        many=True,
+        required=False,
+        read_only=True
+    )
+
+    class Meta:
+        model = Observation2
+        fields = ('id','task_type', 'name', 'instrument','filter','taskID',
                   'field_name','field_ra','field_dec','field_fov','box',
                   'ra_min', 'ra_max','dec_min', 'dec_max','ra_dec_fov','date','size',
                   'derived_raw_image','derived_sky_plot_image','derived_annotated_image',

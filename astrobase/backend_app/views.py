@@ -16,8 +16,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import DataProduct, Observation, Status, AstroFile, Collection, Job, ObservationBox
-from .serializers import DataProductSerializer, ObservationSerializer, ObservationLimitedSerializer, StatusSerializer, AstroFileSerializer, \
+from .models import DataProduct, Observation, Observation2, Status, AstroFile, Collection, Job, ObservationBox
+from .serializers import DataProductSerializer, ObservationSerializer, Observation2Serializer, ObservationLimitedSerializer, StatusSerializer, AstroFileSerializer, \
     CollectionSerializer, JobSerializer, ObservationBoxSerializer, ObservationMinimumSerializer
 from .forms import FilterForm
 from .services import algorithms
@@ -98,7 +98,72 @@ class ObservationFilter(filters.FilterSet):
             'generated_dataproducts__dataproduct_type': ['exact', 'icontains', 'in']
         }
 
+# example: /my_astrobase/observations/?observing_mode__icontains=powershot_g2
+class Observation2Filter(filters.FilterSet):
 
+    # example of an OR filter.
+    # this filters a range of fields for the given value of 'fieldsearch='.
+    # example: http://localhost:8000/my_astrobase/observations/?fieldsearch=aurora
+    fieldsearch = filters.CharFilter(field_name='fieldsearch', method='search_my_fields')
+
+    # example: http://localhost:8000/my_astrobase/observations/?coordsearch=212,48
+    coordsearch = filters.CharFilter(field_name='coordsearch', method='search_my_coords')
+
+    def search_my_fields(self, queryset, name, value):
+        return queryset.filter(
+            Q(name__icontains=value) | Q(field_name__icontains=value) |
+            Q(quality__icontains=value)| Q(my_status__icontains=value)|
+            Q(taskID__icontains=value) | Q(parent__taskID__icontains=value)
+        )
+
+    def search_my_coords(self, queryset, name, value):
+        # value is a comma separated decimal RA,dec coordinate
+        # chain the filters to create a query to find the coordinate in the bounding box of observations
+        ra,dec = value.split(',')
+        search_ra = float(ra.strip())
+        search_dec = float(dec.strip())
+        q = queryset.filter(ra_min__lte=search_ra)\
+            .filter(ra_max__gte=search_ra)\
+            .filter(dec_min__lte=search_dec)\
+            .filter(dec_max__gte=search_dec)
+        return q
+
+
+    class Meta:
+        model = Observation2
+
+        fields = {
+            'id': ['exact', 'in'],
+            'instrument': ['exact', 'in', 'icontains'],
+            'filter': ['exact', 'in', 'icontains'],
+            'task_type': ['exact', 'in', 'icontains'],  #
+            'field_name': ['gt', 'lt', 'gte', 'lte', 'icontains', 'exact','in'],
+            'field_ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'field_dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'field_fov': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'ra_min': ['gt', 'lt', 'gte', 'lte'],
+            'ra_max': ['gt', 'lt', 'gte', 'lte'],
+            'dec_min': ['gt', 'lt', 'gte', 'lte'],
+            'dec_max': ['gt', 'lt', 'gte', 'lte'],
+            'name': ['exact', 'icontains','in'],
+            'description': ['exact', 'icontains', 'in'],
+            'my_status': ['exact', 'icontains', 'in', 'startswith'],          #/my_astrobase/observations?&my_status__in=archived,removing
+            'taskID': ['gt', 'lt', 'gte', 'lte','exact', 'icontains', 'startswith','in'],
+            'creationTime' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'date' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'data_location': ['exact', 'icontains'],
+            'quality': ['exact', 'icontains','in'],
+            'exposure_in_seconds' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'iso': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'focal_length': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'stacked_images' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'magnitude' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
+            'image_type': ['icontains', 'exact'],
+            'used_in_hips': ['exact'],
+            #'fieldsearch': ['exact', 'icontains', 'in'],
+            #'coordsearch': ['exact'],
+
+        }
 
 # example: /my_astrobase/dataproducts?status__in=created,archived
 class DataProductFilter(filters.FilterSet):
@@ -329,6 +394,90 @@ class ObservationListViewAPI(generics.ListCreateAPIView):
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = ObservationFilter
+
+
+class Observation2ListViewAPI(generics.ListCreateAPIView):
+    """
+    A pagination list of observations, sorted by date.
+    """
+    model = Observation2
+    queryset = Observation2.objects.all().order_by('-date')
+    serializer_class = Observation2Serializer
+
+    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = Observation2Filter
+
+class UpdateObservations2(generics.ListAPIView):
+    model = Observation
+    queryset = Observation.objects.all()
+
+    # override the list method to be able to plug in my transient business logic
+    def list(self, request):
+        Observation2.objects.all().delete()
+
+        observations = Observation.objects.all()
+
+        for observation in observations:
+            observation2 = Observation2(
+                name = observation.name,
+                task_type = observation.task_type,
+                taskID = observation.taskID,
+                creationTime = observation.creationTime,
+                new_status = observation.new_status,
+                my_status = observation.my_status,
+                astrometry_url = observation.astrometry_url,
+                job = observation.job,
+                date = observation.date,
+                instrument = observation.instrument,
+                filter = observation.filter,
+                description = observation.description,
+                url = observation.url,
+
+                field_name= observation.field_name,
+                field_ra = observation.field_ra,
+                field_dec = observation.field_dec,
+                field_fov = observation.field_fov,
+
+                ra_min = observation.ra_min,
+                ra_max = observation.ra_max,
+                dec_min = observation.dec_min,
+                dec_max = observation.dec_max,
+                ra_dec_fov = observation.ra_dec_fov,
+                box = observation.box,
+
+                quality = observation.quality,
+
+                # details about the imaging
+                iso = observation.iso,
+                focal_length = observation.focal_length,
+                exposure_in_seconds = observation.exposure_in_seconds,
+                stacked_images = observation.stacked_images,
+                # magnitude = models.FloatField(null = True, blank=True)
+                magnitude = observation.magnitude,
+                image_type = observation.image_type,
+                used_in_hips = observation.used_in_hips,
+                extra = observation.extra,
+                transient = observation.transient,
+                size = observation.size,
+
+                derived_annotated_image = observation.derived_annotated_image,
+                derived_annotated_transient_image = observation.derived_annotated_transient_image,
+                derived_annotated_grid_image = observation.derived_annotated_grid_image,
+                derived_annotated_grid_eq_image = observation.derived_annotated_grid_eq_image,
+                derived_annotated_stars_image = observation.derived_annotated_stars_image,
+                derived_sky_plot_image = observation.derived_sky_plot_image,
+                derived_sky_globe_image = observation.derived_sky_globe_image,
+                derived_fits = observation.derived_fits
+
+
+            # relationships
+                #parent = observation.parent
+            )
+            print(observation2)
+            observation2.save()
+
+        return Response({"observations2 updated"})
 
 # example: /my_astrobase/observations/
 # calling this view serializes the observations list in a REST API
