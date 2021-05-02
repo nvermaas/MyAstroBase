@@ -18,7 +18,7 @@ from django.db.models import Q
 
 from .models import DataProduct, Observation, Status, AstroFile, Collection, Job, ObservationBox
 from .serializers import DataProductSerializer, ObservationSerializer, ObservationLimitedSerializer, StatusSerializer, AstroFileSerializer, \
-    CollectionSerializer, JobSerializer, ObservationBoxSerializer
+    CollectionSerializer, JobSerializer, ObservationBoxSerializer, ObservationMinimumSerializer
 from .forms import FilterForm
 from .services import algorithms
 from .services import jobs
@@ -340,6 +340,19 @@ class ObservationListViewHips(generics.ListCreateAPIView):
     queryset = Observation.objects.all()
     serializer_class = ObservationLimitedSerializer
     pagination_class = NoPagination
+
+    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = ObservationFilter
+
+
+class ObservationListMinimumViewAPI(generics.ListCreateAPIView):
+    """
+    A pagination list of observations, sorted by date.
+    """
+    model = Observation
+    queryset = Observation.objects.all().order_by('-date')
+    serializer_class = ObservationMinimumSerializer
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)

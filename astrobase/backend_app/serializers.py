@@ -98,7 +98,7 @@ class ObservationFullSerializer(serializers.ModelSerializer):
     class Meta:
         model = Observation
         fields = ('id','task_type', 'name', 'instrument','filter','process_type','taskID',
-                  'field_name','field_ra','field_dec','field_fov','box'
+                  'field_name','field_ra','field_dec','field_fov','box',
                   'ra_min', 'ra_max','dec_min', 'dec_max','ra_dec_fov','date','size',
                   'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
                   'derived_annotated_grid_image','derived_annotated_stars_image','derived_sky_globe_image',
@@ -136,6 +136,24 @@ class ObservationLimitedSerializer(serializers.ModelSerializer):
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
                   'image_type','used_in_hips')
 
+
+class ObservationMinimumSerializer(serializers.ModelSerializer):
+    # this adds a 'generated_dataproducts' list with hyperlinks to the Observation API.
+    # note that 'generated_dataproducts' is not defined in the DataProduct model,
+    # but comes from the related_field in Observation.parent.
+
+
+
+    class Meta:
+        model = Observation
+        fields = ('id','task_type', 'name', 'instrument','filter','process_type','taskID',
+                  'field_name','box',
+                  'date',
+                  'derived_annotated_image',
+                  'quality','description',
+                  'derived_parent_taskid',
+                  'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
+                  'image_type','used_in_hips','children')
 
 class CollectionSerializer(serializers.ModelSerializer):
     observations = ObservationLimitedSerializer(many=True, read_only=True)

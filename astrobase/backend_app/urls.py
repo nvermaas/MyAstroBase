@@ -28,6 +28,7 @@ urlpatterns = [
 
     # ex: /astrobase/observations/
     path('observations/', views.ObservationListViewAPI.as_view()),
+    path('observations_minimum/', views.ObservationListMinimumViewAPI.as_view()),
     path('observations_hips/', views.ObservationListViewHips.as_view()),
 
     # ex: /astrobase/observations/5/
