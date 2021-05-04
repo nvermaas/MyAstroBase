@@ -306,134 +306,6 @@ class Observation(TaskObject):
         return str(self.taskID) + ' - ' + str(self.name) + ' - ' + str(self.field_name)
 
 
-# file upload for images to the astrobase landing_pad
-def my_directory_path(instance, filename):
-    """
-    overrides the location where the file is written and adds the provided directory to it.
-    :param instance:
-    :param filename:
-    :return:
-    """
-    new_filename = instance.new_filename
-    if new_filename!="":
-        my_file = os.path.join(instance.directory, new_filename)
-    else:
-        my_file = os.path.join(instance.directory, filename)
-    return my_file
-
-
-# Files to upload (images and inspectionplots)
-class AstroFile(models.Model):
-    # using a custom 'storage' to overwrite existing files.
-    # (because the 'delete' methods do not delete associated images).
-    file = models.FileField(upload_to=my_directory_path, storage=OverwriteStorage(), blank=False, null=False)
-    new_filename = models.CharField(max_length=80, blank=True)
-    directory = models.CharField(max_length=128, blank=True)
-    timestamp = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.file.name
-
-
-class DataProduct(TaskObject):
-    # properties
-    #file = models.FileField(upload_to=my_directory_path, storage=OverwriteStorage(), blank=False, null=False)
-
-    filename = models.CharField(max_length=200, default="unknown")
-    description = models.CharField(max_length=255, default="unknown")
-    dataproduct_type = models.CharField('Dataproduct Type', default=TYPE_RAW, max_length=50)
-    size = models.BigIntegerField(default=0)
-    quality = models.CharField(max_length=30, default="unknown")
-
-    # relationships
-    parent = models.ForeignKey(Observation, related_name='generated_dataproducts', on_delete=models.CASCADE, null=False)
-
-    # this translates a view-name (from urls.py) back to a url, to avoid hardcoded url's in the html templates
-    # bad : <td><a href="/astrobase/observations/{{ observation.id }}/" target="_blank">{{ observation.taskID }} </a> </td>
-    # good: <td><a href="{{ observation.get_absolute_url }}" target="_blank">{{ observation.taskID }} </a> </td>
-    def get_absolute_url(self):
-        return reverse('dataproduct-detail-view-api', kwargs={'pk': self.pk})
-
-    def __str__(self):
-        return self.filename
-
-    @property
-    def property_url(self):
-        data_host = settings.DATA_HOST
-        path = data_host + '/' + self.taskID + '/' + self.filename
-
-        return path
-
-
-class Collection(models.Model):
-    """
-    A way to bundle observations into collections
-    """
-    COLLECTION_TYPE_CHOICES = (
-        ("solar system", "solar system"),
-        ("stars wide angle","stars wide angle"),
-        ("stars zoomed-in", "stars zoomed-in"),
-        ("deep sky", "deep sky"),
-        ("moon", "moon"),
-        ("spacecraft", "spacecraft"),
-        ("scenery", "scenery"),
-        ("technical", "technical"),
-        ("event", "event"),
-        ("other", "other"),
-    )
-
-    date = models.DateTimeField('date', null=True)
-    name = models.CharField(max_length=100, default="unknown")
-    collection_type = models.CharField(max_length=20, null=True, choices = COLLECTION_TYPE_CHOICES, default="other")
-    description = models.CharField(max_length=255, default="", null=True, blank=True)
-
-    # relationships
-    observations = models.ManyToManyField(Observation)
-
-    def __str__(self):
-        return str(self.name)
-
-
-# job to be executed async by the astrobase_services packages by polling the database
-class Job(models.Model):
-    creationTime = models.DateTimeField(default=datetime.utcnow, blank=True)
-    # relationships
-    command = models.CharField(max_length=200, default="", null=True)
-    parameters = models.CharField(max_length=200, default="", null=True, blank=True)
-    extra = models.TextField(null=True, blank=True)
-    status = models.CharField(max_length=50, default="defined", null=True)
-    result = models.CharField(max_length=200, default="", null=True, blank=True)
-
-    def __str__(self):
-        return str(self.id) + ' - ' + str(self.command) + " (" + self.status + ")"
-
-
-# only retrieve a limited number of fields for better performance
-class ObservationBoxManager(models.Manager):
-    def get_queryset(self):
-        return super(ObservationBoxManager, self).get_queryset().filter(used_in_hips=True).exclude(box=None)\
-            .only('taskID','name','field_ra','field_dec','field_fov','field_name','box','image_type','quality')
-
-# this is a proxy model of Observation with limited fields
-class ObservationBox(Observation):
-    objects = ObservationBoxManager()
-
-    @property
-    def derived_fits(self):
-        # get the sky_globe dataproduct
-
-        # find object with 'datasetID'
-        try:
-            dataproduct = DataProduct.objects.get(dataproduct_type='fits',taskID=self.taskID)
-            path = dataproduct.property_url
-            return path
-        except:
-            return None
-
-    class Meta:
-        proxy = True
-
-
 class Observation2(models.Model):
     INSTRUMENT_CHOICES = (
         ("Powershot G2", "Powershot G2"),
@@ -575,4 +447,162 @@ class Observation2(models.Model):
 
     def __str__(self):
         return str(self.taskID) + ' - ' + str(self.name) + ' - ' + str(self.field_name)
+
+
+
+# file upload for images to the astrobase landing_pad
+def my_directory_path(instance, filename):
+    """
+    overrides the location where the file is written and adds the provided directory to it.
+    :param instance:
+    :param filename:
+    :return:
+    """
+    new_filename = instance.new_filename
+    if new_filename!="":
+        my_file = os.path.join(instance.directory, new_filename)
+    else:
+        my_file = os.path.join(instance.directory, filename)
+    return my_file
+
+
+# Files to upload (images and inspectionplots)
+class AstroFile(models.Model):
+    # using a custom 'storage' to overwrite existing files.
+    # (because the 'delete' methods do not delete associated images).
+    file = models.FileField(upload_to=my_directory_path, storage=OverwriteStorage(), blank=False, null=False)
+    new_filename = models.CharField(max_length=80, blank=True)
+    directory = models.CharField(max_length=128, blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.file.name
+
+
+class DataProduct(TaskObject):
+    # properties
+    #file = models.FileField(upload_to=my_directory_path, storage=OverwriteStorage(), blank=False, null=False)
+
+    filename = models.CharField(max_length=200, default="unknown")
+    description = models.CharField(max_length=255, default="unknown")
+    dataproduct_type = models.CharField('Dataproduct Type', default=TYPE_RAW, max_length=50)
+    size = models.BigIntegerField(default=0)
+    quality = models.CharField(max_length=30, default="unknown")
+
+    # relationships
+    parent = models.ForeignKey(Observation, related_name='generated_dataproducts', on_delete=models.CASCADE, null=False)
+
+    # this translates a view-name (from urls.py) back to a url, to avoid hardcoded url's in the html templates
+    # bad : <td><a href="/astrobase/observations/{{ observation.id }}/" target="_blank">{{ observation.taskID }} </a> </td>
+    # good: <td><a href="{{ observation.get_absolute_url }}" target="_blank">{{ observation.taskID }} </a> </td>
+    def get_absolute_url(self):
+        return reverse('dataproduct-detail-view-api', kwargs={'pk': self.pk})
+
+    def __str__(self):
+        return self.filename
+
+    @property
+    def property_url(self):
+        data_host = settings.DATA_HOST
+        path = data_host + '/' + self.taskID + '/' + self.filename
+
+        return path
+
+
+class Collection(models.Model):
+    """
+    A way to bundle observations into collections
+    """
+    COLLECTION_TYPE_CHOICES = (
+        ("solar system", "solar system"),
+        ("stars wide angle","stars wide angle"),
+        ("stars zoomed-in", "stars zoomed-in"),
+        ("deep sky", "deep sky"),
+        ("moon", "moon"),
+        ("spacecraft", "spacecraft"),
+        ("scenery", "scenery"),
+        ("technical", "technical"),
+        ("event", "event"),
+        ("other", "other"),
+    )
+
+    date = models.DateTimeField('date', null=True)
+    name = models.CharField(max_length=100, default="unknown")
+    collection_type = models.CharField(max_length=20, null=True, choices = COLLECTION_TYPE_CHOICES, default="other")
+    description = models.CharField(max_length=255, default="", null=True, blank=True)
+
+    # relationships
+    observations = models.ManyToManyField(Observation)
+
+    def __str__(self):
+        return str(self.name)
+
+
+class Collection2(models.Model):
+    """
+    A way to bundle observations into collections
+    """
+    COLLECTION_TYPE_CHOICES = (
+        ("solar system", "solar system"),
+        ("stars wide angle","stars wide angle"),
+        ("stars zoomed-in", "stars zoomed-in"),
+        ("deep sky", "deep sky"),
+        ("moon", "moon"),
+        ("spacecraft", "spacecraft"),
+        ("scenery", "scenery"),
+        ("technical", "technical"),
+        ("event", "event"),
+        ("other", "other"),
+    )
+
+    date = models.DateTimeField('date', null=True)
+    name = models.CharField(max_length=100, default="unknown")
+    collection_type = models.CharField(max_length=20, null=True, choices = COLLECTION_TYPE_CHOICES, default="other")
+    description = models.CharField(max_length=255, default="", null=True, blank=True)
+
+    # relationships
+    observations = models.ManyToManyField(Observation2)
+
+    def __str__(self):
+        return str(self.name)
+
+
+# job to be executed async by the astrobase_services packages by polling the database
+class Job(models.Model):
+    creationTime = models.DateTimeField(default=datetime.utcnow, blank=True)
+    # relationships
+    command = models.CharField(max_length=200, default="", null=True)
+    parameters = models.CharField(max_length=200, default="", null=True, blank=True)
+    extra = models.TextField(null=True, blank=True)
+    status = models.CharField(max_length=50, default="defined", null=True)
+    result = models.CharField(max_length=200, default="", null=True, blank=True)
+
+    def __str__(self):
+        return str(self.id) + ' - ' + str(self.command) + " (" + self.status + ")"
+
+
+# only retrieve a limited number of fields for better performance
+class ObservationBoxManager(models.Manager):
+    def get_queryset(self):
+        return super(ObservationBoxManager, self).get_queryset().filter(used_in_hips=True).exclude(box=None)\
+            .only('taskID','name','field_ra','field_dec','field_fov','field_name','box','image_type','quality')
+
+# this is a proxy model of Observation with limited fields
+class ObservationBox(Observation):
+    objects = ObservationBoxManager()
+
+    @property
+    def derived_fits(self):
+        # get the sky_globe dataproduct
+
+        # find object with 'datasetID'
+        try:
+            dataproduct = DataProduct.objects.get(dataproduct_type='fits',taskID=self.taskID)
+            path = dataproduct.property_url
+            return path
+        except:
+            return None
+
+    class Meta:
+        proxy = True
 

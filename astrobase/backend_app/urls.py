@@ -30,6 +30,7 @@ urlpatterns = [
     path('observations/', views.ObservationListViewAPI.as_view()),
     path('observations2/', views.Observation2ListViewAPI.as_view()),
     path('update_observations2/', views.UpdateObservations2.as_view()),
+    path('update_collections2/', views.UpdateCollections2.as_view()),
 
     path('observations_minimum/', views.ObservationListMinimumViewAPI.as_view()),
     path('observations_hips/', views.ObservationListViewHips.as_view()),
@@ -42,9 +43,11 @@ urlpatterns = [
 
     # ex: /astrobase/collections/
     path('collections/', views.CollectionListViewAPI.as_view()),
+    path('collections2/', views.Collection2ListViewAPI.as_view()),
 
     # ex: /astrobase/collections/5/
     path('collections/<int:pk>/', views.CollectionDetailsViewAPI.as_view(), name='collection-detail-view-api'),
+    path('collections2/<int:pk>/', views.Collection2DetailsViewAPI.as_view(), name='collection2-detail-view-api'),
 
     # ex: /astrobase/status/
     path('status/', views.StatusListViewAPI.as_view(),name='status-list-view-api'),

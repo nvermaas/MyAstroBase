@@ -16,9 +16,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import DataProduct, Observation, Observation2, Status, AstroFile, Collection, Job, ObservationBox
+from .models import DataProduct, Observation, Observation2, Status, AstroFile, Collection, Collection2, Job, ObservationBox
 from .serializers import DataProductSerializer, ObservationSerializer, Observation2Serializer, ObservationLimitedSerializer, StatusSerializer, AstroFileSerializer, \
-    CollectionSerializer, JobSerializer, ObservationBoxSerializer, ObservationMinimumSerializer
+    CollectionSerializer, Collection2Serializer, JobSerializer, ObservationBoxSerializer, ObservationMinimumSerializer
 from .forms import FilterForm
 from .services import algorithms
 from .services import jobs
@@ -199,6 +199,28 @@ class CollectionFilter(filters.FilterSet):
 
     class Meta:
         model = Collection
+
+        fields = {
+            'description': ['exact', 'icontains'],
+            'name': ['exact', 'icontains'],
+            'collection_type': ['icontains', 'exact'],
+            # 'fieldsearch': ['exact', 'icontains', 'in']
+        }
+
+class Collection2Filter(filters.FilterSet):
+
+    # example of an OR filter.
+    # this filters a range of fields for the given value of 'fieldsearch='.
+    # example: http://localhost:8000/my_astrobase/observations/?fieldsearch=aurora
+    fieldsearch = filters.CharFilter(field_name='fieldsearch', method='search_my_fields')
+
+    def search_my_fields(self, queryset, name, value):
+        return queryset.filter(
+            Q(name__icontains=value) | Q(description__icontains=value)
+        )
+
+    class Meta:
+        model = Collection2
 
         fields = {
             'description': ['exact', 'icontains'],
@@ -469,15 +491,74 @@ class UpdateObservations2(generics.ListAPIView):
                 derived_sky_plot_image = observation.derived_sky_plot_image,
                 derived_sky_globe_image = observation.derived_sky_globe_image,
                 derived_fits = observation.derived_fits
-
-
-            # relationships
-                #parent = observation.parent
             )
+
             print(observation2)
             observation2.save()
 
+        # now that all observations are in the database
+        # iterate once more to find the parents
+        for observation in observations:
+
+            # relationships
+            if observation.parent != None:
+                taskID_child = observation.taskID
+                taskID_parent = observation.parent.taskID
+                child2 = Observation2.objects.get(taskID=taskID_child)
+                parent2 = Observation2.objects.get(taskID=taskID_parent)
+                child2.parent = parent2
+                print(child2)
+                child2.save()
+
+
+        # update collections2
+        Collection2.objects.all().delete()
+        collections = Collection.objects.all()
+
+        for collection in collections:
+            collection2 = Collection2(
+                date = collection.date,
+                name = collection.name,
+                collection_type = collection.collection_type,
+                description = collection.description,
+            )
+            print(collection2)
+            collection2.save()
+
+            observations = collection.observations
+            for observation in observations:
+                observation2 = Observation2.objects.get(taskID=observation.taskID)
+                collection2.observations.add(observation2)
         return Response({"observations2 updated"})
+
+
+class UpdateCollections2(generics.ListAPIView):
+    model = Collection
+    queryset = Collection.objects.all()
+
+    # override the list method to be able to plug in my transient business logic
+    def list(self, request):
+
+        # update collections2
+        Collection2.objects.all().delete()
+        collections = Collection.objects.all()
+
+        for collection in collections:
+            collection2 = Collection2(
+                date = collection.date,
+                name = collection.name,
+                collection_type = collection.collection_type,
+                description = collection.description,
+            )
+            print(collection2)
+            collection2.save()
+
+            observations = collection.observations.all()
+            for observation in observations:
+                observation2 = Observation2.objects.get(taskID=observation.taskID)
+                collection2.observations.add(observation2)
+        return Response({"collections2 updated"})
+
 
 # example: /my_astrobase/observations/
 # calling this view serializes the observations list in a REST API
@@ -547,7 +628,32 @@ class CollectionDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     queryset = Collection.objects.all()
     serializer_class = CollectionSerializer
     
-    
+
+class Collection2ListViewAPI(generics.ListCreateAPIView):
+    """
+    A pagination list of Collections, sorted by date.
+    """
+    model = Collection2
+    queryset = Collection2.objects.all().order_by('-date')
+    serializer_class = Collection2Serializer
+    pagination_class = CollectionPagination
+
+    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = Collection2Filter
+
+
+# example: /my_astrobase/Collections/5/
+# calling this view serializes an Collection in the REST API
+class Collection2DetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Detailed view of an Collection2.
+    """
+    model = Collection2
+    queryset = Collection2.objects.all()
+    serializer_class = Collection2Serializer
+
+
 # example: /my_astrobase/projects/
 # calling this view serializes the projects list in a REST API
 class ProjectListViewAPI(generics.ListCreateAPIView):

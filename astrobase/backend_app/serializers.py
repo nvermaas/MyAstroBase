@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import DataProduct, Observation, Observation2, Collection, Status, AstroFile, Job, ObservationBox
+from .models import DataProduct, Observation, Observation2, Collection, Collection2, Status, AstroFile, Job, ObservationBox
 import logging
 
 logger = logging.getLogger(__name__)
@@ -144,6 +144,7 @@ class ObservationFullSerializer(serializers.ModelSerializer):
 
 
 class ObservationLimitedSerializer(serializers.ModelSerializer):
+    # used for collections
     # this adds a 'generated_dataproducts' list with hyperlinks to the Observation API.
     # note that 'generated_dataproducts' is not defined in the DataProduct model,
     # but comes from the related_field in Observation.parent.
@@ -157,6 +158,34 @@ class ObservationLimitedSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Observation
+        fields = ('id','name', 'instrument','filter','taskID',
+                  'field_name','field_ra','field_dec','field_fov','box',
+                  'ra_min', 'ra_max','dec_min', 'dec_max','ra_dec_fov','date','size',
+                  'derived_raw_image','derived_sky_plot_image','derived_annotated_image',
+                  'derived_annotated_grid_image','derived_annotated_grid_eq_image','derived_annotated_stars_image','derived_sky_globe_image',
+                  'derived_fits','derived_annotated_transient_image',
+                  'my_status','new_status','job','astrometry_url','url',
+                  'quality','description',
+                  'parent','derived_parent_taskid',
+                  'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
+                  'image_type','used_in_hips')
+
+
+class Observation2LimitedSerializer(serializers.ModelSerializer):
+    # used for collections
+    # this adds a 'generated_dataproducts' list with hyperlinks to the Observation API.
+    # note that 'generated_dataproducts' is not defined in the DataProduct model,
+    # but comes from the related_field in Observation.parent.
+
+    parent = serializers.PrimaryKeyRelatedField(
+        many=False,
+        queryset=Observation2.objects.filter(task_type='master'),
+        required=False,
+        allow_null=True,
+    )
+
+    class Meta:
+        model = Observation2
         fields = ('id','name', 'instrument','filter','taskID',
                   'field_name','field_ra','field_dec','field_fov','box',
                   'ra_min', 'ra_max','dec_min', 'dec_max','ra_dec_fov','date','size',
@@ -197,6 +226,15 @@ class CollectionSerializer(serializers.ModelSerializer):
         # fields = "__all__"
         # this expands the observations to more than just the id.
         #depth=1
+
+
+class Collection2Serializer(serializers.ModelSerializer):
+    observations = Observation2LimitedSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Collection2
+        fields = ('id','date','name','collection_type','description','observations')
+
 
 # Serializer for file uploads
 class AstroFileSerializer(serializers.ModelSerializer):
