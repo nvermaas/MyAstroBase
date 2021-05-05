@@ -17,15 +17,6 @@ urlpatterns = [
     path('task/<taskID>/', views.DataProductsListView.as_view(), name='dataproducts-list-view'),
 
     # --- REST API ---
-    # ex: /astrobase/dataproducts/
-    path('dataproducts/', views.DataProductListViewAPI.as_view()),
-
-    # ex: /astrobase/dataproducts/5/
-    path('dataproducts/<int:pk>/', views.DataProductDetailsViewAPI.as_view(),name='dataproduct-detail-view-api'),
-
-    # ex: /astrobase/observations/
-    path('tasks/', views.ObservationListViewAPI.as_view()),
-
     # ex: /astrobase/observations/
     path('observations/', views.ObservationListViewAPI.as_view()),
     path('observations2/', views.Observation2ListViewAPI.as_view()),
@@ -83,14 +74,6 @@ urlpatterns = [
     path('observations/<int:pk>/setstatus/<new_status>/<page>',
          views.ObservationSetStatus,
          name='observation-setstatus-view'),
-
-    path('observations/<int:pk>/setstatus_dps/<new_dps_status>/<new_obs_status>/<page>',
-         views.ObservationSetStatusDataProducts,
-         name='observation-dps-setstatus-view'),
-
-    path('dataproducts/<int:pk>/setstatus/<new_status>',
-         views.DataProductSetStatusView,
-         name='dataproduct-setstatus-view'),
 
     path('observations/<int:pk>/setquality/<quality>/<page>',
          views.ObservationSetQuality,

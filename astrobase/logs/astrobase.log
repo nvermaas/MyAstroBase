@@ -21170,3 +21170,864 @@
 [05/May/2021 17:18:20,179] checking taskid 210501002..
 [05/May/2021 17:18:20,181] checking taskid 210501003..
 [05/May/2021 17:18:20,183] checking taskid 210501004..
+[05/May/2021 17:18:36,461] get_next_taskid(20210501)
+[05/May/2021 17:18:36,462] checking taskid 210501001..
+[05/May/2021 17:18:36,467] checking taskid 210501002..
+[05/May/2021 17:18:36,470] checking taskid 210501003..
+[05/May/2021 17:18:36,473] checking taskid 210501004..
+[05/May/2021 17:18:42,441] SIGNAL : pre_save Observation(210501003 - vesta - vesta)
+[05/May/2021 17:18:42,442] handle_pre_save(210501003 - vesta - vesta)
+[05/May/2021 17:18:42,494] handle_post_save(210501003 - vesta - vesta)
+[05/May/2021 17:18:42,495] update observation = 210501003
+[05/May/2021 17:18:52,757] get_next_taskid(20210501)
+[05/May/2021 17:18:52,758] checking taskid 210501001..
+[05/May/2021 17:18:52,770] checking taskid 210501002..
+[05/May/2021 17:18:52,776] checking taskid 210501003..
+[05/May/2021 17:18:52,782] checking taskid 210501004..
+[05/May/2021 17:19:09,108] get_next_taskid(20210501)
+[05/May/2021 17:19:09,110] checking taskid 210501001..
+[05/May/2021 17:19:09,120] checking taskid 210501002..
+[05/May/2021 17:19:09,126] checking taskid 210501003..
+[05/May/2021 17:19:09,130] checking taskid 210501004..
+[05/May/2021 17:19:25,420] get_next_taskid(20210501)
+[05/May/2021 17:19:25,420] checking taskid 210501001..
+[05/May/2021 17:19:25,423] checking taskid 210501002..
+[05/May/2021 17:19:25,425] checking taskid 210501003..
+[05/May/2021 17:19:25,426] checking taskid 210501004..
+[05/May/2021 17:19:41,967] get_next_taskid(20210501)
+[05/May/2021 17:19:41,968] checking taskid 210501001..
+[05/May/2021 17:19:41,978] checking taskid 210501002..
+[05/May/2021 17:19:41,981] checking taskid 210501003..
+[05/May/2021 17:19:41,984] checking taskid 210501004..
+[05/May/2021 17:19:58,269] get_next_taskid(20210501)
+[05/May/2021 17:19:58,270] checking taskid 210501001..
+[05/May/2021 17:19:58,281] checking taskid 210501002..
+[05/May/2021 17:19:58,286] checking taskid 210501003..
+[05/May/2021 17:19:58,291] checking taskid 210501004..
+[05/May/2021 17:20:14,608] get_next_taskid(20210501)
+[05/May/2021 17:20:14,609] checking taskid 210501001..
+[05/May/2021 17:20:14,617] checking taskid 210501002..
+[05/May/2021 17:20:14,621] checking taskid 210501003..
+[05/May/2021 17:20:14,624] checking taskid 210501004..
+[05/May/2021 17:20:26,276] add_dataproducts(210501003,1)
+[05/May/2021 17:20:27,139] SIGNAL : pre_save Observation(210501003 - vesta - vesta)
+[05/May/2021 17:20:27,140] handle_pre_save(210501003 - vesta - vesta)
+[05/May/2021 17:20:27,169] handle_post_save(210501003 - vesta - vesta)
+[05/May/2021 17:20:27,169] update observation = 210501003
+[05/May/2021 17:20:30,917] get_next_taskid(20210501)
+[05/May/2021 17:20:30,918] checking taskid 210501001..
+[05/May/2021 17:20:30,922] checking taskid 210501002..
+[05/May/2021 17:20:30,923] checking taskid 210501003..
+[05/May/2021 17:20:30,924] checking taskid 210501004..
+[05/May/2021 17:20:47,206] get_next_taskid(20210501)
+[05/May/2021 17:20:47,207] checking taskid 210501001..
+[05/May/2021 17:20:47,222] checking taskid 210501002..
+[05/May/2021 17:20:47,226] checking taskid 210501003..
+[05/May/2021 17:20:47,231] checking taskid 210501004..
+[05/May/2021 17:21:03,500] get_next_taskid(20210501)
+[05/May/2021 17:21:03,500] checking taskid 210501001..
+[05/May/2021 17:21:03,504] checking taskid 210501002..
+[05/May/2021 17:21:03,506] checking taskid 210501003..
+[05/May/2021 17:21:03,507] checking taskid 210501004..
+[05/May/2021 17:21:20,072] get_next_taskid(20210501)
+[05/May/2021 17:21:20,073] checking taskid 210501001..
+[05/May/2021 17:21:20,081] checking taskid 210501002..
+[05/May/2021 17:21:20,087] checking taskid 210501003..
+[05/May/2021 17:21:20,110] checking taskid 210501004..
+[05/May/2021 17:21:36,413] get_next_taskid(20210501)
+[05/May/2021 17:21:36,414] checking taskid 210501001..
+[05/May/2021 17:21:36,426] checking taskid 210501002..
+[05/May/2021 17:21:36,430] checking taskid 210501003..
+[05/May/2021 17:21:36,432] checking taskid 210501004..
+[05/May/2021 17:21:52,715] get_next_taskid(20210501)
+[05/May/2021 17:21:52,716] checking taskid 210501001..
+[05/May/2021 17:21:52,723] checking taskid 210501002..
+[05/May/2021 17:21:52,728] checking taskid 210501003..
+[05/May/2021 17:21:52,731] checking taskid 210501004..
+[05/May/2021 17:22:09,023] get_next_taskid(20210501)
+[05/May/2021 17:22:09,024] checking taskid 210501001..
+[05/May/2021 17:22:09,035] checking taskid 210501002..
+[05/May/2021 17:22:09,042] checking taskid 210501003..
+[05/May/2021 17:22:09,049] checking taskid 210501004..
+[05/May/2021 17:22:25,336] get_next_taskid(20210501)
+[05/May/2021 17:22:25,337] checking taskid 210501001..
+[05/May/2021 17:22:25,352] checking taskid 210501002..
+[05/May/2021 17:22:25,354] checking taskid 210501003..
+[05/May/2021 17:22:25,366] checking taskid 210501004..
+[05/May/2021 17:22:41,665] get_next_taskid(20210501)
+[05/May/2021 17:22:41,666] checking taskid 210501001..
+[05/May/2021 17:22:41,670] checking taskid 210501002..
+[05/May/2021 17:22:41,672] checking taskid 210501003..
+[05/May/2021 17:22:41,673] checking taskid 210501004..
+[05/May/2021 17:22:57,943] get_next_taskid(20210501)
+[05/May/2021 17:22:57,944] checking taskid 210501001..
+[05/May/2021 17:22:57,948] checking taskid 210501002..
+[05/May/2021 17:22:57,950] checking taskid 210501003..
+[05/May/2021 17:22:57,952] checking taskid 210501004..
+[05/May/2021 17:23:14,228] get_next_taskid(20210501)
+[05/May/2021 17:23:14,229] checking taskid 210501001..
+[05/May/2021 17:23:14,238] checking taskid 210501002..
+[05/May/2021 17:23:14,242] checking taskid 210501003..
+[05/May/2021 17:23:14,245] checking taskid 210501004..
+[05/May/2021 17:23:30,562] get_next_taskid(20210501)
+[05/May/2021 17:23:30,564] checking taskid 210501001..
+[05/May/2021 17:23:30,575] checking taskid 210501002..
+[05/May/2021 17:23:30,581] checking taskid 210501003..
+[05/May/2021 17:23:30,586] checking taskid 210501004..
+[05/May/2021 17:23:46,893] get_next_taskid(20210501)
+[05/May/2021 17:23:46,899] checking taskid 210501001..
+[05/May/2021 17:23:46,915] checking taskid 210501002..
+[05/May/2021 17:23:46,920] checking taskid 210501003..
+[05/May/2021 17:23:46,929] checking taskid 210501004..
+[05/May/2021 17:24:03,303] get_next_taskid(20210501)
+[05/May/2021 17:24:03,304] checking taskid 210501001..
+[05/May/2021 17:24:03,310] checking taskid 210501002..
+[05/May/2021 17:24:03,313] checking taskid 210501003..
+[05/May/2021 17:24:03,315] checking taskid 210501004..
+[05/May/2021 17:24:19,602] get_next_taskid(20210501)
+[05/May/2021 17:24:19,603] checking taskid 210501001..
+[05/May/2021 17:24:19,613] checking taskid 210501002..
+[05/May/2021 17:24:19,618] checking taskid 210501003..
+[05/May/2021 17:24:19,622] checking taskid 210501004..
+[05/May/2021 17:24:36,983] get_next_taskid(20210501)
+[05/May/2021 17:24:36,985] checking taskid 210501001..
+[05/May/2021 17:24:36,995] checking taskid 210501002..
+[05/May/2021 17:24:36,999] checking taskid 210501003..
+[05/May/2021 17:24:37,002] checking taskid 210501004..
+[05/May/2021 17:24:53,316] get_next_taskid(20210501)
+[05/May/2021 17:24:53,316] checking taskid 210501001..
+[05/May/2021 17:24:53,321] checking taskid 210501002..
+[05/May/2021 17:24:53,322] checking taskid 210501003..
+[05/May/2021 17:24:53,324] checking taskid 210501004..
+[05/May/2021 17:25:09,635] get_next_taskid(20210501)
+[05/May/2021 17:25:09,636] checking taskid 210501001..
+[05/May/2021 17:25:09,647] checking taskid 210501002..
+[05/May/2021 17:25:09,651] checking taskid 210501003..
+[05/May/2021 17:25:09,656] checking taskid 210501004..
+[05/May/2021 17:25:25,987] get_next_taskid(20210501)
+[05/May/2021 17:25:25,989] checking taskid 210501001..
+[05/May/2021 17:25:26,000] checking taskid 210501002..
+[05/May/2021 17:25:26,006] checking taskid 210501003..
+[05/May/2021 17:25:26,011] checking taskid 210501004..
+[05/May/2021 17:25:42,316] get_next_taskid(20210501)
+[05/May/2021 17:25:42,316] checking taskid 210501001..
+[05/May/2021 17:25:42,324] checking taskid 210501002..
+[05/May/2021 17:25:42,328] checking taskid 210501003..
+[05/May/2021 17:25:42,332] checking taskid 210501004..
+[05/May/2021 17:25:58,600] get_next_taskid(20210501)
+[05/May/2021 17:25:58,600] checking taskid 210501001..
+[05/May/2021 17:25:58,604] checking taskid 210501002..
+[05/May/2021 17:25:58,607] checking taskid 210501003..
+[05/May/2021 17:25:58,608] checking taskid 210501004..
+[05/May/2021 17:26:14,884] get_next_taskid(20210501)
+[05/May/2021 17:26:14,885] checking taskid 210501001..
+[05/May/2021 17:26:14,893] checking taskid 210501002..
+[05/May/2021 17:26:14,896] checking taskid 210501003..
+[05/May/2021 17:26:14,899] checking taskid 210501004..
+[05/May/2021 17:26:31,188] get_next_taskid(20210501)
+[05/May/2021 17:26:31,189] checking taskid 210501001..
+[05/May/2021 17:26:31,201] checking taskid 210501002..
+[05/May/2021 17:26:31,207] checking taskid 210501003..
+[05/May/2021 17:26:31,211] checking taskid 210501004..
+[05/May/2021 17:26:47,524] get_next_taskid(20210501)
+[05/May/2021 17:26:47,525] checking taskid 210501001..
+[05/May/2021 17:26:47,537] checking taskid 210501002..
+[05/May/2021 17:26:47,543] checking taskid 210501003..
+[05/May/2021 17:26:47,548] checking taskid 210501004..
+[05/May/2021 17:27:03,835] get_next_taskid(20210501)
+[05/May/2021 17:27:03,836] checking taskid 210501001..
+[05/May/2021 17:27:03,840] checking taskid 210501002..
+[05/May/2021 17:27:03,842] checking taskid 210501003..
+[05/May/2021 17:27:03,843] checking taskid 210501004..
+[05/May/2021 17:27:20,123] get_next_taskid(20210501)
+[05/May/2021 17:27:20,123] checking taskid 210501001..
+[05/May/2021 17:27:20,130] checking taskid 210501002..
+[05/May/2021 17:27:20,132] checking taskid 210501003..
+[05/May/2021 17:27:20,134] checking taskid 210501004..
+[05/May/2021 17:27:36,415] get_next_taskid(20210501)
+[05/May/2021 17:27:36,415] checking taskid 210501001..
+[05/May/2021 17:27:36,419] checking taskid 210501002..
+[05/May/2021 17:27:36,420] checking taskid 210501003..
+[05/May/2021 17:27:36,422] checking taskid 210501004..
+[05/May/2021 17:27:52,707] get_next_taskid(20210501)
+[05/May/2021 17:27:52,708] checking taskid 210501001..
+[05/May/2021 17:27:52,718] checking taskid 210501002..
+[05/May/2021 17:27:52,723] checking taskid 210501003..
+[05/May/2021 17:27:52,728] checking taskid 210501004..
+[05/May/2021 17:28:09,033] get_next_taskid(20210501)
+[05/May/2021 17:28:09,034] checking taskid 210501001..
+[05/May/2021 17:28:09,039] checking taskid 210501002..
+[05/May/2021 17:28:09,042] checking taskid 210501003..
+[05/May/2021 17:28:09,045] checking taskid 210501004..
+[05/May/2021 17:28:25,331] get_next_taskid(20210501)
+[05/May/2021 17:28:25,332] checking taskid 210501001..
+[05/May/2021 17:28:25,344] checking taskid 210501002..
+[05/May/2021 17:28:25,349] checking taskid 210501003..
+[05/May/2021 17:28:25,354] checking taskid 210501004..
+[05/May/2021 17:28:41,643] get_next_taskid(20210501)
+[05/May/2021 17:28:41,644] checking taskid 210501001..
+[05/May/2021 17:28:41,648] checking taskid 210501002..
+[05/May/2021 17:28:41,649] checking taskid 210501003..
+[05/May/2021 17:28:41,651] checking taskid 210501004..
+[05/May/2021 17:28:58,005] get_next_taskid(20210501)
+[05/May/2021 17:28:58,006] checking taskid 210501001..
+[05/May/2021 17:28:58,025] checking taskid 210501002..
+[05/May/2021 17:28:58,030] checking taskid 210501003..
+[05/May/2021 17:28:58,035] checking taskid 210501004..
+[05/May/2021 17:29:14,351] get_next_taskid(20210501)
+[05/May/2021 17:29:14,352] checking taskid 210501001..
+[05/May/2021 17:29:14,364] checking taskid 210501002..
+[05/May/2021 17:29:14,368] checking taskid 210501003..
+[05/May/2021 17:29:14,373] checking taskid 210501004..
+[05/May/2021 17:29:30,672] get_next_taskid(20210501)
+[05/May/2021 17:29:30,673] checking taskid 210501001..
+[05/May/2021 17:29:30,680] checking taskid 210501002..
+[05/May/2021 17:29:30,683] checking taskid 210501003..
+[05/May/2021 17:29:30,686] checking taskid 210501004..
+[05/May/2021 17:29:47,132] get_next_taskid(20210501)
+[05/May/2021 17:29:47,132] checking taskid 210501001..
+[05/May/2021 17:29:47,144] checking taskid 210501002..
+[05/May/2021 17:29:47,148] checking taskid 210501003..
+[05/May/2021 17:29:47,150] checking taskid 210501004..
+[05/May/2021 17:30:03,475] get_next_taskid(20210501)
+[05/May/2021 17:30:03,476] checking taskid 210501001..
+[05/May/2021 17:30:03,480] checking taskid 210501002..
+[05/May/2021 17:30:03,481] checking taskid 210501003..
+[05/May/2021 17:30:03,482] checking taskid 210501004..
+[05/May/2021 17:30:19,816] get_next_taskid(20210501)
+[05/May/2021 17:30:19,817] checking taskid 210501001..
+[05/May/2021 17:30:19,822] checking taskid 210501002..
+[05/May/2021 17:30:19,824] checking taskid 210501003..
+[05/May/2021 17:30:19,826] checking taskid 210501004..
+[05/May/2021 17:30:36,122] get_next_taskid(20210501)
+[05/May/2021 17:30:36,123] checking taskid 210501001..
+[05/May/2021 17:30:36,127] checking taskid 210501002..
+[05/May/2021 17:30:36,128] checking taskid 210501003..
+[05/May/2021 17:30:36,130] checking taskid 210501004..
+[05/May/2021 17:30:52,432] get_next_taskid(20210501)
+[05/May/2021 17:30:52,432] checking taskid 210501001..
+[05/May/2021 17:30:52,436] checking taskid 210501002..
+[05/May/2021 17:30:52,437] checking taskid 210501003..
+[05/May/2021 17:30:52,439] checking taskid 210501004..
+[05/May/2021 17:31:08,733] get_next_taskid(20210501)
+[05/May/2021 17:31:08,733] checking taskid 210501001..
+[05/May/2021 17:31:08,737] checking taskid 210501002..
+[05/May/2021 17:31:08,739] checking taskid 210501003..
+[05/May/2021 17:31:08,741] checking taskid 210501004..
+[05/May/2021 17:31:25,006] get_next_taskid(20210501)
+[05/May/2021 17:31:25,007] checking taskid 210501001..
+[05/May/2021 17:31:25,010] checking taskid 210501002..
+[05/May/2021 17:31:25,012] checking taskid 210501003..
+[05/May/2021 17:31:25,013] checking taskid 210501004..
+[05/May/2021 17:31:41,295] get_next_taskid(20210501)
+[05/May/2021 17:31:41,295] checking taskid 210501001..
+[05/May/2021 17:31:41,299] checking taskid 210501002..
+[05/May/2021 17:31:41,300] checking taskid 210501003..
+[05/May/2021 17:31:41,302] checking taskid 210501004..
+[05/May/2021 17:31:57,628] get_next_taskid(20210501)
+[05/May/2021 17:31:57,629] checking taskid 210501001..
+[05/May/2021 17:31:57,640] checking taskid 210501002..
+[05/May/2021 17:31:57,645] checking taskid 210501003..
+[05/May/2021 17:31:57,650] checking taskid 210501004..
+[05/May/2021 17:32:13,981] get_next_taskid(20210501)
+[05/May/2021 17:32:13,982] checking taskid 210501001..
+[05/May/2021 17:32:13,990] checking taskid 210501002..
+[05/May/2021 17:32:13,994] checking taskid 210501003..
+[05/May/2021 17:32:13,998] checking taskid 210501004..
+[05/May/2021 17:32:30,326] get_next_taskid(20210501)
+[05/May/2021 17:32:30,327] checking taskid 210501001..
+[05/May/2021 17:32:30,337] checking taskid 210501002..
+[05/May/2021 17:32:30,341] checking taskid 210501003..
+[05/May/2021 17:32:30,348] checking taskid 210501004..
+[05/May/2021 17:32:46,689] get_next_taskid(20210501)
+[05/May/2021 17:32:46,690] checking taskid 210501001..
+[05/May/2021 17:32:46,701] checking taskid 210501002..
+[05/May/2021 17:32:46,706] checking taskid 210501003..
+[05/May/2021 17:32:46,711] checking taskid 210501004..
+[05/May/2021 17:33:03,031] get_next_taskid(20210501)
+[05/May/2021 17:33:03,032] checking taskid 210501001..
+[05/May/2021 17:33:03,040] checking taskid 210501002..
+[05/May/2021 17:33:03,044] checking taskid 210501003..
+[05/May/2021 17:33:03,047] checking taskid 210501004..
+[05/May/2021 17:33:19,343] get_next_taskid(20210501)
+[05/May/2021 17:33:19,343] checking taskid 210501001..
+[05/May/2021 17:33:19,349] checking taskid 210501002..
+[05/May/2021 17:33:19,352] checking taskid 210501003..
+[05/May/2021 17:33:19,353] checking taskid 210501004..
+[05/May/2021 17:33:35,642] get_next_taskid(20210501)
+[05/May/2021 17:33:35,644] checking taskid 210501001..
+[05/May/2021 17:33:35,656] checking taskid 210501002..
+[05/May/2021 17:33:35,662] checking taskid 210501003..
+[05/May/2021 17:33:35,668] checking taskid 210501004..
+[05/May/2021 17:33:51,961] get_next_taskid(20210501)
+[05/May/2021 17:33:51,961] checking taskid 210501001..
+[05/May/2021 17:33:51,965] checking taskid 210501002..
+[05/May/2021 17:33:51,968] checking taskid 210501003..
+[05/May/2021 17:33:51,969] checking taskid 210501004..
+[05/May/2021 17:34:08,256] get_next_taskid(20210501)
+[05/May/2021 17:34:08,258] checking taskid 210501001..
+[05/May/2021 17:34:08,266] checking taskid 210501002..
+[05/May/2021 17:34:08,269] checking taskid 210501003..
+[05/May/2021 17:34:08,273] checking taskid 210501004..
+[05/May/2021 17:34:24,564] get_next_taskid(20210501)
+[05/May/2021 17:34:24,565] checking taskid 210501001..
+[05/May/2021 17:34:24,579] checking taskid 210501002..
+[05/May/2021 17:34:24,582] checking taskid 210501003..
+[05/May/2021 17:34:24,586] checking taskid 210501004..
+[05/May/2021 17:34:40,859] get_next_taskid(20210501)
+[05/May/2021 17:34:40,859] checking taskid 210501001..
+[05/May/2021 17:34:40,864] checking taskid 210501002..
+[05/May/2021 17:34:40,866] checking taskid 210501003..
+[05/May/2021 17:34:40,868] checking taskid 210501004..
+[05/May/2021 17:34:57,138] get_next_taskid(20210501)
+[05/May/2021 17:34:57,138] checking taskid 210501001..
+[05/May/2021 17:34:57,142] checking taskid 210501002..
+[05/May/2021 17:34:57,144] checking taskid 210501003..
+[05/May/2021 17:34:57,146] checking taskid 210501004..
+[05/May/2021 17:35:13,423] get_next_taskid(20210501)
+[05/May/2021 17:35:13,424] checking taskid 210501001..
+[05/May/2021 17:35:13,427] checking taskid 210501002..
+[05/May/2021 17:35:13,429] checking taskid 210501003..
+[05/May/2021 17:35:13,430] checking taskid 210501004..
+[05/May/2021 17:35:29,742] get_next_taskid(20210501)
+[05/May/2021 17:35:29,743] checking taskid 210501001..
+[05/May/2021 17:35:29,747] checking taskid 210501002..
+[05/May/2021 17:35:29,749] checking taskid 210501003..
+[05/May/2021 17:35:29,750] checking taskid 210501004..
+[05/May/2021 17:35:46,058] get_next_taskid(20210501)
+[05/May/2021 17:35:46,059] checking taskid 210501001..
+[05/May/2021 17:35:46,066] checking taskid 210501002..
+[05/May/2021 17:35:46,069] checking taskid 210501003..
+[05/May/2021 17:35:46,072] checking taskid 210501004..
+[05/May/2021 17:36:02,880] get_next_taskid(20210501)
+[05/May/2021 17:36:02,881] checking taskid 210501001..
+[05/May/2021 17:36:02,888] checking taskid 210501002..
+[05/May/2021 17:36:02,890] checking taskid 210501003..
+[05/May/2021 17:36:02,892] checking taskid 210501004..
+[05/May/2021 17:36:19,211] get_next_taskid(20210501)
+[05/May/2021 17:36:19,212] checking taskid 210501001..
+[05/May/2021 17:36:19,217] checking taskid 210501002..
+[05/May/2021 17:36:19,219] checking taskid 210501003..
+[05/May/2021 17:36:19,222] checking taskid 210501004..
+[05/May/2021 17:36:35,517] get_next_taskid(20210501)
+[05/May/2021 17:36:35,518] checking taskid 210501001..
+[05/May/2021 17:36:35,529] checking taskid 210501002..
+[05/May/2021 17:36:35,533] checking taskid 210501003..
+[05/May/2021 17:36:35,536] checking taskid 210501004..
+[05/May/2021 17:36:51,839] get_next_taskid(20210501)
+[05/May/2021 17:36:51,841] checking taskid 210501001..
+[05/May/2021 17:36:51,851] checking taskid 210501002..
+[05/May/2021 17:36:51,853] checking taskid 210501003..
+[05/May/2021 17:36:51,855] checking taskid 210501004..
+[05/May/2021 17:37:08,143] get_next_taskid(20210501)
+[05/May/2021 17:37:08,144] checking taskid 210501001..
+[05/May/2021 17:37:08,167] checking taskid 210501002..
+[05/May/2021 17:37:08,170] checking taskid 210501003..
+[05/May/2021 17:37:08,173] checking taskid 210501004..
+[05/May/2021 17:37:24,465] get_next_taskid(20210501)
+[05/May/2021 17:37:24,466] checking taskid 210501001..
+[05/May/2021 17:37:24,473] checking taskid 210501002..
+[05/May/2021 17:37:24,477] checking taskid 210501003..
+[05/May/2021 17:37:24,480] checking taskid 210501004..
+[05/May/2021 17:37:40,778] get_next_taskid(20210501)
+[05/May/2021 17:37:40,778] checking taskid 210501001..
+[05/May/2021 17:37:40,786] checking taskid 210501002..
+[05/May/2021 17:37:40,790] checking taskid 210501003..
+[05/May/2021 17:37:40,793] checking taskid 210501004..
+[05/May/2021 17:37:57,091] get_next_taskid(20210501)
+[05/May/2021 17:37:57,091] checking taskid 210501001..
+[05/May/2021 17:37:57,095] checking taskid 210501002..
+[05/May/2021 17:37:57,097] checking taskid 210501003..
+[05/May/2021 17:37:57,099] checking taskid 210501004..
+[05/May/2021 17:38:13,383] get_next_taskid(20210501)
+[05/May/2021 17:38:13,384] checking taskid 210501001..
+[05/May/2021 17:38:13,388] checking taskid 210501002..
+[05/May/2021 17:38:13,389] checking taskid 210501003..
+[05/May/2021 17:38:13,391] checking taskid 210501004..
+[05/May/2021 17:38:30,311] get_next_taskid(20210501)
+[05/May/2021 17:38:30,312] checking taskid 210501001..
+[05/May/2021 17:38:30,321] checking taskid 210501002..
+[05/May/2021 17:38:30,326] checking taskid 210501003..
+[05/May/2021 17:38:30,330] checking taskid 210501004..
+[05/May/2021 17:38:46,648] get_next_taskid(20210501)
+[05/May/2021 17:38:46,649] checking taskid 210501001..
+[05/May/2021 17:38:46,660] checking taskid 210501002..
+[05/May/2021 17:38:46,663] checking taskid 210501003..
+[05/May/2021 17:38:46,668] checking taskid 210501004..
+[05/May/2021 17:39:02,950] get_next_taskid(20210501)
+[05/May/2021 17:39:02,951] checking taskid 210501001..
+[05/May/2021 17:39:02,956] checking taskid 210501002..
+[05/May/2021 17:39:02,959] checking taskid 210501003..
+[05/May/2021 17:39:02,961] checking taskid 210501004..
+[05/May/2021 17:39:19,254] get_next_taskid(20210501)
+[05/May/2021 17:39:19,256] checking taskid 210501001..
+[05/May/2021 17:39:19,262] checking taskid 210501002..
+[05/May/2021 17:39:19,265] checking taskid 210501003..
+[05/May/2021 17:39:19,268] checking taskid 210501004..
+[05/May/2021 17:39:35,547] get_next_taskid(20210501)
+[05/May/2021 17:39:35,548] checking taskid 210501001..
+[05/May/2021 17:39:35,559] checking taskid 210501002..
+[05/May/2021 17:39:35,562] checking taskid 210501003..
+[05/May/2021 17:39:35,565] checking taskid 210501004..
+[05/May/2021 17:39:51,886] get_next_taskid(20210501)
+[05/May/2021 17:39:51,888] checking taskid 210501001..
+[05/May/2021 17:39:51,900] checking taskid 210501002..
+[05/May/2021 17:39:51,906] checking taskid 210501003..
+[05/May/2021 17:39:51,910] checking taskid 210501004..
+[05/May/2021 17:40:08,245] get_next_taskid(20210501)
+[05/May/2021 17:40:08,247] checking taskid 210501001..
+[05/May/2021 17:40:08,260] checking taskid 210501002..
+[05/May/2021 17:40:08,266] checking taskid 210501003..
+[05/May/2021 17:40:08,271] checking taskid 210501004..
+[05/May/2021 17:40:24,608] get_next_taskid(20210501)
+[05/May/2021 17:40:24,609] checking taskid 210501001..
+[05/May/2021 17:40:24,613] checking taskid 210501002..
+[05/May/2021 17:40:24,614] checking taskid 210501003..
+[05/May/2021 17:40:24,616] checking taskid 210501004..
+[05/May/2021 17:40:40,924] get_next_taskid(20210501)
+[05/May/2021 17:40:40,925] checking taskid 210501001..
+[05/May/2021 17:40:40,929] checking taskid 210501002..
+[05/May/2021 17:40:40,931] checking taskid 210501003..
+[05/May/2021 17:40:40,932] checking taskid 210501004..
+[05/May/2021 17:40:57,214] get_next_taskid(20210501)
+[05/May/2021 17:40:57,214] checking taskid 210501001..
+[05/May/2021 17:40:57,218] checking taskid 210501002..
+[05/May/2021 17:40:57,220] checking taskid 210501003..
+[05/May/2021 17:40:57,222] checking taskid 210501004..
+[05/May/2021 17:41:13,515] get_next_taskid(20210501)
+[05/May/2021 17:41:13,516] checking taskid 210501001..
+[05/May/2021 17:41:13,526] checking taskid 210501002..
+[05/May/2021 17:41:13,531] checking taskid 210501003..
+[05/May/2021 17:41:13,536] checking taskid 210501004..
+[05/May/2021 17:41:29,868] get_next_taskid(20210501)
+[05/May/2021 17:41:29,869] checking taskid 210501001..
+[05/May/2021 17:41:29,881] checking taskid 210501002..
+[05/May/2021 17:41:29,887] checking taskid 210501003..
+[05/May/2021 17:41:29,891] checking taskid 210501004..
+[05/May/2021 17:41:46,183] get_next_taskid(20210501)
+[05/May/2021 17:41:46,184] checking taskid 210501001..
+[05/May/2021 17:41:46,192] checking taskid 210501002..
+[05/May/2021 17:41:46,195] checking taskid 210501003..
+[05/May/2021 17:41:46,198] checking taskid 210501004..
+[05/May/2021 17:42:02,521] get_next_taskid(20210501)
+[05/May/2021 17:42:02,523] checking taskid 210501001..
+[05/May/2021 17:42:02,534] checking taskid 210501002..
+[05/May/2021 17:42:02,540] checking taskid 210501003..
+[05/May/2021 17:42:02,545] checking taskid 210501004..
+[05/May/2021 17:42:22,330] get_next_taskid(20210501)
+[05/May/2021 17:42:22,330] checking taskid 210501001..
+[05/May/2021 17:42:22,333] checking taskid 210501002..
+[05/May/2021 17:42:22,336] checking taskid 210501003..
+[05/May/2021 17:42:22,337] checking taskid 210501004..
+[05/May/2021 17:42:38,636] get_next_taskid(20210501)
+[05/May/2021 17:42:38,637] checking taskid 210501001..
+[05/May/2021 17:42:38,641] checking taskid 210501002..
+[05/May/2021 17:42:38,642] checking taskid 210501003..
+[05/May/2021 17:42:38,644] checking taskid 210501004..
+[05/May/2021 17:42:54,922] get_next_taskid(20210501)
+[05/May/2021 17:42:54,922] checking taskid 210501001..
+[05/May/2021 17:42:54,925] checking taskid 210501002..
+[05/May/2021 17:42:54,928] checking taskid 210501003..
+[05/May/2021 17:42:54,928] checking taskid 210501004..
+[05/May/2021 17:43:11,216] get_next_taskid(20210501)
+[05/May/2021 17:43:11,216] checking taskid 210501001..
+[05/May/2021 17:43:11,220] checking taskid 210501002..
+[05/May/2021 17:43:11,222] checking taskid 210501003..
+[05/May/2021 17:43:11,223] checking taskid 210501004..
+[05/May/2021 17:43:27,508] get_next_taskid(20210501)
+[05/May/2021 17:43:27,509] checking taskid 210501001..
+[05/May/2021 17:43:27,521] checking taskid 210501002..
+[05/May/2021 17:43:27,527] checking taskid 210501003..
+[05/May/2021 17:43:27,532] checking taskid 210501004..
+[05/May/2021 17:43:43,842] get_next_taskid(20210501)
+[05/May/2021 17:43:43,843] checking taskid 210501001..
+[05/May/2021 17:43:43,853] checking taskid 210501002..
+[05/May/2021 17:43:43,858] checking taskid 210501003..
+[05/May/2021 17:43:43,862] checking taskid 210501004..
+[05/May/2021 17:44:00,146] get_next_taskid(20210501)
+[05/May/2021 17:44:00,147] checking taskid 210501001..
+[05/May/2021 17:44:00,157] checking taskid 210501002..
+[05/May/2021 17:44:00,160] checking taskid 210501003..
+[05/May/2021 17:44:00,162] checking taskid 210501004..
+[05/May/2021 17:44:16,507] get_next_taskid(20210501)
+[05/May/2021 17:44:16,508] checking taskid 210501001..
+[05/May/2021 17:44:16,520] checking taskid 210501002..
+[05/May/2021 17:44:16,526] checking taskid 210501003..
+[05/May/2021 17:44:16,532] checking taskid 210501004..
+[05/May/2021 17:44:32,973] get_next_taskid(20210501)
+[05/May/2021 17:44:32,975] checking taskid 210501001..
+[05/May/2021 17:44:32,983] checking taskid 210501002..
+[05/May/2021 17:44:32,986] checking taskid 210501003..
+[05/May/2021 17:44:32,989] checking taskid 210501004..
+[05/May/2021 17:44:49,272] get_next_taskid(20210501)
+[05/May/2021 17:44:49,273] checking taskid 210501001..
+[05/May/2021 17:44:49,281] checking taskid 210501002..
+[05/May/2021 17:44:49,284] checking taskid 210501003..
+[05/May/2021 17:44:49,286] checking taskid 210501004..
+[05/May/2021 17:45:05,576] get_next_taskid(20210501)
+[05/May/2021 17:45:05,577] checking taskid 210501001..
+[05/May/2021 17:45:05,591] checking taskid 210501002..
+[05/May/2021 17:45:05,599] checking taskid 210501003..
+[05/May/2021 17:45:05,608] checking taskid 210501004..
+[05/May/2021 17:45:21,980] get_next_taskid(20210501)
+[05/May/2021 17:45:21,981] checking taskid 210501001..
+[05/May/2021 17:45:21,993] checking taskid 210501002..
+[05/May/2021 17:45:21,999] checking taskid 210501003..
+[05/May/2021 17:45:22,001] checking taskid 210501004..
+[05/May/2021 17:45:38,321] get_next_taskid(20210501)
+[05/May/2021 17:45:38,322] checking taskid 210501001..
+[05/May/2021 17:45:38,333] checking taskid 210501002..
+[05/May/2021 17:45:38,340] checking taskid 210501003..
+[05/May/2021 17:45:38,346] checking taskid 210501004..
+[05/May/2021 17:45:54,690] get_next_taskid(20210501)
+[05/May/2021 17:45:54,691] checking taskid 210501001..
+[05/May/2021 17:45:54,701] checking taskid 210501002..
+[05/May/2021 17:45:54,706] checking taskid 210501003..
+[05/May/2021 17:45:54,711] checking taskid 210501004..
+[05/May/2021 17:46:11,051] get_next_taskid(20210501)
+[05/May/2021 17:46:11,052] checking taskid 210501001..
+[05/May/2021 17:46:11,061] checking taskid 210501002..
+[05/May/2021 17:46:11,065] checking taskid 210501003..
+[05/May/2021 17:46:11,068] checking taskid 210501004..
+[05/May/2021 17:46:27,367] get_next_taskid(20210501)
+[05/May/2021 17:46:27,368] checking taskid 210501001..
+[05/May/2021 17:46:27,371] checking taskid 210501002..
+[05/May/2021 17:46:27,373] checking taskid 210501003..
+[05/May/2021 17:46:27,374] checking taskid 210501004..
+[05/May/2021 17:46:43,649] get_next_taskid(20210501)
+[05/May/2021 17:46:43,650] checking taskid 210501001..
+[05/May/2021 17:46:43,654] checking taskid 210501002..
+[05/May/2021 17:46:43,655] checking taskid 210501003..
+[05/May/2021 17:46:43,657] checking taskid 210501004..
+[05/May/2021 17:46:59,948] get_next_taskid(20210501)
+[05/May/2021 17:46:59,949] checking taskid 210501001..
+[05/May/2021 17:46:59,960] checking taskid 210501002..
+[05/May/2021 17:46:59,966] checking taskid 210501003..
+[05/May/2021 17:46:59,971] checking taskid 210501004..
+[05/May/2021 17:47:16,259] get_next_taskid(20210501)
+[05/May/2021 17:47:16,260] checking taskid 210501001..
+[05/May/2021 17:47:16,281] checking taskid 210501002..
+[05/May/2021 17:47:16,287] checking taskid 210501003..
+[05/May/2021 17:47:16,294] checking taskid 210501004..
+[05/May/2021 17:47:32,591] get_next_taskid(20210501)
+[05/May/2021 17:47:32,592] checking taskid 210501001..
+[05/May/2021 17:47:32,601] checking taskid 210501002..
+[05/May/2021 17:47:32,606] checking taskid 210501003..
+[05/May/2021 17:47:32,615] checking taskid 210501004..
+[05/May/2021 17:47:36,332] add_dataproducts(210501003,1)
+[05/May/2021 17:47:43,001] SIGNAL : pre_save Observation(210501003 - vesta - vesta)
+[05/May/2021 17:47:43,002] handle_pre_save(210501003 - vesta - vesta)
+[05/May/2021 17:47:43,049] handle_post_save(210501003 - vesta - vesta)
+[05/May/2021 17:47:43,050] update observation = 210501003
+[05/May/2021 17:47:47,584] SIGNAL : pre_save Observation(210501003 - vesta - vesta)
+[05/May/2021 17:47:47,585] handle_pre_save(210501003 - vesta - vesta)
+[05/May/2021 17:47:47,612] handle_post_save(210501003 - vesta - vesta)
+[05/May/2021 17:47:47,612] update observation = 210501003
+[05/May/2021 17:47:48,896] get_next_taskid(20210501)
+[05/May/2021 17:47:48,896] checking taskid 210501001..
+[05/May/2021 17:47:48,900] checking taskid 210501002..
+[05/May/2021 17:47:48,901] checking taskid 210501003..
+[05/May/2021 17:47:48,902] checking taskid 210501004..
+[05/May/2021 17:48:05,242] get_next_taskid(20210501)
+[05/May/2021 17:48:05,243] checking taskid 210501001..
+[05/May/2021 17:48:05,253] checking taskid 210501002..
+[05/May/2021 17:48:05,259] checking taskid 210501003..
+[05/May/2021 17:48:05,261] checking taskid 210501004..
+[05/May/2021 17:48:21,581] get_next_taskid(20210501)
+[05/May/2021 17:48:21,583] checking taskid 210501001..
+[05/May/2021 17:48:21,593] checking taskid 210501002..
+[05/May/2021 17:48:21,597] checking taskid 210501003..
+[05/May/2021 17:48:21,602] checking taskid 210501004..
+[05/May/2021 17:48:37,915] get_next_taskid(20210501)
+[05/May/2021 17:48:37,916] checking taskid 210501001..
+[05/May/2021 17:48:37,919] checking taskid 210501002..
+[05/May/2021 17:48:37,920] checking taskid 210501003..
+[05/May/2021 17:48:37,921] checking taskid 210501004..
+[05/May/2021 17:48:54,223] get_next_taskid(20210501)
+[05/May/2021 17:48:54,224] checking taskid 210501001..
+[05/May/2021 17:48:54,236] checking taskid 210501002..
+[05/May/2021 17:48:54,241] checking taskid 210501003..
+[05/May/2021 17:48:54,246] checking taskid 210501004..
+[05/May/2021 17:49:10,538] get_next_taskid(20210501)
+[05/May/2021 17:49:10,538] checking taskid 210501001..
+[05/May/2021 17:49:10,542] checking taskid 210501002..
+[05/May/2021 17:49:10,543] checking taskid 210501003..
+[05/May/2021 17:49:10,544] checking taskid 210501004..
+[05/May/2021 17:49:26,839] get_next_taskid(20210501)
+[05/May/2021 17:49:26,840] checking taskid 210501001..
+[05/May/2021 17:49:26,846] checking taskid 210501002..
+[05/May/2021 17:49:26,849] checking taskid 210501003..
+[05/May/2021 17:49:26,852] checking taskid 210501004..
+[05/May/2021 17:49:43,146] get_next_taskid(20210501)
+[05/May/2021 17:49:43,147] checking taskid 210501001..
+[05/May/2021 17:49:43,159] checking taskid 210501002..
+[05/May/2021 17:49:43,164] checking taskid 210501003..
+[05/May/2021 17:49:43,169] checking taskid 210501004..
+[05/May/2021 17:49:59,491] get_next_taskid(20210501)
+[05/May/2021 17:49:59,492] checking taskid 210501001..
+[05/May/2021 17:49:59,505] checking taskid 210501002..
+[05/May/2021 17:49:59,511] checking taskid 210501003..
+[05/May/2021 17:49:59,516] checking taskid 210501004..
+[05/May/2021 17:50:15,962] get_next_taskid(20210501)
+[05/May/2021 17:50:15,962] checking taskid 210501001..
+[05/May/2021 17:50:15,966] checking taskid 210501002..
+[05/May/2021 17:50:15,967] checking taskid 210501003..
+[05/May/2021 17:50:15,969] checking taskid 210501004..
+[05/May/2021 17:50:32,286] get_next_taskid(20210501)
+[05/May/2021 17:50:32,288] checking taskid 210501001..
+[05/May/2021 17:50:32,300] checking taskid 210501002..
+[05/May/2021 17:50:32,307] checking taskid 210501003..
+[05/May/2021 17:50:32,313] checking taskid 210501004..
+[05/May/2021 17:50:48,623] get_next_taskid(20210501)
+[05/May/2021 17:50:48,623] checking taskid 210501001..
+[05/May/2021 17:50:48,627] checking taskid 210501002..
+[05/May/2021 17:50:48,629] checking taskid 210501003..
+[05/May/2021 17:50:48,631] checking taskid 210501004..
+[05/May/2021 17:51:04,930] get_next_taskid(20210501)
+[05/May/2021 17:51:04,930] checking taskid 210501001..
+[05/May/2021 17:51:04,934] checking taskid 210501002..
+[05/May/2021 17:51:04,935] checking taskid 210501003..
+[05/May/2021 17:51:04,937] checking taskid 210501004..
+[05/May/2021 17:51:21,243] get_next_taskid(20210501)
+[05/May/2021 17:51:21,243] checking taskid 210501001..
+[05/May/2021 17:51:21,246] checking taskid 210501002..
+[05/May/2021 17:51:21,248] checking taskid 210501003..
+[05/May/2021 17:51:21,249] checking taskid 210501004..
+[05/May/2021 17:51:37,535] get_next_taskid(20210501)
+[05/May/2021 17:51:37,537] checking taskid 210501001..
+[05/May/2021 17:51:37,549] checking taskid 210501002..
+[05/May/2021 17:51:37,555] checking taskid 210501003..
+[05/May/2021 17:51:37,560] checking taskid 210501004..
+[05/May/2021 17:51:53,857] get_next_taskid(20210501)
+[05/May/2021 17:51:53,858] checking taskid 210501001..
+[05/May/2021 17:51:53,864] checking taskid 210501002..
+[05/May/2021 17:51:53,866] checking taskid 210501003..
+[05/May/2021 17:51:53,868] checking taskid 210501004..
+[05/May/2021 17:52:10,137] get_next_taskid(20210501)
+[05/May/2021 17:52:10,138] checking taskid 210501001..
+[05/May/2021 17:52:10,142] checking taskid 210501002..
+[05/May/2021 17:52:10,144] checking taskid 210501003..
+[05/May/2021 17:52:10,147] checking taskid 210501004..
+[05/May/2021 17:52:26,436] get_next_taskid(20210501)
+[05/May/2021 17:52:26,436] checking taskid 210501001..
+[05/May/2021 17:52:26,442] checking taskid 210501002..
+[05/May/2021 17:52:26,444] checking taskid 210501003..
+[05/May/2021 17:52:26,447] checking taskid 210501004..
+[05/May/2021 17:52:42,735] get_next_taskid(20210501)
+[05/May/2021 17:52:42,736] checking taskid 210501001..
+[05/May/2021 17:52:42,741] checking taskid 210501002..
+[05/May/2021 17:52:42,744] checking taskid 210501003..
+[05/May/2021 17:52:42,747] checking taskid 210501004..
+[05/May/2021 17:52:59,036] get_next_taskid(20210501)
+[05/May/2021 17:52:59,036] checking taskid 210501001..
+[05/May/2021 17:52:59,042] checking taskid 210501002..
+[05/May/2021 17:52:59,045] checking taskid 210501003..
+[05/May/2021 17:52:59,048] checking taskid 210501004..
+[05/May/2021 17:53:15,401] get_next_taskid(20210501)
+[05/May/2021 17:53:15,402] checking taskid 210501001..
+[05/May/2021 17:53:15,405] checking taskid 210501002..
+[05/May/2021 17:53:15,406] checking taskid 210501003..
+[05/May/2021 17:53:15,408] checking taskid 210501004..
+[05/May/2021 17:53:31,703] get_next_taskid(20210501)
+[05/May/2021 17:53:31,704] checking taskid 210501001..
+[05/May/2021 17:53:31,713] checking taskid 210501002..
+[05/May/2021 17:53:31,718] checking taskid 210501003..
+[05/May/2021 17:53:31,720] checking taskid 210501004..
+[05/May/2021 17:53:35,101] DataProductsListView.get_queryset()
+[05/May/2021 17:53:35,103] my_queryset retrieved
+[05/May/2021 17:53:45,429] DataProductsListView.get_queryset()
+[05/May/2021 17:53:45,431] my_queryset retrieved
+[05/May/2021 17:53:47,999] get_next_taskid(20210501)
+[05/May/2021 17:53:48,000] checking taskid 210501001..
+[05/May/2021 17:53:48,004] checking taskid 210501002..
+[05/May/2021 17:53:48,006] checking taskid 210501003..
+[05/May/2021 17:53:48,007] checking taskid 210501004..
+[05/May/2021 17:54:04,299] get_next_taskid(20210501)
+[05/May/2021 17:54:04,300] checking taskid 210501001..
+[05/May/2021 17:54:04,312] checking taskid 210501002..
+[05/May/2021 17:54:04,317] checking taskid 210501003..
+[05/May/2021 17:54:04,324] checking taskid 210501004..
+[05/May/2021 17:54:20,656] get_next_taskid(20210501)
+[05/May/2021 17:54:20,658] checking taskid 210501001..
+[05/May/2021 17:54:20,668] checking taskid 210501002..
+[05/May/2021 17:54:20,673] checking taskid 210501003..
+[05/May/2021 17:54:20,678] checking taskid 210501004..
+[05/May/2021 17:54:36,982] get_next_taskid(20210501)
+[05/May/2021 17:54:36,983] checking taskid 210501001..
+[05/May/2021 17:54:36,995] checking taskid 210501002..
+[05/May/2021 17:54:36,999] checking taskid 210501003..
+[05/May/2021 17:54:37,001] checking taskid 210501004..
+[05/May/2021 17:54:53,312] get_next_taskid(20210501)
+[05/May/2021 17:54:53,313] checking taskid 210501001..
+[05/May/2021 17:54:53,322] checking taskid 210501002..
+[05/May/2021 17:54:53,325] checking taskid 210501003..
+[05/May/2021 17:54:53,328] checking taskid 210501004..
+[05/May/2021 17:55:09,637] get_next_taskid(20210501)
+[05/May/2021 17:55:09,638] checking taskid 210501001..
+[05/May/2021 17:55:09,643] checking taskid 210501002..
+[05/May/2021 17:55:09,646] checking taskid 210501003..
+[05/May/2021 17:55:09,649] checking taskid 210501004..
+[05/May/2021 17:55:25,920] get_next_taskid(20210501)
+[05/May/2021 17:55:25,920] checking taskid 210501001..
+[05/May/2021 17:55:25,924] checking taskid 210501002..
+[05/May/2021 17:55:25,925] checking taskid 210501003..
+[05/May/2021 17:55:25,927] checking taskid 210501004..
+[05/May/2021 17:55:42,264] get_next_taskid(20210501)
+[05/May/2021 17:55:42,265] checking taskid 210501001..
+[05/May/2021 17:55:42,277] checking taskid 210501002..
+[05/May/2021 17:55:42,281] checking taskid 210501003..
+[05/May/2021 17:55:42,288] checking taskid 210501004..
+[05/May/2021 17:55:58,568] get_next_taskid(20210501)
+[05/May/2021 17:55:58,569] checking taskid 210501001..
+[05/May/2021 17:55:58,581] checking taskid 210501002..
+[05/May/2021 17:55:58,587] checking taskid 210501003..
+[05/May/2021 17:55:58,594] checking taskid 210501004..
+[05/May/2021 17:56:14,939] get_next_taskid(20210501)
+[05/May/2021 17:56:14,940] checking taskid 210501001..
+[05/May/2021 17:56:14,952] checking taskid 210501002..
+[05/May/2021 17:56:14,957] checking taskid 210501003..
+[05/May/2021 17:56:14,961] checking taskid 210501004..
+[05/May/2021 17:56:31,259] get_next_taskid(20210501)
+[05/May/2021 17:56:31,259] checking taskid 210501001..
+[05/May/2021 17:56:31,263] checking taskid 210501002..
+[05/May/2021 17:56:31,264] checking taskid 210501003..
+[05/May/2021 17:56:31,266] checking taskid 210501004..
+[05/May/2021 17:56:47,560] get_next_taskid(20210501)
+[05/May/2021 17:56:47,561] checking taskid 210501001..
+[05/May/2021 17:56:47,573] checking taskid 210501002..
+[05/May/2021 17:56:47,578] checking taskid 210501003..
+[05/May/2021 17:56:47,583] checking taskid 210501004..
+[05/May/2021 17:57:03,881] get_next_taskid(20210501)
+[05/May/2021 17:57:03,882] checking taskid 210501001..
+[05/May/2021 17:57:03,894] checking taskid 210501002..
+[05/May/2021 17:57:03,899] checking taskid 210501003..
+[05/May/2021 17:57:03,904] checking taskid 210501004..
+[05/May/2021 17:57:20,223] get_next_taskid(20210501)
+[05/May/2021 17:57:20,225] checking taskid 210501001..
+[05/May/2021 17:57:20,237] checking taskid 210501002..
+[05/May/2021 17:57:20,243] checking taskid 210501003..
+[05/May/2021 17:57:20,248] checking taskid 210501004..
+[05/May/2021 17:57:36,565] get_next_taskid(20210501)
+[05/May/2021 17:57:36,565] checking taskid 210501001..
+[05/May/2021 17:57:36,571] checking taskid 210501002..
+[05/May/2021 17:57:36,574] checking taskid 210501003..
+[05/May/2021 17:57:36,576] checking taskid 210501004..
+[05/May/2021 17:57:52,868] get_next_taskid(20210501)
+[05/May/2021 17:57:52,869] checking taskid 210501001..
+[05/May/2021 17:57:52,887] checking taskid 210501002..
+[05/May/2021 17:57:52,908] checking taskid 210501003..
+[05/May/2021 17:57:52,917] checking taskid 210501004..
+[05/May/2021 17:58:09,223] get_next_taskid(20210501)
+[05/May/2021 17:58:09,224] checking taskid 210501001..
+[05/May/2021 17:58:09,233] checking taskid 210501002..
+[05/May/2021 17:58:09,236] checking taskid 210501003..
+[05/May/2021 17:58:09,239] checking taskid 210501004..
+[05/May/2021 17:58:25,552] get_next_taskid(20210501)
+[05/May/2021 17:58:25,553] checking taskid 210501001..
+[05/May/2021 17:58:25,565] checking taskid 210501002..
+[05/May/2021 17:58:25,569] checking taskid 210501003..
+[05/May/2021 17:58:25,572] checking taskid 210501004..
+[05/May/2021 17:58:41,850] get_next_taskid(20210501)
+[05/May/2021 17:58:41,851] checking taskid 210501001..
+[05/May/2021 17:58:41,854] checking taskid 210501002..
+[05/May/2021 17:58:41,856] checking taskid 210501003..
+[05/May/2021 17:58:41,858] checking taskid 210501004..
+[05/May/2021 17:58:58,131] get_next_taskid(20210501)
+[05/May/2021 17:58:58,131] checking taskid 210501001..
+[05/May/2021 17:58:58,139] checking taskid 210501002..
+[05/May/2021 17:58:58,142] checking taskid 210501003..
+[05/May/2021 17:58:58,146] checking taskid 210501004..
+[05/May/2021 17:59:14,441] get_next_taskid(20210501)
+[05/May/2021 17:59:14,442] checking taskid 210501001..
+[05/May/2021 17:59:14,453] checking taskid 210501002..
+[05/May/2021 17:59:14,459] checking taskid 210501003..
+[05/May/2021 17:59:14,464] checking taskid 210501004..
+[05/May/2021 17:59:30,850] get_next_taskid(20210501)
+[05/May/2021 17:59:30,851] checking taskid 210501001..
+[05/May/2021 17:59:30,854] checking taskid 210501002..
+[05/May/2021 17:59:30,856] checking taskid 210501003..
+[05/May/2021 17:59:30,858] checking taskid 210501004..
+[05/May/2021 17:59:47,180] get_next_taskid(20210501)
+[05/May/2021 17:59:47,180] checking taskid 210501001..
+[05/May/2021 17:59:47,183] checking taskid 210501002..
+[05/May/2021 17:59:47,184] checking taskid 210501003..
+[05/May/2021 17:59:47,185] checking taskid 210501004..
+[05/May/2021 18:00:03,494] get_next_taskid(20210501)
+[05/May/2021 18:00:03,495] checking taskid 210501001..
+[05/May/2021 18:00:03,500] checking taskid 210501002..
+[05/May/2021 18:00:03,503] checking taskid 210501003..
+[05/May/2021 18:00:03,506] checking taskid 210501004..
+[05/May/2021 18:00:19,798] get_next_taskid(20210501)
+[05/May/2021 18:00:19,798] checking taskid 210501001..
+[05/May/2021 18:00:19,806] checking taskid 210501002..
+[05/May/2021 18:00:19,808] checking taskid 210501003..
+[05/May/2021 18:00:19,810] checking taskid 210501004..
+[05/May/2021 18:00:36,082] get_next_taskid(20210501)
+[05/May/2021 18:00:36,083] checking taskid 210501001..
+[05/May/2021 18:00:36,095] checking taskid 210501002..
+[05/May/2021 18:00:36,099] checking taskid 210501003..
+[05/May/2021 18:00:36,101] checking taskid 210501004..
+[05/May/2021 18:00:52,384] get_next_taskid(20210501)
+[05/May/2021 18:00:52,385] checking taskid 210501001..
+[05/May/2021 18:00:52,389] checking taskid 210501002..
+[05/May/2021 18:00:52,391] checking taskid 210501003..
+[05/May/2021 18:00:52,392] checking taskid 210501004..
+[05/May/2021 18:01:08,686] get_next_taskid(20210501)
+[05/May/2021 18:01:08,686] checking taskid 210501001..
+[05/May/2021 18:01:08,692] checking taskid 210501002..
+[05/May/2021 18:01:08,694] checking taskid 210501003..
+[05/May/2021 18:01:08,696] checking taskid 210501004..
+[05/May/2021 18:01:24,981] get_next_taskid(20210501)
+[05/May/2021 18:01:24,982] checking taskid 210501001..
+[05/May/2021 18:01:24,988] checking taskid 210501002..
+[05/May/2021 18:01:24,991] checking taskid 210501003..
+[05/May/2021 18:01:24,994] checking taskid 210501004..
+[05/May/2021 18:01:41,270] get_next_taskid(20210501)
+[05/May/2021 18:01:41,270] checking taskid 210501001..
+[05/May/2021 18:01:41,277] checking taskid 210501002..
+[05/May/2021 18:01:41,278] checking taskid 210501003..
+[05/May/2021 18:01:41,280] checking taskid 210501004..
+[05/May/2021 18:01:57,673] get_next_taskid(20210501)
+[05/May/2021 18:01:57,674] checking taskid 210501001..
+[05/May/2021 18:01:57,681] checking taskid 210501002..
+[05/May/2021 18:01:57,682] checking taskid 210501003..
+[05/May/2021 18:01:57,684] checking taskid 210501004..
+[05/May/2021 18:02:13,983] get_next_taskid(20210501)
+[05/May/2021 18:02:13,984] checking taskid 210501001..
+[05/May/2021 18:02:13,992] checking taskid 210501002..
+[05/May/2021 18:02:13,995] checking taskid 210501003..
+[05/May/2021 18:02:13,997] checking taskid 210501004..
+[05/May/2021 18:02:47,557] get_next_taskid(20210501)
+[05/May/2021 18:02:47,557] checking taskid 210501001..
+[05/May/2021 18:02:47,562] checking taskid 210501002..
+[05/May/2021 18:02:47,565] checking taskid 210501003..
+[05/May/2021 18:02:47,568] checking taskid 210501004..
+[05/May/2021 18:03:03,866] get_next_taskid(20210501)
+[05/May/2021 18:03:03,867] checking taskid 210501001..
+[05/May/2021 18:03:03,877] checking taskid 210501002..
+[05/May/2021 18:03:03,880] checking taskid 210501003..
+[05/May/2021 18:03:03,883] checking taskid 210501004..
+[05/May/2021 18:03:20,174] get_next_taskid(20210501)
+[05/May/2021 18:03:20,174] checking taskid 210501001..
+[05/May/2021 18:03:20,179] checking taskid 210501002..
+[05/May/2021 18:03:20,181] checking taskid 210501003..
+[05/May/2021 18:03:20,182] checking taskid 210501004..
+[05/May/2021 20:26:28,050] SIGNAL : pre_save Observation(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:26:28,057] handle_pre_save(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:26:28,086] handle_post_save(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:26:28,087] update observation = 210501001
+[05/May/2021 20:27:27,743] SIGNAL : pre_save Observation(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:27,743] handle_pre_save(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:27,767] handle_post_save(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:27,767] update observation = 210501001
+[05/May/2021 20:27:29,105] SIGNAL : pre_save Observation(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:29,105] handle_pre_save(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:29,127] handle_post_save(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:29,128] update observation = 210501001
+[05/May/2021 20:27:35,128] SIGNAL : pre_save Observation(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:35,128] handle_pre_save(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:35,160] handle_post_save(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:35,160] update observation = 210501001
+[05/May/2021 20:27:48,660] SIGNAL : pre_save Observation(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:48,661] handle_pre_save(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)
+[05/May/2021 20:27:48,690] handle_post_save(210501001 - Vesta2 Simulation - Leo, Vesta (Stellarium) - grid 2)

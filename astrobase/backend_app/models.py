@@ -410,8 +410,6 @@ class Observation2(models.Model):
     derived_sky_plot_image = models.CharField(max_length=80, null=True, blank=True)
     derived_sky_globe_image = models.CharField(max_length=80, null=True, blank=True)
 
-
-
     transient = models.CharField(max_length=30, null=True, blank=True)
 
     # relationships
@@ -429,15 +427,6 @@ class Observation2(models.Model):
         path = data_host + '/' + self.taskID
 
         return path
-
-    @property
-    def nr_of_dps(self):
-        try:
-            # sum the sizes of all dataproducts in the dps field
-            count = 5
-            return count
-        except:
-            return None
 
     @property
     def derived_raw_image(self):

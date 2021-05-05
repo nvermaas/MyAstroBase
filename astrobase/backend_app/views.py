@@ -657,13 +657,13 @@ class ProjectListViewAPI(generics.ListCreateAPIView):
     """
 
     # a projects is a observation
-    model = Observation
-    queryset = Observation.objects.filter(task_type='master').order_by('-date')
-    serializer_class = ObservationSerializer
+    model = Observation2
+    queryset = Observation2.objects.filter(task_type='master').order_by('-date')
+    serializer_class = Observation2Serializer
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = ObservationFilter
+    filter_class = Observation2Filter
 
 
 # example: /my_astrobase/Jobs/
@@ -694,71 +694,38 @@ class JobDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
 # example: 'Schedule', 'Unschedule', 'Ready to Ingest', 'Remove Data'
 
 def ObservationSetStatus(request,pk,new_status,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
+    model = Observation2
+    observation = Observation2.objects.get(pk=pk)
     observation.new_status = new_status
     observation.save()
     return redirect('/my_astrobase/?page='+page)
 
 
 def ObservationSetQuality(request,pk,quality,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
+    model = Observation2
+    observation = Observation2.objects.get(pk=pk)
     observation.quality = quality
     observation.save()
     return redirect('/my_astrobase/?page='+page)
 
 def ObservationSetHips(request,pk,hips,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
+    model = Observation2
+    observation = Observation2.objects.get(pk=pk)
     observation.used_in_hips = hips
     observation.save()
     return redirect('/my_astrobase/?page='+page)
 
 def ObservationSetTaskType(request,pk,type,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
+    model = Observation2
+    observation = Observation2.objects.get(pk=pk)
     observation.task_type = type
-    # status is set to 'master' to show it in a different style
-    # observation.new_status = type
     observation.save()
     return redirect('/my_astrobase/?page='+page)
-
-
-# set the status of an observation and all its dataproducts to 'new_dps_status'
-# example: 'Validate DPS' button
-# /my_astrobase/observations/<int:pk>/setstatus_dps/<new_dps_status>/<new_obs_status>/<page>
-def ObservationSetStatusDataProducts(request,pk,new_dps_status,new_obs_status,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
-    observation.new_status = new_obs_status
-    observation.save()
-    taskid = observation.taskID
-
-    dataproducts = DataProduct.objects.filter(taskID=taskid)
-    for dataproduct in dataproducts:
-        dataproduct.new_status = new_dps_status
-        dataproduct.save()
-
-    return redirect('/my_astrobase/?page='+page)
-
-# set the status of a dataproduct to 'new_status'
-# example: 'Validate', 'Skip' and 'Remove' buttons
-def DataProductSetStatusView(request,pk,new_status):
-    model = DataProduct
-    dataproduct = DataProduct.objects.get(pk=pk)
-    dataproduct.new_status = new_status
-    dataproduct.save()
-
-    taskid = dataproduct.taskID
-
-    return redirect('/my_astrobase/task/'+taskid)
-
 
 # get the next taskid based on starttime and what is currently in the database
 #/my_astrobase/get_next_taskid?timestamp=2019-04-05
 class GetNextTaskIDView(generics.ListAPIView):
-    queryset = Observation.objects.all()
+    queryset = Observation2.objects.all()
 
     # override list and generate a custom response
     def list(self, request, *args, **kwargs):
@@ -841,7 +808,6 @@ class UploadFileView(APIView):
             return Response(file_serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 
 def get_queryset_auth(object, my_model_class, process_type=None):
