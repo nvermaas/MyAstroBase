@@ -47,14 +47,6 @@
                 {% endif %}
             </td>
             <td>
-                <a href="{% url 'dataproducts-list-view' observation.taskID %}" class="btn btn-success btn-sm" role="button">DPS</a>
-                {% for dataproduct in my_dataproducts_list %}
-                   {% if dataproduct.dataproduct_type == "raw" %}
-                      <a href="{{ dataproduct.property_url }}" target="_blank" >{{ dataproduct.filename }}</a>
-                   {% endif %}
-                {% endfor %}
-            </td>
-            <td>
                 {% if user.is_authenticated %}
                     {% if observation.my_status == "pending" %}
                         <a href="{% url 'observation-setstatus-view' observation.pk 'raw' my_observations.number %}" class="btn btn-warning btn-sm" role="button">Cancel</a>

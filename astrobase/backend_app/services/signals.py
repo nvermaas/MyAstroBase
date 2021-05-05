@@ -5,7 +5,7 @@ from django.core.signals import request_started, request_finished
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.contrib.contenttypes.models import ContentType
-from backend_app.models import TaskObject, Observation, DataProduct, Status
+from backend_app.models import TaskObject, Observation2, Status
 from . import jobs
 
 """
@@ -28,16 +28,10 @@ def request_finished_handler(sender, **kwargs):
 
 #--- Observation and DataProduct signals-------------
 
-@receiver(pre_save, sender=Observation)
+@receiver(pre_save, sender=Observation2)
 def pre_save_observation_handler(sender, **kwargs):
     logger.info("SIGNAL : pre_save Observation(" + str(kwargs.get('instance')) + ")")
     handle_pre_save(sender, **kwargs)
-
-@receiver(pre_save, sender=DataProduct)
-def pre_save_dataproduct_handler(sender, **kwargs):
-    logger.info("SIGNAL : pre_save DataProduct(" + str(kwargs.get('instance')) + ")")
-    handle_pre_save(sender, **kwargs)
-
 
 def handle_pre_save(sender, **kwargs):
     """
@@ -60,11 +54,6 @@ def handle_pre_save(sender, **kwargs):
         # set the new status
         myTaskObject.my_status = new_status
 
-        # add the new to the status history by brewing a status object out of it
-        myStatus = Status(name=new_status, taskObject=myTaskObject)
-        myStatus.save()
-
-
     # temporarily disconnect the post_save handler to save the dataproduct (again) and avoiding recursion.
     # I don't use pre_save, because then the 'created' key is not available, which is the most handy way to
     # determine if this dataproduct already exists. (I could also check the database, but this is easier).
@@ -77,15 +66,9 @@ def handle_pre_save(sender, **kwargs):
     #   jobs.dispatchJob(myTaskObject, new_status)
 
 
-@receiver(post_save, sender=Observation)
+@receiver(post_save, sender=Observation2)
 def post_save_observation_handler(sender, **kwargs):
     #logger.info("SIGNAL : post_save Observation(" + str(kwargs.get('instance')) + ")")
-    handle_post_save(sender, **kwargs)
-
-
-@receiver(post_save, sender=DataProduct)
-def post_save_dataproduct_handler(sender, **kwargs):
-    #logger.info("SIGNAL : post_save DataProduct(" + str(kwargs.get('instance')) + ")")
     handle_post_save(sender, **kwargs)
 
 
@@ -98,22 +81,13 @@ def handle_post_save(sender, **kwargs):
     logger.info("handle_post_save("+str(kwargs.get('instance'))+")")
     myTaskObject = kwargs.get('instance')
 
-    # CREATE NEW OBSERVATION / DATAPRODUCT
+    # CREATE NEW OBSERVATION
     if kwargs['created']:
         logger.info("save new "+str(myTaskObject.task_type))
 
         # set status
         myTaskObject.my_status = myTaskObject.new_status
 
-        # add the new to the status history by brewing a status object out of it
-        myStatus = Status(name=myTaskObject.new_status, taskObject=myTaskObject)
-        myStatus.save()
-
-    # if there already is an observation with this taskID, then add this dataproduct to it
-    if (myTaskObject.task_type == 'dataproduct'):
-        logger.info("update dataproduct parent = " + str(myTaskObject.taskID))
-        parent = Observation.objects.get(taskID=myTaskObject.taskID)
-        myTaskObject.parent=parent
 
     if (myTaskObject.task_type == 'observation'):
         # note that task_type == 'master' will be omitted here
@@ -175,15 +149,11 @@ def handle_post_save(sender, **kwargs):
 
 def connect_signals():
     #logger.info("connect_signals")
-    pre_save.connect(pre_save_observation_handler, sender=Observation)
-    pre_save.connect(pre_save_dataproduct_handler, sender=DataProduct)
-    post_save.connect(post_save_observation_handler, sender=Observation)
-    post_save.connect(post_save_dataproduct_handler, sender=DataProduct)
+    pre_save.connect(pre_save_observation_handler, sender=Observation2)
+    post_save.connect(post_save_observation_handler, sender=Observation2)
 
 
 def disconnect_signals():
     #logger.info("disconnect_signals")
-    pre_save.disconnect(pre_save_observation_handler, sender=Observation)
-    pre_save.disconnect(pre_save_dataproduct_handler, sender=DataProduct)
-    post_save.disconnect(post_save_observation_handler, sender=Observation)
-    post_save.disconnect(post_save_dataproduct_handler, sender=DataProduct)
+    pre_save.disconnect(pre_save_observation_handler, sender=Observation2)
+    post_save.disconnect(post_save_observation_handler, sender=Observation2)

@@ -61,7 +61,7 @@ class ObservationSerializer(serializers.ModelSerializer):
                   'derived_annotated_grid_image','derived_annotated_grid_eq_image','derived_annotated_stars_image','derived_sky_globe_image',
                   'derived_fits','derived_annotated_transient_image',
                   'my_status','new_status','astrometry_url','job','url',
-                  'nr_of_dps','data_location', 'quality','description',
+                  'data_location', 'quality','description',
                   'parent','derived_parent_taskid',
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
                   'image_type','used_in_hips','children','extra','transient')
@@ -94,7 +94,7 @@ class Observation2Serializer(serializers.ModelSerializer):
                   'derived_annotated_grid_image','derived_annotated_grid_eq_image','derived_annotated_stars_image','derived_sky_globe_image',
                   'derived_fits','derived_annotated_transient_image',
                   'my_status','new_status','astrometry_url','job','url',
-                  'nr_of_dps','data_location', 'quality','description',
+                  'data_location', 'quality','description',
                   'parent','derived_parent_taskid',
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
                   'image_type','used_in_hips','children','extra','transient')

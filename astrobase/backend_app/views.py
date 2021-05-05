@@ -295,8 +295,7 @@ class IndexView(ListView):
     context_object_name = 'my_observations'
 
     def get_queryset(self):
-        #observations = Observation.objects.order_by('-creationTime')
-        #observations = get_filtered_observations()
+
         my_status = self.request.GET.get('my_status')
         not_my_status = self.request.GET.get('not_my_status')
         search_box = self.request.GET.get('search_box', None)
@@ -305,7 +304,7 @@ class IndexView(ListView):
             observations = get_searched_observations(search_box)
         else:
             #observations = Observation.objects.order_by('-taskID')
-            observations = Observation.objects.order_by('-date')
+            observations = Observation2.objects.order_by('-date')
         if (my_status is not None):
             observations = get_filtered_observations(my_status)
         if (not_my_status is not None):
@@ -330,19 +329,19 @@ class IndexView(ListView):
 # filter on a single status
 # http://localhost:8000/my_astrobase/query?my_status=scheduled
 def get_filtered_observations(my_status):
-    q = Observation.objects.order_by('-date')
+    q = Observation2.objects.order_by('-date')
     q = q.filter(my_status=my_status)
     #q = q.exclude(my_status__icontains='removed')
     return q
 
 # http://localhost:8000/my_astrobase/query?not_my_status=removed
 def get_unfiltered_observations(my_status):
-    q = Observation.objects.order_by('-date')
+    q = Observation2.objects.order_by('-date')
     q = q.exclude(my_status=my_status)
     return q
 
 def get_searched_observations(search):
-    observations = Observation.objects.filter(
+    observations = Observation2.objects.filter(
         Q(taskID__contains=search) |
         Q(parent__taskID__contains=search) |
         Q(my_status__icontains=search) |
@@ -587,6 +586,14 @@ class ObservationDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     queryset = Observation.objects.all()
     serializer_class = ObservationSerializer
 
+class Observation2DetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Detailed view of an observation.
+    """
+    model = Observation2
+    queryset = Observation2.objects.all()
+    serializer_class = Observation2Serializer
+
 class CollectionPagination(pagination.PageNumberPagination):
     page_size = 10
 
@@ -650,13 +657,13 @@ class ProjectListViewAPI(generics.ListCreateAPIView):
     """
 
     # a projects is a observation
-    model = Observation
-    queryset = Observation.objects.filter(task_type='master').order_by('-date')
-    serializer_class = ObservationSerializer
+    model = Observation2
+    queryset = Observation2.objects.filter(task_type='master').order_by('-date')
+    serializer_class = Observation2Serializer
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = ObservationFilter
+    filter_class = Observation2Filter
 
 
 # example: /my_astrobase/Jobs/
@@ -687,71 +694,38 @@ class JobDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
 # example: 'Schedule', 'Unschedule', 'Ready to Ingest', 'Remove Data'
 
 def ObservationSetStatus(request,pk,new_status,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
+    model = Observation2
+    observation = Observation2.objects.get(pk=pk)
     observation.new_status = new_status
     observation.save()
     return redirect('/my_astrobase/?page='+page)
 
 
 def ObservationSetQuality(request,pk,quality,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
+    model = Observation2
+    observation = Observation2.objects.get(pk=pk)
     observation.quality = quality
     observation.save()
     return redirect('/my_astrobase/?page='+page)
 
 def ObservationSetHips(request,pk,hips,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
+    model = Observation2
+    observation = Observation2.objects.get(pk=pk)
     observation.used_in_hips = hips
     observation.save()
     return redirect('/my_astrobase/?page='+page)
 
 def ObservationSetTaskType(request,pk,type,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
+    model = Observation2
+    observation = Observation2.objects.get(pk=pk)
     observation.task_type = type
-    # status is set to 'master' to show it in a different style
-    # observation.new_status = type
     observation.save()
     return redirect('/my_astrobase/?page='+page)
-
-
-# set the status of an observation and all its dataproducts to 'new_dps_status'
-# example: 'Validate DPS' button
-# /my_astrobase/observations/<int:pk>/setstatus_dps/<new_dps_status>/<new_obs_status>/<page>
-def ObservationSetStatusDataProducts(request,pk,new_dps_status,new_obs_status,page):
-    model = Observation
-    observation = Observation.objects.get(pk=pk)
-    observation.new_status = new_obs_status
-    observation.save()
-    taskid = observation.taskID
-
-    dataproducts = DataProduct.objects.filter(taskID=taskid)
-    for dataproduct in dataproducts:
-        dataproduct.new_status = new_dps_status
-        dataproduct.save()
-
-    return redirect('/my_astrobase/?page='+page)
-
-# set the status of a dataproduct to 'new_status'
-# example: 'Validate', 'Skip' and 'Remove' buttons
-def DataProductSetStatusView(request,pk,new_status):
-    model = DataProduct
-    dataproduct = DataProduct.objects.get(pk=pk)
-    dataproduct.new_status = new_status
-    dataproduct.save()
-
-    taskid = dataproduct.taskID
-
-    return redirect('/my_astrobase/task/'+taskid)
-
 
 # get the next taskid based on starttime and what is currently in the database
 #/my_astrobase/get_next_taskid?timestamp=2019-04-05
 class GetNextTaskIDView(generics.ListAPIView):
-    queryset = Observation.objects.all()
+    queryset = Observation2.objects.all()
 
     # override list and generate a custom response
     def list(self, request, *args, **kwargs):
@@ -834,7 +808,6 @@ class UploadFileView(APIView):
             return Response(file_serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 
 def get_queryset_auth(object, my_model_class, process_type=None):
