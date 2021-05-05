@@ -295,8 +295,7 @@ class IndexView(ListView):
     context_object_name = 'my_observations'
 
     def get_queryset(self):
-        #observations = Observation.objects.order_by('-creationTime')
-        #observations = get_filtered_observations()
+
         my_status = self.request.GET.get('my_status')
         not_my_status = self.request.GET.get('not_my_status')
         search_box = self.request.GET.get('search_box', None)
@@ -305,7 +304,7 @@ class IndexView(ListView):
             observations = get_searched_observations(search_box)
         else:
             #observations = Observation.objects.order_by('-taskID')
-            observations = Observation.objects.order_by('-date')
+            observations = Observation2.objects.order_by('-date')
         if (my_status is not None):
             observations = get_filtered_observations(my_status)
         if (not_my_status is not None):
@@ -330,19 +329,19 @@ class IndexView(ListView):
 # filter on a single status
 # http://localhost:8000/my_astrobase/query?my_status=scheduled
 def get_filtered_observations(my_status):
-    q = Observation.objects.order_by('-date')
+    q = Observation2.objects.order_by('-date')
     q = q.filter(my_status=my_status)
     #q = q.exclude(my_status__icontains='removed')
     return q
 
 # http://localhost:8000/my_astrobase/query?not_my_status=removed
 def get_unfiltered_observations(my_status):
-    q = Observation.objects.order_by('-date')
+    q = Observation2.objects.order_by('-date')
     q = q.exclude(my_status=my_status)
     return q
 
 def get_searched_observations(search):
-    observations = Observation.objects.filter(
+    observations = Observation2.objects.filter(
         Q(taskID__contains=search) |
         Q(parent__taskID__contains=search) |
         Q(my_status__icontains=search) |
@@ -586,6 +585,14 @@ class ObservationDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     model = Observation
     queryset = Observation.objects.all()
     serializer_class = ObservationSerializer
+
+class Observation2DetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Detailed view of an observation.
+    """
+    model = Observation2
+    queryset = Observation2.objects.all()
+    serializer_class = Observation2Serializer
 
 class CollectionPagination(pagination.PageNumberPagination):
     page_size = 10

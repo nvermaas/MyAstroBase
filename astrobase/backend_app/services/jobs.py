@@ -6,7 +6,7 @@ for Observations or DataProducts in AstroBase.
 import logging;
 import json
 import datetime
-from ..models import Observation, Job
+from ..models import Observation2, Job
 from transients_app.services import algorithms as transients
 
 logger = logging.getLogger(__name__)
@@ -66,14 +66,14 @@ def dispatch_job(command, observation_id):
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     # add a grid of 1 or 10 square degrees to the image
     if command == "grid":
-        observation = Observation.objects.get(id=observation_id)
+        observation = Observation2.objects.get(id=observation_id)
 
         # parse the url into observation_dir and filenames
-        parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
 
         # use annotated image as input image
-        parameter_input = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        parameter_output = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + \
                      str(parameter_fits[2]) + ',' + \
@@ -89,14 +89,14 @@ def dispatch_job(command, observation_id):
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     # add a grid of 1 or 10 square degrees to the image and rotate the image to horizontal (equatorial)
     if command == "grid_eq":
-        observation = Observation.objects.get(id=observation_id)
+        observation = Observation2.objects.get(id=observation_id)
 
         # parse the url into observation_dir and filenames
         parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
 
         # use annotated image as input image
-        parameter_input = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        parameter_output = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + \
                      str(parameter_fits[2]) + ',' + \
@@ -112,10 +112,10 @@ def dispatch_job(command, observation_id):
     # retrieve the stars from the fits that were used by astrometry.net,
     # and draw them with their magnitudes. (to get a feel of the limiting magnitude of the image)
     if command == "stars":
-        observation = Observation.objects.get(id=observation_id)
+        observation = Observation2.objects.get(id=observation_id)
 
         # parse the url into observation_dir and filenames
-        parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
         job_id = parameter_fits[2].split('.')
 
         parameters = str(parameter_fits[1] + ',' + str(job_id[0]))
@@ -124,10 +124,10 @@ def dispatch_job(command, observation_id):
 
     # read min/max ra and dec from fits and store in database
     if command == "min_max":
-        observation = Observation.objects.get(id=observation_id)
+        observation = Observation2.objects.get(id=observation_id)
 
         # parse the url into observation_dir and filenames
-        path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        path1 = observation.derived_fits.split('astrobase/data')[1].split('/')
 
         parameters = str(path1[1] + ',' + str(path1[2]))
         job = Job(command='box', parameters=parameters, status="new")
@@ -138,11 +138,11 @@ def dispatch_job(command, observation_id):
     if command == "all_min_max":
         # find all observations with a fits file, and create a min_max job for all of them
         #obs_with_fits = Observation.objects.filter(generated_dataproducts__dataproduct_type='fits')
-        obs = Observation.objects.all()
+        obs = Observation2.objects.all()
 
         for observation in obs:
             try:
-                path1 = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+                path1 = observation.derived_fits.split('astrobase/data')[1].split('/')
                 parameters = str(path1[1] + ',' + str(path1[2]))
                 job = Job(command='box', parameters=parameters, status="new")
                 job.save()
@@ -154,12 +154,12 @@ def dispatch_job(command, observation_id):
     # the 'observation.extra' field contains instructions from what to draw.
     # the extra objects will be drawn on the 'annotated image'
     if command == "draw_extra":
-        observation = Observation.objects.get(id=observation_id)
+        observation = Observation2.objects.get(id=observation_id)
 
         # parse the url into observation_dir and filenames
-        parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-        parameter_input = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        parameter_output = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+        parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2])
         job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
@@ -168,7 +168,7 @@ def dispatch_job(command, observation_id):
 
     # draw a transient (planet, comet or asteroid) on the image
     if command == "transient":
-        observation = Observation.objects.get(id=observation_id)
+        observation = Observation2.objects.get(id=observation_id)
 
         if observation.transient==None:
             return "impossible"
@@ -176,9 +176,9 @@ def dispatch_job(command, observation_id):
         add_transient_to_job(observation)
 
         # parse the url into observation_dir and filenames
-        parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
-        parameter_input = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        parameter_output = observation.observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+        parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_transient."))
         job = Job(command='transient', parameters=parameters, extra=observation.extra, status="new")

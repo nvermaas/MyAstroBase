@@ -401,6 +401,7 @@ class Observation2(models.Model):
     transient = models.CharField(max_length=30, null=True, blank=True)
     size = models.BigIntegerField(null=True, blank=True)
     dps = models.TextField(null=True, blank=True)
+    derived_fits = models.CharField(max_length=80, null=True, blank=True)
     derived_annotated_image = models.CharField(max_length=80, null=True, blank=True)
     derived_annotated_transient_image = models.CharField(max_length=80, null=True, blank=True)
     derived_annotated_grid_image = models.CharField(max_length=80, null=True, blank=True)
@@ -408,7 +409,7 @@ class Observation2(models.Model):
     derived_annotated_stars_image = models.CharField(max_length=80, null=True, blank=True)
     derived_sky_plot_image = models.CharField(max_length=80, null=True, blank=True)
     derived_sky_globe_image = models.CharField(max_length=80, null=True, blank=True)
-    derived_fits = models.CharField(max_length=80, null=True, blank=True)
+
 
 
     transient = models.CharField(max_length=30, null=True, blank=True)
@@ -421,6 +422,13 @@ class Observation2(models.Model):
     # good: <td><a href="{{ observation.get_absolute_url }}" target="_blank">{{ observation.taskID }} </a> </td>
     def get_absolute_url(self):
         return reverse('observation-detail-view-api', kwargs={'pk': self.pk})
+
+    @property
+    def derived_base_url(self):
+        data_host = settings.DATA_HOST
+        path = data_host + '/' + self.taskID
+
+        return path
 
     @property
     def nr_of_dps(self):

@@ -4,11 +4,11 @@
     Date created: 2019-11-13
     Description:  Business logic for AstroBase. These functions are called from the views (views.py).
 """
-import time
+import os
 import datetime
 import logging
 from .common import timeit
-from ..models import Observation, DataProduct
+from ..models import Observation2
 
 DATE_FORMAT = "%Y-%m-%d"
 TIME_FORMAT = "%Y-%m-%d %H:%M:%SZ"
@@ -55,7 +55,7 @@ def get_next_taskid(timestamp, taskid_postfix):
 
         # check if this taskid already exists. If it does, increase the counter and try again
         logger.info('checking taskid ' + str(taskid) + '..')
-        found = Observation.objects.filter(taskID=taskid).count()
+        found = Observation2.objects.filter(taskID=taskid).count()
 
         if found==0:
             return taskid
@@ -75,26 +75,52 @@ def add_dataproducts(taskID, dataproducts):
     logger.info("add_dataproducts("+taskID+','+str(number_of_dataproducts)+")")
 
     # get the common fields from the observation based on the given taskid
-    parent = Observation.objects.get(taskID=taskID)
-    parent_data_location = parent.data_location
+    parent = Observation2.objects.get(taskID=taskID)
+    base_url = parent.derived_base_url
 
     for dp in dataproducts:
-        new_status = dp.get('new_status','defined')
-        data_location = dp.get('data_dir',parent_data_location)
-        size = dp.get('size', 0)
-        myDataProduct = DataProduct(taskID=taskID,
-                                    dataproduct_type=dp['dataproduct_type'],
-                                    data_location=data_location,
-                                    filename=dp['filename'],
-                                    name=dp['filename'],
-                                    description=dp['filename'],
-                                    task_type='dataproduct',
-                                    new_status=new_status,
-                                    parent=parent,
-                                    size=dp['size'],
-                                    )
+        # store the dataproduct in the observation
 
-        logger.info('addding dataproduct: '+str(myDataProduct))
-        myDataProduct.save()
+        if parent.size == None:
+            parent.size = 0
 
+        # depending on the dataproduct type
+        type = dp['dataproduct_type']
+        if type == 'raw':
+            # do not store as field, because the raw dataproduct is derived from taskid in the model now
+            parent.size = parent.size + int(dp['size'])
+
+        if type == 'annotated':
+            parent.derived_annotated_image = base_url + '/' + dp['filename']
+            parent.size = parent.size + int(dp['size'])
+
+        if type == 'sky_plot':
+            parent.derived_sky_plot_image = base_url + '/' + dp['filename']
+            parent.size = parent.size + int(dp['size'])
+
+        if type == 'sky_globe':
+            parent.derived_sky_globe_image = base_url + '/' + dp['filename']
+            parent.size = parent.size + int(dp['size'])
+
+        if type == 'fits':
+            parent.derived_fits = base_url + '/' + dp['filename']
+            parent.size = parent.size + int(dp['size'])
+
+        if type == 'annotated_grid':
+            parent.derived_annotated_grid_image = base_url + '/' + dp['filename']
+            parent.size = parent.size + int(dp['size'])
+
+        if type == 'annotated_grid_eq':
+            parent.derived_annotated_grid_eq_image = base_url + '/' + dp['filename']
+            parent.size = parent.size + int(dp['size'])
+
+        if type == 'annotated_stars':
+            parent.derived_annotated_stars_image = base_url + '/' + dp['filename']
+            parent.size = parent.size + int(dp['size'])
+
+        if type == 'annotated_transient':
+            parent.derived_annotated_transient_image = base_url + '/' + dp['filename']
+            parent.size = parent.size + int(dp['size'])
+
+    parent.save()
 
