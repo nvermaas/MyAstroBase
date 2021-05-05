@@ -33,7 +33,6 @@ urlpatterns = [
     path('update_collections2/', views.UpdateCollections2.as_view()),
 
     path('observations_minimum/', views.ObservationListMinimumViewAPI.as_view()),
-    path('observations_hips/', views.ObservationListViewHips.as_view()),
 
     # ex: /astrobase/observations/5/
     path('observations/<int:pk>/', views.ObservationDetailsViewAPI.as_view(),name='observation-detail-view-api'),
@@ -56,7 +55,7 @@ urlpatterns = [
     path('jobs/', views.JobListViewAPI.as_view()),
 
     # ex: /astrobase/boxes/
-    path('boxes/', views.ObservationBoxesListView.as_view()),
+    path('boxes/', views.Observation2BoxesListView.as_view()),
 
     # ex: /astrobase/jobs/5/
     path('jobs/<int:pk>/', views.JobDetailsViewAPI.as_view(), name='job-detail-view-api'),

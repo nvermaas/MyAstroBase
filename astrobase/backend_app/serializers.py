@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import DataProduct, Observation, Observation2, Collection, Collection2, Status, AstroFile, Job, ObservationBox
+from .models import DataProduct, Observation, Observation2, Collection, Collection2, \
+    Status, AstroFile, Job, ObservationBox, Observation2Box
 import logging
 
 logger = logging.getLogger(__name__)
@@ -205,7 +206,6 @@ class ObservationMinimumSerializer(serializers.ModelSerializer):
     # but comes from the related_field in Observation.parent.
 
 
-
     class Meta:
         model = Observation
         fields = ('id','task_type', 'name', 'instrument','filter','process_type','taskID',
@@ -216,6 +216,7 @@ class ObservationMinimumSerializer(serializers.ModelSerializer):
                   'derived_parent_taskid',
                   'exposure_in_seconds','iso','focal_length','stacked_images','magnitude',
                   'image_type','used_in_hips','children')
+
 
 class CollectionSerializer(serializers.ModelSerializer):
     observations = ObservationLimitedSerializer(many=True, read_only=True)
@@ -251,4 +252,10 @@ class JobSerializer(serializers.ModelSerializer):
 class ObservationBoxSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ObservationBox
+        fields = ('taskID','name','field_ra','field_dec','field_fov','field_name','box','image_type','quality','derived_fits')
+
+
+class Observation2BoxSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Observation2Box
         fields = ('taskID','name','field_ra','field_dec','field_fov','field_name','box','image_type','quality','derived_fits')

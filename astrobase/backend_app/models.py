@@ -587,6 +587,14 @@ class ObservationBoxManager(models.Manager):
         return super(ObservationBoxManager, self).get_queryset().filter(used_in_hips=True).exclude(box=None)\
             .only('taskID','name','field_ra','field_dec','field_fov','field_name','box','image_type','quality')
 
+
+# only retrieve a limited number of fields for better performance
+class Observation2BoxManager(models.Manager):
+    def get_queryset(self):
+        return super(Observation2BoxManager, self).get_queryset().filter(used_in_hips=True).exclude(box=None)\
+            .only('taskID','name','field_ra','field_dec','field_fov','field_name','box','image_type','quality','derived_fits')
+
+
 # this is a proxy model of Observation with limited fields
 class ObservationBox(Observation):
     objects = ObservationBoxManager()
@@ -606,3 +614,9 @@ class ObservationBox(Observation):
     class Meta:
         proxy = True
 
+# this is a proxy model of Observation with limited fields
+class Observation2Box(Observation2):
+    objects = Observation2BoxManager()
+
+    class Meta:
+        proxy = True

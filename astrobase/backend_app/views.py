@@ -16,9 +16,13 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import DataProduct, Observation, Observation2, Status, AstroFile, Collection, Collection2, Job, ObservationBox
-from .serializers import DataProductSerializer, ObservationSerializer, Observation2Serializer, ObservationLimitedSerializer, StatusSerializer, AstroFileSerializer, \
-    CollectionSerializer, Collection2Serializer, JobSerializer, ObservationBoxSerializer, ObservationMinimumSerializer
+from .models import DataProduct, Observation, Observation2, Status, AstroFile, Collection, Collection2, Job, \
+    ObservationBox, Observation2Box
+from .serializers import DataProductSerializer, ObservationSerializer, Observation2Serializer, \
+    ObservationLimitedSerializer, ObservationMinimumSerializer, StatusSerializer, AstroFileSerializer, \
+    CollectionSerializer, Collection2Serializer, JobSerializer, \
+    ObservationBoxSerializer, Observation2BoxSerializer \
+
 from .forms import FilterForm
 from .services import algorithms
 from .services import jobs
@@ -560,22 +564,6 @@ class UpdateCollections2(generics.ListAPIView):
         return Response({"collections2 updated"})
 
 
-# example: /my_astrobase/observations/
-# calling this view serializes the observations list in a REST API
-class ObservationListViewHips(generics.ListCreateAPIView):
-    """
-    A pagination list of observations, sorted by date.
-    """
-    model = Observation
-    queryset = Observation.objects.all()
-    serializer_class = ObservationLimitedSerializer
-    pagination_class = NoPagination
-
-    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = ObservationFilter
-
-
 class ObservationListMinimumViewAPI(generics.ListCreateAPIView):
     """
     A pagination list of observations, sorted by date.
@@ -911,3 +899,11 @@ class ObservationBoxesListView(generics.ListCreateAPIView):
     pagination_class = NoPagination
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = ObservationFilter
+
+# Observation Coordinates for Aladin
+class Observation2BoxesListView(generics.ListCreateAPIView):
+    queryset = Observation2Box.objects.all()
+    serializer_class = Observation2BoxSerializer
+    pagination_class = NoPagination
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = Observation2Filter
