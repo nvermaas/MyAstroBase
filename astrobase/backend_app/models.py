@@ -401,14 +401,15 @@ class Observation2(models.Model):
     transient = models.CharField(max_length=30, null=True, blank=True)
     size = models.BigIntegerField(null=True, blank=True)
     dps = models.TextField(null=True, blank=True)
-    derived_fits = models.CharField(max_length=80, null=True, blank=True)
-    derived_annotated_image = models.CharField(max_length=80, null=True, blank=True)
-    derived_annotated_transient_image = models.CharField(max_length=80, null=True, blank=True)
-    derived_annotated_grid_image = models.CharField(max_length=80, null=True, blank=True)
-    derived_annotated_grid_eq_image = models.CharField(max_length=80, null=True, blank=True)
-    derived_annotated_stars_image = models.CharField(max_length=80, null=True, blank=True)
-    derived_sky_plot_image = models.CharField(max_length=80, null=True, blank=True)
-    derived_sky_globe_image = models.CharField(max_length=80, null=True, blank=True)
+
+    fits = models.CharField(max_length=20, null=True, blank=True)
+    annotated_image = models.CharField(max_length=20, null=True, blank=True)
+    annotated_transient_image = models.CharField(max_length=20, null=True, blank=True)
+    annotated_grid_image = models.CharField(max_length=20, null=True, blank=True)
+    annotated_grid_eq_image = models.CharField(max_length=20, null=True, blank=True)
+    annotated_stars_image = models.CharField(max_length=20, null=True, blank=True)
+    sky_plot_image = models.CharField(max_length=20, null=True, blank=True)
+    sky_globe_image = models.CharField(max_length=20, null=True, blank=True)
 
     transient = models.CharField(max_length=30, null=True, blank=True)
 
@@ -437,6 +438,77 @@ class Observation2(models.Model):
         except:
             return None
 
+    @property
+    def derived_fits(self):
+        try:
+            data_host = settings.DATA_HOST
+            path = data_host + '/' + self.taskID + '/' + str(self.fits)
+            return path
+        except:
+            return None
+
+    @property
+    def derived_annotated_image(self):
+        try:
+            data_host = settings.DATA_HOST
+            path = data_host + '/' + self.taskID + '/' + str(self.annotated_image)
+            return path
+        except:
+            return None
+
+    @property
+    def derived_annotated_transient_image(self):
+        try:
+            data_host = settings.DATA_HOST
+            path = data_host + '/' + self.taskID + '/' + str(self.annotated_transient_image)
+            return path
+        except:
+            return None
+
+    @property
+    def derived_annotated_grid_image(self):
+        try:
+            data_host = settings.DATA_HOST
+            path = data_host + '/' + self.taskID + '/' + str(self.annotated_grid_image)
+            return path
+        except:
+            return None
+
+    @property
+    def derived_annotated_grid_eq_image(self):
+        try:
+            data_host = settings.DATA_HOST
+            path = data_host + '/' + self.taskID + '/' + str(self.annotated_grid_eq_image)
+            return path
+        except:
+            return None
+
+    @property
+    def derived_annotated_stars_image(self):
+        try:
+            data_host = settings.DATA_HOST
+            path = data_host + '/' + self.taskID + '/' + str(self.annotated_stars_image)
+            return path
+        except:
+            return None
+
+    @property
+    def derived_sky_plot_image(self):
+        try:
+            data_host = settings.DATA_HOST
+            path = data_host + '/' + self.taskID + '/' + str(self.annotated_sky_plot_image)
+            return path
+        except:
+            return None
+
+    @property
+    def derived_sky_globe_image(self):
+        try:
+            data_host = settings.DATA_HOST
+            path = data_host + '/' + self.taskID + '/' + str(self.sky_globe_image)
+            return path
+        except:
+            return None
 
     @property
     def derived_parent_taskid(self):
@@ -589,7 +661,7 @@ class ObservationBoxManager(models.Manager):
 class Observation2BoxManager(models.Manager):
     def get_queryset(self):
         return super(Observation2BoxManager, self).get_queryset().filter(used_in_hips=True).exclude(box=None)\
-            .only('taskID','name','field_ra','field_dec','field_fov','field_name','box','image_type','quality','derived_fits')
+            .only('taskID','name','field_ra','field_dec','field_fov','field_name','box','image_type','quality')
 
 
 # this is a proxy model of Observation with limited fields
@@ -614,6 +686,15 @@ class ObservationBox(Observation):
 # this is a proxy model of Observation with limited fields
 class Observation2Box(Observation2):
     objects = Observation2BoxManager()
+
+    @property
+    def derived_fits(self):
+        try:
+            data_host = settings.DATA_HOST
+            path = data_host + '/' + self.taskID + '/' + str(self.fits)
+            return path
+        except:
+            return None
 
     class Meta:
         proxy = True

@@ -1,5 +1,6 @@
 import logging
 import json
+import os
 
 from . import config
 from django.http import HttpResponse, HttpResponseRedirect
@@ -434,104 +435,46 @@ class Observation2ListViewAPI(generics.ListCreateAPIView):
     filter_class = Observation2Filter
 
 class UpdateObservations2(generics.ListAPIView):
-    model = Observation
-    queryset = Observation.objects.all()
+    model = Observation2
+    queryset = Observation2.objects.all()
 
     # override the list method to be able to plug in my transient business logic
     def list(self, request):
-        Observation2.objects.all().delete()
-
-        observations = Observation.objects.all()
+        observations = Observation2.objects.all()
 
         for observation in observations:
-            observation2 = Observation2(
-                name = observation.name,
-                task_type = observation.task_type,
-                taskID = observation.taskID,
-                creationTime = observation.creationTime,
-                new_status = observation.new_status,
-                my_status = observation.my_status,
-                astrometry_url = observation.astrometry_url,
-                job = observation.job,
-                date = observation.date,
-                instrument = observation.instrument,
-                filter = observation.filter,
-                description = observation.description,
-                url = observation.url,
+            try:
+                dirname, observation.fits = os.path.split(observation.derived_fits)
+            except:
+                pass
+            try:
+                dirname, observation.annotated_image = os.path.split(observation.derived_annotated_image)
+            except:
+                pass
+            try:
+                dirname, observation.annotated_grid_image = os.path.split(observation.derived_annotated_grid_image)
+            except:
+                pass
+            try:
+                dirname, observation.annotated_grid_eq_image = os.path.split(observation.derived_annotated_grid_eq_image)
+            except:
+                pass
+            try:
+                dirname, observation.annotated_stars_image = os.path.split(observation.derived_annotated_stars_image)
+            except:
+                pass
+            try:
+                dirname, observation.sky_plot_image = os.path.split(observation.derived_sky_plot_image)
+            except:
+                pass
+            try:
+                dirname, observation.sky_globe_image = os.path.split(observation.derived_sky_globe_image)
+            except:
+                pass
 
-                field_name= observation.field_name,
-                field_ra = observation.field_ra,
-                field_dec = observation.field_dec,
-                field_fov = observation.field_fov,
+            print(observation)
+            observation.save()
 
-                ra_min = observation.ra_min,
-                ra_max = observation.ra_max,
-                dec_min = observation.dec_min,
-                dec_max = observation.dec_max,
-                ra_dec_fov = observation.ra_dec_fov,
-                box = observation.box,
-
-                quality = observation.quality,
-
-                # details about the imaging
-                iso = observation.iso,
-                focal_length = observation.focal_length,
-                exposure_in_seconds = observation.exposure_in_seconds,
-                stacked_images = observation.stacked_images,
-                # magnitude = models.FloatField(null = True, blank=True)
-                magnitude = observation.magnitude,
-                image_type = observation.image_type,
-                used_in_hips = observation.used_in_hips,
-                extra = observation.extra,
-                transient = observation.transient,
-                size = observation.size,
-
-                derived_annotated_image = observation.derived_annotated_image,
-                derived_annotated_transient_image = observation.derived_annotated_transient_image,
-                derived_annotated_grid_image = observation.derived_annotated_grid_image,
-                derived_annotated_grid_eq_image = observation.derived_annotated_grid_eq_image,
-                derived_annotated_stars_image = observation.derived_annotated_stars_image,
-                derived_sky_plot_image = observation.derived_sky_plot_image,
-                derived_sky_globe_image = observation.derived_sky_globe_image,
-                derived_fits = observation.derived_fits
-            )
-
-            print(observation2)
-            observation2.save()
-
-        # now that all observations are in the database
-        # iterate once more to find the parents
-        for observation in observations:
-
-            # relationships
-            if observation.parent != None:
-                taskID_child = observation.taskID
-                taskID_parent = observation.parent.taskID
-                child2 = Observation2.objects.get(taskID=taskID_child)
-                parent2 = Observation2.objects.get(taskID=taskID_parent)
-                child2.parent = parent2
-                print(child2)
-                child2.save()
-
-
-        # update collections2
-        Collection2.objects.all().delete()
-        collections = Collection.objects.all()
-
-        for collection in collections:
-            collection2 = Collection2(
-                date = collection.date,
-                name = collection.name,
-                collection_type = collection.collection_type,
-                description = collection.description,
-            )
-            print(collection2)
-            collection2.save()
-
-            observations = collection.observations
-            for observation in observations:
-                observation2 = Observation2.objects.get(taskID=observation.taskID)
-                collection2.observations.add(observation2)
         return Response({"observations2 updated"})
 
 
