@@ -440,6 +440,8 @@ class Observation2(models.Model):
 
     @property
     def derived_fits(self):
+        if self.fits == None:
+            return None
         try:
             data_host = settings.DATA_HOST
             path = data_host + '/' + self.taskID + '/' + str(self.fits)
@@ -449,6 +451,8 @@ class Observation2(models.Model):
 
     @property
     def derived_annotated_image(self):
+        if self.annotated_image == None:
+            return None
         try:
             data_host = settings.DATA_HOST
             path = data_host + '/' + self.taskID + '/' + str(self.annotated_image)
@@ -458,6 +462,8 @@ class Observation2(models.Model):
 
     @property
     def derived_annotated_transient_image(self):
+        if self.annotated_transient_image == None:
+            return None
         try:
             data_host = settings.DATA_HOST
             path = data_host + '/' + self.taskID + '/' + str(self.annotated_transient_image)
@@ -467,6 +473,8 @@ class Observation2(models.Model):
 
     @property
     def derived_annotated_grid_image(self):
+        if self.annotated_grid_image == None:
+            return None
         try:
             data_host = settings.DATA_HOST
             path = data_host + '/' + self.taskID + '/' + str(self.annotated_grid_image)
@@ -476,6 +484,8 @@ class Observation2(models.Model):
 
     @property
     def derived_annotated_grid_eq_image(self):
+        if self.annotated_grid_eq_image == None:
+            return None
         try:
             data_host = settings.DATA_HOST
             path = data_host + '/' + self.taskID + '/' + str(self.annotated_grid_eq_image)
@@ -485,6 +495,8 @@ class Observation2(models.Model):
 
     @property
     def derived_annotated_stars_image(self):
+        if self.annotated_stars_image == None:
+            return None
         try:
             data_host = settings.DATA_HOST
             path = data_host + '/' + self.taskID + '/' + str(self.annotated_stars_image)
@@ -494,6 +506,8 @@ class Observation2(models.Model):
 
     @property
     def derived_sky_plot_image(self):
+        if self.annotated_sky_plot_image == None:
+            return None
         try:
             data_host = settings.DATA_HOST
             path = data_host + '/' + self.taskID + '/' + str(self.annotated_sky_plot_image)
@@ -503,6 +517,8 @@ class Observation2(models.Model):
 
     @property
     def derived_sky_globe_image(self):
+        if self.sky_globe_image == None:
+            return None
         try:
             data_host = settings.DATA_HOST
             path = data_host + '/' + self.taskID + '/' + str(self.sky_globe_image)

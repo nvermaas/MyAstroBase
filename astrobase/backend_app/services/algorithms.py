@@ -91,35 +91,35 @@ def add_dataproducts(taskID, dataproducts):
             parent.size = parent.size + int(dp['size'])
 
         if type == 'annotated':
-            parent.derived_annotated_image = base_url + '/' + dp['filename']
+            parent.annotated_image = dp['filename']
             parent.size = parent.size + int(dp['size'])
 
         if type == 'sky_plot':
-            parent.derived_sky_plot_image = base_url + '/' + dp['filename']
+            parent.sky_plot_image = dp['filename']
             parent.size = parent.size + int(dp['size'])
 
         if type == 'sky_globe':
-            parent.derived_sky_globe_image = base_url + '/' + dp['filename']
+            parent.sky_globe_image = dp['filename']
             parent.size = parent.size + int(dp['size'])
 
         if type == 'fits':
-            parent.derived_fits = base_url + '/' + dp['filename']
+            parent.fits = dp['filename']
             parent.size = parent.size + int(dp['size'])
 
         if type == 'annotated_grid':
-            parent.derived_annotated_grid_image = base_url + '/' + dp['filename']
+            parent.annotated_grid_image = dp['filename']
             parent.size = parent.size + int(dp['size'])
 
         if type == 'annotated_grid_eq':
-            parent.derived_annotated_grid_eq_image = base_url + '/' + dp['filename']
+            parent.annotated_grid_eq_image = dp['filename']
             parent.size = parent.size + int(dp['size'])
 
         if type == 'annotated_stars':
-            parent.derived_annotated_stars_image = base_url + '/' + dp['filename']
+            parent.annotated_stars_image = dp['filename']
             parent.size = parent.size + int(dp['size'])
 
         if type == 'annotated_transient':
-            parent.derived_annotated_transient_image = base_url + '/' + dp['filename']
+            parent.annotated_transient_image = dp['filename']
             parent.size = parent.size + int(dp['size'])
 
     parent.save()
