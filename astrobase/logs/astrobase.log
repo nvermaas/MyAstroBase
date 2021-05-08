@@ -26370,3 +26370,12 @@
 [08/May/2021 09:21:01,456] handle_pre_save(210501002 - vesta - vesta)
 [08/May/2021 09:21:01,485] handle_post_save(210501002 - vesta - vesta)
 [08/May/2021 09:21:01,486] update observation = 210501002
+[08/May/2021 12:23:27,694] SIGNAL : pre_save Observation(210501001 - Vesta Simulation - Leo, Vesta (Stellarium) - grid 2)
+[08/May/2021 12:23:27,694] handle_pre_save(210501001 - Vesta Simulation - Leo, Vesta (Stellarium) - grid 2)
+[08/May/2021 12:23:27,723] handle_post_save(210501001 - Vesta Simulation - Leo, Vesta (Stellarium) - grid 2)
+[08/May/2021 12:23:27,724] update observation = 210501001
+[08/May/2021 12:23:53,647] add_dataproducts(210501001,1)
+[08/May/2021 12:23:53,649] SIGNAL : pre_save Observation(210501001 - Vesta Simulation - Leo, Vesta (Stellarium) - grid 2)
+[08/May/2021 12:23:53,649] handle_pre_save(210501001 - Vesta Simulation - Leo, Vesta (Stellarium) - grid 2)
+[08/May/2021 12:23:53,681] handle_post_save(210501001 - Vesta Simulation - Leo, Vesta (Stellarium) - grid 2)
+[08/May/2021 12:23:53,682] update observation = 210501001
