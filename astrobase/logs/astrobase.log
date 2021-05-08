@@ -26211,3 +26211,158 @@
 [06/May/2021 21:23:47,900] handle_pre_save(210501001 - Vesta Simulation - Leo, Vesta (Stellarium) - grid 2)
 [06/May/2021 21:23:47,921] handle_post_save(210501001 - Vesta Simulation - Leo, Vesta (Stellarium) - grid 2)
 [06/May/2021 21:23:47,921] update observation = 210501001
+[08/May/2021 06:54:57,244] get_next_taskid(20210501)
+[08/May/2021 06:54:57,245] checking taskid 210501001..
+[08/May/2021 06:54:57,249] checking taskid 210501002..
+[08/May/2021 06:55:23,489] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 06:55:23,489] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 06:55:23,777] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 06:55:23,778] save new observation
+[08/May/2021 06:55:23,778] update observation = 210501002
+[08/May/2021 06:55:32,784] add_dataproducts(210501002,1)
+[08/May/2021 06:55:47,014] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 06:55:47,015] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 06:55:48,046] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 06:55:48,046] update observation = 210501002
+[08/May/2021 06:56:05,778] get_next_taskid(20210501)
+[08/May/2021 06:56:05,779] checking taskid 210501001..
+[08/May/2021 06:56:05,791] checking taskid 210501002..
+[08/May/2021 06:56:05,809] checking taskid 210501003..
+[08/May/2021 06:56:22,135] get_next_taskid(20210501)
+[08/May/2021 06:56:22,136] checking taskid 210501001..
+[08/May/2021 06:56:22,149] checking taskid 210501002..
+[08/May/2021 06:56:22,158] checking taskid 210501003..
+[08/May/2021 06:56:38,470] get_next_taskid(20210501)
+[08/May/2021 06:56:38,470] checking taskid 210501001..
+[08/May/2021 06:56:38,475] checking taskid 210501002..
+[08/May/2021 06:56:38,476] checking taskid 210501003..
+[08/May/2021 06:56:54,762] get_next_taskid(20210501)
+[08/May/2021 06:56:54,762] checking taskid 210501001..
+[08/May/2021 06:56:54,766] checking taskid 210501002..
+[08/May/2021 06:56:54,768] checking taskid 210501003..
+[08/May/2021 06:57:11,090] get_next_taskid(20210501)
+[08/May/2021 06:57:11,091] checking taskid 210501001..
+[08/May/2021 06:57:11,103] checking taskid 210501002..
+[08/May/2021 06:57:11,108] checking taskid 210501003..
+[08/May/2021 06:57:43,587] get_next_taskid(20210501)
+[08/May/2021 06:57:43,588] checking taskid 210501001..
+[08/May/2021 06:57:43,600] checking taskid 210501002..
+[08/May/2021 06:57:43,605] checking taskid 210501003..
+[08/May/2021 06:58:34,679] SIGNAL : pre_save Observation(210501003 - vesta - vesta)
+[08/May/2021 06:58:34,679] handle_pre_save(210501003 - vesta - vesta)
+[08/May/2021 06:58:35,131] handle_post_save(210501003 - vesta - vesta)
+[08/May/2021 06:58:35,132] save new observation
+[08/May/2021 06:58:35,133] update observation = 210501003
+[08/May/2021 06:59:24,579] add_dataproducts(210501003,1)
+[08/May/2021 06:59:24,589] SIGNAL : pre_save Observation(210501003 - vesta - vesta)
+[08/May/2021 06:59:24,590] handle_pre_save(210501003 - vesta - vesta)
+[08/May/2021 06:59:25,176] handle_post_save(210501003 - vesta - vesta)
+[08/May/2021 06:59:25,177] update observation = 210501003
+[08/May/2021 06:59:55,061] get_next_taskid(20210501)
+[08/May/2021 06:59:55,062] checking taskid 210501001..
+[08/May/2021 06:59:55,074] checking taskid 210501002..
+[08/May/2021 06:59:55,079] checking taskid 210501003..
+[08/May/2021 06:59:55,085] checking taskid 210501004..
+[08/May/2021 07:00:27,130] get_next_taskid(20210501)
+[08/May/2021 07:00:27,131] checking taskid 210501001..
+[08/May/2021 07:00:27,142] checking taskid 210501002..
+[08/May/2021 07:00:27,147] checking taskid 210501003..
+[08/May/2021 07:00:27,152] checking taskid 210501004..
+[08/May/2021 07:00:32,824] SIGNAL : pre_save Observation(210501004 - vesta - vesta)
+[08/May/2021 07:00:32,824] handle_pre_save(210501004 - vesta - vesta)
+[08/May/2021 07:00:33,095] handle_post_save(210501004 - vesta - vesta)
+[08/May/2021 07:00:33,096] save new observation
+[08/May/2021 07:00:33,098] update observation = 210501004
+[08/May/2021 07:00:38,329] add_dataproducts(210501004,1)
+[08/May/2021 07:00:38,333] SIGNAL : pre_save Observation(210501004 - vesta - vesta)
+[08/May/2021 07:00:38,333] handle_pre_save(210501004 - vesta - vesta)
+[08/May/2021 07:00:38,369] handle_post_save(210501004 - vesta - vesta)
+[08/May/2021 07:00:38,369] update observation = 210501004
+[08/May/2021 07:00:42,880] SIGNAL : pre_save Observation(210501004 - vesta - vesta)
+[08/May/2021 07:00:42,880] handle_pre_save(210501004 - vesta - vesta)
+[08/May/2021 07:00:43,510] handle_post_save(210501004 - vesta - vesta)
+[08/May/2021 07:00:43,511] update observation = 210501004
+[08/May/2021 07:02:31,994] SIGNAL : pre_save Observation(210501004 - vesta - vesta)
+[08/May/2021 07:02:31,994] handle_pre_save(210501004 - vesta - vesta)
+[08/May/2021 07:02:32,687] SIGNAL : pre_save Observation(210501003 - vesta - vesta)
+[08/May/2021 07:02:32,687] handle_pre_save(210501003 - vesta - vesta)
+[08/May/2021 07:02:34,111] handle_post_save(210501003 - vesta - vesta)
+[08/May/2021 07:02:34,112] update observation = 210501003
+[08/May/2021 07:02:34,567] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:02:34,570] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:02:35,238] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:02:35,238] update observation = 210501002
+[08/May/2021 07:02:38,464] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:02:38,465] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:02:38,491] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:02:38,492] update observation = 210501002
+[08/May/2021 07:02:39,115] SIGNAL : pre_save Observation(210501003 - vesta - vesta)
+[08/May/2021 07:02:39,116] handle_pre_save(210501003 - vesta - vesta)
+[08/May/2021 07:02:39,138] handle_post_save(210501003 - vesta - vesta)
+[08/May/2021 07:02:39,138] update observation = 210501003
+[08/May/2021 07:02:39,892] SIGNAL : pre_save Observation(210501004 - vesta - vesta)
+[08/May/2021 07:02:39,893] handle_pre_save(210501004 - vesta - vesta)
+[08/May/2021 07:02:39,929] handle_post_save(210501004 - vesta - vesta)
+[08/May/2021 07:02:39,929] update observation = 210501004
+[08/May/2021 07:03:35,630] get_next_taskid(20210501)
+[08/May/2021 07:03:35,631] checking taskid 210501001..
+[08/May/2021 07:03:35,642] checking taskid 210501002..
+[08/May/2021 07:03:36,834] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:03:36,834] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:03:37,539] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:03:37,540] save new observation
+[08/May/2021 07:03:37,540] update observation = 210501002
+[08/May/2021 07:03:39,126] add_dataproducts(210501002,1)
+[08/May/2021 07:03:39,129] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:03:39,130] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:03:39,737] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:03:39,738] update observation = 210501002
+[08/May/2021 07:03:42,384] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:03:42,385] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:03:42,668] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:03:42,668] update observation = 210501002
+[08/May/2021 07:04:21,312] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:04:21,313] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:04:21,910] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:04:21,911] update observation = 210501002
+[08/May/2021 07:04:28,350] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:04:28,350] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:04:29,458] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:04:29,459] update observation = 210501002
+[08/May/2021 07:04:32,054] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:04:32,055] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:04:32,726] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:04:32,728] update observation = 210501002
+[08/May/2021 07:04:35,365] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:04:35,365] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:04:36,810] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:04:36,811] update observation = 210501002
+[08/May/2021 07:05:59,876] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:05:59,877] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:01,167] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:01,168] update observation = 210501002
+[08/May/2021 07:06:03,764] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:06:03,765] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:04,400] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:04,401] update observation = 210501002
+[08/May/2021 07:06:17,233] add_dataproducts(210501002,8)
+[08/May/2021 07:06:17,237] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:06:17,237] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:17,772] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:17,773] update observation = 210501002
+[08/May/2021 07:06:20,376] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:06:20,377] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:21,050] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:21,051] update observation = 210501002
+[08/May/2021 07:06:23,684] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:06:23,684] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:24,299] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:24,300] update observation = 210501002
+[08/May/2021 07:06:28,038] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:06:28,039] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:28,629] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:28,630] update observation = 210501002
+[08/May/2021 07:06:31,270] SIGNAL : pre_save Observation(210501002 - vesta - vesta)
+[08/May/2021 07:06:31,270] handle_pre_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:32,738] handle_post_save(210501002 - vesta - vesta)
+[08/May/2021 07:06:32,739] update observation = 210501002

@@ -402,14 +402,14 @@ class Observation2(models.Model):
     size = models.BigIntegerField(null=True, blank=True)
     dps = models.TextField(null=True, blank=True)
 
-    fits = models.CharField(max_length=20, null=True, blank=True)
-    annotated_image = models.CharField(max_length=20, null=True, blank=True)
-    annotated_transient_image = models.CharField(max_length=20, null=True, blank=True)
-    annotated_grid_image = models.CharField(max_length=20, null=True, blank=True)
-    annotated_grid_eq_image = models.CharField(max_length=20, null=True, blank=True)
-    annotated_stars_image = models.CharField(max_length=20, null=True, blank=True)
-    sky_plot_image = models.CharField(max_length=20, null=True, blank=True)
-    sky_globe_image = models.CharField(max_length=20, null=True, blank=True)
+    fits = models.CharField(max_length=30, null=True, blank=True)
+    annotated_image = models.CharField(max_length=30, null=True, blank=True)
+    annotated_transient_image = models.CharField(max_length=30, null=True, blank=True)
+    annotated_grid_image = models.CharField(max_length=30, null=True, blank=True)
+    annotated_grid_eq_image = models.CharField(max_length=30, null=True, blank=True)
+    annotated_stars_image = models.CharField(max_length=30, null=True, blank=True)
+    sky_plot_image = models.CharField(max_length=30, null=True, blank=True)
+    sky_globe_image = models.CharField(max_length=30, null=True, blank=True)
 
     transient = models.CharField(max_length=30, null=True, blank=True)
 
