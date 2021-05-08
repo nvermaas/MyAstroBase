@@ -13,35 +13,13 @@ urlpatterns = [
     # ex: /astrobase/
     path('', views.IndexView.as_view(), name='index'),
 
-    # ex: /astrobase/task/180223003/
-    path('task/<taskID>/', views.DataProductsListView.as_view(), name='dataproducts-list-view'),
-
     # --- REST API ---
     # ex: /astrobase/observations/
-    path('observations/', views.ObservationListViewAPI.as_view()),
     path('observations2/', views.Observation2ListViewAPI.as_view()),
-    path('update_observations2/', views.UpdateObservations2.as_view()),
-    path('update_collections2/', views.UpdateCollections2.as_view()),
-
-    path('observations_minimum/', views.ObservationListMinimumViewAPI.as_view()),
-
-    # ex: /astrobase/observations/5/
-    path('observations/<int:pk>/', views.ObservationDetailsViewAPI.as_view(),name='observation-detail-view-api'),
-    path('observations2/<int:pk>/', views.Observation2DetailsViewAPI.as_view(), name='observation2-detail-view-api'),
-
-    # ex: /astrobase/projects/
+    path('observations2/<int:pk>/', views.Observation2DetailsViewAPI.as_view(),name='observation2-detail-view-api'),
     path('projects/', views.ProjectListViewAPI.as_view()),
-
-    # ex: /astrobase/collections/
-    path('collections/', views.CollectionListViewAPI.as_view()),
     path('collections2/', views.Collection2ListViewAPI.as_view()),
-
-    # ex: /astrobase/collections/5/
-    path('collections/<int:pk>/', views.CollectionDetailsViewAPI.as_view(), name='collection-detail-view-api'),
     path('collections2/<int:pk>/', views.Collection2DetailsViewAPI.as_view(), name='collection2-detail-view-api'),
-
-    # ex: /astrobase/status/
-    path('status/', views.StatusListViewAPI.as_view(),name='status-list-view-api'),
 
     # ex: /astrobase/jobs/
     path('jobs/', views.JobListViewAPI.as_view()),

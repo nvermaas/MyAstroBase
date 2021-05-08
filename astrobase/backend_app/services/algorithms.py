@@ -16,21 +16,6 @@ DJANGO_TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
 logger = logging.getLogger(__name__)
 
-def get_delta_in_minutes(timestamp1,timestamp2):
-    """
-    return minutes between 2 dates
-    :param timestamp1:
-    :param timestamp2:
-    :return:
-    """
-    date1 = datetime.datetime.strptime(timestamp1, TIME_FORMAT)
-    date2 = datetime.datetime.strptime(timestamp2, TIME_FORMAT)
-    minutes = (date2 - date1).total_seconds() / 60.0
-    return int(minutes)
-
-
-
-@timeit
 def get_next_taskid(timestamp, taskid_postfix):
     """
     get the observation with a starttime closest to now.
@@ -64,7 +49,6 @@ def get_next_taskid(timestamp, taskid_postfix):
 
 
 # /astrobase/post_dataproducts?taskid=190405001
-@timeit
 def add_dataproducts(taskID, dataproducts):
     """
     :param taskID: taskid of the observation

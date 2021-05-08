@@ -17,12 +17,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import DataProduct, Observation, Observation2, Status, AstroFile, Collection, Collection2, Job, \
-    ObservationBox, Observation2Box
-from .serializers import DataProductSerializer, ObservationSerializer, Observation2Serializer, \
-    ObservationLimitedSerializer, ObservationMinimumSerializer, StatusSerializer, AstroFileSerializer, \
-    CollectionSerializer, Collection2Serializer, JobSerializer, \
-    ObservationBoxSerializer, Observation2BoxSerializer \
+from .models import Observation2, AstroFile, Collection2, Job, Observation2Box
+from .serializers import Observation2Serializer, AstroFileSerializer, Collection2Serializer, JobSerializer, Observation2BoxSerializer \
 
 from .forms import FilterForm
 from .services import algorithms
@@ -30,78 +26,7 @@ from .services import jobs
 
 logger = logging.getLogger(__name__)
 
-
 # ---------- filters (in the REST API) ---------
-
-# example: /my_astrobase/observations/?observing_mode__icontains=powershot_g2
-class ObservationFilter(filters.FilterSet):
-
-    # example of an OR filter.
-    # this filters a range of fields for the given value of 'fieldsearch='.
-    # example: http://localhost:8000/my_astrobase/observations/?fieldsearch=aurora
-    fieldsearch = filters.CharFilter(field_name='fieldsearch', method='search_my_fields')
-
-    # example: http://localhost:8000/my_astrobase/observations/?coordsearch=212,48
-    coordsearch = filters.CharFilter(field_name='coordsearch', method='search_my_coords')
-
-    def search_my_fields(self, queryset, name, value):
-        return queryset.filter(
-            Q(name__icontains=value) | Q(field_name__icontains=value) |
-            Q(quality__icontains=value)| Q(my_status__icontains=value)|
-            Q(taskID__icontains=value) | Q(parent__taskID__icontains=value)
-        )
-
-    def search_my_coords(self, queryset, name, value):
-        # value is a comma separated decimal RA,dec coordinate
-        # chain the filters to create a query to find the coordinate in the bounding box of observations
-        ra,dec = value.split(',')
-        search_ra = float(ra.strip())
-        search_dec = float(dec.strip())
-        q = queryset.filter(ra_min__lte=search_ra)\
-            .filter(ra_max__gte=search_ra)\
-            .filter(dec_min__lte=search_dec)\
-            .filter(dec_max__gte=search_dec)
-        return q
-
-
-    class Meta:
-        model = Observation
-
-        fields = {
-            'id': ['exact', 'in'],
-            'instrument': ['exact', 'in', 'icontains'],
-            'filter': ['exact', 'in', 'icontains'],
-            'process_type': ['exact', 'in', 'icontains'], #/my_astrobase/observations?&process_type=observation
-            'task_type': ['exact', 'in', 'icontains'],  #
-            'field_name': ['gt', 'lt', 'gte', 'lte', 'icontains', 'exact','in'],
-            'field_ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'field_dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'field_fov': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'ra_min': ['gt', 'lt', 'gte', 'lte'],
-            'ra_max': ['gt', 'lt', 'gte', 'lte'],
-            'dec_min': ['gt', 'lt', 'gte', 'lte'],
-            'dec_max': ['gt', 'lt', 'gte', 'lte'],
-            'name': ['exact', 'icontains','in'],
-            'description': ['exact', 'icontains', 'in'],
-            'my_status': ['exact', 'icontains', 'in', 'startswith'],          #/my_astrobase/observations?&my_status__in=archived,removing
-            'taskID': ['gt', 'lt', 'gte', 'lte','exact', 'icontains', 'startswith','in'],
-            'creationTime' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'date' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'data_location': ['exact', 'icontains'],
-            'quality': ['exact', 'icontains','in'],
-            'exposure_in_seconds' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'iso': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'focal_length': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'stacked_images' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'magnitude' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'image_type': ['icontains', 'exact'],
-            'used_in_hips': ['exact'],
-            #'fieldsearch': ['exact', 'icontains', 'in'],
-            #'coordsearch': ['exact'],
-
-            # &generated_dataproducts__dataproduct_type=fits
-            'generated_dataproducts__dataproduct_type': ['exact', 'icontains', 'in']
-        }
 
 # example: /my_astrobase/observations/?observing_mode__icontains=powershot_g2
 class Observation2Filter(filters.FilterSet):
@@ -132,7 +57,6 @@ class Observation2Filter(filters.FilterSet):
             .filter(dec_min__lte=search_dec)\
             .filter(dec_max__gte=search_dec)
         return q
-
 
     class Meta:
         model = Observation2
@@ -170,47 +94,6 @@ class Observation2Filter(filters.FilterSet):
 
         }
 
-# example: /my_astrobase/dataproducts?status__in=created,archived
-class DataProductFilter(filters.FilterSet):
-
-    class Meta:
-        model = DataProduct
-
-        fields = {
-            'id': ['exact', 'in'],
-            'dataproduct_type': ['exact', 'in'],  # ../dataproducts?dataProductType=IMAGE,VISIBILITY
-            'description': ['exact', 'icontains'],
-            'name': ['exact', 'icontains'],
-            'filename': ['exact', 'icontains'],
-            'taskID': ['exact', 'icontains'],
-            'creationTime': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'parent__taskID': ['exact', 'in', 'icontains'],
-            'my_status': ['exact', 'icontains', 'in'],
-            'data_location': ['exact', 'icontains'],
-        }
-
-# example: /my_astrobase/dataproducts?status__in=created,archived
-class CollectionFilter(filters.FilterSet):
-
-    # example of an OR filter.
-    # this filters a range of fields for the given value of 'fieldsearch='.
-    # example: http://localhost:8000/my_astrobase/observations/?fieldsearch=aurora
-    fieldsearch = filters.CharFilter(field_name='fieldsearch', method='search_my_fields')
-
-    def search_my_fields(self, queryset, name, value):
-        return queryset.filter(
-            Q(name__icontains=value) | Q(description__icontains=value)
-        )
-
-    class Meta:
-        model = Collection
-
-        fields = {
-            'description': ['exact', 'icontains'],
-            'name': ['exact', 'icontains'],
-            'collection_type': ['icontains', 'exact'],
-            # 'fieldsearch': ['exact', 'icontains', 'in']
-        }
 
 class Collection2Filter(filters.FilterSet):
 
@@ -234,25 +117,6 @@ class Collection2Filter(filters.FilterSet):
             # 'fieldsearch': ['exact', 'icontains', 'in']
         }
 
-# example: has 1811130001 been 'processed?'
-# http://localhost:8000/my_astrobase/status/?&taskID=181130001&name=processed
-class StatusFilter(filters.FilterSet):
-
-    # A direct filter on a @property field is not possible, this simulates that behaviour
-    taskID = filters.Filter(field_name="taskObject__taskID",lookup_expr='exact')
-
-    class Meta:
-        model = Status
-
-        # https://django-filter.readthedocs.io/en/master/ref/filters.html?highlight=exclude
-        fields = {
-            #'taskid': ['exact', 'in'],
-            'name': ['exact', 'in'],
-            'timestamp': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'taskObject__taskID': ['exact', 'in'],
-            # 'taskID': ['exact', 'in'],
-
-        }
 
 # example: /my_astrobase/dataproducts?status__in=created,archived
 class JobFilter(filters.FilterSet):
@@ -263,6 +127,7 @@ class JobFilter(filters.FilterSet):
         fields = {
             'status': ['exact', 'icontains', 'in'],
         }
+
 
 # this uses a form
 def do_filter(request):
@@ -280,10 +145,6 @@ def do_filter(request):
     return render(request, 'backend_app/index.html', {'my_form': form})
 
 # ---------- GUI Views -----------
-# http://localhost:8000/my_astrobase/
-# calling this view renders the index.html template in the GUI (the observation list)
-# http://localhost:8000/my_astrobase/query?my_status=removed
-# http://localhost:8000/my_astrobase/query?not_my_status=removed
 
 class IndexView(ListView):
     """
@@ -350,77 +211,11 @@ def get_searched_observations(search):
     return observations
 
 
-# example: /my_astrobase/task/180323003/
-# https://docs.djangoproject.com/en/2.1/topics/class-based-views/generic-display/
-# calling this view renders the dataproducts.html template in the GUI
 # a custom pagination class to return more than the default 100 dataproducts
 class NoPagination(pagination.PageNumberPagination):
     page_size = 10000
 
-class DataProductsListView(ListView):
-    model = DataProduct
-    context_object_name = 'my_dataproducts_list'
-    template_name = 'backend_app/dataproducts.html'
-    pagination_class = NoPagination
-
-    # override get_queryset to make a custom query on taskid
-    def get_queryset(self):
-        logger.info("DataProductsListView.get_queryset()")
-        taskid = self.kwargs['taskID']
-        my_queryset = DataProduct.objects.filter(taskID=taskid)
-        logger.info("my_queryset retrieved")
-        return my_queryset
-
-
-
 # ---------- REST API views -----------
-# example: /my_astrobase/status
-
-class StatusListViewAPI(generics.ListCreateAPIView):
-    model = Status
-    queryset = Status.objects.all()
-    serializer_class = StatusSerializer
-    pagination_class = NoPagination
-
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = StatusFilter
-
-
-# example: /my_astrobase/dataproducts/
-# calling this view serializes the dataproduct list in a REST API
-class DataProductListViewAPI(generics.ListCreateAPIView):
-    model = DataProduct
-    queryset = DataProduct.objects.all()
-    serializer_class = DataProductSerializer
-    pagination_class = NoPagination
-
-    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = DataProductFilter
-
-
-# example: /my_astrobase/dataproducts/5/
-# calling this view serializes a dataproduct in the REST API
-class DataProductDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
-    model = DataProduct
-    queryset = DataProduct.objects.all()
-    serializer_class = DataProductSerializer
-
-
-# example: /my_astrobase/observations/
-# calling this view serializes the observations list in a REST API
-class ObservationListViewAPI(generics.ListCreateAPIView):
-    """
-    A pagination list of observations, sorted by date.
-    """
-    model = Observation
-    queryset = Observation.objects.all().order_by('-date')
-    serializer_class = ObservationSerializer
-
-    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = ObservationFilter
-
 
 class Observation2ListViewAPI(generics.ListCreateAPIView):
     """
@@ -434,100 +229,6 @@ class Observation2ListViewAPI(generics.ListCreateAPIView):
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = Observation2Filter
 
-class UpdateObservations2(generics.ListAPIView):
-    model = Observation2
-    queryset = Observation2.objects.all()
-
-    # override the list method to be able to plug in my transient business logic
-    def list(self, request):
-        observations = Observation2.objects.all()
-
-        for observation in observations:
-            try:
-                dirname, observation.fits = os.path.split(observation.derived_fits)
-            except:
-                pass
-            try:
-                dirname, observation.annotated_image = os.path.split(observation.derived_annotated_image)
-            except:
-                pass
-            try:
-                dirname, observation.annotated_grid_image = os.path.split(observation.derived_annotated_grid_image)
-            except:
-                pass
-            try:
-                dirname, observation.annotated_grid_eq_image = os.path.split(observation.derived_annotated_grid_eq_image)
-            except:
-                pass
-            try:
-                dirname, observation.annotated_stars_image = os.path.split(observation.derived_annotated_stars_image)
-            except:
-                pass
-            try:
-                dirname, observation.sky_plot_image = os.path.split(observation.derived_sky_plot_image)
-            except:
-                pass
-            try:
-                dirname, observation.sky_globe_image = os.path.split(observation.derived_sky_globe_image)
-            except:
-                pass
-
-            print(observation)
-            observation.save()
-
-        return Response({"observations2 updated"})
-
-
-class UpdateCollections2(generics.ListAPIView):
-    model = Collection
-    queryset = Collection.objects.all()
-
-    # override the list method to be able to plug in my transient business logic
-    def list(self, request):
-
-        # update collections2
-        Collection2.objects.all().delete()
-        collections = Collection.objects.all()
-
-        for collection in collections:
-            collection2 = Collection2(
-                date = collection.date,
-                name = collection.name,
-                collection_type = collection.collection_type,
-                description = collection.description,
-            )
-            print(collection2)
-            collection2.save()
-
-            observations = collection.observations.all()
-            for observation in observations:
-                observation2 = Observation2.objects.get(taskID=observation.taskID)
-                collection2.observations.add(observation2)
-        return Response({"collections2 updated"})
-
-
-class ObservationListMinimumViewAPI(generics.ListCreateAPIView):
-    """
-    A pagination list of observations, sorted by date.
-    """
-    model = Observation
-    queryset = Observation.objects.all().order_by('-date')
-    serializer_class = ObservationMinimumSerializer
-
-    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = ObservationFilter
-
-
-# example: /my_astrobase/observations/5/
-# calling this view serializes an observation in the REST API
-class ObservationDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Detailed view of an observation.
-    """
-    model = Observation
-    queryset = Observation.objects.all()
-    serializer_class = ObservationSerializer
 
 class Observation2DetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
     """
@@ -540,32 +241,6 @@ class Observation2DetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
 class CollectionPagination(pagination.PageNumberPagination):
     page_size = 10
 
-# example: /my_astrobase/collections/
-# calling this view serializes the Collections list in a REST API
-class CollectionListViewAPI(generics.ListCreateAPIView):
-    """
-    A pagination list of Collections, sorted by date.
-    """
-    model = Collection
-    queryset = Collection.objects.all().order_by('-date')
-    serializer_class = CollectionSerializer
-    pagination_class = CollectionPagination
-
-    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = CollectionFilter
-
-
-# example: /my_astrobase/Collections/5/
-# calling this view serializes an Collection in the REST API
-class CollectionDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Detailed view of an Collection.
-    """
-    model = Collection
-    queryset = Collection.objects.all()
-    serializer_class = CollectionSerializer
-    
 
 class Collection2ListViewAPI(generics.ListCreateAPIView):
     """
@@ -622,6 +297,7 @@ class JobListViewAPI(generics.ListCreateAPIView):
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = JobFilter
 
+
 # example: /my_astrobase/Jobs/5/
 # calling this view serializes an Job in the REST API
 class JobDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
@@ -635,6 +311,7 @@ class JobDetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
 # --- Command views, triggered by a button in the GUI or directoy with a URL ---
 # set observation status to 'new_status' - called from the GUI
 # example: 'Schedule', 'Unschedule', 'Ready to Ingest', 'Remove Data'
+
 
 def ObservationSetStatus(request,pk,new_status,page):
     model = Observation2
@@ -651,6 +328,7 @@ def ObservationSetQuality(request,pk,quality,page):
     observation.save()
     return redirect('/my_astrobase/?page='+page)
 
+
 def ObservationSetHips(request,pk,hips,page):
     model = Observation2
     observation = Observation2.objects.get(pk=pk)
@@ -664,6 +342,7 @@ def ObservationSetTaskType(request,pk,type,page):
     observation.task_type = type
     observation.save()
     return redirect('/my_astrobase/?page='+page)
+
 
 # get the next taskid based on starttime and what is currently in the database
 #/my_astrobase/get_next_taskid?timestamp=2019-04-05
@@ -694,12 +373,10 @@ class GetNextTaskIDView(generics.ListAPIView):
         })
 
 
-
 # add dataproducts as a batch
 # /my_astrobase/post_dataproducts&taskid=190405034
 class PostDataproductsView(generics.CreateAPIView):
-    queryset = DataProduct.objects.all()
-    serializer_class = DataProductSerializer
+    queryset = Observation2.objects.all()
     pagination_class = NoPagination
 
     def post(self, request, *args, **kwargs):
@@ -728,10 +405,12 @@ class UploadsView(generics.ListCreateAPIView):
     serializer_class = AstroFileSerializer
     queryset = AstroFile.objects.all()
 
+
 # overview of the uploads
 class UploadsDetailsView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = AstroFileSerializer
     queryset = AstroFile.objects.all()
+
 
 # view for uploading images to the 'landing_pad website
 class UploadFileView(APIView):
@@ -807,14 +486,6 @@ class RunCommandView(generics.ListAPIView):
             'observation_id' : observation_id,
             'result' : result
         })
-
-# Observation Coordinates for Aladin
-class ObservationBoxesListView(generics.ListCreateAPIView):
-    queryset = ObservationBox.objects.all()
-    serializer_class = ObservationBoxSerializer
-    pagination_class = NoPagination
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = ObservationFilter
 
 # Observation Coordinates for Aladin
 class Observation2BoxesListView(generics.ListCreateAPIView):

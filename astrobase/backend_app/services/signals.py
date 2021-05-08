@@ -5,7 +5,7 @@ from django.core.signals import request_started, request_finished
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.contrib.contenttypes.models import ContentType
-from backend_app.models import TaskObject, Observation2, Status
+from backend_app.models import Observation2
 from . import jobs
 
 """
@@ -40,30 +40,30 @@ def handle_pre_save(sender, **kwargs):
     :param (in) kwargs: The instance of the object that sends the trigger.
     """
     logger.info("handle_pre_save(" + str(kwargs.get('instance')) + ")")
-    myTaskObject = kwargs.get('instance')
+    myObservation = kwargs.get('instance')
 
     # IF this object does not exist yet, then abort, and let it first be handled by handle_post_save (get get a id).
-    if myTaskObject.id==None:
+    if myObservation.id==None:
         return None
 
     # handle status change
-    my_status = str(myTaskObject.my_status)
-    new_status = str(myTaskObject.new_status)
+    my_status = str(myObservation.my_status)
+    new_status = str(myObservation.new_status)
     if (new_status!=None) and (my_status!=new_status):
 
         # set the new status
-        myTaskObject.my_status = new_status
+        myObservation.my_status = new_status
 
     # temporarily disconnect the post_save handler to save the dataproduct (again) and avoiding recursion.
     # I don't use pre_save, because then the 'created' key is not available, which is the most handy way to
     # determine if this dataproduct already exists. (I could also check the database, but this is easier).
     disconnect_signals()
-    myTaskObject.save()
+    myObservation.save()
     connect_signals()
 
     # dispatch a job if the status has changed.
     #if (new_status != None) and (my_status != new_status):
-    #   jobs.dispatchJob(myTaskObject, new_status)
+    #   jobs.dispatchJob(myObservation, new_status)
 
 
 @receiver(post_save, sender=Observation2)
@@ -79,17 +79,17 @@ def handle_post_save(sender, **kwargs):
     :param (in) kwargs: The instance of the object that sends the trigger.
     """
     logger.info("handle_post_save("+str(kwargs.get('instance'))+")")
-    myTaskObject = kwargs.get('instance')
+    myObservation = kwargs.get('instance')
 
     # CREATE NEW OBSERVATION
     if kwargs['created']:
-        logger.info("save new "+str(myTaskObject.task_type))
+        logger.info("save new "+str(myObservation.task_type))
 
         # set status
-        myTaskObject.my_status = myTaskObject.new_status
+        myObservation.my_status = myObservation.new_status
 
 
-    if (myTaskObject.task_type == 'observation'):
+    if (myObservation.task_type == 'observation'):
         # note that task_type == 'master' will be omitted here
         myObservation = kwargs.get('instance')
 
@@ -104,8 +104,6 @@ def handle_post_save(sender, **kwargs):
                 myObservation.field_dec = parent.field_dec
             if myObservation.field_fov == 0.0:
                 myObservation.field_fov = parent.field_fov
-
-
 
             # check if the following values have been set before. If not copy them from the master
             if myObservation.quality == '':
@@ -144,7 +142,7 @@ def handle_post_save(sender, **kwargs):
     # I don't use pre_save, because then the 'created' key is not available, which is the most handy way to
     # determine if this dataproduct already exists. (I could also check the database, but this is easier).
     disconnect_signals()
-    myTaskObject.save()
+    myObservation.save()
     connect_signals()
 
 def connect_signals():
