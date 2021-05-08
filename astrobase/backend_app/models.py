@@ -420,7 +420,7 @@ class Observation2(models.Model):
     # bad : <td><a href="/astrobase/observations/{{ observation.id }}/" target="_blank">{{ observation.taskID }} </a> </td>
     # good: <td><a href="{{ observation.get_absolute_url }}" target="_blank">{{ observation.taskID }} </a> </td>
     def get_absolute_url(self):
-        return reverse('observation-detail-view-api', kwargs={'pk': self.pk})
+        return reverse('observation2-detail-view-api', kwargs={'pk': self.pk})
 
     @property
     def derived_base_url(self):
