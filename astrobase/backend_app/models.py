@@ -212,11 +212,11 @@ class Observation2(models.Model):
 
     @property
     def derived_sky_plot_image(self):
-        if self.annotated_sky_plot_image == None:
+        if self.sky_plot_image == None:
             return None
         try:
             data_host = settings.DATA_HOST
-            path = data_host + '/' + self.taskID + '/' + str(self.annotated_sky_plot_image)
+            path = data_host + '/' + self.taskID + '/' + str(self.sky_plot_image)
             return path
         except:
             return None
