@@ -42,7 +42,8 @@ STATIC_URL = '/my_astrobase/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'my_static_files')
 
 # because the backend runs in docker, it can only access a the /shared volume
-MEDIA_URL = 'https://uilennest.net/astrobase/shared/www'
+# at OS level the URL and ROOT are connected through a symbolic link
+MEDIA_URL = 'https://uilennest.net/astrobase/media'
 MEDIA_ROOT = '/shared/www'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
