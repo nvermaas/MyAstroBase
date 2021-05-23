@@ -219,11 +219,12 @@ def get_comet(name, timestamp):
 
     comet = sun + mpc.comet_orbit(row, ts, GM_SUN)
 
-    t = ts.utc(timestamp.year, timestamp.month, timestamp.day)
+    t = ts.utc(timestamp.year, timestamp.month, timestamp.day, timestamp.hour, timestamp.minute)
     ra, dec, distance = earth.at(t).observe(comet).radec()
 
     result = {}
     result['name'] = name
+    result['designation'] = row['designation']
     result['timestamp'] = str(timestamp)
     result['ra'] = str(ra)
     result['dec'] = str(dec)
@@ -232,6 +233,7 @@ def get_comet(name, timestamp):
     result['distance'] = str(distance)
     result['magnitude_g'] = row['magnitude_g']
     result['magnitude_k'] = row['magnitude_k']
+    result['visual_magnitude'] = row['magnitude_k']
     result['row'] = row
     return result
 

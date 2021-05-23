@@ -26484,3 +26484,47 @@
 [23/May/2021 10:38:56,343] handle_pre_save(200714003 - Comet Neowise - comet neowise)
 [23/May/2021 10:38:56,350] handle_post_save(200714003 - Comet Neowise - comet neowise)
 [23/May/2021 10:38:56,350] update observation = 200714003
+[23/May/2021 10:41:27,557] SIGNAL : pre_save Observation(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:41:27,558] handle_pre_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:41:27,595] handle_post_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:41:27,595] update observation = 200714003
+[23/May/2021 10:41:42,184] add_dataproducts(200714003,1)
+[23/May/2021 10:42:14,142] SIGNAL : pre_save Observation(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:42:14,143] handle_pre_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:42:14,178] handle_post_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:42:14,178] update observation = 200714003
+[23/May/2021 10:43:20,591] SIGNAL : pre_save Observation(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:43:20,593] handle_pre_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:43:20,667] handle_post_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:43:20,667] update observation = 200714003
+[23/May/2021 10:43:55,930] add_dataproducts(200714003,1)
+[23/May/2021 10:44:16,227] SIGNAL : pre_save Observation(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:44:16,228] handle_pre_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:44:16,266] handle_post_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:44:16,266] update observation = 200714003
+[23/May/2021 10:46:42,167] SIGNAL : pre_save Observation(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 10:46:42,167] handle_pre_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 10:46:42,174] handle_post_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 10:46:42,174] update observation = 200712001
+[23/May/2021 10:53:30,011] SIGNAL : pre_save Observation(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 10:53:30,012] handle_pre_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 10:53:30,064] handle_post_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 10:53:30,064] update observation = 200712001
+[23/May/2021 10:53:56,465] add_dataproducts(200712001,1)
+[23/May/2021 10:53:56,469] SIGNAL : pre_save Observation(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 10:53:56,470] handle_pre_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 10:53:56,505] handle_post_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 10:53:56,505] update observation = 200712001
+[23/May/2021 11:04:48,046] SIGNAL : pre_save Observation(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 11:04:48,046] handle_pre_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 11:04:48,054] handle_post_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 11:04:48,054] update observation = 200712001
+[23/May/2021 11:05:01,846] SIGNAL : pre_save Observation(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 11:05:01,846] handle_pre_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 11:05:01,878] handle_post_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 11:05:01,878] update observation = 200712001
+[23/May/2021 11:05:14,831] add_dataproducts(200712001,1)
+[23/May/2021 11:05:14,835] SIGNAL : pre_save Observation(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 11:05:14,835] handle_pre_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 11:05:14,861] handle_post_save(200712001 - Comet Neowise first shot - comet neowise)
+[23/May/2021 11:05:14,862] update observation = 200712001

@@ -39,12 +39,12 @@ def add_transient_to_job(observation):
         # first try if the transient is an asteroid
         try:
             result = transients.get_asteroid(transient, t)
-            designation = result['designation']
         except:
             # then try a comet
             result = transients.get_comet(transient, t)
-            designation = result['name']
 
+
+        designation = result['designation']
         line = {}
 
         line['ra'] = float(result['ra_decimal'])
