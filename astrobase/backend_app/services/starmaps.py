@@ -9,7 +9,6 @@ from skyfield.projections import build_stereographic_projection
 
 # /astrobase/post_dataproducts?taskid=190405001
 def create_starmap(command, observation_id):
-    url = ''
 
     # The comet is plotted on several dates `t_comet`.  But the stars only
     # need to be drawn once, so we take the middle comet date as the single
@@ -129,7 +128,8 @@ def create_starmap(command, observation_id):
     ))
 
     # Save.
+    filename = '/shared/starmap.png'
+    fig.savefig(filename, bbox_inches='tight')
 
-    fig.savefig('neowise-finder-chart.png', bbox_inches='tight')
-
-    return url
+    image_url = filename
+    return image_url
