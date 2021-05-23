@@ -63,7 +63,7 @@ def create_starmap(command, observation_id):
     center = earth.at(t).observe(comet)
     projection = build_stereographic_projection(center)
     field_of_view_degrees = 45.0
-    limiting_magnitude = 7.0
+    limiting_magnitude = 8.0
 
     # Now that we have constructed our projection, compute the x and y
     # coordinates that each star and the comet will have on the plot.
@@ -91,7 +91,7 @@ def create_starmap(command, observation_id):
 
     # Time to build the figure!
 
-    fig, ax = plt.subplots(figsize=[9, 9])
+    fig, ax = plt.subplots(figsize=[15, 15])
 
     # Draw the constellation lines.
 
