@@ -26379,3 +26379,108 @@
 [08/May/2021 12:23:53,649] handle_pre_save(210501001 - Vesta Simulation - Leo, Vesta (Stellarium) - grid 2)
 [08/May/2021 12:23:53,681] handle_post_save(210501001 - Vesta Simulation - Leo, Vesta (Stellarium) - grid 2)
 [08/May/2021 12:23:53,682] update observation = 210501001
+[09/May/2021 10:33:33,503] get_next_taskid(20090311)
+[09/May/2021 10:33:33,505] checking taskid 090311001..
+[09/May/2021 10:33:33,511] checking taskid 090311002..
+[09/May/2021 10:33:33,514] checking taskid 090311003..
+[09/May/2021 10:33:33,517] checking taskid 090311004..
+[09/May/2021 10:33:33,520] checking taskid 090311005..
+[09/May/2021 10:33:33,522] checking taskid 090311006..
+[09/May/2021 10:33:33,525] checking taskid 090311007..
+[09/May/2021 10:33:33,528] checking taskid 090311008..
+[09/May/2021 10:33:33,532] checking taskid 090311009..
+[09/May/2021 10:33:33,535] checking taskid 090311010..
+[09/May/2021 10:33:33,539] checking taskid 090311011..
+[09/May/2021 10:33:33,542] checking taskid 090311012..
+[09/May/2021 10:33:34,764] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:33:34,765] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:33:34,784] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:33:34,785] save new observation
+[09/May/2021 10:33:34,785] update observation = 090311012
+[09/May/2021 10:33:36,006] add_dataproducts(090311012,1)
+[09/May/2021 10:34:35,091] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:34:35,093] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:34:35,133] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:34:35,134] update observation = 090311012
+[09/May/2021 10:34:37,449] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:34:37,450] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:34:37,479] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:34:37,479] update observation = 090311012
+[09/May/2021 10:36:10,146] SIGNAL : pre_save Observation(090311007 - IMG_2877 - IMG_2877)
+[09/May/2021 10:36:10,147] handle_pre_save(090311007 - IMG_2877 - IMG_2877)
+[09/May/2021 10:36:10,169] handle_post_save(090311007 - IMG_2877 - IMG_2877)
+[09/May/2021 10:36:10,169] update observation = 090311007
+[09/May/2021 10:36:16,092] SIGNAL : pre_save Observation(090311007 - IMG_2877 - IMG_2877)
+[09/May/2021 10:36:16,093] handle_pre_save(090311007 - IMG_2877 - IMG_2877)
+[09/May/2021 10:36:16,121] handle_post_save(090311007 - IMG_2877 - IMG_2877)
+[09/May/2021 10:36:16,121] update observation = 090311007
+[09/May/2021 10:37:14,830] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:37:14,831] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:37:14,860] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:37:14,860] update observation = 090311012
+[09/May/2021 10:38:07,926] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:38:07,930] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:38:07,956] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:38:07,956] update observation = 090311012
+[09/May/2021 10:38:14,759] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:38:14,760] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:38:14,786] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:38:14,786] update observation = 090311012
+[09/May/2021 10:38:17,105] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:38:17,105] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:38:17,128] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:38:17,128] update observation = 090311012
+[09/May/2021 10:39:51,655] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:39:51,656] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:39:51,687] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:39:51,687] update observation = 090311012
+[09/May/2021 10:39:58,661] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:39:58,661] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:39:58,692] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:39:58,692] update observation = 090311012
+[09/May/2021 10:46:42,312] add_dataproducts(090311012,8)
+[09/May/2021 10:47:03,399] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:03,401] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:03,457] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:03,458] update observation = 090311012
+[09/May/2021 10:47:05,824] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:05,824] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:05,850] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:05,850] update observation = 090311012
+[09/May/2021 10:47:08,198] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:08,199] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:08,232] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:08,232] update observation = 090311012
+[09/May/2021 10:47:10,702] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:10,703] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:10,734] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:10,735] update observation = 090311012
+[09/May/2021 10:47:13,098] SIGNAL : pre_save Observation(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:13,099] handle_pre_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:13,135] handle_post_save(090311012 - IMG_2877 - IMG_2877)
+[09/May/2021 10:47:13,135] update observation = 090311012
+[09/May/2021 10:54:18,919] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[09/May/2021 10:54:18,920] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[09/May/2021 10:54:18,926] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[09/May/2021 10:54:18,926] update observation = 090311012
+[09/May/2021 10:55:34,647] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[09/May/2021 10:55:34,648] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[09/May/2021 10:55:34,661] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[09/May/2021 10:55:34,661] update observation = 090311012
+[23/May/2021 10:28:21,089] SIGNAL : pre_save Observation(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:28:21,090] handle_pre_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:28:21,099] handle_post_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:28:21,099] update observation = 200714003
+[23/May/2021 10:34:27,772] SIGNAL : pre_save Observation(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:34:27,773] handle_pre_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:34:27,822] handle_post_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:34:27,823] update observation = 200714003
+[23/May/2021 10:35:18,414] add_dataproducts(200714003,1)
+[23/May/2021 10:35:31,840] SIGNAL : pre_save Observation(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:35:31,840] handle_pre_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:35:31,886] handle_post_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:35:31,887] update observation = 200714003
+[23/May/2021 10:38:56,343] SIGNAL : pre_save Observation(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:38:56,343] handle_pre_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:38:56,350] handle_post_save(200714003 - Comet Neowise - comet neowise)
+[23/May/2021 10:38:56,350] update observation = 200714003

@@ -227,7 +227,7 @@ def get_comet(name, timestamp):
     result['timestamp'] = str(timestamp)
     result['ra'] = str(ra)
     result['dec'] = str(dec)
-    result['ra_decimal'] = str(ra.hours)
+    result['ra_decimal'] = str(ra.hours * 15)
     result['dec_decimal'] = str(dec.degrees)
     result['distance'] = str(distance)
     result['magnitude_g'] = row['magnitude_g']

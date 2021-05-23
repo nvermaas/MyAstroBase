@@ -35,8 +35,15 @@ def add_transient_to_job(observation):
     count = 0
     for t in timestamps:
         count += 1
-        result = transients.get_asteroid(transient, t)
-        designation = result['designation']
+
+        # first try if the transient is an asteroid
+        try:
+            result = transients.get_asteroid(transient, t)
+            designation = result['designation']
+        except:
+            # then try a comet
+            result = transients.get_comet(transient, t)
+            designation = result['name']
 
         line = {}
 
