@@ -41,8 +41,9 @@ AUTH_PASSWORD_VALIDATORS = []
 STATIC_URL = '/my_astrobase/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'my_static_files')
 
-MEDIA_URL = 'https://uilennest.net/astrobase/data'
-MEDIA_ROOT = '/home/nvermaas/www/astrobase/data'
+# because the backend runs in docker, it can only access a the /shared volume
+MEDIA_URL = 'https://uilennest.net/astrobase/shared/www'
+MEDIA_ROOT = '/shared/www'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 DATA_HOST = "https://uilennest.net/astrobase/data"
