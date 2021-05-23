@@ -43,7 +43,6 @@ def add_transient_to_job(observation):
             # then try a comet
             result = transients.get_comet(transient, t)
 
-
         designation = result['designation'] + ' - m' + str(result['visual_magnitude'])
         line = {}
 
@@ -196,5 +195,6 @@ def dispatch_job(command, observation_id):
     if command == "hips":
         job = Job(command='hips',status="new")
         job.save()
+
 
     return "dispatched"
