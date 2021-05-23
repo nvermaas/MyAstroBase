@@ -1,6 +1,6 @@
 import numpy as np
-from matplotlib import pyplot as plt
-from matplotlib.collections import LineCollection
+#from matplotlib import pyplot as plt
+#from matplotlib.collections import LineCollection
 
 from skyfield.api import Star, load
 from skyfield.constants import GM_SUN_Pitjeva_2005_km3_s2 as GM_SUN
