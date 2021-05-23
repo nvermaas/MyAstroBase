@@ -7,6 +7,9 @@ from skyfield.constants import GM_SUN_Pitjeva_2005_km3_s2 as GM_SUN
 from skyfield.data import hipparcos, mpc, stellarium
 from skyfield.projections import build_stereographic_projection
 
+import os
+from django.conf import settings
+
 # /astrobase/post_dataproducts?taskid=190405001
 def create_starmap(command, observation_id):
 
@@ -128,8 +131,10 @@ def create_starmap(command, observation_id):
     ))
 
     # Save.
-    filename = '/shared/starmap.png'
-    fig.savefig(filename, bbox_inches='tight')
+    filename = 'starmap.png'
+    path = os.path.join(settings.MEDIA_ROOT, filename)
+
+    fig.savefig(path, bbox_inches='tight')
 
     image_url = filename
     return image_url

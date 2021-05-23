@@ -41,8 +41,8 @@ AUTH_PASSWORD_VALIDATORS = []
 STATIC_URL = '/my_astrobase/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'my_static_files')
 
-MEDIA_URL = 'https://localhost/'
-MEDIA_ROOT = '/data/astrobase/landing_pad'
+MEDIA_URL = 'https://uilennest.net/astrobase/data/'
+MEDIA_ROOT = '/home/nvermaas/www/astrobase/data'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 DATA_HOST = "https://uilennest.net/astrobase/data"
