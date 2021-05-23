@@ -44,7 +44,7 @@ def add_transient_to_job(observation):
             result = transients.get_comet(transient, t)
 
 
-        designation = result['designation']
+        designation = result['designation'] + ' - m' + str(result['visual_magnitude'])
         line = {}
 
         line['ra'] = float(result['ra_decimal'])
