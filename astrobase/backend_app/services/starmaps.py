@@ -136,5 +136,5 @@ def create_starmap(command, observation_id):
 
     fig.savefig(path, bbox_inches='tight')
 
-    image_url = filename
+    image_url = os.path.join(settings.MEDIA_URL, filename)
     return image_url
