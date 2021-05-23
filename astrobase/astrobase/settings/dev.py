@@ -10,8 +10,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 AUTH_PASSWORD_VALIDATORS = []
 
-MEDIA_URL = 'http://localhost/'
-MEDIA_ROOT = 'd:/my_astrobase/data'
+MEDIA_URL = 'https://uilennest.net/astrobase/media/'
+MEDIA_ROOT = 'd:/my_astrobase/data/media'
 DATA_HOST = "https://uilennest.net/astrobase/data"
 
 LOGIN_REDIRECT_URL = "http://localhost:3000/astroview/login"

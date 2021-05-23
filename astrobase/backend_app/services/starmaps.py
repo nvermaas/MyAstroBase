@@ -91,7 +91,7 @@ def create_starmap(command, observation_id):
 
     # Time to build the figure!
 
-    fig, ax = plt.subplots(figsize=[15, 15])
+    fig, ax = plt.subplots(figsize=[9, 9])
 
     # Draw the constellation lines.
 
