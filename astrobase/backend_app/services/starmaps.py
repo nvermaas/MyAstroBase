@@ -1,6 +1,6 @@
 import numpy as np
-#from matplotlib import pyplot as plt
-#from matplotlib.collections import LineCollection
+from matplotlib import pyplot as plt
+from matplotlib.collections import LineCollection
 
 from skyfield.api import Star, load
 from skyfield.constants import GM_SUN_Pitjeva_2005_km3_s2 as GM_SUN
@@ -86,5 +86,50 @@ def create_starmap(command, observation_id):
     xy1 = stars[['x', 'y']].loc[edges_star1].values
     xy2 = stars[['x', 'y']].loc[edges_star2].values
     lines_xy = np.rollaxis(np.array([xy1, xy2]), 1)
+
+    # Time to build the figure!
+
+    fig, ax = plt.subplots(figsize=[9, 9])
+
+    # Draw the constellation lines.
+
+    ax.add_collection(LineCollection(lines_xy, colors='#00f2'))
+
+    # Draw the stars.
+
+    ax.scatter(stars['x'][bright_stars], stars['y'][bright_stars],
+               s=marker_size, color='k')
+
+    # Draw the comet positions, and label them with dates.
+
+    comet_color = '#f00'
+    offset = 0.002
+
+    ax.plot(comet_x, comet_y, '+', c=comet_color, zorder=3)
+
+    for xi, yi, tstr in zip(comet_x, comet_y, t_comet.utc_strftime('%m/%d')):
+        tstr = tstr.lstrip('0')
+        text = ax.text(xi + offset, yi - offset, tstr, color=comet_color,
+                       ha='left', va='top', fontsize=9, weight='bold', zorder=-1)
+        text.set_alpha(0.5)
+
+    # Finally, title the plot and set some final parameters.
+
+    angle = np.pi - field_of_view_degrees / 360.0 * np.pi
+    limit = np.sin(angle) / (1.0 - np.cos(angle))
+
+    ax.set_xlim(-limit, limit)
+    ax.set_ylim(-limit, limit)
+    ax.xaxis.set_visible(False)
+    ax.yaxis.set_visible(False)
+    ax.set_aspect(1.0)
+    ax.set_title('Comet NEOWISE {} through {}'.format(
+        t_comet[0].utc_strftime('%Y %B %d'),
+        t_comet[-1].utc_strftime('%Y %B %d'),
+    ))
+
+    # Save.
+
+    fig.savefig('neowise-finder-chart.png', bbox_inches='tight')
 
     return url
