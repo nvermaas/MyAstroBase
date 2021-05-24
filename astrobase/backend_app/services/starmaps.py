@@ -1,3 +1,5 @@
+# create starmaps using skyfield and matplotlib
+
 import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.collections import LineCollection
@@ -18,7 +20,7 @@ def create_starmap(command, observation_id):
     # time `t` we use for everything else.
 
     ts = load.timescale()
-    t_comet = ts.utc(2020, 7, range(17, 27))
+    t_comet = ts.utc(2020, 8, range(1, 10))
     t = t_comet[len(t_comet) // 2]  # middle date
 
     # An ephemeris from the JPL provides Sun and Earth positions.
@@ -63,7 +65,7 @@ def create_starmap(command, observation_id):
 
     center = earth.at(t).observe(comet)
     projection = build_stereographic_projection(center)
-    field_of_view_degrees = 45.0
+    field_of_view_degrees = 30.0
     limiting_magnitude = 8.0
 
     # Now that we have constructed our projection, compute the x and y
