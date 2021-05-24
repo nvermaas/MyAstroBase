@@ -10,7 +10,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 AUTH_PASSWORD_VALIDATORS = []
 
-MEDIA_URL = 'https://uilennest.net/astrobase/media/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 MEDIA_ROOT = 'd:/my_astrobase/data/media'
 DATA_HOST = "https://uilennest.net/astrobase/data"
 
@@ -23,4 +25,5 @@ CACHES = {
     }
 }
 
-MY_ASTEROIDS = "asteroids.txt"
+MY_ASTEROIDS_ROOT = "asteroids.txt"
+MY_HIPPARCOS_ROOT = "hip_main.dat"

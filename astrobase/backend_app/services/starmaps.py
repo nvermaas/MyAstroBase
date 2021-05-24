@@ -41,7 +41,8 @@ def create_starmap(command, observation_id):
 
     # The Hipparcos mission provides our star catalog.
 
-    with load.open(hipparcos.URL) as f:
+    # with load.open(hipparcos.URL) as f:
+    with load.open(settings.MY_HIPPARCOS_URL) as f:
         stars = hipparcos.load_dataframe(f)
 
     # And the constellation outlines come from Stellarium.  We make a list

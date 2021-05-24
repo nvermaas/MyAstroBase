@@ -20,7 +20,6 @@ DATE_FORMAT = "%Y-%m-%d"
 TIME_FORMAT = "%Y-%m-%d %H:%M:%SZ"
 DJANGO_TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
-MY_ASTEROID_URL = "https://uilennest.net/repository/asteroids.txt"
 
 def phi_func(index, phase_angle):
     """
@@ -248,7 +247,7 @@ def get_asteroid(name, timestamp):
     except:
         pass
 
-    with load.open(MY_ASTEROID_URL) as f:
+    with load.open(settings.MY_ASTROIDS_URL) as f:
         minor_planets = mpc.load_mpcorb_dataframe(f)
 
     bad_orbits = minor_planets.semimajor_axis_au.isnull()
@@ -301,16 +300,13 @@ def get_asteroid(name, timestamp):
 
 def update_asteroid_table():
 
-    # parse asteroids.txt
-    asteroids_file = settings.MY_ASTEROIDS
-
     # clear asteroid table
     Asteroid.objects.all().delete()
 
 #    for b in urllib.request.urlopen(MY_ASTEROID_URL):
 #        line = b.decode('utf-8')
 
-    with open(asteroids_file, "r") as f:
+    with open(settings.MY_ASTEROIDS_ROOT, "r") as f:
         line = f.readline()
 
         while line != '':  # The EOF char is an empty string

@@ -36,18 +36,6 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = []
 
-# this works, reverse-proxy through apache
-# STATIC_URL = '/static_astrobase/'
-STATIC_URL = '/my_astrobase/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'my_static_files')
-
-# because the backend runs in docker, it can only access a the /shared volume
-# at OS level the URL and ROOT are connected through a symbolic link
-MEDIA_URL = 'https://uilennest.net/astrobase/media/'
-MEDIA_ROOT = '/shared/www'
-
-ASTROMETRY_HOST = "http://nova.astrometry.net/api"
-DATA_HOST = "https://uilennest.net/astrobase/data"
 
 LOGIN_REDIRECT_URL = "https://uilennest.net/astroview/login"
 LOGOUT_REDIRECT_URL = "https://uilennest.net/astroview/logout"
@@ -58,5 +46,3 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
     }
 }
-
-MY_ASTEROIDS = "/shared/asteroids.txt"
