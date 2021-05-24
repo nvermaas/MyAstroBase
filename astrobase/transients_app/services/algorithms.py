@@ -234,7 +234,7 @@ def get_comet(name, timestamp):
     result['magnitude_k'] = row['magnitude_k']
     result['visual_magnitude'] = row['magnitude_k']
     result['row'] = row
-    return result
+    return result,comet
 
 
 def get_asteroid(name, timestamp):
@@ -247,7 +247,7 @@ def get_asteroid(name, timestamp):
     except:
         pass
 
-    with load.open(settings.MY_ASTROIDS_URL) as f:
+    with load.open(settings.MY_ASTEROIDS_URL) as f:
         minor_planets = mpc.load_mpcorb_dataframe(f)
 
     bad_orbits = minor_planets.semimajor_axis_au.isnull()
@@ -295,7 +295,7 @@ def get_asteroid(name, timestamp):
     result['visual_magnitude'] = visual_magnitude
     result['last_observation_date'] = row['last_observation_date']
     # result['row'] = row
-    return result
+    return result,asteroid
 
 
 def update_asteroid_table():
@@ -336,7 +336,7 @@ def update_asteroid_table_ephemeris(timestamp):
     for asteroid in asteroids:
         designation = asteroid.designation
 
-        details = get_asteroid(designation,timestamp)
+        details,_ = get_asteroid(designation,timestamp)
 
         asteroid.ra = details['ra_decimal']
         asteroid.dec = details['dec_decimal']

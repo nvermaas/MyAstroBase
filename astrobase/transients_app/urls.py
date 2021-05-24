@@ -20,5 +20,7 @@ urlpatterns = [
 
      # add ra,dec to all asteroids in the asteroids table for <timestamp>
      path('update_asteroids_ephemeris/', views.UpdateAsteroidsEphemeris.as_view(), name='update_asteroids'),
+
+     path('starmap/', views.StarMap.as_view(), name='starmap-view'),
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)

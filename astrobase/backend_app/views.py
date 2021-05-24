@@ -21,7 +21,7 @@ from .models import Observation2, AstroFile, Collection2, Job, Observation2Box
 from .serializers import Observation2Serializer, AstroFileSerializer, Collection2Serializer, JobSerializer, Observation2BoxSerializer \
 
 from .forms import FilterForm
-from .services import algorithms, starmaps, jobs
+from .services import algorithms, jobs
 
 logger = logging.getLogger(__name__)
 
@@ -494,33 +494,3 @@ class Observation2BoxesListView(generics.ListCreateAPIView):
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = Observation2Filter
 
-
-# run an external command
-# /my_astrobase/run-command/?command=foo&observation_id=1
-class StarMap(generics.ListAPIView):
-
-    queryset = Observation2.objects.all()
-
-    def list(self, request, *args, **kwargs):
-        # read the arguments from the request
-        try:
-            command = self.request.query_params['command']
-        except:
-            command = None
-
-        try:
-            observation_id = self.request.query_params['observation_id']
-        except:
-            observation_id = None
-
-        # result = "jobs can only be executed by authenticated users"
-        # if self.request.user.is_superuser:
-        url = starmaps.create_starmap(command, observation_id)
-
-        # return a response
-
-        return Response({
-            'command': command,
-            'observation_id' : observation_id,
-            'url' : url
-        })

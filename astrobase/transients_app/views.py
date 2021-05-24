@@ -7,7 +7,7 @@ from .serializers import TransientSerializer, MinorPlanetSerializer, AsteroidSer
 import datetime
 
 from .models import Transient,Asteroid
-from .services import algorithms
+from .services import algorithms, starmaps
 
 # example: /my_astrobase/dataproducts?status__in=created,archived
 class AsteroidFilter(filters.FilterSet):
@@ -99,7 +99,7 @@ class CometView(generics.ListAPIView):
 
         print(timestamp)
         # call to the business logic that returns a list of moonphase
-        my_comet = algorithms.get_comet(name,timestamp)
+        my_comet,_ = algorithms.get_comet(name,timestamp)
 
         # serializer = MinorPlanetSerializer(instance=my_transients, many=True)
         # data = {'minor_planets' : serializer.data}
@@ -127,7 +127,7 @@ class AsteroidView(generics.ListAPIView):
             timestamp = datetime.datetime.now()
 
          # call to the business logic that returns a list of moonphase
-        my_asteroid = algorithms.get_asteroid(name,timestamp)
+        my_asteroid,_ = algorithms.get_asteroid(name,timestamp)
 
         return Response(my_asteroid)
 
@@ -161,3 +161,59 @@ class UpdateAsteroidsEphemeris(generics.ListAPIView):
 
         count = Asteroid.objects.all().count()
         return Response({str(count)+" asteroids updated"})
+
+
+# http://localhost:8000/my_astrobase/starmap/?name=Psyche&timestamp=2021-02-23T22:55:59Z
+
+class StarMap(generics.ListAPIView):
+
+    queryset = Asteroid.objects.all()
+
+    def list(self, request, *args, **kwargs):
+        # read the arguments from the request
+        try:
+            name = self.request.query_params['name']
+        except:
+            name = "C/2020 F3 (NEOWISE)"
+
+        try:
+            s = self.request.query_params['timestamp']
+            timestamp = datetime.datetime.strptime(s,algorithms.DJANGO_TIME_FORMAT)
+        except:
+            timestamp = datetime.datetime.now()
+
+        try:
+            fov = int(self.request.query_params['fov'])
+        except:
+            fov = 45
+
+        try:
+            days_past = int(self.request.query_params['days_past'])
+        except:
+            days_past = 5
+
+        try:
+            days_future = int(self.request.query_params['days_future'])
+        except:
+            days_future = 10
+
+        try:
+            magnitude = int(self.request.query_params['magnitude'])
+        except:
+            magnitude = 8
+
+        # result = "jobs can only be executed by authenticated users"
+        # if self.request.user.is_superuser:
+        url = starmaps.create_starmap(name, timestamp, days_past, days_future, fov, magnitude)
+
+        # return a response
+
+        return Response({
+            'name': name,
+            'timestamp' : timestamp,
+            'days_past': days_past,
+            'days_future': days_future,
+            'fov': fov,
+            'magnitude': magnitude,
+            'url' : url
+        })

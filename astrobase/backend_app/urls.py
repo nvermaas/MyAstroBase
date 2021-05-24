@@ -69,5 +69,4 @@ urlpatterns = [
          views.RunCommandView.as_view(),
          name='run-command-view'),
 
-    path('starmap/', views.StarMap.as_view(),name='run-command-view'),
 ]
