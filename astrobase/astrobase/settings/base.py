@@ -214,7 +214,7 @@ MEDIA_URL = 'https://uilennest.net/astrobase/media/'
 MEDIA_ROOT = '/shared/media'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
-DATA_HOST = "https://uilennest.net/astrobase/data"
+DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 

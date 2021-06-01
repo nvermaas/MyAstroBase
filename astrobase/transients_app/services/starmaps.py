@@ -62,6 +62,9 @@ def create_starmap(name, timestamp, days_past, days_future, fov, magnitude):
     # We will center the chart on the comet's middle position.
 
     center = earth.at(t).observe(transient)
+    #star = Star(ra_hours=(17, 57, 48.49803), dec_degrees=(4, 41, 36.2072))
+    #center = earth.at(t).observe(star)
+
     projection = build_stereographic_projection(center)
     field_of_view_degrees = float(fov)
     limiting_magnitude = magnitude
@@ -92,7 +95,7 @@ def create_starmap(name, timestamp, days_past, days_future, fov, magnitude):
 
     # Time to build the figure!
 
-    fig, ax = plt.subplots(figsize=[9, 12])
+    fig, ax = plt.subplots(figsize=[12, 12])
 
     # Draw the constellation lines.
 
@@ -106,7 +109,7 @@ def create_starmap(name, timestamp, days_past, days_future, fov, magnitude):
     # Draw the comet positions, and label them with dates.
 
     transient_color = '#f00'
-    offset = 0.001
+    offset = 0.0005
 
     ax.plot(transient_x, transient_y, '+', c=transient_color, zorder=3)
 
@@ -127,7 +130,7 @@ def create_starmap(name, timestamp, days_past, days_future, fov, magnitude):
     ax.yaxis.set_visible(False)
     ax.set_aspect(1.0)
     ax.set_title('{} {} through {}'.format(
-        name,
+        d['designation'],
         t_transient[0].utc_strftime('%d %B %Y'),
         t_transient[-1].utc_strftime('%d %B %Y'),
     ))
