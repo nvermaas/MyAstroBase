@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'backend_app',
     'moon_app',
     'transients_app',
+    'exoplanets',
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
