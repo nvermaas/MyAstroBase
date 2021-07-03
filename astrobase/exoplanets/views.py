@@ -1,5 +1,5 @@
 from rest_framework.response import Response
-from rest_framework import generics
+from rest_framework import generics, pagination
 from django_filters import rest_framework as filters
 
 from .serializers import ExoplanetSerializer
@@ -22,11 +22,23 @@ class ExoplanetFilter(filters.FilterSet):
             'dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
         }
 
+# a custom pagination class to return more than the default 100 dataproducts
+class NoPagination(pagination.PageNumberPagination):
+    page_size = 10000
+
 class ExoplanetsView(generics.ListAPIView):
     model = Exoplanet
     queryset = Exoplanet.objects.all()
     serializer_class = ExoplanetSerializer
     filter_class = ExoplanetFilter
+
+
+class ExoplanetsAllView(generics.ListAPIView):
+    model = Exoplanet
+    queryset = Exoplanet.objects.all()
+    serializer_class = ExoplanetSerializer
+    filter_class = ExoplanetFilter
+    pagination_class = NoPagination
 
 
 class UpdateExoplanets(generics.ListAPIView):

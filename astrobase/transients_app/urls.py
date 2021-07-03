@@ -15,6 +15,8 @@ urlpatterns = [
 
      # show list of asteroids in the database
      path('asteroids/', views.AsteroidsView.as_view(), name='asteroids'),
+     path('asteroids-all/', views.AsteroidsAllView.as_view(), name='asteroids-all'),
+
      # update the astroids database based on the asteroids.txt file
      path('update_asteroids/', views.UpdateAsteroids.as_view(), name='update_asteroids'),
 

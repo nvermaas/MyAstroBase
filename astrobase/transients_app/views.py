@@ -1,6 +1,6 @@
 
 from rest_framework.response import Response
-from rest_framework import generics
+from rest_framework import generics, pagination
 from django_filters import rest_framework as filters
 
 from .serializers import TransientSerializer, MinorPlanetSerializer, AsteroidSerializer
@@ -23,12 +23,23 @@ class AsteroidFilter(filters.FilterSet):
             'visual_magnitude': ['gt', 'lt', 'gte', 'lte'],
         }
 
+# a custom pagination class to return more than the default 100 dataproducts
+class NoPagination(pagination.PageNumberPagination):
+    page_size = 10000
+
 class AsteroidsView(generics.ListAPIView):
     model = Asteroid
     queryset = Asteroid.objects.all()
     serializer_class = AsteroidSerializer
     filter_class = AsteroidFilter
 
+
+class AsteroidsAllView(generics.ListAPIView):
+    model = Asteroid
+    queryset = Asteroid.objects.all()
+    serializer_class = AsteroidSerializer
+    filter_class = AsteroidFilter
+    pagination_class = NoPagination
 
 class TransientView(generics.ListAPIView):
     model = Transient

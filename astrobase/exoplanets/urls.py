@@ -7,6 +7,7 @@ app_name = 'exoplanets'
 
 urlpatterns = [
      path('exoplanets/', views.ExoplanetsView.as_view(), name='exoplanets'),
+     path('exoplanets-all/', views.ExoplanetsAllView.as_view(), name='exoplanets-all'),
 
      # update the exoplanets database based on the exoplanets.csv file
      path('exoplanets/update/', views.UpdateExoplanets.as_view(), name='update_exoplanets'),
