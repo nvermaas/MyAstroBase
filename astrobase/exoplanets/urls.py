@@ -9,7 +9,7 @@ urlpatterns = [
      path('exoplanets/', views.ExoplanetsView.as_view(), name='exoplanets'),
 
      # update the exoplanets database based on the exoplanets.csv file
-     path('update_exoplanets/', views.UpdateExoplanets.as_view(), name='update_exoplanets'),
+     path('exoplanets/update/', views.UpdateExoplanets.as_view(), name='update_exoplanets'),
 
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)

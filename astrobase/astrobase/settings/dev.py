@@ -27,3 +27,4 @@ CACHES = {
 
 MY_ASTEROIDS_ROOT = "asteroids.txt"
 MY_HIPPARCOS_ROOT = "hip_main.dat"
+MY_EXOPLANETS_ROOT = "exoplanets.csv"

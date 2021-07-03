@@ -227,3 +227,6 @@ MY_ASTEROIDS_ROOT = "/shared/repository/asteroids.txt"
 
 MY_HIPPARCOS_URL = "https://uilennest.net/astrobase/repository/hip_main.dat"
 MY_HIPPARCOS_ROOT = "/shared/repository/hip_main.dat"
+
+MY_EXOPLANETS_URL = "https://uilennest.net/astrobase/repository/exoplanets.csv"
+MY_EXOPLANETS_ROOT = "/shared/repository/exoplanets.csv"

@@ -17,6 +17,7 @@ class ExoplanetFilter(filters.FilterSet):
         fields = {
             'pl_name': ['exact', 'icontains', 'in'],
             'hostname': ['exact', 'icontains', 'in'],
+            'soltype': ['exact', 'icontains', 'in'],
             'ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
         }
@@ -26,6 +27,7 @@ class ExoplanetsView(generics.ListAPIView):
     queryset = Exoplanet.objects.all()
     serializer_class = ExoplanetSerializer
     filter_class = ExoplanetFilter
+
 
 class UpdateExoplanets(generics.ListAPIView):
     model = Exoplanet
