@@ -21,6 +21,11 @@ def update_exoplanet_table():
                 line = f.readline()
                 continue
 
+            # only read confirmed planets
+            if not 'Confirmed' in line:
+                line = f.readline()
+                continue
+
             list = line.split(',')
 
             exoplanet = Exoplanet(

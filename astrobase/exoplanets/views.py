@@ -18,13 +18,14 @@ class ExoplanetFilter(filters.FilterSet):
             'pl_name': ['exact', 'icontains', 'in'],
             'hostname': ['exact', 'icontains', 'in'],
             'soltype': ['exact', 'icontains', 'in'],
+            'sy_pnum': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'ra': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'dec': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
         }
 
 # a custom pagination class to return more than the default 100 dataproducts
 class NoPagination(pagination.PageNumberPagination):
-    page_size = 10000
+    page_size = 50000
 
 class ExoplanetsView(generics.ListAPIView):
     model = Exoplanet
