@@ -19,11 +19,13 @@ class Observation2(models.Model):
         ("Powershot G15", "Powershot G15"),
         ("Canon 350D", "Canon 350D"),
         ("Canon 2000D","Canon 2000D"),
+        ("other", "other"),
     )
 
     FILTER_CHOICES = (
         ("None", "None"),
         ("CLS", "CLS"),
+        ("other", "other"),
     )
 
     ISO_CHOICES = (
@@ -112,6 +114,7 @@ class Observation2(models.Model):
     fits = models.CharField(max_length=30, null=True, blank=True)
     annotated_image = models.CharField(max_length=30, null=True, blank=True)
     annotated_transient_image = models.CharField(max_length=40, null=True, blank=True)
+    annotated_exoplanets_image = models.CharField(max_length=40, null=True, blank=True)
     annotated_grid_image = models.CharField(max_length=40, null=True, blank=True)
     annotated_grid_eq_image = models.CharField(max_length=40, null=True, blank=True)
     annotated_stars_image = models.CharField(max_length=40, null=True, blank=True)
@@ -173,6 +176,17 @@ class Observation2(models.Model):
         try:
             data_host = settings.DATA_HOST
             path = data_host + '/' + self.taskID + '/' + str(self.annotated_transient_image)
+            return path
+        except:
+            return None
+
+    @property
+    def derived_annotated_exoplanets_image(self):
+        if self.annotated_exoplanets_image == None:
+            return None
+        try:
+            data_host = settings.DATA_HOST
+            path = data_host + '/' + self.taskID + '/' + str(self.annotated_exoplanets_image)
             return path
         except:
             return None

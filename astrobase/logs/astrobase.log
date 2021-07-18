@@ -26581,3 +26581,38 @@
 [23/May/2021 12:13:28,410] handle_pre_save(200712001 - Comet Neowise first shot - comet neowise)
 [23/May/2021 12:13:28,440] handle_post_save(200712001 - Comet Neowise first shot - comet neowise)
 [23/May/2021 12:13:28,440] update observation = 200712001
+[18/Jul/2021 10:12:52,358] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 10:12:52,365] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 10:12:52,390] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 10:12:52,390] update observation = 210222004
+[18/Jul/2021 12:08:14,642] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:08:14,643] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:08:14,704] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:08:14,705] update observation = 210222004
+[18/Jul/2021 12:10:11,559] add_dataproducts(210222004,1)
+[18/Jul/2021 12:10:11,563] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:10:11,564] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:10:11,600] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:10:11,600] update observation = 210222004
+[18/Jul/2021 12:14:10,019] add_dataproducts(210222004,1)
+[18/Jul/2021 12:14:10,024] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:14:10,024] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:14:10,056] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:14:10,056] update observation = 210222004
+[18/Jul/2021 12:27:54,201] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:27:54,209] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:27:54,239] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:27:54,239] update observation = 210222004
+[18/Jul/2021 12:28:58,702] add_dataproducts(210222004,1)
+[18/Jul/2021 12:28:58,706] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:28:58,707] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:28:58,739] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 12:28:58,739] update observation = 210222004
+[18/Jul/2021 13:11:44,836] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:11:44,836] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:11:44,875] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:11:44,876] update observation = 090311012
+[18/Jul/2021 13:30:57,608] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:30:57,609] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:30:57,645] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:30:57,645] update observation = 090311012

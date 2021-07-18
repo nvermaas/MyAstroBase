@@ -8,6 +8,7 @@ import json
 import datetime
 from ..models import Observation2, Job
 from transients_app.services import algorithms as transients
+from exoplanets.models import Exoplanet
 
 logger = logging.getLogger(__name__)
 
@@ -38,12 +39,13 @@ def add_transient_to_job(observation):
 
         # first try if the transient is an asteroid
         try:
-            result = transients.get_asteroid(transient, t)
+            result,_ = transients.get_asteroid(transient, t)
         except:
             # then try a comet
-            result = transients.get_comet(transient, t)
+            result,_ = transients.get_comet(transient, t)
 
-        designation = result['designation'] + ' - m' + str(result['visual_magnitude'])
+        vmag = round(float(result['visual_magnitude']) * 10) / 10
+        designation = result['designation'] + ' - m' +str(vmag)
         line = {}
 
         line['ra'] = float(result['ra_decimal'])
@@ -60,6 +62,65 @@ def add_transient_to_job(observation):
             line['color'] = 'red'
 
         list.append(line)
+
+    extra = json.dumps(list)
+
+    observation.extra = extra
+    observation.save()
+
+
+def add_exoplanets_to_job(observation):
+    # create ephemeris for the transient
+
+    # roughly cut out the coordinate box of the image, but take a wide margin
+    box = observation.box.split(',')
+    ra_end = float(box[0])+10
+    dec_end = float(box[1])+10
+    ra_start = float(box[4])-10
+    dec_start = float(box[5])-10
+
+    # roughly get the size of the image
+    # size = max(ra_end - ra_start, dec_end - dec_start)
+
+    exoplanets = Exoplanet.objects.filter(
+        ra__gt=ra_start, ra__lt=ra_end, dec__gt=dec_start, dec__lt=dec_end)
+
+    list = []
+    for planet in exoplanets:
+
+        try:
+            vmag = round(float(planet.sy_vmag) * 10)/10
+            designation = planet.hostname + ' - m' + str(vmag)
+        except:
+            vmag = 0
+            designation = planet.hostname
+
+        if vmag <=15:
+            element = {}
+
+            element['ra'] = float(planet.ra)
+            element['dec'] = float(planet.dec)
+
+            element['label'] = designation
+            element['shape'] = 'exoplanet'
+            element['size'] = 20
+            element['color'] = 'red'
+
+            list.append(element)
+
+            # if this star as multiple exoplanets, then also draw a green circle
+            if planet.sy_pnum>1:
+                element = {}
+
+                element['ra'] = float(planet.ra)
+                element['dec'] = float(planet.dec)
+
+                element['label'] = ""
+                element['shape'] = 'exoplanet'
+                element['size'] = 30
+                element['color'] = 'green'
+
+                list.append(element)
 
     extra = json.dumps(list)
 
@@ -191,10 +252,19 @@ def dispatch_job(command, observation_id):
         job.save()
 
 
-    # kick off the hips generation (not currently in place)
-    if command == "hips":
-        job = Job(command='hips',status="new")
-        job.save()
+    # draw a transient (planet, comet or asteroid) on the image
+    if command == "exoplanets":
+        observation = Observation2.objects.get(id=observation_id)
 
+        add_exoplanets_to_job(observation)
+
+        # parse the url into observation_dir and filenames
+        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+        parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+
+        parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_exoplanets."))
+        job = Job(command='exoplanets', parameters=parameters, extra=observation.extra, status="new")
+        job.save()
 
     return "dispatched"

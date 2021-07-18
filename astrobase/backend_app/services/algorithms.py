@@ -106,6 +106,10 @@ def add_dataproducts(taskID, dataproducts):
             parent.annotated_transient_image = dp['filename']
             parent.size = parent.size + int(dp['size'])
 
+        if type == 'annotated_exoplanets':
+            parent.annotated_exoplanets_image = dp['filename']
+            parent.size = parent.size + int(dp['size'])
+
     parent.save()
 
 
