@@ -26752,3 +26752,9 @@
 [21/Aug/2021 11:53:30,155] handle_pre_save(210224002 - rosetta - rosetta)
 [21/Aug/2021 11:53:30,182] handle_post_save(210224002 - rosetta - rosetta)
 [21/Aug/2021 11:53:30,182] update observation = 210224002
+[09/Oct/2021 13:53:51,812] SIGNAL : pre_save Observation(210306004 - Mars and Pleiades - Taurus, Pleiades, Mars)
+[09/Oct/2021 13:53:51,813] handle_pre_save(210306004 - Mars and Pleiades - Taurus, Pleiades, Mars)
+[09/Oct/2021 13:53:51,824] handle_post_save(210306004 - Mars and Pleiades - Taurus, Pleiades, Mars)
+[09/Oct/2021 13:54:57,752] SIGNAL : pre_save Observation(210306004 - Mars and Pleiades - Taurus, Pleiades, Mars)
+[09/Oct/2021 13:54:57,753] handle_pre_save(210306004 - Mars and Pleiades - Taurus, Pleiades, Mars)
+[09/Oct/2021 13:54:57,777] handle_post_save(210306004 - Mars and Pleiades - Taurus, Pleiades, Mars)
