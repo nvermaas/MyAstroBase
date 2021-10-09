@@ -8,6 +8,7 @@ import numpy as np
 from skyfield.api import load
 from skyfield.data import mpc
 from skyfield.constants import GM_SUN_Pitjeva_2005_km3_s2 as GM_SUN
+from skyfield.magnitudelib import planetary_magnitude
 
 try:
     import ephem
@@ -296,6 +297,49 @@ def get_asteroid(name, timestamp):
     result['last_observation_date'] = row['last_observation_date']
     # result['row'] = row
     return result,asteroid
+
+
+def get_planet(name, timestamp):
+    # https://rhodesmill.org/skyfield/api.html#planetary-magnitudes
+
+    ts = load.timescale()
+    eph = load('de421.bsp')
+    sun, earth = eph['sun'], eph['earth']
+    planet = eph[name+' BARYCENTER']
+
+    t = ts.utc(timestamp.year, timestamp.month, timestamp.day, timestamp.hour, timestamp.minute)
+    ra, dec, distance_from_sun = sun.at(t).observe(planet).radec()
+    ra, dec, distance_from_earth = earth.at(t).observe(planet).radec()
+
+    # https://towardsdatascience.com/space-science-with-python-a-very-bright-opposition-62e248abfe62
+    # how do I calculate the current phase_angle between sun and earth as seen from the asteroid
+    ra_sun, dec_sun, d = planet.at(t).observe(sun).radec()
+    ra_earth,dec_earth, d = planet.at(t).observe(earth).radec()
+
+    phase_angle_in_degrees = abs(ra_sun.hours - ra_earth.hours)
+    phase_angle = phase_angle_in_degrees * math.pi / 180
+
+    eph_planet = eph['earth'].at(t).observe(planet)
+    try:
+        visual_magnitude = planetary_magnitude(eph_planet)
+    except:
+        visual_magnitude = 0
+
+    result = {}
+    result['name'] = name
+    result['designation'] = name
+    result['timestamp'] = str(timestamp)
+    result['ra'] = str(ra)
+    result['dec'] = str(dec)
+    result['ra_decimal'] = str(ra.hours * 15)
+    result['dec_decimal'] = str(dec.degrees)
+    result['distance_from_earth'] = str(distance_from_earth.au)
+    result['distance_from_sun'] = str(distance_from_sun.au)
+    result['phase_angle'] = phase_angle_in_degrees
+    result['visual_magnitude'] = visual_magnitude
+
+    # result['row'] = row
+    return result,planet
 
 
 def update_asteroid_table():

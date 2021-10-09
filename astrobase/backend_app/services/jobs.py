@@ -42,7 +42,11 @@ def add_transient_to_job(observation):
             result,_ = transients.get_asteroid(transient, t)
         except:
             # then try a comet
-            result,_ = transients.get_comet(transient, t)
+            try:
+                result,_ = transients.get_comet(transient, t)
+            except:
+                # finally try a planet
+                result, _ = transients.get_planet(transient, t)
 
         vmag = round(float(result['visual_magnitude']) * 10) / 10
         designation = result['designation'] + ' - m' +str(vmag)
@@ -74,10 +78,10 @@ def add_exoplanets_to_job(observation):
 
     # roughly cut out the coordinate box of the image, but take a wide margin
     box = observation.box.split(',')
-    ra_end = float(box[0])+10
-    dec_end = float(box[1])+10
-    ra_start = float(box[4])-10
-    dec_start = float(box[5])-10
+    ra_end = float(box[0])+5
+    dec_end = float(box[1])+5
+    ra_start = float(box[4])-5
+    dec_start = float(box[5])-5
 
     # roughly get the size of the image
     # size = max(ra_end - ra_start, dec_end - dec_start)

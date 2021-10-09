@@ -26616,3 +26616,139 @@
 [18/Jul/2021 13:30:57,609] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
 [18/Jul/2021 13:30:57,645] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
 [18/Jul/2021 13:30:57,645] update observation = 090311012
+[18/Jul/2021 13:33:34,604] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:33:34,604] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:33:34,643] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:33:34,643] update observation = 090311012
+[18/Jul/2021 13:35:32,924] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 13:35:32,924] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 13:35:32,958] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 13:35:32,958] update observation = 210222004
+[18/Jul/2021 13:35:46,998] add_dataproducts(090311012,1)
+[18/Jul/2021 13:35:47,003] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:35:47,003] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:35:47,037] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:35:47,038] update observation = 090311012
+[18/Jul/2021 13:36:12,387] add_dataproducts(210222004,1)
+[18/Jul/2021 13:36:12,395] SIGNAL : pre_save Observation(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 13:36:12,396] handle_pre_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 13:36:12,433] handle_post_save(210222004 - Eunomia in Gemini - Gemini, Eunomia)
+[18/Jul/2021 13:36:12,434] update observation = 210222004
+[18/Jul/2021 13:38:15,365] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:38:15,365] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:38:15,402] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:38:15,402] update observation = 090311012
+[18/Jul/2021 13:38:44,354] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:38:44,354] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:38:44,394] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:38:44,394] update observation = 090311012
+[18/Jul/2021 13:38:47,083] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:38:47,083] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:38:47,118] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:38:47,118] update observation = 090311012
+[18/Jul/2021 13:39:02,559] add_dataproducts(090311012,1)
+[18/Jul/2021 13:39:02,564] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:39:02,564] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:39:02,603] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:39:02,603] update observation = 090311012
+[18/Jul/2021 13:39:35,516] add_dataproducts(090311012,1)
+[18/Jul/2021 13:39:35,522] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:39:35,523] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:39:35,563] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 13:39:35,564] update observation = 090311012
+[18/Jul/2021 14:05:46,177] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 14:05:46,178] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 14:05:46,218] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 14:05:46,219] update observation = 090311012
+[18/Jul/2021 14:23:27,572] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 14:23:27,572] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 14:23:27,618] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 14:23:27,618] update observation = 090311012
+[18/Jul/2021 14:23:55,114] add_dataproducts(090311012,1)
+[18/Jul/2021 14:23:55,119] SIGNAL : pre_save Observation(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 14:23:55,119] handle_pre_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 14:23:55,154] handle_post_save(090311012 - South from Tuscon, Arizona - Virgo, Hydra, Corvus, Crater, Centaurus)
+[18/Jul/2021 14:23:55,154] update observation = 090311012
+[18/Jul/2021 15:07:47,070] SIGNAL : pre_save Observation(210113002 - Hyades Psyche 2 - Taurus, Hyades, Psyche)
+[18/Jul/2021 15:07:47,071] handle_pre_save(210113002 - Hyades Psyche 2 - Taurus, Hyades, Psyche)
+[18/Jul/2021 15:07:47,115] handle_post_save(210113002 - Hyades Psyche 2 - Taurus, Hyades, Psyche)
+[18/Jul/2021 15:07:47,116] update observation = 210113002
+[21/Aug/2021 11:32:57,927] get_next_taskid(20200111)
+[21/Aug/2021 11:32:57,928] checking taskid 200111001..
+[21/Aug/2021 11:32:57,932] checking taskid 200111002..
+[21/Aug/2021 11:32:57,934] checking taskid 200111003..
+[21/Aug/2021 11:32:57,935] checking taskid 200111004..
+[21/Aug/2021 11:32:57,937] checking taskid 200111005..
+[21/Aug/2021 11:32:57,938] checking taskid 200111006..
+[21/Aug/2021 11:32:57,939] checking taskid 200111007..
+[21/Aug/2021 11:32:57,941] checking taskid 200111008..
+[21/Aug/2021 11:35:53,546] get_next_taskid(20200111)
+[21/Aug/2021 11:35:53,546] checking taskid 200111001..
+[21/Aug/2021 11:35:53,551] checking taskid 200111002..
+[21/Aug/2021 11:35:53,554] checking taskid 200111003..
+[21/Aug/2021 11:35:53,555] checking taskid 200111004..
+[21/Aug/2021 11:35:53,557] checking taskid 200111005..
+[21/Aug/2021 11:35:53,558] checking taskid 200111006..
+[21/Aug/2021 11:35:53,560] checking taskid 200111007..
+[21/Aug/2021 11:35:53,561] checking taskid 200111008..
+[21/Aug/2021 11:39:45,311] get_next_taskid(20200111)
+[21/Aug/2021 11:39:45,313] checking taskid 200111001..
+[21/Aug/2021 11:39:45,324] checking taskid 200111002..
+[21/Aug/2021 11:39:45,329] checking taskid 200111003..
+[21/Aug/2021 11:39:45,335] checking taskid 200111004..
+[21/Aug/2021 11:39:45,339] checking taskid 200111005..
+[21/Aug/2021 11:39:45,342] checking taskid 200111006..
+[21/Aug/2021 11:39:45,345] checking taskid 200111007..
+[21/Aug/2021 11:39:45,348] checking taskid 200111008..
+[21/Aug/2021 11:40:12,714] SIGNAL : pre_save Observation(200111008 - orion_nebula - orion_nebula)
+[21/Aug/2021 11:40:12,714] handle_pre_save(200111008 - orion_nebula - orion_nebula)
+[21/Aug/2021 11:40:12,732] handle_post_save(200111008 - orion_nebula - orion_nebula)
+[21/Aug/2021 11:40:12,732] save new observation
+[21/Aug/2021 11:40:12,732] update observation = 200111008
+[21/Aug/2021 11:40:14,922] add_dataproducts(200111008,1)
+[21/Aug/2021 11:40:14,927] SIGNAL : pre_save Observation(200111008 - orion_nebula - orion_nebula)
+[21/Aug/2021 11:40:14,927] handle_pre_save(200111008 - orion_nebula - orion_nebula)
+[21/Aug/2021 11:40:14,951] handle_post_save(200111008 - orion_nebula - orion_nebula)
+[21/Aug/2021 11:40:14,951] update observation = 200111008
+[21/Aug/2021 11:40:17,787] SIGNAL : pre_save Observation(200111008 - orion_nebula - orion_nebula)
+[21/Aug/2021 11:40:17,787] handle_pre_save(200111008 - orion_nebula - orion_nebula)
+[21/Aug/2021 11:40:17,817] handle_post_save(200111008 - orion_nebula - orion_nebula)
+[21/Aug/2021 11:40:17,817] update observation = 200111008
+[21/Aug/2021 11:45:00,830] get_next_taskid(20210224)
+[21/Aug/2021 11:45:00,831] checking taskid 210224001..
+[21/Aug/2021 11:45:49,284] get_next_taskid(20210224)
+[21/Aug/2021 11:45:49,284] checking taskid 210224001..
+[21/Aug/2021 11:46:21,386] SIGNAL : pre_save Observation(210224001 - rosetta - rosetta)
+[21/Aug/2021 11:46:21,386] handle_pre_save(210224001 - rosetta - rosetta)
+[21/Aug/2021 11:46:21,403] handle_post_save(210224001 - rosetta - rosetta)
+[21/Aug/2021 11:46:21,403] save new observation
+[21/Aug/2021 11:46:21,404] update observation = 210224001
+[21/Aug/2021 11:46:22,609] add_dataproducts(210224001,1)
+[21/Aug/2021 11:46:22,613] SIGNAL : pre_save Observation(210224001 - rosetta - rosetta)
+[21/Aug/2021 11:46:22,613] handle_pre_save(210224001 - rosetta - rosetta)
+[21/Aug/2021 11:46:22,645] handle_post_save(210224001 - rosetta - rosetta)
+[21/Aug/2021 11:46:22,645] update observation = 210224001
+[21/Aug/2021 11:46:24,955] SIGNAL : pre_save Observation(210224001 - rosetta - rosetta)
+[21/Aug/2021 11:46:24,956] handle_pre_save(210224001 - rosetta - rosetta)
+[21/Aug/2021 11:46:24,987] handle_post_save(210224001 - rosetta - rosetta)
+[21/Aug/2021 11:46:24,988] update observation = 210224001
+[21/Aug/2021 11:50:06,089] get_next_taskid(20210224)
+[21/Aug/2021 11:50:06,090] checking taskid 210224001..
+[21/Aug/2021 11:50:06,098] checking taskid 210224002..
+[21/Aug/2021 11:52:58,039] get_next_taskid(20210224)
+[21/Aug/2021 11:52:58,041] checking taskid 210224001..
+[21/Aug/2021 11:52:58,051] checking taskid 210224002..
+[21/Aug/2021 11:53:26,623] SIGNAL : pre_save Observation(210224002 - rosetta - rosetta)
+[21/Aug/2021 11:53:26,623] handle_pre_save(210224002 - rosetta - rosetta)
+[21/Aug/2021 11:53:26,637] handle_post_save(210224002 - rosetta - rosetta)
+[21/Aug/2021 11:53:26,638] save new observation
+[21/Aug/2021 11:53:26,638] update observation = 210224002
+[21/Aug/2021 11:53:27,837] add_dataproducts(210224002,1)
+[21/Aug/2021 11:53:27,841] SIGNAL : pre_save Observation(210224002 - rosetta - rosetta)
+[21/Aug/2021 11:53:27,841] handle_pre_save(210224002 - rosetta - rosetta)
+[21/Aug/2021 11:53:27,860] handle_post_save(210224002 - rosetta - rosetta)
+[21/Aug/2021 11:53:27,861] update observation = 210224002
+[21/Aug/2021 11:53:30,155] SIGNAL : pre_save Observation(210224002 - rosetta - rosetta)
+[21/Aug/2021 11:53:30,155] handle_pre_save(210224002 - rosetta - rosetta)
+[21/Aug/2021 11:53:30,182] handle_post_save(210224002 - rosetta - rosetta)
+[21/Aug/2021 11:53:30,182] update observation = 210224002
