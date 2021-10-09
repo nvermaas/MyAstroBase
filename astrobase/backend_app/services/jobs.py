@@ -49,7 +49,11 @@ def add_transient_to_job(observation):
                 result, _ = transients.get_planet(transient, t)
 
         vmag = round(float(result['visual_magnitude']) * 10) / 10
-        designation = result['designation'] + ' - m' +str(vmag)
+        if vmag == 0:
+            designation = result['designation']
+        else:
+            designation = result['designation'] + '(' +str(vmag) +')'
+
         line = {}
 
         line['ra'] = float(result['ra_decimal'])
