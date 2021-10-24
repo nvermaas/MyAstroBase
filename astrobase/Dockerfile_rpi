@@ -5,9 +5,9 @@ RUN mkdir /code
 WORKDIR /code
 COPY . /code/
 RUN pip install -r requirements/prod.txt
-CMD exec gunicorn astrobase.wsgi_docker:application --bind 0.0.0.0:8018 --workers 3
+CMD exec gunicorn astrobase.wsgi_docker:application --bind 0.0.0.0:8000 --workers 3
 
-# RUN exec python manage.py collectstatic --settings=astrobase.settings.prod
+# RUN exec python manage.py collectstatic --settings=astrobase.settings.docker
 # EXPOSE 8018
 
 # build the image like this:

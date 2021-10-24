@@ -10,6 +10,6 @@ requests==2.20.0
 #astroquery==0.4.1
 numpy==1.18.1
 skyfield==1.39
-pandas==1.1.5
+#pandas==1.1.5
 matplotlib==3.3.4
-python-memcached==1.59
+#python-memcached==1.59
