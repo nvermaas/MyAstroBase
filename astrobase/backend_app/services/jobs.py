@@ -170,8 +170,8 @@ def dispatch_job(command, observation_id):
         parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
 
         # use annotated image as input image
-        parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+        parameter_input = observation.derived_raw_image.split('astrobase/data')[1].split('/')
+        parameter_output = observation.derived_raw_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + \
                      str(parameter_fits[2]) + ',' + \
