@@ -136,7 +136,7 @@ def add_exoplanets_to_job(observation):
     observation.save()
 
 
-def dispatch_job(command, observation_id):
+def dispatch_job(command, observation_id, params):
 
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     # add a grid of 1 or 10 square degrees to the image
@@ -274,5 +274,37 @@ def dispatch_job(command, observation_id):
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_exoplanets."))
         job = Job(command='exoplanets', parameters=parameters, extra=observation.extra, status="new")
         job.save()
+
+
+    # crop all images on a coordinate
+    # http://localhost:8000/my_astrobase/run-command/?command=image_cutout&params=84,10,1
+    if command == "image_cutout":
+        # what cone to search for?
+        cone = params.split(',')
+
+        # which images contain this coordinate?
+        search_ra = float(cone[0].strip())
+        search_dec = float(cone[1].strip())
+        fov = float(cone[2].strip())
+
+        observations = Observation2.objects.filter(ra_min__lte=search_ra)\
+            .filter(ra_max__gte=search_ra)\
+            .filter(dec_min__lte=search_dec)\
+            .filter(dec_max__gte=search_dec)
+
+        # http://localhost:8000/my_astrobase/observations/?coordsearch=212,48
+        for observation in observations:
+            print(observation.derived_raw_image)
+
+            # parse the url into observation_dir and filenames
+            parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+            parameter_input = observation.derived_raw_image.split('astrobase/data')[1].split('/')
+
+            # output tiles are named by their ra,dec,fov,taskID like 84_10_1_210101001.jpg
+            output_filename = params.replace(',','_') + '_' + str(observation.taskID) + '.jpg'
+
+            parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + output_filename
+            job = Job(command='image_cutout', parameters=parameters, extra=params, status="new")
+            job.save()
 
     return "dispatched"

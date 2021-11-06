@@ -478,15 +478,21 @@ class RunCommandView(generics.ListAPIView):
         except:
             observation_id = None
 
+        try:
+            params = self.request.query_params['params']
+        except:
+            params = None
+
         # result = "jobs can only be executed by authenticated users"
         # if self.request.user.is_superuser:
-        result = jobs.dispatch_job(command, observation_id)
+        result = jobs.dispatch_job(command, observation_id, params)
 
         # return a response
 
         return Response({
             'command': command,
             'observation_id' : observation_id,
+            'params': params,
             'result' : result
         })
 
