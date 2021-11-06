@@ -167,7 +167,7 @@ def dispatch_job(command, observation_id):
         observation = Observation2.objects.get(id=observation_id)
 
         # parse the url into observation_dir and filenames
-        parameter_fits = observation.observation.derived_fits.split('astrobase/data')[1].split('/')
+        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
 
         # use annotated image as input image
         parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')

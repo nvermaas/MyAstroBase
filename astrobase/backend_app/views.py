@@ -48,7 +48,11 @@ class Observation2Filter(filters.FilterSet):
     def search_my_coords(self, queryset, name, value):
         # value is a comma separated decimal RA,dec coordinate
         # chain the filters to create a query to find the coordinate in the bounding box of observations
-        ra,dec = value.split(',')
+        try:
+            ra,dec = value.split(',')
+        except:
+            ra, dec = value.split(' ')
+
         search_ra = float(ra.strip())
         search_dec = float(dec.strip())
         q = queryset.filter(ra_min__lte=search_ra)\
