@@ -2,7 +2,7 @@
 Jobs contains the business logic for the different system jobs that have to be executed based on status changes
 for Observations or DataProducts in AstroBase.
 """
-
+import os
 import logging;
 import json
 import datetime
@@ -301,7 +301,7 @@ def dispatch_job(command, observation_id, params):
             parameter_input = observation.derived_raw_image.split('astrobase/data')[1].split('/')
 
             # output tiles are named by their ra,dec,fov,taskID like 84_10_1_210101001.jpg
-            output_filename = params.replace(',','_') + '_' + str(observation.taskID) + '.jpg'
+            output_filename = os.path.join(params.replace(',','_'),params.replace(',','_') + '_' + str(observation.taskID) + '.jpg')
 
             parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + output_filename
             job = Job(command='image_cutout', parameters=parameters, extra=params, status="new")
