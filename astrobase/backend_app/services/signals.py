@@ -95,6 +95,23 @@ def handle_post_save(sender, **kwargs):
 
         logger.info("update observation = " + str(myObservation.taskID))
 
+        # check if there is a valid bounding box calculated.
+        # if not, fill min/max values from 'box'.
+        # 108.38,-0.97,
+        # 74.77,20.16,
+        # 60.84,-1.95,
+        # 94.76,-23.17
+        if myObservation.derived_annotated_grid_image==None:
+            try:
+                box = myObservation.box.split(',')
+                myObservation.ra_max = max(float(box[0]),float(box[2]),float(box[4]),float(box[6]))
+                myObservation.ra_min = min(float(box[0]),float(box[2]),float(box[4]),float(box[6]))
+                myObservation.dec_max = max(float(box[1]),float(box[3]),float(box[5]),float(box[7]))
+                myObservation.dec_min = min(float(box[1]),float(box[3]),float(box[5]),float(box[7]))
+            except:
+                # skip for observations that do not have a ra,dec box
+                pass
+
         # if this observation has a parent..
         parent = myObservation.parent
         if parent != None:

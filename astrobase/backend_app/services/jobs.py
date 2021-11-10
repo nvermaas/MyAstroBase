@@ -209,21 +209,24 @@ def dispatch_job(command, observation_id, params):
         job.save()
 
     # update min/max ra and dec for all observations with a fits file
-    # /my_astrobase/run-command?command=all_min_max (no longer used)
-    if command == "all_min_max":
-        # find all observations with a fits file, and create a min_max job for all of them
-        #obs_with_fits = Observation.objects.filter(generated_dataproducts__dataproduct_type='fits')
-        obs = Observation2.objects.all()
+    # /my_astrobase/run-command?command=do_all (no longer used)
+    if command == "do_all":
+        # do something or all observations
+        observations = Observation2.objects.all()
 
-        for observation in obs:
-            try:
-                path1 = observation.derived_fits.split('astrobase/data')[1].split('/')
-                parameters = str(path1[1] + ',' + str(path1[2]))
-                job = Job(command='box', parameters=parameters, status="new")
-                job.save()
-                print('ok: ' + str(observation))
-            except:
-                print('failed: '+str(observation))
+        for observation in observations:
+            # save them all, to trigger a signal
+            print(observation.name)
+            observation.save()
+            #try:
+            #    path1 = observation.derived_fits.split('astrobase/data')[1].split('/')
+            #    parameters = str(path1[1] + ',' + str(path1[2]))
+            #    job = Job(command='box', parameters=parameters, status="new")
+            #    job.save()
+            #    print('ok: ' + str(observation))
+            #except:
+            #    print('failed: '+str(observation))
+
 
     # /my_astrobase/run-command/?command=draw_extra&observation_id=4131
     # the 'observation.extra' field contains instructions from what to draw.
