@@ -298,16 +298,18 @@ def dispatch_job(command, observation_id, params):
         # http://localhost:8000/my_astrobase/observations/?coordsearch=212,48
         for observation in observations:
             print(observation.derived_raw_image)
+            try:
+                # parse the url into observation_dir and filenames
+                parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+                parameter_input = observation.derived_raw_image.split('astrobase/data')[1].split('/')
 
-            # parse the url into observation_dir and filenames
-            parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
-            parameter_input = observation.derived_raw_image.split('astrobase/data')[1].split('/')
+                # output tiles are named by their ra,dec,fov,taskID like 84_10_1_210101001.jpg
+                output_filename = os.path.join(params.replace(',','_'),params.replace(',','_') + '_' + str(observation.taskID) + '.jpg')
 
-            # output tiles are named by their ra,dec,fov,taskID like 84_10_1_210101001.jpg
-            output_filename = os.path.join(params.replace(',','_'),params.replace(',','_') + '_' + str(observation.taskID) + '.jpg')
-
-            parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + output_filename
-            job = Job(command='image_cutout', parameters=parameters, extra=params, status="new")
-            job.save()
+                parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + output_filename
+                job = Job(command='image_cutout', parameters=parameters, extra=params, status="new")
+                job.save()
+            except:
+                print('failed to create job')
 
     return "dispatched"
