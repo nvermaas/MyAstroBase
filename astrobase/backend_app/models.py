@@ -368,9 +368,9 @@ class CutoutDirectory(models.Model):
         return os.path.join(self.directory) + ' (' + str(self.number_of_images) + ')'
 
     @property
-    def derived_path(self):
-        cutouts_dir = os.path.join(settings.DATA_HOST,'cutouts')
-        return cutouts_dir
+    def derived_url(self):
+        url = settings.DATA_HOST + '/cutouts'
+        return url
 
 
 # a record per filename
@@ -403,10 +403,9 @@ class Cutout(models.Model):
         return os.path.join(self.filename) + ' (' + self.status + ')'
 
     @property
-    def derived_path(self):
-        cutouts_dir = os.path.join(settings.DATA_HOST,'cutouts')
-        path = os.path.join(os.path.join(cutouts_dir,self.directory),self.filename)
-        return path
+    def derived_url(self):
+        url = settings.DATA_HOST + '/cutouts/' + self.directory + '/' + self.filename
+        return url
 
     def save(self, *args, **kwargs):
         q = Cutout.objects.filter(directory=self.directory, visible=True)

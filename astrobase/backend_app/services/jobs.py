@@ -354,12 +354,12 @@ def dispatch_job(command, observation_id, params):
                         cutout_size = size_in_pixels,
                         observation_taskID = observation.taskID,
                         observation_quality = observation.quality,
-                        cutout_directory = cutout_directory,
+                        visible = False,
                         status = "job_created"
                     )
 
                 # update the cutout_directory with the latest filename
-                cutout_directory.thumbnail = filename
+                cutout_directory.thumbnail = cutout.derived_url
                 cutout_directory.save()
 
                 cutout.save()

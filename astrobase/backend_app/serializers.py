@@ -111,7 +111,7 @@ class CutoutSerializer(serializers.ModelSerializer):
                   'observation_taskID',
                   'cutout_quality',
                   'status',
-                  'derived_path')
+                  'derived_url')
 
 class CutoutDirectorySerializer(serializers.ModelSerializer):
 
@@ -125,5 +125,6 @@ class CutoutDirectorySerializer(serializers.ModelSerializer):
                   'cutout_size',
                   'visible',
                   'status',
+                  'derived_url',
                   'number_of_images',
                   'thumbnail')
