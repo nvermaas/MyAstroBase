@@ -6,7 +6,7 @@ import os
 import logging;
 import json
 import datetime
-from ..models import Observation2, Job
+from ..models import Observation2, Job, Cutout
 from transients_app.services import algorithms as transients
 from exoplanets.models import Exoplanet
 
@@ -283,12 +283,14 @@ def dispatch_job(command, observation_id, params):
     # http://localhost:8000/my_astrobase/run-command/?command=image_cutout&params=84,10,1
     if command == "image_cutout":
         # what cone to search for?
-        cone = params.split(',')
+        cutout = params.split(',')
 
         # which images contain this coordinate?
-        search_ra = float(cone[0].strip())
-        search_dec = float(cone[1].strip())
-        fov = float(cone[2].strip())
+        search_ra = float(cutout[0].strip())
+        search_dec = float(cutout[1].strip())
+        field_of_view = float(cutout[2].strip())
+        field_name = cutout[3]
+        size_in_pixels = int(cutout[4])
 
         observations = Observation2.objects.filter(ra_min__lte=search_ra)\
             .filter(ra_max__gte=search_ra)\
@@ -298,17 +300,39 @@ def dispatch_job(command, observation_id, params):
         # http://localhost:8000/my_astrobase/observations/?coordsearch=212,48
         for observation in observations:
             print(observation.derived_raw_image)
+
             try:
+
                 # parse the url into observation_dir and filenames
                 parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
                 parameter_input = observation.derived_raw_image.split('astrobase/data')[1].split('/')
 
                 # output tiles are named by their ra,dec,fov,taskID like 84_10_1_210101001.jpg
-                output_filename = os.path.join(params.replace(',','_'),params.replace(',','_') + '_' + str(observation.taskID) + '.jpg')
+                directory = params.replace(',','_')
+                filename = params.replace(',','_') + '_' + str(observation.taskID) + '.jpg'
+                output_filename = os.path.join(directory,filename)
 
                 parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + output_filename
                 job = Job(command='image_cutout', parameters=parameters, extra=params, status="new")
+
+                # create cutout object and add to database
+                cutout = Cutout(
+                    directory= directory,
+                    filename = filename,
+                    field_name = field_name,
+                    field_ra = search_ra,
+                    field_dec = search_dec,
+                    field_fov = field_of_view,
+                    cutout_size = size_in_pixels,
+                    order = 0,
+                    quality = observation.quality,
+                    status = "job_created"
+                )
+
+                # cutout and job created... action!
+                cutout.save()
                 job.save()
+
             except:
                 print('failed to create job')
 

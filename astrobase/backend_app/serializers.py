@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Observation2,  Collection2, AstroFile, Job, Observation2Box
+from .models import Observation2,  Collection2, AstroFile, Job, Observation2Box, Cutout
 import logging
 
 logger = logging.getLogger(__name__)
@@ -90,3 +90,11 @@ class Observation2BoxSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Observation2Box
         fields = ('taskID','name','field_ra','field_dec','field_fov','field_name','box','image_type','quality','derived_fits')
+
+
+class CutoutSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Cutout
+        fields = ('creationTime','directory','filename','field_name','field_ra','field_dec','field_fov',
+                  'cutout_size','order','quality','status','derived_path')

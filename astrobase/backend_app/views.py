@@ -17,8 +17,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import Observation2, AstroFile, Collection2, Job, Observation2Box
-from .serializers import Observation2Serializer, AstroFileSerializer, Collection2Serializer, JobSerializer, Observation2BoxSerializer \
+from .models import Observation2, AstroFile, Collection2, Job, Observation2Box, Cutout
+from .serializers import Observation2Serializer, AstroFileSerializer, Collection2Serializer, JobSerializer, \
+    Observation2BoxSerializer, CutoutSerializer \
 
 from .forms import FilterForm
 from .services import algorithms, jobs
@@ -504,3 +505,24 @@ class Observation2BoxesListView(generics.ListCreateAPIView):
     filter_backends = (filters.DjangoFilterBackend,)
     filter_class = Observation2Filter
 
+
+class CutoutListView(generics.ListCreateAPIView):
+    """
+    A pagination list of cutouts, sorted by date.
+    """
+    model = Cutout
+    queryset = Cutout.objects.all().order_by('-field_name')
+    serializer_class = CutoutSerializer
+
+    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
+    filter_backends = (filters.DjangoFilterBackend,)
+    #filter_class = CutoutFilter
+
+
+class CutoutDetailsView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Detailed view of an observation.
+    """
+    model = Cutout
+    queryset = Cutout.objects.all()
+    serializer_class = CutoutSerializer

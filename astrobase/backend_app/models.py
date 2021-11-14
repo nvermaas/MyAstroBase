@@ -10,7 +10,6 @@ datetime_format_string = '%Y-%m-%dT%H:%M:%SZ'
 
 TASK_TYPE_MASTER = 'master'
 TASK_TYPE_OBSERVATION = 'observation'
-TASK_TYPE_DATAPRODUCT = 'dataproduct'
 
 
 class Observation2(models.Model):
@@ -58,7 +57,7 @@ class Observation2(models.Model):
     )
 
     name = models.CharField(max_length=100, default="unknown")
-    task_type = models.CharField(max_length=20, choices = TASK_TYPE_CHOICES, default=TASK_TYPE_DATAPRODUCT)
+    task_type = models.CharField(max_length=20, choices = TASK_TYPE_CHOICES, default=TASK_TYPE_OBSERVATION)
 
     taskID = models.CharField('taskID', db_index=True, max_length=30, blank=True, null=True)
     creationTime = models.DateTimeField(default=datetime.utcnow, blank=True)
@@ -347,3 +346,31 @@ class Observation2Box(Observation2):
 
     class Meta:
         proxy = True
+
+# a record per filename
+# a cutout is a ra,dec square cutout from a larger image, and rotated to horizontal (equatorial)
+class Cutout(models.Model):
+    creationTime = models.DateTimeField(default=datetime.utcnow, blank=True)
+    directory = models.CharField(max_length=80, null=True)
+    filename = models.CharField(max_length=80, blank=True)
+
+    field_name = models.CharField(max_length=100, null=True)
+    field_ra = models.FloatField('field_ra', null = True)
+    field_dec = models.FloatField('field_dec', null = True)
+    field_fov = models.FloatField('field_fov', null=True)
+    cutout_size = models.IntegerField(default=500)
+    order = models.IntegerField(default=0)
+    quality = models.CharField(max_length=15, default="unknown", null=True)
+    status = models.CharField(max_length=15, default="unknown", null=True)
+
+    # relationships
+    observation = models.ForeignKey(Observation2, related_name='cutouts', on_delete=models.SET_NULL, null=True, blank=True)
+
+    def __str__(self):
+        return os.path.join(self.filename) + ' (' + self.status + ')'
+
+    @property
+    def derived_path(self):
+        cutouts_dir = os.path.join(settings.DATA_HOST,'cutouts')
+        path = os.path.join(os.path.join(cutouts_dir,self.directory),self.filename)
+        return path
