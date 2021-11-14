@@ -315,22 +315,32 @@ def dispatch_job(command, observation_id, params):
                 parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + output_filename
                 job = Job(command='image_cutout', parameters=parameters, extra=params, status="new")
 
+                # if this filename doesn't exist yet, then
                 # create cutout object and add to database
-                cutout = Cutout(
-                    directory= directory,
-                    filename = filename,
-                    field_name = field_name,
-                    field_ra = search_ra,
-                    field_dec = search_dec,
-                    field_fov = field_of_view,
-                    cutout_size = size_in_pixels,
-                    order = 0,
-                    quality = observation.quality,
-                    status = "job_created"
-                )
+                try:
+                    # cutout exists, update it
+                    cutout = Cutout.objects.get(filename=filename)
+                    now = datetime.datetime.utcnow()
+                    cutout.creationTime = now
+                    cutout.status = 'job_recreated'
 
-                # cutout and job created... action!
+                except:
+                    # cutout doesn't exist, create it
+                    cutout = Cutout(
+                        directory= directory,
+                        filename = filename,
+                        field_name = field_name,
+                        field_ra = search_ra,
+                        field_dec = search_dec,
+                        field_fov = field_of_view,
+                        cutout_size = size_in_pixels,
+                        observation_quality = observation.quality,
+                        status = "job_created"
+                    )
+
                 cutout.save()
+
+                # cutout is saved, dispatch the job by saving it
                 job.save()
 
             except:

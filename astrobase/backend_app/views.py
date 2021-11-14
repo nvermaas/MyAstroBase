@@ -521,8 +521,12 @@ class CutoutListView(generics.ListCreateAPIView):
 
 class CutoutDetailsView(generics.RetrieveUpdateDestroyAPIView):
     """
-    Detailed view of an observation.
+    Detailed view of a cutout
     """
+
+    # the primary key of cutout is not 'id', but a unique filename
+    lookup_field = 'filename'
+
     model = Cutout
     queryset = Cutout.objects.all()
     serializer_class = CutoutSerializer

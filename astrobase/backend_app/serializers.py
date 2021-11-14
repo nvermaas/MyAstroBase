@@ -96,5 +96,18 @@ class CutoutSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cutout
-        fields = ('creationTime','directory','filename','field_name','field_ra','field_dec','field_fov',
-                  'cutout_size','order','quality','status','derived_path')
+        fields = ('filename',
+                  'creationTime',
+                  'directory',
+                  'field_name',
+                  'field_ra',
+                  'field_dec',
+                  'field_fov',
+                  'cutout_size',
+                  'order',
+                  'visible',
+                  'delete',
+                  'observation_quality',
+                  'cutout_quality',
+                  'status',
+                  'derived_path')

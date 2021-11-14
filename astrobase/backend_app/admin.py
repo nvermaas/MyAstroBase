@@ -15,5 +15,5 @@ admin.site.register(AstroFile)
 
 @admin.register(Cutout)
 class CutoutAdmin(admin.ModelAdmin):
-    ordering = ['field_ra']
+    ordering = ['filename']
     search_fields = ['field_name','directory']
