@@ -111,7 +111,6 @@ class CutoutSerializer(serializers.ModelSerializer):
                   'observation_taskID',
                   'cutout_quality',
                   'status',
-                  'cutout_directory',
                   'derived_path')
 
 class CutoutDirectorySerializer(serializers.ModelSerializer):

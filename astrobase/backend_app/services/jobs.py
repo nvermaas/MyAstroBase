@@ -358,11 +358,11 @@ def dispatch_job(command, observation_id, params):
                         status = "job_created"
                     )
 
-                cutout.save()
-
                 # update the cutout_directory with the latest filename
                 cutout_directory.thumbnail = filename
                 cutout_directory.save()
+
+                cutout.save()
 
                 # cutout is saved, dispatch the job by saving it
                 job.save()

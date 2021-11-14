@@ -95,12 +95,9 @@ def handle_post_save(sender, **kwargs):
 
         logger.info("update observation = " + str(myObservation.taskID))
 
-        # check if there is a valid bounding box calculated.
+        # check if there has already been a valid bounding box calculated.
         # if not, fill min/max values from 'box'.
-        # 108.38,-0.97,
-        # 74.77,20.16,
-        # 60.84,-1.95,
-        # 94.76,-23.17
+
         if myObservation.derived_annotated_grid_image==None:
             try:
                 box = myObservation.box.split(',')

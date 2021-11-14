@@ -372,12 +372,13 @@ class CutoutDirectory(models.Model):
         cutouts_dir = os.path.join(settings.DATA_HOST,'cutouts')
         return cutouts_dir
 
+
 # a record per filename
 # a cutout is a ra,dec square cutout from a larger image, and rotated to horizontal (equatorial)
 class Cutout(models.Model):
     filename = models.CharField(db_index=True, primary_key=True, max_length=80, blank=True)
     creationTime = models.DateTimeField(default=datetime.utcnow, blank=True)
-    directory = models.CharField(max_length=80, null=True)
+    directory = models.CharField(db_index=True,max_length=80, null=True)
 
     field_name = models.CharField(max_length=100, null=True)
     field_ra = models.FloatField('field_ra', null = True)
@@ -395,7 +396,7 @@ class Cutout(models.Model):
     status = models.CharField(max_length=15, default="unknown", null=True)
 
     # relationships
-    cutout_directory = models.ForeignKey(CutoutDirectory, related_name='cutouts', on_delete=models.CASCADE, null=True, blank=True)
+    #cutout_directory = models.ForeignKey(CutoutDirectory, related_name='cutouts', on_delete=models.CASCADE, null=True, blank=True)
     #observation = models.ForeignKey(Observation2, related_name='cutouts', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
@@ -406,3 +407,13 @@ class Cutout(models.Model):
         cutouts_dir = os.path.join(settings.DATA_HOST,'cutouts')
         path = os.path.join(os.path.join(cutouts_dir,self.directory),self.filename)
         return path
+
+    def save(self, *args, **kwargs):
+        q = Cutout.objects.filter(directory=self.directory, visible=True)
+        number_of_images = len(q)
+
+        cutout_directory = CutoutDirectory.objects.get(directory=self.directory)
+        cutout_directory.number_of_images = number_of_images
+        cutout_directory.save()
+
+        super(Cutout, self).save(*args, **kwargs)
