@@ -6,7 +6,7 @@ import os
 import logging;
 import json
 import datetime
-from ..models import Observation2, Job, Cutout
+from ..models import Observation2, Job, Cutout, CutoutDirectory
 from transients_app.services import algorithms as transients
 from exoplanets.models import Exoplanet
 
@@ -284,6 +284,7 @@ def dispatch_job(command, observation_id, params):
     if command == "image_cutout":
         # what cone to search for?
         cutout = params.split(',')
+        directory = params.replace(',', '_')
 
         # which images contain this coordinate?
         search_ra = float(cutout[0].strip())
@@ -291,6 +292,24 @@ def dispatch_job(command, observation_id, params):
         field_of_view = float(cutout[2].strip())
         field_name = cutout[3]
         size_in_pixels = int(cutout[4])
+
+        # if this cutout directory doesn't exist yet, then create it
+        try:
+            # cutout exists, update it
+            cutout_directory = CutoutDirectory.objects.get(directory=directory)
+            cutout_directory.status = 'job_recreated'
+
+        except:
+            # cutout doesn't exist, create it
+            cutout_directory = CutoutDirectory(
+                directory=directory,
+                field_name=field_name,
+                field_ra=search_ra,
+                field_dec=search_dec,
+                field_fov=field_of_view,
+                status="job_created"
+            )
+        cutout_directory.save()
 
         observations = Observation2.objects.filter(ra_min__lte=search_ra)\
             .filter(ra_max__gte=search_ra)\
@@ -308,8 +327,7 @@ def dispatch_job(command, observation_id, params):
                 parameter_input = observation.derived_raw_image.split('astrobase/data')[1].split('/')
 
                 # output tiles are named by their ra,dec,fov,taskID like 84_10_1_210101001.jpg
-                directory = params.replace(',','_')
-                filename = params.replace(',','_') + '_' + str(observation.taskID) + '.jpg'
+                filename = directory + '_' + str(observation.taskID) + '.jpg'
                 output_filename = os.path.join(directory,filename)
 
                 parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + output_filename
@@ -334,11 +352,17 @@ def dispatch_job(command, observation_id, params):
                         field_dec = search_dec,
                         field_fov = field_of_view,
                         cutout_size = size_in_pixels,
+                        observation_taskID = observation.taskID,
                         observation_quality = observation.quality,
+                        cutout_directory = cutout_directory,
                         status = "job_created"
                     )
 
                 cutout.save()
+
+                # update the cutout_directory with the latest filename
+                cutout_directory.thumbnail = filename
+                cutout_directory.save()
 
                 # cutout is saved, dispatch the job by saving it
                 job.save()

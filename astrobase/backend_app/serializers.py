@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Observation2,  Collection2, AstroFile, Job, Observation2Box, Cutout
+from .models import Observation2,  Collection2, AstroFile, Job, Observation2Box, Cutout, CutoutDirectory
 import logging
 
 logger = logging.getLogger(__name__)
@@ -108,6 +108,23 @@ class CutoutSerializer(serializers.ModelSerializer):
                   'visible',
                   'delete',
                   'observation_quality',
+                  'observation_taskID',
                   'cutout_quality',
                   'status',
+                  'cutout_directory',
                   'derived_path')
+
+class CutoutDirectorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = CutoutDirectory
+        fields = ('directory',
+                  'field_name',
+                  'field_ra',
+                  'field_dec',
+                  'field_fov',
+                  'cutout_size',
+                  'visible',
+                  'status',
+                  'number_of_images',
+                  'thumbnail')

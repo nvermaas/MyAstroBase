@@ -347,6 +347,31 @@ class Observation2Box(Observation2):
     class Meta:
         proxy = True
 
+
+# a directory per cutout
+# a cutout is a ra,dec square cutout from a larger image, and rotated to horizontal (equatorial)
+class CutoutDirectory(models.Model):
+    directory = models.CharField(db_index=True, primary_key=True,max_length=80)
+
+    field_name = models.CharField(max_length=100, null=True)
+    field_ra = models.FloatField('field_ra', null = True)
+    field_dec = models.FloatField('field_dec', null = True)
+    field_fov = models.FloatField('field_fov', null=True)
+    cutout_size = models.IntegerField(default=500)
+
+    visible = models.BooleanField(default=True)
+    status = models.CharField(max_length=15, default="empty", null=True)
+    number_of_images = models.IntegerField(default=0)
+    thumbnail = models.CharField(max_length=80, blank=True, null=True)
+
+    def __str__(self):
+        return os.path.join(self.directory) + ' (' + str(self.number_of_images) + ')'
+
+    @property
+    def derived_path(self):
+        cutouts_dir = os.path.join(settings.DATA_HOST,'cutouts')
+        return cutouts_dir
+
 # a record per filename
 # a cutout is a ra,dec square cutout from a larger image, and rotated to horizontal (equatorial)
 class Cutout(models.Model):
@@ -363,12 +388,15 @@ class Cutout(models.Model):
     visible = models.BooleanField(default=True)
     delete = models.BooleanField(default=False)
     observation_quality = models.CharField(max_length=15, default="unknown", null=True)
+    observation_taskID = models.CharField('taskID', max_length=30, blank=True, null=True)
+
     cutout_quality = models.CharField(max_length=15, default="unknown", null=True)
 
     status = models.CharField(max_length=15, default="unknown", null=True)
 
     # relationships
-    observation = models.ForeignKey(Observation2, related_name='cutouts', on_delete=models.SET_NULL, null=True, blank=True)
+    cutout_directory = models.ForeignKey(CutoutDirectory, related_name='cutouts', on_delete=models.CASCADE, null=True, blank=True)
+    #observation = models.ForeignKey(Observation2, related_name='cutouts', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return os.path.join(self.filename) + ' (' + self.status + ')'

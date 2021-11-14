@@ -17,9 +17,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.db.models import Q
 
-from .models import Observation2, AstroFile, Collection2, Job, Observation2Box, Cutout
+from .models import Observation2, AstroFile, Collection2, Job, Observation2Box, Cutout, CutoutDirectory
 from .serializers import Observation2Serializer, AstroFileSerializer, Collection2Serializer, JobSerializer, \
-    Observation2BoxSerializer, CutoutSerializer \
+    Observation2BoxSerializer, CutoutSerializer, CutoutDirectorySerializer \
 
 from .forms import FilterForm
 from .services import algorithms, jobs
@@ -130,6 +130,22 @@ class JobFilter(filters.FilterSet):
 
         fields = {
             'status': ['exact', 'icontains', 'in'],
+        }
+
+# example: /my_astrobase/cutouts?status__in=created,archived
+class CutoutFilter(filters.FilterSet):
+
+    class Meta:
+        model = Cutout
+
+        fields = {
+            'field_name': ['exact', 'icontains', 'in'],
+            'directory' : ['exact', 'icontains'],
+            'visible': ['exact'],
+            'delete': ['exact'],
+            'status': ['exact', 'icontains', 'in'],
+            'observation_quality': ['exact', 'icontains', 'in'],
+            'cutout_quality': ['exact', 'icontains', 'in'],
         }
 
 
@@ -506,6 +522,32 @@ class Observation2BoxesListView(generics.ListCreateAPIView):
     filter_class = Observation2Filter
 
 
+class CutoutDirectoryListView(generics.ListCreateAPIView):
+    """
+    A pagination list of cutoutDirectory.
+    """
+    model = CutoutDirectory
+    queryset = CutoutDirectory.objects.all()
+    serializer_class = CutoutDirectorySerializer
+
+    # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
+    filter_backends = (filters.DjangoFilterBackend,)
+    # filter_class = CutoutDirectoryFilter
+
+
+class CutoutDirectoryDetailsView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Detailed view of a cutout
+    """
+
+    # the primary key of cutout is not 'id', but a unique filename
+    lookup_field = 'directory'
+
+    model = CutoutDirectory
+    queryset = CutoutDirectory.objects.all()
+    serializer_class = CutoutDirectorySerializer
+
+
 class CutoutListView(generics.ListCreateAPIView):
     """
     A pagination list of cutouts, sorted by date.
@@ -516,7 +558,7 @@ class CutoutListView(generics.ListCreateAPIView):
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
-    #filter_class = CutoutFilter
+    filter_class = CutoutFilter
 
 
 class CutoutDetailsView(generics.RetrieveUpdateDestroyAPIView):

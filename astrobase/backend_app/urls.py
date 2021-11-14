@@ -30,6 +30,9 @@ urlpatterns = [
     # ex: /astrobase/jobs/5/
     path('jobs/<int:pk>/', views.JobDetailsViewAPI.as_view(), name='job-detail-view-api'),
 
+    path('cutout_directories/', views.CutoutDirectoryListView.as_view()),
+    path('cutout_directories/<directory>/', views.CutoutDirectoryDetailsView.as_view()),
+
     path('cutouts/', views.CutoutListView.as_view()),
     path('cutouts/<filename>/', views.CutoutDetailsView.as_view()),
 
