@@ -388,6 +388,8 @@ class Cutout(models.Model):
     order = models.IntegerField(default=0)
     visible = models.BooleanField(default=True)
     delete = models.BooleanField(default=False)
+    observation_name = models.CharField(max_length=40, default="unknown")
+    observation_date = models.DateTimeField(blank=True, null=True)
     observation_quality = models.CharField(max_length=15, default="unknown", null=True)
     observation_taskID = models.CharField('taskID', max_length=30, blank=True, null=True)
 

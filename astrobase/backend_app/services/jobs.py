@@ -314,7 +314,7 @@ def dispatch_job(command, observation_id, params):
         observations = Observation2.objects.filter(ra_min__lte=search_ra)\
             .filter(ra_max__gte=search_ra)\
             .filter(dec_min__lte=search_dec)\
-            .filter(dec_max__gte=search_dec)
+            .filter(dec_max__gte=search_dec).order_by('-date')
 
         # http://localhost:8000/my_astrobase/observations/?coordsearch=212,48
         for observation in observations:
@@ -352,6 +352,8 @@ def dispatch_job(command, observation_id, params):
                         field_dec = search_dec,
                         field_fov = field_of_view,
                         cutout_size = size_in_pixels,
+                        observation_date = observation.date,
+                        observation_name = observation.name,
                         observation_taskID = observation.taskID,
                         observation_quality = observation.quality,
                         visible = False,

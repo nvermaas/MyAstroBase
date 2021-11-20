@@ -107,6 +107,8 @@ class CutoutSerializer(serializers.ModelSerializer):
                   'order',
                   'visible',
                   'delete',
+                  'observation_date',
+                  'observation_name',
                   'observation_quality',
                   'observation_taskID',
                   'cutout_quality',
