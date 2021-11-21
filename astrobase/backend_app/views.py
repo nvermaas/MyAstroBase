@@ -572,3 +572,12 @@ class CutoutDetailsView(generics.RetrieveUpdateDestroyAPIView):
     model = Cutout
     queryset = Cutout.objects.all()
     serializer_class = CutoutSerializer
+
+
+def CutoutDirectorySetThumbnail(request,directory,filename):
+    logger.info('CutoutDirectorySetThumbnail()')
+    model = CutoutDirectory
+    directory = CutoutDirectory.objects.get(directory=directory)
+    cutout = Cutout.objects.get(filename=filename)
+    directory.thumbnail = cutout.derived_url
+    directory.save()

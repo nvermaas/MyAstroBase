@@ -71,6 +71,9 @@ urlpatterns = [
          views.ObservationSetTaskType,
          name='observation-settasktype-view'),
 
+    path('cutout_directories/<directory>/setthumbnail/<filename>',
+         views.CutoutDirectorySetThumbnail),
+
     path('run-command/',
          views.RunCommandView.as_view(),
          name='run-command-view'),
