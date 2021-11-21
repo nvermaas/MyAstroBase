@@ -74,6 +74,9 @@ urlpatterns = [
     path('cutout_directories/<directory>/setthumbnail/<filename>',
          views.CutoutDirectorySetThumbnail),
 
+    path('cutout_directories/<directory>/remove', views.RemoveCutoutDirectory),
+    path('cutouts/<filename>/remove', views.RemoveCutoutImage),
+
     path('run-command/',
          views.RunCommandView.as_view(),
          name='run-command-view'),

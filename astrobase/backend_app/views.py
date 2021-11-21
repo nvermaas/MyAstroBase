@@ -576,8 +576,20 @@ class CutoutDetailsView(generics.RetrieveUpdateDestroyAPIView):
 
 def CutoutDirectorySetThumbnail(request,directory,filename):
     logger.info('CutoutDirectorySetThumbnail()')
-    model = CutoutDirectory
     directory = CutoutDirectory.objects.get(directory=directory)
     cutout = Cutout.objects.get(filename=filename)
     directory.thumbnail = cutout.derived_url
     directory.save()
+
+
+def RemoveCutoutDirectory(request,directory):
+    logger.info('RemoveCutoutDirectory()')
+    CutoutDirectory.objects.filter(directory=directory).delete()
+
+    # also remove all the images associated with this directory
+    Cutout.objects.filter(directory=directory).delete()
+
+
+def RemoveCutoutImage(request,filename):
+    logger.info('RemoveCutoutImage()')
+    Cutout.objects.filter(filename=filename).delete()
