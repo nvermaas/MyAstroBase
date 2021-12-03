@@ -313,6 +313,8 @@ class Collection2(models.Model):
 
 # job to be executed async by the astrobase_services packages by polling the database
 class Job(models.Model):
+    queue = models.CharField(max_length=30, default="astrobase_services", null=True)
+    celery_id = models.CharField(max_length=50, null=True, blank=True)
     creationTime = models.DateTimeField(default=datetime.utcnow, blank=True)
     # relationships
     command = models.CharField(max_length=200, default="", null=True)
