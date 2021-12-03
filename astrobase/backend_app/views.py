@@ -130,6 +130,8 @@ class JobFilter(filters.FilterSet):
 
         fields = {
             'status': ['exact', 'icontains', 'in'],
+            'queue': ['exact', 'icontains', 'in'],
+            'celery_id': ['exact', 'icontains', 'in'],
         }
 
 # example: /my_astrobase/cutouts?status__in=created,archived
