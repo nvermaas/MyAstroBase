@@ -1,4 +1,4 @@
-runname: build-deploy-astrobase
+name: build-deploy-astrobase
 on: [push]
 jobs:
   build-deploy-astrobase:
