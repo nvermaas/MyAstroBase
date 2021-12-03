@@ -138,6 +138,12 @@ def add_exoplanets_to_job(observation):
 
 def dispatch_job(command, observation_id, params):
 
+    # test the 'astro' queue, which will be picked up by celery
+    if command == "ping":
+        job = Job(command='ping', queue='astro', status="new")
+        job.save()
+
+
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     # add a grid of 1 or 10 square degrees to the image
     if command == "grid":
