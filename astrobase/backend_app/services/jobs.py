@@ -337,7 +337,7 @@ def dispatch_job(command, observation_id, params):
                 output_filename = os.path.join(directory,filename)
 
                 parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + output_filename
-                job = Job(command='image_cutout', parameters=parameters, extra=params, status="new")
+                job = Job(command='image_cutout', queue='astro', parameters=parameters, extra=params, status="new")
 
                 # if this filename doesn't exist yet, then
                 # create cutout object and add to database
