@@ -582,7 +582,7 @@ def CutoutDirectorySetThumbnail(request,directory,filename):
     cutout = Cutout.objects.get(filename=filename)
     directory.thumbnail = cutout.derived_url
     directory.save()
-
+    return HttpResponseRedirect('/my_astrobase/')
 
 def RemoveCutoutDirectory(request,directory):
     logger.info('RemoveCutoutDirectory()')
@@ -590,8 +590,9 @@ def RemoveCutoutDirectory(request,directory):
 
     # also remove all the images associated with this directory
     Cutout.objects.filter(directory=directory).delete()
-
+    return HttpResponseRedirect('/my_astrobase/')
 
 def RemoveCutoutImage(request,filename):
     logger.info('RemoveCutoutImage()')
     Cutout.objects.filter(filename=filename).delete()
+    return HttpResponseRedirect('/my_astrobase/')
