@@ -163,7 +163,7 @@ def dispatch_job(command, observation_id, params):
                      observation.field_name.replace(',','#')
 
         print(parameters)
-        job = Job(command='grid', queue='astro', parameters=parameters, status="new")
+        job = Job(command='grid', parameters=parameters, status="new")
         job.save()
 
 
