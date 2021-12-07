@@ -6,9 +6,11 @@ import os
 import logging;
 import json
 import datetime
+
 from ..models import Observation2, Job, Cutout, CutoutDirectory
 from transients_app.services import algorithms as transients
 from exoplanets.models import Exoplanet
+from ..my_celery import app
 
 logger = logging.getLogger(__name__)
 
@@ -375,7 +377,15 @@ def dispatch_job(command, observation_id, params):
                 # cutout is saved, dispatch the job by saving it
                 job.save()
 
+                # trigger the job in celery
+                task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+                #task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(655)))
+
+
             except:
                 print('failed to create job')
+
+        # trigger the job in celery
+        #task = app.send_task("astro_tasks.tasks.get_jobs")
 
     return "dispatched"
