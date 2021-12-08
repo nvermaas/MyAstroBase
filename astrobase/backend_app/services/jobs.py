@@ -139,10 +139,12 @@ def add_exoplanets_to_job(observation):
 
 
 def dispatch_job(command, observation_id, params):
+    # when 'queue' is specified in the Job object, then it will be picked up by Celery.
+    # otherwise it will be picked up by the old pip instaled astrobase_services
 
     # test the 'astro' queue, which will be picked up by celery
     if command == "ping":
-        job = Job(command='ping', queue='astro', status="new")
+        job = Job(command='ping', queue='celery', status="new")
         job.save()
 
 
@@ -165,9 +167,11 @@ def dispatch_job(command, observation_id, params):
                      observation.field_name.replace(',','#')
 
         print(parameters)
-        job = Job(command='grid', parameters=parameters, status="new")
+        job = Job(command='grid', queue="celery", parameters=parameters, status="new")
         job.save()
 
+        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+        # task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(655)))
 
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     # add a grid of 1 or 10 square degrees to the image and rotate the image to horizontal (equatorial)
@@ -339,7 +343,7 @@ def dispatch_job(command, observation_id, params):
                 output_filename = os.path.join(directory,filename)
 
                 parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + output_filename
-                job = Job(command='image_cutout', queue='astro', parameters=parameters, extra=params, status="new")
+                job = Job(command='image_cutout', queue='celery', parameters=parameters, extra=params, status="new")
 
                 # if this filename doesn't exist yet, then
                 # create cutout object and add to database
@@ -378,9 +382,8 @@ def dispatch_job(command, observation_id, params):
                 job.save()
 
                 # trigger the job in celery
-                task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+                task = app.send_task("astro_tasks.tasks.handle_cutout", kwargs=dict(id=str(job.id)))
                 #task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(655)))
-
 
             except:
                 print('failed to create job')

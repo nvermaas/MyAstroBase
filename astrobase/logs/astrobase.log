@@ -29753,3 +29753,78 @@
 [26/Nov/2021 16:36:57,999] RemoveCutoutDirectory()
 [26/Nov/2021 16:37:05,665] CutoutDirectorySetThumbnail()
 [26/Nov/2021 16:37:11,826] RemoveCutoutImage()
+[08/Dec/2021 15:12:22,023] add_dataproducts(210601002,1)
+[08/Dec/2021 15:12:22,034] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:22,034] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:22,062] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:22,062] update observation = 210601002
+[08/Dec/2021 15:12:24,421] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:24,421] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:24,453] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:24,454] update observation = 210601002
+[08/Dec/2021 15:12:26,807] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:26,807] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:26,838] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:26,838] update observation = 210601002
+[08/Dec/2021 15:12:29,174] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:29,175] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:29,203] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:29,203] update observation = 210601002
+[08/Dec/2021 15:12:31,553] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:31,553] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:31,579] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:31,579] update observation = 210601002
+[08/Dec/2021 15:12:33,931] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:33,932] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:33,960] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:12:33,960] update observation = 210601002
+[08/Dec/2021 15:26:14,227] add_dataproducts(210601002,1)
+[08/Dec/2021 15:26:14,231] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:14,231] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:14,267] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:14,267] update observation = 210601002
+[08/Dec/2021 15:26:16,624] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:16,624] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:16,661] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:16,661] update observation = 210601002
+[08/Dec/2021 15:26:18,966] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:18,966] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:19,002] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:19,002] update observation = 210601002
+[08/Dec/2021 15:26:21,361] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:21,361] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:21,399] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:21,399] update observation = 210601002
+[08/Dec/2021 15:26:23,729] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:23,730] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:23,765] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:23,766] update observation = 210601002
+[08/Dec/2021 15:26:26,086] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:26,087] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:26,118] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:26,118] update observation = 210601002
+[08/Dec/2021 15:26:40,744] add_dataproducts(210601002,1)
+[08/Dec/2021 15:26:40,751] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:40,752] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:40,787] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:40,787] update observation = 210601002
+[08/Dec/2021 15:26:43,114] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:43,115] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:43,147] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:43,147] update observation = 210601002
+[08/Dec/2021 15:26:45,507] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:45,508] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:45,543] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:45,544] update observation = 210601002
+[08/Dec/2021 15:26:47,888] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:47,889] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:47,919] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:47,919] update observation = 210601002
+[08/Dec/2021 15:26:50,218] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:50,218] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:50,251] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:50,252] update observation = 210601002
+[08/Dec/2021 15:26:52,589] SIGNAL : pre_save Observation(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:52,590] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:52,623] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
+[08/Dec/2021 15:26:52,623] update observation = 210601002

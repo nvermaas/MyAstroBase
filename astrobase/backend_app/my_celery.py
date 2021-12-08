@@ -8,7 +8,7 @@ except:
 
 app = Celery('my_celery',backend='rpc://',broker=RABBITMQ_BROKER)
 app.conf.task_routes = {
-    #'astro_tasks.tasks.*': {'queue': QUEUE_ASTRO},
     'astro_tasks.tasks.*': {'queue': 'astro'},
+    'astro_tasks.tasks.handle_cutout': {'queue': 'cutout'},
     'dev_tasks.tasks.*': {'queue': 'dev_q'},
 }
