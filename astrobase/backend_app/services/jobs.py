@@ -191,7 +191,7 @@ def dispatch_job(command, observation_id, params):
                      observation.field_name.replace(',','#')
 
         parameters=parameters+',equatorial'
-        job = Job(command='grid', parameters=parameters, status="new")
+        job = Job(command='grid', queue="celery",parameters=parameters, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -207,7 +207,7 @@ def dispatch_job(command, observation_id, params):
         job_id = parameter_fits[2].split('.')
 
         parameters = str(parameter_fits[1] + ',' + str(job_id[0]))
-        job = Job(command='stars', parameters=parameters, status="new")
+        job = Job(command='stars', queue="celery", parameters=parameters, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -220,7 +220,7 @@ def dispatch_job(command, observation_id, params):
         path1 = observation.derived_fits.split('astrobase/data')[1].split('/')
 
         parameters = str(path1[1] + ',' + str(path1[2]))
-        job = Job(command='box', parameters=parameters, status="new")
+        job = Job(command='box', queue="celery", parameters=parameters, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -257,7 +257,7 @@ def dispatch_job(command, observation_id, params):
         parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2])
-        job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
+        job = Job(command='draw_extra', queue="celery", parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -278,7 +278,7 @@ def dispatch_job(command, observation_id, params):
         parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_transient."))
-        job = Job(command='transient', parameters=parameters, extra=observation.extra, status="new")
+        job = Job(command='transient', queue="celery", parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -295,7 +295,7 @@ def dispatch_job(command, observation_id, params):
         parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_exoplanets."))
-        job = Job(command='exoplanets', parameters=parameters, extra=observation.extra, status="new")
+        job = Job(command='exoplanets', queue="celery", parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
