@@ -171,7 +171,6 @@ def dispatch_job(command, observation_id, params):
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
-        # task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(655)))
 
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     # add a grid of 1 or 10 square degrees to the image and rotate the image to horizontal (equatorial)
@@ -195,6 +194,8 @@ def dispatch_job(command, observation_id, params):
         job = Job(command='grid', parameters=parameters, status="new")
         job.save()
 
+        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+
     # /my_astrobase/run-command/?command=stars&observation_id=2410
     # retrieve the stars from the fits that were used by astrometry.net,
     # and draw them with their magnitudes. (to get a feel of the limiting magnitude of the image)
@@ -209,6 +210,8 @@ def dispatch_job(command, observation_id, params):
         job = Job(command='stars', parameters=parameters, status="new")
         job.save()
 
+        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+
     # read min/max ra and dec from fits and store in database
     if command == "min_max":
         observation = Observation2.objects.get(id=observation_id)
@@ -219,6 +222,8 @@ def dispatch_job(command, observation_id, params):
         parameters = str(path1[1] + ',' + str(path1[2]))
         job = Job(command='box', parameters=parameters, status="new")
         job.save()
+
+        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
 
     # update min/max ra and dec for all observations with a fits file
     # /my_astrobase/run-command?command=do_all (no longer used)
@@ -255,6 +260,8 @@ def dispatch_job(command, observation_id, params):
         job = Job(command='draw_extra', parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
+        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+
 
     # draw a transient (planet, comet or asteroid) on the image
     if command == "transient":
@@ -274,6 +281,7 @@ def dispatch_job(command, observation_id, params):
         job = Job(command='transient', parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
+        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
 
     # draw a transient (planet, comet or asteroid) on the image
     if command == "exoplanets":
@@ -289,6 +297,8 @@ def dispatch_job(command, observation_id, params):
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_exoplanets."))
         job = Job(command='exoplanets', parameters=parameters, extra=observation.extra, status="new")
         job.save()
+
+        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
 
 
     # crop all images on a coordinate
@@ -383,12 +393,9 @@ def dispatch_job(command, observation_id, params):
 
                 # trigger the job in celery
                 task = app.send_task("astro_tasks.tasks.handle_cutout", kwargs=dict(id=str(job.id)))
-                #task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(655)))
 
             except:
                 print('failed to create job')
 
-        # trigger the job in celery
-        #task = app.send_task("astro_tasks.tasks.get_jobs")
 
     return "dispatched"
