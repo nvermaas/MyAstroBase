@@ -29946,3 +29946,6 @@
 [10/Dec/2021 19:12:15,134] handle_pre_save(210601002 - Meissa - Orion, Lambda Orionis)
 [10/Dec/2021 19:12:15,157] handle_post_save(210601002 - Meissa - Orion, Lambda Orionis)
 [10/Dec/2021 19:12:15,158] update observation = 210601002
+[30/Dec/2021 13:00:09,900] RemoveCutoutDirectory()
+[30/Dec/2021 13:32:14,319] RemoveCutoutDirectory()
+[30/Dec/2021 13:35:55,896] RemoveCutoutDirectory()

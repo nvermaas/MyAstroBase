@@ -6,6 +6,7 @@ import os
 import logging;
 import json
 import datetime
+import math
 
 from ..models import Observation2, Job, Cutout, CutoutDirectory
 from transients_app.services import algorithms as transients
@@ -333,13 +334,25 @@ def dispatch_job(command, observation_id, params):
             )
         cutout_directory.save()
 
+        # find all observations that have the search coordinate inside the image...
         observations = Observation2.objects.filter(ra_min__lte=search_ra)\
             .filter(ra_max__gte=search_ra)\
             .filter(dec_min__lte=search_dec)\
             .filter(dec_max__gte=search_dec).order_by('-date')
 
+        my_observations = list(observations)
+
+        # ...or that have the center of the image less than 1 field_of_view away from the search coordinate
+        for o in Observation2.objects.all():
+            dx = o.field_ra - search_ra
+            dy = o.field_dec - search_dec
+            distance = math.sqrt(dx ** 2 + dy **2)
+            if distance < field_of_view:
+                my_observations.append(o)
+                print(o.name)
+
         # http://localhost:8000/my_astrobase/observations/?coordsearch=212,48
-        for observation in observations:
+        for observation in my_observations:
             print(observation.derived_raw_image)
 
             try:
