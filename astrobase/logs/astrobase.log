@@ -29949,3 +29949,8 @@
 [30/Dec/2021 13:00:09,900] RemoveCutoutDirectory()
 [30/Dec/2021 13:32:14,319] RemoveCutoutDirectory()
 [30/Dec/2021 13:35:55,896] RemoveCutoutDirectory()
+[30/Dec/2021 14:44:16,894] RemoveCutoutDirectory()
+[30/Dec/2021 14:44:55,835] SIGNAL : pre_save Observation(211109003 - M51 Wide - Ursa Major, M51 Whirlpool)
+[30/Dec/2021 14:44:55,835] handle_pre_save(211109003 - M51 Wide - Ursa Major, M51 Whirlpool)
+[30/Dec/2021 14:44:55,872] handle_post_save(211109003 - M51 Wide - Ursa Major, M51 Whirlpool)
+[30/Dec/2021 14:44:55,872] update observation = 211109003
