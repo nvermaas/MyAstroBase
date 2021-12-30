@@ -98,16 +98,16 @@ def handle_post_save(sender, **kwargs):
         # check if there has already been a valid bounding box calculated.
         # if not, fill min/max values from 'box'.
 
-        if myObservation.derived_annotated_grid_image==None:
-            try:
-                box = myObservation.box.split(',')
-                myObservation.ra_max = max(float(box[0]),float(box[2]),float(box[4]),float(box[6]))
-                myObservation.ra_min = min(float(box[0]),float(box[2]),float(box[4]),float(box[6]))
-                myObservation.dec_max = max(float(box[1]),float(box[3]),float(box[5]),float(box[7]))
-                myObservation.dec_min = min(float(box[1]),float(box[3]),float(box[5]),float(box[7]))
-            except:
-                # skip for observations that do not have a ra,dec box
-                pass
+        #if myObservation.derived_annotated_grid_image==None:
+        try:
+            box = myObservation.box.split(',')
+            myObservation.ra_max = max(float(box[0]),float(box[2]),float(box[4]),float(box[6]))
+            myObservation.ra_min = min(float(box[0]),float(box[2]),float(box[4]),float(box[6]))
+            myObservation.dec_max = max(float(box[1]),float(box[3]),float(box[5]),float(box[7]))
+            myObservation.dec_min = min(float(box[1]),float(box[3]),float(box[5]),float(box[7]))
+        except:
+            # skip for observations that do not have a ra,dec box
+            pass
 
         # if this observation has a parent..
         parent = myObservation.parent
