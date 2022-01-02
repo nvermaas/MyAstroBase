@@ -145,7 +145,7 @@ def dispatch_job(command, observation_id, params):
 
     # test the 'astro' queue, which will be picked up by celery
     if command == "ping":
-        job = Job(command='ping', queue='celery', status="new")
+        job = Job(command='ping', job_service='celery', queue='celery', status="new")
         job.save()
 
 
@@ -168,7 +168,7 @@ def dispatch_job(command, observation_id, params):
                      observation.field_name.replace(',','#')
 
         print(parameters)
-        job = Job(command='grid', queue="celery", parameters=parameters, status="new")
+        job = Job(command='grid', job_service='celery', queue="celery", parameters=parameters, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -192,7 +192,7 @@ def dispatch_job(command, observation_id, params):
                      observation.field_name.replace(',','#')
 
         parameters=parameters+',equatorial'
-        job = Job(command='grid', queue="celery",parameters=parameters, status="new")
+        job = Job(command='grid', job_service='celery',queue="celery",parameters=parameters, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -208,7 +208,7 @@ def dispatch_job(command, observation_id, params):
         job_id = parameter_fits[2].split('.')
 
         parameters = str(parameter_fits[1] + ',' + str(job_id[0]))
-        job = Job(command='stars', queue="celery", parameters=parameters, status="new")
+        job = Job(command='stars', job_service='celery', queue="celery", parameters=parameters, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -221,7 +221,7 @@ def dispatch_job(command, observation_id, params):
         path1 = observation.derived_fits.split('astrobase/data')[1].split('/')
 
         parameters = str(path1[1] + ',' + str(path1[2]))
-        job = Job(command='box', queue="celery", parameters=parameters, status="new")
+        job = Job(command='box', job_service='celery',queue="celery", parameters=parameters, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -258,7 +258,7 @@ def dispatch_job(command, observation_id, params):
         parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2])
-        job = Job(command='draw_extra', queue="celery", parameters=parameters, extra=observation.extra, status="new")
+        job = Job(command='draw_extra', job_service='celery',queue="celery", parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -279,7 +279,7 @@ def dispatch_job(command, observation_id, params):
         parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_transient."))
-        job = Job(command='transient', queue="celery", parameters=parameters, extra=observation.extra, status="new")
+        job = Job(command='transient', job_service='celery',queue="celery", parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -296,7 +296,7 @@ def dispatch_job(command, observation_id, params):
         parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
 
         parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_exoplanets."))
-        job = Job(command='exoplanets', queue="celery", parameters=parameters, extra=observation.extra, status="new")
+        job = Job(command='exoplanets', job_service='celery', queue="celery", parameters=parameters, extra=observation.extra, status="new")
         job.save()
 
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
@@ -366,7 +366,7 @@ def dispatch_job(command, observation_id, params):
                 output_filename = os.path.join(directory,filename)
 
                 parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + output_filename
-                job = Job(command='image_cutout', queue='celery', parameters=parameters, extra=params, status="new")
+                job = Job(command='image_cutout', job_service='celery', queue='celery', parameters=parameters, extra=params, status="new")
 
                 # if this filename doesn't exist yet, then
                 # create cutout object and add to database

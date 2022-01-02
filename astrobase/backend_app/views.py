@@ -131,6 +131,7 @@ class JobFilter(filters.FilterSet):
         fields = {
             'status': ['exact', 'icontains', 'in'],
             'queue': ['exact', 'icontains', 'in'],
+            'job_service': ['exact'],
             'celery_id': ['exact', 'icontains', 'in'],
         }
 

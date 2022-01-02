@@ -29954,3 +29954,4 @@
 [30/Dec/2021 14:44:55,835] handle_pre_save(211109003 - M51 Wide - Ursa Major, M51 Whirlpool)
 [30/Dec/2021 14:44:55,872] handle_post_save(211109003 - M51 Wide - Ursa Major, M51 Whirlpool)
 [30/Dec/2021 14:44:55,872] update observation = 211109003
+[30/Dec/2021 14:58:20,866] RemoveCutoutDirectory()
