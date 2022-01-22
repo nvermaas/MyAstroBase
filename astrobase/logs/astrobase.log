@@ -29955,3 +29955,127 @@
 [30/Dec/2021 14:44:55,872] handle_post_save(211109003 - M51 Wide - Ursa Major, M51 Whirlpool)
 [30/Dec/2021 14:44:55,872] update observation = 211109003
 [30/Dec/2021 14:58:20,866] RemoveCutoutDirectory()
+[02/Jan/2022 14:19:00,895] get_next_taskid(20210306)
+[02/Jan/2022 14:19:00,896] checking taskid 210306001..
+[02/Jan/2022 14:19:00,904] checking taskid 210306002..
+[02/Jan/2022 14:19:00,906] checking taskid 210306003..
+[02/Jan/2022 14:19:00,908] checking taskid 210306004..
+[02/Jan/2022 14:19:00,910] checking taskid 210306005..
+[02/Jan/2022 14:19:30,836] SIGNAL : pre_save Observation(210306005 - flame_and_horsehead - flame_and_horsehead)
+[02/Jan/2022 14:19:30,836] handle_pre_save(210306005 - flame_and_horsehead - flame_and_horsehead)
+[02/Jan/2022 14:19:30,857] handle_post_save(210306005 - flame_and_horsehead - flame_and_horsehead)
+[02/Jan/2022 14:19:30,858] save new observation
+[02/Jan/2022 14:19:30,858] update observation = 210306005
+[02/Jan/2022 14:19:36,045] add_dataproducts(210306005,1)
+[02/Jan/2022 14:19:36,047] SIGNAL : pre_save Observation(210306005 - flame_and_horsehead - flame_and_horsehead)
+[02/Jan/2022 14:19:36,047] handle_pre_save(210306005 - flame_and_horsehead - flame_and_horsehead)
+[02/Jan/2022 14:19:36,065] handle_post_save(210306005 - flame_and_horsehead - flame_and_horsehead)
+[02/Jan/2022 14:19:36,066] update observation = 210306005
+[02/Jan/2022 14:19:38,313] SIGNAL : pre_save Observation(210306005 - flame_and_horsehead - flame_and_horsehead)
+[02/Jan/2022 14:19:38,313] handle_pre_save(210306005 - flame_and_horsehead - flame_and_horsehead)
+[02/Jan/2022 14:19:38,338] handle_post_save(210306005 - flame_and_horsehead - flame_and_horsehead)
+[02/Jan/2022 14:19:38,338] update observation = 210306005
+[02/Jan/2022 14:26:22,420] get_next_taskid(20211222)
+[02/Jan/2022 14:26:22,421] checking taskid 211222001..
+[02/Jan/2022 14:26:22,430] checking taskid 211222002..
+[02/Jan/2022 14:26:22,432] checking taskid 211222003..
+[02/Jan/2022 14:26:22,436] checking taskid 211222004..
+[02/Jan/2022 14:26:22,438] checking taskid 211222005..
+[02/Jan/2022 14:26:22,441] checking taskid 211222006..
+[02/Jan/2022 14:26:23,664] SIGNAL : pre_save Observation(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[02/Jan/2022 14:26:23,665] handle_pre_save(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[02/Jan/2022 14:26:23,681] handle_post_save(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[02/Jan/2022 14:26:23,681] save new observation
+[02/Jan/2022 14:26:23,682] update observation = 211222006
+[02/Jan/2022 14:26:24,876] add_dataproducts(211222006,1)
+[02/Jan/2022 14:26:24,878] SIGNAL : pre_save Observation(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[02/Jan/2022 14:26:24,879] handle_pre_save(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[02/Jan/2022 14:26:24,906] handle_post_save(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[02/Jan/2022 14:26:24,906] update observation = 211222006
+[02/Jan/2022 14:26:27,144] SIGNAL : pre_save Observation(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[02/Jan/2022 14:26:27,144] handle_pre_save(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[02/Jan/2022 14:26:27,170] handle_post_save(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[02/Jan/2022 14:26:27,171] update observation = 211222006
+[05/Jan/2022 11:37:16,773] get_next_taskid(20211222)
+[05/Jan/2022 11:37:16,774] checking taskid 211222001..
+[05/Jan/2022 11:37:16,777] checking taskid 211222002..
+[05/Jan/2022 11:37:16,778] checking taskid 211222003..
+[05/Jan/2022 11:37:16,779] checking taskid 211222004..
+[05/Jan/2022 11:37:16,780] checking taskid 211222005..
+[05/Jan/2022 11:37:16,781] checking taskid 211222006..
+[05/Jan/2022 11:37:16,781] checking taskid 211222007..
+[05/Jan/2022 11:37:18,012] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:37:18,012] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:37:18,029] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:37:18,030] save new observation
+[05/Jan/2022 11:37:18,030] update observation = 211222007
+[05/Jan/2022 11:37:19,223] add_dataproducts(211222007,1)
+[05/Jan/2022 11:37:19,225] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:37:19,226] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:37:19,248] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:37:19,249] update observation = 211222007
+[05/Jan/2022 11:37:21,524] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:37:21,524] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:37:21,552] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:37:21,552] update observation = 211222007
+[05/Jan/2022 11:41:53,558] SIGNAL : pre_save Observation(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:41:53,559] handle_pre_save(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:41:53,583] handle_post_save(211222006 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:41:53,584] update observation = 211222006
+[05/Jan/2022 11:43:50,449] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:43:50,450] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:43:50,480] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:43:50,480] update observation = 211222007
+[05/Jan/2022 11:43:59,981] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:43:59,982] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:00,000] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:00,000] update observation = 211222007
+[05/Jan/2022 11:44:06,006] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:06,006] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:06,028] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:06,029] update observation = 211222007
+[05/Jan/2022 11:44:08,270] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:08,270] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:08,294] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:08,294] update observation = 211222007
+[05/Jan/2022 11:44:10,567] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:10,567] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:10,587] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:44:10,588] update observation = 211222007
+[05/Jan/2022 11:45:17,795] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:17,803] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:17,821] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:17,822] update observation = 211222007
+[05/Jan/2022 11:45:20,040] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:20,041] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:20,059] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:20,059] update observation = 211222007
+[05/Jan/2022 11:45:30,528] add_dataproducts(211222007,8)
+[05/Jan/2022 11:45:30,530] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:30,531] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:30,557] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:30,558] update observation = 211222007
+[05/Jan/2022 11:45:32,843] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:32,843] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:32,859] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:32,860] update observation = 211222007
+[05/Jan/2022 11:45:35,135] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:35,136] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:35,156] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:35,157] update observation = 211222007
+[05/Jan/2022 11:45:37,491] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:37,491] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:37,516] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:37,516] update observation = 211222007
+[05/Jan/2022 11:45:39,723] SIGNAL : pre_save Observation(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:39,723] handle_pre_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:39,747] handle_post_save(211222007 - pleiades_midwinter_zoom - pleiades_midwinter_zoom)
+[05/Jan/2022 11:45:39,748] update observation = 211222007
+[05/Jan/2022 15:37:14,358] RemoveCutoutDirectory()
+[05/Jan/2022 15:40:26,663] RemoveCutoutDirectory()
+[05/Jan/2022 15:42:41,486] RemoveCutoutDirectory()
+[09/Jan/2022 10:07:00,578] RemoveCutoutDirectory()
+[09/Jan/2022 10:18:08,666] RemoveCutoutDirectory()
+[09/Jan/2022 10:21:08,130] RemoveCutoutDirectory()
+[09/Jan/2022 10:21:10,728] RemoveCutoutDirectory()
+[09/Jan/2022 10:23:14,829] RemoveCutoutDirectory()

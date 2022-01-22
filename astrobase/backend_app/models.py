@@ -366,7 +366,7 @@ class CutoutDirectory(models.Model):
     visible = models.BooleanField(default=True)
     status = models.CharField(max_length=15, default="empty", null=True)
     number_of_images = models.IntegerField(default=0)
-    thumbnail = models.CharField(max_length=80, blank=True, null=True)
+    thumbnail = models.CharField(max_length=254, blank=True, null=True)
 
     def __str__(self):
         return os.path.join(self.directory) + ' (' + str(self.number_of_images) + ')'
