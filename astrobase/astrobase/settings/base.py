@@ -211,22 +211,22 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'my_static_files')
 
 # because the backend runs in docker, it can only access a the /shared volume
 # at OS level the URL and ROOT are connected through a symbolic link
-MEDIA_URL = 'https://uilennest.net/astrobase/media/'
+MEDIA_URL = 'https://web-of-wyrd.nl/astrobase/media/'
 MEDIA_ROOT = '/shared/media'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
-DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"
+DATA_HOST = "https://web-of-wyrd.nl/data_on_yggdrasil/astrobase/data"
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 
-REPOSITORY_URL = 'https://uilennest.net/astrobase/repository/'
+REPOSITORY_URL = 'https://web-of-wyrd.nl/astrobase/repository/'
 REPOSITORY_ROOT = '/shared/repository'
 
-MY_ASTEROIDS_URL = "https://uilennest.net/astrobase/repository/asteroids.txt"
+MY_ASTEROIDS_URL = "https://web-of-wyrd.nl/astrobase/repository/asteroids.txt"
 MY_ASTEROIDS_ROOT = "/shared/repository/asteroids.txt"
 
-MY_HIPPARCOS_URL = "https://uilennest.net/astrobase/repository/hip_main.dat"
+MY_HIPPARCOS_URL = "https://web-of-wyrd.nl/astrobase/repository/hip_main.dat"
 MY_HIPPARCOS_ROOT = "/shared/repository/hip_main.dat"
 
-MY_EXOPLANETS_URL = "https://uilennest.net/astrobase/repository/exoplanets.csv"
+MY_EXOPLANETS_URL = "https://web-of-wyrd.nl/astrobase/repository/exoplanets.csv"
 MY_EXOPLANETS_ROOT = "/shared/repository/exoplanets.csv"

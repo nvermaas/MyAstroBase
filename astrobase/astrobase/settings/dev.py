@@ -14,7 +14,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = 'd:/my_astrobase/data/media'
-DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"
+DATA_HOST = "https://web-of-wyrd.nl/data_on_yggdrasil/astrobase/data"
 
 LOGIN_REDIRECT_URL = "http://localhost:3000/astroview/login"
 LOGOUT_REDIRECT_URL = "http://localhost:3000/astroview/logout"
