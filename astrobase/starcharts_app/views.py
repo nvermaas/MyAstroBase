@@ -8,8 +8,9 @@ from django.conf import settings
 def StarChart(request):
     # https://stackoverflow.com/questions/35288793/django-media-url-tag
     filename = 'starchart.svg'
-    starchart_url = os.path.join(settings.MEDIA_URL,filename)
-    return render(request, "starcharts_app/index.html", {'starchart_url': starchart_url})
+    starchart_url_media = os.path.join(settings.MEDIA_URL,filename)
+    starchart_url_static = os.path.join(settings.STATIC_URL, filename)
+    return render(request, "starcharts_app/index.html", {'starchart_url_media': starchart_url_media, 'starchart_url_static': starchart_url_static})
 
 
 #create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
