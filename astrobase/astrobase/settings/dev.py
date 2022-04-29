@@ -1,4 +1,8 @@
+import os
 from astrobase.settings.base import *
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -13,7 +17,9 @@ AUTH_PASSWORD_VALIDATORS = []
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = 'd:/my_astrobase/data/media'
+MEDIA_ROOT = ''
+MEDIA_URL = ''
+
 DATA_HOST = "https://web-of-wyrd.nl/data_on_yggdrasil/astrobase/data"
 
 LOGIN_REDIRECT_URL = "http://localhost:3000/astroview/login"
@@ -28,3 +34,4 @@ CACHES = {
 MY_ASTEROIDS_ROOT = "asteroids.txt"
 MY_HIPPARCOS_ROOT = "hip_main.dat"
 MY_EXOPLANETS_ROOT = "exoplanets.csv"
+MY_HYG_ROOT = "hygdata.sqlite3"

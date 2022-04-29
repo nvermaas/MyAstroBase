@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'moon_app',
     'transients_app',
     'exoplanets',
+    'starcharts_app',
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
@@ -79,6 +80,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -230,3 +232,6 @@ MY_HIPPARCOS_ROOT = "/shared/repository/hip_main.dat"
 
 MY_EXOPLANETS_URL = "https://web-of-wyrd.nl/astrobase/repository/exoplanets.csv"
 MY_EXOPLANETS_ROOT = "/shared/repository/exoplanets.csv"
+
+MY_HYG_URL = "https://web-of-wyrd.nl/astrobase/repository/hygdata.sqlite3"
+MY_HYG_ROOT = "/shared/repository/hygdata.sqlite3"

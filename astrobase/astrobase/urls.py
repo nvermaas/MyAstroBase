@@ -25,5 +25,6 @@ urlpatterns = [
     path('my_astrobase/', include('moon_app.urls')),
     path('my_astrobase/', include('transients_app.urls')),
     path('my_astrobase/', include('exoplanets.urls')),
+    path('my_astrobase/', include('starcharts_app.urls')),
 ]
 
