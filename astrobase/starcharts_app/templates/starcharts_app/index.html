@@ -4,15 +4,14 @@
 
 
 <div class="container-fluid details-container">
-    <img src="{{ starchart_url }}"> </img>
+    <img src="{{ starchart_url }}" width="1200" height="800"/>
     <h3>{{ starchart_url }}</h3>
     <h3>{{ MEDIA_URL }}</h3>
     <h3>{{ request.path }}</h3>
     <h3>{{ request.get_full_path  }}</h3>
 
-    <img src="{% static 'starcharts_app/starchart.svg' %}" width="1600" height="800"/>
+    <img src="{% static 'starcharts_app/starchart.svg' %}" width="1200" height="800"/>
 </div>
-
+<p class="footer"> version 29 apr 2022 - 17:00)</p>
 {% endblock %}
 
-<p class="footer"> version 29 apr 2022 - 17:00)</p>
