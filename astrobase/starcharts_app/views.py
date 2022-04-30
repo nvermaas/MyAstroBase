@@ -2,10 +2,11 @@ import os
 from django.shortcuts import render, redirect
 
 from .my_starcharts import sky_area, star_database, coord_calc, diagram
+from .models import StarChart
 
 from django.conf import settings
 
-def StarChart(request):
+def StarChartView(request):
     # https://stackoverflow.com/questions/35288793/django-media-url-tag
     filename = 'starchart.svg'
     starchart_url_media = os.path.join(settings.MEDIA_URL,filename)
@@ -23,6 +24,8 @@ def CreateStarChart(request):
     mag = float(request.GET.get('mag','10'))
     title = 'my_starchart'
 
+    starchart = StarChart(title=title, ra_min=ra_min,ra_max=ra_max, dec_min=dec_min, dec_max=dec_max, magnitude_limit=mag)
+
     area = sky_area.SkyArea(ra_min,ra_max,dec_min,dec_max,mag)
 
     db = star_database.StarDatabase(settings.MY_HYG_ROOT)
@@ -37,5 +40,9 @@ def CreateStarChart(request):
     filename = 'starchart.svg'
     path = os.path.join(settings.MEDIA_ROOT, filename)
     d.render_svg(path)
+
+    starchart.image='starchart_image.svg'
+    starchart.file='starchart_file.svg'
+    starchart.save()
 
     return redirect('/my_astrobase/starchart/')

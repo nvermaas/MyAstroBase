@@ -17,7 +17,7 @@ AUTH_PASSWORD_VALIDATORS = []
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = 'starcharts_app/static/starcharts_app'
+MEDIA_ROOT = ''
 MEDIA_URL = ''
 
 DATA_HOST = "https://web-of-wyrd.nl/data_on_yggdrasil/astrobase/data"
