@@ -4,12 +4,14 @@
 
 
 <div class="container-fluid details-container">
-    <h3>starchart_url_media = {{ starchart_url_media }}</h3>
+    <h5>http://{{ request.get_host }}/my_astrobase{% get_media_prefix %}{{ starchart.image }}</h5>
+    <a href="http://{{ request.get_host }}/my_astrobase{% get_media_prefix %}{{ starchart.image }}">
+        <img src="http://{{ request.get_host }}/my_astrobase{% get_media_prefix %}{{ starchart.image }}" width="1000" height="800">
+    </a>
+    <h5>starchart_url_media = {{ starchart_url_media }}</h5>
     <img src="{{ starchart_url_media }}" width="800" height="500"/>
 
-    <h3>{% static 'starcharts_app/starchart.svg' %}</h3>
-    <img src="{% static 'starcharts_app/starchart.svg' %}" width="800" height="500"/>
 </div>
-<p class="footer"> version 30 apr 2022 - 11:00)</p>
+<p class="footer"> version 30 apr 2022 - 20:00)</p>
 {% endblock %}
 

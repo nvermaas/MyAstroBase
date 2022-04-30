@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.timezone import datetime
 
 class MoonPhases(models.Model):
     phase = models.CharField(max_length=15)
@@ -18,5 +17,5 @@ class StarChart(models.Model):
     dec_max = models.FloatField()
     magnitude_limit = models.FloatField()
 
-    image = models.ImageField()
-    file = models.FileField()
+    image = models.ImageField(upload_to='my_starmaps')
+    file = models.FileField(upload_to='my_starmaps')
