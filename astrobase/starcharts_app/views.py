@@ -12,7 +12,7 @@ def StarChartView(request):
     # https://stackoverflow.com/questions/35288793/django-media-url-tag
     filename = 'starchart.svg'
     #starchart_url_media = os.path.join(os.path.join(settings.MEDIA_URL,'my_starcharts'),filename)
-    starchart_url_media = settings.MEDIA_URL + '/my_starcharts/' + filename
+    starchart_url_media = settings.MEDIA_URL + 'my_starmaps/' + filename
 
     title = 'my_starchart'
     starchart = StarChart.objects.get(title=title)
