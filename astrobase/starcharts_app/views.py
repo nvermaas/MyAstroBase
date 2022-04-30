@@ -11,13 +11,13 @@ from django.conf import settings
 def StarChartView(request):
     # https://stackoverflow.com/questions/35288793/django-media-url-tag
     filename = 'starchart.svg'
-    starchart_url_media = os.path.join(settings.MEDIA_URL,filename)
-    starchart_url_static = os.path.join(settings.STATIC_URL, filename)
+    #starchart_url_media = os.path.join(os.path.join(settings.MEDIA_URL,'my_starcharts'),filename)
+    starchart_url_media = settings.MEDIA_URL + '/my_starcharts/' + filename
 
     title = 'my_starchart'
     starchart = StarChart.objects.get(title=title)
 
-    return render(request, "starcharts_app/index.html", {'starchart':starchart,'starchart_url_media': starchart_url_media, 'starchart_url_static': starchart_url_static})
+    return render(request, "starcharts_app/index.html", {'starchart':starchart,'starchart_url_media': starchart_url_media})
 
 
 #create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
@@ -50,6 +50,10 @@ def CreateStarChart(request):
     starchart_path = os.path.join(settings.MEDIA_ROOT, filename)
     d.render_svg(starchart_path)
 
+    starchart_url_media = settings.MEDIA_URL + 'my_starmaps/' + filename
+    if settings.DEBUG:
+        starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
+
     path = Path(starchart_path)
     with path.open(mode='rb') as f:
         starchart.file = File(f, name=path.name)
@@ -63,6 +67,6 @@ def CreateStarChart(request):
     #starchart.save()
     #return render(request, "starcharts_app/index.html", {'starchart_url_media': starchart_url_media, 'starchart_url_static': starchart_url_static})
 
-    return render(request, "starcharts_app/index.html", {'starchart':starchart,'starchart_url_media': None, 'starchart_url_static': None})
+    return render(request, "starcharts_app/index.html", {'starchart':starchart,'starchart_url_media': starchart_url_media})
 
     #return redirect('/my_astrobase/starchart/')
