@@ -18,4 +18,4 @@ class StarChart(models.Model):
     magnitude_limit = models.FloatField()
 
     image = models.ImageField(upload_to='my_starmaps')
-    file = models.FileField(upload_to='my_starmaps')
+    #file = models.FileField(upload_to='my_starmaps')

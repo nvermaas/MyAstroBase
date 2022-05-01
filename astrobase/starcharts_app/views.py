@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from pathlib import Path
 from django.core.files import File
 
-from .my_starcharts import sky_area, star_database, coord_calc, diagram
+from .starchart import sky_area, star_database, coord_calc, diagram
 from .models import StarChart
 
 from django.conf import settings
@@ -11,8 +11,10 @@ from django.conf import settings
 def StarChartView(request):
     # https://stackoverflow.com/questions/35288793/django-media-url-tag
     filename = 'starchart.svg'
-    #starchart_url_media = os.path.join(os.path.join(settings.MEDIA_URL,'my_starcharts'),filename)
+    
     starchart_url_media = settings.MEDIA_URL + 'my_starmaps/' + filename
+    #if settings.DEBUG:
+    #    starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
 
     title = 'my_starchart'
     starchart = StarChart.objects.get(title=title)
@@ -51,22 +53,14 @@ def CreateStarChart(request):
     d.render_svg(starchart_path)
 
     starchart_url_media = settings.MEDIA_URL + 'my_starmaps/' + filename
-    if settings.DEBUG:
-        starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
+    #if settings.DEBUG:
+    #    starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
 
     path = Path(starchart_path)
     with path.open(mode='rb') as f:
-        starchart.file = File(f, name=path.name)
+        #starchart.file = File(f, name=path.name)
         starchart.image = File(f, name=path.name)
         starchart.save()
 
-# https://stackoverflow.com/questions/33088295/access-images-on-localhost
-
-    #starchart.image='starchart_image.svg'
-    #starchart.file='starchart_file.svg'
-    #starchart.save()
-    #return render(request, "starcharts_app/index.html", {'starchart_url_media': starchart_url_media, 'starchart_url_static': starchart_url_static})
-
     return render(request, "starcharts_app/index.html", {'starchart':starchart,'starchart_url_media': starchart_url_media})
 
-    #return redirect('/my_astrobase/starchart/')
