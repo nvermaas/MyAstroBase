@@ -18,8 +18,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = ''
-#MEDIA_URL = ''
-MEDIA_URL = 'http://localhost:8000/my_astrobase/'
+MEDIA_URL = ''
+#MEDIA_URL = 'http://localhost:8000/my_astrobase/'
 
 DATA_HOST = "https://web-of-wyrd.nl/data_on_yggdrasil/astrobase/data"
 
