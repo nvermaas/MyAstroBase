@@ -4,17 +4,13 @@
 
 
 <div class="container-fluid details-container">
-    <h5>starchart_url_media = {{ starchart_url_media }}</h5>
+    <h3>{{ starchart.name }}</h3>
+    <h5>{{ starchart_url_media }}</h5>
     <a href="{{ starchart_url_media }}">
         <img src="{{ starchart_url_media }}" width="1000" height="800"/>
     </a>
-    <h5>{% get_media_prefix %}{{ starchart.image }}</h5>
-    <a href="{% get_media_prefix %}{{ starchart.image }}">
-        <img src="{% get_media_prefix %}{{ starchart.image }}" width="1000" height="800">
-    </a>
-
 
 </div>
-<p class="footer"> version 1 may 2022 - 16:00)</p>
+<p class="footer"> version 1 may 2022 - 16:30)</p>
 {% endblock %}
 

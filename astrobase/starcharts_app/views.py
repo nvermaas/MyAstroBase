@@ -8,19 +8,20 @@ from .models import StarChart
 
 from django.conf import settings
 
-def StarChartView(request):
-    # https://stackoverflow.com/questions/35288793/django-media-url-tag
-    title = 'my_starchart'
-    filename = title + '.svg'
-    
-    starchart_url_media = settings.MEDIA_URL + 'my_starmaps/' + filename
-    if settings.DEBUG:
-        starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
+def StarChartView(request, name='my_starchart'):
 
+    try:
+        starchart = StarChart.objects.get(name=name)
+        filename = name + '.svg'
 
-    starchart = StarChart.objects.get(title=title)
+        starchart_url_media = settings.MEDIA_URL + 'my_starmaps/' + filename
+        if settings.DEBUG:
+            starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
+    except:
+        starchart = None
+        starchart_url_media = None
 
-    return render(request, "starcharts_app/index.html", {'starchart':starchart,'starchart_url_media': starchart_url_media})
+    return render(request, "starcharts_app/index.html", {'starchart' : starchart, 'starchart_url_media' : starchart_url_media})
 
 
 #create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
@@ -31,12 +32,15 @@ def CreateStarChart(request):
     dec_min = float(request.GET.get('dec_min','10.75'))
     dec_max = float(request.GET.get('dec_max','19.25'))
     mag = float(request.GET.get('mag','10'))
-    title = request.GET.get('title','my_starchart')
+    name = request.GET.get('name','my_starchart')
 
     try:
-        starchart = StarChart.objects.get(title=title)
+        starchart = StarChart.objects.get(name=name)
+        starchart.delete()
     except:
-        starchart = StarChart(title=title, ra_min=ra_min,ra_max=ra_max, dec_min=dec_min, dec_max=dec_max, magnitude_limit=mag)
+        pass
+
+    starchart = StarChart(name=name, ra_min=ra_min,ra_max=ra_max, dec_min=dec_min, dec_max=dec_max, magnitude_limit=mag)
 
     area = sky_area.SkyArea(ra_min,ra_max,dec_min,dec_max,mag)
 
@@ -47,7 +51,7 @@ def CreateStarChart(request):
     cc.process()
 
     # create the diagram
-    d = diagram.Diagram(title, area, star_data_list)
+    d = diagram.Diagram(name, area, star_data_list)
     list(map(d.add_curve, cc.calc_curves()))
 
     # generate the temporary image file
@@ -56,7 +60,7 @@ def CreateStarChart(request):
     d.render_svg(temp_path)
 
     # delete existing file before uploading
-    my_filename = title + '.svg'
+    my_filename = name + '.svg'
     try:
         existing_file = os.path.join(os.path.join(settings.MEDIA_ROOT, 'my_starmaps'), my_filename)
         os.remove(existing_file)
