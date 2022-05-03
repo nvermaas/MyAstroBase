@@ -2,7 +2,7 @@ import os
 from astrobase.settings.base import *
 
 # Import production setting must remain False.
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
