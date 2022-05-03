@@ -6,6 +6,10 @@ from . import views
 app_name = 'starcharts_app'
 
 urlpatterns = [
+     # REST API
+     path('starcharts/', views.StarChartAPIView.as_view(), name='starchart-api'),
+
+     # functions
      path('starchart/', views.StarChartView, name='starchart'),
      path('starchart/<name>', views.StarChartView, name='starchart'),
 

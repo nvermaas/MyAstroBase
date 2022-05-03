@@ -2,11 +2,30 @@ import os
 from django.shortcuts import render, redirect
 from pathlib import Path
 from django.core.files import File
+from django_filters import rest_framework as filters
+from rest_framework import generics, pagination
 
 from .starchart import sky_area, star_database, coord_calc, diagram
 from .models import StarChart
+from .serializers import StarChartSerializer
 
 from django.conf import settings
+
+class StarChartFilter(filters.FilterSet):
+
+    class Meta:
+        model = StarChart
+
+        fields = {
+            'name': ['exact', 'icontains', 'in'],
+        }
+
+class StarChartAPIView(generics.ListAPIView):
+    model = StarChart
+    queryset = StarChart.objects.all()
+    serializer_class = StarChartSerializer
+    filter_class = StarChartFilter
+
 
 def StarChartView(request, name='my_starchart'):
 
