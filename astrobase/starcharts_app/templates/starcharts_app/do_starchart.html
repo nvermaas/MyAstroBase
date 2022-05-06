@@ -8,7 +8,7 @@
        <div class="card-body">
          <h4>Create Starchart</h4>
          <h5>{{ starchart.name }}</h5>
-        <form class="post-form" action="{% url 'starcharts_app:form-starchart' starchart %}" method="POST">
+        <form class="post-form" action="{% url 'starcharts_app:form-starchart' starchart.name %}" method="POST">
             {% csrf_token %}
             <div>
                 {{ form }}
