@@ -1,0 +1,25 @@
+{% extends 'starcharts_app/base.html' %}
+{% load static %}
+{% block myBlock %}
+<div class="container-fluid details-container">
+
+
+  <div class="card">
+       <div class="card-body">
+         <h4>Create Starchart</h4>
+         <h5>{{ starchart.name }}</h5>
+        <form class="post-form" action="{% url 'starcharts_app:form-starchart' starchart %}" method="POST">
+            {% csrf_token %}
+            <div>
+                {{ form }}
+            </div>
+            <div><button class="btn btn-success btn-sm" type="submit"><i class="fas fa-check"></i> OK</button>
+                <a href="{% url 'starcharts_app:form-starchart' %}" class="btn btn-warning btn-sm" role="button"><i class="fas fa-times-circle"></i> Cancel</a>&nbsp
+            </div>
+        </form>
+
+       </div>
+  </div>
+</div>
+{% endblock %}
+
