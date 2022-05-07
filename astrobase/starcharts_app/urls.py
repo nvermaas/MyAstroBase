@@ -10,12 +10,14 @@ urlpatterns = [
      path('starcharts-api/', views.StarChartAPIView.as_view(), name='starchart-api'),
 
      # functions
-     path('starchart/', views.StarChartView, name='starchart'),
-     path('starchart/<name>', views.StarChartView, name='starchart'),
+     path('show-starchart/', views.ShowStarChartView, name='starchart'),
+     path('show-starchart/<name>', views.ShowStarChartView, name='starchart'),
 
+     path('starchart/', views.StarChartView, name='form-starchart'),
+     path('starchart/<name>', views.StarChartView, name='form-starchart'),
+
+     # shortcut to directly create a starchart with request parameters
      path('create-starchart/', views.CreateStarChart, name='create-starchart'),
-     path('form-starchart/', views.FormStarChart, name='form-starchart'),
-     path('form-starchart/<name>', views.FormStarChart, name='form-starchart'),
 
 ]
 

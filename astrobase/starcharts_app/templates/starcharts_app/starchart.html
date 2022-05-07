@@ -1,8 +1,8 @@
 {% extends 'starcharts_app/base.html' %}
 {% load static %}
 {% block myBlock %}
-<div class="container-fluid details-container">
 
+<div class="container-fluid details-container">
 
   <div class="card">
        <div class="card-body">
@@ -18,8 +18,14 @@
             </div>
         </form>
 
+        <h5>{{ starchart_url_media }}</h5>
+        <a href="{{ starchart_url_media }}">
+            <img src="{{ starchart_url_media }}" width="1000" height="800"/>
+        </a>
+
        </div>
   </div>
 </div>
+<p class="footer"> version 7 may 2022 - 10:00)</p>
 {% endblock %}
 

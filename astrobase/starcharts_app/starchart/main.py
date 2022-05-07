@@ -9,17 +9,16 @@ from .star_database import StarDatabase
 from .coord_calc import CoordCalc
 
 
-def create_starchart(name, ra_min, ra_max, dec_min, dec_max, mag):
+def create_starchart(input_starchart):
     try:
-        starchart = StarChart.objects.get(name=name)
+        starchart = StarChart.objects.get(name=input_starchart.name)
         starchart.delete()
     except:
         pass
 
-    starchart = StarChart(name=name, ra_min=ra_min, ra_max=ra_max, dec_min=dec_min, dec_max=dec_max,
-                          magnitude_limit=mag)
+    starchart = input_starchart
 
-    area = SkyArea(ra_min, ra_max, dec_min, dec_max, mag)
+    area = SkyArea(starchart.ra_min, starchart.ra_max, starchart.dec_min, starchart.dec_max, starchart.magnitude_limit)
 
     db = StarDatabase(settings.MY_HYG_ROOT)
     star_data_list = db.get_stars(area)
@@ -28,7 +27,7 @@ def create_starchart(name, ra_min, ra_max, dec_min, dec_max, mag):
     cc.process()
 
     # create the diagram
-    d = Diagram(name, area, star_data_list)
+    d = Diagram(starchart.name, area, star_data_list)
     list(map(d.add_curve, cc.calc_curves()))
 
     # generate the temporary image file
@@ -37,7 +36,7 @@ def create_starchart(name, ra_min, ra_max, dec_min, dec_max, mag):
     d.render_svg(temp_path)
 
     # delete existing file before uploading
-    my_filename = name + '.svg'
+    my_filename = starchart.name + '.svg'
     try:
         existing_file = os.path.join(os.path.join(settings.MEDIA_ROOT, 'my_starmaps'), my_filename)
         os.remove(existing_file)
