@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'bootstrap_pagination',
     'rest_framework.authtoken',
     'corsheaders',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +68,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'astrobase.urls'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
