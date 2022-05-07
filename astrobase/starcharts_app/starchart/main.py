@@ -54,3 +54,22 @@ def create_starchart(input_starchart):
         starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
 
     return starchart,starchart_url_media
+
+
+def construct_starcharts_list():
+#  <li><a class="dropdown-item" href="http://localhost:8000/my_astrobase/starchart/my_starchart">my_starchart</a></li>
+#  <li><a class="dropdown-item" href="http://localhost:8000/my_astrobase/starchart/MyOrion">MyOrion</a></li>
+    results = ''
+
+    left = '<li><a class="dropdown-item" href="'
+    base_url = settings.MEDIA_URL + "/starchart/"
+    if settings.DEBUG:
+        base_url = "http://localhost:8000/my_astrobase/starchart/"
+
+    right = '</a></li>'
+
+    for starchart in StarChart.objects.all():
+        line = left + base_url + starchart.name + '">' + starchart.name + right
+        results += line
+
+    return results

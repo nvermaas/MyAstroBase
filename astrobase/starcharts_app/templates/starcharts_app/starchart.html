@@ -8,6 +8,16 @@
         <div class="col-2" >
             <div class="card">
                <div class="card-body">
+
+                   <div class="btn-group">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Chart
+                      </button>
+                      <ul class="dropdown-menu">
+                            {{ starcharts_list | safe }}
+                      </ul>
+                    </div>
+                    <hr>
                     <h3>{{ starchart.name }}</h3>
                     <form class="post-form" action="{% url 'starcharts_app:form-starchart' starchart.name %}" method="POST">
                         {% csrf_token %}
@@ -54,6 +64,6 @@
         </div>
     </div>
 </div>
-<p class="footer"> version 7 may 2022 - 12:30)</p>
+<p class="footer"> version 7 may 2022 - 16:00)</p>
 {% endblock %}
 

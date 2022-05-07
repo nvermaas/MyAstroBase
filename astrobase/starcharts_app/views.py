@@ -5,7 +5,7 @@ from django.conf import settings
 from .models import StarChart
 from .serializers import StarChartSerializer
 from .forms import StarChartForm
-from .starchart.main import create_starchart
+from .starchart.main import create_starchart, construct_starcharts_list
 
 
 class StarChartFilter(filters.FilterSet):
@@ -77,6 +77,7 @@ def StarChartView(request, name='my_starchart'):
     if settings.DEBUG:
         starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
 
+    starcharts_list = construct_starcharts_list()
 
     # a POST means that the form is filled in and should be stored in the database
     if request.method == "POST":
@@ -87,20 +88,22 @@ def StarChartView(request, name='my_starchart'):
             return render(request, "starcharts_app/starchart.html",
                           {'form': form,
                            'starchart': starchart,
-                           'starchart_url_media': starchart_url_media}
-                          )
+                           'starchart_url_media': starchart_url_media,
+                           'starcharts_list' : starcharts_list})
         else:
             # form is invalid
-            #todo: show error
             return render(request, "starcharts_app/starchart.html", {
                 'form': form,
                 'starchart': starchart,
-                'starchart_url_media': starchart_url_media})
+                'starchart_url_media': starchart_url_media,
+                'starcharts_list': starcharts_list})
 
     # a GET presents the form to the user to fill in and submit as a POST
     else:
         form = StarChartForm(instance=starchart)
+
         return render(request, "starcharts_app/starchart.html", {
             'form': form,
             'starchart': starchart,
-            'starchart_url_media': starchart_url_media})
+            'starchart_url_media': starchart_url_media,
+            'starcharts_list' : starcharts_list})
