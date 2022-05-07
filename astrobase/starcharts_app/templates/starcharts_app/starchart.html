@@ -12,7 +12,28 @@
                     <form class="post-form" action="{% url 'starcharts_app:form-starchart' starchart.name %}" method="POST">
                         {% csrf_token %}
                         <div>
-                            {{ form|crispy }}
+                            <div class="row">
+                                {{ form.name|as_crispy_field }}
+                            </div>
+                            <div class="row">
+                              <div class="col-6">
+                                {{ form.ra_min|as_crispy_field }}
+                              </div>
+                              <div class="col-6">
+                                {{ form.ra_max|as_crispy_field }}
+                              </div>
+                            </div>
+                            <div class="row">
+                               <div class="col-6">
+                                {{ form.dec_min|as_crispy_field }}
+                              </div>
+                              <div class="col-6">
+                                {{ form.dec_max|as_crispy_field }}
+                              </div>
+                            </div>
+                           <div class="row">
+                                {{ form.magnitude_limit|as_crispy_field }}
+                            </div>
                         </div>&nbsp;
                             <div><button class="btn btn-success btn-md" type="submit"><i class="fas fa-check"></i> Save</button>
                         </div>
@@ -33,6 +54,6 @@
         </div>
     </div>
 </div>
-<p class="footer"> version 7 may 2022 - 12:00)</p>
+<p class="footer"> version 7 may 2022 - 12:30)</p>
 {% endblock %}
 
