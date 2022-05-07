@@ -64,18 +64,19 @@ def CreateStarChart(request):
     return render(request, "starcharts_app/index.html", {'starchart':starchart,'starchart_url_media': starchart_url_media})
 
 
-def StarChartView(request, name='my_starchart'):
+def StarChartView(request, name=None):
 
     try:
         starchart = StarChart.objects.get(name=name)
+        filename = name + '.svg'
+
+        starchart_url_media = settings.MEDIA_URL + 'my_starmaps/' + filename
+        if settings.DEBUG:
+            starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
+
     except:
-        starchart = StarChart(name=name)
-
-    filename = name + '.svg'
-
-    starchart_url_media = settings.MEDIA_URL + 'my_starmaps/' + filename
-    if settings.DEBUG:
-        starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
+        starchart = StarChart()
+        starchart_url_media=""
 
     starcharts_list = construct_starcharts_list()
 
