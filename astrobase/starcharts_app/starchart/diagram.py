@@ -2,24 +2,24 @@
 from .svg import Svg
 import codecs
 
-MARGIN_X=20
-MARGIN_Y=60
-MAGNIFICATION = 500
+MARGIN_X=0
+MARGIN_Y=0
+#MAGNIFICATION = 500
 
 MIN_D = 1
 MAX_D = 4
 
 #DIMMEST_MAG = 6
-DIMMEST_MAG = 8
-BRIGHTEST_MAG = -1.5
+#DIMMEST_MAG = 8
+#BRIGHTEST_MAG = -1.5
 
 LABEL_OFFSET_X = 4
 LABEL_OFFSET_Y = 3
-FONT_SIZE=8
-FONT_COLOUR='#167ac6'
+#FONT_SIZE=8
+#FONT_COLOUR='#167ac6'
 
-TITLE_SIZE=16
-TITLE_COLOUR='#FFF'
+#TITLE_SIZE=16
+#TITLE_COLOUR='#FFF'
 COORDS_SIZE=12
 COORDS_COLOUR='#FFF'
 
@@ -29,8 +29,9 @@ CURVE_WIDTH = 0.1
 CURVE_COLOUR = '#FFF'
 
 class Diagram:
-    def __init__(self, title, area, star_data_list):
-        self.title = title
+    def __init__(self, starchart, area, star_data_list):
+        self.starchart = starchart
+        self.title = starchart.name
         self.area = area
         self.star_data_list = star_data_list
         self.curves = []
@@ -40,8 +41,8 @@ class Diagram:
         self.curves.append(curve_points)
 
     def _mag_to_d(self, m):
-        mag_range = DIMMEST_MAG - BRIGHTEST_MAG
-        m_score = (DIMMEST_MAG - m) / mag_range
+        mag_range = self.starchart.dimmest_mag - self.starchart.brightest_mag
+        m_score = (self.starchart.dimmest_mag - m) / mag_range
         r_range = MAX_D - MIN_D
         return MIN_D + m_score * r_range
 
@@ -61,19 +62,20 @@ class Diagram:
             if star_data.label:
                 x, y = self._invert_and_offset(star_data.x, star_data.y)
                 d = self._mag_to_d(star_data.mag)
-                svg.text(x + LABEL_OFFSET_X + d/2, y + LABEL_OFFSET_Y, star_data.label, FONT_COLOUR, FONT_SIZE)
+                svg.text(x + LABEL_OFFSET_X + d / 2, y + LABEL_OFFSET_Y, star_data.label, self.starchart.font_color,
+                         self.starchart.font_size)
 
         # next add curves
         for curve_points in self.curves:
             svg.curve([self._invert_and_offset(cp[0], cp[1]) for cp in curve_points], CURVE_WIDTH, CURVE_COLOUR)
 
         # title
-        center_x = self.star_data_list.max_x/2 + MARGIN_X
-        svg.text(center_x, MARGIN_Y/2, self.title, TITLE_COLOUR, TITLE_SIZE, 'middle', 'underline')
+        #center_x = self.star_data_list.max_x/2 + MARGIN_X
+        #svg.text(center_x, MARGIN_Y/2, self.title, TITLE_COLOUR, TITLE_SIZE, 'middle', 'underline')
 
         # coords
-        chart_bottom_y = self.star_data_list.max_y + MARGIN_Y
-        svg.text(center_x, chart_bottom_y + MARGIN_Y/2, "Right Ascension: {}-{}".format(self.area.ra_min, self.area.ra_max), COORDS_COLOUR, COORDS_SIZE, 'middle')
-        svg.text(center_x, chart_bottom_y + MARGIN_Y/2 + COORDS_SIZE, "Declination: {}-{}".format(self.area.dec_min, self.area.dec_max), COORDS_COLOUR, COORDS_SIZE, 'middle')
+        #chart_bottom_y = self.star_data_list.max_y + MARGIN_Y
+        #svg.text(center_x, chart_bottom_y + MARGIN_Y/2, "RA: {}-{}".format(self.area.ra_min, self.area.ra_max), COORDS_COLOUR, COORDS_SIZE, 'middle')
+        #svg.text(center_x, chart_bottom_y + MARGIN_Y/2 + COORDS_SIZE, "Dec: {}-{}".format(self.area.dec_min, self.area.dec_max), COORDS_COLOUR, COORDS_SIZE, 'middle')
 
         codecs.open(outfile, 'w', 'utf-8').writelines(svg.to_list())

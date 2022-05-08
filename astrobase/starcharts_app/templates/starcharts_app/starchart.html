@@ -5,7 +5,7 @@
 
 <div class="container-fluid details-container">
     <div class="row">
-        <div class="col-2" >
+        <div class="col-3" >
             <div class="card">
                <div class="card-body">
                     <div class="row">
@@ -50,8 +50,38 @@
                               </div>
                             </div>
                            <div class="row">
+                               <div class="col-4">
                                 {{ form.magnitude_limit|as_crispy_field }}
+                               </div>
+                               <div class="col-4">
+                                {{ form.dimmest_mag|as_crispy_field }}
+                               </div>
+                               <div class="col-4">
+                                {{ form.brightest_mag|as_crispy_field }}
+                               </div>
                             </div>
+
+                            <div class="row">
+                               <div class="col-4">
+                                  {{ form.diagram_size|as_crispy_field }}
+                                </div>
+                                <div class="col-4">
+                                  {{ form.display_width|as_crispy_field }}
+                                </div>
+                                <div class="col-4">
+                                  {{ form.display_height|as_crispy_field }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                               <div class="col-4">
+                                {{ form.font_size|as_crispy_field }}
+                              </div>
+                              <div class="col-6">
+                                {{ form.font_color|as_crispy_field }}
+                              </div>
+                            </div>
+
                         </div>&nbsp;
                             <div><button class="btn btn-success btn-md" type="submit"><i class="fas fa-check"></i> Save</button>
                         </div>
@@ -62,16 +92,19 @@
         <div class="col">
             <div class="card">
                <div class="card-body">
-
+                  {% if starchart_url_media %}
                     <a href="{{ starchart_url_media }}">
-                        <img src="{{ starchart_url_media }}" width="1200" height="700"/>
+                        <img src="{{ starchart_url_media }}" width="{{ starchart.display_width}}" height="{{ starchart.display_height}}"/>
                     </a>
                    <p><i>{{ starchart_url_media }}</i></p>
+                   {% else %}
+                   <h3>Select an existing chart or fill in the form and click 'save' to create a new one</h3>
+                   {% endif %}
                </div>
             </div>
         </div>
     </div>
 </div>
-<p class="footer"> version 7 may 2022 - 16:00)</p>
+<p class="footer"> version 8 may 2022 - 19:00)</p>
 {% endblock %}
 

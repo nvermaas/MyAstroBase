@@ -16,6 +16,17 @@ class StarChart(models.Model):
     dec_min = models.FloatField()
     dec_max = models.FloatField()
     magnitude_limit = models.FloatField()
+    dimmest_mag = models.FloatField(default=8)
+    brightest_mag = models.FloatField(default=-1.5)
 
     image = models.ImageField(upload_to='my_starmaps')
 
+    diagram_size = models.IntegerField(default=800)
+    display_width = models.IntegerField(default=1200)
+    display_height = models.IntegerField(default=700)
+
+    font_size = models.IntegerField(default=8)
+    font_color = models.CharField(default='#167ac6', max_length=10)
+
+    def __str__(self):
+        return self.name

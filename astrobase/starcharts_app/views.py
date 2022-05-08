@@ -45,8 +45,8 @@ def ShowStarChartView(request, name='my_starchart'):
 #http://localhost:8000/my_astrobase/create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
 def CreateStarChart(request):
     name = request.GET.get('name', 'my_starchart')
-    ra_min = float(request.GET.get('ra_min','44'))/15
-    ra_max = float(request.GET.get('ra_max','56'))/15
+    ra_min = float(request.GET.get('ra_min','44'))
+    ra_max = float(request.GET.get('ra_max','56'))
     dec_min = float(request.GET.get('dec_min','10.75'))
     dec_max = float(request.GET.get('dec_max','19.25'))
     mag = float(request.GET.get('mag','10'))

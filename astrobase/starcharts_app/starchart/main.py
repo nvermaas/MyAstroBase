@@ -18,16 +18,16 @@ def create_starchart(input_starchart):
 
     starchart = input_starchart
 
-    area = SkyArea(starchart.ra_min, starchart.ra_max, starchart.dec_min, starchart.dec_max, starchart.magnitude_limit)
+    area = SkyArea(starchart.ra_min/15, starchart.ra_max/15, starchart.dec_min, starchart.dec_max, starchart.magnitude_limit)
 
     db = StarDatabase(settings.MY_HYG_ROOT)
     star_data_list = db.get_stars(area)
 
-    cc = CoordCalc(star_data_list, area, 800)
+    cc = CoordCalc(star_data_list, area, starchart.diagram_size)
     cc.process()
 
     # create the diagram
-    d = Diagram(starchart.name, area, star_data_list)
+    d = Diagram(starchart, area, star_data_list)
     list(map(d.add_curve, cc.calc_curves()))
 
     # generate the temporary image file
