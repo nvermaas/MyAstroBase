@@ -5,7 +5,7 @@
 
 <div class="container-fluid details-container">
     <div class="row">
-        <div class="col-3" >
+        <div class="col-4" >
             <div class="card">
                <div class="card-body">
                     <div class="row">
@@ -34,18 +34,16 @@
                                 {{ form.name|as_crispy_field }}
                             </div>
                             <div class="row">
-                              <div class="col-6">
+                              <div class="col-3">
                                 {{ form.ra_min|as_crispy_field }}
                               </div>
-                              <div class="col-6">
+                              <div class="col-3">
                                 {{ form.ra_max|as_crispy_field }}
                               </div>
-                            </div>
-                            <div class="row">
-                               <div class="col-6">
+                               <div class="col-3">
                                 {{ form.dec_min|as_crispy_field }}
                               </div>
-                              <div class="col-6">
+                              <div class="col-3">
                                 {{ form.dec_max|as_crispy_field }}
                               </div>
                             </div>
@@ -59,6 +57,31 @@
                                <div class="col-4">
                                 {{ form.brightest_mag|as_crispy_field }}
                                </div>
+                               <div class="col-4">
+                                {{ form.star_color|as_crispy_field }}
+                               </div>
+                               <div class="col-4">
+                                {{ form.min_diameter|as_crispy_field }}
+                               </div>
+                               <div class="col-4">
+                                {{ form.max_diameter|as_crispy_field }}
+                               </div>
+                            </div>
+
+                            <div class="row">
+                               <div class="col-3">
+                                {{ form.font_size|as_crispy_field }}
+                              </div>
+                              <div class="col-3">
+                                {{ form.font_color|as_crispy_field }}
+                              </div>
+
+                              <div class="col-3">
+                                {{ form.curve_width|as_crispy_field }}
+                              </div>
+                              <div class="col-3">
+                                {{ form.curve_color|as_crispy_field }}
+                              </div>
                             </div>
 
                             <div class="row">
@@ -72,24 +95,14 @@
                                   {{ form.display_height|as_crispy_field }}
                                 </div>
                             </div>
-
-                            <div class="row">
-                               <div class="col-4">
-                                {{ form.font_size|as_crispy_field }}
-                              </div>
-                              <div class="col-6">
-                                {{ form.font_color|as_crispy_field }}
-                              </div>
-                            </div>
-
                         </div>&nbsp;
-                            <div><button class="btn btn-success btn-md" type="submit"><i class="fas fa-check"></i> Save</button>
-                        </div>
+                        <div class="col-3"><button class="btn btn-success btn-md" type="submit"><i class="fas fa-check"></i> Save</button></div>
+
                     </form>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-8">
             <div class="card">
                <div class="card-body">
                   {% if starchart_url_media %}

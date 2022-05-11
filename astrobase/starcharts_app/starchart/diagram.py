@@ -6,8 +6,8 @@ MARGIN_X=0
 MARGIN_Y=0
 #MAGNIFICATION = 500
 
-MIN_D = 1
-MAX_D = 4
+#MIN_D = 1
+#MAX_D = 4
 
 #DIMMEST_MAG = 6
 #DIMMEST_MAG = 8
@@ -20,13 +20,13 @@ LABEL_OFFSET_Y = 3
 
 #TITLE_SIZE=16
 #TITLE_COLOUR='#FFF'
-COORDS_SIZE=12
-COORDS_COLOUR='#FFF'
+#COORDS_SIZE=12
+#COORDS_COLOUR='#FFF'
 
-STAR_COLOUR='#FFF'
+#STAR_COLOUR='#FFF'
 
-CURVE_WIDTH = 0.1
-CURVE_COLOUR = '#FFF'
+#CURVE_WIDTH = 0.1
+#CURVE_COLOUR = '#FFF'
 
 class Diagram:
     def __init__(self, starchart, area, star_data_list):
@@ -43,8 +43,8 @@ class Diagram:
     def _mag_to_d(self, m):
         mag_range = self.starchart.dimmest_mag - self.starchart.brightest_mag
         m_score = (self.starchart.dimmest_mag - m) / mag_range
-        r_range = MAX_D - MIN_D
-        return MIN_D + m_score * r_range
+        r_range = self.starchart.max_diameter - self.starchart.min_diameter
+        return self.starchart.min_diameter + m_score * r_range
 
     def _invert_and_offset(self, x, y):
         return x + MARGIN_X, (self.star_data_list.max_y - y) + MARGIN_Y
@@ -55,7 +55,7 @@ class Diagram:
         # add stars first
         for star_data in self.star_data_list.data:
             x, y = self._invert_and_offset(star_data.x, star_data.y)
-            svg.circle(x, y, self._mag_to_d(star_data.mag), STAR_COLOUR)
+            svg.circle(x, y, self._mag_to_d(star_data.mag), self.starchart.star_color)
 
         # next add labels
         for star_data in self.star_data_list.data:
@@ -67,7 +67,7 @@ class Diagram:
 
         # next add curves
         for curve_points in self.curves:
-            svg.curve([self._invert_and_offset(cp[0], cp[1]) for cp in curve_points], CURVE_WIDTH, CURVE_COLOUR)
+            svg.curve([self._invert_and_offset(cp[0], cp[1]) for cp in curve_points], self.starchart.curve_width, self.starchart.curve_color)
 
         # title
         #center_x = self.star_data_list.max_x/2 + MARGIN_X
