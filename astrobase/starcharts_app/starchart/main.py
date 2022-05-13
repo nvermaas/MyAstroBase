@@ -62,7 +62,7 @@ def construct_starcharts_list():
     results = ''
 
     left = '<li><a class="dropdown-item" href="'
-    base_url = "/starchart/"
+    base_url = "/my_astrobase/starchart/"
     if settings.DEBUG:
         base_url = "http://localhost:8000/my_astrobase/starchart/"
 
