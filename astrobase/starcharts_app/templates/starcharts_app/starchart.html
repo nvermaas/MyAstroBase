@@ -31,7 +31,12 @@
                         {% csrf_token %}
                         <div>
                             <div class="row">
+                                <div class="col-8">
                                 {{ form.name|as_crispy_field }}
+                                </div>
+                                <div class="col-4">
+                                {{ form.scheme|as_crispy_field }}
+                                </div>
                             </div>
                             <div class="row">
                               <div class="col-3">
@@ -57,14 +62,17 @@
                                <div class="col-4">
                                 {{ form.brightest_mag|as_crispy_field }}
                                </div>
-                               <div class="col-4">
+                               <div class="col-3">
+                                {{ form.background|as_crispy_field }}
+                               </div>
+                               <div class="col-3">
                                 {{ form.star_color|as_crispy_field }}
                                </div>
-                               <div class="col-4">
-                                {{ form.min_diameter|as_crispy_field }}
+                               <div class="col-3">
+                                {{ form.min_d|as_crispy_field }}
                                </div>
-                               <div class="col-4">
-                                {{ form.max_diameter|as_crispy_field }}
+                               <div class="col-3">
+                                {{ form.max_d|as_crispy_field }}
                                </div>
                             </div>
 

@@ -1,9 +1,16 @@
 XML_HEADER = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>'
-SVG_HEADER = '<svg style="background-color:black;" xmlns="http://www.w3.org/2000/svg" version="1.1">'
+#SVG_HEADER = '<svg style="background-color:black;" xmlns="http://www.w3.org/2000/svg" version="1.1">'
 SVG_FOOTER = '</svg>'
 
 class Svg:
-    def __init__(self):
+    def __init__(self,background):
+        self.background = background
+        print(self.background)
+
+        self.svg_header = '<svg style="background-color:'
+        self.svg_header += self.background
+        self.svg_header += ';" xmlns="http://www.w3.org/2000/svg" version="1.1">'
+
         self.elements = []
 
     def line(self, x1, y1, x2, y2, width, colour):
@@ -53,4 +60,4 @@ class Svg:
         self.elements.append('<path d="{}" stroke="{}" stroke-width="{}" fill="transparent"/>'.format(d, colour, width))
 
     def to_list(self):
-        return [XML_HEADER, SVG_HEADER] + self.elements + [SVG_FOOTER]
+        return [XML_HEADER, self.svg_header] + self.elements + [SVG_FOOTER]

@@ -43,14 +43,14 @@ class Diagram:
     def _mag_to_d(self, m):
         mag_range = self.starchart.dimmest_mag - self.starchart.brightest_mag
         m_score = (self.starchart.dimmest_mag - m) / mag_range
-        r_range = self.starchart.max_diameter - self.starchart.min_diameter
-        return self.starchart.min_diameter + m_score * r_range
+        r_range = self.starchart.max_d - self.starchart.min_d
+        return self.starchart.min_d + m_score * r_range
 
     def _invert_and_offset(self, x, y):
         return x + MARGIN_X, (self.star_data_list.max_y - y) + MARGIN_Y
 
     def render_svg(self, outfile):
-        svg = Svg()
+        svg = Svg(self.starchart.background)
 
         # add stars first
         for star_data in self.star_data_list.data:
