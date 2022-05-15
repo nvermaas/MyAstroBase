@@ -9,8 +9,29 @@ class MoonPhases(models.Model):
     class Meta:
         managed = False
 
+
+class Scheme(models.Model):
+    name = models.CharField(default='default', max_length=15)
+    magnitude_limit = models.FloatField(default=10)
+    dimmest_mag = models.FloatField(default=8)
+    brightest_mag = models.FloatField(default=-1.5)
+    min_d = models.IntegerField(default=1)
+    max_d = models.IntegerField(default=4)
+
+    font_size = models.IntegerField(default=10)
+    font_color = models.CharField(default='#167ac6', max_length=10)
+
+    curve_width = models.FloatField(default=0.2)
+    curve_color = models.CharField(default='#FFF', max_length=10)
+    star_color = models.CharField(default='#FFF', max_length=10)
+    background = models.CharField(default='black', max_length=10)
+
+    def __str__(self):
+        return self.name
+
+
 class StarChart(models.Model):
-    name = models.CharField(default='change me', max_length=15)
+    name = models.CharField(default='change me', max_length=30)
     ra_min = models.FloatField()
     ra_max = models.FloatField()
     dec_min = models.FloatField()
@@ -34,7 +55,7 @@ class StarChart(models.Model):
     curve_color = models.CharField(default='#FFF', max_length=10)
     star_color = models.CharField(default='#FFF', max_length=10)
     background = models.CharField(default='black', max_length=10)
-    scheme = models.CharField(default='default', max_length=15)
+    scheme = models.ForeignKey(Scheme, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.name

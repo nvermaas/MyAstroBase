@@ -57,8 +57,6 @@ def create_starchart(input_starchart):
 
 
 def construct_starcharts_list():
-#  <li><a class="dropdown-item" href="http://localhost:8000/my_astrobase/starchart/my_starchart">my_starchart</a></li>
-#  <li><a class="dropdown-item" href="http://localhost:8000/my_astrobase/starchart/MyOrion">MyOrion</a></li>
     results = ''
 
     left = '<li><a class="dropdown-item" href="'
