@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django_filters import rest_framework as filters
 from rest_framework import generics, pagination
 from django.conf import settings
-from .models import StarChart
+from .models import StarChart, Scheme
 from .serializers import StarChartSerializer
 from .forms import StarChartForm
 from .starchart.main import create_starchart, construct_starcharts_list
@@ -41,28 +41,41 @@ def ShowStarChartView(request, name='my_starchart'):
     return render(request, "starcharts_app/index.html", {'starchart' : starchart, 'starchart_url_media' : starchart_url_media})
 
 
+
 #create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
 #http://localhost:8000/my_astrobase/create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
 def CreateStarChart(request):
     name = request.GET.get('name', 'my_starchart')
+    scheme_name = request.GET.get('scheme','default')
     ra_min = float(request.GET.get('ra_min','44'))
     ra_max = float(request.GET.get('ra_max','56'))
     dec_min = float(request.GET.get('dec_min','10.75'))
     dec_max = float(request.GET.get('dec_max','19.25'))
-    mag = float(request.GET.get('mag','10'))
-    name = request.GET.get('name','my_starchart')
+    magnitude = float(request.GET.get('magnitude','10'))
+
+    try:
+        scheme = Scheme.objects.get(name=scheme_name)
+    except:
+        scheme = None
+
 
     input_starchart = StarChart(name=name,
+                                scheme = scheme,
                                 ra_min=ra_min,
                                 ra_max=ra_max,
                                 dec_min=dec_min,
                                 dec_max=dec_max,
-                                magnitude_limit=mag)
+                                magnitude_limit=magnitude)
 
     starchart, starchart_url_media = create_starchart(input_starchart)
+    starcharts_list = construct_starcharts_list()
+    form = StarChartForm(instance=starchart)
 
-    return render(request, "starcharts_app/index.html", {'starchart':starchart,'starchart_url_media': starchart_url_media})
-
+    return render(request, "starcharts_app/starchart.html",
+                  {'form': form,
+                   'starchart': starchart,
+                   'starchart_url_media': starchart_url_media,
+                   'starcharts_list': starcharts_list})
 
 def StarChartView(request, name=None):
 
@@ -85,6 +98,13 @@ def StarChartView(request, name=None):
 
         form = StarChartForm(request.POST, instance=starchart)
         if form.is_valid():
+            # update the name and save to apply a potential change of scheme before creating the svg
+            starchart.name = starchart.name.replace(" ", "_")
+            starchart.save()
+
+            # reload the form with the above changes so they show up in the template
+            form = StarChartForm(instance=starchart)
+
             starchart, starchart_url_media = create_starchart(starchart)
             return render(request, "starcharts_app/starchart.html",
                           {'form': form,
@@ -97,7 +117,8 @@ def StarChartView(request, name=None):
                 'form': form,
                 'starchart': starchart,
                 'starchart_url_media': starchart_url_media,
-                'starcharts_list': starcharts_list})
+                'starcharts_list': starcharts_list,
+                'schemes_list' :schemes_list})
 
     # a GET presents the form to the user to fill in and submit as a POST
     else:
@@ -108,3 +129,5 @@ def StarChartView(request, name=None):
             'starchart': starchart,
             'starchart_url_media': starchart_url_media,
             'starcharts_list' : starcharts_list})
+
+

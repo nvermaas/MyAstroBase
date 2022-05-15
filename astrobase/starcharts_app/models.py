@@ -11,7 +11,7 @@ class MoonPhases(models.Model):
 
 
 class Scheme(models.Model):
-    name = models.CharField(default='default', max_length=15)
+    name = models.CharField(default='default', max_length=30)
     magnitude_limit = models.FloatField(default=10)
     dimmest_mag = models.FloatField(default=8)
     brightest_mag = models.FloatField(default=-1.5)
@@ -56,6 +56,31 @@ class StarChart(models.Model):
     star_color = models.CharField(default='#FFF', max_length=10)
     background = models.CharField(default='black', max_length=10)
     scheme = models.ForeignKey(Scheme, on_delete=models.SET_NULL, null=True, blank=True)
+    previous_scheme_name = models.CharField(max_length=30, null=True)
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+
+        # check if the scheme needs to be applied, overwrite the colors
+        apply_scheme = False
+
+        try:
+            if (self.previous_scheme_name != self.scheme.name):
+                apply_scheme = True
+
+        except:
+            pass
+
+        if (apply_scheme):
+            self.background = self.scheme.background
+            self.star_color = self.scheme.star_color
+
+        try:
+            self.previous_scheme_name = self.scheme.name
+        except:
+            self.previous_scheme_name = None
+
+        # continue the save
+        super(StarChart, self).save(*args, **kwargs)

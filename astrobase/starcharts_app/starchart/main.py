@@ -71,3 +71,20 @@ def construct_starcharts_list():
         results += line
 
     return results
+
+
+def construct_schemes_list():
+    results = ''
+
+    left = '<li><a class="dropdown-item" href="'
+    base_url = "/my_astrobase/starchart/"
+    if settings.DEBUG:
+        base_url = "http://localhost:8000/my_astrobase/starchart/"
+
+    right = '</a></li>'
+
+    for starchart in Sche.objects.all():
+        line = left + base_url + starchart.name + '">' + starchart.name + right
+        results += line
+
+    return results

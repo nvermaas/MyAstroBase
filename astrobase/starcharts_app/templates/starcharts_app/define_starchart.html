@@ -9,7 +9,7 @@
             <div class="card">
                <div class="card-body">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-6">
                            <div class="btn-group">
                               <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 Select Chart
@@ -19,7 +19,7 @@
                               </ul>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-6">
                             <a href="{% url 'starcharts_app:starchart' %}">
                                 <div><button class="btn btn-success btn-md"><i class="fas fa-folder-plus"></i> New</button></div>
                             </a>
@@ -31,10 +31,10 @@
                         {% csrf_token %}
                         <div>
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-8">
                                 {{ form.name|as_crispy_field }}
                                 </div>
-                                <div class="col-6">
+                                <div class="col-4">
                                 {{ form.scheme|as_crispy_field }}
                                 </div>
                             </div>
@@ -126,5 +126,6 @@
         </div>
     </div>
 </div>
-<p class="footer"> version 15 may 2022 - 15:00)</p>
+
 {% endblock %}
+
