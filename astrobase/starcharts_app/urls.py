@@ -7,6 +7,7 @@ app_name = 'starcharts_app'
 
 urlpatterns = [
      # REST API
+     path('stars-api/', views.StarsAPIView.as_view(), name='stars-api'),
      path('starcharts-api/', views.StarChartAPIView.as_view(), name='starchart-api'),
 
      # functions

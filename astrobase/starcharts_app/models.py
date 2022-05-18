@@ -1,13 +1,14 @@
 from django.db import models
 
-class MoonPhases(models.Model):
-    phase = models.CharField(max_length=15)
-    date = models.DateField()
-    time = models.TimeField
+# settings.MY_HYG_ROOT
+class Stars(models.Model):
+    RightAscension = models.FloatField()
+    Declination = models.FloatField()
+    Magnitude = models.FloatField()
+    HipparcosID = models.CharField(max_length=10)
+    HenryDraperID = models.CharField(max_length=10)
+    BayerFlamsteed = models.CharField(max_length=10)
 
-    # there is no database, just a datamodel
-    class Meta:
-        managed = False
 
 
 class Scheme(models.Model):

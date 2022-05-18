@@ -108,11 +108,20 @@ REST_FRAMEWORK = {
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+# Database
+DATABASE_ROUTERS = [
+    'backend_app.database_router.DefaultRouter',
+    'starcharts_app.database_router.StarChartsRouter',
+]
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'astrobase.sqlite3'),
+    },
+    'stars': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'stars.sqlite3'),
     },
 }
 

@@ -2,10 +2,26 @@ from django.shortcuts import render, redirect
 from django_filters import rest_framework as filters
 from rest_framework import generics, pagination
 from django.conf import settings
-from .models import StarChart, Scheme
-from .serializers import StarChartSerializer
+from .models import StarChart, Scheme, Stars
+from .serializers import StarChartSerializer, StarsSerializer
 from .forms import StarChartForm
 from .starchart.main import create_starchart, construct_starcharts_list
+
+class StarsFilter(filters.FilterSet):
+
+    class Meta:
+        model = Stars
+
+        fields = {
+            'BayerFlamsteed': ['exact', 'icontains', 'in'],
+        }
+
+
+class StarsAPIView(generics.ListAPIView):
+    model = Stars
+    queryset = Stars.objects.using('stars').all()
+    serializer_class = StarsSerializer
+    filter_class = StarsFilter
 
 
 class StarChartFilter(filters.FilterSet):
