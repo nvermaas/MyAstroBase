@@ -2,11 +2,12 @@ import os
 from pathlib import Path
 from django.core.files import File
 from django.conf import settings
-from ..models import StarChart
+from ..models import StarChart, Scheme
 from .sky_area import SkyArea
 from .diagram import Diagram
 from .star_database import StarDatabase
 from .coord_calc import CoordCalc
+
 
 
 def create_starchart(input_starchart):
@@ -73,18 +74,19 @@ def construct_starcharts_list():
     return results
 
 
-def construct_schemes_list():
-    results = ''
+def create_scheme_from_chart(input_starchart):
+    scheme = Scheme(
+        name=input_starchart.name,
+        magnitude_limit=input_starchart.magnitude_limit,
+        dimmest_mag=input_starchart.dimmest_mag,
+        brightest_mag=input_starchart.brightest_mag,
+        min_d=input_starchart.min_d,
+        max_d=input_starchart.max_d,
+        font_size=input_starchart.font_size,
+        font_color=input_starchart.font_color,
+        curve_width=input_starchart.curve_width,
+        curve_color=input_starchart.curve_color,
+        star_color=input_starchart.star_color,
+        background=input_starchart.background)
+    scheme.save()
 
-    left = '<li><a class="dropdown-item" href="'
-    base_url = "/my_astrobase/starchart/"
-    if settings.DEBUG:
-        base_url = "http://localhost:8000/my_astrobase/starchart/"
-
-    right = '</a></li>'
-
-    for starchart in Sche.objects.all():
-        line = left + base_url + starchart.name + '">' + starchart.name + right
-        results += line
-
-    return results

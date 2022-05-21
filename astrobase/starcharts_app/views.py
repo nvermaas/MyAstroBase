@@ -5,7 +5,7 @@ from django.conf import settings
 from .models import StarChart, Scheme, Stars
 from .serializers import StarChartSerializer, StarsSerializer
 from .forms import StarChartForm
-from .starchart.main import create_starchart, construct_starcharts_list
+from .starchart.main import create_starchart, construct_starcharts_list, create_scheme_from_chart
 
 class StarsFilter(filters.FilterSet):
 
@@ -93,6 +93,8 @@ def CreateStarChart(request):
                    'starchart_url_media': starchart_url_media,
                    'starcharts_list': starcharts_list})
 
+
+
 def StarChartView(request, name=None):
 
     try:
@@ -114,14 +116,23 @@ def StarChartView(request, name=None):
 
         form = StarChartForm(request.POST, instance=starchart)
         if form.is_valid():
-            # update the name and save to apply a potential change of scheme before creating the svg
-            starchart.name = starchart.name.replace(" ", "_")
-            starchart.save()
+            object_to_save = request.POST['save']
 
-            # reload the form with the above changes so they show up in the template
-            form = StarChartForm(instance=starchart)
+            if object_to_save == 'scheme':
+                # save as scheme button was pushed
+                create_scheme_from_chart(starchart)
 
-            starchart, starchart_url_media = create_starchart(starchart)
+            else:
+                # save chart button was pushed
+                # update the name and save to apply a potential change of scheme before creating the svg
+                starchart.name = starchart.name.replace(" ", "_")
+                starchart.save()
+
+                # reload the form with the above changes so they show up in the template
+                form = StarChartForm(instance=starchart)
+
+                starchart, starchart_url_media = create_starchart(starchart)
+
             return render(request, "starcharts_app/starchart.html",
                           {'form': form,
                            'starchart': starchart,

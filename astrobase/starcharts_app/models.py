@@ -4,12 +4,22 @@ from django.db import models
 class Stars(models.Model):
     RightAscension = models.FloatField()
     Declination = models.FloatField()
-    Magnitude = models.FloatField()
+
     HipparcosID = models.CharField(max_length=10)
     HenryDraperID = models.CharField(max_length=10)
     BayerFlamsteed = models.CharField(max_length=10)
-
-
+    DistanceInParsecs = models.FloatField()
+    ProperMotionRA = models.FloatField()
+    ProperMotionDec = models.FloatField()
+    RadialVelocity = models.FloatField()
+    Magnitude = models.FloatField()
+    AbsoluteMagnitude = models.FloatField()
+    Luminosity = models.FloatField()
+    SpectralType = models.CharField(max_length=10)
+    ColorIndex = models.FloatField()
+    Constellation = models.CharField(max_length=5)
+    VariableMinimum = models.FloatField()
+    VariableMaximum = models.FloatField()
 
 class Scheme(models.Model):
     name = models.CharField(default='default', max_length=30)
