@@ -6,6 +6,7 @@ from .models import StarChart, Scheme, Stars
 from .serializers import StarChartSerializer, StarsSerializer
 from .forms import StarChartForm
 from .starchart.main import create_starchart, construct_starcharts_list, create_scheme_from_chart
+from .starchart.star_database import StarDatabase
 
 class StarsFilter(filters.FilterSet):
 
@@ -14,6 +15,23 @@ class StarsFilter(filters.FilterSet):
 
         fields = {
             'BayerFlamsteed': ['exact', 'icontains', 'in'],
+            'HipparcosID': ['exact', 'icontains', 'in'],
+            'HenryDraperID': ['exact', 'icontains', 'in'],
+            'GlieseID': ['exact', 'icontains', 'in'],
+            'Constellation': ['exact', 'icontains', 'in'],
+            'SpectralType': ['exact', 'icontains', 'in'],
+            'RightAscension': ['exact', 'icontains', 'lte','gte'],
+            'Declination': ['exact', 'icontains', 'lte', 'gte'],
+            'DistanceInParsecs': ['exact', 'icontains', 'lte', 'gte'],
+            'ProperMotionRA': ['exact', 'icontains', 'lte', 'gte'],
+            'ProperMotionDec': ['exact', 'icontains', 'lte', 'gte'],
+            'RadialVelocity': ['exact', 'icontains', 'lte', 'gte'],
+            'Magnitude': ['exact', 'icontains', 'lte', 'gte'],
+            'AbsoluteMagnitude': ['exact', 'icontains', 'lte', 'gte'],
+            'Luminosity': ['exact', 'icontains', 'lte', 'gte'],
+            'ColorIndex': ['exact', 'icontains', 'lte', 'gte'],
+            'VariableMinimum': ['exact', 'icontains', 'lte', 'gte'],
+            'VariableMaximum': ['exact', 'icontains', 'lte', 'gte'],
         }
 
 
@@ -144,8 +162,7 @@ def StarChartView(request, name=None):
                 'form': form,
                 'starchart': starchart,
                 'starchart_url_media': starchart_url_media,
-                'starcharts_list': starcharts_list,
-                'schemes_list' :schemes_list})
+                'starcharts_list': starcharts_list})
 
     # a GET presents the form to the user to fill in and submit as a POST
     else:
@@ -158,3 +175,11 @@ def StarChartView(request, name=None):
             'starcharts_list' : starcharts_list})
 
 
+#create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
+#http://localhost:8000/my_astrobase/create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
+def ImportStars(request):
+    print('importstars')
+    db = StarDatabase(settings.MY_HYG_ROOT)
+    db.import_stars()
+
+    return redirect("/my_astrobase/starchart/")

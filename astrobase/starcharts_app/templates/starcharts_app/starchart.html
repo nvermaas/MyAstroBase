@@ -9,7 +9,7 @@
             <div class="card">
                <div class="card-body">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-4">
                            <div class="btn-group">
                               <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 Select Chart
@@ -22,6 +22,11 @@
                         <div class="col-4">
                             <a href="{% url 'starcharts_app:starchart' %}">
                                 <div><button class="btn btn-success btn-md"><i class="fas fa-folder-plus"></i> New Chart</button></div>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="{% url 'starcharts_app:stars-api' %}" target="_blank">
+                                <div><button class="btn btn-primary btn-md"><i class="fas fa-star"></i>Stars API</button></div>
                             </a>
                         </div>
                         </div>
@@ -128,5 +133,5 @@
         </div>
     </div>
 </div>
-<p class="footer"> version 21 may 2022 - 14:00)</p>
+<p class="footer"> version 21 may 2022 - 20:00)</p>
 {% endblock %}

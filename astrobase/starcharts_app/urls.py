@@ -19,6 +19,7 @@ urlpatterns = [
 
      # shortcut to directly create a starchart with request parameters
      path('create-starchart/', views.CreateStarChart, name='create-starchart'),
+     path('import-stars/', views.ImportStars, name='import-stars'),
 
 ]
 

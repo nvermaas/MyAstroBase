@@ -1,7 +1,7 @@
 import sqlite3
 from sqlite3 import Error
 
-import codecs
+from ..models import Stars
 from .star_data import StarData, StarDataList
 
 class StarDatabase:
@@ -51,3 +51,56 @@ class StarDatabase:
                 matches.append(StarData(ra, dec, mag, label))
 
             return StarDataList(matches)
+
+
+    def import_stars(self):
+
+        """
+        Import all stars from hygdata table into the stars database
+        """
+
+
+        cur = self.conn.cursor()
+        cur.execute("SELECT RightAscension,Declination,Magnitude,HipparcosID,GlieseID,BayerFlamsteed,DistanceInParsecs,"
+                    "ProperMotionRA,ProperMotionDec,RadialVelocity,AbsoluteMagnitude,Luminosity,SpectralType,"
+                    "ColorIndex,Constellation,VariableMinimum,VariableMaximum FROM hygdata")
+
+        rows = cur.fetchall()
+
+        # clear the current Stars database
+        Stars.objects.all().delete()
+
+        for row in rows:
+            # get rid of the '' in the fields that are supposed to be a float
+            _row13 = None if row[13]=='' else row[13]
+            _row15 = None if row[15]=='' else row[15]
+            _row16 = None if row[16]=='' else row[16]
+
+            try:
+                star = Stars(
+                    RightAscension=row[0],
+                    Declination=row[1],
+                    Magnitude=row[2],
+                    HipparcosID=row[3],
+                    GlieseID=row[4],
+                    BayerFlamsteed=row[5],
+                    DistanceInParsecs=row[6],
+                    ProperMotionRA=row[7],
+                    ProperMotionDec=row[8],
+                    RadialVelocity=row[9],
+                    AbsoluteMagnitude=row[10],
+                    Luminosity=row[11],
+                    SpectralType=row[12],
+                    ColorIndex=_row13,
+                    Constellation=row[14],
+                    VariableMinimum=_row15,
+                    VariableMaximum=_row16,
+                )
+                star.save()
+            except Exception as e:
+                print('error reading star: '+str(e))
+
+            print(star)
+
+
+        return
