@@ -6,7 +6,7 @@ from .models import StarChart, Scheme, Stars
 from .serializers import StarChartSerializer, StarsSerializer
 from .forms import StarChartForm
 from .starchart.main import create_starchart, construct_starcharts_list, create_scheme_from_chart
-from .starchart.star_database import StarDatabase
+from .starchart.hyg_star_database import HygStarDatabase
 
 class StarsFilter(filters.FilterSet):
 
@@ -177,9 +177,10 @@ def StarChartView(request, name=None):
 
 #create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
 #http://localhost:8000/my_astrobase/create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
+# fill the Django controlled stars.sqlite3 database with the data from hygdata.sqlite3
 def ImportStars(request):
     print('importstars')
-    db = StarDatabase(settings.MY_HYG_ROOT)
+    db = HygStarDatabase(settings.MY_HYG_ROOT)
     db.import_stars()
 
     return redirect("/my_astrobase/starchart/")

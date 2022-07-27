@@ -4,10 +4,7 @@
     Date created: 2019-11-13
     Description:  Business logic for AstroBase. These functions are called from the views (views.py).
 """
-import os
-import datetime
 import logging
-from .common import timeit
 from ..models import Observation2
 
 DATE_FORMAT = "%Y-%m-%d"

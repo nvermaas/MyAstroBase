@@ -36,3 +36,10 @@ MY_ASTEROIDS_ROOT = "asteroids.txt"
 MY_HIPPARCOS_ROOT = "hip_main.dat"
 MY_EXOPLANETS_ROOT = "exoplanets.csv"
 MY_HYG_ROOT = "hygdata.sqlite3"
+
+# UCAC4 database credentials
+UCAC4_HOST = "localhost"
+UCAC4_PORT = "5432"
+UCAC4_DATABASE = "ucac4"
+UCAC4_USER = "postgres"
+UCAC4_PASSWORD = "postgres"

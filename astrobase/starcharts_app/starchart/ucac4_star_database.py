@@ -1,20 +1,26 @@
-import sqlite3
-from sqlite3 import Error
+import psycopg2
+from psycopg2 import Error
+from ..utils import timeit
 
-from ..models import Stars
 from .star_data import StarData, StarDataList
 
-class StarDatabase:
-    def __init__(self, db_file):
+class UCAC4StarDatabase:
+    def __init__(self,host,port,database,user,password):
 
         self.conn = None
         try:
-            self.conn = sqlite3.connect(db_file)
+            self.conn = psycopg2.connect(
+                database=database,
+                user=user,
+                password=password,
+                host=host,
+                port=port
+            )
         except Error as e:
             print(e)
 
-
-    def get_stars(self, sky_area):
+    @timeit
+    def get_stars(self, sky_area, limit):
 
             """
             Query all rows in the tasks table
@@ -22,7 +28,14 @@ class StarDatabase:
             :return:
             """
             cur = self.conn.cursor()
-            cur.execute("SELECT RightAscension,Declination,Magnitude,BayerFlamsteed FROM hygdata")
+            where = "ra > " + str(sky_area.ra_min * 15) + " and "
+            where+= "ra < " + str(sky_area.ra_max * 15) + " and "
+            where+= "dec > " + str(sky_area.dec_min) + " and "
+            where+= "dec < " + str(sky_area.dec_max) + " and "
+            where+= "j_mag < " + str(sky_area.mag_min * 1000)
+            where+= " LIMIT " + str(limit)
+
+            cur.execute("SELECT ra,dec,j_mag FROM public.stars where "+where)
 
             rows = cur.fetchall()
 
@@ -32,21 +45,14 @@ class StarDatabase:
                 #print(row)
                 ra = row[0]/15
                 dec = row[1]
-                mag = row[2]
-                label = row[3]
+                mag = row[2]/1000
+                label = ""
 
                 # add magnitude as label
                 #label = row[2]
 
                 # add colors:
                 # https://stackoverflow.com/questions/21977786/star-b-v-color-index-to-apparent-rgb-color
-
-                if mag > sky_area.mag_min:  # because smaller mag values mean brighter stars
-                    continue
-                if not (sky_area.ra_min <= ra <= sky_area.ra_max):
-                    continue
-                if not (sky_area.dec_min <= dec <= sky_area.dec_max):
-                    continue
 
                 matches.append(StarData(ra, dec, mag, label))
 

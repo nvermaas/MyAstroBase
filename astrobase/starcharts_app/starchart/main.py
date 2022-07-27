@@ -5,7 +5,8 @@ from django.conf import settings
 from ..models import StarChart, Scheme
 from .sky_area import SkyArea
 from .diagram import Diagram
-from .star_database import StarDatabase
+from .hyg_star_database import HygStarDatabase
+from .ucac4_star_database import UCAC4StarDatabase
 from .coord_calc import CoordCalc
 
 
@@ -21,8 +22,21 @@ def create_starchart(input_starchart):
 
     area = SkyArea(starchart.ra_min/15, starchart.ra_max/15, starchart.dec_min, starchart.dec_max, starchart.magnitude_limit)
 
-    db = StarDatabase(settings.MY_HYG_ROOT)
-    star_data_list = db.get_stars(area)
+    # todo: move these vars to StarChart object
+    source = "ucac4_postgres"
+    limit = 10000
+
+    if source == "hyg_sqlite":
+        hyg_db = HygStarDatabase(settings.MY_HYG_ROOT)
+        star_data_list = hyg_db.get_stars(area)
+
+    elif source == "ucac4_postgres":
+        ucac4_db = UCAC4StarDatabase(settings.UCAC4_HOST,
+                                     settings.UCAC4_PORT,
+                                     settings.UCAC4_DATABASE,
+                                     settings.UCAC4_USER,
+                                     settings.UCAC4_PASSWORD)
+        star_data_list = ucac4_db.get_stars(area,limit)
 
     cc = CoordCalc(star_data_list, area, starchart.diagram_size)
     cc.process()
