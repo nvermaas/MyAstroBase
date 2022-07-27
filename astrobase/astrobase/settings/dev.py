@@ -45,8 +45,8 @@ UCAC4_USER = "postgres"
 UCAC4_PASSWORD = "postgres"
 
 # UCAC4 database credentials (mintbox)
-UCAC4_HOST = "192.168.178.37"
-UCAC4_PORT = "5432"
-UCAC4_DATABASE = "ucac4"
-UCAC4_USER = "postgres"
-UCAC4_PASSWORD = "secret"
+#UCAC4_HOST = "192.168.178.37"
+#UCAC4_PORT = "5432"
+#UCAC4_DATABASE = "ucac4"
+#UCAC4_USER = "postgres"
+#UCAC4_PASSWORD = "secret"

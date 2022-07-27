@@ -81,6 +81,7 @@ def ShowStarChartView(request, name='my_starchart'):
 def CreateStarChart(request):
     name = request.GET.get('name', 'my_starchart')
     scheme_name = request.GET.get('scheme','default')
+    source = scheme_name = request.GET.get('source','ucac4_postgres')
     ra_min = float(request.GET.get('ra_min','44'))
     ra_max = float(request.GET.get('ra_max','56'))
     dec_min = float(request.GET.get('dec_min','10.75'))
@@ -95,6 +96,7 @@ def CreateStarChart(request):
 
     input_starchart = StarChart(name=name,
                                 scheme = scheme,
+                                source = source,
                                 ra_min=ra_min,
                                 ra_max=ra_max,
                                 dec_min=dec_min,

@@ -44,9 +44,15 @@ class Scheme(models.Model):
     def __str__(self):
         return self.name
 
+SOURCE_CHOICES = [
+    ('ucac4_postgres', 'ucac4_postgres'),
+    ('hyg_sqlite', 'hyg_sqlite'),
+]
 
 class StarChart(models.Model):
     name = models.CharField(default='change me', max_length=30)
+    source = models.CharField(choices=SOURCE_CHOICES, default='ucac4_postgres', max_length=30)
+    query_limit = models.IntegerField(default=10000)
     ra_min = models.FloatField()
     ra_max = models.FloatField()
     dec_min = models.FloatField()
