@@ -45,7 +45,10 @@ LOGIN_REDIRECT_URL = "https://web-of-wyrd.nl/astroview/login"
 LOGOUT_REDIRECT_URL = "https://web-of-wyrd.nl/astroview/logout"
 
 # UCAC4 database credentials
-UCAC4_HOST = "192.168.178.37"
+
+# UCAC4_HOST is name of the Docker service inside the same docker network (homebase_network)
+# as defined in the ~/shared/docker-compose.yml file on the mintbox.
+UCAC4_HOST = "postgres-ucac4"
 UCAC4_PORT = "5432"
 UCAC4_DATABASE = "ucac4"
 UCAC4_USER = "postgres"
