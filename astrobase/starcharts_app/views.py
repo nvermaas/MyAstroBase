@@ -82,10 +82,34 @@ def CreateStarChart(request):
     name = request.GET.get('name', 'my_starchart')
     scheme_name = request.GET.get('scheme','default')
     source = scheme_name = request.GET.get('source','ucac4_postgres')
-    ra_min = float(request.GET.get('ra_min','44'))
-    ra_max = float(request.GET.get('ra_max','56'))
-    dec_min = float(request.GET.get('dec_min','10.75'))
-    dec_max = float(request.GET.get('dec_max','19.25'))
+
+    try:
+        ra = float(request.GET.get('ra'))
+        dec = float(request.GET.get('dec'))
+        radius_ra = float(request.GET.get('radius_ra'))
+        radius_dec = float(request.GET.get('radius_dec'))
+    except:
+        # no cone is given, try box
+        ra = None
+        dec = None
+        radius_ra = None
+        radius_dec = None
+        pass
+
+    try:
+        ra_min = float(request.GET.get('ra_min'))
+        ra_max = float(request.GET.get('ra_max'))
+        dec_min = float(request.GET.get('dec_min'))
+        dec_max = float(request.GET.get('dec_max'))
+    except:
+        # no box is given, hope for cone
+        ra_min = None
+        ra_max = None
+        dec_min = None
+        dec_max = None
+        pass
+
+    rotation = int(request.GET.get('rotation', '0'))
     magnitude = float(request.GET.get('magnitude','10'))
 
     try:
@@ -97,6 +121,11 @@ def CreateStarChart(request):
     input_starchart = StarChart(name=name,
                                 scheme = scheme,
                                 source = source,
+                                ra = ra,
+                                dec = dec,
+                                radius_ra = radius_ra,
+                                radius_dec = radius_dec,
+                                rotation = rotation,
                                 ra_min=ra_min,
                                 ra_max=ra_max,
                                 dec_min=dec_min,

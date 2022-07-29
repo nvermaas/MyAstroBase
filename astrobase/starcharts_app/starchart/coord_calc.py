@@ -7,7 +7,7 @@ class CoordCalc:
         self.star_data_list = star_data_list
         self.area = area
         self.center_ra_angle  = self._ra_to_angle((area.ra_min + area.ra_max)/2)
-        if area.ra_max - area.ra_min >= 12:
+        if area.ra_max - area.ra_min >= 180:
             self.center_dec_angle = self._dec_to_angle(90 if abs(area.dec_min) < abs(area.dec_max) else -90)
         else:
             self.center_dec_angle = self._dec_to_angle((area.dec_min + area.dec_max)/2)
@@ -15,7 +15,7 @@ class CoordCalc:
 
     def _ra_to_angle(self, ra):
         # convert right-ascension (0 -> 24) into angle (0 -> 2π)
-        return pi * 2 * (1 - ra / 24)
+        return pi * 2 * (1 - ra / 360)
 
     def _dec_to_angle(self, dec):
         # convert declination (-90 -> +90) into angle (-π/2 -> +π/2)

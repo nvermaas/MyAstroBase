@@ -3,12 +3,11 @@ from pathlib import Path
 from django.core.files import File
 from django.conf import settings
 from ..models import StarChart, Scheme
-from .sky_area import SkyArea
+from .sky_area import SkyArea, ConeToSkyArea
 from .diagram import Diagram
 from .hyg_star_database import HygStarDatabase
 from .ucac4_star_database import UCAC4StarDatabase
 from .coord_calc import CoordCalc
-
 
 
 def create_starchart(input_starchart):
@@ -20,7 +19,10 @@ def create_starchart(input_starchart):
 
     starchart = input_starchart
 
-    area = SkyArea(starchart.ra_min/15, starchart.ra_max/15, starchart.dec_min, starchart.dec_max, starchart.magnitude_limit)
+    if starchart.ra:
+        area = ConeToSkyArea(starchart.ra,starchart.dec,starchart.radius_ra,starchart.radius_dec,starchart.magnitude_limit)
+    else:
+        area = SkyArea(starchart.ra_min, starchart.ra_max, starchart.dec_min, starchart.dec_max, starchart.magnitude_limit)
 
     if starchart.source == "hyg_sqlite":
         hyg_db = HygStarDatabase(settings.MY_HYG_ROOT)

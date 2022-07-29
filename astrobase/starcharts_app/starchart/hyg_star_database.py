@@ -26,11 +26,11 @@ class HygStarDatabase:
 
             rows = cur.fetchall()
 
-            matches = []
+            results = []
 
             for row in rows:
                 #print(row)
-                ra = row[0]/15
+                ra = row[0]
                 dec = row[1]
                 mag = row[2]
                 label = row[3]
@@ -48,9 +48,9 @@ class HygStarDatabase:
                 if not (sky_area.dec_min <= dec <= sky_area.dec_max):
                     continue
 
-                matches.append(StarData(ra, dec, mag, label))
+                results.append(StarData(ra, dec, mag, label))
 
-            return StarDataList(matches)
+            return StarDataList(results)
 
 
     def import_stars(self):
