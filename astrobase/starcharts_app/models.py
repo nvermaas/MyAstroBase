@@ -49,10 +49,22 @@ SOURCE_CHOICES = [
     ('hyg_sqlite', 'hyg_sqlite'),
 ]
 
+LABEL_CHOICES = [
+    ('HipparcosID', 'HipparcosID'),
+    ('HenryDraperID', 'HenryDraperID'),
+    ('GlieseID', 'GlieseID'),
+    ('BayerFlamsteed', 'BayerFlamsteed'),
+    ('ProperName', 'ProperName')
+]
+
 class StarChart(models.Model):
     name = models.CharField(default='change me', max_length=30)
     source = models.CharField(choices=SOURCE_CHOICES, default='ucac4_postgres', max_length=30)
+    label_field = models.CharField(choices=LABEL_CHOICES, default='BayerFlamsteed', max_length=15)
+
     query_limit = models.IntegerField(default=10000)
+    nr_of_stars = models.IntegerField(default=0)
+
     ra = models.FloatField(null=True)
     dec = models.FloatField(null=True)
     radius_ra = models.FloatField(null=True)
