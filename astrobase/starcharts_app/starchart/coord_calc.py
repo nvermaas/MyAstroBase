@@ -3,8 +3,10 @@
 from math import sin, cos, degrees, radians, pi
 
 class CoordCalc:
-    def __init__(self, star_data_list, area, diagram_size):
+    def __init__(self, star_data_list, star_label_list, area, diagram_size):
         self.star_data_list = star_data_list
+        self.star_label_list = star_label_list
+
         self.area = area
         self.center_ra_angle  = self._ra_to_angle((area.ra_min + area.ra_max)/2)
         if area.ra_max - area.ra_min >= 180:
@@ -26,6 +28,10 @@ class CoordCalc:
             star_data.ra_angle  = self._ra_to_angle(star_data.ra)
             star_data.dec_angle = self._dec_to_angle(star_data.dec)
 
+        for star_data in self.star_label_list.data:
+            star_data.ra_angle  = self._ra_to_angle(star_data.ra)
+            star_data.dec_angle = self._dec_to_angle(star_data.dec)
+
     def _angle_to_xy(self, ra_angle, dec_angle):
         # http://www.projectpluto.com/project.htm
         delta_ra = ra_angle - self.center_ra_angle
@@ -36,6 +42,10 @@ class CoordCalc:
     def _populate_xy(self):
         for star_data in self.star_data_list.data:
             star_data.x, star_data.y = self._angle_to_xy(star_data.ra_angle, star_data.dec_angle)
+
+        for star_data in self.star_label_list.data:
+            star_data.x, star_data.y = self._angle_to_xy(star_data.ra_angle, star_data.dec_angle)
+
 
     def _offset_and_scale_xy(self):
         min_x = min([sd.x for sd in self.star_data_list.data])
@@ -65,8 +75,15 @@ class CoordCalc:
         self.star_data_list.max_y = offset_and_scale_y(max_y)
         self.offset_and_scale_x = offset_and_scale_x
         self.offset_and_scale_y = offset_and_scale_y
-
         list(map(offset_and_scale, self.star_data_list.data))
+
+        self.star_label_list.min_x = self.star_data_list.min_x
+        self.star_label_list.min_y = self.star_data_list.min_y
+        self.star_label_list.max_x = self.star_data_list.max_x
+        self.star_label_list.max_y = self.star_data_list.max_y
+
+        list(map(offset_and_scale, self.star_label_list.data))
+
 
     def process(self):
         self._populate_angles()
@@ -121,7 +138,7 @@ class CoordCalc:
         while dec < self.area.dec_max:
             if dec > self.area.dec_min:
                 curves.append(self.calc_dec_curve(dec, dec_steps))
-            dec += 10
+            dec += 1
         curves.append(self.calc_dec_curve(self.area.dec_max, dec_steps))
 
         return curves

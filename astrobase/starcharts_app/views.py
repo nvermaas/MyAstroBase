@@ -86,15 +86,10 @@ def CreateStarChart(request):
     try:
         ra = float(request.GET.get('ra'))
         dec = float(request.GET.get('dec'))
-        radius_ra = float(request.GET.get('radius_ra'))
-        radius_dec = float(request.GET.get('radius_dec'))
     except:
         # no cone is given, try box
         ra = None
         dec = None
-        radius_ra = None
-        radius_dec = None
-        pass
 
     try:
         ra_min = float(request.GET.get('ra_min'))
@@ -107,7 +102,19 @@ def CreateStarChart(request):
         ra_max = None
         dec_min = None
         dec_max = None
-        pass
+
+    try:
+        # try single radius
+        radius_ra = float(request.GET.get('radius'))
+        radius_dec = float(request.GET.get('radius'))
+    except:
+        # try split radius
+        try:
+            radius_ra = float(request.GET.get('radius_ra'))
+            radius_dec = float(request.GET.get('radius_dec'))
+        except:
+            radius_ra = None
+            radius_dec = None
 
     rotation = int(request.GET.get('rotation', '0'))
     magnitude = float(request.GET.get('magnitude','10'))

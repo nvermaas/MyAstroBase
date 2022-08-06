@@ -29,18 +29,40 @@ class HygStarDatabase:
             results = []
 
             for row in rows:
-                #print(row)
                 ra = row[0]
                 dec = row[1]
                 mag = row[2]
                 label = row[3]
 
-                # add magnitude as label
-                #label = row[2]
+                if mag > sky_area.mag_min:  # because smaller mag values mean brighter stars
+                    continue
+                if not (sky_area.ra_min <= ra <= sky_area.ra_max):
+                    continue
+                if not (sky_area.dec_min <= dec <= sky_area.dec_max):
+                    continue
 
-                # add colors:
-                # https://stackoverflow.com/questions/21977786/star-b-v-color-index-to-apparent-rgb-color
+                results.append(StarData(ra, dec, mag, label))
 
+            return StarDataList(results)
+
+
+    def get_labels(self, sky_area):
+
+            cur = self.conn.cursor()
+            cur.execute("SELECT RightAscension,Declination,Magnitude,BayerFlamsteed FROM hygdata")
+
+            rows = cur.fetchall()
+
+            results = []
+
+            for row in rows:
+                ra = row[0]
+                dec = row[1]
+                mag = row[2]
+                label = row[3]
+
+                if not label:
+                    continue
                 if mag > sky_area.mag_min:  # because smaller mag values mean brighter stars
                     continue
                 if not (sky_area.ra_min <= ra <= sky_area.ra_max):

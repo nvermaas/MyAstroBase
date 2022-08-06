@@ -27,8 +27,8 @@ class Stars(models.Model):
 
 class Scheme(models.Model):
     name = models.CharField(default='default', max_length=30)
-    magnitude_limit = models.FloatField(default=10)
-    dimmest_mag = models.FloatField(default=8)
+    magnitude_limit = models.FloatField(default=7)
+    dimmest_mag = models.FloatField(default=6)
     brightest_mag = models.FloatField(default=-1.5)
     min_d = models.IntegerField(default=1)
     max_d = models.IntegerField(default=4)
@@ -65,16 +65,16 @@ class StarChart(models.Model):
 
     rotation = models.IntegerField(default=0)
     magnitude_limit = models.FloatField(default=10)
-    dimmest_mag = models.FloatField(default=8)
-    brightest_mag = models.FloatField(default=-1.5)
+    dimmest_mag = models.FloatField(default=9)
+    brightest_mag = models.FloatField(default=-2)
     min_d = models.IntegerField(default=1)
-    max_d = models.IntegerField(default=4)
+    max_d = models.IntegerField(default=6)
 
     image = models.ImageField(upload_to='my_starmaps')
 
-    diagram_size = models.IntegerField(default=1200)
-    display_width = models.IntegerField(default=1200)
-    display_height = models.IntegerField(default=800)
+    diagram_size = models.IntegerField(default=800)
+    display_width = models.IntegerField(default=800)
+    display_height = models.IntegerField(default=600)
 
     font_size = models.IntegerField(default=10)
     font_color = models.CharField(default='#167ac6', max_length=10)

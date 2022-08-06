@@ -29,11 +29,12 @@ LABEL_OFFSET_Y = 3
 #CURVE_COLOUR = '#FFF'
 
 class Diagram:
-    def __init__(self, starchart, area, star_data_list):
+    def __init__(self, starchart, area, star_data_list, star_label_list):
         self.starchart = starchart
         self.title = starchart.name
         self.area = area
         self.star_data_list = star_data_list
+        self.star_label_list = star_label_list
         self.curves = []
         self.border_min_x = self.border_min_y = self.border_max_x = self.border_max_y = None
 
@@ -58,7 +59,7 @@ class Diagram:
             svg.circle(x, y, self._mag_to_d(star_data.mag), self.starchart.star_color)
 
         # next add labels
-        for star_data in self.star_data_list.data:
+        for star_data in self.star_label_list.data:
             if star_data.label:
                 x, y = self._invert_and_offset(star_data.x, star_data.y)
                 d = self._mag_to_d(star_data.mag)

@@ -37,6 +37,7 @@ class UCAC4StarDatabase:
             where+= " LIMIT " + str(limit)
 
             cur.execute("SELECT ra,dec,j_mag FROM public.stars where "+where)
+            #cur.execute("SELECT ra,dec,j_mag FROM public.z570 where " + where)
 
             rows = cur.fetchall()
 
@@ -60,5 +61,5 @@ class UCAC4StarDatabase:
             return StarDataList(results)
 
 
-    def cone_search(self, ra, dec, radius):
+    def cone_search(self, sky_area, limit):
         pass

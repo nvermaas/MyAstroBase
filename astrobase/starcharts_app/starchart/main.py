@@ -14,7 +14,8 @@ def create_starchart(input_starchart):
     try:
         starchart = StarChart.objects.get(name=input_starchart.name)
         starchart.delete()
-    except:
+    except Exception as e:
+        print(e)
         pass
 
     starchart = input_starchart
@@ -36,37 +37,51 @@ def create_starchart(input_starchart):
                                      settings.UCAC4_PASSWORD)
         star_data_list = ucac4_db.get_stars(area,starchart.query_limit)
 
-    cc = CoordCalc(star_data_list, area, starchart.diagram_size)
-    cc.process()
+    print(str(len(star_data_list.data))+ ' stars')
 
-    # create the diagram
-    d = Diagram(starchart, area, star_data_list)
-    list(map(d.add_curve, cc.calc_curves()))
+    # get star labels from the HYG database
+    hyg_db = HygStarDatabase(settings.MY_HYG_ROOT)
+    star_label_list = hyg_db.get_labels(area)
 
-    # generate the temporary image file
-    temp_filename = 'starchart.svg'
-    temp_path = os.path.join(settings.MEDIA_ROOT, temp_filename)
-    d.render_svg(temp_path)
+    cc = CoordCalc(star_data_list, star_label_list, area, starchart.diagram_size)
 
-    # delete existing file before uploading
-    my_filename = starchart.name + '.svg'
     try:
-        existing_file = os.path.join(os.path.join(settings.MEDIA_ROOT, 'my_starmaps'), my_filename)
-        os.remove(existing_file)
-    except:
-        pass
+        cc.process()
 
-    # add the image to the StarChart object and database
-    path = Path(temp_path)
-    with path.open(mode='rb') as f:
-        starchart.image = File(f, name=my_filename)
-        starchart.save()
+        #cc_labels = CoordCalc(star_label_list, area, starchart.diagram_size)
+        #cc_labels.process()
 
-    starchart_url_media = settings.MEDIA_URL + 'my_starmaps/' + my_filename
-    if settings.DEBUG:
-        starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
+        # create the diagram
+        d = Diagram(starchart, area, star_data_list, star_label_list)
+        list(map(d.add_curve, cc.calc_curves()))
 
-    return starchart,starchart_url_media
+        # generate the temporary image file
+        temp_filename = 'starchart.svg'
+        temp_path = os.path.join(settings.MEDIA_ROOT, temp_filename)
+        d.render_svg(temp_path)
+
+        # delete existing file before uploading
+        my_filename = starchart.name + '.svg'
+        try:
+            existing_file = os.path.join(os.path.join(settings.MEDIA_ROOT, 'my_starmaps'), my_filename)
+            os.remove(existing_file)
+        except:
+            pass
+
+        # add the image to the StarChart object and database
+        path = Path(temp_path)
+        with path.open(mode='rb') as f:
+            starchart.image = File(f, name=my_filename)
+            starchart.save()
+
+        starchart_url_media = settings.MEDIA_URL + 'my_starmaps/' + my_filename
+        if settings.DEBUG:
+            starchart_url_media = "http://localhost:8000/my_astrobase" + starchart_url_media
+
+        return starchart,starchart_url_media
+    except Exception as e:
+        print(e)
+        return starchart, 'not enough stars to create a starchart of this area'
 
 
 def construct_starcharts_list():

@@ -5,7 +5,6 @@ SVG_FOOTER = '</svg>'
 class Svg:
     def __init__(self,background):
         self.background = background
-        print(self.background)
 
         self.svg_header = '<svg style="background-color:'
         self.svg_header += self.background
