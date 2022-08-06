@@ -31,7 +31,7 @@
                         </div>
                         </div>
                     <hr>
-                    <h3>{{ starchart.name }}</h3>
+                    <h4>{{ starchart.name }} ({{ starchart.nr_of_stars }})</h4>
                     <form class="post-form" action="{% url 'starcharts_app:starchart' starchart.name %}" method="POST">
                         {% csrf_token %}
                         <div>
@@ -85,6 +85,9 @@
                             </div>
 
                             <div class="row">
+                              <div class="col-6">
+                                {{ form.label_field|as_crispy_field }}
+                              </div>
                                <div class="col-3">
                                 {{ form.font_size|as_crispy_field }}
                               </div>
@@ -92,6 +95,8 @@
                                 {{ form.font_color|as_crispy_field }}
                               </div>
 
+                            </div>
+                            <div class="row">
                               <div class="col-3">
                                 {{ form.curve_width|as_crispy_field }}
                               </div>
@@ -136,5 +141,5 @@
         </div>
     </div>
 </div>
-<p class="footer"> version 6 aug 2022 - 14:00)</p>
+<p class="footer"> version 6 aug 2022 - 19:00)</p>
 {% endblock %}

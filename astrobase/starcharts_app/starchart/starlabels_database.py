@@ -14,10 +14,11 @@ class StarLabelsDatabase:
             print(e)
 
 
-    def get_labels(self, sky_area):
+    def get_labels(self, sky_area, label_field):
 
             cur = self.conn.cursor()
-            cur.execute("SELECT RightAscension,Declination,Magnitude,BayerFlamsteed FROM hygdata")
+            query = "SELECT RightAscension,Declination,Magnitude," + label_field + " FROM hygdata"
+            cur.execute(query)
 
             rows = cur.fetchall()
 

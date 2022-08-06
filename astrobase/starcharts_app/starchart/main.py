@@ -38,11 +38,11 @@ def create_starchart(input_starchart):
                                      settings.UCAC4_PASSWORD)
         star_data_list = ucac4_db.get_stars(area,starchart.query_limit)
 
-    print(str(len(star_data_list.data))+ ' stars')
+    starchart.nr_of_stars = len(star_data_list.data)
 
     # get star labels from the HYG database
     starlabels_db = StarLabelsDatabase(settings.MY_STARLABELS_ROOT)
-    star_label_list = starlabels_db.get_labels(area)
+    star_label_list = starlabels_db.get_labels(area,starchart.label_field)
 
     cc = CoordCalc(star_data_list, star_label_list, area, starchart.diagram_size)
 
