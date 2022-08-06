@@ -7,6 +7,7 @@ from .sky_area import SkyArea, ConeToSkyArea
 from .diagram import Diagram
 from .hyg_star_database import HygStarDatabase
 from .ucac4_star_database import UCAC4StarDatabase
+from .starlabels_database import StarLabelsDatabase
 from .coord_calc import CoordCalc
 
 
@@ -40,8 +41,8 @@ def create_starchart(input_starchart):
     print(str(len(star_data_list.data))+ ' stars')
 
     # get star labels from the HYG database
-    hyg_db = HygStarDatabase(settings.MY_HYG_ROOT)
-    star_label_list = hyg_db.get_labels(area)
+    starlabels_db = StarLabelsDatabase(settings.MY_STARLABELS_ROOT)
+    star_label_list = starlabels_db.get_labels(area)
 
     cc = CoordCalc(star_data_list, star_label_list, area, starchart.diagram_size)
 

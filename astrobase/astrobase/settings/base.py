@@ -238,3 +238,5 @@ MY_EXOPLANETS_ROOT = "/shared/repository/exoplanets.csv"
 
 MY_HYG_URL = "https://web-of-wyrd.nl/astrobase/repository/hygdata.sqlite3"
 MY_HYG_ROOT = "/shared/repository/hygdata.sqlite3"
+
+MY_STARLABELS_ROOT = "/shared/repository/starlabels.sqlite3"

@@ -36,6 +36,7 @@ MY_ASTEROIDS_ROOT = "asteroids.txt"
 MY_HIPPARCOS_ROOT = "hip_main.dat"
 MY_EXOPLANETS_ROOT = "exoplanets.csv"
 MY_HYG_ROOT = "hygdata.sqlite3"
+MY_STARLABELS_ROOT = "starlabels.sqlite3"
 
 # UCAC4 database credentials (localhost)
 UCAC4_HOST = "localhost"
