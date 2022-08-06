@@ -16,7 +16,6 @@ def create_starchart(input_starchart):
         starchart = StarChart.objects.get(name=input_starchart.name)
         starchart.delete()
     except Exception as e:
-        print(e)
         pass
 
     starchart = input_starchart

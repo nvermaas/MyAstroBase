@@ -182,6 +182,15 @@ def StarChartView(request, name=None):
                 # save chart button was pushed
                 # update the name and save to apply a potential change of scheme before creating the svg
                 starchart.name = starchart.name.replace(" ", "")
+
+                # first delete the existing starchart with this name
+                try:
+                    old_starchart = StarChart.objects.get(name=starchart.name)
+                    old_starchart.delete()
+                except Exception as e:
+                    print(e)
+                    pass
+
                 starchart.save()
 
                 # reload the form with the above changes so they show up in the template
