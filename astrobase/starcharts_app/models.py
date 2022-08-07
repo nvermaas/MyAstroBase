@@ -49,6 +49,11 @@ SOURCE_CHOICES = [
     ('hyg_sqlite', 'hyg_sqlite'),
 ]
 
+OUTPUT_CHOICES = [
+    ('svg', 'svg'),
+    ('png', 'png'),
+]
+
 LABEL_CHOICES = [
     ('HipparcosID', 'HipparcosID'),
     ('HenryDraperID', 'HenryDraperID'),
@@ -60,6 +65,8 @@ LABEL_CHOICES = [
 class StarChart(models.Model):
     name = models.CharField(default='change me', max_length=30)
     source = models.CharField(choices=SOURCE_CHOICES, default='ucac4_postgres', max_length=30)
+    output_format = models.CharField(choices=OUTPUT_CHOICES, default='svg', max_length=3)
+
     label_field = models.CharField(choices=LABEL_CHOICES, default='BayerFlamsteed', max_length=15)
 
     query_limit = models.IntegerField(default=10000)
@@ -88,8 +95,9 @@ class StarChart(models.Model):
     display_width = models.IntegerField(default=800)
     display_height = models.IntegerField(default=600)
 
-    font_size = models.IntegerField(default=10)
-    font_color = models.CharField(default='#167ac6', max_length=10)
+    font_size = models.IntegerField(default=15)
+    #font_color = models.CharField(default='#167ac6', max_length=10)
+    font_color = models.CharField(default='yellow', max_length=10)
 
     curve_width = models.FloatField(default=0.2)
     curve_color = models.CharField(default='#FFF', max_length=10)
@@ -97,6 +105,7 @@ class StarChart(models.Model):
     background = models.CharField(default='black', max_length=10)
     scheme = models.ForeignKey(Scheme, on_delete=models.SET_NULL, null=True, blank=True)
     previous_scheme_name = models.CharField(max_length=30, null=True)
+    extra = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name
