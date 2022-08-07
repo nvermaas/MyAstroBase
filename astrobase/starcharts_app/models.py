@@ -104,7 +104,7 @@ class StarChart(models.Model):
     star_color = models.CharField(default='#FFF', max_length=10)
     background = models.CharField(default='black', max_length=10)
     scheme = models.ForeignKey(Scheme, on_delete=models.SET_NULL, null=True, blank=True)
-    previous_scheme_name = models.CharField(max_length=30, null=True)
+    previous_scheme_name = models.CharField(max_length=30, null=True, blank=True)
     extra = models.TextField(null=True, blank=True)
 
     def __str__(self):

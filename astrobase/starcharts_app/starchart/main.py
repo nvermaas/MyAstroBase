@@ -22,8 +22,14 @@ def create_starchart(input_starchart):
 
     if starchart.ra:
         area = ConeToSkyArea(starchart.ra,starchart.dec,starchart.radius_ra,starchart.radius_dec,starchart.magnitude_limit)
+        starchart.ra_min = area.ra_min
+        starchart.ra_max = area.ra_max
+        starchart.dec_min = area.dec_min
+        starchart.dec_max = area.dec_max
     else:
         area = SkyArea(starchart.ra_min, starchart.ra_max, starchart.dec_min, starchart.dec_max, starchart.magnitude_limit)
+        starchart.ra = (area.ra_min + area.ra_max) / 2
+        starchart.dec = (area.dec_min + area.dec_max) / 2
 
     if starchart.source == "hyg_sqlite":
         hyg_db = HygStarDatabase(settings.MY_HYG_ROOT)
@@ -47,9 +53,6 @@ def create_starchart(input_starchart):
 
     try:
         cc.process()
-
-        #cc_labels = CoordCalc(star_label_list, area, starchart.diagram_size)
-        #cc_labels.process()
 
         # create the diagram
         d = Diagram(starchart, area, star_data_list, star_label_list)
