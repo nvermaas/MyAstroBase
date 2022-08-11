@@ -9,7 +9,7 @@ from .hyg_star_database import HygStarDatabase
 from .ucac4_star_database import UCAC4StarDatabase
 from .starlabels_database import StarLabelsDatabase
 from .coord_calc import CoordCalc
-
+from .plot_data import PlotData, PlotDataList
 
 def create_starchart(input_starchart):
     try:
@@ -49,13 +49,19 @@ def create_starchart(input_starchart):
     starlabels_db = StarLabelsDatabase(settings.MY_STARLABELS_ROOT)
     star_label_list = starlabels_db.get_labels(area,starchart.label_field)
 
-    cc = CoordCalc(star_data_list, star_label_list, area, starchart.diagram_size)
+    # extra objects to draw on the starchart
+    plot_data_list = PlotDataList(starchart.extra)
+
+    cc = CoordCalc(star_data_list,
+                   star_label_list,
+                   plot_data_list,
+                   area, starchart.diagram_size)
 
     try:
         cc.process()
 
         # create the diagram
-        d = Diagram(starchart, area, star_data_list, star_label_list)
+        d = Diagram(starchart, area, star_data_list, star_label_list, plot_data_list)
         list(map(d.add_curve, cc.calc_curves()))
 
         # generate the temporary image file

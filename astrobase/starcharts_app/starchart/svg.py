@@ -19,7 +19,10 @@ class Svg:
         self.elements.append('<text x="{}" y="{}" text-anchor="{}" text-decoration="{}" style="fill: {}; font-size: {}px; font-family: monospace">{}</text>'.format(x, y, align, decoration, colour, size, l))
 
     def circle(self, x, y, d, colour):
-        self.elements.append('<circle cx="{}" cy="{}" r="{}" fill="{}" />'.format(x, y, d, colour))
+        self.elements.append('<circle cx="{}" cy="{}" r="{}" fill="{}"/>'.format(x, y, d, colour))
+
+    def circle_outline(self, x, y, d, colour):
+        self.elements.append('<circle cx="{}" cy="{}" r="{}" stroke="{}" fill-opacity="0"/>'.format(x, y, d, colour))
 
     def curve(self, _points, width, colour):
         points = sum(_points, ())

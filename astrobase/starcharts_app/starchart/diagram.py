@@ -1,40 +1,23 @@
 
 from .svg import Svg
 import codecs
+import json
 
 MARGIN_X=0
 MARGIN_Y=0
-#MAGNIFICATION = 500
-
-#MIN_D = 1
-#MAX_D = 4
-
-#DIMMEST_MAG = 6
-#DIMMEST_MAG = 8
-#BRIGHTEST_MAG = -1.5
 
 LABEL_OFFSET_X = 4
 LABEL_OFFSET_Y = 3
-#FONT_SIZE=8
-#FONT_COLOUR='#167ac6'
 
-#TITLE_SIZE=16
-#TITLE_COLOUR='#FFF'
-#COORDS_SIZE=12
-#COORDS_COLOUR='#FFF'
-
-#STAR_COLOUR='#FFF'
-
-#CURVE_WIDTH = 0.1
-#CURVE_COLOUR = '#FFF'
 
 class Diagram:
-    def __init__(self, starchart, area, star_data_list, star_label_list):
+    def __init__(self, starchart, area, star_data_list, star_label_list, plot_data_list):
         self.starchart = starchart
         self.title = starchart.name
         self.area = area
         self.star_data_list = star_data_list
         self.star_label_list = star_label_list
+        self.plot_data_list = plot_data_list
         self.curves = []
         self.border_min_x = self.border_min_y = self.border_max_x = self.border_max_y = None
 
@@ -59,12 +42,30 @@ class Diagram:
             svg.circle(x, y, self._mag_to_d(star_data.mag), self.starchart.star_color)
 
         # next add labels
-        for star_data in self.star_label_list.data:
-            if star_data.label:
-                x, y = self._invert_and_offset(star_data.x, star_data.y)
-                d = self._mag_to_d(star_data.mag)
-                svg.text(x + LABEL_OFFSET_X + d / 2, y + LABEL_OFFSET_Y, star_data.label, self.starchart.font_color,
+        for label_data in self.star_label_list.data:
+            if label_data.label:
+                x, y = self._invert_and_offset(label_data.x, label_data.y)
+                d = self._mag_to_d(label_data.mag)
+                svg.text(x + LABEL_OFFSET_X + d / 2, y + LABEL_OFFSET_Y, label_data.label, self.starchart.font_color,
                          self.starchart.font_size)
+
+        # add additional elements from the 'extra' field
+        for plot_data in self.plot_data_list.data:
+            x, y = self._invert_and_offset(plot_data.x, plot_data.y)
+            d = self._mag_to_d(plot_data.size)
+
+            if plot_data.shape == "circle":
+                svg.circle(x, y, d, plot_data.color)
+
+            if plot_data.shape == "circle_outline":
+                svg.circle_outline(x, y, d, plot_data.color)
+
+            if plot_data.shape == "cross":
+                svg.circle(x, y, d, plot_data.color)
+                
+            if plot_data.label:
+                x, y = self._invert_and_offset(plot_data.x, plot_data.y)
+                svg.text(x + LABEL_OFFSET_X, y + LABEL_OFFSET_Y, plot_data.label, plot_data.color, self.starchart.font_size)
 
         # next add curves
         for curve_points in self.curves:

@@ -3,9 +3,14 @@
 from math import sin, cos, degrees, radians, pi
 
 class CoordCalc:
-    def __init__(self, star_data_list, star_label_list, area, diagram_size):
+    def __init__(self,
+                 star_data_list,
+                 star_label_list,
+                 plot_data_list,
+                 area, diagram_size):
         self.star_data_list = star_data_list
         self.star_label_list = star_label_list
+        self.plot_data_list = plot_data_list
 
         self.area = area
         self.center_ra_angle  = self._ra_to_angle((area.ra_min + area.ra_max)/2)
@@ -28,9 +33,13 @@ class CoordCalc:
             star_data.ra_angle  = self._ra_to_angle(star_data.ra)
             star_data.dec_angle = self._dec_to_angle(star_data.dec)
 
-        for star_data in self.star_label_list.data:
-            star_data.ra_angle  = self._ra_to_angle(star_data.ra)
-            star_data.dec_angle = self._dec_to_angle(star_data.dec)
+        for label_data in self.star_label_list.data:
+            label_data.ra_angle  = self._ra_to_angle(label_data.ra)
+            label_data.dec_angle = self._dec_to_angle(label_data.dec)
+
+        for plot_data in self.plot_data_list.data:
+            plot_data.ra_angle  = self._ra_to_angle(plot_data.ra)
+            plot_data.dec_angle = self._dec_to_angle(plot_data.dec)
 
     def _angle_to_xy(self, ra_angle, dec_angle):
         # http://www.projectpluto.com/project.htm
@@ -43,8 +52,12 @@ class CoordCalc:
         for star_data in self.star_data_list.data:
             star_data.x, star_data.y = self._angle_to_xy(star_data.ra_angle, star_data.dec_angle)
 
-        for star_data in self.star_label_list.data:
-            star_data.x, star_data.y = self._angle_to_xy(star_data.ra_angle, star_data.dec_angle)
+        for label_data in self.star_label_list.data:
+            label_data.x, label_data.y = self._angle_to_xy(label_data.ra_angle, label_data.dec_angle)
+
+        if self.plot_data_list:
+            for plot_data in self.plot_data_list.data:
+                plot_data.x, plot_data.y = self._angle_to_xy(plot_data.ra_angle, plot_data.dec_angle)
 
 
     def _offset_and_scale_xy(self):
@@ -81,9 +94,14 @@ class CoordCalc:
         self.star_label_list.min_y = self.star_data_list.min_y
         self.star_label_list.max_x = self.star_data_list.max_x
         self.star_label_list.max_y = self.star_data_list.max_y
-
         list(map(offset_and_scale, self.star_label_list.data))
 
+        if self.plot_data_list:
+            self.plot_data_list.min_x = self.star_data_list.min_x
+            self.plot_data_list.min_y = self.star_data_list.min_y
+            self.plot_data_list.max_x = self.star_data_list.max_x
+            self.plot_data_list.max_y = self.star_data_list.max_y
+            list(map(offset_and_scale, self.plot_data_list.data))
 
     def process(self):
         self._populate_angles()
