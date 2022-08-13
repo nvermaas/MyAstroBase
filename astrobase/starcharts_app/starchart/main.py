@@ -55,10 +55,11 @@ def create_starchart(input_starchart):
     except:
         plot_data_list = None
 
-    cc = CoordCalc(star_data_list,
+    cc = CoordCalc(starchart,
+                   star_data_list,
                    star_label_list,
                    plot_data_list,
-                   area, starchart.diagram_size)
+                   area)
 
     try:
         cc.process()

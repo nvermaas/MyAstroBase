@@ -90,7 +90,7 @@ class StarChart(models.Model):
     dec_min = models.FloatField(null=True)
     dec_max = models.FloatField(null=True)
 
-    rotation = models.IntegerField(default=0)
+    rotation = models.FloatField(default=0)
     magnitude_limit = models.FloatField(default=10)
     dimmest_mag = models.FloatField(default=9)
     brightest_mag = models.FloatField(default=-2)

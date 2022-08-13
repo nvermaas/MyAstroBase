@@ -4,10 +4,13 @@ from math import sin, cos, degrees, radians, pi
 
 class CoordCalc:
     def __init__(self,
+                 starchart,
                  star_data_list,
                  star_label_list,
                  plot_data_list,
-                 area, diagram_size):
+                 area):
+
+        self.starchart = starchart
         self.star_data_list = star_data_list
         self.star_label_list = star_label_list
         self.plot_data_list = plot_data_list
@@ -18,7 +21,7 @@ class CoordCalc:
             self.center_dec_angle = self._dec_to_angle(90 if abs(area.dec_min) < abs(area.dec_max) else -90)
         else:
             self.center_dec_angle = self._dec_to_angle((area.dec_min + area.dec_max)/2)
-        self.diagram_size = diagram_size
+        self.diagram_size = starchart.diagram_size
 
     def _ra_to_angle(self, ra):
         # convert right-ascension (0 -> 24) into angle (0 -> 2π)
@@ -49,7 +52,11 @@ class CoordCalc:
         y = sin(dec_angle) * cos(self.center_dec_angle) - cos(dec_angle) * cos(delta_ra) * sin(self.center_dec_angle)
         return x,y
 
+
     def _populate_xy(self):
+        if self.starchart.rotation != 0:
+            x_center, y_center = self._angle_to_xy(self.center_ra_angle, self.center_dec_angle)
+
         for star_data in self.star_data_list.data:
             star_data.x, star_data.y = self._angle_to_xy(star_data.ra_angle, star_data.dec_angle)
 
@@ -104,10 +111,37 @@ class CoordCalc:
             self.plot_data_list.max_y = self.star_data_list.max_y
             list(map(offset_and_scale, self.plot_data_list.data))
 
+
+    def _rotate_xy(self):
+
+        def rotate_xy_around_center(star_data):
+            # https://stackoverflow.com/questions/2259476/rotating-a-point-about-another-point-2d
+            # save some calculation by storing the values in variables
+            s = sin(radians(-self.starchart.rotation))
+            c = cos(radians(-self.starchart.rotation))
+
+            # translate (x,y) to origin
+            ox = self.starchart.display_width/2
+            oy = self.starchart.display_height/2
+
+            star_data.x -= ox
+            star_data.y -= oy
+
+            star_data.x = c * star_data.x - s * star_data.y
+            star_data.y = s * star_data.x + c * star_data.y
+
+            star_data.x += ox
+            star_data.y += oy
+
+        list(map(rotate_xy_around_center, self.star_data_list.data))
+
+
     def process(self):
         self._populate_angles()
         self._populate_xy()
         self._offset_and_scale_xy()
+        if self.starchart.rotation != 0:
+            self._rotate_xy()
 
     def _ra_dec_to_x_y(self, ra, dec):
         ra_angle  = self._ra_to_angle(ra)
