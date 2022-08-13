@@ -50,22 +50,23 @@ class Diagram:
                          self.starchart.font_size)
 
         # add additional elements from the 'extra' field
-        for plot_data in self.plot_data_list.data:
-            x, y = self._invert_and_offset(plot_data.x, plot_data.y)
-            d = self._mag_to_d(plot_data.size)
-
-            if plot_data.shape == "circle":
-                svg.circle(x, y, d, plot_data.color)
-
-            if plot_data.shape == "circle_outline":
-                svg.circle_outline(x, y, d, plot_data.color)
-
-            if plot_data.shape == "cross":
-                svg.circle(x, y, d, plot_data.color)
-                
-            if plot_data.label:
+        if self.plot_data_list:
+            for plot_data in self.plot_data_list.data:
                 x, y = self._invert_and_offset(plot_data.x, plot_data.y)
-                svg.text(x + LABEL_OFFSET_X, y + LABEL_OFFSET_Y, plot_data.label, plot_data.color, self.starchart.font_size)
+                d = self._mag_to_d(plot_data.size)
+
+                if plot_data.shape == "circle":
+                    svg.circle(x, y, d, plot_data.color)
+
+                if plot_data.shape == "circle_outline":
+                    svg.circle_outline(x, y, d, plot_data.color)
+
+                if plot_data.shape == "cross":
+                    svg.circle(x, y, d, plot_data.color)
+
+                if plot_data.label:
+                    x, y = self._invert_and_offset(plot_data.x, plot_data.y)
+                    svg.text(x + LABEL_OFFSET_X, y + LABEL_OFFSET_Y, plot_data.label, plot_data.color, self.starchart.font_size)
 
         # next add curves
         for curve_points in self.curves:

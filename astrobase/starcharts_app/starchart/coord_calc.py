@@ -37,9 +37,10 @@ class CoordCalc:
             label_data.ra_angle  = self._ra_to_angle(label_data.ra)
             label_data.dec_angle = self._dec_to_angle(label_data.dec)
 
-        for plot_data in self.plot_data_list.data:
-            plot_data.ra_angle  = self._ra_to_angle(plot_data.ra)
-            plot_data.dec_angle = self._dec_to_angle(plot_data.dec)
+        if self.plot_data_list:
+            for plot_data in self.plot_data_list.data:
+                plot_data.ra_angle  = self._ra_to_angle(plot_data.ra)
+                plot_data.dec_angle = self._dec_to_angle(plot_data.dec)
 
     def _angle_to_xy(self, ra_angle, dec_angle):
         # http://www.projectpluto.com/project.htm

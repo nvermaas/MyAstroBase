@@ -61,15 +61,18 @@
                               </div>
                             </div>
                            <div class="row">
-                               <div class="col-4">
+                               <div class="col-3">
                                 {{ form.magnitude_limit|as_crispy_field }}
                                </div>
-                               <div class="col-4">
+                               <div class="col-3">
                                 {{ form.dimmest_mag|as_crispy_field }}
                                </div>
-                               <div class="col-4">
+                               <div class="col-3">
                                 {{ form.brightest_mag|as_crispy_field }}
                                </div>
+                               <div class="col-3">
+                                {{ form.rotation|as_crispy_field }}
+                              </div>
                                <div class="col-3">
                                 {{ form.background|as_crispy_field }}
                                </div>

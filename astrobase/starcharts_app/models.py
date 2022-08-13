@@ -1,5 +1,23 @@
 from django.db import models
 
+SOURCE_CHOICES = [
+    ('ucac4_postgres', 'ucac4_postgres'),
+    ('hyg_sqlite', 'hyg_sqlite'),
+]
+
+OUTPUT_CHOICES = [
+    ('svg', 'svg'),
+    ('png', 'png'),
+]
+
+LABEL_CHOICES = [
+    ('HipparcosID', 'HipparcosID'),
+    ('HenryDraperID', 'HenryDraperID'),
+    ('GlieseID', 'GlieseID'),
+    ('BayerFlamsteed', 'BayerFlamsteed'),
+    ('ProperName', 'ProperName')
+]
+
 # settings.MY_HYG_ROOT
 class Stars(models.Model):
     RightAscension = models.FloatField()
@@ -27,12 +45,20 @@ class Stars(models.Model):
 
 class Scheme(models.Model):
     name = models.CharField(default='default', max_length=30)
+    source = models.CharField(choices=SOURCE_CHOICES, default='ucac4_postgres', max_length=30)
+    output_format = models.CharField(choices=OUTPUT_CHOICES, default='svg', max_length=3)
+    label_field = models.CharField(choices=LABEL_CHOICES, default='BayerFlamsteed', max_length=15)
+    query_limit = models.IntegerField(default=10000)
+
     magnitude_limit = models.FloatField(default=7)
     dimmest_mag = models.FloatField(default=6)
     brightest_mag = models.FloatField(default=-1.5)
     min_d = models.IntegerField(default=1)
     max_d = models.IntegerField(default=4)
 
+    diagram_size = models.IntegerField(default=800)
+    display_width = models.IntegerField(default=800)
+    display_height = models.IntegerField(default=600)
     font_size = models.IntegerField(default=10)
     font_color = models.CharField(default='#167ac6', max_length=10)
 
@@ -44,31 +70,13 @@ class Scheme(models.Model):
     def __str__(self):
         return self.name
 
-SOURCE_CHOICES = [
-    ('ucac4_postgres', 'ucac4_postgres'),
-    ('hyg_sqlite', 'hyg_sqlite'),
-]
 
-OUTPUT_CHOICES = [
-    ('svg', 'svg'),
-    ('png', 'png'),
-]
-
-LABEL_CHOICES = [
-    ('HipparcosID', 'HipparcosID'),
-    ('HenryDraperID', 'HenryDraperID'),
-    ('GlieseID', 'GlieseID'),
-    ('BayerFlamsteed', 'BayerFlamsteed'),
-    ('ProperName', 'ProperName')
-]
 
 class StarChart(models.Model):
     name = models.CharField(default='change me', max_length=30)
     source = models.CharField(choices=SOURCE_CHOICES, default='ucac4_postgres', max_length=30)
     output_format = models.CharField(choices=OUTPUT_CHOICES, default='svg', max_length=3)
-
     label_field = models.CharField(choices=LABEL_CHOICES, default='BayerFlamsteed', max_length=15)
-
     query_limit = models.IntegerField(default=10000)
     nr_of_stars = models.IntegerField(default=0)
 

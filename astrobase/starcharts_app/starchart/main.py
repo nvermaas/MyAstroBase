@@ -50,7 +50,10 @@ def create_starchart(input_starchart):
     star_label_list = starlabels_db.get_labels(area,starchart.label_field)
 
     # extra objects to draw on the starchart
-    plot_data_list = PlotDataList(starchart.extra)
+    try:
+        plot_data_list = PlotDataList(starchart.extra)
+    except:
+        plot_data_list = None
 
     cc = CoordCalc(star_data_list,
                    star_label_list,
