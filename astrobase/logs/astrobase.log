@@ -30080,3 +30080,18 @@
 [09/Jan/2022 10:21:10,728] RemoveCutoutDirectory()
 [09/Jan/2022 10:23:14,829] RemoveCutoutDirectory()
 [23/Jan/2022 19:03:58,412] RemoveCutoutImage()
+[14/Aug/2022 17:29:49,943] SIGNAL : pre_save Observation(211121003 - Victoria Zoom - Victoria, Aquarius)
+[14/Aug/2022 17:29:49,945] handle_pre_save(211121003 - Victoria Zoom - Victoria, Aquarius)
+[14/Aug/2022 17:29:49,949] handle_post_save(211121003 - Victoria Zoom - Victoria, Aquarius)
+[14/Aug/2022 17:29:49,950] update observation = 211121003
+[14/Aug/2022 17:32:42,200] SIGNAL : pre_save Observation(211121003 - Victoria Zoom - Victoria, Aquarius)
+[14/Aug/2022 17:32:42,201] handle_pre_save(211121003 - Victoria Zoom - Victoria, Aquarius)
+[14/Aug/2022 17:32:42,205] handle_post_save(211121003 - Victoria Zoom - Victoria, Aquarius)
+[14/Aug/2022 17:32:42,206] update observation = 211121003
+[14/Aug/2022 17:32:55,256] SIGNAL : pre_save Observation(211121003 - Victoria Zoom - Victoria, Aquarius)
+[14/Aug/2022 17:32:55,256] handle_pre_save(211121003 - Victoria Zoom - Victoria, Aquarius)
+[14/Aug/2022 17:32:55,263] handle_post_save(211121003 - Victoria Zoom - Victoria, Aquarius)
+[14/Aug/2022 17:32:55,263] update observation = 211121003
+[17/Aug/2022 18:07:07,719] SIGNAL : pre_save Observation(211221001 - 1 Ceres - Taurus, Ceres)
+[17/Aug/2022 18:07:07,727] handle_pre_save(211221001 - 1 Ceres - Taurus, Ceres)
+[17/Aug/2022 18:07:07,758] handle_post_save(211221001 - 1 Ceres - Taurus, Ceres)

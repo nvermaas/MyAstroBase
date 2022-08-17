@@ -1,5 +1,6 @@
 import requests
 import math
+import json
 import datetime
 from django.conf import settings
 
@@ -342,6 +343,66 @@ def get_planet(name, timestamp):
     return result,planet
 
 
+def get_ephemeris_as_json(transient_name, date):
+
+    timestamps = []
+    timestamp = date
+    midnight = timestamp.replace(hour=0, minute=0, second=0)
+    yesterday = midnight + datetime.timedelta(days=-1)
+    tomorrow = midnight + datetime.timedelta(days=+1)
+    tomorrow2 = midnight + datetime.timedelta(days=+2)
+    tomorrow3 = midnight + datetime.timedelta(days=+3)
+
+    timestamps.append(timestamp)
+    timestamps.append(midnight)
+    timestamps.append(yesterday)
+    timestamps.append(tomorrow)
+    timestamps.append(tomorrow2)
+    timestamps.append(tomorrow3)
+
+    list = []
+    count = 0
+    for t in timestamps:
+        count += 1
+
+        # first try if the transient is an asteroid
+        try:
+            result, _ = get_asteroid(transient_name, t)
+        except:
+            # then try a comet
+            try:
+                result, _ = get_comet(transient_name, t)
+            except:
+                # finally try a planet
+                result, _ = get_planet(transient_name, t)
+
+        vmag = round(float(result['visual_magnitude']) * 10) / 10
+        if vmag == 0:
+            designation = result['designation']
+        else:
+            designation = result['designation'] + ' (' + str(vmag) + ')'
+
+        line = {}
+
+        line['ra'] = float(result['ra_decimal'])
+        line['dec'] = float(result['dec_decimal'])
+        if count == 1:
+            line['label'] = designation
+            line['shape'] = 'circle_outline'
+            line['size'] = -50
+            line['color'] = 'yellow'
+        else:
+            line['label'] = str(t.day)
+            line['shape'] = 'cross'
+            line['size'] = vmag
+            line['color'] = 'red'
+
+        list.append(line)
+
+    extra = json.dumps(list)
+    return extra
+
+
 def update_asteroid_table():
 
     # clear asteroid table
@@ -388,3 +449,4 @@ def update_asteroid_table_ephemeris(timestamp):
         asteroid.timestamp = timestamp
         print(designation)
         asteroid.save()
+

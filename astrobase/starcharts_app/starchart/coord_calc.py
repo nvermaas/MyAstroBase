@@ -116,6 +116,7 @@ class CoordCalc:
 
         def rotate_xy_around_center(star_data):
             # https://stackoverflow.com/questions/2259476/rotating-a-point-about-another-point-2d
+
             # save some calculation by storing the values in variables
             s = sin(radians(-self.starchart.rotation))
             c = cos(radians(-self.starchart.rotation))
@@ -133,6 +134,8 @@ class CoordCalc:
             star_data.x += ox
             star_data.y += oy
 
+            # try svg transform instead:
+            # https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
         list(map(rotate_xy_around_center, self.star_data_list.data))
 
 
