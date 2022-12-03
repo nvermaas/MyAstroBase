@@ -75,7 +75,6 @@ def ShowStarChartView(request, name='my_starchart'):
     return render(request, "starcharts_app/index.html", {'starchart' : starchart, 'starchart_url_media' : starchart_url_media})
 
 
-
 #create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
 #http://localhost:8000/my_astrobase/create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
 def CreateStarChart(request):
@@ -222,8 +221,6 @@ def StarChartView(request, name=None):
             'starcharts_list' : starcharts_list})
 
 
-#create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
-#http://localhost:8000/my_astrobase/create-starchart?ra_min=44&ra_max=56&dec_min=10.75&dec_max=19.15&mag=10
 # fill the Django controlled stars.sqlite3 database with the data from hygdata.sqlite3
 def ImportStars(request):
     print('importstars')

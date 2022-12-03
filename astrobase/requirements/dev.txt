@@ -1,3 +1,4 @@
 -r base.txt
 pyephem==9.99
-matplotlib==3.3.4
+#matplotlib==3.3.4
+#numpy==1.22.2

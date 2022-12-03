@@ -5,11 +5,16 @@ from django.conf import settings
 from ..models import StarChart, Scheme
 from .sky_area import SkyArea, ConeToSkyArea
 from .diagram import Diagram
+from .skyplot import SkyPlot
 from .hyg_star_database import HygStarDatabase
 from .ucac4_star_database import UCAC4StarDatabase
 from .starlabels_database import StarLabelsDatabase
 from .coord_calc import CoordCalc
 from .plot_data import PlotData, PlotDataList
+
+def create_plot(starchart, area, star_data_list, star_label_list, plot_data_list):
+    plot = SkyPlot(starchart, area, star_data_list, star_label_list, plot_data_list)
+
 
 def create_starchart(input_starchart):
     try:
@@ -61,6 +66,9 @@ def create_starchart(input_starchart):
                    plot_data_list,
                    area)
 
+    # create plot with matplotlib
+    # create_plot(starchart, area, star_data_list, star_label_list, plot_data_list)
+
     try:
         cc.process()
 
@@ -69,8 +77,7 @@ def create_starchart(input_starchart):
         list(map(d.add_curve, cc.calc_curves()))
 
         # generate the temporary image file
-        temp_filename = 'starchart.svg'
-        temp_path = os.path.join(settings.MEDIA_ROOT, temp_filename)
+        temp_path = os.path.join(settings.MEDIA_ROOT, 'starchart.svg')
         d.render_svg(temp_path)
 
         # delete existing file before uploading
