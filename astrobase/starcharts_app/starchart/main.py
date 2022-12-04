@@ -12,8 +12,6 @@ from .starlabels_database import StarLabelsDatabase
 from .coord_calc import CoordCalc
 from .plot_data import PlotData, PlotDataList
 
-def create_plot(starchart, area, star_data_list, star_label_list, plot_data_list):
-    plot = SkyPlot(starchart, area, star_data_list, star_label_list, plot_data_list)
 
 
 def create_starchart(input_starchart):
@@ -66,8 +64,12 @@ def create_starchart(input_starchart):
                    plot_data_list,
                    area)
 
+    # --------------------------------------------------------------------------------
     # create plot with matplotlib
-    # create_plot(starchart, area, star_data_list, star_label_list, plot_data_list)
+    #temp_path = os.path.join(settings.MEDIA_ROOT, 'starchart.png')
+    #plot = SkyPlot(starchart, area, star_data_list, star_label_list, plot_data_list)
+    #plot.render_plot(temp_path)
+    # --------------------------------------------------------------------------------
 
     try:
         cc.process()
