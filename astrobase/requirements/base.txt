@@ -14,6 +14,6 @@ numpy
 pandas==1.1.5
 Pillow==9.3.0
 psycopg2-binary==2.9.3
-requests==2.20.0
+requests==2.31.0
 skyfield==1.39
 whitenoise==5.0.1
