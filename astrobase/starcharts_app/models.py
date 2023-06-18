@@ -7,7 +7,8 @@ SOURCE_CHOICES = [
 
 OUTPUT_CHOICES = [
     ('svg', 'svg'),
-    ('png', 'png'),
+    ('matplotlib (png)', 'matplotlib (png)'),
+    ('cartopy', 'cartopy'),
 ]
 
 LABEL_CHOICES = [
@@ -46,7 +47,7 @@ class Stars(models.Model):
 class Scheme(models.Model):
     name = models.CharField(default='default', max_length=30)
     source = models.CharField(choices=SOURCE_CHOICES, default='ucac4_postgres', max_length=30)
-    output_format = models.CharField(choices=OUTPUT_CHOICES, default='svg', max_length=3)
+    output_format = models.CharField(choices=OUTPUT_CHOICES, default='svg', max_length=30)
     label_field = models.CharField(choices=LABEL_CHOICES, default='BayerFlamsteed', max_length=15)
     query_limit = models.IntegerField(default=10000)
 
@@ -75,7 +76,7 @@ class Scheme(models.Model):
 class StarChart(models.Model):
     name = models.CharField(default='change me', max_length=30)
     source = models.CharField(choices=SOURCE_CHOICES, default='ucac4_postgres', max_length=30)
-    output_format = models.CharField(choices=OUTPUT_CHOICES, default='svg', max_length=3)
+    output_format = models.CharField(choices=OUTPUT_CHOICES, default='svg', max_length=30)
     label_field = models.CharField(choices=LABEL_CHOICES, default='BayerFlamsteed', max_length=15)
     query_limit = models.IntegerField(default=10000)
     nr_of_stars = models.IntegerField(default=0)

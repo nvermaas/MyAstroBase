@@ -18,6 +18,8 @@ class SkyPlot:
         # https://matplotlib.org/stable/tutorials/introductory/pyplot.html
         # https://www.geeksforgeeks.org/how-to-reverse-axes-in-matplotlib/#:~:text=In%20Matplotlib%20we%20can%20reverse,methods%20for%20the%20pyplot%20object.
         # https://matplotlib.org/basemap/users/pstere.html
+        # https://astroplan.readthedocs.io/en/latest/tutorials/plots.html#plots-sky-charts
+
         print(self.title)
         ra_list = []
         dec_list = []
@@ -35,8 +37,8 @@ class SkyPlot:
             #size_list.append((0.5 + mag_limit - star.mag) * 3)
             size_list.append((0.5 + mag_limit - star.mag) * 1)
 
-        fig, ax = plt.subplots()
-        colormap = 'gray'
+        #fig, ax = plt.subplots()
+        #colormap = 'gray'
 
         plt.scatter(ra_list, dec_list, s=mag_list, color=self.starchart.star_color, alpha=1.0)
         #plt.invert_xaxis()
@@ -45,6 +47,7 @@ class SkyPlot:
 
 
         plt.title(self.title)
+        #plt.subplot(projection="hammer")
         plt.suptitle("Astrobase Starcharts")
         plt.xlabel('Right Ascension (degrees)')
         plt.ylabel('Declination')
