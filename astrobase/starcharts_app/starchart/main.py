@@ -17,7 +17,7 @@ from .plot_data import PlotData, PlotDataList
 def create_starchart(input_starchart):
     try:
         starchart = StarChart.objects.get(name=input_starchart.name)
-        starchart.delete()
+        # starchart.delete()
     except Exception as e:
         pass
 
@@ -66,9 +66,9 @@ def create_starchart(input_starchart):
 
     # --------------------------------------------------------------------------------
     # create plot with matplotlib
-    #temp_path = os.path.join(settings.MEDIA_ROOT, 'starchart.png')
-    #plot = SkyPlot(starchart, area, star_data_list, star_label_list, plot_data_list)
-    #plot.render_plot(temp_path)
+    temp_path = os.path.join(settings.MEDIA_ROOT, 'starchart.png')
+    plot = SkyPlot(starchart, area, star_data_list, star_label_list, plot_data_list)
+    plot.render_plot(temp_path)
     # --------------------------------------------------------------------------------
 
     try:
