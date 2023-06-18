@@ -98,7 +98,7 @@ class Observation2(models.Model):
 
     # details about the imaging
     iso = models.CharField(max_length=4, null=True, choices = ISO_CHOICES, default="none")
-    focal_length = models.IntegerField(default=200)
+    focal_length = models.IntegerField(default=135)
     exposure_in_seconds = models.IntegerField(default=0)
     stacked_images = models.IntegerField(default=1)
     # magnitude = models.FloatField(null = True, blank=True)
