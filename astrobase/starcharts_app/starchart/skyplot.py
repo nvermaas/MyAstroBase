@@ -18,6 +18,8 @@ class SkyPlot:
         # https://matplotlib.org/stable/tutorials/introductory/pyplot.html
         # https://www.geeksforgeeks.org/how-to-reverse-axes-in-matplotlib/#:~:text=In%20Matplotlib%20we%20can%20reverse,methods%20for%20the%20pyplot%20object.
         # https://matplotlib.org/basemap/users/pstere.html
+        # https://astroplan.readthedocs.io/en/latest/tutorials/plots.html#plots-sky-charts
+
         print(self.title)
         ra_list = []
         dec_list = []
@@ -25,29 +27,41 @@ class SkyPlot:
         size_list = []
 
         mag_limit = 15
+        dimmest = 10
+        mag_limit = self.starchart.magnitude_limit
+        dimmest = self.starchart.dimmest_mag
         for star in self.star_data_list.data:
             ra_list.append(star.ra)
             dec_list.append(star.dec)
-            mag_list.append((10 - star.mag) ** 2)
-            size_list.append((0.5 + mag_limit - star.mag) * 3)
-            print(ra_list)
-            print(dec_list)
+            mag_list.append((dimmest - star.mag) ** 2)
+            #size_list.append((0.5 + mag_limit - star.mag) * 3)
+            size_list.append((0.5 + mag_limit - star.mag) * 1)
 
-        fig, ax = plt.subplots()
-        colormap = 'gray'
-        # size = (0.5 + mag_lim - qtab['Gmag']) * 3
-        plt.scatter(ra_list, dec_list, s=mag_list, color='black', alpha=1.0)
+        #fig, ax = plt.subplots()
+        #colormap = 'gray'
+
+        plt.scatter(ra_list, dec_list, s=mag_list, color=self.starchart.star_color, alpha=1.0)
         #plt.invert_xaxis()
         plt.xlim(max(ra_list), min(ra_list))
         plt.ylim(min(dec_list), max(dec_list))
 
-        #plt.style.use('dark_background')
-        #plt.figure(figsize=(12,6))
-        #plt.subplot(projection="hammer")
+
         plt.title(self.title)
+        #plt.subplot(projection="hammer")
         plt.suptitle("Astrobase Starcharts")
         plt.xlabel('Right Ascension (degrees)')
         plt.ylabel('Declination')
         plt.grid(True, alpha=0.3)
-        plt.savefig("d:\\temp\plot.png")
+
+        for label in self.star_label_list.data:
+            plt.text(label.ra,label.dec, label.label,fontsize=self.starchart.font_size, color=self.starchart.font_color)
+
+        ax = plt.gca()
+        ax.set_facecolor(self.starchart.background)
+
+        fig = plt.gcf()
+        fig.set_size_inches(20, 15)
+        fig.savefig("d:\\temp\plot.png", dpi=200)
+
+        #plt.savefig("d:\\temp\plot.png")
         #plt.show()
