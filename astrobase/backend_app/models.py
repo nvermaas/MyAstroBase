@@ -16,8 +16,9 @@ class Observation2(models.Model):
     INSTRUMENT_CHOICES = (
         ("Powershot G2", "Powershot G2"),
         ("Powershot G15", "Powershot G15"),
-        ("Canon 350D", "Canon 350D"),
-        ("Canon 2000D","Canon 2000D"),
+        ("Canon 350D - Sigma 18-200", "Canon 350D - Sigma 18-200"),
+        ("Canon 2000D - Sigma 18-200", "Canon 2000D - Sigma 18-200"),
+        ("Canon 2000D - Samyang 135", "Canon 2000D - Samyang 135"),
         ("other", "other"),
     )
 
@@ -63,7 +64,6 @@ class Observation2(models.Model):
     creationTime = models.DateTimeField(default=datetime.utcnow, blank=True)
 
     new_status = models.CharField(max_length=50, default="defined", null=True)
-    data_location = models.CharField(max_length=255, default=None, blank=True, null=True)
 
     # my_status is 'platgeslagen', because django-filters can not filter on a related property,
     # and I need services to be able to filter on a status to execute their tasks.
@@ -74,7 +74,7 @@ class Observation2(models.Model):
     date = models.DateTimeField('date', null=True)
 
     # can be used to distinguish types of observations, like with powershot G2 or Kitt Peak
-    instrument = models.CharField(max_length=50, choices = INSTRUMENT_CHOICES, default="Canon 2000D")
+    instrument = models.CharField(max_length=50, choices = INSTRUMENT_CHOICES, default="Canon 2000D - Samyang 135")
     filter = models.CharField(max_length=50, choices = FILTER_CHOICES, default="CLS")
 
     description = models.CharField(max_length=255, default="", null=True, blank=True)

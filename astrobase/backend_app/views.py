@@ -84,7 +84,6 @@ class Observation2Filter(filters.FilterSet):
             'taskID': ['gt', 'lt', 'gte', 'lte','exact', 'icontains', 'startswith','in'],
             'creationTime' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'date' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
-            'data_location': ['exact', 'icontains'],
             'quality': ['exact', 'icontains','in'],
             'exposure_in_seconds' : ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
             'iso': ['gt', 'lt', 'gte', 'lte', 'contains', 'exact'],
