@@ -298,7 +298,10 @@ class ProjectListViewAPI(generics.ListCreateAPIView):
 
     # a projects is a observation
     model = Observation2
-    queryset = Observation2.objects.filter(task_type='master').order_by('-date')
+    #queryset = Observation2.objects.filter(task_type='master').order_by('-date')
+    queryset = Observation2.objects.filter(Q(task_type='master') | Q(parent=None)).order_by('-date')
+    # masters, or observations without a master (master==None)
+
     serializer_class = Observation2Serializer
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
