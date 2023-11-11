@@ -21,7 +21,7 @@ MEDIA_ROOT = ''
 MEDIA_URL = ''
 #MEDIA_URL = 'http://localhost:8000/my_astrobase/'
 
-DATA_HOST = "https://web-of-wyrd.nl/data_on_yggdrasil/astrobase/data"
+DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"
 
 LOGIN_REDIRECT_URL = "http://localhost:3000/astroview/login"
 LOGOUT_REDIRECT_URL = "http://localhost:3000/astroview/logout"

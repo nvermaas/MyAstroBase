@@ -41,8 +41,8 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = []
 
 
-LOGIN_REDIRECT_URL = "https://web-of-wyrd.nl/astroview/login"
-LOGOUT_REDIRECT_URL = "https://web-of-wyrd.nl/astroview/logout"
+LOGIN_REDIRECT_URL = "https://uilennest.net/astroview/login"
+LOGOUT_REDIRECT_URL = "https://uilennest.net/astroview/logout"
 
 # UCAC4 database credentials
 
