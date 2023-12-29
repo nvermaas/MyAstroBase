@@ -35,9 +35,6 @@
                 <a class="navbar-brand mb-0 h1">
                     <h2>
                     <img src="{% static 'backend_app/astrobase_logo.jpg' %}" width="90" height="90" alt="">
-<!--
-                    <img src="{% static 'backend_app/atdb_logo.jpg' %}" width="180" height="90" alt="">
--->
                     AstroBase Server
                     </h2>
 
@@ -47,7 +44,9 @@
         </div>
         <tr>
             <td>
-                <a href="{% url 'upload-file' %}" class="btn btn-primary btn-md" role="button">Upload Image</a>
+                {% if user.is_authenticated %}
+                   <a href="{% url 'upload-file' %}" class="btn btn-warning btn-md" role="button">Upload New Image</a>
+                {% endif %}
             </td>
             <td>
                 {% include 'backend_app/search.html' %}
