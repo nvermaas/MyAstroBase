@@ -1,4 +1,6 @@
 from django import forms
+from .models import AstroFile
+
 STATUS_CHOICES = [('defined','defined'),
                   ('scheduled','scheduled'),
                   ('running','running'),
@@ -8,3 +10,8 @@ STATUS_CHOICES = [('defined','defined'),
 
 class FilterForm(forms.Form):
      status = forms.MultipleChoiceField(required=True, widget=forms.CheckboxSelectMultiple, choices=STATUS_CHOICES)
+
+class AstroFileForm(forms.ModelForm):
+    class Meta:
+        model = AstroFile
+        fields = ['file']

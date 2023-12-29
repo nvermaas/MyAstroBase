@@ -223,8 +223,7 @@ except:
 # at OS level the URL and ROOT are connected through a symbolic link
 #MEDIA_URL = 'https://uilennest.net/astrobase/media/'
 MEDIA_URL = os.path.join(BACKEND_HOST, 'astrobase/media/')
-
-MEDIA_ROOT = '/shared/media'
+MEDIA_ROOT = '/landing_pad'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"

@@ -45,8 +45,14 @@
             </div>
 
         </div>
-
-        {% include 'backend_app/search.html' %}
+        <tr>
+            <td>
+                <a href="{% url 'upload-file' %}" class="btn btn-primary btn-md" role="button">Upload Image</a>
+            </td>
+            <td>
+                {% include 'backend_app/search.html' %}
+            </td>
+        </tr>
     </nav>
 
     <!-- to add blocks of code -->

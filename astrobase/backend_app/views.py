@@ -14,6 +14,7 @@ from rest_framework.views import APIView
 from django_filters import rest_framework as filters
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.files.storage import FileSystemStorage
 
 from django.db.models import Q
 
@@ -21,7 +22,7 @@ from .models import Observation2, AstroFile, Collection2, Job, Observation2Box, 
 from .serializers import Observation2Serializer, AstroFileSerializer, Collection2Serializer, JobSerializer, \
     Observation2BoxSerializer, CutoutSerializer, CutoutDirectorySerializer \
 
-from .forms import FilterForm
+from .forms import FilterForm, AstroFileForm
 from .services import algorithms, jobs
 
 logger = logging.getLogger(__name__)
@@ -456,6 +457,16 @@ class UploadFileView(APIView):
         else:
             return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+def upload_file(request):
+    if request.method == 'POST':
+        form = AstroFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index')  # Redirect to a success page
+    else:
+        form = AstroFileForm()
+
+    return render(request, 'backend_app/upload_file.html', {'form': form})
 
 def get_queryset_auth(object, my_model_class, process_type=None):
     """
