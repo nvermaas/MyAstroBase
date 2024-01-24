@@ -146,7 +146,7 @@ def handle_post_save(sender, **kwargs):
 
             myObservation.instrument = parent.instrument
             myObservation.filter = parent.filter
-            myObservation.date = parent.date
+            #myObservation.date = parent.date
             myObservation.magnitude = parent.magnitude
             myObservation.field_name = parent.field_name
             # myObservation.save()
