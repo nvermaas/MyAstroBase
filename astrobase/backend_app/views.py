@@ -45,7 +45,7 @@ class Observation2Filter(filters.FilterSet):
             Q(name__icontains=value) | Q(field_name__icontains=value) |
             Q(quality__icontains=value)| Q(my_status__icontains=value)|
             Q(taskID__icontains=value) | Q(parent__taskID__icontains=value)
-        )
+        ).order_by('-date')
 
     def search_my_coords(self, queryset, name, value):
         # value is a comma separated decimal RA,dec coordinate
