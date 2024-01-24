@@ -30097,3 +30097,7 @@
 [17/Aug/2022 18:07:07,758] handle_post_save(211221001 - 1 Ceres - Taurus, Ceres)
 [18/Jun/2023 13:42:18,163] SIGNAL : pre_save Observation(191231004 - M31 Andromeda Galaxy - Andromeda, M31, M32, M110)
 [18/Jun/2023 13:42:18,164] handle_pre_save(191231004 - M31 Andromeda Galaxy - Andromeda, M31, M32, M110)
+[24/Jan/2024 15:55:48,974] SIGNAL : pre_save Observation(240122001 - Andromeda Swirled - M31, Andromeda Galaxy)
+[24/Jan/2024 15:55:48,978] handle_pre_save(240122001 - Andromeda Swirled - M31, Andromeda Galaxy)
+[24/Jan/2024 15:55:48,982] handle_post_save(240122001 - Andromeda Swirled - M31, Andromeda Galaxy)
+[24/Jan/2024 15:55:48,986] update observation = 240122001
