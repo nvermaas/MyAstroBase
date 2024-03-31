@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class TransientsConfig(AppConfig):
-    name = 'transients'
+    name = 'transients_app'

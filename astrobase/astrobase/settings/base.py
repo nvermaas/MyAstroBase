@@ -33,9 +33,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 INSTALLED_APPS = [
     'backend_app',
     'moon_app',
-    'transients_app',
     'exoplanets',
     'starcharts_app',
+    'transients_app',
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
