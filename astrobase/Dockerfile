@@ -2,6 +2,7 @@
 FROM python:3.9.7-slim
 
 RUN apt-get update && apt-get install --no-install-recommends -y bash nano mc libmagic1
+RUN exec python -m pip install --upgrade pip
 
 ENV PYTHONUNBUFFERED 1
 
