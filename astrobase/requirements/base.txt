@@ -1,5 +1,5 @@
 celery==5.2.2
-Django==5
+Django==4.3
 djangorestframework==3.14
 django-filter==22.1
 #django-cors-headers==3.6.0
