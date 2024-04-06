@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_TRUSTED_ORIGINS = ["https://uilennest.net"]
+#CSRF_TRUSTED_ORIGINS = ["https://uilennest.net","https://web-of-wyrd.nl"]
 
 # Application definition
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'django_extensions',
+    'bootstrap_pagination',
     'rest_framework.authtoken',
     'corsheaders',
     'crispy_forms',
