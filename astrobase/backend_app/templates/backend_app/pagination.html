@@ -1,5 +1,43 @@
-{% load bootstrap_pagination %}
+    <div class="btn-group" role="group" aria-label="Item pagination" style="margin-bottom: 1rem">
 
-<div>
-  {% bootstrap_paginate my_observations range=20 show_prev_next="true" show_first_last="true" previous_label="Previous" first_label="First" next_label="Next" last_label="Last" %}
-</div>
+        {% if my_observations.has_previous %}
+            <a href="?page=1" class="btn btn-outline-primary">First</a>
+            <a href="?page={{ my_observations.previous_page_number }}" class="btn btn-outline-primary">Previous</a>
+        {% else %}
+            <button class="btn btn-outline-primary" disabled>First</button>
+            <button class="btn btn-outline-primary" disabled>Previous</button>
+        {% endif %}
+
+        {% for page_number in my_observations.paginator.page_range %}
+            {% if my_observations.number == page_number %}
+                <button class="btn btn-outline-primary active">
+                    <span>{{ page_number }} <span class="sr-only">(current)</span></span>
+                </button>
+            <!-- first and last 20 pages -->
+            {% elif my_observations.number < 10 and page_number < 20 or my_observations.number > my_observations.paginator.num_pages|add:"-10" and page_number > my_observations.paginator.num_pages|add:"-20" %}
+                <a href="?page={{ page_number }}" class="btn btn-outline-primary">
+                    {{ page_number }}
+                </a>
+            <!-- 10 pages around current page -->
+            {% elif page_number < my_observations.number and page_number > my_observations.number|add:"-10" or page_number > my_observations.number and page_number < my_observations.number|add:10 %}
+                <a href="?page={{ page_number }}" class="btn btn-outline-primary">
+                    {{ page_number }}
+                </a>
+            {% endif %}
+        {% endfor %}
+
+        <!-- last page button or ellipsis if last page is too far -->
+        {% if my_observations.number|add:10 < my_observations.paginator.num_pages %}
+            <button class="btn btn-outline-primary" disabled>...</button>
+        {% elif my_observations.number|add:10 == my_observations.paginator.num_pages %}
+            <a href="?page={{ my_observations.paginator.num_pages }}" class="btn btn-outline-primary">{{ my_observations.paginator.num_pages }}</a>
+        {% endif %}
+
+        {% if my_observations.has_next %}
+            <a href="?page={{ my_observations.next_page_number }}" class="btn btn-outline-primary">Next</a>
+            <a href="?page={{ my_observations.paginator.num_pages }}" class="btn btn-outline-primary">Last</a>
+        {% else %}
+            <button class="btn btn-outline-primary" disabled>Next</button>
+            <button class="btn btn-outline-primary" disabled>Last</button>
+        {% endif %}
+    </div>

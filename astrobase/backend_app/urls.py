@@ -1,5 +1,5 @@
 from django.urls import path
-from django.conf.urls import url
+
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.authtoken.views import obtain_auth_token
 from django.conf import settings
@@ -9,8 +9,8 @@ from . import views
 
 urlpatterns = [
 
-    url(r'^my_astrobase/obtain-auth-token/$', csrf_exempt(obtain_auth_token)),
 
+   path('my_astrobase/obtain-auth-token/', csrf_exempt(obtain_auth_token)),
     # --- GUI ---
     # ex: /astrobase/
     path('', views.IndexView.as_view(), name='index'),
