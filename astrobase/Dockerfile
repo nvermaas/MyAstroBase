@@ -1,8 +1,18 @@
-#FROM python:3.10-slim
-FROM python:3.9.7-slim
+FROM python:3.10-slim
+#FROM python:3.9.7-slim
 
-RUN apt-get update && apt-get install --no-install-recommends -y bash nano mc libmagic1
+# Add GPG keys
+RUN apt-get update && \
+    apt-get install -y gnupg nano && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9 6ED0E7B82643E131 F8D2585B8783D481 && \
+    apt-get clean
+
+# Update package lists
+RUN apt-get update
+
+#RUN apt-get update && apt-get install --no-install-recommends -y bash nano mc libmagic1 gnupg
 RUN exec python -m pip install --upgrade pip
+
 
 ENV PYTHONUNBUFFERED 1
 
