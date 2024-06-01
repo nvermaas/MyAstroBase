@@ -15,7 +15,7 @@ CMD exec gunicorn astrobase.wsgi_docker:application --bind 0.0.0.0:8000 --worker
 # build the image like this:
 # docker build -t my_astrobase:latest .
 
-# run the container from 'shared', like this:
+# run the container like this:
 # docker run -d --name my_astrobase --mount type=bind,source=$HOME/shared,target=/shared -p 8008:8000 --restart always my_astrobase:latest
 
 # log into the container
