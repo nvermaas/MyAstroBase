@@ -25,6 +25,8 @@ MEDIA_URL = 'media/'
 
 
 DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"
+# temporarily switched to a mounted and web-served folder on raspiastro (because mintbox is dead)
+DATA_HOST = "http://192.168.178.72/data_on_yggdrasil/astrobase/data"
 
 LOGIN_REDIRECT_URL = "http://localhost:3000/astroview/login"
 LOGOUT_REDIRECT_URL = "http://localhost:3000/astroview/logout"

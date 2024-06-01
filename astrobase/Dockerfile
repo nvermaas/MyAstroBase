@@ -13,10 +13,10 @@ RUN exec python manage.py collectstatic --settings=astrobase.settings.docker --n
 CMD exec gunicorn astrobase.wsgi_docker:application --bind 0.0.0.0:8000 --workers 3
 
 # build the image like this:
-# docker build -t astrobase_web:latest .
+# docker build -t my_astrobase:latest .
 
 # run the container from 'shared', like this:
-# docker run -d --name astrobase_rpi --mount type=bind,source=/home/pi/shared,target=/shared -p 8008:8000 --restart always astrobase_web:latest
+# docker run -d --name my_astrobase --mount type=bind,source=$HOME/shared,target=/shared -p 8008:8000 --restart always my_astrobase:latest
 
 # log into the container
-# docker exec -it astrobase_rpi sh
+# docker exec -it my_astrobase sh
