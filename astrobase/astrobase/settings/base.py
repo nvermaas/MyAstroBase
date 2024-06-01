@@ -228,6 +228,7 @@ MEDIA_ROOT = '/landing_pad'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"
+DATA_HOST = "https://uilennest.net/astrobase/data"
 #DATA_HOST = os.path.join(BACKEND_HOST, 'data_on_yggdrasil/astrobase/data')
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
