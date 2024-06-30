@@ -225,6 +225,8 @@ except:
 MEDIA_URL = os.path.join(BACKEND_HOST, 'astrobase/media/')
 MEDIA_ROOT = '/landing_pad'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 #DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"
 DATA_HOST = "https://uilennest.net/astrobase/data"

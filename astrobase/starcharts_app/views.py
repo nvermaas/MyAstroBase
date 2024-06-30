@@ -39,7 +39,7 @@ class StarsAPIView(generics.ListAPIView):
     model = Stars
     queryset = Stars.objects.using('stars').all()
     serializer_class = StarsSerializer
-    filter_class = StarsFilter
+    filterset_class = StarsFilter
 
 
 class StarChartFilter(filters.FilterSet):
@@ -56,7 +56,7 @@ class StarChartAPIView(generics.ListAPIView):
     model = StarChart
     queryset = StarChart.objects.all()
     serializer_class = StarChartSerializer
-    filter_class = StarChartFilter
+    filterset_class = StarChartFilter
 
 
 def ShowStarChartView(request, name='my_starchart'):
