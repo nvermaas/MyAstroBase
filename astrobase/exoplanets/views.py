@@ -31,14 +31,14 @@ class ExoplanetsView(generics.ListAPIView):
     model = Exoplanet
     queryset = Exoplanet.objects.all()
     serializer_class = ExoplanetSerializer
-    filter_class = ExoplanetFilter
+    filterset_class = ExoplanetFilter
 
 
 class ExoplanetsAllView(generics.ListAPIView):
     model = Exoplanet
     queryset = Exoplanet.objects.all()
     serializer_class = ExoplanetSerializer
-    filter_class = ExoplanetFilter
+    filterset_class = ExoplanetFilter
     pagination_class = NoPagination
 
 

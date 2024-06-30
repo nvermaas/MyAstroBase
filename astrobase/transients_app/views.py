@@ -31,14 +31,14 @@ class AsteroidsView(generics.ListAPIView):
     model = Asteroid
     queryset = Asteroid.objects.all()
     serializer_class = AsteroidSerializer
-    filter_class = AsteroidFilter
+    filterset_class = AsteroidFilter
 
 
 class AsteroidsAllView(generics.ListAPIView):
     model = Asteroid
     queryset = Asteroid.objects.all()
     serializer_class = AsteroidSerializer
-    filter_class = AsteroidFilter
+    filterset_class = AsteroidFilter
     pagination_class = NoPagination
 
 

@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
-#CSRF_TRUSTED_ORIGINS = ["https://uilennest.net","https://web-of-wyrd.nl"]
+CSRF_TRUSTED_ORIGINS = ["https://uilennest.net","https://web-of-wyrd.nl","127.0.0.1:8000"]
 
 # Application definition
 
@@ -225,6 +225,8 @@ except:
 #MEDIA_URL = 'https://uilennest.net/astrobase/media/'
 MEDIA_URL = os.path.join(BACKEND_HOST, 'astrobase/media/')
 MEDIA_ROOT = '/landing_pad'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 #DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"

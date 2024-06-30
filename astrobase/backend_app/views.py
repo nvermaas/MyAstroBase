@@ -251,7 +251,7 @@ class Observation2ListViewAPI(generics.ListCreateAPIView):
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = Observation2Filter
+    filterset_class = Observation2Filter
 
 
 class Observation2DetailsViewAPI(generics.RetrieveUpdateDestroyAPIView):
@@ -277,7 +277,7 @@ class Collection2ListViewAPI(generics.ListCreateAPIView):
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = Collection2Filter
+    filterset_class = Collection2Filter
 
 
 # example: /my_astrobase/Collections/5/
@@ -308,7 +308,7 @@ class ProjectListViewAPI(generics.ListCreateAPIView):
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = Observation2Filter
+    filterset_class = Observation2Filter
 
 
 # example: /my_astrobase/Jobs/
@@ -322,7 +322,7 @@ class JobListViewAPI(generics.ListCreateAPIView):
     serializer_class = JobSerializer
 
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = JobFilter
+    filterset_class = JobFilter
 
 
 # example: /my_astrobase/Jobs/5/
@@ -536,7 +536,7 @@ class Observation2BoxesListView(generics.ListCreateAPIView):
     serializer_class = Observation2BoxSerializer
     pagination_class = NoPagination
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = Observation2Filter
+    filterset_class = Observation2Filter
 
 
 class CutoutDirectoryListView(generics.ListCreateAPIView):
@@ -549,7 +549,7 @@ class CutoutDirectoryListView(generics.ListCreateAPIView):
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
-    # filter_class = CutoutDirectoryFilter
+    # filterset_class = CutoutDirectoryFilter
 
 
 class CutoutDirectoryDetailsView(generics.RetrieveUpdateDestroyAPIView):
@@ -575,7 +575,7 @@ class CutoutListView(generics.ListCreateAPIView):
 
     # using the Django Filter Backend - https://django-filter.readthedocs.io/en/latest/index.html
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_class = CutoutFilter
+    filterset_class = CutoutFilter
 
 
 class CutoutDetailsView(generics.RetrieveUpdateDestroyAPIView):
