@@ -17,4 +17,5 @@ jobs:
              cd astrobase
              docker build -t my_astrobase:latest .
              cd $HOME/shared
+             docker rm -f my_astrobase
              docker-compose -p dockernest up -d
