@@ -115,9 +115,9 @@ def dispatch_job(command, observation_id, params):
         print(parameters)
         job = Job(command='grid', job_service='celery', queue="celery", parameters=parameters, status="new")
         job.save()
-        print(f"celery.send_task('astro_tasks.tasks.handle_job({job.id})')")
+        print(f"celery.send_task(astro_tasks.tasks.handle_job({job.id}))")
         task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
-        print(task)
+
 
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     # add a grid of 1 or 10 square degrees to the image and rotate the image to horizontal (equatorial)
