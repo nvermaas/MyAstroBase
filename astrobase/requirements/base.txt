@@ -17,6 +17,6 @@ matplotlib==3.6.2
 pandas==2.2.1
 #Pillow==9.3.0
 psycopg2-binary==2.9.3
-requests==2.20.0
+requests==2.32.2
 skyfield==1.39
 whitenoise==5.0.1
