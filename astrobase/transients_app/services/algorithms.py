@@ -24,32 +24,9 @@ TIME_FORMAT = "%Y-%m-%d %H:%M:%SZ"
 DJANGO_TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
 # https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/satellites/a_old_versions/
-eph = load(os.path.join(settings.REPOSITORY_ROOT,'de421.bsp'))        # planets + Earth's Moon
-jup_moons = load(os.path.join(settings.REPOSITORY_ROOT,'jup365.bsp')) # Galilean moons
-sat_moons = load(os.path.join(settings.REPOSITORY_ROOT,'sat365.bsp')) # Titan, Rhea, Dione, etc.
-ura_moons = load(os.path.join(settings.REPOSITORY_ROOT,'ura083.bsp')) # Titania, Oberon
-nep_moons = load(os.path.join(settings.REPOSITORY_ROOT,'nep076.bsp')) # Triton
+#eph = load(os.path.join(settings.REPOSITORY_ROOT,'de421.bsp'))        # planets + Earth's Moon
 
-# Dictionary mapping names → kernel
-MOON_KERNELS = {
-    # Jupiter
-    "Io": jup_moons,
-    "Europa": jup_moons,
-    "Ganymede": jup_moons,
-    "Callisto": jup_moons,
-    # Saturn
-    "Titan": sat_moons,
-    "Rhea": sat_moons,
-    "Dione": sat_moons,
-    "Tethys": sat_moons,
-    "Iapetus": sat_moons,
-    "Enceladus": sat_moons,
-    # Uranus
-    "Titania": ura_moons,
-    "Oberon": ura_moons,
-    # Neptune
-    "Triton": nep_moons,
-}
+
 
 def phi_func(index, phase_angle):
     """
@@ -374,6 +351,34 @@ def get_planet(name, timestamp):
 
 # http://localhost:8000/my_astrobase/bright_moon/?name=Triton
 def get_bright_moon(name, timestamp):
+    jup_moons = load(os.path.join(settings.REPOSITORY_ROOT, 'jup365.bsp'))  # Galilean moons
+    sat_moons = load(os.path.join(settings.REPOSITORY_ROOT, 'sat365.bsp'))  # Titan, Rhea, Dione, etc.
+    ura_moons = load(os.path.join(settings.REPOSITORY_ROOT, 'ura083.bsp'))  # Titania, Oberon
+    nep_moons = load(os.path.join(settings.REPOSITORY_ROOT, 'nep076.bsp'))  # Triton
+
+    # Dictionary mapping names → kernel
+    MOON_KERNELS = {
+        # Jupiter
+        "Io": jup_moons,
+        "Europa": jup_moons,
+        "Ganymede": jup_moons,
+        "Callisto": jup_moons,
+        # Saturn
+        "Titan": sat_moons,
+        "Rhea": sat_moons,
+        "Dione": sat_moons,
+        "Tethys": sat_moons,
+        "Iapetus": sat_moons,
+        "Enceladus": sat_moons,
+        # Uranus
+        "Titania": ura_moons,
+        "Oberon": ura_moons,
+        # Neptune
+        "Triton": nep_moons,
+    }
+
+
+
     ts = load.timescale()
     sun, earth = eph['sun'], eph['earth']
 
