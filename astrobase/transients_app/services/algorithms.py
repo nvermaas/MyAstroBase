@@ -400,6 +400,7 @@ def get_bright_moon(name, timestamp):
 
     result = {
         'name': name,
+        'designation': name,
         'timestamp': str(timestamp),
         'ra': str(ra),
         'dec': str(dec),
@@ -428,6 +429,8 @@ def get_ephemeris_as_json(transient_name, date):
     timestamps.append(tomorrow2)
     timestamps.append(tomorrow3)
 
+    is_bright_moon = False
+
     list = []
     count = 0
     for t in timestamps:
@@ -444,11 +447,17 @@ def get_ephemeris_as_json(transient_name, date):
                 # then try a bright moon
                 try:
                     result, _ = get_bright_moon(transient_name, t)
+                    is_bright_moon = True
                 except:
                     # finally try a planet
                     result, _ = get_planet(transient_name, t)
 
-        vmag = round(float(result['visual_magnitude']) * 10) / 10
+        try:
+            vmag = round(float(result['visual_magnitude']) * 10) / 10
+        except:
+            # yikes
+            vmag = 0
+
         if vmag == 0:
             designation = result['designation']
         else:
@@ -459,10 +468,16 @@ def get_ephemeris_as_json(transient_name, date):
         line['ra'] = float(result['ra_decimal'])
         line['dec'] = float(result['dec_decimal'])
         if count == 1:
-            line['label'] = designation
-            line['shape'] = 'circle_outline'
-            line['size'] = -50
-            line['color'] = 'yellow'
+            if is_bright_moon:
+                line['label'] = designation
+                line['shape'] = 'circle_outline'
+                line['size'] = -10
+                line['color'] = 'yellow'
+            else:
+                line['label'] = designation
+                line['shape'] = 'circle_outline'
+                line['size'] = -50
+                line['color'] = 'yellow'
         else:
             line['label'] = str(t.day)
             line['shape'] = 'cross'

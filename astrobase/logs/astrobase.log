@@ -30101,3 +30101,10 @@
 [24/Jan/2024 15:55:48,978] handle_pre_save(240122001 - Andromeda Swirled - M31, Andromeda Galaxy)
 [24/Jan/2024 15:55:48,982] handle_post_save(240122001 - Andromeda Swirled - M31, Andromeda Galaxy)
 [24/Jan/2024 15:55:48,986] update observation = 240122001
+[14/Sep/2025 17:59:25,551] SIGNAL : pre_save Observation(250111002 - Uranus, Oberon - Aries, Uranus)
+[14/Sep/2025 17:59:25,552] handle_pre_save(250111002 - Uranus, Oberon - Aries, Uranus)
+[14/Sep/2025 17:59:25,563] handle_post_save(250111002 - Uranus, Oberon - Aries, Uranus)
+[14/Sep/2025 18:11:59,345] SIGNAL : pre_save Observation(250113001 - Uranus Zoom - Aries, Uranus)
+[14/Sep/2025 18:11:59,345] handle_pre_save(250113001 - Uranus Zoom - Aries, Uranus)
+[14/Sep/2025 18:11:59,354] handle_post_save(250113001 - Uranus Zoom - Aries, Uranus)
+[14/Sep/2025 18:11:59,355] update observation = 250113001
