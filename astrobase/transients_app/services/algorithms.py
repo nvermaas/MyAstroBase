@@ -23,11 +23,6 @@ DATE_FORMAT = "%Y-%m-%d"
 TIME_FORMAT = "%Y-%m-%d %H:%M:%SZ"
 DJANGO_TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
-# https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/satellites/a_old_versions/
-#eph = load(os.path.join(settings.REPOSITORY_ROOT,'de421.bsp'))        # planets + Earth's Moon
-
-
-
 def phi_func(index, phase_angle):
     """
     Phase function that is needed for the reduced magnitude. The function has
@@ -351,6 +346,8 @@ def get_planet(name, timestamp):
 
 # http://localhost:8000/my_astrobase/bright_moon/?name=Triton
 def get_bright_moon(name, timestamp):
+    # https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/satellites/a_old_versions/
+    eph = load(os.path.join(settings.REPOSITORY_ROOT,'de421.bsp'))        # planets + Earth's Moon
     jup_moons = load(os.path.join(settings.REPOSITORY_ROOT, 'jup365.bsp'))  # Galilean moons
     sat_moons = load(os.path.join(settings.REPOSITORY_ROOT, 'sat365.bsp'))  # Titan, Rhea, Dione, etc.
     ura_moons = load(os.path.join(settings.REPOSITORY_ROOT, 'ura083.bsp'))  # Titania, Oberon
