@@ -436,18 +436,19 @@ def get_ephemeris_as_json(transient_name, date):
     for t in timestamps:
         count += 1
 
-        # first try if the transient is an asteroid
+        # first try if the transient is a bright moon
         try:
-            result, _ = get_asteroid(transient_name, t)
+            result, _ = get_bright_moon(transient_name, t)
+            is_bright_moon = True
+
         except:
             # then try a comet
             try:
                 result, _ = get_comet(transient_name, t)
             except:
-                # then try a bright moon
+                # then try an asteroid
                 try:
-                    result, _ = get_bright_moon(transient_name, t)
-                    is_bright_moon = True
+                    result, _ = get_asteroid(transient_name, t)
                 except:
                     # finally try a planet
                     result, _ = get_planet(transient_name, t)

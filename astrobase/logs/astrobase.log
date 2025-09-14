@@ -30112,3 +30112,14 @@
 [14/Sep/2025 19:05:21,184] handle_pre_save(250113001 - Uranus Zoom - Aries, Uranus)
 [14/Sep/2025 19:05:21,194] handle_post_save(250113001 - Uranus Zoom - Aries, Uranus)
 [14/Sep/2025 19:05:21,194] update observation = 250113001
+[14/Sep/2025 19:39:04,382] SIGNAL : pre_save Observation(250111002 - Uranus, Oberon - Aries, Uranus)
+[14/Sep/2025 19:39:04,382] handle_pre_save(250111002 - Uranus, Oberon - Aries, Uranus)
+[14/Sep/2025 19:39:04,400] handle_post_save(250111002 - Uranus, Oberon - Aries, Uranus)
+[14/Sep/2025 19:57:42,918] SIGNAL : pre_save Observation(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 19:57:42,918] handle_pre_save(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 19:57:42,922] handle_post_save(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 19:57:42,922] update observation = 240108009
+[14/Sep/2025 20:00:49,997] SIGNAL : pre_save Observation(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 20:00:49,998] handle_pre_save(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 20:00:50,009] handle_post_save(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 20:00:50,009] update observation = 240108009
