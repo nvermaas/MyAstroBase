@@ -465,9 +465,9 @@ def get_ephemeris_as_json(transient_name, date):
 
         line = {}
 
-        line['ra'] = float(result['ra_decimal'])
-        line['dec'] = float(result['dec_decimal'])
         if count == 1:
+            line['ra'] = float(result['ra_decimal'])
+            line['dec'] = float(result['dec_decimal'])
             if is_bright_moon:
                 line['label'] = designation
                 line['shape'] = 'circle_outline'
@@ -480,6 +480,8 @@ def get_ephemeris_as_json(transient_name, date):
                 line['color'] = 'yellow'
         else:
             if not is_bright_moon:
+                line['ra'] = float(result['ra_decimal'])
+                line['dec'] = float(result['dec_decimal'])
                 line['label'] = str(t.day)
                 line['shape'] = 'cross'
                 line['size'] = vmag
