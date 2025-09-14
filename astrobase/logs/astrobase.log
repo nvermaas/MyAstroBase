@@ -30108,3 +30108,7 @@
 [14/Sep/2025 18:11:59,345] handle_pre_save(250113001 - Uranus Zoom - Aries, Uranus)
 [14/Sep/2025 18:11:59,354] handle_post_save(250113001 - Uranus Zoom - Aries, Uranus)
 [14/Sep/2025 18:11:59,355] update observation = 250113001
+[14/Sep/2025 19:05:21,184] SIGNAL : pre_save Observation(250113001 - Uranus Zoom - Aries, Uranus)
+[14/Sep/2025 19:05:21,184] handle_pre_save(250113001 - Uranus Zoom - Aries, Uranus)
+[14/Sep/2025 19:05:21,194] handle_post_save(250113001 - Uranus Zoom - Aries, Uranus)
+[14/Sep/2025 19:05:21,194] update observation = 250113001
