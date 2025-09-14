@@ -1,3 +1,4 @@
+import os
 import requests
 import math
 import json
@@ -22,6 +23,33 @@ DATE_FORMAT = "%Y-%m-%d"
 TIME_FORMAT = "%Y-%m-%d %H:%M:%SZ"
 DJANGO_TIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
+# https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/satellites/a_old_versions/
+eph = load(os.path.join(settings.REPOSITORY_ROOT,'de421.bsp'))        # planets + Earth's Moon
+jup_moons = load(os.path.join(settings.REPOSITORY_ROOT,'jup365.bsp')) # Galilean moons
+sat_moons = load(os.path.join(settings.REPOSITORY_ROOT,'sat365.bsp')) # Titan, Rhea, Dione, etc.
+ura_moons = load(os.path.join(settings.REPOSITORY_ROOT,'ura083.bsp')) # Titania, Oberon
+nep_moons = load(os.path.join(settings.REPOSITORY_ROOT,'nep076.bsp')) # Triton
+
+# Dictionary mapping names → kernel
+MOON_KERNELS = {
+    # Jupiter
+    "Io": jup_moons,
+    "Europa": jup_moons,
+    "Ganymede": jup_moons,
+    "Callisto": jup_moons,
+    # Saturn
+    "Titan": sat_moons,
+    "Rhea": sat_moons,
+    "Dione": sat_moons,
+    "Tethys": sat_moons,
+    "Iapetus": sat_moons,
+    "Enceladus": sat_moons,
+    # Uranus
+    "Titania": ura_moons,
+    "Oberon": ura_moons,
+    # Neptune
+    "Triton": nep_moons,
+}
 
 def phi_func(index, phase_angle):
     """
@@ -300,7 +328,9 @@ def get_asteroid(name, timestamp):
     return result,asteroid
 
 
+# http://localhost:8000/my_astrobase/planet/?name=Jupiter
 def get_planet(name, timestamp):
+
     # https://rhodesmill.org/skyfield/api.html#planetary-magnitudes
 
     ts = load.timescale()
@@ -342,6 +372,42 @@ def get_planet(name, timestamp):
     # result['row'] = row
     return result,planet
 
+# http://localhost:8000/my_astrobase/bright_moon/?name=Triton
+def get_bright_moon(name, timestamp):
+    ts = load.timescale()
+    sun, earth = eph['sun'], eph['earth']
+
+    # Find the correct kernel
+    kernel = MOON_KERNELS.get(name)
+    if kernel is None:
+        raise ValueError(f"{name} is not in the list of supported bright moons")
+
+    target = kernel[name]
+
+    # Convert timestamp
+    t = ts.utc(timestamp.year, timestamp.month, timestamp.day,
+               timestamp.hour, timestamp.minute)
+
+    # RA/Dec from Earth
+    ra, dec, distance = earth.at(t).observe(target).radec()
+
+    # Phase angle (Sun–Earth as seen from moon)
+    ra_sun, dec_sun, _ = target.at(t).observe(sun).radec()
+    ra_earth, dec_earth, _ = target.at(t).observe(earth).radec()
+    phase_angle_deg = abs(ra_sun.hours - ra_earth.hours)
+
+    result = {
+        'name': name,
+        'timestamp': str(timestamp),
+        'ra': str(ra),
+        'dec': str(dec),
+        'ra_decimal': ra.hours * 15,
+        'dec_decimal': dec.degrees,
+        'distance_from_earth_au': distance.au,
+        'phase_angle_deg': phase_angle_deg,
+    }
+    return result, target
+
 
 def get_ephemeris_as_json(transient_name, date):
 
@@ -373,8 +439,12 @@ def get_ephemeris_as_json(transient_name, date):
             try:
                 result, _ = get_comet(transient_name, t)
             except:
-                # finally try a planet
-                result, _ = get_planet(transient_name, t)
+                # then try a bright moon
+                try:
+                    result, _ = get_bright_moon(transient_name, t)
+                except:
+                    # finally try a planet
+                    result, _ = get_planet(transient_name, t)
 
         vmag = round(float(result['visual_magnitude']) * 10) / 10
         if vmag == 0:

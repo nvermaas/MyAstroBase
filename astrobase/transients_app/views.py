@@ -169,6 +169,31 @@ class PlanetView(generics.ListAPIView):
         return Response(my_planet)
 
 
+class BrightMoonView(generics.ListAPIView):
+    model = Transient
+    queryset = Transient.objects.all()
+    serializer_class = TransientSerializer
+
+    # override the list method to be able to plug in my transient business logic
+    def list(self, request):
+
+        try:
+            name = self.request.query_params['name']
+        except:
+            name = "Ganymede"
+
+        try:
+            s = self.request.query_params['timestamp']
+            timestamp = datetime.datetime.strptime(s,algorithms.DJANGO_TIME_FORMAT)
+        except:
+            timestamp = datetime.datetime.now()
+
+         # call to the business logic that returns a list of moonphase
+        my_planet,_ = algorithms.get_bright_moon(name,timestamp)
+
+        return Response(my_planet)
+
+
 class UpdateAsteroids(generics.ListAPIView):
     model = Asteroid
     queryset = Asteroid.objects.all()

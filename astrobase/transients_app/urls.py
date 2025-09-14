@@ -10,6 +10,7 @@ urlpatterns = [
      path('minor_planets/', views.MinorPlanetsView.as_view(), name='minor_planets'),
      path('comet/', views.CometView.as_view(), name='comet'),
      path('planet/', views.PlanetView.as_view(), name='planet'),
+     path('bright_moon/', views.BrightMoonView.as_view(), name='bright_moon'),
 
      # get info about an asteroid by name
      path('asteroid/', views.AsteroidView.as_view(), name='asteroid'),

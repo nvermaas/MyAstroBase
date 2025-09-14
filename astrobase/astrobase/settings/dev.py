@@ -21,7 +21,7 @@ MEDIA_ROOT = 'media'
 MEDIA_URL = 'media/'
 
 #MEDIA_URL = 'http://localhost:8000/my_astrobase/'
-
+REPOSITORY_ROOT = '.'
 
 
 DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"
