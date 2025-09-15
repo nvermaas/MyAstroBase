@@ -30123,3 +30123,23 @@
 [14/Sep/2025 20:00:49,998] handle_pre_save(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
 [14/Sep/2025 20:00:50,009] handle_post_save(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
 [14/Sep/2025 20:00:50,009] update observation = 240108009
+[14/Sep/2025 20:02:44,749] SIGNAL : pre_save Observation(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 20:02:44,749] handle_pre_save(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 20:02:44,755] handle_post_save(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 20:02:44,755] update observation = 240108009
+[14/Sep/2025 20:04:18,692] SIGNAL : pre_save Observation(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 20:04:18,692] handle_pre_save(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 20:04:18,701] handle_post_save(240108009 - Saturn, Titan, Iapetus - Aquarius, Saturn, Titan)
+[14/Sep/2025 20:04:18,701] update observation = 240108009
+[15/Sep/2025 19:58:27,701] SIGNAL : pre_save Observation(211009004 - Jovians 8 oct 2021 - Jupiter)
+[15/Sep/2025 19:58:27,702] handle_pre_save(211009004 - Jovians 8 oct 2021 - Jupiter)
+[15/Sep/2025 19:58:27,713] handle_post_save(211009004 - Jovians 8 oct 2021 - Jupiter)
+[15/Sep/2025 19:58:27,714] update observation = 211009004
+[15/Sep/2025 19:59:37,655] SIGNAL : pre_save Observation(211009004 - Jovians 8 oct 2021 - Jupiter)
+[15/Sep/2025 19:59:37,655] handle_pre_save(211009004 - Jovians 8 oct 2021 - Jupiter)
+[15/Sep/2025 19:59:37,660] handle_post_save(211009004 - Jovians 8 oct 2021 - Jupiter)
+[15/Sep/2025 19:59:37,660] update observation = 211009004
+[15/Sep/2025 20:05:03,616] SIGNAL : pre_save Observation(211009004 - Jovians 8 oct 2021 - Jupiter)
+[15/Sep/2025 20:05:03,616] handle_pre_save(211009004 - Jovians 8 oct 2021 - Jupiter)
+[15/Sep/2025 20:05:03,635] handle_post_save(211009004 - Jovians 8 oct 2021 - Jupiter)
+[15/Sep/2025 20:05:03,636] update observation = 211009004

@@ -18,8 +18,7 @@ logger = logging.getLogger(__name__)
 def add_transient_to_job(observation):
     # create ephemeris for the transient
     # get the name of the transient and the timestamp for calculation
-    transient_name = observation.transient
-    objects_to_plot = transients.get_ephemeris_as_json(transient_name,observation.date)
+    objects_to_plot = transients.get_ephemeris_as_json(observation.transient,observation.date)
 
     observation.extra = objects_to_plot
     observation.save()

@@ -374,7 +374,14 @@ def get_bright_moon(name, timestamp):
         "Triton": nep_moons,
     }
 
-
+    MOON_MAGNITUDES = {
+        "Io": 5.0, "Europa": 5.3, "Ganymede": 4.6, "Callisto": 5.6,
+        "Titan": 8.4, "Rhea": 9.7, "Dione": 10.4, "Tethys": 10.2,
+        "Iapetus": 10.2, "Enceladus": 11.7,
+        "Titania": 13.9, "Oberon": 14.1,
+        "Triton": 13.5,
+        "Phobos": 11.3, "Deimos": 12.4,
+    }
 
     ts = load.timescale()
     sun, earth = eph['sun'], eph['earth']
@@ -408,11 +415,13 @@ def get_bright_moon(name, timestamp):
         'dec_decimal': dec.degrees,
         'distance_from_earth_au': distance.au,
         'phase_angle_deg': phase_angle_deg,
+        'visual_magnitude' : MOON_MAGNITUDES.get(name, None)
     }
     return result, target
 
-
-def get_ephemeris_as_json(transient_name, date):
+# http://localhost:8000/my_astrobase/run-command?command=transient&observation_id=1305
+def get_ephemeris_as_json(transient, date):
+    transient_list = transient.split(',')
 
     timestamps = []
     timestamp = date
@@ -429,67 +438,69 @@ def get_ephemeris_as_json(transient_name, date):
     timestamps.append(tomorrow2)
     timestamps.append(tomorrow3)
 
-    is_bright_moon = False
-
     list = []
-    count = 0
-    for t in timestamps:
-        count += 1
 
-        # first try if the transient is a bright moon
-        try:
-            result, _ = get_bright_moon(transient_name, t)
-            is_bright_moon = True
+    for transient_name in transient_list:
+        is_bright_moon = False
+        count = 0
+        for t in timestamps:
+            count += 1
 
-        except:
-            # then try a comet
+            # first try if the transient is a bright moon
             try:
-                result, _ = get_comet(transient_name, t)
+                result, _ = get_bright_moon(transient_name, t)
+                is_bright_moon = True
+
             except:
-                # then try an asteroid
+                # then try a comet
                 try:
-                    result, _ = get_asteroid(transient_name, t)
+                    result, _ = get_comet(transient_name, t)
                 except:
-                    # finally try a planet
-                    result, _ = get_planet(transient_name, t)
+                    # then try an asteroid
+                    try:
+                        result, _ = get_asteroid(transient_name, t)
+                    except:
+                        # finally try a planet
+                        result, _ = get_planet(transient_name, t)
 
-        try:
-            vmag = round(float(result['visual_magnitude']) * 10) / 10
-        except:
-            # yikes
-            vmag = 0
+            try:
+                vmag = round(float(result['visual_magnitude']) * 10) / 10
+            except:
+                # yikes
+                vmag = 0
 
-        if vmag == 0:
-            designation = result['designation']
-        else:
-            designation = result['designation'] + ' (' + str(vmag) + ')'
-
-        line = {}
-
-        if count == 1:
-            line['ra'] = float(result['ra_decimal'])
-            line['dec'] = float(result['dec_decimal'])
-            if is_bright_moon:
-                line['label'] = designation
-                line['shape'] = 'circle_outline'
-                line['size'] = -20
-                line['color'] = 'yellow'
+            if vmag == 0:
+                designation = result['designation']
             else:
-                line['label'] = designation
-                line['shape'] = 'circle_outline'
-                line['size'] = -50
-                line['color'] = 'yellow'
-            list.append(line)
+                designation = result['designation'] + ' (' + str(vmag) + ')'
 
-        else:
-            if not is_bright_moon:
+            line = {}
+
+            if count == 1:
                 line['ra'] = float(result['ra_decimal'])
                 line['dec'] = float(result['dec_decimal'])
-                line['label'] = str(t.day)
-                line['shape'] = 'cross'
-                line['size'] = vmag
-                line['color'] = 'red'
+                if is_bright_moon:
+                    line['label'] = designation
+                    line['shape'] = 'circle_outline'
+                    line['size'] = -20
+                    line['color'] = 'yellow'
+                else:
+                    line['label'] = designation
+                    line['shape'] = 'circle_outline'
+                    line['size'] = -50
+                    line['color'] = 'yellow'
                 list.append(line)
+
+            else:
+                # when it is not a moon, then it makes sense to plot its further course
+                if not is_bright_moon:
+                    line['ra'] = float(result['ra_decimal'])
+                    line['dec'] = float(result['dec_decimal'])
+                    line['label'] = str(t.day)
+                    line['shape'] = 'cross'
+                    line['size'] = vmag
+                    line['color'] = 'red'
+                    list.append(line)
 
     extra = json.dumps(list)
     return extra
