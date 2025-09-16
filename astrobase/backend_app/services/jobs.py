@@ -26,13 +26,16 @@ def add_transient_to_job(observation):
 
 def add_exoplanets_to_job(observation):
     # create ephemeris for the transient
-    objects_to_plot = transients.get_exoplanets_as_json(observation.transient,observation.date)
+    objects_to_plot = transients.get_exoplanets_as_json(observation)
 
     observation.extra = objects_to_plot
     observation.save()
 
 
 def run_command_grid(observation_id):
+    # /my_astrobase/run-command/?command=grid&observation_id=2410
+    # add a grid of 1 or 10 square degrees to the image
+
     observation = Observation2.objects.get(id=observation_id)
 
     # parse the url into observation_dir and filenames
@@ -55,6 +58,127 @@ def run_command_grid(observation_id):
     task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
 
 
+def run_command_grid_eq(observation_id):
+    # /my_astrobase/run-command/?command=grid_eq&observation_id=2410
+    # add a grid of 1 or 10 square degrees to the image and rotate the image to horizontal (equatorial)
+    observation = Observation2.objects.get(id=observation_id)
+
+    # parse the url into observation_dir and filenames
+    parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+
+    # use annotated image as input image
+    parameter_input = observation.derived_raw_image.split('astrobase/data')[1].split('/')
+    parameter_output = observation.derived_raw_image.split('astrobase/data')[1].split('/')
+
+    parameters = str(parameter_fits[1]) + ',' + \
+                 str(parameter_fits[2]) + ',' + \
+                 str(parameter_input[2]) + ',' + \
+                 str(parameter_output[2].replace(".", "_grid.")) + ',' + \
+                 observation.field_name.replace(',', '#')
+
+    parameters = parameters + ',equatorial'
+    job = Job(command='grid', job_service='celery', queue="celery", parameters=parameters, status="new")
+    job.save()
+
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+
+
+def run_command_stars(observation_id):
+    # /my_astrobase/run-command/?command=stars&observation_id=2410
+    # retrieve the stars from the fits that were used by astrometry.net,
+    # and draw them with their magnitudes. (to get a feel of the limiting magnitude of the image)
+
+    observation = Observation2.objects.get(id=observation_id)
+
+    # parse the url into observation_dir and filenames
+    parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+    job_id = parameter_fits[2].split('.')
+
+    parameters = str(parameter_fits[1] + ',' + str(job_id[0]))
+    job = Job(command='stars', job_service='celery', queue="celery", parameters=parameters, status="new")
+    job.save()
+
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+
+
+def run_command_min_max(observation_id):
+    # read min/max ra and dec from fits and store in database
+    observation = Observation2.objects.get(id=observation_id)
+
+    # parse the url into observation_dir and filenames
+    path1 = observation.derived_fits.split('astrobase/data')[1].split('/')
+
+    parameters = str(path1[1] + ',' + str(path1[2]))
+    job = Job(command='box', job_service='celery', queue="celery", parameters=parameters, status="new")
+    job.save()
+
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+
+
+def run_command_draw_extra(observation_id):
+    # /my_astrobase/run-command/?command=draw_extra&observation_id=4131
+    # the 'observation.extra' field contains instructions from what to draw.
+    # the extra objects will be drawn on the 'annotated image'
+    observation = Observation2.objects.get(id=observation_id)
+
+    # parse the url into observation_dir and filenames
+    parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+    parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+    parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+
+    parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(
+        parameter_output[2])
+    job = Job(command='draw_extra', job_service='celery', queue="celery", parameters=parameters,
+              extra=observation.extra, status="new")
+    job.save()
+
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+
+def run_command_transient(observation_id):
+    # draw a transient (planet, comet or asteroid) on the image
+
+    observation = Observation2.objects.get(id=observation_id)
+
+    if observation.transient == None:
+        return "impossible"
+
+    add_transient_to_job(observation)
+
+    # parse the url into observation_dir and filenames
+    parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+    parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+    parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+
+    parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(
+        parameter_output[2].replace(".", "_transient."))
+    job = Job(command='transient', job_service='celery', queue="celery", parameters=parameters, extra=observation.extra,
+              status="new")
+    job.save()
+
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+
+
+def run_command_exoplanets(observation_id):
+    # draw a transient (planet, comet or asteroid) on the image
+
+    observation = Observation2.objects.get(id=observation_id)
+
+    add_exoplanets_to_job(observation)
+
+    # parse the url into observation_dir and filenames
+    parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+    parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+    parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+
+    parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(
+        parameter_output[2].replace(".", "_exoplanets."))
+    job = Job(command='exoplanets', job_service='celery', queue="celery", parameters=parameters,
+              extra=observation.extra, status="new")
+    job.save()
+
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+
+
 def dispatch_job(command, observation_id, params):
     # when 'queue' is specified in the Job object, then it will be picked up by Celery.
     # otherwise it will be picked up by the old pip instaled astrobase_services
@@ -64,140 +188,26 @@ def dispatch_job(command, observation_id, params):
         job = Job(command='ping', job_service='celery', queue='celery', status="new")
         job.save()
 
-
-    # /my_astrobase/run-command/?command=grid&observation_id=2410
-    # add a grid of 1 or 10 square degrees to the image
     if command == "grid":
         run_command_grid(observation_id)
 
-
-    # /my_astrobase/run-command/?command=grid&observation_id=2410
-    # add a grid of 1 or 10 square degrees to the image and rotate the image to horizontal (equatorial)
     if command == "grid_eq":
-        observation = Observation2.objects.get(id=observation_id)
+        run_command_grid_eq(observation_id)
 
-        # parse the url into observation_dir and filenames
-        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
-
-        # use annotated image as input image
-        parameter_input = observation.derived_raw_image.split('astrobase/data')[1].split('/')
-        parameter_output = observation.derived_raw_image.split('astrobase/data')[1].split('/')
-
-        parameters = str(parameter_fits[1]) + ',' + \
-                     str(parameter_fits[2]) + ',' + \
-                     str(parameter_input[2]) + ','  + \
-                     str(parameter_output[2].replace(".", "_grid.")) + ',' + \
-                     observation.field_name.replace(',','#')
-
-        parameters=parameters+',equatorial'
-        job = Job(command='grid', job_service='celery',queue="celery",parameters=parameters, status="new")
-        job.save()
-
-        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
-
-    # /my_astrobase/run-command/?command=stars&observation_id=2410
-    # retrieve the stars from the fits that were used by astrometry.net,
-    # and draw them with their magnitudes. (to get a feel of the limiting magnitude of the image)
     if command == "stars":
-        observation = Observation2.objects.get(id=observation_id)
+        run_command_stars(observation_id)
 
-        # parse the url into observation_dir and filenames
-        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
-        job_id = parameter_fits[2].split('.')
-
-        parameters = str(parameter_fits[1] + ',' + str(job_id[0]))
-        job = Job(command='stars', job_service='celery', queue="celery", parameters=parameters, status="new")
-        job.save()
-
-        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
-
-    # read min/max ra and dec from fits and store in database
     if command == "min_max":
-        observation = Observation2.objects.get(id=observation_id)
+        run_command_min_max(observation_id)
 
-        # parse the url into observation_dir and filenames
-        path1 = observation.derived_fits.split('astrobase/data')[1].split('/')
-
-        parameters = str(path1[1] + ',' + str(path1[2]))
-        job = Job(command='box', job_service='celery',queue="celery", parameters=parameters, status="new")
-        job.save()
-
-        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
-
-    # update min/max ra and dec for all observations with a fits file
-    # /my_astrobase/run-command?command=do_all (no longer used)
-    if command == "do_all":
-        # do something or all observations
-        observations = Observation2.objects.all()
-
-        for observation in observations:
-            # save them all, to trigger a signal
-            print(observation.name)
-            observation.save()
-            #try:
-            #    path1 = observation.derived_fits.split('astrobase/data')[1].split('/')
-            #    parameters = str(path1[1] + ',' + str(path1[2]))
-            #    job = Job(command='box', parameters=parameters, status="new")
-            #    job.save()
-            #    print('ok: ' + str(observation))
-            #except:
-            #    print('failed: '+str(observation))
-
-
-    # /my_astrobase/run-command/?command=draw_extra&observation_id=4131
-    # the 'observation.extra' field contains instructions from what to draw.
-    # the extra objects will be drawn on the 'annotated image'
     if command == "draw_extra":
-        observation = Observation2.objects.get(id=observation_id)
+        run_command_draw_extra(observation_id)
 
-        # parse the url into observation_dir and filenames
-        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
-        parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-
-        parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2])
-        job = Job(command='draw_extra', job_service='celery',queue="celery", parameters=parameters, extra=observation.extra, status="new")
-        job.save()
-
-        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
-
-
-    # draw a transient (planet, comet or asteroid) on the image
     if command == "transient":
-        observation = Observation2.objects.get(id=observation_id)
+        run_command_transient(observation_id)
 
-        if observation.transient==None:
-            return "impossible"
-
-        add_transient_to_job(observation)
-
-        # parse the url into observation_dir and filenames
-        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
-        parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-
-        parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_transient."))
-        job = Job(command='transient', job_service='celery',queue="celery", parameters=parameters, extra=observation.extra, status="new")
-        job.save()
-
-        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
-
-    # draw a transient (planet, comet or asteroid) on the image
     if command == "exoplanets":
-        observation = Observation2.objects.get(id=observation_id)
-
-        add_exoplanets_to_job(observation)
-
-        # parse the url into observation_dir and filenames
-        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
-        parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-
-        parameters = str(parameter_fits[1]) + ',' + str(parameter_fits[2]) + ',' + str(parameter_input[2]) + ',' + str(parameter_output[2].replace(".", "_exoplanets."))
-        job = Job(command='exoplanets', job_service='celery', queue="celery", parameters=parameters, extra=observation.extra, status="new")
-        job.save()
-
-        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+        run_command_exoplanets(observation_id)
 
 
     # crop all images on a coordinate

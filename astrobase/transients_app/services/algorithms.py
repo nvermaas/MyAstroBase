@@ -507,7 +507,7 @@ def get_ephemeris_as_json(transient, date):
     return extra
 
 
-def get_exoplanets_as_json(transient, date):
+def get_exoplanets_as_json(observation):
     # roughly cut out the coordinate box of the image, but take a wide margin
     box = observation.box.split(',')
     ra_end = float(box[0]) + 5
