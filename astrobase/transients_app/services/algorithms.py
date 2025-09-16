@@ -18,6 +18,7 @@ except:
     pass
 
 from ..models import Asteroid
+from exoplanets.models import Exoplanet
 
 DATE_FORMAT = "%Y-%m-%d"
 TIME_FORMAT = "%Y-%m-%d %H:%M:%SZ"
@@ -501,6 +502,61 @@ def get_ephemeris_as_json(transient, date):
                     line['size'] = vmag
                     line['color'] = 'red'
                     list.append(line)
+
+    extra = json.dumps(list)
+    return extra
+
+
+def get_exoplanets_as_json(transient, date):
+    # roughly cut out the coordinate box of the image, but take a wide margin
+    box = observation.box.split(',')
+    ra_end = float(box[0]) + 5
+    dec_end = float(box[1]) + 5
+    ra_start = float(box[4]) - 5
+    dec_start = float(box[5]) - 5
+
+    # roughly get the size of the image
+    # size = max(ra_end - ra_start, dec_end - dec_start)
+
+    exoplanets = Exoplanet.objects.filter(
+        ra__gt=ra_start, ra__lt=ra_end, dec__gt=dec_start, dec__lt=dec_end)
+
+    list = []
+    for planet in exoplanets:
+
+        try:
+            vmag = round(float(planet.sy_vmag) * 10) / 10
+            designation = planet.hostname + ' - m' + str(vmag)
+        except:
+            vmag = 0
+            designation = planet.hostname
+
+        if vmag <= 15:
+            element = {}
+
+            element['ra'] = float(planet.ra)
+            element['dec'] = float(planet.dec)
+
+            element['label'] = designation
+            element['shape'] = 'exoplanet'
+            element['size'] = 20
+            element['color'] = 'red'
+
+            list.append(element)
+
+            # if this star as multiple exoplanets, then also draw a green circle
+            if planet.sy_pnum > 1:
+                element = {}
+
+                element['ra'] = float(planet.ra)
+                element['dec'] = float(planet.dec)
+
+                element['label'] = ""
+                element['shape'] = 'exoplanet'
+                element['size'] = 30
+                element['color'] = 'green'
+
+                list.append(element)
 
     extra = json.dumps(list)
     return extra

@@ -26,61 +26,33 @@ def add_transient_to_job(observation):
 
 def add_exoplanets_to_job(observation):
     # create ephemeris for the transient
+    objects_to_plot = transients.get_exoplanets_as_json(observation.transient,observation.date)
 
-    # roughly cut out the coordinate box of the image, but take a wide margin
-    box = observation.box.split(',')
-    ra_end = float(box[0])+5
-    dec_end = float(box[1])+5
-    ra_start = float(box[4])-5
-    dec_start = float(box[5])-5
-
-    # roughly get the size of the image
-    # size = max(ra_end - ra_start, dec_end - dec_start)
-
-    exoplanets = Exoplanet.objects.filter(
-        ra__gt=ra_start, ra__lt=ra_end, dec__gt=dec_start, dec__lt=dec_end)
-
-    list = []
-    for planet in exoplanets:
-
-        try:
-            vmag = round(float(planet.sy_vmag) * 10)/10
-            designation = planet.hostname + ' - m' + str(vmag)
-        except:
-            vmag = 0
-            designation = planet.hostname
-
-        if vmag <=15:
-            element = {}
-
-            element['ra'] = float(planet.ra)
-            element['dec'] = float(planet.dec)
-
-            element['label'] = designation
-            element['shape'] = 'exoplanet'
-            element['size'] = 20
-            element['color'] = 'red'
-
-            list.append(element)
-
-            # if this star as multiple exoplanets, then also draw a green circle
-            if planet.sy_pnum>1:
-                element = {}
-
-                element['ra'] = float(planet.ra)
-                element['dec'] = float(planet.dec)
-
-                element['label'] = ""
-                element['shape'] = 'exoplanet'
-                element['size'] = 30
-                element['color'] = 'green'
-
-                list.append(element)
-
-    extra = json.dumps(list)
-
-    observation.extra = extra
+    observation.extra = objects_to_plot
     observation.save()
+
+
+def run_command_grid(observation_id):
+    observation = Observation2.objects.get(id=observation_id)
+
+    # parse the url into observation_dir and filenames
+    parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
+
+    # use annotated image as input image
+    parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+    parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
+
+    parameters = str(parameter_fits[1]) + ',' + \
+                 str(parameter_fits[2]) + ',' + \
+                 str(parameter_input[2]) + ',' + \
+                 str(parameter_output[2].replace(".", "_grid.")) + ',' + \
+                 observation.field_name.replace(',', '#')
+
+    print(parameters)
+    job = Job(command='grid', job_service='celery', queue="celery", parameters=parameters, status="new")
+    job.save()
+    print(f"celery.send_task(astro_tasks.tasks.handle_job({job.id}))")
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
 
 
 def dispatch_job(command, observation_id, params):
@@ -96,26 +68,7 @@ def dispatch_job(command, observation_id, params):
     # /my_astrobase/run-command/?command=grid&observation_id=2410
     # add a grid of 1 or 10 square degrees to the image
     if command == "grid":
-        observation = Observation2.objects.get(id=observation_id)
-
-        # parse the url into observation_dir and filenames
-        parameter_fits = observation.derived_fits.split('astrobase/data')[1].split('/')
-
-        # use annotated image as input image
-        parameter_input = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-        parameter_output = observation.derived_annotated_image.split('astrobase/data')[1].split('/')
-
-        parameters = str(parameter_fits[1]) + ',' + \
-                     str(parameter_fits[2]) + ',' + \
-                     str(parameter_input[2]) + ','  + \
-                     str(parameter_output[2].replace(".", "_grid.")) + ',' + \
-                     observation.field_name.replace(',','#')
-
-        print(parameters)
-        job = Job(command='grid', job_service='celery', queue="celery", parameters=parameters, status="new")
-        job.save()
-        print(f"celery.send_task(astro_tasks.tasks.handle_job({job.id}))")
-        task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+        run_command_grid(observation_id)
 
 
     # /my_astrobase/run-command/?command=grid&observation_id=2410
