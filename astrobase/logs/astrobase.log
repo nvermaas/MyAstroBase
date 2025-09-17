@@ -30151,3 +30151,7 @@
 [16/Sep/2025 20:50:38,185] handle_pre_save(211009004 - Jovians 8 oct 2021 - Jupiter)
 [16/Sep/2025 20:50:38,205] handle_post_save(211009004 - Jovians 8 oct 2021 - Jupiter)
 [16/Sep/2025 20:50:38,206] update observation = 211009004
+[16/Sep/2025 21:05:49,451] SIGNAL : pre_save Observation(211009004 - Jovians 8 oct 2021 - Jupiter)
+[16/Sep/2025 21:05:49,451] handle_pre_save(211009004 - Jovians 8 oct 2021 - Jupiter)
+[16/Sep/2025 21:05:49,464] handle_post_save(211009004 - Jovians 8 oct 2021 - Jupiter)
+[16/Sep/2025 21:05:49,464] update observation = 211009004
