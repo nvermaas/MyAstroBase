@@ -560,9 +560,12 @@ def get_exoplanets_as_json(observation):
 
 
 def get_asteroids_as_json(observation):
-
+    """
+    update the coordinates of all the 1000 asteroid on file
+    and draw them on the transient images of my observation
+    """
     # update the asteroids table with the data of the observation.
-    #update_asteroid_table_ephemeris(observation.date)
+    update_asteroid_table_ephemeris(observation.date)
 
     # roughly cut out the coordinate box of the image, but take a wide margin
 
@@ -571,7 +574,6 @@ def get_asteroids_as_json(observation):
     dec_end = float(box[1]) + 5
     ra_start = float(box[4]) - 5
     dec_start = float(box[5]) - 5
-
 
     asteroids = Asteroid.objects.filter(ra__gt=ra_start, ra__lt=ra_end, dec__gt=dec_start, dec__lt=dec_end)
 

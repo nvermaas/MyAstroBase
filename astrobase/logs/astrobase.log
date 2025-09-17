@@ -30211,3 +30211,11 @@
 [17/Sep/2025 16:57:25,587] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
 [17/Sep/2025 16:57:25,624] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
 [17/Sep/2025 16:57:25,625] update observation = 201120006
+[17/Sep/2025 17:14:27,849] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Sep/2025 17:14:27,849] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Sep/2025 17:14:27,865] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Sep/2025 17:14:27,865] update observation = 201120006
+[17/Sep/2025 17:14:27,871] SIGNAL : pre_save Observation(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Sep/2025 17:14:27,872] handle_pre_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Sep/2025 17:14:27,879] handle_post_save(201120006 - Flora and Eugenia - Cetus, Flora, Eugenia)
+[17/Sep/2025 17:14:27,880] update observation = 201120006
