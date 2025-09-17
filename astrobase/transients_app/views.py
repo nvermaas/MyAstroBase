@@ -42,25 +42,7 @@ class AsteroidsAllView(generics.ListAPIView):
     pagination_class = NoPagination
 
 
-class TransientView(generics.ListAPIView):
-    model = Transient
-    queryset = Transient.objects.all()
-    serializer_class = TransientSerializer
-
-    # override the list method to be able to plug in my transient business logic
-    def list(self, request):
-
-        try:
-            name = self.request.query_params['name']
-        except:
-            name = "eros"
-
-        # uses astropy to also calc emphemeris
-        my_transients = algorithms.get_transients(name)
-        return Response(my_transients)
-
-
-
+# http://localhost:8000/my_astrobase/minor_planets/?name=ceres&timestamp=2025-09-17T08:55:59Z
 class MinorPlanetsView(generics.ListAPIView):
     model = Transient
     queryset = Transient.objects.all()

@@ -188,19 +188,11 @@ def get_minor_planets_webservice(name, timestamp):
     return result
 
 
-# fetch properties of the orbits of a minor planet by name
-def get_transients(name):
-
-    result = {}
-    result['name'] = name
-
-    return result
-
-
-# fetch properties of the orbits of a comet by name and timestamp
-# get_comet?name=C/2020 F3 (NEOWISE)&timestamp=2020-07-12T08:55:59Z
 
 def get_comet(name, timestamp):
+    # fetch properties of the orbits of a comet by name and timestamp
+    # get_comet?name=C/2020 F3 (NEOWISE)&timestamp=2020-07-12T08:55:59Z
+
     # https://rhodesmill.org/skyfield/example-plots.html#drawing-a-finder-chart-for-comet-neowise
     # https://astroquery.readthedocs.io/en/latest/mpc/mpc.html
 
@@ -303,6 +295,11 @@ def get_asteroid(name, timestamp):
 
 # http://localhost:8000/my_astrobase/planet/?name=Jupiter
 def get_planet(name, timestamp):
+    """
+    @input name: planet name
+    @input timestamp: timestamp to calculate ephemerides with
+    @output dict with results
+    """
 
     # https://rhodesmill.org/skyfield/api.html#planetary-magnitudes
 
@@ -421,7 +418,7 @@ def get_bright_moon(name, timestamp):
     return result, target
 
 # http://localhost:8000/my_astrobase/run-command?command=transient&observation_id=1305
-def get_ephemeris_as_json(transient, date):
+def get_transients_as_json(transient, date):
     transient_list = transient.split(',')
 
     timestamps = []
@@ -562,6 +559,45 @@ def get_exoplanets_as_json(observation):
     return extra
 
 
+def get_asteroids_as_json(observation):
+
+    # update the asteroids table with the data of the observation.
+    #update_asteroid_table_ephemeris(observation.date)
+
+    # roughly cut out the coordinate box of the image, but take a wide margin
+
+    box = observation.box.split(',')
+    ra_end = float(box[0]) + 5
+    dec_end = float(box[1]) + 5
+    ra_start = float(box[4]) - 5
+    dec_start = float(box[5]) - 5
+
+
+    asteroids = Asteroid.objects.filter(ra__gt=ra_start, ra__lt=ra_end, dec__gt=dec_start, dec__lt=dec_end)
+
+    list = []
+    for asteroid in asteroids:
+
+        designation = f'{asteroid.designation} - m{asteroid.visual_magnitude}'
+
+        if asteroid.visual_magnitude <= 15:
+            element = {}
+
+            element['ra'] = float(asteroid.ra)
+            element['dec'] = float(asteroid.dec)
+
+            element['label'] = designation
+            element['shape'] = 'asteroid'
+            element['size'] = 20
+            element['color'] = 'yellow'
+
+            list.append(element)
+
+    extra = json.dumps(list)
+    return extra
+
+
+
 def update_asteroid_table():
 
     # clear asteroid table
@@ -604,8 +640,8 @@ def update_asteroid_table_ephemeris(timestamp):
 
         asteroid.ra = details['ra_decimal']
         asteroid.dec = details['dec_decimal']
-        asteroid.visual_magnitude = details['visual_magnitude']
+        asteroid.visual_magnitude = round(details['visual_magnitude'],1)
         asteroid.timestamp = timestamp
-        print(designation)
+        print(f'{designation} - m{asteroid.visual_magnitude}')
         asteroid.save()
 

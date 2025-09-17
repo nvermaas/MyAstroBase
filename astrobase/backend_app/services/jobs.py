@@ -9,7 +9,7 @@ import datetime
 import math
 
 from ..models import Observation2, Job, Cutout, CutoutDirectory
-from transients_app.services import algorithms as transients
+from transients_app.services import algorithms as transients_algorithms
 from exoplanets.models import Exoplanet
 from ..my_celery import app
 
@@ -130,7 +130,7 @@ def run_command_transient(observation_id):
         return "impossible"
 
     # construct objects to plot, and save them in the observation.extra field
-    objects_to_plot = transients.get_ephemeris_as_json(observation.transient,observation.date)
+    objects_to_plot = transients_algorithms.get_transients_as_json(observation.transient, observation.date)
     observation.extra = objects_to_plot
     observation.save()
 
@@ -151,16 +151,18 @@ def run_command_transient(observation_id):
 def run_command_asteroids(observation_id):
     """"
     draw the brighest asteroids in the field of view of the image
-    example: http://localhost:8000/my_astrobase/run-command?command=asteroids&observation_id=1305
+    example: http://localhost:8000/my_astrobase/run-command?command=asteroids&observation_id=1208
     """
 
     observation = Observation2.objects.get(id=observation_id)
 
-    if observation.transient == None:
-        return "impossible"
+    # there may be a dedicated transient also... draw it
+    if observation.transient:
+        objects_to_plot = transients_algorithms.get_transients_as_json(observation.transient, observation.date)
+        observation.extra = objects_to_plot
+        observation.save()
 
-    # construct objects to plot, and save them in the observation.extra field
-    objects_to_plot = transients.get_ephemeris_as_json(observation.transient,observation.date)
+    objects_to_plot = transients_algorithms.get_asteroids_as_json(observation)
     observation.extra = objects_to_plot
     observation.save()
 
@@ -187,7 +189,7 @@ def run_command_exoplanets(observation_id):
     observation = Observation2.objects.get(id=observation_id)
 
     # construct objects to plot, and save them in the observation.extra field
-    objects_to_plot = transients.get_exoplanets_as_json(observation)
+    objects_to_plot = transients_algorithms.get_exoplanets_as_json(observation)
     observation.extra = objects_to_plot
     observation.save()
 
