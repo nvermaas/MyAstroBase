@@ -261,13 +261,12 @@ def get_asteroid(name, timestamp):
     ra, dec, distance_from_sun = sun.at(t).observe(asteroid).radec()
     ra, dec, distance_from_earth = earth.at(t).observe(asteroid).radec()
 
-    # https://towardsdatascience.com/space-science-with-python-a-very-bright-opposition-62e248abfe62
-    # how do I calculate the current phase_angle between sun and earth as seen from the asteroid
-    ra_sun, dec_sun, d = asteroid.at(t).observe(sun).radec()
-    ra_earth,dec_earth, d = asteroid.at(t).observe(earth).radec()
+    ast_sun = asteroid.at(t).observe(sun)
+    ast_earth = asteroid.at(t).observe(earth)
 
-    phase_angle_in_degrees = abs(ra_sun.hours - ra_earth.hours)
-    phase_angle = phase_angle_in_degrees * math.pi / 180
+    # Phase angle: angle between Sun and Earth as seen from asteroid
+    phase_angle = ast_sun.separation_from(ast_earth)
+    #phase_angle_degrees = phase_angle.degrees
 
     visual_magnitude = app_mag(abs_mag=row['magnitude_H'], \
                              phase_angle=phase_angle, \
@@ -601,7 +600,14 @@ def get_asteroids_as_json(observation):
 
 
 def update_asteroid_table():
-
+    """
+        update asteroids.txt
+        - download MPCORB.DAT file: https://www.minorplanetcenter.net/iau/MPCORB/MPCORB.DAT.gz
+        - unzip
+        - cut off header
+        - save (first 1000?) as /shared/respository/asteroids.txt file (look for MY_ASTEROID_ROOT in settings\base.py)
+        https://uilennest.net/my_astrobase/update_asteroids/
+    """
     # clear asteroid table
     Asteroid.objects.all().delete()
 
