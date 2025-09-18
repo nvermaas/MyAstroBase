@@ -532,7 +532,7 @@ class RunCommandView(generics.ListAPIView):
 
 # Observation Coordinates for Aladin
 class Observation2BoxesListView(generics.ListCreateAPIView):
-    queryset = Observation2Box.objects.all()
+    queryset = Observation2Box.objects.all().order_by('id')
     serializer_class = Observation2BoxSerializer
     pagination_class = NoPagination
     filter_backends = (filters.DjangoFilterBackend,)
