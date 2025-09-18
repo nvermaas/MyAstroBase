@@ -258,16 +258,26 @@ def get_asteroid(name, timestamp):
 
     asteroid = sun + mpc.mpcorb_orbit(row, ts, GM_SUN)
     t = ts.utc(timestamp.year, timestamp.month, timestamp.day, timestamp.hour, timestamp.minute)
-    ra, dec, distance_from_sun = sun.at(t).observe(asteroid).radec()
+    #ra, dec, distance_from_sun = sun.at(t).observe(asteroid).radec()
     ra, dec, distance_from_earth = earth.at(t).observe(asteroid).radec()
-    #_, _, distance_from_sun = sun.at(t).observe(asteroid).radec()
+    _, _, distance_from_sun = sun.at(t).observe(asteroid).radec()
 
+    # *** new ***
     ast_sun = asteroid.at(t).observe(sun)
     ast_earth = asteroid.at(t).observe(earth)
 
     # Phase angle: angle between Sun and Earth as seen from asteroid
     phase_angle = ast_sun.separation_from(ast_earth)
     #phase_angle_degrees = phase_angle.degrees
+
+    # *** old ***
+    ra_sun, dec_sun, d = asteroid.at(t).observe(sun).radec()
+    ra_earth,dec_earth, d = asteroid.at(t).observe(earth).radec()
+
+    phase_angle_in_degrees = abs(ra_sun.hours - ra_earth.hours)
+    phase_angle = phase_angle_in_degrees * math.pi / 180
+
+    # *** ***
 
     visual_magnitude = app_mag(abs_mag=row['magnitude_H'], \
                              phase_angle=phase_angle, \
