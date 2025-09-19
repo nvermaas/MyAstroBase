@@ -270,7 +270,7 @@ def get_asteroid(name, timestamp):
     # Apparent RA/Dec from observer
     observer = earth + wgs84.latlon(latitude_degrees=52, longitude_degrees=6, elevation_m=0)
     ast_apparent = observer.at(t).observe(asteroid).apparent()
-    ra, dec, distance_from_earth = ast_apparent.radec(epoch='date')
+    ra, dec, distance_from_earth = ast_apparent.radec()
 
     # expected RA for Chaldaea = 11:32:46, or 173.192
     ast_sun = asteroid.at(t).observe(sun)
