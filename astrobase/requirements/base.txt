@@ -1,4 +1,4 @@
-astroquery==0.4.10
+#astroquery==0.4.10
 celery==5.2.2
 Django==5.0.9
 djangorestframework==3.14.0

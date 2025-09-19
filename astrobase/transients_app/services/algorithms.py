@@ -12,9 +12,6 @@ from skyfield.data import mpc
 from skyfield.constants import GM_SUN_Pitjeva_2005_km3_s2 as GM_SUN
 from skyfield.magnitudelib import planetary_magnitude
 
-from astroquery.jplhorizons import Horizons
-from astropy.time import Time
-
 try:
     import ephem
 except:
@@ -267,32 +264,21 @@ def get_asteroid(name, timestamp):
     asteroid = sun + mpc.mpcorb_orbit(row, ts, GM_SUN)
     t = ts.utc(timestamp.year, timestamp.month, timestamp.day, timestamp.hour, timestamp.minute)
 
-    ra, dec, distance_from_earth = earth.at(t).observe(asteroid).radec()
+    #ra, dec, distance_from_earth = earth.at(t).observe(asteroid).radec()
     _, _, distance_from_sun = sun.at(t).observe(asteroid).radec()
 
     # Apparent RA/Dec from observer
     observer = earth + wgs84.latlon(latitude_degrees=52, longitude_degrees=6, elevation_m=0)
     ast_apparent = observer.at(t).observe(asteroid).apparent()
-    ra, dec, distance_from_earth = ast_apparent.radec()
+    ra, dec, distance_from_earth = ast_apparent.radec(epoch='date')
 
-    # expected RA for Chaldaea = 11:32:46
-
-    # *** new ***
+    # expected RA for Chaldaea = 11:32:46, or 173.192
     ast_sun = asteroid.at(t).observe(sun)
     ast_earth = asteroid.at(t).observe(earth)
 
     # Phase angle: angle between Sun and Earth as seen from asteroid
     phase_angle = ast_sun.separation_from(ast_earth)
     phase_angle_radians = phase_angle.radians
-
-    # *** old ***
-    #ra_sun, dec_sun, d = asteroid.at(t).observe(sun).radec()
-    #ra_earth,dec_earth, d = asteroid.at(t).observe(earth).radec()
-
-    #phase_angle_degrees = abs(ra_sun.hours - ra_earth.hours)
-    #phase_angle_radians = phase_angle_degrees * math.pi / 180
-
-    # *** ***
 
     visual_magnitude = app_mag(abs_mag=row['magnitude_H'], \
                              phase_angle=phase_angle_radians, \
