@@ -7,10 +7,13 @@ from django.conf import settings
 
 import numpy as np
 
-from skyfield.api import load
+from skyfield.api import load, wgs84
 from skyfield.data import mpc
 from skyfield.constants import GM_SUN_Pitjeva_2005_km3_s2 as GM_SUN
 from skyfield.magnitudelib import planetary_magnitude
+
+from astroquery.jplhorizons import Horizons
+from astropy.time import Time
 
 try:
     import ephem
@@ -233,8 +236,13 @@ def get_comet(name, timestamp):
 
 
 def get_asteroid(name, timestamp):
+    # http://localhost:8000/my_astrobase/run-command/?command=asteroids&observation_id=1672
+
     # https://rhodesmill.org/skyfield/example-plots.html#drawing-a-finder-chart-for-comet-neowise
     # https://astroquery.readthedocs.io/en/latest/mpc/mpc.html
+
+    # https://ssd-api.jpl.nasa.gov/doc/horizons.html
+
     designation = name
     try:
         asteroids = Asteroid.objects.filter(designation__icontains=name)
@@ -258,9 +266,16 @@ def get_asteroid(name, timestamp):
 
     asteroid = sun + mpc.mpcorb_orbit(row, ts, GM_SUN)
     t = ts.utc(timestamp.year, timestamp.month, timestamp.day, timestamp.hour, timestamp.minute)
-    #ra, dec, distance_from_sun = sun.at(t).observe(asteroid).radec()
+
     ra, dec, distance_from_earth = earth.at(t).observe(asteroid).radec()
     _, _, distance_from_sun = sun.at(t).observe(asteroid).radec()
+
+    # Apparent RA/Dec from observer
+    observer = earth + wgs84.latlon(latitude_degrees=52, longitude_degrees=6, elevation_m=0)
+    ast_apparent = observer.at(t).observe(asteroid).apparent()
+    ra, dec, distance_from_earth = ast_apparent.radec()
+
+    # expected RA for Chaldaea = 11:32:46
 
     # *** new ***
     ast_sun = asteroid.at(t).observe(sun)
@@ -268,19 +283,19 @@ def get_asteroid(name, timestamp):
 
     # Phase angle: angle between Sun and Earth as seen from asteroid
     phase_angle = ast_sun.separation_from(ast_earth)
-    #phase_angle_degrees = phase_angle.degrees
+    phase_angle_radians = phase_angle.radians
 
     # *** old ***
-    ra_sun, dec_sun, d = asteroid.at(t).observe(sun).radec()
-    ra_earth,dec_earth, d = asteroid.at(t).observe(earth).radec()
+    #ra_sun, dec_sun, d = asteroid.at(t).observe(sun).radec()
+    #ra_earth,dec_earth, d = asteroid.at(t).observe(earth).radec()
 
-    phase_angle_in_degrees = abs(ra_sun.hours - ra_earth.hours)
-    phase_angle = phase_angle_in_degrees * math.pi / 180
+    #phase_angle_degrees = abs(ra_sun.hours - ra_earth.hours)
+    #phase_angle_radians = phase_angle_degrees * math.pi / 180
 
     # *** ***
 
     visual_magnitude = app_mag(abs_mag=row['magnitude_H'], \
-                             phase_angle=phase_angle, \
+                             phase_angle=phase_angle_radians, \
                              slope_g=row['magnitude_G'], \
                              d_ast_sun=distance_from_sun.au, \
                              d_ast_earth=distance_from_earth.au)
@@ -291,7 +306,7 @@ def get_asteroid(name, timestamp):
     result['timestamp'] = str(timestamp)
     result['ra'] = str(ra)
     result['dec'] = str(dec)
-    result['ra_decimal'] = str(ra.hours * 15)
+    result['ra_decimal'] = str(ra.degrees)
     result['dec_decimal'] = str(dec.degrees)
     result['distance_from_earth'] = str(distance_from_earth.au)
     result['distance_from_sun'] = str(distance_from_sun.au)
@@ -299,7 +314,7 @@ def get_asteroid(name, timestamp):
     result['magnitude_g'] = row['magnitude_G']
     result['visual_magnitude'] = visual_magnitude
     result['last_observation_date'] = row['last_observation_date']
-    # result['row'] = row
+
     return result,asteroid
 
 
