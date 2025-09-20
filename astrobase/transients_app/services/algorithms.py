@@ -258,7 +258,7 @@ def get_asteroid(name, timestamp):
     row = minor_planets.loc[designation]
 
     ts = load.timescale()
-    eph = load('de421.bsp')
+    eph = load('de440s.bsp')
     sun, earth = eph['sun'], eph['earth']
 
     asteroid = sun + mpc.mpcorb_orbit(row, ts, GM_SUN)
