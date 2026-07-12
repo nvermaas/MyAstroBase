@@ -258,7 +258,7 @@ def get_asteroid(name, timestamp):
     row = minor_planets.loc[designation]
 
     ts = load.timescale()
-    eph = load('de440s.bsp')
+    eph = load('de421.bsp')
     sun, earth = eph['sun'], eph['earth']
 
     asteroid = sun + mpc.mpcorb_orbit(row, ts, GM_SUN)
@@ -271,8 +271,10 @@ def get_asteroid(name, timestamp):
     observer = earth + wgs84.latlon(latitude_degrees=52, longitude_degrees=6, elevation_m=0)
     ast_apparent = observer.at(t).observe(asteroid).apparent()
     ra, dec, distance_from_earth = ast_apparent.radec()
-
-    # expected RA for Chaldaea = 11:32:46, or 173.192
+    #ra, dec, distance_from_earth = ast_apparent.radec(epoch="date")
+    # expected RA for Chaldaea
+    # J2000:  RA 11:31:28, or 173.192, dec 7:32:57 (calc is 11:31:46)
+    # on-date:  RA 11:32:46, or 173.192, dec 7:24:35 (calc 11:33:04)
     ast_sun = asteroid.at(t).observe(sun)
     ast_earth = asteroid.at(t).observe(earth)
 

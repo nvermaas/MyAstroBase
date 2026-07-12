@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
-CSRF_TRUSTED_ORIGINS = ["https://uilennest.net","https://web-of-wyrd.nl","http://127.0.0.1:8000"]
+CSRF_TRUSTED_ORIGINS = ["https://uilennest.net","https://web-of-wyrd.nl","http://127.0.0.1:8000", "https://woodland.uilennest.net", "https://middle-earth.uilennest.net"]
 
 # Application definition
 

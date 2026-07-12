@@ -1,13 +1,15 @@
-name: build-deploy-astrobase
-on: [push]
+name: deploy-docker-woodland
+on:
+  workflow_dispatch:
 jobs:
-  build-deploy-astrobase:
+  deploy-docker-woodland:
     runs-on: ubuntu-latest
     steps:
       - name: execute build & deploy procedure on mintbox
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.MY_HOST }}
+          port: 2222
           username: ${{ secrets.MY_USERNAME }}
           password: ${{ secrets.MY_PASSWORD }}
           #key: ${{ secrets.MY_PRIVATE_KEY }}
@@ -19,4 +21,4 @@ jobs:
              cd $HOME/shared
              docker stop my_astrobase
              docker rm -f my_astrobase
-             docker-compose -p astronest -f ~/shared/docker-compose-astro.yml up -d
+             docker compose -p astronest -f ~/shared/docker-compose-astro.yml up -d

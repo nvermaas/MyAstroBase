@@ -30295,3 +30295,11 @@
 [19/Sep/2025 20:47:00,082] handle_pre_save(250420002 - k2-18 zoom - k2-18, Leo, Virgo)
 [19/Sep/2025 20:47:00,090] handle_post_save(250420002 - k2-18 zoom - k2-18, Leo, Virgo)
 [19/Sep/2025 20:47:00,090] update observation = 250420002
+[20/Sep/2025 19:20:37,758] SIGNAL : pre_save Observation(250420002 - k2-18 zoom - k2-18, Leo, Virgo)
+[20/Sep/2025 19:20:37,758] handle_pre_save(250420002 - k2-18 zoom - k2-18, Leo, Virgo)
+[20/Sep/2025 19:20:37,768] handle_post_save(250420002 - k2-18 zoom - k2-18, Leo, Virgo)
+[20/Sep/2025 19:20:37,768] update observation = 250420002
+[20/Sep/2025 19:20:51,319] SIGNAL : pre_save Observation(250420002 - k2-18 zoom - k2-18, Leo, Virgo)
+[20/Sep/2025 19:20:51,319] handle_pre_save(250420002 - k2-18 zoom - k2-18, Leo, Virgo)
+[20/Sep/2025 19:20:51,334] handle_post_save(250420002 - k2-18 zoom - k2-18, Leo, Virgo)
+[20/Sep/2025 19:20:51,334] update observation = 250420002
