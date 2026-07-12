@@ -219,6 +219,11 @@ try:
 except:
     BACKEND_HOST = 'https://uilennest.net/'
 
+try:
+    DATA_HOST = os.environ['DATA_HOST']
+except:
+    DATA_HOST = "https://uilennest.net/astrobase/data"
+
 # because the backend runs in docker, it can only access a the /shared volume
 # at OS level the URL and ROOT are connected through a symbolic link
 #MEDIA_URL = 'https://uilennest.net/astrobase/media/'
@@ -228,9 +233,7 @@ MEDIA_ROOT = '/landing_pad'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
-#DATA_HOST = "https://uilennest.net/data_on_yggdrasil/astrobase/data"
-DATA_HOST = "https://uilennest.net/astrobase/data"
-#DATA_HOST = os.path.join(BACKEND_HOST, 'data_on_yggdrasil/astrobase/data')
+
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 
