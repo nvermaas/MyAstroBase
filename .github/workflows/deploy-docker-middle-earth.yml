@@ -1,15 +1,15 @@
-name: deploy-docker-woodland
+name: deploy-docker-middle-earth
 on:
   workflow_dispatch:
 jobs:
-  deploy-docker-woodland:
+  deploy-docker-middle-earth:
     runs-on: ubuntu-latest
     steps:
       - name: execute build & deploy procedure on mintbox
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.MY_HOST }}
-          port: 22
+          port: 2222
           username: ${{ secrets.MY_USERNAME }}
           password: ${{ secrets.MY_PASSWORD }}
           #key: ${{ secrets.MY_PRIVATE_KEY }}
