@@ -210,7 +210,7 @@ def run_command_exoplanets(observation_id):
 def run_command_image_cutout(params):
     '''
     crop all images on a coordinate with a given size
-    # http://localhost:8000/my_astrobase/run-command/?command=image_cutout&params=84,10,1
+    # http://localhost:8000/my_astrobase/run-command/?command=image_cutout&params=84,10,1,my_target,500
     '''
 
     # what cone to search for?
