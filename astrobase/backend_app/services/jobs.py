@@ -38,7 +38,14 @@ def run_command_grid(observation_id):
     job = Job(command='grid', job_service='celery', queue="celery", parameters=parameters, status="new")
     job.save()
     print(f"celery.send_task(astro_tasks.tasks.handle_job({job.id}))")
-    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+    task = app.send_task("astro_tasks.tasks.handle_cutout", kwargs={"id": str(job.id)},
+                         retry=True, retry_policy={
+                                "max_retries": 3,
+                                "interval_start": 0,
+                                "interval_step": 1,
+                                "interval_max": 5,
+                            }
+    )
 
 
 def run_command_grid_eq(observation_id):
