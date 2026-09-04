@@ -10,8 +10,7 @@ print(f'connect to RABBITMQ_BROKER: {RABBITMQ_BROKER}')
 
 app = Celery('my_celery',backend='rpc://',broker=RABBITMQ_BROKER)
 
-print(f'Celery Broker URL: {app.broker} ')
-
+print(f'Celery conf: {app.conf} ')
 
 app.conf.task_routes = {
     'astro_tasks.tasks.*': {'queue': 'astro'},
