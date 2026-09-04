@@ -317,8 +317,8 @@ def run_command_image_cutout(params):
             # trigger the job in celery
             task = app.send_task("astro_tasks.tasks.handle_cutout", kwargs=dict(id=str(job.id)))
 
-        except:
-            print('failed to create job')
+        except Exception as error:
+            print(f'failed to create job: {error}')
 
 
 def dispatch_job(command, observation_id, params):
