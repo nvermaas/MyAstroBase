@@ -8,7 +8,7 @@ except:
 
 print(f'connect to RABBITMQ_BROKER: {RABBITMQ_BROKER}')
 
-app = Celery('my_celery',backend='rpc://',broker=RABBITMQ_BROKER)
+app = Celery('my_celery',broker=RABBITMQ_BROKER)
 app.conf.task_ignore_result = True
 
 print(f'Celery conf: {app.conf} ')
