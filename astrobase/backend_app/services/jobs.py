@@ -70,7 +70,14 @@ def run_command_grid_eq(observation_id):
     job = Job(command='grid', job_service='celery', queue="celery", parameters=parameters, status="new")
     job.save()
 
-    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)),
+                         retry=True, retry_policy={
+                                "max_retries": 3,
+                                "interval_start": 0,
+                                "interval_step": 1,
+                                "interval_max": 5,
+                            }
+    )
 
 
 def run_command_stars(observation_id):
@@ -88,7 +95,14 @@ def run_command_stars(observation_id):
     job = Job(command='stars', job_service='celery', queue="celery", parameters=parameters, status="new")
     job.save()
 
-    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)),
+                         retry=True, retry_policy={
+                                "max_retries": 3,
+                                "interval_start": 0,
+                                "interval_step": 1,
+                                "interval_max": 5,
+                            }
+    )
 
 
 def run_command_min_max(observation_id):
@@ -102,7 +116,14 @@ def run_command_min_max(observation_id):
     job = Job(command='box', job_service='celery', queue="celery", parameters=parameters, status="new")
     job.save()
 
-    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)),
+                         retry=True, retry_policy={
+                                "max_retries": 3,
+                                "interval_start": 0,
+                                "interval_step": 1,
+                                "interval_max": 5,
+                            }
+    )
 
 
 def run_command_draw_extra(observation_id):
@@ -122,7 +143,14 @@ def run_command_draw_extra(observation_id):
               extra=observation.extra, status="new")
     job.save()
 
-    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)),
+                         retry=True, retry_policy={
+                                "max_retries": 3,
+                                "interval_start": 0,
+                                "interval_step": 1,
+                                "interval_max": 5,
+                            }
+    )
 
 
 def run_command_transient(observation_id):
@@ -152,7 +180,14 @@ def run_command_transient(observation_id):
               status="new")
     job.save()
 
-    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)),
+                         retry=True, retry_policy={
+                                "max_retries": 3,
+                                "interval_start": 0,
+                                "interval_step": 1,
+                                "interval_max": 5,
+                            }
+    )
 
 
 def run_command_asteroids(observation_id):
@@ -184,7 +219,14 @@ def run_command_asteroids(observation_id):
               status="new")
     job.save()
 
-    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)),
+                         retry=True, retry_policy={
+                                "max_retries": 3,
+                                "interval_start": 0,
+                                "interval_step": 1,
+                                "interval_max": 5,
+                            }
+    )
 
 
 def run_command_exoplanets(observation_id):
@@ -211,7 +253,14 @@ def run_command_exoplanets(observation_id):
               extra=observation.extra, status="new")
     job.save()
 
-    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)))
+    task = app.send_task("astro_tasks.tasks.handle_job", kwargs=dict(id=str(job.id)),
+                         retry=True, retry_policy={
+                                "max_retries": 3,
+                                "interval_start": 0,
+                                "interval_step": 1,
+                                "interval_max": 5,
+                            }
+    )
 
 
 def run_command_image_cutout(params):
@@ -322,7 +371,14 @@ def run_command_image_cutout(params):
             job.save()
 
             # trigger the job in celery
-            task = app.send_task("astro_tasks.tasks.handle_cutout", kwargs=dict(id=str(job.id)))
+            task = app.send_task("astro_tasks.tasks.handle_cutout", kwargs=dict(id=str(job.id)),
+                         retry=True, retry_policy={
+                                "max_retries": 3,
+                                "interval_start": 0,
+                                "interval_step": 1,
+                                "interval_max": 5,
+                            }
+    )
 
         except Exception as error:
             print(f'failed to create job: {error}')
