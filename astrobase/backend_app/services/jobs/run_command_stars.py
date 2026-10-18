@@ -8,9 +8,7 @@ import json
 import datetime
 import math
 
-from ...models import Observation2, Job, Cutout, CutoutDirectory
-from transients_app.services import algorithms as transients_algorithms
-from exoplanets.models import Exoplanet
+from ...models import Observation2, Job
 from ...my_celery import app
 
 logger = logging.getLogger(__name__)

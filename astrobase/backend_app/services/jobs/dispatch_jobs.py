@@ -1,14 +1,7 @@
-from .run_command_grid import (
-    run_command_grid,
-    run_command_grid_eq,
-    run_command_min_max,
-    run_command_draw_extra,
-    run_command_transient,
-    run_command_exoplanets,
-    run_command_image_cutout,
-    run_command_asteroids,
-)
-from .run_command_stars import run_command_stars
+from .run_command_grid import *
+from .run_command_stars import *
+from .run_command_min_max import *
+from .run_command_extra import *
 
 def dispatch_job(command, observation_id, params):
     # when 'queue' is specified in the Job object, then it will be picked up by Celery.
