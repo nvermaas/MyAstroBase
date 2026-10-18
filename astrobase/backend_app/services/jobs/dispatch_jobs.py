@@ -2,6 +2,9 @@ from .run_command_grid import *
 from .run_command_stars import *
 from .run_command_min_max import *
 from .run_command_extra import *
+from .run_command_transient import *
+from .run_command_exoplanets import *
+from .run_command_image_cutout import *
 
 def dispatch_job(command, observation_id, params):
     # when 'queue' is specified in the Job object, then it will be picked up by Celery.
