@@ -5,6 +5,7 @@ import datetime
 import math
 
 from ...models import Observation2, Job
+from transients_app.services import algorithms as transients_algorithms
 from exoplanets.models import Exoplanet
 from ...my_celery import app
 
@@ -14,7 +15,7 @@ logger = logging.getLogger(__name__)
 def run_command_exoplanets(observation_id):
     """"
     draw exoplanet host stars on the raw image of an observation
-    example: http://localhost:8000/my_astrobase/run-command?command=exoplanets&observation_id=1305
+    example: http://localhost:8000/my_astrobase/run-command?command=exoplanets&observation_id=1695
     """
 
     observation = Observation2.objects.get(id=observation_id)
