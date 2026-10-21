@@ -30303,3 +30303,7 @@
 [20/Sep/2025 19:20:51,319] handle_pre_save(250420002 - k2-18 zoom - k2-18, Leo, Virgo)
 [20/Sep/2025 19:20:51,334] handle_post_save(250420002 - k2-18 zoom - k2-18, Leo, Virgo)
 [20/Sep/2025 19:20:51,334] update observation = 250420002
+[18/Oct/2026 17:23:05,664] SIGNAL : pre_save Observation(250405003 - Markanian Chain - Virgo Cluster, M58, M60, M84, M86, M87, M88, M89, M90, M91, M99, M100)
+[18/Oct/2026 17:23:05,665] handle_pre_save(250405003 - Markanian Chain - Virgo Cluster, M58, M60, M84, M86, M87, M88, M89, M90, M91, M99, M100)
+[18/Oct/2026 17:23:05,693] handle_post_save(250405003 - Markanian Chain - Virgo Cluster, M58, M60, M84, M86, M87, M88, M89, M90, M91, M99, M100)
+[18/Oct/2026 17:23:05,693] update observation = 250405003
