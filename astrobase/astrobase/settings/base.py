@@ -234,26 +234,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 ASTROMETRY_HOST = "http://nova.astrometry.net/api"
 
-
-ASTROMETRY_HOST = "http://nova.astrometry.net/api"
-
-#REPOSITORY_URL = 'https://uilennest.net/astrobase/repository/'
 REPOSITORY_URL = os.path.join(BACKEND_HOST, 'astrobase/repository/')
 REPOSITORY_ROOT = '/shared/repository'
 
-#MY_ASTEROIDS_URL = "https://uilennest.net/astrobase/repository/asteroids.txt"
 MY_ASTEROIDS_URL = os.path.join(BACKEND_HOST, 'astrobase/repository/asteroids.txt')
 MY_ASTEROIDS_ROOT = "/shared/repository/asteroids.txt"
 
-#MY_HIPPARCOS_URL = "https://uilennest.net/astrobase/repository/hip_main.dat"
 MY_HIPPARCOS_URL = os.path.join(BACKEND_HOST, 'astrobase/repository/hip_main.dat')
 MY_HIPPARCOS_ROOT = "/shared/repository/hip_main.dat"
 
-#MY_EXOPLANETS_URL = "https://uilennest.net/astrobase/repository/exoplanets.csv"
 MY_EXOPLANETS_URL = os.path.join(BACKEND_HOST, 'astrobase/repository/exoplanets.csv')
 MY_EXOPLANETS_ROOT = "/shared/repository/exoplanets.csv"
 
-#MY_HYG_URL = "https://uilennest.net/astrobase/repository/hygdata.sqlite3"
 MY_HYG_URL = os.path.join(BACKEND_HOST, 'astrobase/repository/hygdata.sqlite3')
 MY_HYG_ROOT = "/shared/repository/hygdata.sqlite3"
 
