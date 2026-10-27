@@ -1,7 +1,7 @@
 #astroquery==0.4.10
 celery==5.2.2
-Django==5.0.9
-djangorestframework==3.14.0
+django>=5.2.17
+djangorestframework>=3.18.2
 django-filter==24.1
 django-cors-headers==4.3.0
 django-extensions==3.1.0
